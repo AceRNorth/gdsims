@@ -91,7 +91,7 @@
 	void RunNReps(int N)
 	      {
 
-		os3<<"ParList"<<pa.set<<"run"<<pa.index<<".txt";
+		os3<<"CoordinateList"<<pa.set<<"run"<<pa.index<<".txt";
 		ParList.open(os3.str().c_str());
 		os1<<"LocalData"<<pa.set<<"run"<<pa.index<<".txt";// make a file for outputing local data
 		os2<<"Totals"<<pa.set<<"run"<<pa.index<<".txt";// make a file for outputing global data
@@ -118,7 +118,6 @@
 	void RunMaxT(void)
 		{
 		int TT=ti.start;
-		int tot,totW,totD,totE,totR;
 		int uniquepat,relpat,year2,num_release_sites,num_driver;
 		
 		/*-----------------set gene drive release sites------------------*/
@@ -145,7 +144,7 @@
 
 		while (TT<ti.maxT+1)
 			{
-		
+			/*----------outputting------------------------*/	
 			if(TT%ti.interval==0)
 				{
 				cout<<TT<<"   "<<to.JTot<<"   "<<to.MTot<<"    "<<to.VTot<<"   "<<to.FTot<<endl;
@@ -153,16 +152,18 @@
 				for(int i=0;i<NumGen;i++)globalinfo<<"     "<<to.M[i];
 				globalinfo<<endl;
 				};
-			TT++;
+			if(TT>ti.recstart && TT<=ti.recend && TT%ti.recfreq==0)record(TT);
+			/*------------------------------------------------*/
 			for(int jj=0;jj<num_release_sites;jj++)
 				{
 				if(TT==reltimes[jj])
 					{
+					//gene drive release
 					PutDriverSites(relpatches[jj]);
 					};
 				};
-			if(TT>ti.recstart && TT<=ti.recend && TT%ti.recfreq==0)record(TT);
 			OneStep(TT);
+			TT++;
 			};
         return;};
 
@@ -240,13 +241,15 @@
 		Site[index].TotW=0;
 		for(int ii=0;ii<Site.size();ii++)
 			{
+		// re-activate this if loop to exclude self-dispersal. need to check isolated sites catered for
 		//	if(ii!=index)
 			//	{
 				dd=distance(pa.U,Site[index].x,Site[index].y,Site[ii].x,Site[ii].y);
 				if(dd<pa.LD)
 				{
 					Site[index].connecIND.push_back(ii); 
-					ww=(1-dd/pa.LD)*(3/(PI*pa.LD*pa.LD))/(1.0*pa.NumPat);
+			//		ww=(1-dd/pa.LD)*(3/(PI*pa.LD*pa.LD))/(1.0*pa.NumPat);
+					ww=pa.LD-dd;
 					Site[index].connecW.push_back(ww); 
 					Site[index].TotW+=ww;
 				};
@@ -266,7 +269,9 @@
 
 
 	void SitesPopulate(int pat){
-		//	for(int a=0;a<TL;a++){Site[pat].J[0][a]+=in.NumJW[a];to.J[0]+=in.NumJW[a];to.JTot+=in.NumJW[a];Site[pat].JTot+=in.NumJW[a];};
+			for(int a=0;a<TL;a++){Site[pat].J[0][a]+=in.NumJW[a];to.J[0]+=in.NumJW[a];to.JTot+=in.NumJW[a];Site[pat].JTot+=in.NumJW[a];};
+		//	
+		//	nb can remove int() from below
 			Site[pat].M[0]=int(in.NumAdultsWM);to.M[0]+=int(in.NumAdultsWM);to.MTot+=int(in.NumAdultsWM);Site[pat].MTot+=int(in.NumAdultsWM);
 			Site[pat].V[0]=int(in.NumAdultsWV);to.V[0]+=int(in.NumAdultsWV);to.VTot+=int(in.NumAdultsWV);
 			Site[pat].F[0][0]=int(in.NumAdultsWF);
@@ -324,13 +329,13 @@
 		double pcomp;
 		for(int pat=0;pat<Site.size();pat++)
 		{
-		pcomp=(1-pa.muJ)*Site[pat].comp;
+		pcomp=(1-pa.muJ)*Site[pat].comp;// probability of survival per larva
 			jtSitesch=0;
 			for(int age=0;age<TL-1;age++)
 			{
 				for(int i=0;i<NumGen;i++)
 					{		
-					Site[pat].J[i][age]=random_binomial(Site[pat].J[i][age+1],pcomp);
+					Site[pat].J[i][age]=random_binomial(Site[pat].J[i][age+1],pcomp);//increment age by 1 taking mortality into account (pcomp is survival per larva)
 					jtSitesch+=Site[pat].J[i][age];
 					jtAll[i]+=Site[pat].J[i][age];
 					};
@@ -348,8 +353,6 @@
 		int v[NumGen];
 		int f[NumGen];
 		std::vector<double> m(NumGen);
-		int* mates;
-		int num;
 		std::vector<int> randomCounts;
 		for(int pat=0;pat<Site.size();pat++)
 				{
@@ -357,7 +360,7 @@
 			for(int i=0;i<NumGen;i++)m[i]=(1.0*Site[pat].M[i]);
 			for(int i=0;i<NumGen;i++)
 					{
-					v[i]=random_binomial(Site[pat].V[i],Site[pat].mate_rate);
+					v[i]=random_binomial(Site[pat].V[i],Site[pat].mate_rate);//how many V will mate
 					if(v[i]>0)
 						{
 						randomCounts = random_Multinomial(v[i],m);
@@ -498,7 +501,7 @@
 				{
 				for(int i=0;i<NumGen;i++)
 					{
-					num=random_binomial(Site[pat].M[i],pa.muA);
+					num=random_binomial(Site[pat].M[i],pa.muA);// number that die
 					Site[pat].M[i]-=num;
 					Site[pat].MTot-=num;
 					to.M[i]-=num;
@@ -765,12 +768,9 @@ double Random()
 
 void record(int index)
 	{	
-	char state;
-	//int tot; 
 	for(int pat=0;pat<Site.size();pat+=in.recSitesFreq)
 				{
 				for(int i=0;i<NumGen-1;i++) localinfo<<Site[pat].M[i]<<"    "; localinfo<<Site[pat].M[5]<<endl;
-			
 				};
 
 		
