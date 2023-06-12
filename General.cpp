@@ -125,7 +125,7 @@
 		int relpatches[num_release_sites];
 		int reltimes[num_release_sites];
 		
-		for(int jj=0;jj<num_release_sites;jj++) relpatches[jj]=-1;
+		for(int jj=0;jj<num_release_sites;jj++) relpatches[jj]=-1;//initialise elemets outside the range of possible values, to prevent interference
 		for(int jj=0;jj<num_release_sites;jj++)
 			{
 			uniquepat=0;

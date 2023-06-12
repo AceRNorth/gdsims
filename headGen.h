@@ -94,8 +94,8 @@ struct Patch
 	long long int AesF[NumGen][NumGen];	
 	long long int MoveF[NumGen][NumGen];	
 	long long int MoveM[NumGen];
-	long double comp;
-	long double mate_rate;
+	long double comp;//survival probability per larvae per day from competition (between 0 and 1)
+	long double mate_rate;// probability a virgin female mates on a given day
 
 
 /*----- for determining connectivities between patches-------*/
@@ -129,7 +129,8 @@ struct Times
 /*---------------------struct containing model parameters----------------------------------*/
 struct Pars
 	{
-	double muJ,muA,d,gamma,beta,theta,xi,e,em,ef,LD,dL,muLD,psi,muAES;
+	double muJ,muA,d,gamma,beta,theta,xi,e,em,ef,dL,muLD,psi,muAES;
+	double LD;// maximum distance at which two sites are connected
 	double alpha0;
 	double LarvProbs[TL];
 	double meanTL;
