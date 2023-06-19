@@ -1,63 +1,59 @@
 #include "headGen.h"
 
 /*--------------------------------------global variables----------------------------------*/
-/*----------------------------------------------------------------------------------------*/
 /*-------------random number seed-----------------*/
 std::random_device rd;
 std::mt19937 gen(rd());
-/*------------------------------------------------*/
+
 /*----------------global structs------------------*/
-Pars pa;//parameters 
-initials in; //initial conditions
+Pars pa; // parameters 
+initials in; // initial conditions
 Times ti; // timekeeping parameters
 totals to; // totals
 std::vector<Patch> Site; // information on each population
-/*------------------------------------------------*/
+
 /*------------------Output files------------------*/
 std::ostringstream os1, os2, os3, os4;
 std::ofstream globalinfo, localinfo, duration, ParList;
-/*------------------------------------------------*/
 
-/*----------------------------------------------------------------------------------------*/
 //	clock_t now=clock();
-
 
 int main()
 {
 	/*---------input parameters---------------------*/
-	std::cin >> pa.set; //enumeration for output files
+	std::cin >> pa.set; // enumeration for output files
 	std::cin >> pa.index;
-	std::cin >> pa.NumPat;// number of sites
-	std::cin >> in.recSitesFreq;//if outputting local data, how many sites to collect for (1 is all sites, 10 is 1 in 10 etc)
-	std::cin >> ti.interval;//time interval for outputting global data
+	std::cin >> pa.NumPat; // number of sites
+	std::cin >> in.recSitesFreq; // if outputting local data, how many sites to collect for (1 is all sites, 10 is 1 in 10 etc)
+	std::cin >> ti.interval; // time interval for outputting global data
 	std::cin >> ti.start;
-	std::cin >> ti.maxT;// maximum time to simulate until (days)
-	std::cin >> ti.recfreq;// how often to collect local data (every rec days)
-	std::cin >> ti.recstart;// how often to collect local data (every rec days)
-	std::cin >> ti.recend;// how often to collect local data (every rec days)
-	std::cin >> ti.NumRuns;// how many simulation runs
-	std::cin >> in.driver_time;// time to start releasing drive alleles; if negative, the release dates are random, if positive, the releases are on the specific date
-	std::cin >> in.driver_start;// time to start releasing drive alleles
-	std::cin >> in.driver_end;// time to end releasing drive alleles
-	std::cin >> in.NumDriver;// number of drive homozygous male mosquitoes per release
-	std::cin >> in.NumDriverSites;// number of release sites per year
-	std::cin >> pa.muJ;//juvenile density independent mortality per day
-	std::cin >> pa.muA;//adult mortality per day
-	std::cin >> pa.d;//adult dispersal rate
-	std::cin >> pa.gamma;//rate of r2 allele formation from W/D meiosis
-	std::cin >> pa.beta;//parameter that controls mating rate
-	std::cin >> pa.theta;//egg laying rate of wildtype females (eggs per day)
-	std::cin >> pa.xi;// somatic Cas9 expression fitness cost
-	std::cin >> pa.e;// homing rate in females
-	std::cin >> pa.LD;//maximum distance at which settlements are connected
+	std::cin >> ti.maxT; // maximum time to simulate until (days)
+	std::cin >> ti.recfreq; // how often to collect local data (every rec days)
+	std::cin >> ti.recstart; // how often to collect local data (every rec days)
+	std::cin >> ti.recend; // how often to collect local data (every rec days)
+	std::cin >> ti.NumRuns; // how many simulation runs
+	std::cin >> in.driver_time; // time to start releasing drive alleles; if negative, the release dates are random, if positive, the releases are on the specific date
+	std::cin >> in.driver_start; // time to start releasing drive alleles
+	std::cin >> in.driver_end; // time to end releasing drive alleles
+	std::cin >> in.NumDriver; // number of drive homozygous male mosquitoes per release
+	std::cin >> in.NumDriverSites; // number of release sites per year
+	std::cin >> pa.muJ; // juvenile density independent mortality per day
+	std::cin >> pa.muA; // adult mortality per day
+	std::cin >> pa.d; // adult dispersal rate
+	std::cin >> pa.gamma; // rate of r2 allele formation from W/D meiosis
+	std::cin >> pa.beta; // parameter that controls mating rate
+	std::cin >> pa.theta; // egg laying rate of wildtype females (eggs per day)
+	std::cin >> pa.xi; // somatic Cas9 expression fitness cost
+	std::cin >> pa.e; // homing rate in females
+	std::cin >> pa.LD; // maximum distance at which settlements are connected
 
-	std::cin >> pa.psi;//Aestivation rate
-	std::cin >> pa.muAES;//aestivation mortality
-	std::cin >> pa.t_hide1;//start day of going into aestivation
-	std::cin >> pa.t_hide2;//end day of going into aestivation
-	std::cin >> pa.t_wake1;//start day of emerging from aestivation
-	std::cin >> pa.t_wake2;//end day of emerging from aestivation
-	std::cin >> pa.alpha0;//baseline contribution to carrying capacity
+	std::cin >> pa.psi; // Aestivation rate
+	std::cin >> pa.muAES; // aestivation mortality
+	std::cin >> pa.t_hide1; // start day of going into aestivation
+	std::cin >> pa.t_hide2; // end day of going into aestivation
+	std::cin >> pa.t_wake1; // start day of emerging from aestivation
+	std::cin >> pa.t_wake2; // end day of emerging from aestivation
+	std::cin >> pa.alpha0; // baseline contribution to carrying capacity
 	std::cin >> pa.meanTL;
 
 	for (int x=0; x<TL; x++) {
@@ -68,8 +64,6 @@ int main()
 	std::cin >> pa.CentRad;
 	// std::cout << pa.U << "   " << pa.muA << "  " << pa.muJ << std::endl;
 
-
-	/*---------------------------------------------------------------------------------------------------*/
 	/*-------------------------------numbers to use when initiating populations--------------------------*/
 	int inV = 10000;
 	int inM = 50000;
@@ -80,26 +74,23 @@ int main()
 	}
 
 	in.NumAdultsWV = inV, in.NumAdultsWM = inM, in.NumAdultsWF = inF;
-	/*---------------------------------------------------------------------------------------------------*/
-
 
 	/*--------------------------------Set inheritance architecture---------------------------------------*/
 	SetFertility();
-	/*---------------------------------------------------------------------------------------------------*/
 
 	/*--------------------------------run model NumRuns times--------------------------------------------*/
 	RunNReps(ti.NumRuns);
-	/*---------------------------------------------------------------------------------------------------*/
+
 	return 0;
 }
 	
-
+	
 void RunNReps(int N) {
 
 	os3 << "CoordinateList" << pa.set << "run" << pa.index << ".txt";
 	ParList.open(os3.str().c_str());
-	os1 << "LocalData" << pa.set << "run" << pa.index << ".txt";// make a file for outputing local data
-	os2 << "Totals" << pa.set << "run" << pa.index << ".txt";// make a file for outputing global data
+	os1 << "LocalData" << pa.set << "run" << pa.index << ".txt"; // make a file for outputing local data
+	os2 << "Totals" << pa.set << "run" << pa.index << ".txt"; // make a file for outputing global data
 	localinfo.open(os1.str().c_str());
 	globalinfo.open(os2.str().c_str());
 	std::clock_t start;
@@ -131,12 +122,12 @@ void RunMaxT() {
 	int uniquepat, relpat, year2, num_release_sites, num_driver;
 	
 	/*-----------------set gene drive release sites------------------*/
-	num_release_sites = min(to.CentSqVils, int(in.NumDriverSites));
+	num_release_sites = std::min(to.CentSqVils, int(in.NumDriverSites));
 	int relpatches[num_release_sites];
 	int reltimes[num_release_sites];
 	
 	for (int jj=0; jj < num_release_sites; jj++) {
-		relpatches[jj] = -1; //initialise elements outside the range of possible values, to prevent interference
+		relpatches[jj] = -1; // initialise elements outside the range of possible values, to prevent interference
 	}
 
 	for (int jj=0; jj < num_release_sites; jj++) {
@@ -176,7 +167,7 @@ void RunMaxT() {
 		/*------------------------------------------------*/
 		for (int jj=0; jj < num_release_sites; jj++) {
 			if (TT == reltimes[jj]){
-				//gene drive release
+				// gene drive release
 				PutDriverSites(relpatches[jj]);
 			}
 		}
@@ -200,7 +191,7 @@ void initiate() {
 	to.CentSqHum = 0;
 	Site.clear();
 	Patch pp;
-	//cout << "init   1" << endl;
+	// cout << "init   1" << endl;
 	/*----------------------------------------------------------------------------------*/
 	/*------------------------------input the settlement data---------------------------*/
 	for (int ii=0; ii < pa.NumPat; ii++) {       
@@ -252,8 +243,8 @@ void initiate() {
 	}
 
 	UpdateConnec();
-//		CheckCounts(0,'i');
-//cout<<"finished initialising"<<endl;
+//	CheckCounts(0,'i');
+// 	cout<<"finished initialising"<<endl;
 }
 
 
@@ -499,7 +490,6 @@ void LayEggs() {
 		larv[i] = pa.LarvProbs[i];
 	}
 
-	int* aww;
 	for (int pat=0; pat < Site.size(); pat++) {
 		// fraction of 0:ww,1:wd,2:dd,3:wr,4:rr,5:dr
 		for (int i=0; i<NumGen; i++) {
@@ -567,7 +557,7 @@ void UpdateMate() {
 }
 
 void SetFertility() {
-	//fraction of 0:ww, 1:wd, 2:dd, 3:wr, 4:rr, 5:dr
+	// fraction of 0:ww, 1:wd, 2:dd, 3:wr, 4:rr, 5:dr
 	double Fwwww[6] = {1, 0, 0, 0, 0, 0};
 	double Fwwwd[6] = {(1 - pa.e - pa.gamma) * 0.5, (1 + pa.e) * 0.5, 0, pa.gamma * 0.5, 0, 0};
 	double Fwwdd[6] = {0, 1, 0, 0, 0, 0};
@@ -667,7 +657,7 @@ void SetFertility() {
 }
 
 double distance (double U, double x1, double y1, double x2, double y2) {
-	//periodic distance function
+	// periodic distance function
 	double xdist = 0;
 	double ydist = 0;
 
@@ -686,7 +676,7 @@ double distance (double U, double x1, double y1, double x2, double y2) {
 		ydist = abso(y1 - y2);
 	}
 
-	return double(sqrt(xdist * xdist + ydist * ydist));
+	return double(std::sqrt(xdist * xdist + ydist * ydist));
 }
 
 double abso(double XX) {
@@ -702,14 +692,14 @@ long long int random_poisson(double landa) {
 		return 0;
 	}
 	else if (landa > 30) {
-		//use normal approximation	
+		// use normal approximation	
 		std::normal_distribution<> dist(landa, std::sqrt(landa));
 		int x = std::round(dist(gen));
 		return std::max(0,x);     // shouldn't have two return statements here!!! find out what should actually be returned, if want both or only one
 		return std::round(dist(gen));
 	}
 	else {
-		//sample poisson directly
+		// sample poisson directly
 		std::poisson_distribution<> dist(landa);
 		return dist(gen);
 	}
@@ -795,17 +785,17 @@ void CheckCounts(int TT, char ref) {
 			for (int j=0; j < NumGen; j++) {
 				if (Site[pat].F[i][j] < 0) {
 					std::cout << TT << "   " << ref << " F neg  " << i << "   " << j << "  " << Site[pat].F[i][j] << std::endl;
-					exit(1);
+					std::exit(1);
 				}
 			}
 		}
 
 		for (int i=0; i<NumGen; i++) {
-			totF += accumulate(Site[pat].F[i],Site[pat].F[i]+NumGen,0);
+			totF += std::accumulate(Site[pat].F[i],Site[pat].F[i]+NumGen,0);
 		}
 
-		totM += accumulate(Site[pat].M, Site[pat].M + NumGen, 0);
-		totV += accumulate(Site[pat].V, Site[pat].V + NumGen, 0);
+		totM += std::accumulate(Site[pat].M, Site[pat].M + NumGen, 0);
+		totV += std::accumulate(Site[pat].V, Site[pat].V + NumGen, 0);
 		for (int i=0; i<NumGen; i++) {
 			for (int a=0; a<TL; a++) {
 				totJ += Site[pat].J[i][a];
@@ -813,41 +803,41 @@ void CheckCounts(int TT, char ref) {
 		}
 	}
 
-	totFB += accumulate(to.F, to.F + NumGen, 0);
-	totMB += accumulate(to.M, to.M + NumGen, 0);
-	totVB += accumulate(to.V, to.V + NumGen, 0);
-	totJB += accumulate(to.J, to.J + NumGen, 0);
+	totFB += std::accumulate(to.F, to.F + NumGen, 0);
+	totMB += std::accumulate(to.M, to.M + NumGen, 0);
+	totVB += std::accumulate(to.V, to.V + NumGen, 0);
+	totJB += std::accumulate(to.J, to.J + NumGen, 0);
 
 	if (totF != to.FTot) {
 		std::cout << TT << "   " << ref << " F count error  " << totF << "   " << totFB << "   " << to.FTot << std::endl;
-		exit(1);
+		std::exit(1);
 	}
 	if (totM != to.MTot) {
 		std::cout << TT << "   " << ref << " M count error  " << totM << "   " << totMB << "   " << to.MTot << std::endl;
-		exit(1);
+		std::exit(1);
 	}
 	if (totV != to.VTot) {
 		std::cout << TT << "   " << ref << " V count error  " << totV << "   " << totVB << "   " << to.VTot << std::endl;
-		exit(1);
+		std::exit(1);
 	}
 	if (totJ != to.JTot) {
 		std::cout << TT << "   " << ref << " J count error  " << totJ << "   " << totJB << "   " << to.JTot << std::endl;
-		exit(1);
+		std::exit(1);
 	}
 	if (totFB != to.FTot) {
 		std::cout << TT << "   " << ref << " F count errorB  " << totFB << "   " << to.FTot << std::endl;
-		exit(1);
+		std::exit(1);
 	}
 	if (totMB != to.MTot) {
 		std::cout << TT << "   " << ref << " M count errorB  " << totMB << "   " << to.MTot << std::endl;
-		exit(1);
+		std::exit(1);
 	}
 	if (totVB != to.VTot) {
 		std::cout << TT << "   " << ref << " V count errorB  " << totVB << "   " << to.VTot << std::endl;
-		exit(1);
+		std::exit(1);
 	}
 	if (totJB != to.JTot) {
 		std::cout << TT << "   " << ref << " J count errorB  " << totJB << "   " << to.JTot << std::endl;
-		exit(1);
+		std::exit(1);
 	}
 }

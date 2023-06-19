@@ -1,31 +1,18 @@
 #include <iostream>
 #include <fstream>
-#include <stdlib.h>
 #include <sstream>
-#include <math.h>
-#include <time.h>
+#include <string>
 #include <vector>
-#include <assert.h>
-#include <stdio.h>
-#include <ctime>
+#include <ctime> // for runtime calculations
 #include <cstdlib> // for exit function
-#include <tr1/random>
-#include <random>
-#include <cmath>
-#include <numeric>
-//#include <random>
-#include <chrono>
-#include <algorithm>
-
-using namespace std;
-//using std::ifstream;
-using namespace std::tr1;
+#include <random>  
+#include <cmath> 
+#include <numeric>  
+#include <algorithm> 
 
 /*-----------------------------------------------------Header definitions---------------------------------------------------------*/
 /*--------------------------------------------------------------------------------------------------------------------------------*/
-
-
-const int TL = 20; //juvenile development time (egg to adult)
+const int TL = 20; // juvenile development time (egg to adult)
 const int NumGen = 6;
 
 const double PI = 3.14159265;
@@ -69,9 +56,6 @@ std::vector<int> random_Multinomial(int N, const std::vector<double>& probs);
 double distance(double U, double x1, double y1, double x2, double y2); // distance between points (assuming toroidal boundaries)
 double abso(double XX); // absolute used in distance function
 
-/*----------------------------------------------------------------------------------------*/
-
-
 
 /*----------------------struct for keeping track of global numbers------------------------*/
 struct totals {
@@ -84,8 +68,6 @@ struct totals {
 	int CentSqVils;
 	double CentSqHum;
 };	
-/*----------------------------------------------------------------------------------------*/
-
 
 /*----------------------struct combining initial condition parameters---------------------*/
 struct initials {
@@ -107,8 +89,6 @@ struct initials {
 	int NumRes;
 	int recSitesFreq;
 };	
-/*----------------------------------------------------------------------------------------*/
-
 		
 /*------------------------state of population in each settlement---------------------------*/
 struct Patch {
@@ -127,38 +107,35 @@ struct Patch {
 	long long int MTot;
 	long long int M[NumGen];
 	long long int V[NumGen];
-	//int Fww,Fwd,Fdd,Fwr,Frr,Fdr;
+	//int Fww, Fwd, Fdd, Fwr, Frr, Fdr;
 	long long int F[NumGen][NumGen];	
 	long long int AesF[NumGen][NumGen];	
 	long long int MoveF[NumGen][NumGen];	
 	long long int MoveM[NumGen];
-	long double comp;//survival probability per larvae per day from competition (between 0 and 1)
-	long double mate_rate;// probability a virgin female mates on a given day
+	long double comp; // survival probability per larvae per day from competition (between 0 and 1)
+	long double mate_rate; // probability a virgin female mates on a given day
 
 
-/*----- for determining connectivities between patches-------*/
-	std::vector<int> connecIND; //connection indices
-	std::vector<double> connecW;// connection weights
-	double TotW;// sum of connection weights
-/*-----------------------------------------------------------*/
+	/*----- for determining connectivities between patches-------*/
+	std::vector<int> connecIND; // connection indices
+	std::vector<double> connecW; // connection weights
+	double TotW; // sum of connection weights
+	/*-----------------------------------------------------------*/
 	int CentSq;
 };
-/*----------------------------------------------------------------------------------------*/
 
 
 
 /*----------------struct containt simulation timekeeping parameters-------------------------*/
 struct Times {
-	int maxT;// maximum simulated time
+	int maxT; // maximum simulated time
 	int start;
-	int recfreq; //record frequency
-	int recstart;// start recording
-	int recend;// end recording
-	int NumRuns;// number of simulation replicates to run
-	int interval;// how often to output global variables
+	int recfreq; // record frequency
+	int recstart; // start recording
+	int recend; // end recording
+	int NumRuns; // number of simulation replicates to run
+	int interval; // how often to output global variables
 };
-
-/*----------------------------------------------------------------------------------------*/
 
 /*---------------------struct containing model parameters----------------------------------*/
 struct Pars {
@@ -189,8 +166,5 @@ struct Pars {
 	int t_hide1,t_hide2,t_wake1,t_wake2;
 	/*----------------------------------------*/
 
-	double f[NumGen][NumGen][NumGen]; //f_ijk is fraction of type k offspring from mother with genotype i mated to father with genotype j
+	double f[NumGen][NumGen][NumGen]; // f_ijk is fraction of type k offspring from mother with genotype i mated to father with genotype j
 };
-
-/*----------------------------------------------------------------------------------------*/
-
