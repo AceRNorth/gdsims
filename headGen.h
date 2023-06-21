@@ -15,8 +15,8 @@
 const int TL = 20; // juvenile development time (egg to adult)
 const int NumGen = 6;
 
-const double PI = 3.14159265;
-const double TWOPI = 6.28318531;
+// const double PI = 3.14159265;
+// const double TWOPI = 6.28318531;
 // const long long int LONG_MAX=3147483647000;  // had error - figure what's going wrong
 
 /*-------------------------------function declarations-------------------------------------*/
@@ -24,7 +24,7 @@ void RunMaxT();
 void RunNReps(int N);
 void initiate(); // set up the simulation sites and variables
 void SitesPopulate(int pat); // initiate populations in the sites
-void record(int index); // output data from each individual site
+void record(); // output data from each individual site
 void PutDriverSites(int pat); // release gene drives into population
 void UpdateConnec(); // computes inter-patch connectivities
 void OneStep(int day); // control population processes
@@ -72,21 +72,21 @@ struct totals {
 /*----------------------struct combining initial condition parameters---------------------*/
 struct initials {
 	int NumAdultsWM, NumAdultsWV, NumAdultsWF;
-	int NumAdultsDM, NumAdultsDV, NumAdultsDF;
-	int NumAdultsRM, NumAdultsRV, NumAdultsRF;
+	// int NumAdultsDM, NumAdultsDV, NumAdultsDF;
+	// int NumAdultsRM, NumAdultsRV, NumAdultsRF;
 	int NumJW[TL];
-	int NumJD[TL];
-	int NumJR[TL];
+	// int NumJD[TL];
+	// int NumJR[TL];
 	double driver_time;
 	double driver_start;
 	double driver_end;
-	double r_time;
+	// double r_time;
 	int NumDriver;
 	double NumDriverSites;
-	double NumDriverD;
-	double NumDriverSitesD;
-	int NumR;
-	int NumRes;
+	// double NumDriverD;
+	// double NumDriverSitesD;
+	// int NumR;
+	// int NumRes;
 	int recSitesFreq;
 };	
 		
@@ -94,27 +94,26 @@ struct initials {
 struct Patch {
 	double x;
 	double y;
-//	double Nhum;
+	// double Nhum;
 	double gam;
 	double arab;
 	double fun;
 	double area;
-	double dens;
+	// double dens;
 	int sqx, sqy;
-	int numsites;
+	// int numsites;
 	long long int J[NumGen][TL];
 	long long int JTot;
-	long long int MTot;
 	long long int M[NumGen];
+	long long int MTot;
 	long long int V[NumGen];
-	//int Fww, Fwd, Fdd, Fwr, Frr, Fdr;
+	// int Fww, Fwd, Fdd, Fwr, Frr, Fdr;
 	long long int F[NumGen][NumGen];	
 	long long int AesF[NumGen][NumGen];	
 	long long int MoveF[NumGen][NumGen];	
 	long long int MoveM[NumGen];
 	long double comp; // survival probability per larvae per day from competition (between 0 and 1)
 	long double mate_rate; // probability a virgin female mates on a given day
-
 
 	/*----- for determining connectivities between patches-------*/
 	std::vector<int> connecIND; // connection indices
@@ -123,8 +122,6 @@ struct Patch {
 	/*-----------------------------------------------------------*/
 	int CentSq;
 };
-
-
 
 /*----------------struct containt simulation timekeeping parameters-------------------------*/
 struct Times {
@@ -147,10 +144,10 @@ struct Pars {
 	double theta;
 	double xi;
 	double e;
-	double em;
-	double ef;
-	double dL;
-	double muLD;
+	// double em;
+	// double ef;
+	// double dL;
+	// double muLD;
 	double psi;
 	double muAES;
 	double LD; // maximum distance at which two sites are connected
@@ -158,7 +155,7 @@ struct Pars {
 	double LarvProbs[TL];
 	double meanTL;
 	double U; // size of simulation area (side)
-	double CentRad; //radius of interior area of simulation
+	double CentRad; // radius of interior area of simulation
 	int NumPat; // number of population sites
 	int set, index; // for labelling the output files
 

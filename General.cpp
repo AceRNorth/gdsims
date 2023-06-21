@@ -116,67 +116,6 @@ void RunNReps(int N) {
 	ParList.close();
 }
 
-void RunMaxT() {
-
-	int TT = ti.start;
-	int uniquepat, relpat, year2, num_release_sites, num_driver;
-	
-	/*-----------------set gene drive release sites------------------*/
-	num_release_sites = std::min(to.CentSqVils, int(in.NumDriverSites));
-	int relpatches[num_release_sites];
-	int reltimes[num_release_sites];
-	
-	for (int jj=0; jj < num_release_sites; jj++) {
-		relpatches[jj] = -1; // initialise elements outside the range of possible values, to prevent interference
-	}
-
-	for (int jj=0; jj < num_release_sites; jj++) {
-		uniquepat = 0;
-
-		while (uniquepat == 0) {
-			uniquepat = 1;
-			relpat = IRandom(0, Site.size() - 1);
-
-			for (int ii=0; ii < num_release_sites; ii++) {
-				if (relpat == relpatches[ii] || Site[relpat].CentSq == 0) {
-					uniquepat=0;
-				}
-			}
-			relpatches[jj] = relpat;
-		}
-
-		reltimes[jj] = in.driver_time;
-	}
-	/*------------------------------------------------------------*/
-	while (TT < ti.maxT + 1) {
-		/*----------outputting------------------------*/	
-		if (TT % ti.interval == 0) {
-			std::cout << TT << "   " << to.JTot << "   " << to.MTot << "    " << to.VTot << "   " << to.FTot << std::endl;
-			globalinfo << TT;
-			
-			for (int i=0; i<NumGen; i++) {
-				globalinfo << "     " << to.M[i];
-			}
-
-			globalinfo << std::endl;
-		}
-
-		if (TT > ti.recstart && TT <= ti.recend && TT%ti.recfreq == 0) {
-			record(TT);
-		}
-		/*------------------------------------------------*/
-		for (int jj=0; jj < num_release_sites; jj++) {
-			if (TT == reltimes[jj]){
-				// gene drive release
-				PutDriverSites(relpatches[jj]);
-			}
-		}
-
-		OneStep(TT);
-		TT++;
-	}
-}
-
 void initiate() {
 	for (int i=0; i<NumGen; i++) {
 		to.J[i] = 0;
@@ -249,7 +188,7 @@ void initiate() {
 
 
 void UpdateConnec() {
-	double dd, ww, cor;
+	double dd, ww;
 	for (int index = 0; index < Site.size(); index++) {
 		Site[index].connecIND.clear();
 		Site[index].connecW.clear();
@@ -261,7 +200,7 @@ void UpdateConnec() {
 				if (dd < pa.LD) {
 					Site[index].connecIND.push_back(ii); 
 					//ww = (1 - dd / pa.LD) * (3 / (PI * pa.LD * pa.LD)) / (1.0 * pa.NumPat);
-					ww = pa.LD-dd;
+					ww = pa.LD - dd;
 					Site[index].connecW.push_back(ww); 
 					Site[index].TotW += ww;
 				}
@@ -270,6 +209,68 @@ void UpdateConnec() {
 	}
 }
 
+void RunMaxT() {
+	int TT = ti.start;
+	int uniquepat, relpat, num_release_sites; 
+	// int num_driver;
+	
+	/*-----------------set gene drive release sites------------------*/
+	num_release_sites = std::min(to.CentSqVils, int(in.NumDriverSites));
+	int relpatches[num_release_sites]; // patches in which to release the gene drive (contains indices to the patches?)
+	int reltimes[num_release_sites]; // release times
+	
+	for (int jj=0; jj < num_release_sites; jj++) {
+		relpatches[jj] = -1; // initialise elements outside the range of possible values, to prevent interference
+	}
+
+	for (int jj=0; jj < num_release_sites; jj++) {
+		uniquepat = 0;
+
+		while (uniquepat == 0) {
+			uniquepat = 1;
+			relpat = IRandom(0, Site.size() - 1);
+
+			for (int ii=0; ii < num_release_sites; ii++) {
+				if (relpat == relpatches[ii] || Site[relpat].CentSq == 0) {
+					uniquepat = 0;
+				}
+			}
+			relpatches[jj] = relpat;
+		}
+
+		reltimes[jj] = in.driver_time;
+	}
+	/*------------------------------------------------------------*/
+	while (TT < ti.maxT + 1) {
+		/*----------outputting------------------------*/	
+		if (TT % ti.interval == 0) {
+			// outputs and records total number of each type of mosquito
+			std::cout << TT << "   " << to.JTot << "   " << to.MTot << "    " << to.VTot << "   " << to.FTot << std::endl;
+			globalinfo << TT;
+			
+			// records total number of males of each genotype
+			for (int i=0; i<NumGen; i++) {
+				globalinfo << "     " << to.M[i];
+			}
+
+			globalinfo << std::endl;
+		}
+
+		if (TT > ti.recstart && TT <= ti.recend && TT%ti.recfreq == 0) {
+			record();
+		}
+		/*------------------------------------------------*/
+		for (int jj=0; jj < num_release_sites; jj++) {
+			if (TT == reltimes[jj]){
+				// gene drive release
+				PutDriverSites(relpatches[jj]);
+			}
+		}
+
+		OneStep(TT);
+		TT++;
+	}
+}
 
 void PutDriverSites(int pat) {
 	Site[pat].M[1] += in.NumDriver;
@@ -279,6 +280,11 @@ void PutDriverSites(int pat) {
 	UpdateMate();
 }
 
+void UpdateMate() {
+	for (int pat=0; pat < Site.size(); pat++) {
+		Site[pat].mate_rate = Site[pat].MTot / (pa.beta + Site[pat].MTot);
+	}
+}
 
 void SitesPopulate(int pat) {
 	for (int a=0; a<TL; a++) {
@@ -321,30 +327,6 @@ void OneStep(int day) {
 	UpdateComp(day);
 	UpdateMate();
 }
-	
-
-void JuvEmerge() {
-	int surv, survM;
-	double pcomp;
-	for (int pat=0; pat < Site.size(); pat++) {
-		pcomp = (1 - pa.muJ) * Site[pat].comp;
-
-		for (int i=0; i<NumGen; i++) {
-			surv = random_binomial(Site[pat].J[i][0], pcomp); 
-
-			if (surv > 0) {		
-				survM = random_binomial(surv, 0.5);
-				Site[pat].MTot += survM;
-				Site[pat].M[i] += survM; 
-				to.M[i] += survM;
-				to.MTot += survM;
-				Site[pat].V[i] += surv - survM;
-				to.V[i] += surv - survM;
-				to.VTot += surv - survM;
-			}
-		}
-	}
-}
 
 void JuvGetOlder() {
 	long int jtSitesch, jtAllAll;
@@ -379,6 +361,31 @@ void JuvGetOlder() {
 	}
 
 	to.JTot = jtAllAll;
+}
+
+void AdultsDie() {
+	long long int num;
+	for (int pat=0; pat < Site.size(); pat++) {
+		for (int i=0; i<NumGen; i++) {
+			num = random_binomial(Site[pat].M[i], pa.muA); // number that die
+			Site[pat].M[i] -= num;
+			Site[pat].MTot -= num;
+			to.M[i] -= num;
+			to.MTot -= num;	
+
+			num = random_binomial(Site[pat].V[i], pa.muA);
+			Site[pat].V[i] -= num;
+			to.V[i] -= num;
+			to.VTot -= num;	
+
+			for (int j=0; j<NumGen; j++) {
+				num = random_binomial(Site[pat].F[i][j], pa.muA);
+				Site[pat].F[i][j] -= num;
+				to.F[i] -= num;
+				to.FTot -= num;	
+			}
+		}
+	}
 }
 
 void VirginsMate() {
@@ -451,37 +458,6 @@ void AdultsMove() {
 	}
 }
 
-void Hide() {
-	long long int num;
-	for (int pat=0; pat < Site.size(); pat++) {
-		for (int i=0; i<NumGen; i++) {
-			for (int j=0; j<NumGen; j++) {
-				num = random_binomial(Site[pat].F[i][j], pa.psi);
-				Site[pat].F[i][j] -= num;
-				to.F[i] -= num;
-				to.FTot -= num;
-				Site[pat].AesF[i][j] += random_binomial(num, 1 - pa.muAES);	
-			}
-		}
-	}
-}
-
-void Wake(int day) {
-	long long int num;
-	double prob = 1.0 / (1.0 + pa.t_wake2 - (day%365));
-	for (int pat=0; pat < Site.size(); pat++) {
-		for (int i=0; i<NumGen; i++) {
-			for(int j=0; j<NumGen; j++) {
-				num = random_binomial(Site[pat].AesF[i][j], prob);
-				Site[pat].F[i][j] += num;
-				to.F[i] += num;
-				to.FTot += num;
-				Site[pat].AesF[i][j] -= num;	
-			}
-		}
-	}
-}
-
 void LayEggs() {
 	double num;
 	std::vector<double> larv(TL);
@@ -514,26 +490,55 @@ void LayEggs() {
 	}
 }
 
-void AdultsDie() {
+void JuvEmerge() {
+	int surv, survM;
+	double pcomp;
+	for (int pat=0; pat < Site.size(); pat++) {
+		pcomp = (1 - pa.muJ) * Site[pat].comp;
+
+		for (int i=0; i<NumGen; i++) {
+			surv = random_binomial(Site[pat].J[i][0], pcomp); 
+
+			if (surv > 0) {		
+				survM = random_binomial(surv, 0.5);
+				Site[pat].MTot += survM;
+				Site[pat].M[i] += survM; 
+				to.M[i] += survM;
+				to.MTot += survM;
+				Site[pat].V[i] += surv - survM;
+				to.V[i] += surv - survM;
+				to.VTot += surv - survM;
+			}
+		}
+	}
+}
+
+void Hide() {
 	long long int num;
 	for (int pat=0; pat < Site.size(); pat++) {
 		for (int i=0; i<NumGen; i++) {
-			num = random_binomial(Site[pat].M[i], pa.muA); // number that die
-			Site[pat].M[i] -= num;
-			Site[pat].MTot -= num;
-			to.M[i] -= num;
-			to.MTot -= num;	
-
-			num = random_binomial(Site[pat].V[i], pa.muA);
-			Site[pat].V[i] -= num;
-			to.V[i] -= num;
-			to.VTot -= num;	
-
 			for (int j=0; j<NumGen; j++) {
-				num = random_binomial(Site[pat].F[i][j], pa.muA);
+				num = random_binomial(Site[pat].F[i][j], pa.psi);
 				Site[pat].F[i][j] -= num;
 				to.F[i] -= num;
-				to.FTot -= num;	
+				to.FTot -= num;
+				Site[pat].AesF[i][j] += random_binomial(num, 1 - pa.muAES);	
+			}
+		}
+	}
+}
+
+void Wake(int day) {
+	long long int num;
+	double prob = 1.0 / (1.0 + pa.t_wake2 - (day%365));
+	for (int pat=0; pat < Site.size(); pat++) {
+		for (int i=0; i<NumGen; i++) {
+			for(int j=0; j<NumGen; j++) {
+				num = random_binomial(Site[pat].AesF[i][j], prob);
+				Site[pat].F[i][j] += num;
+				to.F[i] += num;
+				to.FTot += num;
+				Site[pat].AesF[i][j] -= num;	
 			}
 		}
 	}
@@ -547,12 +552,6 @@ void UpdateComp(int day) {
 
 	for (int pat = 0; pat < Site.size(); pat++) {
 			Site[pat].comp = std::pow(pa.alpha0 / (pa.alpha0 + Site[pat].JTot + 0.0001), 1 / pa.meanTL);
-	}
-}
-
-void UpdateMate() {
-	for (int pat=0; pat < Site.size(); pat++) {
-		Site[pat].mate_rate = Site[pat].MTot / (pa.beta + Site[pat].MTot);
 	}
 }
 
@@ -765,7 +764,7 @@ double Random() {
 	return dist(gen);
 }
 
-void record(int index) {	
+void record() {	
 	for(int pat=0; pat < Site.size(); pat += in.recSitesFreq) {
 		for(int i=0; i < NumGen - 1; i++) {
 			// potentially join lines into one statement
@@ -773,7 +772,6 @@ void record(int index) {
 			localinfo << Site[pat].M[5] << std::endl;
 		}
 	}
-
 }
 
 void CheckCounts(int TT, char ref) {
