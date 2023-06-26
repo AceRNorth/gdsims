@@ -13,9 +13,8 @@ totals to; // totals
 std::vector<Patch> Site; // information on each population
 
 /*------------------Output files------------------*/
-std::ostringstream os1, os2, os3, os4;
-std::ofstream globalinfo, localinfo, duration, ParList;
-
+std::ostringstream os1, os2, os3;
+std::ofstream globalinfo, localinfo, ParList;
 //	clock_t now=clock();
 
 int main()
@@ -63,7 +62,6 @@ int main()
 	std::cin >> pa.U;
 	std::cin >> pa.CentRad;
 	// std::cout << pa.U << "   " << pa.muA << "  " << pa.muJ << std::endl;
-
 	/*-------------------------------numbers to use when initiating populations--------------------------*/
 	int inV = 10000;
 	int inM = 50000;
@@ -80,7 +78,7 @@ int main()
 
 	/*--------------------------------run model NumRuns times--------------------------------------------*/
 	RunNReps(ti.NumRuns);
-
+	
 	return 0;
 }
 	
@@ -93,6 +91,7 @@ void RunNReps(int N) {
 	os2 << "Totals" << pa.set << "run" << pa.index << ".txt"; // make a file for outputing global data
 	localinfo.open(os1.str().c_str());
 	globalinfo.open(os2.str().c_str());
+
 	std::clock_t start;
 	double dtime;
 	start = std::clock();
@@ -212,7 +211,6 @@ void UpdateConnec() {
 void RunMaxT() {
 	int TT = ti.start;
 	int uniquepat, relpat, num_release_sites; 
-	// int num_driver;
 	
 	/*-----------------set gene drive release sites------------------*/
 	num_release_sites = std::min(to.CentSqVils, int(in.NumDriverSites));
@@ -351,6 +349,8 @@ void JuvGetOlder() {
 		
 		Site[pat].JTot = jtSitesch;
 		jtAllAll += jtSitesch;
+
+		// youngest ones have all aged by one day so 0 left in this age group (?? check notation for age if countdown to 0 or element TL)
 		for (int i=0; i<NumGen; i++) {
 			Site[pat].J[i][TL-1] = 0;
 		} 
@@ -390,26 +390,26 @@ void AdultsDie() {
 
 void VirginsMate() {
 	int v[NumGen];
-	int f[NumGen];
 	std::vector<double> m(NumGen);
 	std::vector<int> randomCounts;
 	for (int pat=0; pat < Site.size(); pat++) {
 		for (int i=0; i<NumGen; i++) {
-			m[i] = (1.0 * Site[pat].M[i]);
+			m[i] = (1.0 * Site[pat].M[i]); // why the multiplication factor ??) there might also be better way of using this global data instead of creating duplicate local variable. maybe use pointers?? 
 		}
 
 		for (int i=0; i<NumGen; i++) {
 			v[i] = random_binomial(Site[pat].V[i], Site[pat].mate_rate); // how many V will mate
 
 			if (v[i] > 0) {
-				randomCounts = random_Multinomial(v[i], m);
+				// vector of number of mated females carrying each male genotype (?)
+				randomCounts = random_Multinomial(v[i], m); // with m and not m[i] ?? why? what is randomCounts?
 
 				for (int j=0; j<NumGen; j++) {
 					Site[pat].F[i][j] += randomCounts[j];
 				}
 
-				to.F[i] += v[i];
 				Site[pat].V[i] -= v[i];
+				to.F[i] += v[i];
 				to.V[i] -= v[i];
 				to.VTot -= v[i];
 				to.FTot += v[i];
@@ -419,28 +419,33 @@ void VirginsMate() {
 }
 
 void AdultsMove() {
-	int pat, newpat;
+	int pat;
+	// int newpat; think this name is only being used as for loop local variables ?? confusing to have a separate function variable. i placed int newpat=0 instead in each for loop to initialise the variable separately
 	std::vector<int> randomCounts;
 	if (Site.size() > 1) {
+		// number of adults dispersing from each patch (with each genotype)
 		for (pat=0; pat < Site.size(); pat++) {
 			for (int i=0; i<NumGen; i++) {
-				Site[pat].MoveM[i] = random_binomial(Site[pat].M[i], pa.d);
+				Site[pat].MoveM[i] = random_binomial(Site[pat].M[i], pa.d); // how many males will disperse
 				Site[pat].M[i] -= Site[pat].MoveM[i];
 				Site[pat].MTot -= Site[pat].MoveM[i];
 
 				for (int j=0; j<NumGen; j++) {
-					Site[pat].MoveF[i][j] = random_binomial(Site[pat].F[i][j], pa.d);
+					Site[pat].MoveF[i][j] = random_binomial(Site[pat].F[i][j], pa.d); // how many (mated) females will disperse
 					Site[pat].F[i][j] -= Site[pat].MoveF[i][j]; 
+					// not updating female total here too? no variable for that in Patch?
 				}
 			}
 		}
 
+		// number of adults dispersing to each patch (with each genotype)
 		for (pat=0; pat < Site.size(); pat++) {
 			for (int i=0; i<NumGen; i++) {
-				randomCounts = random_Multinomial(Site[pat].MoveM[i], Site[pat].connecW);
-
-				for (newpat=0; newpat < randomCounts.size(); newpat++) {
+				randomCounts = random_Multinomial(Site[pat].MoveM[i], Site[pat].connecW); // how many males will disperse to each connected patch
+				
+				for (int newpat=0; newpat < randomCounts.size(); newpat++) {
 					Site[Site[pat].connecIND[newpat]].M[i] += randomCounts[newpat];
+					// not updating totals ?? can't subtract in previous loop and then not add them back
 				}
 
 				for (int j=0; j<NumGen; j++) {
@@ -448,7 +453,7 @@ void AdultsMove() {
 						//std::vector<int> randomCounts = random_Multinomial(Site[pat].MoveF[i][j], Site[pat].connecW);
 						randomCounts = random_Multinomial(Site[pat].MoveF[i][j], Site[pat].connecW);
 
-						for (newpat=0; newpat < randomCounts.size(); newpat++) {
+						for (int newpat=0; newpat < randomCounts.size(); newpat++) {
 							Site[Site[pat].connecIND[newpat]].F[i][j] += randomCounts[newpat];
 						}
 					}
@@ -463,18 +468,18 @@ void LayEggs() {
 	std::vector<double> larv(TL);
 	std::vector<int> randomCounts;
 	for (int i=0; i<TL; i++) {
-		larv[i] = pa.LarvProbs[i];
+		larv[i] = pa.LarvProbs[i]; // again, is this local variable necessary if already have global variable (or potentially later have this function as method with this variable as attribute, which will have same effect)? use pointers?
 	}
 
 	for (int pat=0; pat < Site.size(); pat++) {
-		// fraction of 0:ww,1:wd,2:dd,3:wr,4:rr,5:dr
+		// fraction of 0:ww, 1:wd, 2:dd, 3:wr, 4:rr, 5:dr
 		for (int i=0; i<NumGen; i++) {
 			for (int j=0; j<NumGen; j++) {
 				for (int k=0; k<NumGen; k++) {
-					num = Site[pat].F[i][j] * pa.f[i][j][k];
-					num = random_poisson(pa.theta * num);
+					num = Site[pat].F[i][j] * pa.f[i][j][k]; // number of eggs laid with each genotype
+					num = random_poisson(pa.theta * num); // normalisation(?) of number of eggs laid according to distribution of number of eggs laid per day
 
-					randomCounts = random_Multinomial(num, larv);
+					randomCounts = random_Multinomial(num, larv); // number of larvae that actually survive coming out of egg (??)
 
 					for (int a=0; a<TL; a++) {
 						Site[pat].J[k][a] += randomCounts[a];
@@ -497,10 +502,10 @@ void JuvEmerge() {
 		pcomp = (1 - pa.muJ) * Site[pat].comp;
 
 		for (int i=0; i<NumGen; i++) {
-			surv = random_binomial(Site[pat].J[i][0], pcomp); 
+			surv = random_binomial(Site[pat].J[i][0], pcomp); // number of juveniles that survive eclosion (?)
 
 			if (surv > 0) {		
-				survM = random_binomial(surv, 0.5);
+				survM = random_binomial(surv, 0.5); // roughly half of the juveniles become male and half female following a distribution
 				Site[pat].MTot += survM;
 				Site[pat].M[i] += survM; 
 				to.M[i] += survM;
@@ -730,9 +735,9 @@ long long int random_binomial(long long int N, double p) {
 }
 
 std::vector<int> random_Multinomial(int N, const std::vector<double>& probs) {
-		int num_outcomes = probs.size();
-		std::vector<int> result(num_outcomes, 0);
-		std::vector<double> scaled_probabilities(num_outcomes, 0.0);
+	int num_outcomes = probs.size();
+	std::vector<int> result(num_outcomes, 0);
+	std::vector<double> scaled_probabilities(num_outcomes, 0.0);
 
 	double sum_p = 0.0;
 	for (int i = 0; i < num_outcomes; ++i) {

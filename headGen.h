@@ -9,6 +9,7 @@
 #include <cmath> 
 #include <numeric>  
 #include <algorithm> 
+#include <cstdio>
 
 /*-----------------------------------------------------Header definitions---------------------------------------------------------*/
 /*--------------------------------------------------------------------------------------------------------------------------------*/
@@ -72,10 +73,8 @@ struct totals {
 /*----------------------struct combining initial condition parameters---------------------*/
 struct initials {
 	int NumAdultsWM, NumAdultsWV, NumAdultsWF;
-	// int NumAdultsDM, NumAdultsDV, NumAdultsDF;
 	// int NumAdultsRM, NumAdultsRV, NumAdultsRF;
 	int NumJW[TL];
-	// int NumJD[TL];
 	// int NumJR[TL];
 	double driver_time;
 	double driver_start;
