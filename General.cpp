@@ -84,7 +84,7 @@ int main()
 	
 	
 void RunNReps(int N) {
-
+	// place new function here to create new files? but will need to close them later on
 	os3 << "CoordinateList" << pa.set << "run" << pa.index << ".txt";
 	ParList.open(os3.str().c_str());
 	os1 << "LocalData" << pa.set << "run" << pa.index << ".txt"; // make a file for outputing local data
@@ -99,6 +99,7 @@ void RunNReps(int N) {
 	for (int j=0; j<N; j++) {
 		initiate();
 
+		// place a new recordPosition()/recordPatches() function?
 		for (int pat=0; pat < Site.size(); pat += in.recSitesFreq) {
 			ParList << Site[pat].x << "   " << Site[pat].y << std::endl;
 		}
@@ -185,7 +186,7 @@ void initiate() {
 // 	cout<<"finished initialising"<<endl;
 }
 
-
+// rename function as SetConnec()? only being called at start to set connection values
 void UpdateConnec() {
 	double dd, ww;
 	for (int index = 0; index < Site.size(); index++) {
@@ -270,18 +271,22 @@ void RunMaxT() {
 	}
 }
 
+void record() {	
+	for(int pat=0; pat < Site.size(); pat += in.recSitesFreq) {
+		for(int i=0; i < NumGen - 1; i++) {
+			// potentially join lines into one statement - correct this because not doing what it should be doing
+			localinfo << Site[pat].M[i] << "    ";
+			localinfo << Site[pat].M[5] << std::endl;
+		}
+	}
+}
+
 void PutDriverSites(int pat) {
 	Site[pat].M[1] += in.NumDriver;
 	Site[pat].MTot += in.NumDriver;
 	to.M[1] += in.NumDriver;
 	to.MTot += in.NumDriver;
 	UpdateMate();
-}
-
-void UpdateMate() {
-	for (int pat=0; pat < Site.size(); pat++) {
-		Site[pat].mate_rate = Site[pat].MTot / (pa.beta + Site[pat].MTot);
-	}
 }
 
 void SitesPopulate(int pat) {
@@ -322,7 +327,7 @@ void OneStep(int day) {
 	JuvEmerge();
 	if (day%365 > pa.t_hide1 && day%365 <= pa.t_hide2 && pa.psi > 0.00001) Hide();
 	if (day%365 > pa.t_wake1 && day%365 <= pa.t_wake2 && pa.psi > 0.00001) Wake(day);
-	UpdateComp(day);
+	UpdateComp();
 	UpdateMate();
 }
 
@@ -523,11 +528,11 @@ void Hide() {
 	for (int pat=0; pat < Site.size(); pat++) {
 		for (int i=0; i<NumGen; i++) {
 			for (int j=0; j<NumGen; j++) {
-				num = random_binomial(Site[pat].F[i][j], pa.psi);
+				num = random_binomial(Site[pat].F[i][j], pa.psi); // number of females that go (or try to go?) into aestivation
 				Site[pat].F[i][j] -= num;
 				to.F[i] -= num;
 				to.FTot -= num;
-				Site[pat].AesF[i][j] += random_binomial(num, 1 - pa.muAES);	
+				Site[pat].AesF[i][j] += random_binomial(num, 1 - pa.muAES);	// number that actually survive going into aestivation
 			}
 		}
 	}
@@ -535,11 +540,11 @@ void Hide() {
 
 void Wake(int day) {
 	long long int num;
-	double prob = 1.0 / (1.0 + pa.t_wake2 - (day%365));
+	double prob = 1.0 / (1.0 + pa.t_wake2 - (day%365)); // probability of a female waking on a given day
 	for (int pat=0; pat < Site.size(); pat++) {
 		for (int i=0; i<NumGen; i++) {
 			for(int j=0; j<NumGen; j++) {
-				num = random_binomial(Site[pat].AesF[i][j], prob);
+				num = random_binomial(Site[pat].AesF[i][j], prob); // number of females that wake up from aestivation on the given day
 				Site[pat].F[i][j] += num;
 				to.F[i] += num;
 				to.FTot += num;
@@ -549,14 +554,21 @@ void Wake(int day) {
 	}
 }
 
-void UpdateComp(int day) {
-	int week = (int)(day % 365) / 7;
-	if (week == 52) {
-		week = 51;
-	}
+void UpdateComp() {
+	// for rainfall extension?
+	// int week = (int)(day % 365) / 7; // can safely remove this type cast
+	// if (week == 52) { // why?
+	// 	week = 51;
+	// }
 
 	for (int pat = 0; pat < Site.size(); pat++) {
 			Site[pat].comp = std::pow(pa.alpha0 / (pa.alpha0 + Site[pat].JTot + 0.0001), 1 / pa.meanTL);
+	}
+}
+
+void UpdateMate() {
+	for (int pat=0; pat < Site.size(); pat++) {
+		Site[pat].mate_rate = Site[pat].MTot / (pa.beta + Site[pat].MTot);
 	}
 }
 
@@ -691,6 +703,16 @@ double abso(double XX) {
 	return YY;
 }
 
+double Random() {
+	std::uniform_real_distribution<> dist(0.0, 1.0);
+	return dist(gen);
+}
+
+int IRandom(int a, int b) {
+	std::uniform_int_distribution<> dist(a, b);
+	return dist(gen);
+}
+
 long long int random_poisson(double landa) {
 	if (landa < 1e-5) {
 		return 0;
@@ -757,26 +779,6 @@ std::vector<int> random_Multinomial(int N, const std::vector<double>& probs) {
 	}
 
 	return result;
-}
-
-int IRandom(int a, int b) {
-	std::uniform_int_distribution<> dist(a, b);
-	return dist(gen);
-}
-
-double Random() {
-	std::uniform_real_distribution<> dist(0.0, 1.0);
-	return dist(gen);
-}
-
-void record() {	
-	for(int pat=0; pat < Site.size(); pat += in.recSitesFreq) {
-		for(int i=0; i < NumGen - 1; i++) {
-			// potentially join lines into one statement
-			localinfo << Site[pat].M[i] << "    ";
-			localinfo << Site[pat].M[5] << std::endl;
-		}
-	}
 }
 
 void CheckCounts(int TT, char ref) {

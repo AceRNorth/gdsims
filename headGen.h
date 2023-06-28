@@ -16,47 +16,44 @@
 const int TL = 20; // juvenile development time (egg to adult)
 const int NumGen = 6;
 
-// const double PI = 3.14159265;
-// const double TWOPI = 6.28318531;
+// const double PI = 3.14159265; // used to be use in calculating the connectivity weights
 // const long long int LONG_MAX=3147483647000;  // had error - figure what's going wrong
 
 /*-------------------------------function declarations-------------------------------------*/
-void RunMaxT();
 void RunNReps(int N);
 void initiate(); // set up the simulation sites and variables
-void SitesPopulate(int pat); // initiate populations in the sites
+void UpdateConnec(); // computes inter-patch connectivities
+void RunMaxT();
 void record(); // output data from each individual site
 void PutDriverSites(int pat); // release gene drives into population
-void UpdateConnec(); // computes inter-patch connectivities
+void SitesPopulate(int pat); // initiate populations in the sites
 void OneStep(int day); // control population processes
 
 /*--------- population processes (controlled from OneStep)-----*/
 void JuvGetOlder();
+void AdultsDie();
 void VirginsMate();
 void AdultsMove();
-void Hide();
-void Wake(int day);
 void LayEggs();
 void JuvEmerge();
-void AdultsDie();
-void UpdateComp(int day);
+void Hide();
+void Wake(int day);
+void UpdateComp();
 void UpdateMate();
 /*-------------------------------------------------------------------*/
 void SetFertility();
 void CheckCounts(int TT, char ref); // function for debugging - checks if totals are the same as the number in each class in each population
 
-/*--------random number generater functions-----------------------*/
-long long int random_poisson(double landa);
-long long int random_binomial(long long int N, double p);
-int IRandom(int a, int b);
-double Random();
-// double random_normal(double,double);
-std::vector<int> random_Multinomial(int N, const std::vector<double>& probs);
-/*-------------------------------------------------------------------*/
-
 double distance(double U, double x1, double y1, double x2, double y2); // distance between points (assuming toroidal boundaries)
 double abso(double XX); // absolute used in distance function
 
+/*--------random number generator functions-----------------------*/
+double Random();
+int IRandom(int a, int b);
+long long int random_poisson(double landa);
+long long int random_binomial(long long int N, double p);
+std::vector<int> random_Multinomial(int N, const std::vector<double>& probs);
+/*-------------------------------------------------------------------*/
 
 /*----------------------struct for keeping track of global numbers------------------------*/
 struct totals {
@@ -73,19 +70,12 @@ struct totals {
 /*----------------------struct combining initial condition parameters---------------------*/
 struct initials {
 	int NumAdultsWM, NumAdultsWV, NumAdultsWF;
-	// int NumAdultsRM, NumAdultsRV, NumAdultsRF;
 	int NumJW[TL];
-	// int NumJR[TL];
 	double driver_time;
 	double driver_start;
 	double driver_end;
-	// double r_time;
 	int NumDriver;
 	double NumDriverSites;
-	// double NumDriverD;
-	// double NumDriverSitesD;
-	// int NumR;
-	// int NumRes;
 	int recSitesFreq;
 };	
 		
@@ -93,20 +83,16 @@ struct initials {
 struct Patch {
 	double x;
 	double y;
-	// double Nhum;
 	double gam;
 	double arab;
 	double fun;
 	double area;
-	// double dens;
 	int sqx, sqy;
-	// int numsites;
 	long long int J[NumGen][TL];
 	long long int JTot;
 	long long int M[NumGen];
 	long long int MTot;
 	long long int V[NumGen];
-	// int Fww, Fwd, Fdd, Fwr, Frr, Fdr;
 	long long int F[NumGen][NumGen];	
 	long long int AesF[NumGen][NumGen];	
 	long long int MoveF[NumGen][NumGen];	
@@ -143,10 +129,6 @@ struct Pars {
 	double theta;
 	double xi;
 	double e;
-	// double em;
-	// double ef;
-	// double dL;
-	// double muLD;
 	double psi;
 	double muAES;
 	double LD; // maximum distance at which two sites are connected
