@@ -11,15 +11,11 @@
 #include <algorithm> 
 #include <cstdio>
 
-/*-----------------------------------------------------Header definitions---------------------------------------------------------*/
-/*--------------------------------------------------------------------------------------------------------------------------------*/
 const int TL = 20; // juvenile development time (egg to adult)
 const int NumGen = 6;
-
 // const double PI = 3.14159265; // used to be use in calculating the connectivity weights
 // const long long int LONG_MAX=3147483647000;  // had error - figure what's going wrong
 
-/*-------------------------------function declarations-------------------------------------*/
 void RunNReps(int N);
 void initiate(); // set up the simulation sites and variables
 void UpdateConnec(); // computes inter-patch connectivities
@@ -29,7 +25,7 @@ void PutDriverSites(int pat); // release gene drives into population
 void SitesPopulate(int pat); // initiate populations in the sites
 void OneStep(int day); // control population processes
 
-/*--------- population processes (controlled from OneStep)-----*/
+// Population processes (controlled from OneStep)
 void JuvGetOlder();
 void AdultsDie();
 void VirginsMate();
@@ -40,22 +36,21 @@ void Hide();
 void Wake(int day);
 void UpdateComp();
 void UpdateMate();
-/*-------------------------------------------------------------------*/
+
 void SetFertility();
 void CheckCounts(int TT, char ref); // function for debugging - checks if totals are the same as the number in each class in each population
 
 double distance(double U, double x1, double y1, double x2, double y2); // distance between points (assuming toroidal boundaries)
 double abso(double XX); // absolute used in distance function
 
-/*--------random number generator functions-----------------------*/
+// Random number generator functions
 double Random();
 int IRandom(int a, int b);
 long long int random_poisson(double landa);
 long long int random_binomial(long long int N, double p);
 std::vector<int> random_Multinomial(int N, const std::vector<double>& probs);
-/*-------------------------------------------------------------------*/
 
-/*----------------------struct for keeping track of global numbers------------------------*/
+// Keeps track of global numbers
 struct totals {
 	long long int J[NumGen];
 	long long int M[NumGen];
@@ -63,31 +58,24 @@ struct totals {
 	long long int F[NumGen];
 	long long int CentF[NumGen];
 	long long int JTot, MTot, VTot, FTot;
-	int CentSqVils;
-	double CentSqHum;
+	int CentSqVils; // is this needed?
 };	
 
-/*----------------------struct combining initial condition parameters---------------------*/
+// Combines initial condition parameters
 struct initials {
 	int NumAdultsWM, NumAdultsWV, NumAdultsWF;
 	int NumJW[TL];
 	double driver_time;
-	double driver_start;
 	double driver_end;
 	int NumDriver;
 	double NumDriverSites;
 	int recSitesFreq;
 };	
 		
-/*------------------------state of population in each settlement---------------------------*/
+// State of population in each settlement
 struct Patch {
 	double x;
 	double y;
-	double gam;
-	double arab;
-	double fun;
-	double area;
-	int sqx, sqy;
 	long long int J[NumGen][TL];
 	long long int JTot;
 	long long int M[NumGen];
@@ -100,15 +88,15 @@ struct Patch {
 	long double comp; // survival probability per larvae per day from competition (between 0 and 1)
 	long double mate_rate; // probability a virgin female mates on a given day
 
-	/*----- for determining connectivities between patches-------*/
+	// for determining connectivities between patches
 	std::vector<int> connecIND; // connection indices
 	std::vector<double> connecW; // connection weights
 	double TotW; // sum of connection weights
-	/*-----------------------------------------------------------*/
+	
 	int CentSq;
 };
 
-/*----------------struct containt simulation timekeeping parameters-------------------------*/
+// Contains simulation timekeeping parameters
 struct Times {
 	int maxT; // maximum simulated time
 	int start;
@@ -119,7 +107,7 @@ struct Times {
 	int interval; // how often to output global variables
 };
 
-/*---------------------struct containing model parameters----------------------------------*/
+// Contains model parameters
 struct Pars {
 	double muJ;
 	double muA;
@@ -134,15 +122,15 @@ struct Pars {
 	double LD; // maximum distance at which two sites are connected
 	double alpha0;
 	double LarvProbs[TL];
+	int LarvDevMin; //int or double/float?
 	double meanTL;
 	double U; // size of simulation area (side)
 	double CentRad; // radius of interior area of simulation
 	int NumPat; // number of population sites
 	int set, index; // for labelling the output files
 
-	/*----- aestivation parameters------------*/
-	int t_hide1,t_hide2,t_wake1,t_wake2;
-	/*----------------------------------------*/
+	// aestivation parameters
+	int t_hide1, t_hide2, t_wake1, t_wake2;
 
 	double f[NumGen][NumGen][NumGen]; // f_ijk is fraction of type k offspring from mother with genotype i mated to father with genotype j
 };
