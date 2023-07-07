@@ -91,7 +91,6 @@ struct Patch {
 	// for determining connectivities between patches
 	std::vector<int> connecIND; // connection indices
 	std::vector<double> connecW; // connection weights
-	double TotW; // sum of connection weights
 	
 	int CentSq;
 };

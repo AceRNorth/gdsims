@@ -71,18 +71,16 @@ int main()
     }
 
 	// Initial populations
-	int inV = 10000;
-	int inM = 50000;
-	int inF = 40000;
+	in.NumAdultsWV = 10000;
+	in.NumAdultsWM = 50000;
+	in.NumAdultsWF = 40000;
 
 	for (int a=0; a<TL; a++) {
 		in.NumJW[a] = 10000;
 	}
 
-	in.NumAdultsWV = inV, in.NumAdultsWM = inM, in.NumAdultsWF = inF;
-
 	// Set inheritance architecture
-	SetFertility();
+	SetFertility(); // only used in LayEggs()!
 
 	// Run model NumRuns times
 	RunNReps(ti.NumRuns);
@@ -151,7 +149,6 @@ void initiate() {
 
 		pp.connecIND.clear();
 		pp.connecW.clear();
-		pp.TotW = 0;
 
 		for (int i=0; i<NumGen; i++) {
 			for (int a=0; a<TL; a++) {
@@ -192,7 +189,6 @@ void UpdateConnec() {
 	for (int index = 0; index < Site.size(); index++) {
 		Site[index].connecIND.clear();
 		Site[index].connecW.clear();
-		Site[index].TotW = 0;
 		for (int ii=0; ii < Site.size(); ii++) {
 		// re-activate this if loop to exclude self-dispersal. need to check isolated sites catered for
 		//	if (ii != index) {
@@ -202,7 +198,6 @@ void UpdateConnec() {
 					//ww = (1 - dd / pa.LD) * (3 / (PI * pa.LD * pa.LD)) / (1.0 * pa.NumPat);
 					ww = pa.LD - dd;
 					Site[index].connecW.push_back(ww); 
-					Site[index].TotW += ww;
 				}
 		//	}
 		}
@@ -580,7 +575,7 @@ void SetFertility() {
 	double Fwwwr[6] = {0.5, 0, 0, 0.5, 0, 0};
 	double Fwwrr[6] = {0, 0, 0, 1, 0, 0};
 	double Fwwdr[6] = {0, 0.5, 0, 0.5, 0, 0};
-	double Fwdww[6] = {(1 - pa.xi)*(1 - pa.e - pa.gamma)*0.5, (1 - pa.xi)*(1 + pa.e)*0.5, 0, (1 -pa.xi)*pa.gamma*0.5, 0, 0};
+	double Fwdww[6] = {(1 - pa.xi)*(1 - pa.e - pa.gamma)*0.5, (1 - pa.xi)*(1 + pa.e)*0.5, 0, (1 - pa.xi)*pa.gamma*0.5, 0, 0};
 	double Fwdwd[6] = {(1 - pa.xi)*(1 - pa.e - pa.gamma)*(1 - pa.e - pa.gamma)* 0.25, (1 - pa.xi)*(1 - pa.e - pa.gamma)*(1 + pa.e)*0.5, (1 - pa.xi)*(1 + pa.e)*(1 + pa.e)*0.25, (1 - pa.xi)*(1 - pa.e - pa.gamma)*pa.gamma*0.5, (1 - pa.xi)*pa.gamma*pa.gamma*0.25, (1 - pa.xi)*(1 + pa.e)*pa.gamma*0.5};
 
 	double Fwddd[6] = {0, (1 - pa.xi)*(1 - pa.e-pa.gamma)*0.5, (1 - pa.xi)*(1 + pa.e)*0.5, 0, 0, (1-pa.xi)*pa.gamma*0.5};
