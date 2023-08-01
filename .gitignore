@@ -1,10 +1,7 @@
 *.odt
-params.xlsx
-LocalData1run1.txt
-Totals1run1.txt
-CoordinateList1run1.txt
-ParsExampleRun.nb
-ParsExampleRun1.nb
-General.exe
+*.xlsx
+*.txt
+*.nb
+*.exe
 .vscode
 

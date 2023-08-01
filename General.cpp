@@ -16,7 +16,6 @@ std::ostringstream os1, os2, os3;
 std::ofstream localinfo; // population values of males with each genotype in each patch for each simulated day
 std::ofstream globalinfo; // total population values (in all patches) of males with each genotype for each simulated day
 std::ofstream ParList; // coordinate list (x, y) of the patches
-//	clock_t now=clock();
 
 int main()
 {	
@@ -33,6 +32,7 @@ int main()
 	std::cin >> ti.NumRuns; 
 	std::cin >> in.NumDriver;
 	std::cin >> in.NumDriverSites; 
+	std::cin >> in.driver_time;
 	std::cin >> pa.muJ;
 	std::cin >> pa.muA;
 	std::cin >> pa.d; 
@@ -58,7 +58,7 @@ int main()
 	std::cin >> pa.CentRad;
 
 	// set probabilities of juvenile eclosion for different age groups
-	for (int age=0; age<TL; age++) {
+	for (int age=0; age<TL; ++age) {
         if (age >= pa.LarvDevMin) {
             pa.LarvProbs[age] = 1.0 / (TL - pa.LarvDevMin);
         }
@@ -72,9 +72,14 @@ int main()
 	in.NumAdultsWM = 50000;
 	in.NumAdultsWF = 40000;
 
-	for (int a=0; a<TL; a++) {
+	for (int a=0; a<TL; ++a) {
 		in.NumJW[a] = 10000;
 	}
+
+	//auto start = std::chrono::steady_clock::now();
+	//auto finish = std::chrono::steady_clock::now();
+	//double elapsed_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(finish - start).count();
+	//std::cout << "Fertility run time: " << elapsed_seconds << std::endl;
 
 	// set inheritance architecture
 	SetFertility();
@@ -95,22 +100,21 @@ void RunNReps(int N) {
 	os3 << "CoordinateList" << pa.set << "run" << pa.index << ".txt";
 	ParList.open(os3.str().c_str());
 
-	// std::clock_t start;
-	// double dtime;
-	// start = std::clock();
+	localinfo << "Male populations of each genotype at each site" << std::endl;
+	localinfo << "Day" << "\t" << "Site" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
 
-	for (int j=0; j<N; j++) {
+	globalinfo << "Total males of each genotype" << std::endl;
+	globalinfo << "Day" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
+
+	ParList << "Coordinate list of the sites" << std::endl;
+	ParList << "Site" << "\t" << "x" << "\t" << "y" << std::endl;
+
+	for (int j=0; j<N; ++j) {
 		initiate();
-
-		// record site coordinates
-		for (int pat=0; pat < Site.size(); pat += in.recSitesFreq) {
-			ParList << Site[pat].x << "\t" << Site[pat].y << std::endl;
-		}
-
+		recordCoords();
 		RunMaxT();
 	}
 
-	// dtime = (std::clock() - start) / (double)CLOCKS_PER_SEC;
 	os1.str("");
 	localinfo.close();
 	os2.str(""); 
@@ -121,7 +125,7 @@ void RunNReps(int N) {
 
 // Resets the sites and populations and sets all the initial site parameters
 void initiate() {
-	for (int i=0; i<NumGen; i++) {
+	for (int i=0; i<NumGen; ++i) {
 		to.J[i] = 0;
 		to.M[i] = 0;
 		to.V[i] = 0;
@@ -132,8 +136,9 @@ void initiate() {
 	to.CentSqVils = 0;
 	Site.clear();
 
-	Patch pp;
-	for (int ii=0; ii < pa.NumPat; ii++) {    
+	for (int ii=0; ii < pa.NumPat; ++ii) {   
+		Patch pp;
+
 		// set patch parameters   
 		pp.x = Random() * pa.U;
 		pp.y = Random() * pa.U;
@@ -141,9 +146,6 @@ void initiate() {
 
 		if (distance(pa.U, pp.x, pp.y, pa.U / 2.0, pa.U / 2.0) < pa.CentRad) {
 			pp.CentSq = 1;
-		}
-
-		if (pp.CentSq == 1) {
 			to.CentSqVils++;
 		}
 
@@ -151,45 +153,71 @@ void initiate() {
 		pp.connecIND.clear();
 		pp.connecW.clear();
 
-		for (int i=0; i<NumGen; i++) {
-			for (int a=0; a<TL; a++) {
+		for (int i=0; i<NumGen; ++i) {
+			for (int a=0; a<TL; ++a) {
 				pp.J[i][a] = 0; 
 			}
 			pp.M[i] = 0;
 			pp.V[i] = 0;
-			for (int j=0; j<NumGen; j++) {
+			for (int j=0; j<NumGen; ++j) {
 				pp.F[i][j] = 0;
 				pp.AesF[i][j] = 0;
 			}
 		}
-		pp.comp = 0, pp.mate_rate = 0, pp.JTot = 0, pp.MTot = 0;
+		pp.comp = 0;
+		pp.mate_rate = 0;
+		pp.JTot = 0;
+		pp.MTot = 0;
 
 		Site.push_back(pp);
 	}
-
-	for (int i=0; i < Site.size(); i++) {
-		if (Site[i].CentSq == 1) {
-			SitesPopulate(i);
-		}
-	}
-
+	
+	SitesPopulate();
 	UpdateConnec();
 //	CheckCounts(0,'i');
 }
 
+// Populates the local site with a (wild) mosquito population of different types (age and sex), according to the initial values provided
+// Sets the competition and mating rate entomological model parameters at the site
+void SitesPopulate() {
+	for (int pat=0; pat < Site.size(); ++pat) {
+		for (int a=0; a<TL; ++a) {
+			Site[pat].J[0][a] += in.NumJW[a];
+			to.J[0] += in.NumJW[a];
+			to.JTot += in.NumJW[a];
+			Site[pat].JTot += in.NumJW[a];
+		}
+			
+		Site[pat].M[0] = in.NumAdultsWM;
+		to.M[0] += in.NumAdultsWM;
+		to.MTot += in.NumAdultsWM;
+		Site[pat].MTot += in.NumAdultsWM;
+
+		Site[pat].V[0] = in.NumAdultsWV;
+		to.V[0] += in.NumAdultsWV;
+		to.VTot += in.NumAdultsWV;
+
+		Site[pat].F[0][0] = in.NumAdultsWF;
+		to.F[0] += in.NumAdultsWF;
+		to.FTot += in.NumAdultsWF;
+	}
+
+	UpdateComp();
+	UpdateMate();
+}
+
 // Computes the inter-patch connectivities
 void UpdateConnec() {
-	double dd, ww;
-	for (int index = 0; index < Site.size(); index++) {
+	for (int index = 0; index < Site.size(); ++index) {
 		Site[index].connecIND.clear();
 		Site[index].connecW.clear();
-		for (int ii=0; ii < Site.size(); ii++) {
+		for (int ii=0; ii < Site.size(); ++ii) {
 		// re-activate this if loop to exclude self-dispersal. need to check isolated sites catered for
 		//	if (ii != index) {
-				dd = distance(pa.U, Site[index].x, Site[index].y, Site[ii].x, Site[ii].y);
+				double dd = distance(pa.U, Site[index].x, Site[index].y, Site[ii].x, Site[ii].y);
 				if (dd < pa.LD) {
 					Site[index].connecIND.push_back(ii); 
-					ww = pa.LD - dd;
+					double ww = pa.LD - dd;
 					Site[index].connecW.push_back(ww); 
 				}
 		//	}
@@ -199,73 +227,57 @@ void UpdateConnec() {
 
 // Runs the simulation once for simulated time T
 void RunMaxT() {
-	int TT = 0; // current day of the simulation
-
 	// Set gene drive release sites
-	int num_release_sites = std::min(to.CentSqVils, int(in.NumDriverSites));
-	int relpatches[num_release_sites]; // patches in which to release the gene drive (contains indices to the patches in Site vector)
-	in.driver_time = 300; 
-	int reltime = in.driver_time; 
-	for (int jj=0; jj < num_release_sites; jj++) {
-		relpatches[jj] = -1; // initialise elements outside the range of possible values, to prevent interference
-	}
 
-	int uniquepat, relpat;
-	for (int jj=0; jj < num_release_sites; jj++) {
-		uniquepat = 0;
-
-		while (uniquepat == 0) {
-			uniquepat = 1;
-			relpat = IRandom(0, Site.size() - 1);
-
-			// pick unique sites only within the central square to release the gene drive
-			for (int ii=0; ii < num_release_sites; ii++) {
-				if (relpat == relpatches[ii] || Site[relpat].CentSq == 0) {
-					uniquepat = 0;
-				}
+	int TT = 0; // current day of the simulation 
+	while (TT <= ti.maxT) {
+		// gene drive release
+		int reltime = in.driver_time;
+		if (TT == reltime) {
+			int num_release_sites = std::min(to.CentSqVils, in.NumDriverSites);
+			std::vector<int> release_patches = selectDriverSites(num_release_sites);
+			for (auto relpat : release_patches) {
+				PutDriverSites(relpat);
 			}
-			relpatches[jj] = relpat;
 		}
-	}
-	
-	while (TT < ti.maxT + 1) {
+
+		if (TT > 0) OneStep(TT);
+
 		if (TT % ti.interval == 0) {
 			// outputs and records total number of each type of mosquito
 			std::cout << TT << "\t" << to.JTot << "\t" << to.MTot << "\t" << to.VTot << "\t" << to.FTot << std::endl;
-			globalinfo << TT;
-			
-			// records total number of males of each genotype
-			for (int i=0; i<NumGen; i++) {
-				globalinfo << "\t" << to.M[i];
-			}
-
-			globalinfo << std::endl;
+			recordGlobal(TT);
 		}
 
-		if (TT > ti.recstart && TT <= ti.recend && TT%ti.recfreq == 0) {
-			record();
-		}
-		
-		for (int jj=0; jj < num_release_sites; jj++) {
-			if (TT == reltime){
-				// gene drive release
-				PutDriverSites(relpatches[jj]);
-			}
+		if (TT > ti.recstart && TT <= ti.recend && TT % ti.recfreq == 0) {
+			recordLocal(TT);
 		}
 
-		OneStep(TT);
 		TT++;
 	}
 }
 
-// Records the number of males of each genotype at each site in a file (localinfo file)
-void record() {	
-	for(int pat=0; pat < Site.size(); pat += in.recSitesFreq) {
-		for(int i=0; i < NumGen - 1; i++) {
-			localinfo << Site[pat].M[i] << "\t";
+// Selects random sites for release of the gene drive
+std::vector<int> selectDriverSites(int num_driver_sites) {
+	std::vector<int> relpatches; // patches in which to release the gene drive (contains indices to the patches in Site vector)
+
+	for (int jj=0; jj < num_driver_sites; ++jj) {
+		int uniquepat = 0;
+		int relpat;
+		while (uniquepat == 0) {
+			uniquepat = 1;
+			relpat = IRandom(0, Site.size() - 1);
+
+			// only pick unique sites within the central area to release the gene drive
+			if ((Site[relpat].CentSq == 0) || (std::end(relpatches) != std::find(std::begin(relpatches), std::end(relpatches), relpat))) {
+				uniquepat = 0;
+			}
 		}
-		localinfo << Site[pat].M[5] << std::endl;
+
+		relpatches.push_back(relpat);
 	}
+
+	return relpatches;
 }
 
 // Adds drive heterozygous (WD) male mosquitoes to the selected site
@@ -280,37 +292,34 @@ void PutDriverSites(int pat) {
 	UpdateMate();
 }
 
-// Populates the local site with a (wild) mosquito population of different types (age and sex), according to the initial values provided
-// Sets the competition and mating rate entomological model parameters at the site
-void SitesPopulate(int pat) {
-	for (int a=0; a<TL; a++) {
-		Site[pat].J[0][a] += in.NumJW[a];
-		to.J[0] += in.NumJW[a];
-		to.JTot += in.NumJW[a];
-		Site[pat].JTot += in.NumJW[a];
+void recordCoords() {
+	for (int pat=0; pat < Site.size(); pat += in.recSitesFreq) {
+		ParList << pat+1 << "\t" << Site[pat].x << "\t" << Site[pat].y << std::endl;
 	}
-		
-	Site[pat].M[0] = int(in.NumAdultsWM);
-	to.M[0] += int(in.NumAdultsWM);
-	to.MTot += int(in.NumAdultsWM);
-	Site[pat].MTot += int(in.NumAdultsWM);
+}
 
-	Site[pat].V[0] = int(in.NumAdultsWV);
-	to.V[0] += int(in.NumAdultsWV);
-	to.VTot += int(in.NumAdultsWV);
+// Records the total number (over all sites) of males of each genotype
+void recordGlobal(int TT) {
+	globalinfo << TT;
+	for (const auto& M_gen : to.M) {
+		globalinfo << "\t" << M_gen;
+	}
+	globalinfo << std::endl;
+}
 
-	Site[pat].F[0][0] = int(in.NumAdultsWF);
-	to.F[0] += int(in.NumAdultsWF);
-	to.FTot += int(in.NumAdultsWF);
-
-	Site[pat].comp = std::pow((double)pa.alpha0 / (pa.alpha0 + Site[pat].JTot), 1.0 / pa.meanTL);
-	Site[pat].mate_rate = Site[pat].MTot / (pa.beta + Site[pat].MTot);
+// Records the number of males of each genotype at each site in a file (localinfo file)
+void recordLocal(int TT) {	
+	for (int pat=0; pat < Site.size(); pat += in.recSitesFreq) {
+		localinfo << TT << "\t" << pat+1;
+		for (const auto& M_gen : Site[pat].M) {
+			localinfo << "\t" << M_gen;
+		}
+		localinfo << std::endl;
+	}
 }
 
 // Runs daily mosquito life-processes, including aging, death, egg laying, eclosion, mating, dispersal and aestivation 
 void OneStep(int day) {
-	//std::cout << "os1  " << to.JTot << "   " << to.MTot << "    " << to.VTot << "   " << to.FTot << std::endl;
-	//CheckCounts(0,'o');
 	JuvGetOlder();
 	AdultsDie();
 	VirginsMate();
@@ -326,19 +335,16 @@ void OneStep(int day) {
 // Ages the juvenile population in different age groups by a day
 void JuvGetOlder() {
 	long int jtAll[NumGen];
-	for (int i=0; i<NumGen; i++) {
+	for (int i=0; i<NumGen; ++i) {
 		jtAll[i] = 0; 
 	}
 
-	long int jtSitesch, jtAllAll;
-	jtAllAll = 0;
-	double pcomp;
-	for (int pat=0; pat < Site.size(); pat++) {
-		pcomp = (1 - pa.muJ) * Site[pat].comp; // probability of survival per larva
-		jtSitesch = 0;
-
-		for (int age=0; age < TL - 1; age++) {
-			for (int i=0; i<NumGen; i++) {		
+	long int jtAllAll = 0;
+	for (int pat=0; pat < Site.size(); ++pat) {
+		double pcomp = (1 - pa.muJ) * Site[pat].comp; // probability of survival per larva
+		long int jtSitesch = 0;
+		for (int age=0; age < TL - 1; ++age) {
+			for (int i=0; i<NumGen; ++i) {		
 				Site[pat].J[i][age] = random_binomial(Site[pat].J[i][age+1], pcomp); // number of larvae that survive aging by a day are placed into the new older age group
 				jtSitesch += Site[pat].J[i][age];
 				jtAll[i] += Site[pat].J[i][age];
@@ -349,40 +355,38 @@ void JuvGetOlder() {
 		jtAllAll += jtSitesch;
 
 		// youngest ones have all aged by one day so 0 left in this age group
-		for (int i=0; i<NumGen; i++) {
+		for (int i=0; i<NumGen; ++i) {
 			Site[pat].J[i][TL-1] = 0;
 		} 
 	}
 
 	// updating totals
-	for (int i=0; i<NumGen; i++) {
+	for (int i=0; i<NumGen; ++i) {
 		to.J[i] = jtAll[i];
 	}
-
 	to.JTot = jtAllAll;
 }
 
 // Selects the number of adults that die in the given day and updates population numbers
 void AdultsDie() {
-	long long int num;
-	for (int pat=0; pat < Site.size(); pat++) {
-		for (int i=0; i<NumGen; i++) {
-			num = random_binomial(Site[pat].M[i], pa.muA); // number of males that die
-			Site[pat].M[i] -= num;
-			Site[pat].MTot -= num;
-			to.M[i] -= num;
-			to.MTot -= num;	
+	for (int pat=0; pat < Site.size(); ++pat) {
+		for (int i=0; i<NumGen; ++i) {
+			long long int m_die = random_binomial(Site[pat].M[i], pa.muA); // number of males that die
+			Site[pat].M[i] -= m_die;
+			Site[pat].MTot -= m_die;
+			to.M[i] -= m_die;
+			to.MTot -= m_die;	
 
-			num = random_binomial(Site[pat].V[i], pa.muA);
-			Site[pat].V[i] -= num;
-			to.V[i] -= num;
-			to.VTot -= num;	
+			long long int v_die = random_binomial(Site[pat].V[i], pa.muA);
+			Site[pat].V[i] -= v_die;
+			to.V[i] -= v_die;
+			to.VTot -= v_die;	
 
-			for (int j=0; j<NumGen; j++) {
-				num = random_binomial(Site[pat].F[i][j], pa.muA);
-				Site[pat].F[i][j] -= num;
-				to.F[i] -= num;
-				to.FTot -= num;	
+			for (int j=0; j<NumGen; ++j) {
+				long long int f_die = random_binomial(Site[pat].F[i][j], pa.muA);
+				Site[pat].F[i][j] -= f_die;
+				to.F[i] -= f_die;
+				to.FTot -= f_die;	
 			}
 		}
 	}
@@ -390,15 +394,15 @@ void AdultsDie() {
 
 // Selects the number of virgins that mate in the given day with a male of genotype j, and tranforms them into mated females carrying male genotype j
 void VirginsMate() {
-	int v[NumGen];
+	long long int v[NumGen];
 	std::vector<double> m(NumGen);
-	std::vector<int> randomCounts;
-	for (int pat=0; pat < Site.size(); pat++) {
-		for (int i=0; i<NumGen; i++) {
-			m[i] = (1.0 * Site[pat].M[i]);
+	std::vector<long long int> randomCounts;
+	for (int pat=0; pat < Site.size(); ++pat) {
+		for (int i=0; i<NumGen; ++i) {
+			m[i] = Site[pat].M[i];
 		}
 
-		for (int i=0; i<NumGen; i++) {
+		for (int i=0; i<NumGen; ++i) {
 			v[i] = random_binomial(Site[pat].V[i], Site[pat].mate_rate); // how many V will mate
 
 			if (v[i] > 0) {
@@ -421,37 +425,36 @@ void VirginsMate() {
 // Selects and updates the number of adults that disperse from and to each patch, depending on the patch connectivities
 void AdultsMove() {
 	if (Site.size() > 1) {
-		int pat;
 		// number of adults dispersing from each patch
-		for (pat=0; pat < Site.size(); pat++) {
-			for (int i=0; i<NumGen; i++) {
+		for (int pat=0; pat < Site.size(); ++pat) {
+			for (int i=0; i<NumGen; ++i) {
 				Site[pat].MoveM[i] = random_binomial(Site[pat].M[i], pa.d); // how many males will disperse from patch
 				Site[pat].M[i] -= Site[pat].MoveM[i];
 				Site[pat].MTot -= Site[pat].MoveM[i];
 
-				for (int j=0; j<NumGen; j++) {
+				for (int j=0; j<NumGen; ++j) {
 					Site[pat].MoveF[i][j] = random_binomial(Site[pat].F[i][j], pa.d);
 					Site[pat].F[i][j] -= Site[pat].MoveF[i][j]; 
 				}
 			}
 		}
 
-		std::vector<int> randomCounts;
+		std::vector<long long int> randomCountsM;
+		std::vector<long long int> randomCountsF;
 		// number of adults dispersing to each patch
-		for (pat=0; pat < Site.size(); pat++) {
-			for (int i=0; i<NumGen; i++) {
-				randomCounts = random_Multinomial(Site[pat].MoveM[i], Site[pat].connecW); // how many males will disperse to each of the connected patches for the given patch
-				
-				for (int newpat=0; newpat < randomCounts.size(); newpat++) {
-					Site[Site[pat].connecIND[newpat]].M[i] += randomCounts[newpat];
+		for (int pat=0; pat < Site.size(); ++pat) {
+			for (int i=0; i<NumGen; ++i) {
+				randomCountsM = random_Multinomial(Site[pat].MoveM[i], Site[pat].connecW); // how many males will disperse to each of the connected patches for the given patch
+				for (int newpat=0; newpat < randomCountsM.size(); ++newpat) {
+					Site[Site[pat].connecIND[newpat]].M[i] += randomCountsM[newpat];
 				}
 
-				for (int j=0; j<NumGen; j++) {
+				for (int j=0; j<NumGen; ++j) {
 					if (Site[pat].MoveF[i][j] > 0) {
-						randomCounts = random_Multinomial(Site[pat].MoveF[i][j], Site[pat].connecW);
+						randomCountsF = random_Multinomial(Site[pat].MoveF[i][j], Site[pat].connecW);
 
-						for (int newpat=0; newpat < randomCounts.size(); newpat++) {
-							Site[Site[pat].connecIND[newpat]].F[i][j] += randomCounts[newpat];
+						for (int newpat=0; newpat < randomCountsF.size(); ++newpat) {
+							Site[Site[pat].connecIND[newpat]].F[i][j] += randomCountsF[newpat];
 						}
 					}
 				}
@@ -462,22 +465,21 @@ void AdultsMove() {
 
 // Calculates the number of eggs laid on the given day and updates the number of juveniles, depending on egg survival rates
 void LayEggs() {
-	double num;
 	std::vector<double> larv(TL);
-	for (int i=0; i<TL; i++) {
+	for (int i=0; i<TL; ++i) {
 		larv[i] = pa.LarvProbs[i];
 	}
 
-	std::vector<int> randomCounts;
-	for (int pat=0; pat < Site.size(); pat++) {
-		for (int i=0; i<NumGen; i++) {
-			for (int j=0; j<NumGen; j++) {
-				for (int k=0; k<NumGen; k++) {
-					num = pa.theta * Site[pat].F[i][j] * pa.f[i][j][k]; // expected number of eggs laid with k genotype
-					num = random_poisson(num); // actual number of eggs laid sampled from random distribution
+	std::vector<long long int> randomCounts;
+	for (int pat=0; pat < Site.size(); ++pat) {
+		for (int i=0; i<NumGen; ++i) {
+			for (int j=0; j<NumGen; ++j) {
+				for (int k=0; k<NumGen; ++k) {
+					double num = pa.theta * Site[pat].F[i][j] * pa.f[i][j][k]; // expected number of eggs laid with k genotype
+					long long int eggs = random_poisson(num); // actual number of eggs laid sampled from random distribution
 
-					randomCounts = random_Multinomial(num, larv); // number of eggs that start in each different age class (according to different larval development times)
-					for (int a=0; a<TL; a++) {
+					randomCounts = random_Multinomial(eggs, larv); // number of eggs that start in each different age class (according to different larval development times)
+					for (int a=0; a<TL; ++a) {
 						Site[pat].J[k][a] += randomCounts[a];
 					}
 					//	aww = random_multinom_var(num, TL, &pa.LarvProbs[0], 1.0);
@@ -493,16 +495,13 @@ void LayEggs() {
 
 // Transforms juveniles into adults, depending on eclosion survival rate
 void JuvEmerge() {
-	int surv, survM;
-	double pcomp;
-	for (int pat=0; pat < Site.size(); pat++) {
-		pcomp = (1 - pa.muJ) * Site[pat].comp;
-
-		for (int i=0; i<NumGen; i++) {
-			surv = random_binomial(Site[pat].J[i][0], pcomp); // number of juveniles that survive eclosion
+	for (int pat=0; pat < Site.size(); ++pat) {
+		double pcomp = (1 - pa.muJ) * Site[pat].comp;
+		for (int i=0; i<NumGen; ++i) {
+			long long int surv = random_binomial(Site[pat].J[i][0], pcomp); // number of juveniles that survive eclosion
 
 			if (surv > 0) {		
-				survM = random_binomial(surv, 0.5); // roughly half of the juveniles become male and half female following a distribution
+				long long int survM = random_binomial(surv, 0.5); // roughly half of the juveniles become male and half female following a distribution
 				Site[pat].MTot += survM;
 				Site[pat].M[i] += survM; 
 				to.M[i] += survM;
@@ -517,11 +516,10 @@ void JuvEmerge() {
 
 // Calculates the number of mated females going into aestivation on the given day and updates the population numbers, depending on the survival rate of going into aestivation
 void Hide() {
-	long long int num;
-	for (int pat=0; pat < Site.size(); pat++) {
-		for (int i=0; i<NumGen; i++) {
-			for (int j=0; j<NumGen; j++) {
-				num = random_binomial(Site[pat].F[i][j], pa.psi); // number of females that attempt to go into aestivation
+	for (int pat=0; pat < Site.size(); ++pat) {
+		for (int i=0; i<NumGen; ++i) {
+			for (int j=0; j<NumGen; ++j) {
+				long long int num = random_binomial(Site[pat].F[i][j], pa.psi); // number of females that attempt to go into aestivation
 				Site[pat].F[i][j] -= num;
 				to.F[i] -= num;
 				to.FTot -= num;
@@ -533,12 +531,11 @@ void Hide() {
 
 // Calculates the number of mated females coming out of aestivation on the given day and updates the population numbers
 void Wake(int day) {
-	long long int num;
 	double prob = 1.0 / (1.0 + pa.t_wake2 - (day%365)); // probability of a female waking on a given day
-	for (int pat=0; pat < Site.size(); pat++) {
-		for (int i=0; i<NumGen; i++) {
-			for(int j=0; j<NumGen; j++) {
-				num = random_binomial(Site[pat].AesF[i][j], prob); // number of females that wake up from aestivation on the given day
+	for (int pat=0; pat < Site.size(); ++pat) {
+		for (int i=0; i<NumGen; ++i) {
+			for(int j=0; j<NumGen; ++j) {
+				long long int num = random_binomial(Site[pat].AesF[i][j], prob); // number of females that wake up from aestivation on the given day
 				Site[pat].F[i][j] += num;
 				to.F[i] += num;
 				to.FTot += num;
@@ -550,14 +547,14 @@ void Wake(int day) {
 
 // Updates the density-dependent larval survival probability on the given day in each site
 void UpdateComp() {
-	for (int pat=0; pat < Site.size(); pat++) {
-			Site[pat].comp = std::pow(pa.alpha0 / (pa.alpha0 + Site[pat].JTot + 0.0001), 1.0 / pa.meanTL);
+	for (int pat=0; pat < Site.size(); ++pat) {
+		Site[pat].comp = std::pow(pa.alpha0 / (pa.alpha0 + Site[pat].JTot), 1.0 / pa.meanTL);
 	}
 }
 
 // Updates the mating rate parameter in each site
 void UpdateMate() {
-	for (int pat=0; pat < Site.size(); pat++) {
+	for (int pat=0; pat < Site.size(); ++pat) {
 		Site[pat].mate_rate = Site[pat].MTot / (pa.beta + Site[pat].MTot);
 	}
 }
@@ -572,27 +569,28 @@ void SetFertility() {
 	double Fwwwr[6] = {0.5, 0, 0, 0.5, 0, 0};
 	double Fwwrr[6] = {0, 0, 0, 1, 0, 0};
 	double Fwwdr[6] = {0, 0.5, 0, 0.5, 0, 0};
+
 	double Fwdww[6] = {(1 - pa.xi)*(1 - pa.e - pa.gamma)*0.5, (1 - pa.xi)*(1 + pa.e)*0.5, 0, (1 - pa.xi)*pa.gamma*0.5, 0, 0};
 	double Fwdwd[6] = {(1 - pa.xi)*(1 - pa.e - pa.gamma)*(1 - pa.e - pa.gamma)* 0.25, (1 - pa.xi)*(1 - pa.e - pa.gamma)*(1 + pa.e)*0.5, (1 - pa.xi)*(1 + pa.e)*(1 + pa.e)*0.25, (1 - pa.xi)*(1 - pa.e - pa.gamma)*pa.gamma*0.5, (1 - pa.xi)*pa.gamma*pa.gamma*0.25, (1 - pa.xi)*(1 + pa.e)*pa.gamma*0.5};
-
-	double Fwddd[6] = {0, (1 - pa.xi)*(1 - pa.e-pa.gamma)*0.5, (1 - pa.xi)*(1 + pa.e)*0.5, 0, 0, (1-pa.xi)*pa.gamma*0.5};
-
+	double Fwddd[6] = {0, (1 - pa.xi)*(1 - pa.e - pa.gamma)*0.5, (1 - pa.xi)*(1 + pa.e)*0.5, 0, 0, (1-pa.xi)*pa.gamma*0.5};
 	double Fwdwr[6] = {(1 - pa.xi)*(1 - pa.e - pa.gamma)*0.25, (1 - pa.xi)*(1 + pa.e)*0.25, 0, (1 - pa.xi)*((1 - pa.e - pa.gamma)*0.25 + (pa.gamma * 0.25)), (1 - pa.xi)*pa.gamma*0.25, (1 - pa.xi)*(1 + pa.e)*0.25};
-
 	double Fwdrr[6] = {0, 0, 0, (1 - pa.xi)*(1 - pa.e - pa.gamma)*0.5, (1 - pa.xi)*pa.gamma*0.5, (1 - pa.xi)*(1 + pa.e)*0.5};
 	double Fwddr[6] = {0, (1 - pa.xi)*(1 - pa.e - pa.gamma)*0.25, (1 - pa.xi)*(1 + pa.e)*0.25, (1 - pa.xi)*(1 - pa.e - pa.gamma)*0.25, (1 - pa.xi)*pa.gamma*0.25, (1 - pa.xi)*((1 + pa.e)*0.25 + pa.gamma*0.25)};
+	
 	double Fddww[6] = {0, 0, 0, 0, 0, 0};
 	double Fddwd[6] = {0, 0, 0, 0, 0, 0};
 	double Fdddd[6] = {0, 0, 0, 0, 0, 0};
 	double Fddwr[6] = {0, 0, 0, 0, 0, 0};
 	double Fddrr[6] = {0, 0, 0, 0, 0, 0};
 	double Fdddr[6] = {0, 0, 0, 0, 0, 0};
-	double Fwrww[6] = {0.5, 0, 0, 0.5, 0};
+
+	double Fwrww[6] = {0.5, 0, 0, 0.5, 0, 0};
 	double Fwrwd[6] = {(1 - pa.e - pa.gamma)*0.25, (1 + pa.e)*0.25, 0, (pa.gamma * 0.25 + (1 - pa.e - pa.gamma) * 0.25), pa.gamma*0.25, (1 + pa.e)*0.25};
 	double Fwrdd[6] = {0, 0.5, 0, 0, 0, 0.5};
 	double Fwrwr[6] = {0.25, 0, 0, 0.5, 0.25, 0};
 	double Fwrrr[6] = {0, 0, 0, 0.5, 0.5, 0};
 	double Fwrdr[6] = {0, 0.25, 0, 0.25, 0.25, 0.25};
+
 	double Frrww[6] = {0, 0, 0, 0, 0, 0};
 	double Frrwd[6] = {0, 0, 0, 0, 0, 0};
 	double Frrdd[6] = {0, 0, 0, 0, 0, 0};
@@ -607,9 +605,9 @@ void SetFertility() {
 	double Fdrrr[6] = {0, 0, 0, 0, 0, 0};
 	double Fdrdr[6] = {0, 0, 0, 0, 0, 0};
 
-	for (int k=0; k<6; k++) {
-		for (int i=0; i<6; i++) {
-			for (int j=0; j<6; j++) {
+	for (int k=0; k<6; ++k) {
+		for (int i=0; i<6; ++i) {
+			for (int j=0; j<6; ++j) {
 				if (i==0) {
 					if (j==0) pa.f[i][j][k] = Fwwww[k];
 					if (j==1) pa.f[i][j][k] = Fwwwd[k];
@@ -668,30 +666,21 @@ double distance (double U, double x1, double y1, double x2, double y2) {
 	double xdist = 0;
 	double ydist = 0;
 
-	if (abso(x1 - x2) > U - abso(x1 - x2)) {
-		xdist = U - abso(x1 - x2);
+	if (std::abs(x1 - x2) > U - std::abs(x1 - x2)) {
+		xdist = U - std::abs(x1 - x2);
 	} 
-	else if (abso(x1 - x2) <= U - abso(x1 - x2)) {
-		xdist = abso(x1 - x2);
+	else if (std::abs(x1 - x2) <= U - std::abs(x1 - x2)) {
+		xdist = std::abs(x1 - x2);
 	}
 
-	if (abso(y1 - y2) > U - abso(y1 - y2)) {
-		ydist = U - abso(y1 - y2);
+	if (std::abs(y1 - y2) > U - std::abs(y1 - y2)) {
+		ydist = U - std::abs(y1 - y2);
 	}
-	else if (abso(y1 - y2) <= U - abso(y1 - y2)) {
-		ydist = abso(y1 - y2);
+	else if (std::abs(y1 - y2) <= U - std::abs(y1 - y2)) {
+		ydist = std::abs(y1 - y2);
 	}
 
-	return double(std::sqrt((xdist * xdist) + (ydist * ydist)));
-}
-
-// Returns the absolute of a number
-double abso(double XX) {
-	double YY = XX;
-	if (XX < 0) {
-		YY *= -1;
-	}
-	return YY;
+	return std::sqrt((xdist * xdist) + (ydist * ydist));
 }
 
 // Returns a random floating-point number from a uniform real distribution of 0.0 to 1.0
@@ -730,7 +719,7 @@ long long int random_binomial(long long int N, double p) {
 	if (N * p > 10 && N * (1 - p) > 10) {
 		// use normal approximation
 		std::normal_distribution<> dist(N * p, std::sqrt(N * p * (1 - p))); // distribution(mean, standard deviation)
-		int x = std::round(dist(gen));
+		long long int x = std::round(dist(gen));
 		if (x<0) x=0;
 		if (x>N) x=N;
 		return x;
@@ -751,18 +740,16 @@ long long int random_binomial(long long int N, double p) {
 }
 
 // Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities <probs>
-std::vector<int> random_Multinomial(int N, const std::vector<double>& probs) {
+std::vector<long long int> random_Multinomial(long long int N, const std::vector<double>& probs) {
 	int num_outcomes = probs.size();
-	std::vector<int> result(num_outcomes, 0);
-	std::vector<double> scaled_probabilities(num_outcomes, 0.0);
-
 	double sum_p = 0.0;
 	for (int i = 0; i < num_outcomes; ++i) {
 		sum_p += probs[i];
 	}
 
-	int Nused = N;
-	for(int pat=0; pat < num_outcomes; pat++) {
+	long long int Nused = N;
+	std::vector<long long int> result(num_outcomes, 0);
+	for(int pat=0; pat < num_outcomes; ++pat) {
 		if (Nused > 0) {
 			result[pat] = random_binomial(Nused, probs[pat] / sum_p);
 			sum_p -= probs[pat];
@@ -778,12 +765,18 @@ std::vector<int> random_Multinomial(int N, const std::vector<double>& probs) {
 
 // For debugging, manually calculates total populations counts for F, M, V, J mosquito types and compares with total parameters
 void CheckCounts(int TT, char ref) {
-	int totF = 0, totM = 0, totJ = 0, totV = 0;
-	int totFB = 0, totMB = 0, totJB = 0, totVB = 0;
+	long long int totF = 0;
+	long long int totM = 0;
+	long long int totJ = 0;
+	long long int totV = 0;
+	long long int totFB = 0;
+	long long int totMB = 0;
+	long long int totJB = 0;
+	long long int totVB = 0;
 	
-	for (int pat=0; pat < Site.size(); pat++) {
-		for (int i=0; i<NumGen; i++){
-			for (int j=0; j < NumGen; j++) {
+	for (int pat=0; pat < Site.size(); ++pat) {
+		for (int i=0; i<NumGen; ++i){
+			for (int j=0; j < NumGen; ++j) {
 				if (Site[pat].F[i][j] < 0) {
 					std::cout << TT << "\t" << ref << " F neg  " << i << "\t" << j << "\t" << Site[pat].F[i][j] << std::endl;
 					std::exit(1);
@@ -791,14 +784,14 @@ void CheckCounts(int TT, char ref) {
 			}
 		}
 
-		for (int i=0; i<NumGen; i++) {
+		for (int i=0; i<NumGen; ++i) {
 			totF += std::accumulate(Site[pat].F[i], Site[pat].F[i] + NumGen, 0);
 		}
 
 		totM += std::accumulate(Site[pat].M, Site[pat].M + NumGen, 0);
 		totV += std::accumulate(Site[pat].V, Site[pat].V + NumGen, 0);
-		for (int i=0; i<NumGen; i++) {
-			for (int a=0; a<TL; a++) {
+		for (int i=0; i<NumGen; ++i) {
+			for (int a=0; a<TL; ++a) {
 				totJ += Site[pat].J[i][a];
 			}
 		}

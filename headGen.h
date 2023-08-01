@@ -3,13 +3,13 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#include <ctime> // for runtime calculations
 #include <cstdlib> // for exit function
 #include <random>  
 #include <cmath> 
 #include <numeric>  
 #include <algorithm> 
 #include <cstdio>
+#include <chrono>
 
 const int TL = 20; // juvenile development time (egg to adult) expressed as days left till eclosion (eclosion on day 0)
 const int NumGen = 6; // number of different genotypes in the mosquito population
@@ -20,9 +20,12 @@ void RunNReps(int N);
 void initiate(); 
 void UpdateConnec();
 void RunMaxT();
-void record(); 
+std::vector<int> selectDriverSites(int num_driver_sites);
 void PutDriverSites(int pat);
-void SitesPopulate(int pat);
+void recordCoords(); 
+void recordGlobal(int TT); 
+void recordLocal(int TT); 
+void SitesPopulate();
 void OneStep(int day);
 
 // Population processes (controlled from OneStep)
@@ -42,7 +45,6 @@ void SetFertility();
 void CheckCounts(int TT, char ref); // function for debugging - checks if totals are the same as the number in each class in each population
 
 double distance(double U, double x1, double y1, double x2, double y2); // distance between points (assuming toroidal boundaries)
-double abso(double XX); // absolute used in distance function
 
 // Random number generator functions
 
@@ -50,7 +52,7 @@ double Random();
 int IRandom(int a, int b);
 long long int random_poisson(double landa);
 long long int random_binomial(long long int N, double p);
-std::vector<int> random_Multinomial(int N, const std::vector<double>& probs);
+std::vector<long long int> random_Multinomial(long long int N, const std::vector<double>& probs);
 
 // Contains the total population numbers over all space (all patches) for different mosquito types
 struct totals {
@@ -76,7 +78,7 @@ struct initials {
 	// gene drive initial parameters
 	double driver_time; // time to start releasing drive alleles into the mosquito population
 	int NumDriver; // number of drive heterozygous (WD) male mosquitoes per release
-	double NumDriverSites; // number of gene drive release sites per year
+	int NumDriverSites; // number of gene drive release sites per year
 
 	// data-recording parameters
 	int recSitesFreq; // fraction of sites to collect local data for (1 is all sites, 10 is 1 in 10 etc)
