@@ -19,9 +19,11 @@ const int num_gen = 6; // number of different genotypes in the mosquito populati
 void run_reps(int n); 
 void initiate(); 
 void set_connec();
-void run_model();
+void run_model(int max_time);
 std::vector<int> select_driver_sites(int num_driver_sites);
 void put_driver_sites(const std::vector<int>& patches);
+void create_files(int set_label, int run_label);
+void close_files();
 void record_coords(); 
 void record_global(int day); 
 void record_local(int day); 
@@ -33,9 +35,9 @@ void run_step(int day);
 void juv_get_older();
 void adults_die();
 void virgins_mate();
-void adults_move();
+void adults_disperse();
 void lay_eggs();
-void juv_emerge();
+void juv_eclose();
 void hide();
 void wake(int day);
 void update_comp();
@@ -72,7 +74,7 @@ struct Initials {
 	int initial_WM; // number of initial adult male mosquitoes with wild homozygous (WW) genotype
 	int initial_WV; // number of initial adult unmated female (virgin) mosquitoes with wild homozygous (WW) genotype
 	int initial_WF; // number of initial adult mated female mosquitoes with wild homozygous (WW) genotype
-	std::array<int, max_dev> initial_WJ; // array of number of initial juvenile mosquitoes with wild homozygous (WW) genotype for each age group
+	std::array<int, max_dev+1> initial_WJ; // array of number of initial juvenile mosquitoes with wild homozygous (WW) genotype for each age group
 	
 	// gene drive initial parameters
 	double driver_start; // time to start releasing drive alleles into the mosquito population
@@ -86,7 +88,7 @@ struct Initials {
 // Contains the information of a local mosquito population
 struct Patch {
 	std::array<double, 2> coords; // (x, y) coordinates of the site 
-	std::array<std::array<long long int, max_dev>, num_gen> J; // 2D array of the number of juvenile mosquitoes with each genotype and in each age group in the local site. Age ordered from oldest (0 days left to eclosion) to youngest (TL - 1 days left)
+	std::array<std::array<long long int, max_dev+1>, num_gen> J; // 2D array of the number of juvenile mosquitoes with each genotype and in each age group in the local site. Age ordered from oldest (0 days left to eclosion) to youngest (TL - 1 days left)
 	long long int tot_J; // total number of juvenile mosquitoes in the local site
 	std::array<long long int, num_gen> M; // array of the number of male mosquitoes with each genotype in the local site
 	long long int tot_M; // total number of male mosquitoes in the local site
@@ -95,14 +97,14 @@ struct Patch {
 	std::array<std::array<long long int, num_gen>, num_gen> aes_F;	// 2D array of the number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j that have gone into aestivation
 	std::array<std::array<long long int, num_gen>, num_gen> move_F; // 2D array of the number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j that will be dispersing from the local site 	
 	std::array<long long int, num_gen> move_M; // array of the number of male mosquitoes with each genotype that will be dispersing from the local site
-	long double comp; // density-dependent survival probability per larvae per day from competition (between 0 and 1)
+	long double comp; // survival probability per juvenile per day (both density-dependent and independent factors)
 	long double mate_rate; // probability of an unmated (virgin) female mating on a given day
 
 	// for determining connectivities between patches
 	std::vector<int> connec_indices; // vector of patch indices of those patches that are connected to the selected patch
 	std::vector<double> connec_weights; // vector of patch connection weights of those patches that are connected to the selected patch. Correspond to the respective element in connecIND
-	
-	bool is_central; // whether the patch is inside (1) the central simulated area or not (0) 
+
+	bool is_central();
 };
 
 // Contains the simulation timekeeping parameters
@@ -126,7 +128,8 @@ struct Pars {
 	double beta; // parameter that controls mating rate
 	double theta; // average egg laying rate of wildtype females (eggs per day)
 	double alpha0; // baseline contribution to carrying capacity
-	std::array<double, max_dev> eclosion_probs; // array of probabililities of juvenile eclosion for different age groups
+	std::array<double, max_dev+1> dev_duration_probs; // array of probabilities of juvenile development duration for a new juvenile
+	// (index indicates the number of days to develop or, equivalently, the age class the new juvenile starts at)
 	int min_dev; // minimum development time for a juvenile (in days)
 	double mean_dev; // mean juvenile development time (in days)
 
@@ -142,9 +145,9 @@ struct Pars {
 	// aestivation parameters
 	double psi; // aestivation rate
 	double mu_aes; // aestivation mortality
-	int t_hide1; // start day of aestivation-entering period (day number of the year)
+	int t_hide1; // start day of aestivation-entering period (day number of the year), not included
 	int t_hide2; // end day of aestivation-entering period (day number of the year)
-	int t_wake1; // start day of aestivation-waking period (day number of the year)
+	int t_wake1; // start day of aestivation-waking period (day number of the year), not included
 	int t_wake2; // end day of aestivation-waking period (day number of the year)
 
 	// gene drive parameters

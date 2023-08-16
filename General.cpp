@@ -57,22 +57,12 @@ int main()
 	std::cin >> pa.side;
 	std::cin >> pa.central_radius;
 
-	// set probabilities of juvenile eclosion for different age groups
-	for (int a=0; a < max_dev; ++a) {
-        if (a >= pa.min_dev) {
-            pa.eclosion_probs[a] = 1.0 / (max_dev- pa.min_dev);
-        }
-        else {
-            pa.eclosion_probs[a] = 0;
-        }
-    }
-
 	// initial populations
 	in.initial_WV = 10000;
 	in.initial_WM = 50000;
 	in.initial_WF = 40000;
 
-	for (int a=0; a < max_dev; ++a) {
+	for (int a=0; a < max_dev + 1; ++a) {
 		in.initial_WJ[a] = 10000;
 	}
 
@@ -89,38 +79,46 @@ int main()
 	
 	return 0;
 }
-	
+
 // Creates the output files and runs the simulation N times
 void run_reps(int n) 
 {
-	// creating output files
-	os1 << "LocalData" << pa.set_label << "run" << pa.run_label << ".txt"; 
-	local_data.open(os1.str().c_str());
-	os2 << "Totals" << pa.set_label << "run" << pa.run_label << ".txt";
-	global_data.open(os2.str().c_str());
-	os3 << "CoordinateList" << pa.set_label << "run" << pa.run_label << ".txt";
-	coord_list.open(os3.str().c_str());
-
-	local_data << "Male populations of each genotype at each site" << std::endl;
-	local_data << "Day" << "\t" << "Site" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
-
-	global_data << "Total males of each genotype" << std::endl;
-	global_data << "Day" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
-
-	coord_list << "Coordinate list of the sites" << std::endl;
-	coord_list << "Site" << "\t" << "x" << "\t" << "y" << std::endl;
+	create_files(pa.set_label, pa.run_label);
 
 	for (int j=1; j<=n; ++j) {
 		initiate();
 		record_coords();
-		run_model();
+		run_model(ti.max_t);
 	}
 
-	os1.str("");
+	close_files();
+}
+
+// Creates output files
+void create_files(int set_label, int run_label) 
+{
+	os1 << "LocalData" << set_label << "run" << run_label << ".txt"; 
+	local_data.open(os1.str().c_str());
+	os2 << "Totals" << set_label << "run" << run_label << ".txt";
+	global_data.open(os2.str().c_str());
+	os3 << "CoordinateList" << set_label << "run" << run_label << ".txt";
+	coord_list.open(os3.str().c_str());
+
+	local_data << "Male populations of each genotype at each site\n";
+	local_data << "Day" << "\t" << "Site" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
+
+	global_data << "Total males of each genotype\n";
+	global_data << "Day" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
+
+	coord_list << "Coordinate list of the sites\n";
+	coord_list << "Site" << "\t" << "x" << "\t" << "y" << std::endl;
+}
+
+// Closes output files
+void close_files() 
+{
 	local_data.close();
-	os2.str(""); 
 	global_data.close();
-	os3.str("");
 	coord_list.close();
 }
 
@@ -147,11 +145,8 @@ void initiate()
 		double x = random_real() * pa.side;
 		double y = random_real() * pa.side;
 		pp.coords = {x, y};
-		pp.is_central = false;
 
-		std::array<double, 2> centre = {pa.side / 2.0, pa.side / 2.0};
-		if (distance(pa.side, pp.coords, centre) < pa.central_radius) {
-			pp.is_central = true;
+		if (pp.is_central()) {
 			to.central_sites++;
 		}
 
@@ -160,7 +155,7 @@ void initiate()
 		pp.connec_weights.clear();
 
 		for (int i=0; i < num_gen; ++i) {
-			for (int a=0; a < max_dev; ++a) {
+			for (int a=0; a < max_dev + 1; ++a) {
 				pp.J[i][a] = 0; 
 			}
 			pp.M[i] = 0;
@@ -180,7 +175,15 @@ void initiate()
 	
 	populate_sites();
 	set_connec();
+	set_eclosion_probs(pa.min_dev, max_dev);
 //	CheckCounts(0,'i');
+}
+
+bool Patch::is_central() 
+{
+	std::array<double, 2> centre = {pa.side / 2.0, pa.side / 2.0};
+	bool is_inside = (distance(pa.side, coords, centre) < pa.central_radius);
+	return is_inside;
 }
 
 // Populates the local site with a (wild) mosquito population of different types (age and sex), according to the initial values provided
@@ -188,7 +191,7 @@ void initiate()
 void populate_sites() 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		for (int a=0; a < max_dev; ++a) {
+		for (int a=0; a < max_dev + 1; ++a) {
 			sites[pat].J[0][a] += in.initial_WJ[a];
 			to.J[0] += in.initial_WJ[a];
 			to.tot_J += in.initial_WJ[a];
@@ -221,7 +224,7 @@ void set_connec()
 		sites[pat].connec_weights.clear();
 		for (int new_pat=0; new_pat < sites.size(); ++new_pat) {
 		// re-activate this if loop to exclude self-dispersal. need to check isolated sites catered for
-		//	if (ii != index) {
+		//	if (new_pat != pat) {
 				double dd = distance(pa.side, sites[pat].coords, sites[new_pat].coords);
 				if (dd < pa.max_disp) {
 					sites[pat].connec_indices.push_back(new_pat); 
@@ -233,12 +236,34 @@ void set_connec()
 	}
 }
 
-// Runs the simulation once for simulated time T
-void run_model() 
+// set probabilities of juvenile eclosion for different age groups
+void set_eclosion_probs(int min_time, int max_time) {
+	for (int a=0; a < max_time + 1; ++a) {
+        if (a >= min_time) {
+            pa.dev_duration_probs[a] = 1.0 / (max_time - min_time);
+        }
+        else {
+            pa.dev_duration_probs[a] = 0;
+        }
+		std::cout << a << ": " << pa.dev_duration_probs[a] << std::endl;
+    }
+
+	// for (int a=0; a < max_time + 1; ++a) {
+    //     if (a <= (max_time - min_time)) {
+    //         pa.dev_duration_probs[a] = 1.0 / (max_time - min_time);
+    //     }
+    //     else {
+    //         pa.dev_duration_probs[a] = 0;
+    //     }
+	// 	std::cout << a << ": " << pa.dev_duration_probs[a] << std::endl;
+    // }
+
+}
+
+// Runs the simulation once for simulated time max_time
+void run_model(int max_time) 
 {
-	// Set gene drive release sites
-	int tt = 0; // current day of the simulation 
-	while (tt <= ti.max_t) {
+	for(int tt=0; tt <= max_time; ++tt) { // current day of the simulation 
 		// gene drive release
 		int rel_time = in.driver_start;
 		if (tt == rel_time) {
@@ -258,8 +283,6 @@ void run_model()
 		if (tt > ti.rec_start && tt <= ti.rec_end && tt % ti.rec_interval_local == 0) {
 			record_local(tt);
 		}
-
-		tt++;
 	}
 }
 
@@ -267,19 +290,14 @@ void run_model()
 std::vector<int> select_driver_sites(int num_driver_sites) 
 {
 	std::vector<int> rel_patches; // patches in which to release the gene drive (contains indices to the patches in Site vector)
-	for (int i=0; i < num_driver_sites; ++i) {
-		bool is_unique_pat = false;
-		int rel_pat;
-		while (!is_unique_pat) {
-			rel_pat = random_discrete(0, sites.size() - 1);
+	while (rel_patches.size() < num_driver_sites) {
+		int rel_pat = random_discrete(0, sites.size() - 1);
 
-			// only pick unique sites within the central area to release the gene drive
-			if ((sites[rel_pat].is_central) && (rel_patches.end() == std::find(rel_patches.begin(), rel_patches.end(), rel_pat))) {
-				is_unique_pat = true;
-			}
+		// only pick unique sites within the central area to release the gene drive
+		auto is_unique = (rel_patches.end() == std::find(rel_patches.begin(), rel_patches.end(), rel_pat));
+		if ((sites[rel_pat].is_central()) && is_unique) { 
+			rel_patches.push_back(rel_pat);
 		}
-
-		rel_patches.push_back(rel_pat);
 	}
 
 	return rel_patches;
@@ -338,9 +356,9 @@ void run_step(int day)
 	juv_get_older();
 	adults_die();
 	virgins_mate();
-	adults_move();
+	adults_disperse();
 	lay_eggs();
-	juv_emerge();
+	juv_eclose();
 	if (day%365 > pa.t_hide1 && day%365 <= pa.t_hide2 && pa.psi > 0.00001) hide();
 	if (day%365 > pa.t_wake1 && day%365 <= pa.t_wake2 && pa.psi > 0.00001) wake(day);
 	update_comp();
@@ -357,12 +375,11 @@ void juv_get_older()
 
 	long long int j_tot = 0;
 	for (int pat=0; pat < sites.size(); ++pat) {
-		double p_comp = (1 - pa.mu_j) * sites[pat].comp; // probability of survival per juvenile
 		long long int j_pat = 0;
 		for (int i=0; i < num_gen; ++i) {
-			for (int a=0; a < max_dev - 1; ++a) {
+			for (int a=0; a < max_dev; ++a) {
 				// number of juveniles that survive aging by a day are placed into the new older age group	
-				sites[pat].J[i][a] = random_binomial(sites[pat].J[i][a+1], p_comp);
+				sites[pat].J[i][a] = random_binomial(sites[pat].J[i][a+1], sites[pat].comp);
 				j_pat += sites[pat].J[i][a];
 				j_tot_gens[i] += sites[pat].J[i][a];
 			}
@@ -371,9 +388,9 @@ void juv_get_older()
 		sites[pat].tot_J = j_pat;
 		j_tot += j_pat;
 
-		// youngest ones have all aged by one day so 0 left in this age group
+		// youngest ones have all aged by one day so none left in this age group
 		for (int i=0; i < num_gen; ++i) {
-			sites[pat].J[i][max_dev - 1] = 0;
+			sites[pat].J[i][max_dev] = 0;
 		} 
 	}
 
@@ -441,12 +458,16 @@ void virgins_mate()
 }
 
 // Selects and updates the number of adults that disperse from and to each patch, depending on the patch connectivities
-void adults_move() 
+void adults_disperse() 
 {
+	// const int num_pats = sites.size();
 	if (sites.size() > 1) {
 		// number of adults dispersing from each patch
+		// std::array<std::array<long long int, num_gen>, num_pats> m_from;
+		// std::array<std::array<std::array<long long int, num_gen>, num_gen>, num_pats> f_from;
 		for (int pat=0; pat < sites.size(); ++pat) {
 			for (int i=0; i < num_gen; ++i) {
+				// if (sites[pat].connec_indices > 0) // include this if de-activate self-dispersal
 				sites[pat].move_M[i] = random_binomial(sites[pat].M[i], pa.disp_rate); // how many males will disperse from patch
 				sites[pat].M[i] -= sites[pat].move_M[i];
 				sites[pat].tot_M -= sites[pat].move_M[i];
@@ -458,15 +479,17 @@ void adults_move()
 			}
 		}
 
+		// number of adults dispersing to each patch
 		std::vector<long long int> m_disp;
 		std::vector<long long int> f_disp;
-		// number of adults dispersing to each patch
 		for (int pat=0; pat < sites.size(); ++pat) {
 			for (int i=0; i < num_gen; ++i) {
 				// how many males will disperse to each of the connected patches for the given patch
-				m_disp = random_multinomial(sites[pat].move_M[i], sites[pat].connec_weights);
-				for (int new_pat=0; new_pat < m_disp.size(); ++new_pat) {
-					sites[sites[pat].connec_indices[new_pat]].M[i] += m_disp[new_pat];
+				if (sites[pat].move_M[i] > 0) {
+					m_disp = random_multinomial(sites[pat].move_M[i], sites[pat].connec_weights);
+					for (int new_pat=0; new_pat < m_disp.size(); ++new_pat) {
+						sites[sites[pat].connec_indices[new_pat]].M[i] += m_disp[new_pat];
+					}
 				}
 
 				for (int j=0; j < num_gen; ++j) {
@@ -479,15 +502,27 @@ void adults_move()
 				}
 			}
 		}
+
+		// reset values
+		for (int pat=0; pat < sites.size(); ++pat) {
+			for (int i=0; i < num_gen; ++i) {
+				sites[pat].move_M[i] = 0;
+
+				for (int j=0; j < num_gen; ++j) {
+					sites[pat].move_F[i][j] = 0;
+				}
+			}
+		}
+
 	}
 }
 
 // Calculates the number of eggs laid on the given day and updates the number of juveniles, depending on egg survival rates
 void lay_eggs() 
 {
-	std::vector<double> j_probs(max_dev);
-	for (int i=0; i < max_dev; ++i) {
-		j_probs[i] = pa.eclosion_probs[i];
+	std::vector<double> j_probs(max_dev + 1);
+	for (int i=0; i < max_dev + 1; ++i) {
+		j_probs[i] = pa.dev_duration_probs[i];
 	}
 
 	std::vector<long long int> j_new;
@@ -499,8 +534,8 @@ void lay_eggs()
 					long long int eggs = random_poisson(num); // actual number of eggs laid sampled from random distribution
 
 					j_new = random_multinomial(eggs, j_probs); // number of eggs that start in each different age class (according to different juvenile development times)
-					for (int a=0; a < max_dev; ++a) {
-						sites[pat].J[k][a] += j_new[a];
+					for (int t=0; t < max_dev + 1; ++t) { // juveniles created with assigned remaining time to develop
+						sites[pat].J[k][t] += j_new[t];
 					}
 					
 					to.J[k] += eggs;
@@ -512,13 +547,11 @@ void lay_eggs()
 }
 
 // Transforms juveniles into adults, depending on eclosion survival rate
-void juv_emerge() 
+void juv_eclose() 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		double p_comp = (1 - pa.mu_j) * sites[pat].comp;
 		for (int i=0; i < num_gen; ++i) {
-			long long int surv = random_binomial(sites[pat].J[i][0], p_comp); // number of juveniles that survive eclosion
-
+			long long int surv = random_binomial(sites[pat].J[i][0], sites[pat].comp); // number of juveniles that survive eclosion
 			if (surv > 0) {		
 				long long int surv_m = random_binomial(surv, 0.5); // roughly half of the juveniles become male and half female following a distribution
 				sites[pat].tot_M += surv_m;
@@ -566,11 +599,11 @@ void wake(int day)
 	}
 }
 
-// Updates the density-dependent juvenile survival probability on the given day in each site
+// Updates the juvenile survival probability on the given day in each site
 void update_comp() 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].comp = std::pow(pa.alpha0 / (pa.alpha0 + sites[pat].tot_J), 1.0 / pa.mean_dev);
+		sites[pat].comp = (1 - pa.mu_j) * std::pow(pa.alpha0 / (pa.alpha0 + sites[pat].tot_J), 1.0 / pa.mean_dev);
 	}
 }
 
@@ -634,51 +667,51 @@ void set_inheritance()
 			for (int j=0; j<6; ++j) {
 				if (i==0) {
 					if (j==0) pa.f[i][j][k] = f_ww_ww[k];
-					if (j==1) pa.f[i][j][k] = f_ww_wd[k];
-					if (j==2) pa.f[i][j][k] = f_ww_dd[k];
-					if (j==3) pa.f[i][j][k] = f_ww_wr[k];
-					if (j==4) pa.f[i][j][k] = f_ww_rr[k];
-					if (j==5) pa.f[i][j][k] = f_ww_dr[k];
+					else if (j==1) pa.f[i][j][k] = f_ww_wd[k];
+					else if (j==2) pa.f[i][j][k] = f_ww_dd[k];
+					else if (j==3) pa.f[i][j][k] = f_ww_wr[k];
+					else if (j==4) pa.f[i][j][k] = f_ww_rr[k];
+					else if (j==5) pa.f[i][j][k] = f_ww_dr[k];
 				}
-				if (i==1) {
+				else if (i==1) {
 					if (j==0) pa.f[i][j][k] = f_wd_ww[k];
-					if (j==1) pa.f[i][j][k] = f_wd_wd[k];
-					if (j==2) pa.f[i][j][k] = f_wd_dd[k];
-					if (j==3) pa.f[i][j][k] = f_wd_wr[k];
-					if (j==4) pa.f[i][j][k] = f_wd_rr[k];
-					if (j==5) pa.f[i][j][k] = f_wd_dr[k];
+					else if (j==1) pa.f[i][j][k] = f_wd_wd[k];
+					else if (j==2) pa.f[i][j][k] = f_wd_dd[k];
+					else if (j==3) pa.f[i][j][k] = f_wd_wr[k];
+					else if (j==4) pa.f[i][j][k] = f_wd_rr[k];
+					else if (j==5) pa.f[i][j][k] = f_wd_dr[k];
 				}
-				if (i==2) {
+				else if (i==2) {
 					if (j==0) pa.f[i][j][k] = f_dd_ww[k];
-					if (j==1) pa.f[i][j][k] = f_dd_wd[k];
-					if (j==2) pa.f[i][j][k] = f_dd_dd[k];
-					if (j==3) pa.f[i][j][k] = f_dd_wr[k];
-					if (j==4) pa.f[i][j][k] = f_dd_rr[k];
-					if (j==5) pa.f[i][j][k] = f_dd_dr[k];
+					else if (j==1) pa.f[i][j][k] = f_dd_wd[k];
+					else if (j==2) pa.f[i][j][k] = f_dd_dd[k];
+					else if (j==3) pa.f[i][j][k] = f_dd_wr[k];
+					else if (j==4) pa.f[i][j][k] = f_dd_rr[k];
+					else if (j==5) pa.f[i][j][k] = f_dd_dr[k];
 				}
-				if (i==3) {
+				else if (i==3) {
 					if (j==0) pa.f[i][j][k] = f_wr_ww[k];
-					if (j==1) pa.f[i][j][k] = f_wr_wd[k];
-					if (j==2) pa.f[i][j][k] = f_wr_dd[k];
-					if (j==3) pa.f[i][j][k] = f_wr_wr[k];
-					if (j==4) pa.f[i][j][k] = f_wr_rr[k];
-					if (j==5) pa.f[i][j][k] = f_wr_dr[k];
+					else if (j==1) pa.f[i][j][k] = f_wr_wd[k];
+					else if (j==2) pa.f[i][j][k] = f_wr_dd[k];
+					else if (j==3) pa.f[i][j][k] = f_wr_wr[k];
+					else if (j==4) pa.f[i][j][k] = f_wr_rr[k];
+					else if (j==5) pa.f[i][j][k] = f_wr_dr[k];
 				}
-				if (i==4) {
+				else if (i==4) {
 					if (j==0) pa.f[i][j][k] = f_rr_ww[k];
-					if (j==1) pa.f[i][j][k] = f_rr_wd[k];
-					if (j==2) pa.f[i][j][k] = f_rr_dd[k];
-					if (j==3) pa.f[i][j][k] = f_rr_wr[k];
-					if (j==4) pa.f[i][j][k] = f_rr_rr[k];
-					if (j==5) pa.f[i][j][k] = f_rr_dr[k];
+					else if (j==1) pa.f[i][j][k] = f_rr_wd[k];
+					else if (j==2) pa.f[i][j][k] = f_rr_dd[k];
+					else if (j==3) pa.f[i][j][k] = f_rr_wr[k];
+					else if (j==4) pa.f[i][j][k] = f_rr_rr[k];
+					else if (j==5) pa.f[i][j][k] = f_rr_dr[k];
 				}
-				if (i==5) {
+				else if (i==5) {
 					if (j==0) pa.f[i][j][k] = f_dr_ww[k];
-					if (j==1) pa.f[i][j][k] = f_dr_wd[k];
-					if (j==2) pa.f[i][j][k] = f_dr_dd[k];
-					if (j==3) pa.f[i][j][k] = f_dr_wr[k];
-					if (j==4) pa.f[i][j][k] = f_dr_rr[k];
-					if (j==5) pa.f[i][j][k] = f_dr_dr[k];
+					else if (j==1) pa.f[i][j][k] = f_dr_wd[k];
+					else if (j==2) pa.f[i][j][k] = f_dr_dd[k];
+					else if (j==3) pa.f[i][j][k] = f_dr_wr[k];
+					else if (j==4) pa.f[i][j][k] = f_dr_rr[k];
+					else if (j==5) pa.f[i][j][k] = f_dr_dr[k];
 				}
 			}
 		}
@@ -729,47 +762,53 @@ int random_discrete(int a, int b)
 // Returns a random draw (non-negative integer) from the Poisson distribution with mean lambda (using normal distribution approximation when lambda > 30)
 long long int random_poisson(double lambda) 
 {
+	long long int result;
 	if (lambda < 1e-5) { 
-		return 0;
+		result = 0;
 	}
 	else if (lambda > 30) {
 		// use normal approximation	
 		std::normal_distribution<> dist(lambda, std::sqrt(lambda)); // distribution(mean, standard deviation)
 		int x = std::round(dist(twister));
-		return std::max(0, x);
+		result = std::max(0, x);
 	}
 	else {
 		// sample poisson directly
 		std::poisson_distribution<> dist(lambda); // distribution(mean)
-		return dist(twister);
+		result = dist(twister);
 	}
+
+	return result;
 }
 
 // Returns a random draw (non-negative integer) from the Binomial distribution B(N,p)
 // Uses Normal and Poisson distribution approximations for large N
 long long int random_binomial(long long int n, double p) 
 {
+	long long int result;
 	if (n*p > 10 && n*(1 - p) > 10) {
 		// use normal approximation
 		std::normal_distribution<> dist(n*p, std::sqrt(n*p*(1 - p))); // distribution(mean, standard deviation)
 		long long int x = std::round(dist(twister));
 		if (x<0) x=0;
 		if (x>n) x=n;
-		return x;
+		result = x;
 	}
 	else if ((n > 20 && p < 0.05) || (n > 100 && n*p < 10)) {
 		// use Poisson approximation
-		return random_poisson(n*p);
+		result = random_poisson(n*p);
 	}
 	else if ((n > 20 && p > 0.95) || (n > 100 && n*(1-p) < 10)) {
 		// use Poisson approximation
-		return n - random_poisson(n*(1 - p));
+		result = n - random_poisson(n*(1 - p));
 	}
 	else {
 		// use binomial distribution directly
 		std::binomial_distribution<> dist(n, p);
-		return dist(twister);
+		result = dist(twister);
 	}
+
+	return result;
 }
 
 // Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities <probs>
@@ -826,7 +865,7 @@ void check_counts(int day, char ref)
 		tot_M += std::accumulate(sites[pat].M.begin(), sites[pat].M.end(), 0);
 		tot_V += std::accumulate(sites[pat].V.begin(), sites[pat].V.end(), 0);
 		for (int i=0; i < num_gen; ++i) {
-			for (int a=0; a < max_dev; ++a) {
+			for (int a=0; a < max_dev + 1; ++a) {
 				tot_J += sites[pat].J[i][a];
 			}
 		}
