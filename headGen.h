@@ -19,6 +19,7 @@ const int num_gen = 6; // number of different genotypes in the mosquito populati
 void run_reps(int n); 
 void initiate(); 
 void set_connec();
+void set_dev_duration_probs(int min_time, int max_time);
 void run_model(int max_time);
 std::vector<int> select_driver_sites(int num_driver_sites);
 void put_driver_sites(const std::vector<int>& patches);

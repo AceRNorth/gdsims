@@ -175,7 +175,7 @@ void initiate()
 	
 	populate_sites();
 	set_connec();
-	set_eclosion_probs(pa.min_dev, max_dev);
+	set_dev_duration_probs(pa.min_dev, max_dev);
 //	CheckCounts(0,'i');
 }
 
@@ -237,7 +237,7 @@ void set_connec()
 }
 
 // set probabilities of juvenile eclosion for different age groups
-void set_eclosion_probs(int min_time, int max_time) {
+void set_dev_duration_probs(int min_time, int max_time) {
 	for (int a=0; a < max_time + 1; ++a) {
         if (a >= min_time) {
             pa.dev_duration_probs[a] = 1.0 / (max_time - min_time);
