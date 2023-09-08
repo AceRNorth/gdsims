@@ -17,34 +17,34 @@ const int num_gen = 6; // number of different genotypes in the mosquito populati
 // const long long int LONG_MAX=3147483647000;
 
 void run_reps(int n); 
-void initiate(); 
-void set_connec();
+void initiate(int pats, double side); 
+void set_connec(double side, double max_disp);
 void set_dev_duration_probs(int min_time, int max_time);
-void run_model(int max_time);
+void run_model(int max_time, int driver_start, int rec_interval_global, int rec_start, int rec_end, int rec_interval_local);
 std::vector<int> select_driver_sites(int num_driver_sites);
-void put_driver_sites(const std::vector<int>& patches);
+void put_driver_sites(const std::vector<int>& patches, int num_driver_M);
 void create_files(int set_label, int run_label);
 void close_files();
-void record_coords(); 
+void record_coords(int rec_sites_freq); 
 void record_global(int day); 
-void record_local(int day); 
+void record_local(int day, int rec_sites_freq); 
 void populate_sites();
-void run_step(int day);
+void run_step(int day, int t_hide1, int t_hide2, int t_wake1, int t_wake2, double psi);
 
 // Population processes (controlled from run_step)
 
 void juv_get_older();
-void adults_die();
+void adults_die(double mu_a);
 void virgins_mate();
-void adults_disperse();
-void lay_eggs();
+void adults_disperse(double disp_rate);
+void lay_eggs(double theta);
 void juv_eclose();
-void hide();
-void wake(int day);
-void update_comp();
-void update_mate();
+void hide(double psi, double mu_aes);
+void wake(int day, int t_wake2);
+void update_comp(double mu_j, double alpha0, double mean_dev);
+void update_mate(double beta);
 
-void set_inheritance();
+void set_inheritance(double gamma, double xi, double e);
 void check_counts(int day, char ref); 
 
 double distance(double side, std::array<double, 2> point1, std::array<double, 2> point2);
@@ -67,7 +67,6 @@ struct Totals {
 	long long int tot_M; // total number of male mosquitoes of all genotypes (over all space)
 	long long int tot_V; // total number of unmated female (virgin) mosquitoes of all genotypes (over all space)
 	long long int tot_F; // total number of mated female mosquitoes of all genotypes (over all space)
-	int central_sites; // number of sites in the central simulated square area
 };	
 
 // Contains the initial model population and gene drive parameters to start the model simulation
@@ -78,7 +77,7 @@ struct Initials {
 	std::array<int, max_dev+1> initial_WJ; // array of number of initial juvenile mosquitoes with wild homozygous (WW) genotype for each age group
 	
 	// gene drive initial parameters
-	double driver_start; // time to start releasing drive alleles into the mosquito population
+	int driver_start; // time to start releasing drive alleles into the mosquito population
 	int num_driver_M; // number of drive heterozygous (WD) male mosquitoes per release
 	int num_driver_sites; // number of gene drive release sites per year
 
@@ -104,20 +103,18 @@ struct Patch {
 	// for determining connectivities between patches
 	std::vector<int> connec_indices; // vector of patch indices of those patches that are connected to the selected patch
 	std::vector<double> connec_weights; // vector of patch connection weights of those patches that are connected to the selected patch. Correspond to the respective element in connecIND
-
-	bool is_central();
 };
 
 // Contains the simulation timekeeping parameters
 struct Times {
 	// simulation parameters
 	int max_t; // maximum simulated time (in days)
-	int num_reps; // number of simulation replicates to run
+	int num_runs; // number of simulation replicates to run
 
 	// data-recording parameters
 	int rec_interval_local; // time interval at which to collect/record local data (in days)
-	int rec_start; // start time for the data recording window (in days)
-	int rec_end; //  end time for the data recording window (in days)
+	int rec_start; // start time for the data recording window (in days) (non-inclusive)
+	int rec_end; // end time for the data recording window (in days) (inclusive)
 	int rec_interval_global; // time interval for global data recording/output
 };
 
@@ -135,8 +132,7 @@ struct Pars {
 	double mean_dev; // mean juvenile development time (in days)
 
 	// simulation area parameters
-	double side; // size of the simulation area (side x side) (km)
-	double central_radius; // radius of the central area of simulation (km)
+	double side; // size of the square simulation area (side x side) (km)
 	int num_pat; // number of population sites chosen for the simulation
 
 	// dispersal parameters
@@ -162,3 +158,103 @@ struct Pars {
 	int set_label; // 'set of runs' index label for output files
 	int run_label; // 'run' index label in given set of runs for output files
 };
+
+// // Model progression parameters
+// struct ProgressionParams {
+// 	const int num_runs; // number of simulation replicates to run
+// 	const int max_t; // maximum simulated time (in days)
+// };
+
+// // Model area parameters
+// struct AreaParams {
+// 	const int num_pat; // number of population sites chosen for the simulation
+// 	const double side; // size of the square simulation area (side x side) (km)
+// };
+
+// // Model life-process parameters
+// struct LifeParams {
+// 	double mu_j; // juvenile density independent mortality rate per day
+// 	double mu_a; // adult mortality rate per day
+// 	double beta; // parameter that controls mating rate
+// 	double theta; // average egg laying rate of wildtype females (eggs per day)
+// 	double alpha0; // baseline contribution to carrying capacity
+// 	double mean_dev; // mean juvenile development time (in days)
+// 	int min_dev; // minimum development time for a juvenile (in days)
+// };
+
+// // Gene drive inheritance parameters
+// struct InheritanceParams {
+// 	const double gamma; // rate of r2 allele formation from W/D meiosis
+// 	const double xi; // somatic Cas9 expression fitness cost
+// 	const double e; // homing rate in females
+// };
+
+// // Gene drive release model parameters
+// struct ReleaseParams {
+// 	const int driver_start; // time to start releasing drive alleles into the mosquito population
+// 	const int num_driver_M; // number of drive heterozygous (WD) male mosquitoes per release
+// 	const int num_driver_sites; // number of gene drive release sites per year
+// };
+
+// // Dispersal model parameters
+// struct DispersalParams {
+// 	const double disp_rate; // adult dispersal rate
+// 	const double max_disp; // maximum distance at which two sites are connected (km)
+// };
+
+// // Aestivation model parameters
+// struct AestivationParams {
+// 	const double psi; // aestivation rate
+// 	const double mu_aes; // aestivation mortality
+// 	const int t_hide1; // start day of aestivation-entering period (day number of the year), not included
+// 	const int t_hide2; // end day of aestivation-entering period (day number of the year)
+// 	const int t_wake1; // start day of aestivation-waking period (day number of the year), not included
+// 	const int t_wake2; // end day of aestivation-waking period (day number of the year)
+// };
+
+// // Initial population values for the model
+// struct InitialPopsParams {
+// 	const int initial_WJ = 10000; // array of number of initial juvenile mosquitoes with wild homozygous (WW) genotype for each age group
+// 	const int initial_WM = 50000; // number of initial adult male mosquitoes with wild homozygous (WW) genotype
+// 	const int initial_WV = 10000; // number of initial adult unmated female (virgin) mosquitoes with wild homozygous (WW) genotype
+// 	const int initial_WF = 40000; // number of initial adult mated female mosquitoes with wild homozygous (WW) genotype
+// };
+
+// // Data-recording parameters
+// struct RecordParams {
+// 	// recording window and intervals
+// 	const int rec_start; // start time for the data recording window (in days) (non-inclusive)
+// 	const int rec_end; // end time for the data recording window (in days) (inclusive)
+// 	const int rec_interval_global; // time interval for global data recording/output
+// 	const int rec_interval_local; // time interval at which to collect/record local data (in days)
+// 	const int rec_sites_freq; // fraction of sites to collect local data for (1 is all sites, 10 is 1 in 10 etc)
+
+// 	// output filename labels
+// 	const int set_label; // 'set of runs' index label for output files
+// 	int run_label; // 'run' index label in given set of runs for output files
+// };
+
+// class Exception {
+// public:
+//     Exception();
+//     virtual void message() = 0;
+// };
+
+// class OutOfBoundsException: public Exception {
+// public:
+//     OutOfBoundsException(const std::string& param);
+//     void message();
+
+// private:
+//     std::string par;
+// };
+
+// class InvalidIntervalException: public Exception {
+// public:
+//     InvalidIntervalException(const std::string& param1, const std::string& param2);
+//     void message();
+
+// private:
+//     std::string inter1;
+//     std::string inter2;
+// };

@@ -2,7 +2,8 @@
 
 // random number seed
 std::random_device rd;
-std::mt19937 twister(rd());
+//std::mt19937 twister(rd());
+std::mt19937 twister(1);
 
 // global structs
 Pars pa; 
@@ -19,7 +20,7 @@ std::ofstream coord_list; // coordinate list (x, y) of the patches
 
 int main()
 {	
-	// input parameters
+	std::cout << "Please enter the input parameters for the model:" << std::endl;
 	std::cin >> pa.set_label; 
 	std::cin >> pa.run_label;
 	std::cin >> pa.num_pat; 
@@ -29,7 +30,7 @@ int main()
 	std::cin >> ti.rec_interval_local; 
 	std::cin >> ti.rec_start; 
 	std::cin >> ti.rec_end; 
-	std::cin >> ti.num_reps; 
+	std::cin >> ti.num_runs; 
 	std::cin >> in.num_driver_M;
 	std::cin >> in.num_driver_sites; 
 	std::cin >> in.driver_start;
@@ -55,54 +56,202 @@ int main()
 	std::cin >> pa.min_dev;
 
 	std::cin >> pa.side;
-	std::cin >> pa.central_radius;
 
+	// // input parameters
+	// // progression parameters
+	// int num_runs;
+	// int max_t; 
+
+	// // area parameters
+	// int num_pat;  
+	// double side;
+	
+	// // model parameters
+	// double mu_j;
+	// double mu_a;
+	// double beta;
+	// double theta;
+	// double alpha0;
+	// double mean_dev;
+	// int min_dev;
+
+	// // gene drive inheritance parameters
+	// double gamma;
+	// double xi;
+	// double e;
+
+	// // gene drive release parameters
+	// int driver_start;
+	// int num_driver_M;
+	// int num_driver_sites; 
+
+	// // dispersal parameters 
+	// double disp_rate; 
+	// double max_disp; 
+
+	// // aestivation parameters
+	// double psi;
+	// double mu_aes;
+	// int t_hide1;
+	// int t_hide2;
+	// int t_wake1; 
+	// int t_wake2;
+
+	// // data-recording parameters
+	// int rec_start; 
+	// int rec_end;
+	// int rec_interval_global;
+	// int rec_interval_local;
+	// int rec_sites_freq; 
+
+	// int set_label; 
+	// int run_label;
+
+	// bool invalid_input = true;
+	// std::cout << "Please enter the input parameters for the model:" << std::endl;
+	// while (invalid_input){
+	// 	try {
+	// 		std::cin >> num_runs; 
+	// 		std::cin >> max_t;
+	// 		std::cin >> num_pat; 
+	// 		std::cin >> side; 
+	// 		std::cin >> mu_j;
+	// 		std::cin >> mu_a; 
+	// 		std::cin >> beta; 
+	// 		std::cin >> theta; 
+	// 		std::cin >> alpha0; 
+	// 		std::cin >> mean_dev; 
+	// 		std::cin >> min_dev;
+	// 		std::cin >> gamma; 
+	// 		std::cin >> xi;
+	// 		std::cin >> e;
+	// 		std::cin >> driver_start;
+	// 		std::cin >> num_driver_M; 
+	// 		std::cin >> num_driver_sites;
+	// 		std::cin >> disp_rate;
+	// 		std::cin >> max_disp;
+	// 		std::cin >> psi;
+	// 		std::cin >> mu_aes;
+	// 		std::cin >> t_hide1;
+	// 		std::cin >> t_hide2;
+	// 		std::cin >> t_wake1; 
+	// 		std::cin >> t_wake2;
+	// 		std::cin >> rec_start;
+	// 		std::cin >> rec_end;
+	// 		std::cin >> rec_interval_global;
+	// 		std::cin >> rec_interval_local;
+	// 		std::cin >> rec_sites_freq;
+	// 		std::cin >> set_label;
+	// 		std::cin >> run_label;
+
+	// 		// input validation
+	// 		//if (rec_start > max_t) throw 0; // no local recording exception
+	// 		//if (max_t - rec_interval_local - rec_start < 0) throw 0;
+	// 		if (rec_start >= rec_end) throw InvalidIntervalException("rec_start", "rec_end"); // invalid interval exception
+	// 		if (psi > 0) {
+	// 			if (t_hide1 >= t_hide2) throw InvalidIntervalException("t_hide1", "t_hide2");
+	// 			if (t_wake1 >= t_wake2) throw InvalidIntervalException("t_wake1", "t_wake2");
+	// 		}
+	// 		//if (num_driver_sites > num_pat) throw 2; // reduced gene drive exception
+	// 		//if ((num_driver_sites == 0 && num_driver_M != 0) || (num_driver_M == 0 && num_driver_M != 0)) throw 3; // no gene drive
+	// 		//if ((disp_rate == 0 && max_disp != 0) || (max_disp == 0 && disp_rate != 0)) throw 4; // no dispersal
+	// 		//if ((psi == 0 && mu_aes != 0) || (mu_aes == 0 && psi != 0)) throw 5; // no aestivation
+
+	// 		if (num_runs <= 0) throw OutOfBoundsException("num_runs");
+	// 		if (max_t <= 0) throw OutOfBoundsException("max_t");
+	// 		if (num_pat <= 0) throw OutOfBoundsException("num_pat");
+	// 		if (side <= 0) throw OutOfBoundsException("side");
+	// 		if (mu_j < 0 || mu_j >= 1) throw OutOfBoundsException("mu_j");
+	// 		if (mu_a <= 0 || mu_a >= 1) throw OutOfBoundsException("mu_a");
+	// 		if (beta <= 0) throw OutOfBoundsException("beta");
+	// 		if (theta <= 0) throw OutOfBoundsException("theta");
+	// 		if (alpha0 <= 0) throw OutOfBoundsException("alpha0");
+	// 		if (mean_dev <= 0) throw OutOfBoundsException("mean_dev");
+	// 		if (min_dev <= 0) throw OutOfBoundsException("min_dev");
+	// 		if (gamma < 0 || gamma > 1) throw OutOfBoundsException("gamma");
+	// 		if (xi < 0 || xi > 1) throw OutOfBoundsException("xi");
+	// 		if (e < 0 || e > 1) throw OutOfBoundsException("e");
+	// 		if (driver_start < 1) throw OutOfBoundsException("driver_start");
+	// 		if (num_driver_M < 0) throw OutOfBoundsException("num_driver_M");
+	// 		if (num_driver_sites < 0) throw OutOfBoundsException("num_driver_sites");
+	// 		if (disp_rate < 0 || disp_rate > 1) throw OutOfBoundsException("disp_rate");
+	// 		if (max_disp <= 0) throw OutOfBoundsException("max_disp");
+	// 		if (psi < 0 || psi > 1) throw OutOfBoundsException("psi");
+	// 		if (mu_aes < 0 || mu_aes > 1) throw OutOfBoundsException("mu_aes");
+	// 		if (psi > 0) {
+	// 			if (t_hide1 < 1 || t_hide1 > 365) throw OutOfBoundsException("t_hide1");
+	// 			if (t_hide2 < 1 || t_hide2 > 365) throw OutOfBoundsException("t_hide2");
+	// 			if (t_wake1 < 1 || t_wake1 > 365) throw OutOfBoundsException("t_wake1");
+	// 			if (t_wake2 < 1 || t_wake2 > 365) throw OutOfBoundsException("t_wake2");
+	// 		}
+	// 		if (rec_start < 0) throw OutOfBoundsException("rec_start");
+	// 		if (rec_end < 0) throw OutOfBoundsException("rec_end");
+	// 		if (rec_interval_global < 1) throw OutOfBoundsException("rec_interval_global");
+	// 		if (rec_interval_local < 1) throw OutOfBoundsException("rec_interval_local");
+	// 		if (rec_sites_freq < 1) throw OutOfBoundsException("rec_sites_freq");
+	// 		if (set_label < 0) throw OutOfBoundsException("set_label");
+	// 		if (run_label < 0) throw OutOfBoundsException("run_label");
+
+	// 		invalid_input = false;
+	// 	}
+	// 	catch (Exception &exception) {
+	// 		exception.message();
+	// 	}
+	// }
+
+	// // create data structures from validated parameters
+	// ProgressionParams prog{num_runs, max_t};
+	// AreaParams area{num_pat, side};
+	// LifeParams life{mu_j, mu_a, beta, theta, alpha0, mean_dev, min_dev};
+	// InheritanceParams inher{gamma, xi, e};
+	// ReleaseParams rel{driver_start, num_driver_M, num_driver_sites};
+	// DispersalParams disp{disp_rate, max_disp};
+	// AestivationParams aes{psi, mu_aes, t_hide1, t_hide2, t_wake1, t_wake2};
+	// InitialPopsParams initial;
+	// RecordParams rec{rec_start, rec_end, rec_interval_global, rec_interval_local, rec_sites_freq, set_label, run_label};
+
+	auto start = std::chrono::steady_clock::now();
 	// initial populations
 	in.initial_WV = 10000;
 	in.initial_WM = 50000;
 	in.initial_WF = 40000;
-
-	for (int a=0; a < max_dev + 1; ++a) {
-		in.initial_WJ[a] = 10000;
-	}
-
-	//auto start = std::chrono::steady_clock::now();
-	//auto finish = std::chrono::steady_clock::now();
-	//double elapsed_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(finish - start).count();
-	//std::cout << "Fertility run time: " << elapsed_seconds << std::endl;
+	in.initial_WJ.fill(10000);
 
 	// set inheritance architecture
-	set_inheritance();
+	set_inheritance(pa.gamma, pa.xi, pa.e);
 
-	// run model NumRuns times
-	run_reps(ti.num_reps);
+	// run model num_runs times
+	run_reps(ti.num_runs);
+
+	auto finish = std::chrono::steady_clock::now();
+	double elapsed_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(finish - start).count();
+	std::cout << "Program run time: " << std::endl;
+	printf("%.10f\n", elapsed_seconds);
 	
 	return 0;
 }
 
-// Creates the output files and runs the simulation N times
+// Creates the output files and runs the simulation n times
 void run_reps(int n) 
 {
-	create_files(pa.set_label, pa.run_label);
-
 	for (int j=1; j<=n; ++j) {
-		initiate();
-		record_coords();
-		run_model(ti.max_t);
+		create_files(pa.set_label, pa.run_label);
+		initiate(pa.num_pat, pa.side);
+		record_coords(in.rec_sites_freq);
+		run_model(ti.max_t, in.driver_start, ti.rec_interval_global, ti.rec_start, ti.rec_end, ti.rec_interval_local);
+		close_files();
 	}
-
-	close_files();
 }
 
-// Creates output files
+// Creates output files with headers
 void create_files(int set_label, int run_label) 
 {
 	os1 << "LocalData" << set_label << "run" << run_label << ".txt"; 
-	local_data.open(os1.str().c_str());
+	local_data.open(os1.str());
 	os2 << "Totals" << set_label << "run" << run_label << ".txt";
-	global_data.open(os2.str().c_str());
+	global_data.open(os2.str());
 	os3 << "CoordinateList" << set_label << "run" << run_label << ".txt";
-	coord_list.open(os3.str().c_str());
+	coord_list.open(os3.str());
 
 	local_data << "Male populations of each genotype at each site\n";
 	local_data << "Day" << "\t" << "Site" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
@@ -117,13 +266,22 @@ void create_files(int set_label, int run_label)
 // Closes output files
 void close_files() 
 {
+	os1.str("");
+	os1.clear();
+	os2.str("");
+	os2.clear();
+	os3.str("");
+	os3.clear();
+
 	local_data.close();
 	global_data.close();
 	coord_list.close();
+
+	pa.run_label++;
 }
 
 // Resets the sites and populations and sets all the initial site parameters
-void initiate() 
+void initiate(int pats, double side) 
 {
 	for (int i=0; i < num_gen; ++i) {
 		to.J[i] = 0;
@@ -135,20 +293,15 @@ void initiate()
 	to.tot_M = 0;
 	to.tot_V = 0;
 	to.tot_F = 0;
-	to.central_sites = 0;
 	sites.clear();
 
-	for (int ii=0; ii < pa.num_pat; ++ii) {   
+	for (int ii=0; ii < pats; ++ii) {   
 		Patch pp;
 
-		// set patch parameters  
-		double x = random_real() * pa.side;
-		double y = random_real() * pa.side;
+		// set patch parameters
+		double x = random_real() * side;
+		double y = random_real() * side;
 		pp.coords = {x, y};
-
-		if (pp.is_central()) {
-			to.central_sites++;
-		}
 
 		// clear all other patch parameter values
 		pp.connec_indices.clear();
@@ -174,16 +327,9 @@ void initiate()
 	}
 	
 	populate_sites();
-	set_connec();
+	set_connec(pa.side, pa.max_disp);
 	set_dev_duration_probs(pa.min_dev, max_dev);
 //	CheckCounts(0,'i');
-}
-
-bool Patch::is_central() 
-{
-	std::array<double, 2> centre = {pa.side / 2.0, pa.side / 2.0};
-	bool is_inside = (distance(pa.side, coords, centre) < pa.central_radius);
-	return is_inside;
 }
 
 // Populates the local site with a (wild) mosquito population of different types (age and sex), according to the initial values provided
@@ -212,12 +358,12 @@ void populate_sites()
 		to.tot_F += in.initial_WF;
 	}
 
-	update_comp();
-	update_mate();
+	update_comp(pa.mu_j, pa.alpha0, pa.mean_dev);
+	update_mate(pa.beta);
 }
 
 // Computes the inter-patch connectivities
-void set_connec() 
+void set_connec(double side, double max_disp) 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
 		sites[pat].connec_indices.clear();
@@ -225,15 +371,16 @@ void set_connec()
 		for (int new_pat=0; new_pat < sites.size(); ++new_pat) {
 		// re-activate this if loop to exclude self-dispersal. need to check isolated sites catered for
 		//	if (new_pat != pat) {
-				double dd = distance(pa.side, sites[pat].coords, sites[new_pat].coords);
-				if (dd < pa.max_disp) {
+				double dd = distance(side, sites[pat].coords, sites[new_pat].coords);
+				if (dd < max_disp) {
 					sites[pat].connec_indices.push_back(new_pat); 
-					double ww = pa.max_disp - dd;
+					double ww = max_disp - dd;
 					sites[pat].connec_weights.push_back(ww); 
 				}
 		//	}
 		}
 	}
+	
 }
 
 // set probabilities of juvenile eclosion for different age groups
@@ -245,43 +392,31 @@ void set_dev_duration_probs(int min_time, int max_time) {
         else {
             pa.dev_duration_probs[a] = 0;
         }
-		std::cout << a << ": " << pa.dev_duration_probs[a] << std::endl;
     }
-
-	// for (int a=0; a < max_time + 1; ++a) {
-    //     if (a <= (max_time - min_time)) {
-    //         pa.dev_duration_probs[a] = 1.0 / (max_time - min_time);
-    //     }
-    //     else {
-    //         pa.dev_duration_probs[a] = 0;
-    //     }
-	// 	std::cout << a << ": " << pa.dev_duration_probs[a] << std::endl;
-    // }
-
 }
 
 // Runs the simulation once for simulated time max_time
-void run_model(int max_time) 
+void run_model(int max_time, int driver_start, int rec_interval_global, int rec_start, int rec_end, int rec_interval_local) 
 {
 	for(int tt=0; tt <= max_time; ++tt) { // current day of the simulation 
 		// gene drive release
-		int rel_time = in.driver_start;
+		int rel_time = driver_start;
 		if (tt == rel_time) {
-			int num_rel_sites = std::min(to.central_sites, in.num_driver_sites);
+			int num_rel_sites = std::min(pa.num_pat, in.num_driver_sites);
 			std::vector<int> rel_patches = select_driver_sites(num_rel_sites);
-			put_driver_sites(rel_patches);
+			put_driver_sites(rel_patches, in.num_driver_M);
 		}
 
-		if (tt > 0) run_step(tt);
+		if (tt > 0) run_step(tt, pa.t_hide1, pa.t_hide2, pa.t_wake1, pa.t_wake2, pa.psi);
 
-		if (tt % ti.rec_interval_global == 0) {
+		if (tt % rec_interval_global == 0) {
 			// outputs and records total number of each type of mosquito
 			std::cout << tt << "\t" << to.tot_J << "\t" << to.tot_M << "\t" << to.tot_V << "\t" << to.tot_F << std::endl;
 			record_global(tt);
 		}
 
-		if (tt > ti.rec_start && tt <= ti.rec_end && tt % ti.rec_interval_local == 0) {
-			record_local(tt);
+		if ((tt == 0) || (tt >= rec_start && tt <= rec_end && tt % rec_interval_local == 0)) {
+			record_local(tt, in.rec_sites_freq);
 		}
 	}
 }
@@ -295,7 +430,7 @@ std::vector<int> select_driver_sites(int num_driver_sites)
 
 		// only pick unique sites within the central area to release the gene drive
 		auto is_unique = (rel_patches.end() == std::find(rel_patches.begin(), rel_patches.end(), rel_pat));
-		if ((sites[rel_pat].is_central()) && is_unique) { 
+		if (is_unique) { 
 			rel_patches.push_back(rel_pat);
 		}
 	}
@@ -304,26 +439,26 @@ std::vector<int> select_driver_sites(int num_driver_sites)
 }
 
 // Adds drive heterozygous (WD) male mosquitoes to the selected sites
-void put_driver_sites(const std::vector<int>& patches) 
+void put_driver_sites(const std::vector<int>& patches, int num_driver_M) 
 {
 	for (const auto& pat : patches) {
 		if (pat >= 0 && pat < sites.size()) {
-			sites[pat].M[1] += in.num_driver_M;
-			sites[pat].tot_M += in.num_driver_M;
+			sites[pat].M[1] += num_driver_M;
+			sites[pat].tot_M += num_driver_M;
 
 			// updating totals
-			to.M[1] += in.num_driver_M;
-			to.tot_M += in.num_driver_M;
+			to.M[1] += num_driver_M;
+			to.tot_M += num_driver_M;
 		}
 	}
 
-	update_mate();
+	update_mate(pa.beta);
 }
 
 // Records the x and y coordinates of each site
-void record_coords() 
+void record_coords(int rec_sites_freq) 
 {
-	for (int pat=0; pat < sites.size(); pat += in.rec_sites_freq) {
+	for (int pat=0; pat < sites.size(); pat += rec_sites_freq) {
 		coord_list << pat+1 << "\t" << sites[pat].coords[0] << "\t" << sites[pat].coords[1] << std::endl;
 	}
 }
@@ -339,9 +474,9 @@ void record_global(int day)
 }
 
 // Records the number of males of each genotype at each site in a file (localinfo file)
-void record_local(int day) 
+void record_local(int day, int rec_sites_freq) 
 {	
-	for (int pat=0; pat < sites.size(); pat += in.rec_sites_freq) {
+	for (int pat=0; pat < sites.size(); pat += rec_sites_freq) {
 		local_data << day << "\t" << pat+1;
 		for (const auto& m_gen : sites[pat].M) {
 			local_data << "\t" << m_gen;
@@ -351,18 +486,18 @@ void record_local(int day)
 }
 
 // Runs daily mosquito life-processes, including aging, death, egg laying, eclosion, mating, dispersal and aestivation 
-void run_step(int day) 
+void run_step(int day, int t_hide1, int t_hide2, int t_wake1, int t_wake2, double psi) 
 {
 	juv_get_older();
-	adults_die();
+	adults_die(pa.mu_a);
 	virgins_mate();
-	adults_disperse();
-	lay_eggs();
+	adults_disperse(pa.disp_rate);
+	lay_eggs(pa.theta);
 	juv_eclose();
-	if (day%365 > pa.t_hide1 && day%365 <= pa.t_hide2 && pa.psi > 0.00001) hide();
-	if (day%365 > pa.t_wake1 && day%365 <= pa.t_wake2 && pa.psi > 0.00001) wake(day);
-	update_comp();
-	update_mate();
+	if (day%365 > t_hide1 && day%365 <= t_hide2 && psi > 0.00001) hide(pa.psi, pa.mu_aes);
+	if (day%365 > t_wake1 && day%365 <= t_wake2 && psi > 0.00001) wake(day, pa.t_wake2);
+	update_comp(pa.mu_j, pa.alpha0, pa.mean_dev);
+	update_mate(pa.beta);
 }
 
 // Ages the juvenile population in different age groups by a day
@@ -402,23 +537,23 @@ void juv_get_older()
 }
 
 // Selects the number of adults that die in the given day and updates population numbers
-void adults_die() 
+void adults_die(double mu_a) 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
 		for (int i=0; i < num_gen; ++i) {
-			long long int m = random_binomial(sites[pat].M[i], pa.mu_a); // number of males that die
+			long long int m = random_binomial(sites[pat].M[i], mu_a); // number of males that die
 			sites[pat].M[i] -= m;
 			sites[pat].tot_M -= m;
 			to.M[i] -= m;
 			to.tot_M -= m;	
 
-			long long int v = random_binomial(sites[pat].V[i], pa.mu_a);
+			long long int v = random_binomial(sites[pat].V[i], mu_a);
 			sites[pat].V[i] -= v;
 			to.V[i] -= v;
 			to.tot_V -= v;	
 
 			for (int j=0; j < num_gen; ++j) {
-				long long int f = random_binomial(sites[pat].F[i][j], pa.mu_a);
+				long long int f = random_binomial(sites[pat].F[i][j], mu_a);
 				sites[pat].F[i][j] -= f;
 				to.F[i] -= f;
 				to.tot_F -= f;	
@@ -458,7 +593,7 @@ void virgins_mate()
 }
 
 // Selects and updates the number of adults that disperse from and to each patch, depending on the patch connectivities
-void adults_disperse() 
+void adults_disperse(double disp_rate) 
 {
 	// const int num_pats = sites.size();
 	if (sites.size() > 1) {
@@ -468,12 +603,12 @@ void adults_disperse()
 		for (int pat=0; pat < sites.size(); ++pat) {
 			for (int i=0; i < num_gen; ++i) {
 				// if (sites[pat].connec_indices > 0) // include this if de-activate self-dispersal
-				sites[pat].move_M[i] = random_binomial(sites[pat].M[i], pa.disp_rate); // how many males will disperse from patch
+				sites[pat].move_M[i] = random_binomial(sites[pat].M[i], disp_rate); // how many males will disperse from patch
 				sites[pat].M[i] -= sites[pat].move_M[i];
 				sites[pat].tot_M -= sites[pat].move_M[i];
 
 				for (int j=0; j < num_gen; ++j) {
-					sites[pat].move_F[i][j] = random_binomial(sites[pat].F[i][j], pa.disp_rate);
+					sites[pat].move_F[i][j] = random_binomial(sites[pat].F[i][j], disp_rate);
 					sites[pat].F[i][j] -= sites[pat].move_F[i][j]; 
 				}
 			}
@@ -518,7 +653,7 @@ void adults_disperse()
 }
 
 // Calculates the number of eggs laid on the given day and updates the number of juveniles, depending on egg survival rates
-void lay_eggs() 
+void lay_eggs(double theta) 
 {
 	std::vector<double> j_probs(max_dev + 1);
 	for (int i=0; i < max_dev + 1; ++i) {
@@ -530,7 +665,7 @@ void lay_eggs()
 		for (int i=0; i < num_gen; ++i) {
 			for (int j=0; j < num_gen; ++j) {
 				for (int k=0; k < num_gen; ++k) {
-					double num = pa.theta * sites[pat].F[i][j] * pa.f[i][j][k]; // expected number of eggs laid with k genotype
+					double num = theta * sites[pat].F[i][j] * pa.f[i][j][k]; // expected number of eggs laid with k genotype
 					long long int eggs = random_poisson(num); // actual number of eggs laid sampled from random distribution
 
 					j_new = random_multinomial(eggs, j_probs); // number of eggs that start in each different age class (according to different juvenile development times)
@@ -567,25 +702,25 @@ void juv_eclose()
 }
 
 // Calculates the number of mated females going into aestivation on the given day and updates the population numbers, depending on the survival rate of going into aestivation
-void hide() 
+void hide(double psi, double mu_aes) 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
 		for (int i=0; i < num_gen; ++i) {
 			for (int j=0; j < num_gen; ++j) {
-				long long int f = random_binomial(sites[pat].F[i][j], pa.psi); // number of females that attempt to go into aestivation
+				long long int f = random_binomial(sites[pat].F[i][j], psi); // number of females that attempt to go into aestivation
 				sites[pat].F[i][j] -= f;
 				to.F[i] -= f;
 				to.tot_F -= f;
-				sites[pat].aes_F[i][j] += random_binomial(f, 1 - pa.mu_aes);	// number that survive going into aestivation
+				sites[pat].aes_F[i][j] += random_binomial(f, 1 - mu_aes);	// number that survive going into aestivation
 			}
 		}
 	}
 }
 
 // Calculates the number of mated females coming out of aestivation on the given day and updates the population numbers
-void wake(int day) 
+void wake(int day, int t_wake2) 
 {
-	double prob = 1.0 / (1.0 + pa.t_wake2 - (day%365)); // probability of a female waking on a given day
+	double prob = 1.0 / (1.0 + t_wake2 - (day%365)); // probability of a female waking on a given day
 	for (int pat=0; pat < sites.size(); ++pat) {
 		for (int i=0; i < num_gen; ++i) {
 			for(int j=0; j < num_gen; ++j) {
@@ -600,39 +735,39 @@ void wake(int day)
 }
 
 // Updates the juvenile survival probability on the given day in each site
-void update_comp() 
+void update_comp(double mu_j, double alpha0, double mean_dev) 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].comp = (1 - pa.mu_j) * std::pow(pa.alpha0 / (pa.alpha0 + sites[pat].tot_J), 1.0 / pa.mean_dev);
+		sites[pat].comp = (1 - mu_j) * std::pow(alpha0 / (alpha0 + sites[pat].tot_J), 1.0 / mean_dev);
 	}
 }
 
 // Updates the mating rate parameter in each site
-void update_mate() 
+void update_mate(double beta) 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].mate_rate = sites[pat].tot_M / (pa.beta + sites[pat].tot_M);
+		sites[pat].mate_rate = sites[pat].tot_M / (beta + sites[pat].tot_M);
 	}
 }
 
 // Sets the values of the f_{ijk} fraction for the gene drive considering r2 resistant alleles
 // f_{ijk} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j
-void set_inheritance() 
+void set_inheritance(double gamma, double xi, double e) 
 {
 	// fraction of genotypes with index 0: ww, 1: wd, 2: dd, 3: wr, 4: rr, 5: dr
 	std::array<double, 6> f_ww_ww = {1, 0, 0, 0, 0, 0};
-	std::array<double, 6> f_ww_wd = {(1 - pa.e - pa.gamma) * 0.5, (1 + pa.e) * 0.5, 0, pa.gamma * 0.5, 0, 0};
+	std::array<double, 6> f_ww_wd = {(1 - e - gamma) * 0.5, (1 + e) * 0.5, 0, gamma * 0.5, 0, 0};
 	std::array<double, 6> f_ww_dd = {0, 1, 0, 0, 0, 0};
 	std::array<double, 6> f_ww_wr = {0.5, 0, 0, 0.5, 0, 0};
 	std::array<double, 6> f_ww_rr = {0, 0, 0, 1, 0, 0};
 	std::array<double, 6> f_ww_dr = {0, 0.5, 0, 0.5, 0, 0};
 
-	std::array<double, 6> f_wd_ww = {(1 - pa.xi)*(1 - pa.e - pa.gamma)*0.5, (1 - pa.xi)*(1 + pa.e)*0.5, 0, (1 - pa.xi)*pa.gamma*0.5, 0, 0};
-	std::array<double, 6> f_wd_wd = {(1 - pa.xi)*(1 - pa.e - pa.gamma)*(1 - pa.e - pa.gamma)* 0.25, (1 - pa.xi)*(1 - pa.e - pa.gamma)*(1 + pa.e)*0.5, (1 - pa.xi)*(1 + pa.e)*(1 + pa.e)*0.25, (1 - pa.xi)*(1 - pa.e - pa.gamma)*pa.gamma*0.5, (1 - pa.xi)*pa.gamma*pa.gamma*0.25, (1 - pa.xi)*(1 + pa.e)*pa.gamma*0.5};
-	std::array<double, 6> f_wd_dd = {0, (1 - pa.xi)*(1 - pa.e - pa.gamma)*0.5, (1 - pa.xi)*(1 + pa.e)*0.5, 0, 0, (1-pa.xi)*pa.gamma*0.5};
-	std::array<double, 6> f_wd_wr = {(1 - pa.xi)*(1 - pa.e - pa.gamma)*0.25, (1 - pa.xi)*(1 + pa.e)*0.25, 0, (1 - pa.xi)*((1 - pa.e - pa.gamma)*0.25 + (pa.gamma * 0.25)), (1 - pa.xi)*pa.gamma*0.25, (1 - pa.xi)*(1 + pa.e)*0.25};
-	std::array<double, 6> f_wd_rr = {0, 0, 0, (1 - pa.xi)*(1 - pa.e - pa.gamma)*0.5, (1 - pa.xi)*pa.gamma*0.5, (1 - pa.xi)*(1 + pa.e)*0.5};
-	std::array<double, 6> f_wd_dr = {0, (1 - pa.xi)*(1 - pa.e - pa.gamma)*0.25, (1 - pa.xi)*(1 + pa.e)*0.25, (1 - pa.xi)*(1 - pa.e - pa.gamma)*0.25, (1 - pa.xi)*pa.gamma*0.25, (1 - pa.xi)*((1 + pa.e)*0.25 + pa.gamma*0.25)};
+	std::array<double, 6> f_wd_ww = {(1 - xi)*(1 - e - gamma)*0.5, (1 - xi)*(1 + e)*0.5, 0, (1 - xi)*gamma*0.5, 0, 0};
+	std::array<double, 6> f_wd_wd = {(1 - xi)*(1 - e - gamma)*(1 - e - gamma)* 0.25, (1 - xi)*(1 - e - gamma)*(1 + e)*0.5, (1 - xi)*(1 + e)*(1 + e)*0.25, (1 - xi)*(1 - e - gamma)*gamma*0.5, (1 - xi)*gamma*gamma*0.25, (1 - xi)*(1 + e)*gamma*0.5};
+	std::array<double, 6> f_wd_dd = {0, (1 - xi)*(1 - e - gamma)*0.5, (1 - xi)*(1 + e)*0.5, 0, 0, (1-xi)*gamma*0.5};
+	std::array<double, 6> f_wd_wr = {(1 - xi)*(1 - e - gamma)*0.25, (1 - xi)*(1 + e)*0.25, 0, (1 - xi)*((1 - e - gamma)*0.25 + (gamma * 0.25)), (1 - xi)*gamma*0.25, (1 - xi)*(1 + e)*0.25};
+	std::array<double, 6> f_wd_rr = {0, 0, 0, (1 - xi)*(1 - e - gamma)*0.5, (1 - xi)*gamma*0.5, (1 - xi)*(1 + e)*0.5};
+	std::array<double, 6> f_wd_dr = {0, (1 - xi)*(1 - e - gamma)*0.25, (1 - xi)*(1 + e)*0.25, (1 - xi)*(1 - e - gamma)*0.25, (1 - xi)*gamma*0.25, (1 - xi)*((1 + e)*0.25 + gamma*0.25)};
 	
 	std::array<double, 6> f_dd_ww = {0, 0, 0, 0, 0, 0};
 	std::array<double, 6> f_dd_wd = {0, 0, 0, 0, 0, 0};
@@ -642,7 +777,7 @@ void set_inheritance()
 	std::array<double, 6> f_dd_dr = {0, 0, 0, 0, 0, 0};
 
 	std::array<double, 6> f_wr_ww = {0.5, 0, 0, 0.5, 0, 0};
-	std::array<double, 6> f_wr_wd = {(1 - pa.e - pa.gamma)*0.25, (1 + pa.e)*0.25, 0, (pa.gamma * 0.25 + (1 - pa.e - pa.gamma) * 0.25), pa.gamma*0.25, (1 + pa.e)*0.25};
+	std::array<double, 6> f_wr_wd = {(1 - e - gamma)*0.25, (1 + e)*0.25, 0, (gamma * 0.25 + (1 - e - gamma) * 0.25), gamma*0.25, (1 + e)*0.25};
 	std::array<double, 6> f_wr_dd = {0, 0.5, 0, 0, 0, 0.5};
 	std::array<double, 6> f_wr_wr = {0.25, 0, 0, 0.5, 0.25, 0};
 	std::array<double, 6> f_wr_rr = {0, 0, 0, 0.5, 0.5, 0};
@@ -909,3 +1044,23 @@ void check_counts(int day, char ref)
 		std::exit(1);
 	}
 }
+
+// Exception::Exception() {}
+
+// OutOfBoundsException::OutOfBoundsException(const std::string& param) : par(param){}
+
+// void OutOfBoundsException::message() 
+// {
+//     std::cout << "The parameter " << par << " is out of bounds. Please enter all the input parameters again." << std::endl;
+// }
+
+// InvalidIntervalException::InvalidIntervalException(const std::string& param1, const std::string& param2)
+// {
+//     inter1 = param1;
+//     inter2 = param2;
+// }
+
+// void InvalidIntervalException::message()
+// {
+//     std::cout << "The parameters " << inter1 << ", " << inter2 << " do not constitute a valid interval. Please enter all the input parameters again." << std::endl;
+// }
