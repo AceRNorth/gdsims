@@ -52,21 +52,16 @@ input_string = " ".join(str(i) for i in input_list)
 
 # Run C++ model with input data
 os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files")
-proc = subprocess.Popen(["C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\General.exe"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
-#outs, errs = proc.communicate(input="1 1 50 1 1 1000 200 0 1000 2 1000 5 200 0.05 0.125 0.01 0.025 100 9 0.2 0.95 0.2 0 0 0 0 0 0 100000 15 10 1 0.5")
+proc = subprocess.Popen(["C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\GeneralMetapop.exe"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
 outs, errs = proc.communicate(input=input_string)
 
 #%% Plot global output (totals) from model
-#os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files")
 os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files")
 
 totals = np.loadtxt("Totals1run2.txt", skiprows=2)
 
 times = totals[:, 0]
 total_males = totals[:, 1:]
-
-#print(times)
-#print(total_males)
 
 plt.plot(times, total_males[:, 0], label="$M_{WW}$")
 plt.plot(times, total_males[:, 1], label="$M_{WD}$")

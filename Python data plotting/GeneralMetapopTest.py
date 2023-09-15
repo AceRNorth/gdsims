@@ -22,7 +22,7 @@ for j in range(0, num_sets):
     
     # Run C++ model with input data
     os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files")
-    proc = subprocess.Popen(["C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\General.exe"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
+    proc = subprocess.Popen(["C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\GeneralMetapop.exe"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
     outs, errs = proc.communicate(input=input_string)
 
 
@@ -33,6 +33,8 @@ for j in range(0, num_sets):
 
 num_runs = 2 # later take from pd read table
 num_sets = 6 # later take from number of folders in oracle folder
+
+make_plot = True
 
 for j in range(0, num_sets):
     print("Set " + str(j+1))
@@ -48,18 +50,19 @@ for j in range(0, num_sets):
         local_oracle = np.loadtxt("LocalData" + str(j+1) + "run" + str(i+1) + ".txt", skiprows=2)
         
         # plot oracle data
-        plt.figure()
-        plt.title("Totals oracle data for " + "set " + str(j+1) + " run " + str(i+1))
-        plt.plot(times_oracle, tot_males_oracle[:, 0], label="$M_{WW}$")
-        plt.plot(times_oracle, tot_males_oracle[:, 1], label="$M_{WD}$")
-        plt.plot(times_oracle, tot_males_oracle[:, 2], label="$M_{DD}$")
-        plt.plot(times_oracle, tot_males_oracle[:, 3], label="$M_{WR}$")
-        plt.plot(times_oracle, tot_males_oracle[:, 4], label="$M_{RR}$")
-        plt.plot(times_oracle, tot_males_oracle[:, 5], label="$M_{DR}$")
-        plt.legend()
+        if make_plot:
+            plt.figure()
+            plt.title("Totals oracle data for " + "set " + str(j+1) + " run " + str(i+1))
+            plt.plot(times_oracle, tot_males_oracle[:, 0], label="$M_{WW}$")
+            plt.plot(times_oracle, tot_males_oracle[:, 1], label="$M_{WD}$")
+            plt.plot(times_oracle, tot_males_oracle[:, 2], label="$M_{DD}$")
+            plt.plot(times_oracle, tot_males_oracle[:, 3], label="$M_{WR}$")
+            plt.plot(times_oracle, tot_males_oracle[:, 4], label="$M_{RR}$")
+            plt.plot(times_oracle, tot_males_oracle[:, 5], label="$M_{DR}$")
+            plt.legend()
         
         # import test data
-        os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Test oracle data\\Set" + str(j+1))
+        os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files")
         totals_test = np.loadtxt("Totals" + str(j+1) + "run" + str(i+1) + ".txt", skiprows=2)
         times_test = totals_test[:, 0]
         tot_males_test = totals_test[:, 1:]
@@ -69,15 +72,16 @@ for j in range(0, num_sets):
         local_test = np.loadtxt("LocalData" + str(j+1) + "run" + str(i+1) + ".txt", skiprows=2)
         
         # plot test data
-        plt.figure()
-        plt.title("Totals test data for " + "set " + str(j+1) + " run " + str(i+1))
-        plt.plot(times_test, tot_males_test[:, 0], label="$M_{WW}$")
-        plt.plot(times_test, tot_males_test[:, 1], label="$M_{WD}$")
-        plt.plot(times_test, tot_males_test[:, 2], label="$M_{DD}$")
-        plt.plot(times_test, tot_males_test[:, 3], label="$M_{WR}$")
-        plt.plot(times_test, tot_males_test[:, 4], label="$M_{RR}$")
-        plt.plot(times_test, tot_males_test[:, 5], label="$M_{DR}$")
-        plt.legend()
+        if make_plot:
+            plt.figure()
+            plt.title("Totals test data for " + "set " + str(j+1) + " run " + str(i+1))
+            plt.plot(times_test, tot_males_test[:, 0], label="$M_{WW}$")
+            plt.plot(times_test, tot_males_test[:, 1], label="$M_{WD}$")
+            plt.plot(times_test, tot_males_test[:, 2], label="$M_{DD}$")
+            plt.plot(times_test, tot_males_test[:, 3], label="$M_{WR}$")
+            plt.plot(times_test, tot_males_test[:, 4], label="$M_{RR}$")
+            plt.plot(times_test, tot_males_test[:, 5], label="$M_{DR}$")
+            plt.legend()
         
         # compare
         print("Test results for " + "set " + str(j+1) + " run " + str(i+1) + ":")

@@ -1,4 +1,5 @@
-#include "headGen.h"
+#include <filesystem>
+#include "GeneralMetapop.h"
 
 // random number seed
 std::random_device rd;
@@ -57,8 +58,8 @@ int main()
 
 	std::cin >> pa.side;
 
-	// // input parameters
-	// // progression parameters
+	// input parameters
+	// progression parameters
 	// int num_runs;
 	// int max_t; 
 
@@ -145,18 +146,6 @@ int main()
 	// 		std::cin >> run_label;
 
 	// 		// input validation
-	// 		//if (rec_start > max_t) throw 0; // no local recording exception
-	// 		//if (max_t - rec_interval_local - rec_start < 0) throw 0;
-	// 		if (rec_start >= rec_end) throw InvalidIntervalException("rec_start", "rec_end"); // invalid interval exception
-	// 		if (psi > 0) {
-	// 			if (t_hide1 >= t_hide2) throw InvalidIntervalException("t_hide1", "t_hide2");
-	// 			if (t_wake1 >= t_wake2) throw InvalidIntervalException("t_wake1", "t_wake2");
-	// 		}
-	// 		//if (num_driver_sites > num_pat) throw 2; // reduced gene drive exception
-	// 		//if ((num_driver_sites == 0 && num_driver_M != 0) || (num_driver_M == 0 && num_driver_M != 0)) throw 3; // no gene drive
-	// 		//if ((disp_rate == 0 && max_disp != 0) || (max_disp == 0 && disp_rate != 0)) throw 4; // no dispersal
-	// 		//if ((psi == 0 && mu_aes != 0) || (mu_aes == 0 && psi != 0)) throw 5; // no aestivation
-
 	// 		if (num_runs <= 0) throw OutOfBoundsException("num_runs");
 	// 		if (max_t <= 0) throw OutOfBoundsException("max_t");
 	// 		if (num_pat <= 0) throw OutOfBoundsException("num_pat");
@@ -175,7 +164,7 @@ int main()
 	// 		if (num_driver_M < 0) throw OutOfBoundsException("num_driver_M");
 	// 		if (num_driver_sites < 0) throw OutOfBoundsException("num_driver_sites");
 	// 		if (disp_rate < 0 || disp_rate > 1) throw OutOfBoundsException("disp_rate");
-	// 		if (max_disp <= 0) throw OutOfBoundsException("max_disp");
+	// 		if (max_disp <= 0 || max_disp > side) throw OutOfBoundsException("max_disp");
 	// 		if (psi < 0 || psi > 1) throw OutOfBoundsException("psi");
 	// 		if (mu_aes < 0 || mu_aes > 1) throw OutOfBoundsException("mu_aes");
 	// 		if (psi > 0) {
@@ -191,6 +180,43 @@ int main()
 	// 		if (rec_sites_freq < 1) throw OutOfBoundsException("rec_sites_freq");
 	// 		if (set_label < 0) throw OutOfBoundsException("set_label");
 	// 		if (run_label < 0) throw OutOfBoundsException("run_label");
+
+	// 		if (rec_start >= rec_end) throw InvalidIntervalException("rec_start", "rec_end"); // invalid interval exception
+	// 		if (psi > 0) {
+	// 			if (t_hide1 >= t_hide2) throw InvalidIntervalException("t_hide1", "t_hide2");
+	// 			if (t_wake1 >= t_wake2) throw InvalidIntervalException("t_wake1", "t_wake2");
+	// 		}
+
+	// 		if (num_driver_sites > num_pat) {
+	// 			std::cout << "Warning: num_driver_sites > num_pat. ";
+	// 			std::cout << "This simulation will have reduced gene drive release sites num_driver_sites = num_pat." << std::endl;
+	// 		}
+	// 		if (driver_start > max_t || num_driver_sites == 0 || num_driver_M == 0) {
+	// 			std::cout << "Warning: num_driver_sites or num_driver_M = 0, or driver_start > max_t. ";
+	// 			std::cout << "This simulation will not include gene drive." << std::endl;
+	// 			std::cout << "Inheritance parameters xi, e and gamma will have no effect." << std::endl;
+	// 		} 
+	// 		if (disp_rate == 0 || max_disp == 0) {
+	// 			std::cout << "Warning: disp_rate or max_disp = 0. This simulation will not include dispersal." << std::endl;
+	// 		} 
+	// 		if (max_disp > side/2) {
+	// 			std::cout << "Warning: max_disp > side/2." << std::endl;
+	// 		}
+	// 		if (t_hide1 > max_t || t_hide2 > max_t || t_wake1 > max_t || t_wake2 > max_t) {
+	// 			std::cout << "Warning: the aestivation interval times are larger than max_t. ";
+	// 			std::cout << "This simulation will only run partly through the aestivation period." << std::endl;
+	// 		}
+	// 		if (psi == 0) {
+	// 			std::cout << "Warning: psi = 0. This simulation will not include aestivation." << std::endl;
+	// 		} 
+
+	// 		if (rec_start > max_t) {
+	// 			std::cout << "Warning: rec_start > max_t. This simulation will not include local recording." << std::endl;
+	// 		}
+	// 		if (max_t - rec_interval_local - rec_start < 0) {
+	// 			std::cout << "Warning: the interval between rec_start and max_t is larger than rec_interval_local. ";
+	// 			std::cout << "This simulation will only record local data for day 0." << std::endl;
+	// 		}
 
 	// 		invalid_input = false;
 	// 	}
@@ -246,6 +272,9 @@ void run_reps(int n)
 // Creates output files with headers
 void create_files(int set_label, int run_label) 
 {
+	std::filesystem::path output_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files";
+	std::filesystem::current_path(output_path);
+	
 	os1 << "LocalData" << set_label << "run" << run_label << ".txt"; 
 	local_data.open(os1.str());
 	os2 << "Totals" << set_label << "run" << run_label << ".txt";
@@ -401,11 +430,7 @@ void run_model(int max_time, int driver_start, int rec_interval_global, int rec_
 	for(int tt=0; tt <= max_time; ++tt) { // current day of the simulation 
 		// gene drive release
 		int rel_time = driver_start;
-		if (tt == rel_time) {
-			int num_rel_sites = std::min(pa.num_pat, in.num_driver_sites);
-			std::vector<int> rel_patches = select_driver_sites(num_rel_sites);
-			put_driver_sites(rel_patches, in.num_driver_M);
-		}
+		if (tt == rel_time) release_gene_drive(in.num_driver_M, in.num_driver_sites);
 
 		if (tt > 0) run_step(tt, pa.t_hide1, pa.t_hide2, pa.t_wake1, pa.t_wake2, pa.psi);
 
@@ -419,6 +444,13 @@ void run_model(int max_time, int driver_start, int rec_interval_global, int rec_
 			record_local(tt, in.rec_sites_freq);
 		}
 	}
+}
+
+void release_gene_drive(int num_driver_M, int num_driver_sites)
+{
+	int num_rel_sites = std::min(pa.num_pat, num_driver_sites);
+	std::vector<int> rel_patches = select_driver_sites(num_rel_sites);
+	put_driver_sites(rel_patches, num_driver_M);
 }
 
 // Selects random sites for release of the gene drive
@@ -492,7 +524,7 @@ void run_step(int day, int t_hide1, int t_hide2, int t_wake1, int t_wake2, doubl
 	adults_die(pa.mu_a);
 	virgins_mate();
 	adults_disperse(pa.disp_rate);
-	lay_eggs(pa.theta);
+	lay_eggs(pa.theta, pa.dev_duration_probs);
 	juv_eclose();
 	if (day%365 > t_hide1 && day%365 <= t_hide2 && psi > 0.00001) hide(pa.psi, pa.mu_aes);
 	if (day%365 > t_wake1 && day%365 <= t_wake2 && psi > 0.00001) wake(day, pa.t_wake2);
@@ -503,37 +535,33 @@ void run_step(int day, int t_hide1, int t_hide2, int t_wake1, int t_wake2, doubl
 // Ages the juvenile population in different age groups by a day
 void juv_get_older() 
 {
-	std::array<long long int, num_gen> j_tot_gens;
+	// reset totals
+	to.tot_J = 0;
 	for (int i=0; i < num_gen; ++i) {
-		j_tot_gens[i] = 0; 
+		to.J[i] = 0;
+	}
+	for (int pat=0; pat < sites.size(); ++pat) {
+		sites[pat].tot_J = 0;
 	}
 
-	long long int j_tot = 0;
 	for (int pat=0; pat < sites.size(); ++pat) {
-		long long int j_pat = 0;
 		for (int i=0; i < num_gen; ++i) {
 			for (int a=0; a < max_dev; ++a) {
 				// number of juveniles that survive aging by a day are placed into the new older age group	
 				sites[pat].J[i][a] = random_binomial(sites[pat].J[i][a+1], sites[pat].comp);
-				j_pat += sites[pat].J[i][a];
-				j_tot_gens[i] += sites[pat].J[i][a];
+				sites[pat].tot_J += sites[pat].J[i][a];
+				to.J[i] += sites[pat].J[i][a];
 			}
 		}
-		
-		sites[pat].tot_J = j_pat;
-		j_tot += j_pat;
-
 		// youngest ones have all aged by one day so none left in this age group
 		for (int i=0; i < num_gen; ++i) {
 			sites[pat].J[i][max_dev] = 0;
+			sites[pat].tot_J += sites[pat].J[i][max_dev];
+			to.J[i] += sites[pat].J[i][max_dev];
 		} 
+		
+		to.tot_J += sites[pat].tot_J;
 	}
-
-	// updating totals
-	for (int i=0; i < num_gen; ++i) {
-		to.J[i] = j_tot_gens[i];
-	}
-	to.tot_J = j_tot;
 }
 
 // Selects the number of adults that die in the given day and updates population numbers
@@ -566,18 +594,12 @@ void adults_die(double mu_a)
 void virgins_mate() 
 {
 	std::array<long long int, num_gen> v;
-	std::vector<double> m(num_gen);
 	std::vector<long long int> v_c;
 	for (int pat=0; pat < sites.size(); ++pat) {
 		for (int i=0; i < num_gen; ++i) {
-			m[i] = sites[pat].M[i];
-		}
-
-		for (int i=0; i < num_gen; ++i) {
 			v[i] = random_binomial(sites[pat].V[i], sites[pat].mate_rate); // how many V will mate
-
 			if (v[i] > 0) {
-				v_c = random_multinomial(v[i], m); // how many V with given genotype will carry each of the male genotypes
+				v_c = random_multinomial(v[i], sites[pat].M); // how many V with given genotype will carry each of the male genotypes
 				for (int j=0; j < num_gen; j++) {
 					sites[pat].F[i][j] += v_c[j];
 				}
@@ -595,11 +617,19 @@ void virgins_mate()
 // Selects and updates the number of adults that disperse from and to each patch, depending on the patch connectivities
 void adults_disperse(double disp_rate) 
 {
-	// const int num_pats = sites.size();
+	// reset values
+	for (int pat=0; pat < sites.size(); ++pat) {
+		for (int i=0; i < num_gen; ++i) {
+			sites[pat].move_M[i] = 0;
+
+			for (int j=0; j < num_gen; ++j) {
+				sites[pat].move_F[i][j] = 0;
+			}
+		}
+	}
+
 	if (sites.size() > 1) {
 		// number of adults dispersing from each patch
-		// std::array<std::array<long long int, num_gen>, num_pats> m_from;
-		// std::array<std::array<std::array<long long int, num_gen>, num_gen>, num_pats> f_from;
 		for (int pat=0; pat < sites.size(); ++pat) {
 			for (int i=0; i < num_gen; ++i) {
 				// if (sites[pat].connec_indices > 0) // include this if de-activate self-dispersal
@@ -619,7 +649,7 @@ void adults_disperse(double disp_rate)
 		std::vector<long long int> f_disp;
 		for (int pat=0; pat < sites.size(); ++pat) {
 			for (int i=0; i < num_gen; ++i) {
-				// how many males will disperse to each of the connected patches for the given patch
+				// how many males (for each genotype) will disperse to each of the connected patches for the given patch
 				if (sites[pat].move_M[i] > 0) {
 					m_disp = random_multinomial(sites[pat].move_M[i], sites[pat].connec_weights);
 					for (int new_pat=0; new_pat < m_disp.size(); ++new_pat) {
@@ -637,29 +667,12 @@ void adults_disperse(double disp_rate)
 				}
 			}
 		}
-
-		// reset values
-		for (int pat=0; pat < sites.size(); ++pat) {
-			for (int i=0; i < num_gen; ++i) {
-				sites[pat].move_M[i] = 0;
-
-				for (int j=0; j < num_gen; ++j) {
-					sites[pat].move_F[i][j] = 0;
-				}
-			}
-		}
-
 	}
 }
 
 // Calculates the number of eggs laid on the given day and updates the number of juveniles, depending on egg survival rates
-void lay_eggs(double theta) 
+void lay_eggs(double theta, const std::array<double, max_dev+1>& dev_duration_probs) 
 {
-	std::vector<double> j_probs(max_dev + 1);
-	for (int i=0; i < max_dev + 1; ++i) {
-		j_probs[i] = pa.dev_duration_probs[i];
-	}
-
 	std::vector<long long int> j_new;
 	for (int pat=0; pat < sites.size(); ++pat) {
 		for (int i=0; i < num_gen; ++i) {
@@ -668,7 +681,7 @@ void lay_eggs(double theta)
 					double num = theta * sites[pat].F[i][j] * pa.f[i][j][k]; // expected number of eggs laid with k genotype
 					long long int eggs = random_poisson(num); // actual number of eggs laid sampled from random distribution
 
-					j_new = random_multinomial(eggs, j_probs); // number of eggs that start in each different age class (according to different juvenile development times)
+					j_new = random_multinomial(eggs, dev_duration_probs); // number of eggs that start in each different age class (according to different juvenile development times)
 					for (int t=0; t < max_dev + 1; ++t) { // juveniles created with assigned remaining time to develop
 						sites[pat].J[k][t] += j_new[t];
 					}
@@ -957,7 +970,57 @@ std::vector<long long int> random_multinomial(long long int n, const std::vector
 
 	long long int n_used = n;
 	std::vector<long long int> result(num_outcomes, 0);
-	for(int i=0; i < num_outcomes; ++i) {
+	for (int i=0; i < num_outcomes; ++i) {
+		if (n_used > 0) {
+			result[i] = random_binomial(n_used, probs[i] / sum_p);
+			sum_p -= probs[i];
+			n_used -= result[i];
+		}
+		else {
+			result[i] = 0;
+		}
+	}
+
+	return result;
+}
+
+// Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities <probs>
+std::vector<long long int> random_multinomial(long long int n, const std::array<long long int, num_gen>& probs) 
+{
+	int num_outcomes = probs.size();
+	long long int sum_p = 0.0;
+	for (int i = 0; i < num_outcomes; ++i) {
+		sum_p += probs[i];
+	}
+
+	long long int n_used = n;
+	std::vector<long long int> result(num_outcomes, 0);
+	for (int i=0; i < num_outcomes; ++i) {
+		if (n_used > 0) {
+			result[i] = random_binomial(n_used, probs[i] / sum_p);
+			sum_p -= probs[i];
+			n_used -= result[i];
+		}
+		else {
+			result[i] = 0;
+		}
+	}
+
+	return result;
+}
+
+// Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities <probs>
+std::vector<long long int> random_multinomial(long long int n, const std::array<double, max_dev+1>& probs) 
+{
+	int num_outcomes = probs.size();
+	double sum_p = 0.0;
+	for (int i = 0; i < num_outcomes; ++i) {
+		sum_p += probs[i];
+	}
+
+	long long int n_used = n;
+	std::vector<long long int> result(num_outcomes, 0);
+	for (int i=0; i < num_outcomes; ++i) {
 		if (n_used > 0) {
 			result[i] = random_binomial(n_used, probs[i] / sum_p);
 			sum_p -= probs[i];
@@ -1045,22 +1108,89 @@ void check_counts(int day, char ref)
 	}
 }
 
-// Exception::Exception() {}
-
-// OutOfBoundsException::OutOfBoundsException(const std::string& param) : par(param){}
-
-// void OutOfBoundsException::message() 
+// Record::Record(RecordParams* rec_params) 
 // {
-//     std::cout << "The parameter " << par << " is out of bounds. Please enter all the input parameters again." << std::endl;
+// 	rec = rec_params;
+
+// 	std::filesystem::path output_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files";
+// 	std::filesystem::current_path(output_path);
+	
+// 	my_os1 << "LocalData" << rec->set_label << "run" << rec->run_label << ".txt"; 
+// 	my_local_data.open(my_os1.str());
+// 	my_os2 << "Totals" << rec->set_label << "run" << rec->run_label << ".txt";
+// 	my_global_data.open(my_os2.str());
+// 	my_os3 << "CoordinateList" << rec->set_label << "run" << rec->run_label << ".txt";
+// 	my_coord_list.open(my_os3.str());
+
+// 	my_local_data << "Male populations of each genotype at each site\n";
+// 	my_local_data << "Day" << "\t" << "Site" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
+
+// 	my_global_data << "Total males of each genotype\n";
+// 	my_global_data << "Day" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
+
+// 	my_coord_list << "Coordinate list of the sites\n";
+// 	my_coord_list << "Site" << "\t" << "x" << "\t" << "y" << std::endl;
 // }
 
-// InvalidIntervalException::InvalidIntervalException(const std::string& param1, const std::string& param2)
+// Record::~Record() 
 // {
-//     inter1 = param1;
-//     inter2 = param2;
+// 	my_os1.str("");
+// 	my_os1.clear();
+// 	my_os2.str("");
+// 	my_os2.clear();
+// 	my_os3.str("");
+// 	my_os3.clear();
+
+// 	my_local_data.close();
+// 	my_global_data.close();
+// 	my_coord_list.close();
+
+// 	rec->run_label++;
 // }
 
-// void InvalidIntervalException::message()
+// void Record::my_record_local(int day, int sites_size) 
 // {
-//     std::cout << "The parameters " << inter1 << ", " << inter2 << " do not constitute a valid interval. Please enter all the input parameters again." << std::endl;
+// 	for (int pat=0; pat < sites_size; pat += rec->rec_sites_freq) {
+// 		my_local_data << day << "\t" << pat+1;
+// 		for (const auto& m_gen : sites[pat].M) {
+// 			my_local_data << "\t" << m_gen;
+// 		}
+// 		my_local_data << std::endl;
+// 	}
 // }
+
+// void Record::my_record_coords() 
+// {
+// 	for (int pat=0; pat < sites.size(); pat += rec->rec_sites_freq) {
+// 		my_coord_list << pat+1 << "\t" << sites[pat].coords[0] << "\t" << sites[pat].coords[1] << std::endl;
+// 	}
+// }
+
+// void Record::my_record_global(int day) 
+// {
+// 	my_global_data << day;
+// 	for (const auto& m_gen : to.M) {
+// 		my_global_data << "\t" << m_gen;
+// 	}
+// 	my_global_data << std::endl;
+// }
+
+Exception::Exception() {}
+
+OutOfBoundsException::OutOfBoundsException(const std::string& param) : par(param){}
+
+void OutOfBoundsException::message() 
+{
+    std::cout << "The parameter " << par << " is out of bounds. Please enter all the input parameters again." << std::endl;
+}
+
+InvalidIntervalException::InvalidIntervalException(const std::string& param1, const std::string& param2)
+{
+    inter1 = param1;
+    inter2 = param2;
+}
+
+void InvalidIntervalException::message()
+{
+    std::cout << "The parameters " << inter1 << ", " << inter2 << " do not constitute a valid interval. Please enter all the input parameters again." << std::endl;
+}
