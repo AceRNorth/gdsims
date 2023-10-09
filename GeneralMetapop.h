@@ -16,7 +16,7 @@ const int max_dev = 20; // juvenile development time (egg to adult) expressed as
 const int num_gen = 6; // number of different genotypes in the mosquito population
 // const long long int LONG_MAX=3147483647000;
 
-void run_reps(int n); 
+//void run_reps(int n); 
 void initiate(int pats, double side); 
 void populate_sites();
 void set_connec(double side, double max_disp);
@@ -32,11 +32,11 @@ void put_driver_sites(const std::vector<int>& patches, int num_driver_M);
 
 // Recording functions
 
-void create_files(int set_label, int run_label);
-void close_files();
-void record_coords(int rec_sites_freq); 
-void record_global(int day); 
-void record_local(int day, int rec_sites_freq); 
+// void create_files(int set_label, int run_label);
+// void close_files();
+// void record_coords(int rec_sites_freq); 
+// void record_global(int day); 
+// void record_local(int day, int rec_sites_freq); 
 
 // Population processes (controlled from run_step)
 
@@ -51,7 +51,7 @@ void wake(int day, int t_wake2);
 void update_comp(double mu_j, double alpha0, double mean_dev);
 void update_mate(double beta);
 
-void set_inheritance(double gamma, double xi, double e);
+//void set_inheritance(double gamma, double xi, double e);
 void check_counts(int day, char ref); 
 
 double distance(double side, std::array<double, 2> point1, std::array<double, 2> point2);
@@ -168,20 +168,7 @@ struct Pars {
 	int run_label; // 'run' index label in given set of runs for output files
 };
 
-// class Record {
-// public:
-// 	Record(RecordParams* rec_params);
-// 	~Record();
-// 	void my_record_local(int day, int sites_size);
-// 	void my_record_global(int day);
-// 	void my_record_coords();
-
-// private:
-// 	std::ostringstream my_os1, my_os2, my_os3; // for filenames
-// 	std::ofstream my_local_data, my_global_data, my_coord_list; // file objects
-// 	RecordParams* rec;
-// };
-
+// New classes
 
 // Model progression parameters
 struct ProgressionParams {
@@ -197,13 +184,13 @@ struct AreaParams {
 
 // Model life-process parameters
 struct LifeParams {
-	double mu_j; // juvenile density independent mortality rate per day
-	double mu_a; // adult mortality rate per day
-	double beta; // parameter that controls mating rate
-	double theta; // average egg laying rate of wildtype females (eggs per day)
-	double alpha0; // baseline contribution to carrying capacity
-	double mean_dev; // mean juvenile development time (in days)
-	int min_dev; // minimum development time for a juvenile (in days)
+	const double mu_j; // juvenile density independent mortality rate per day
+	const double mu_a; // adult mortality rate per day
+	const double beta; // parameter that controls mating rate
+	const double theta; // average egg laying rate of wildtype females (eggs per day)
+	const double alpha0; // baseline contribution to carrying capacity
+	const double mean_dev; // mean juvenile development time (in days)
+	const int min_dev; // minimum development time for a juvenile (in days)
 };
 
 // Gene drive inheritance parameters
@@ -255,7 +242,60 @@ struct RecordParams {
 
 	// output filename labels
 	const int set_label; // 'set of runs' index label for output files
-	static int run_label; // 'run' index label in given set of runs for output files
+	const int run_label; // 'run' index label in given set of runs for output files
+};
+
+class SimController {
+public:
+	SimController(ProgressionParams &prog, AreaParams &area, LifeParams &life, InheritanceParams &inher,
+ 		ReleaseParams &rel, DispersalParams &disp, AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec); 
+	void run_sim();
+
+private:
+	int my_num_runs; // number of simulation replicates to run
+	int my_max_t; // maximum simulated time (in days)
+	
+	AreaParams *area_params;
+	LifeParams *life_params;
+	InheritanceParams *inher_params;
+	ReleaseParams *rel_params;
+	DispersalParams *disp_params;
+	AestivationParams *aes_params; 
+	InitialPopsParams *initial_params;
+	RecordParams *rec_params;
+
+	std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> f;
+
+	void my_set_inheritance(); // set-up inheritance architecture of simulation (for all Models)
+	void initiate_sim(); // set-up simulation - set-up inheritance architecture etc
+	void my_run_reps(int n);
+};
+
+
+class Record {
+public:
+	Record(const RecordParams &rec);
+	void create_files();
+	void close_files();
+	void record_local(int day, int sites_size);
+	void record_global(int day);
+	void record_coords();
+
+	static int my_run_label; // 'run' index label in given set of runs for output files
+
+private:
+	// recording window and intervals
+	int my_rec_start; // start time for the data recording window (in days) (non-inclusive)
+	int my_rec_end; // end time for the data recording window (in days) (inclusive)
+	int my_rec_interval_global; // time interval for global data recording/output
+	int my_rec_interval_local; // time interval at which to collect/record local data (in days)
+	int my_rec_sites_freq; // fraction of sites to collect local data for (1 is all sites, 10 is 1 in 10 etc)
+
+	// output filename labels
+	int my_set_label; // 'set of runs' index label for output files
+
+	std::ostringstream my_os1, my_os2, my_os3; // for filenames
+	std::ofstream my_local_data, my_global_data, my_coord_list; // file objects
 };
 
 class Exception {
@@ -281,4 +321,5 @@ public:
 private:
     std::string inter1;
     std::string inter2;
+	
 };
