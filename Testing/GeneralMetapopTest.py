@@ -10,7 +10,7 @@ num_sets = 6
 
 for j in range(0, num_sets):
     # Read input parameter set from .csv file
-    params = pd.read_table("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\Parameters.csv", delimiter=",")
+    params = pd.read_table("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\Parameters - new layout.csv", delimiter=",")
     labels = params[["Parameter"]]
     labels = labels.drop(index=0)
     input_data = params[["set " + str(j+1)]]

@@ -4,41 +4,6 @@ import subprocess
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-# set_label = 0 
-# run_label = 0 
-# num_pat = 0 
-# rec_sites_freq = 0 
-# rec_interval_global = 0 
-# max_t = 0 
-# rec_interval_local = 0 
-# rec_start = 0 
-# rec_end = 0 
-# num_reps = 0 
-# num_driver_M = 0 
-# num_driver_sites = 0 
-# driver_start = 0 
-# mu_j = 0 
-# mu_a = 0 
-# disp_rate = 0 
-# gamma = 0 
-# beta = 0
-# theta = 0 
-# xi = 0 
-# e = 0 
-# max_disp = 0 
-# psi = 0 
-# mu_aes = 0 
-# t_hide1 = 0
-# t_hide2 = 0  
-# t_wake1 = 0 
-# t_wake2 = 0 
-# alpha0 = 0 
-# mean_dev = 0
-# min_dev = 0 
-# side = 0 
-# central_radius = 0 
-
 #%% Read input parameter set from .csv file
 params = pd.read_table("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\Parameters.csv", delimiter=",")
 labels = params[["Parameter"]]

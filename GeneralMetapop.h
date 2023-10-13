@@ -14,15 +14,12 @@
 
 const int max_dev = 20; // juvenile development time (egg to adult) expressed as days left till eclosion (eclosion on day 0)
 const int num_gen = 6; // number of different genotypes in the mosquito population
-// const long long int LONG_MAX=3147483647000;
 
-//void run_reps(int n); 
 void initiate(int pats, double side); 
 void populate_sites();
 void set_connec(double side, double max_disp);
 void set_dev_duration_probs(int min_time, int max_time);
-void run_model(int max_time, int driver_start, int rec_interval_global, int rec_start, int rec_end, int rec_interval_local);
-void run_step(int day, int t_hide1, int t_hide2, int t_wake1, int t_wake2, double psi);
+void run_step(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f, int t_hide1, int t_hide2, int t_wake1, int t_wake2, double psi);
 
 // Gene drive functions
 
@@ -30,29 +27,20 @@ void release_gene_drive(int num_driver_M, int num_driver_sites);
 std::vector<int> select_driver_sites(int num_driver_sites);
 void put_driver_sites(const std::vector<int>& patches, int num_driver_M);
 
-// Recording functions
-
-// void create_files(int set_label, int run_label);
-// void close_files();
-// void record_coords(int rec_sites_freq); 
-// void record_global(int day); 
-// void record_local(int day, int rec_sites_freq); 
-
 // Population processes (controlled from run_step)
 
 void juv_get_older();
 void adults_die(double mu_a);
 void virgins_mate();
 void adults_disperse(double disp_rate);
-void lay_eggs(double theta, const std::array<double, max_dev+1>& dev_duration_probs);
+void lay_eggs(double theta, const std::array<double, max_dev+1>& dev_duration_probs, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f);
 void juv_eclose();
 void hide(double psi, double mu_aes);
 void wake(int day, int t_wake2);
 void update_comp(double mu_j, double alpha0, double mean_dev);
 void update_mate(double beta);
 
-//void set_inheritance(double gamma, double xi, double e);
-void check_counts(int day, char ref); 
+//void check_counts(int day, char ref); 
 
 double distance(double side, std::array<double, 2> point1, std::array<double, 2> point2);
 
@@ -271,17 +259,12 @@ private:
 	void my_run_reps(int n);
 };
 
-
 class Record {
 public:
-	Record(const RecordParams &rec);
-	void create_files();
-	void close_files();
+	Record(RecordParams &rec_params, int run_label);
 	void record_local(int day, int sites_size);
 	void record_global(int day);
 	void record_coords();
-
-	static int my_run_label; // 'run' index label in given set of runs for output files
 
 private:
 	// recording window and intervals
@@ -293,6 +276,7 @@ private:
 
 	// output filename labels
 	int my_set_label; // 'set of runs' index label for output files
+	int my_run_label; // 'run' index label in given set of runs for output files
 
 	std::ostringstream my_os1, my_os2, my_os3; // for filenames
 	std::ofstream my_local_data, my_global_data, my_coord_list; // file objects
