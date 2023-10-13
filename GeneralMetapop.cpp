@@ -895,12 +895,14 @@ SimController::SimController(ProgressionParams &prog, AreaParams &area, LifePara
 	rec_params = &rec;
 }
 
+// Runs the simulation
 void SimController::run_sim()
 {
 	initiate_sim();
 	my_run_reps(my_num_runs);
 }
 
+// Sets up the model architecture for the simulation
 void SimController::initiate_sim()
 {
 	my_set_inheritance();
@@ -1024,7 +1026,7 @@ void SimController::my_run_reps(int n)
 
 		data.record_coords();
 		
-		// previous run_model() - Runs the simulation once for simulated time max_time
+		// previous run_model() - runs the simulation once for simulated time max_time
 		for(int tt=0; tt <= my_max_t; ++tt) { // current day of the simulation 
 			// gene drive release
 			if (tt == rel_params->driver_start) release_gene_drive(rel_params->num_driver_M, rel_params->num_driver_sites);

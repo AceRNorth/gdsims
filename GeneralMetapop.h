@@ -243,19 +243,20 @@ private:
 	int my_num_runs; // number of simulation replicates to run
 	int my_max_t; // maximum simulated time (in days)
 	
-	AreaParams *area_params;
-	LifeParams *life_params;
-	InheritanceParams *inher_params;
-	ReleaseParams *rel_params;
-	DispersalParams *disp_params;
-	AestivationParams *aes_params; 
-	InitialPopsParams *initial_params;
-	RecordParams *rec_params;
+	AreaParams *area_params; // model area parameters
+	LifeParams *life_params; // model life-process parameters
+	InheritanceParams *inher_params; // gene drive inheritance parameters
+	ReleaseParams *rel_params; // gene drive release model parameters
+	DispersalParams *disp_params; // dispersal model parameters
+	AestivationParams *aes_params; // aestivation model parameters
+	InitialPopsParams *initial_params; // initial population values
+	RecordParams *rec_params; // data-recording parameters
 
+	// f_ijk is the fraction of genotype k offspring from mother with genotype i mated to father with genotype j
 	std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> f;
 
-	void my_set_inheritance(); // set-up inheritance architecture of simulation (for all Models)
-	void initiate_sim(); // set-up simulation - set-up inheritance architecture etc
+	void my_set_inheritance(); 
+	void initiate_sim();
 	void my_run_reps(int n);
 };
 
@@ -278,7 +279,7 @@ private:
 	int my_set_label; // 'set of runs' index label for output files
 	int my_run_label; // 'run' index label in given set of runs for output files
 
-	std::ostringstream my_os1, my_os2, my_os3; // for filenames
+	std::ostringstream my_os1, my_os2, my_os3; // filenames
 	std::ofstream my_local_data, my_global_data, my_coord_list; // file objects
 };
 
@@ -294,7 +295,7 @@ public:
     void message();
 
 private:
-    std::string par;
+    std::string par; // parameter that caused the exception
 };
 
 class InvalidIntervalException: public Exception {
@@ -303,7 +304,7 @@ public:
     void message();
 
 private:
-    std::string inter1;
-    std::string inter2;
+    std::string inter1; // start of the interval
+    std::string inter2; // end of the interval
 	
 };
