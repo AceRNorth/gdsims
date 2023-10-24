@@ -44,9 +44,7 @@ for j in range(0, num_sets):
         totals_oracle = np.loadtxt("Totals" + str(j+1) + "run" + str(i+1) + ".txt", skiprows=2)
         times_oracle = totals_oracle[:, 0]
         tot_males_oracle = totals_oracle[:, 1:]
-        
         coords_oracle = np.loadtxt("CoordinateList" + str(j+1) + "run" + str(i+1) + ".txt", skiprows=2)
-        
         local_oracle = np.loadtxt("LocalData" + str(j+1) + "run" + str(i+1) + ".txt", skiprows=2)
         
         # plot oracle data
@@ -66,9 +64,7 @@ for j in range(0, num_sets):
         totals_test = np.loadtxt("Totals" + str(j+1) + "run" + str(i+1) + ".txt", skiprows=2)
         times_test = totals_test[:, 0]
         tot_males_test = totals_test[:, 1:]
-        
         coords_test = np.loadtxt("CoordinateList" + str(j+1) + "run" + str(i+1) + ".txt", skiprows=2)
-        
         local_test = np.loadtxt("LocalData" + str(j+1) + "run" + str(i+1) + ".txt", skiprows=2)
         
         # plot test data
@@ -85,7 +81,6 @@ for j in range(0, num_sets):
         
         # compare
         print("Test results for " + "set " + str(j+1) + " run " + str(i+1) + ":")
-        
         if totals_test.shape == totals_oracle.shape:
             print("Totals data array sizes are equal!")
         else:
