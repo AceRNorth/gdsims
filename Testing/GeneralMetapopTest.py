@@ -82,32 +82,32 @@ for j in range(0, num_sets):
         # compare
         print("Test results for " + "set " + str(j+1) + " run " + str(i+1) + ":")
         if totals_test.shape == totals_oracle.shape:
-            print("Totals data array sizes are equal!")
+            print("Totals data array sizes are equal")
         else:
             print("Totals data array sizes are NOT equal!")
             
         if (totals_test == totals_oracle).all():
-            print("Totals data arrays are equal!")
+            print("Totals data arrays are equal")
         else:
             print("Totals data arrays are NOT equal!")
             
             
         if coords_test.shape == coords_oracle.shape:
-            print("Coords data array sizes are equal!")
+            print("Coords data array sizes are equal")
         else:
             print("Coords data array sizes are NOT equal!")
         if (coords_test == coords_oracle).all():
-            print("Coords data arrays are equal!")
+            print("Coords data arrays are equal")
         else:
             print("Coords data arrays are NOT equal!")
             
         
         if local_test.shape == local_oracle.shape:
-            print("Local data array sizes are equal!")
+            print("Local data array sizes are equal")
         else:
             print("Local data array sizes are NOT equal!")
         if (local_test == local_oracle).all():
-            print("Local data arrays are equal!")
+            print("Local data arrays are equal")
         else:
             print("Local data arrays are NOT equal!")
             

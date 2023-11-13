@@ -222,190 +222,6 @@ int main()
 	return 0;
 }
 
-// Computes the inter-patch connectivities
-void set_connec(double side, double max_disp) 
-{
-	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].connec_indices.clear();
-		sites[pat].connec_weights.clear();
-		for (int new_pat=0; new_pat < sites.size(); ++new_pat) {
-			double dd = distance(side, sites[pat].coords, sites[new_pat].coords);
-			if (dd < max_disp) {
-				sites[pat].connec_indices.push_back(new_pat); 
-				double ww = max_disp - dd;
-				sites[pat].connec_weights.push_back(ww); 
-			}
-		}
-	}
-	
-}
-
-// Releases the gene drive mosquitoes into the simulation area
-void release_gene_drive(int num_driver_M, int num_driver_sites, int num_pat)
-{
-	int num_rel_sites = std::min(num_pat, num_driver_sites);
-	std::vector<int> rel_patches = select_driver_sites(num_rel_sites);
-	put_driver_sites(rel_patches, num_driver_M);
-}
-
-// Selects random sites for release of the gene drive
-std::vector<int> select_driver_sites(int num_driver_sites) 
-{
-	std::vector<int> rel_patches; // patches in which to release the gene drive (contains indices to the patches in Site vector)
-	while (rel_patches.size() < num_driver_sites) {
-		int rel_pat = random_discrete(0, sites.size() - 1);
-
-		// only pick unique sites within the central area to release the gene drive
-		auto is_unique = (rel_patches.end() == std::find(rel_patches.begin(), rel_patches.end(), rel_pat));
-		if (is_unique) { 
-			rel_patches.push_back(rel_pat);
-		}
-	}
-
-	return rel_patches;
-}
-
-// Adds drive heterozygous (WD) male mosquitoes to the selected sites
-void put_driver_sites(const std::vector<int>& patches, int num_driver_M) 
-{
-	for (const auto& pat : patches) {
-		if (pat >= 0 && pat < sites.size()) {
-			sites[pat].M[1] += num_driver_M;
-			sites[pat].tot_M += num_driver_M;
-
-			// updating totals
-			to.M[1] += num_driver_M;
-			to.tot_M += num_driver_M;
-		}
-	}
-
-	update_mate(pa.beta);
-}
-
-// Selects and updates the number of adults that disperse from and to each patch, depending on the patch connectivities
-void adults_disperse(double disp_rate) 
-{
-	// reset values
-	for (int pat=0; pat < sites.size(); ++pat) {
-		for (int i=0; i < num_gen; ++i) {
-			sites[pat].move_M[i] = 0;
-
-			for (int j=0; j < num_gen; ++j) {
-				sites[pat].move_F[i][j] = 0;
-			}
-		}
-	}
-
-	if (sites.size() > 1) {
-		// number of adults dispersing from each patch
-		for (int pat=0; pat < sites.size(); ++pat) {
-			for (int i=0; i < num_gen; ++i) {
-				// if (sites[pat].connec_indices > 0) // include this if de-activate self-dispersal
-				sites[pat].move_M[i] = random_binomial(sites[pat].M[i], disp_rate); // how many males will disperse from patch
-				sites[pat].M[i] -= sites[pat].move_M[i];
-				sites[pat].tot_M -= sites[pat].move_M[i];
-
-				for (int j=0; j < num_gen; ++j) {
-					sites[pat].move_F[i][j] = random_binomial(sites[pat].F[i][j], disp_rate);
-					sites[pat].F[i][j] -= sites[pat].move_F[i][j]; 
-				}
-			}
-		}
-
-		// number of adults dispersing to each patch
-		std::vector<long long int> m_disp;
-		std::vector<long long int> f_disp;
-		for (int pat=0; pat < sites.size(); ++pat) {
-			for (int i=0; i < num_gen; ++i) {
-				// how many males (for each genotype) will disperse to each of the connected patches for the given patch
-				if (sites[pat].move_M[i] > 0) {
-					m_disp = random_multinomial(sites[pat].move_M[i], sites[pat].connec_weights);
-					for (int new_pat=0; new_pat < m_disp.size(); ++new_pat) {
-						sites[sites[pat].connec_indices[new_pat]].M[i] += m_disp[new_pat];
-					}
-				}
-
-				for (int j=0; j < num_gen; ++j) {
-					if (sites[pat].move_F[i][j] > 0) {
-						f_disp = random_multinomial(sites[pat].move_F[i][j], sites[pat].connec_weights);
-						for (int new_pat=0; new_pat < f_disp.size(); ++new_pat) {
-							sites[sites[pat].connec_indices[new_pat]].F[i][j] += f_disp[new_pat];
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-// Calculates the number of mated females going into aestivation on the given day and updates the population numbers, depending on the survival rate of going into aestivation
-void hide(double psi, double mu_aes) 
-{
-	for (int pat=0; pat < sites.size(); ++pat) {
-		for (int i=0; i < num_gen; ++i) {
-			for (int j=0; j < num_gen; ++j) {
-				long long int f = random_binomial(sites[pat].F[i][j], psi); // number of females that attempt to go into aestivation
-				sites[pat].F[i][j] -= f;
-				to.F[i] -= f;
-				to.tot_F -= f;
-				sites[pat].aes_F[i][j] += random_binomial(f, 1 - mu_aes);	// number that survive going into aestivation
-			}
-		}
-	}
-}
-
-// Calculates the number of mated females coming out of aestivation on the given day and updates the population numbers
-void wake(int day, int t_wake2) 
-{
-	double prob = 1.0 / (1.0 + t_wake2 - (day%365)); // probability of a female waking on a given day
-	for (int pat=0; pat < sites.size(); ++pat) {
-		for (int i=0; i < num_gen; ++i) {
-			for(int j=0; j < num_gen; ++j) {
-				long long int f = random_binomial(sites[pat].aes_F[i][j], prob); // number of females that wake up from aestivation on the given day
-				sites[pat].F[i][j] += f;
-				to.F[i] += f;
-				to.tot_F += f;
-				sites[pat].aes_F[i][j] -= f;	
-			}
-		}
-	}
-}
-
-// Updates the mating rate parameter in each site
-void update_mate(double beta) 
-{
-	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].mate_rate = sites[pat].tot_M / (beta + sites[pat].tot_M);
-	}
-}
-
-// Returns the periodic distance between two points in the simulation area with boundaries x = side, y = side
-double distance(double side, std::array<double, 2> point1, std::array<double, 2> point2) 
-{
-	double x_dist = 0;
-	double y_dist = 0;
-	double x1 = point1[0];
-	double y1 = point1[1];
-	double x2 = point2[0];
-	double y2 = point2[1];
-
-	if (std::abs(x1 - x2) > side - std::abs(x1 - x2)) {
-		x_dist = side - std::abs(x1 - x2);
-	} 
-	else if (std::abs(x1 - x2) <= side - std::abs(x1 - x2)) {
-		x_dist = std::abs(x1 - x2);
-	}
-
-	if (std::abs(y1 - y2) > side - std::abs(y1 - y2)) {
-		y_dist = side - std::abs(y1 - y2);
-	}
-	else if (std::abs(y1 - y2) <= side - std::abs(y1 - y2)) {
-		y_dist = std::abs(y1 - y2);
-	}
-
-	return std::sqrt((x_dist * x_dist) + (y_dist * y_dist));
-}
-
 // Returns a random floating-point number from a uniform real distribution of 0.0 to 1.0
 double random_real() 
 {
@@ -779,7 +595,9 @@ void SimController::run_reps(int n)
 		
 		// previous run_model() - runs the simulation once for simulated time max_time
 		for(int tt=0; tt <= max_t; ++tt) { // current day of the simulation 
-			if (tt == rel_params->driver_start) release_gene_drive(rel_params->num_driver_M, rel_params->num_driver_sites, sites.size());
+			if (tt == rel_params->driver_start) {
+				model.release_gene_drive(rel_params->num_driver_M, rel_params->num_driver_sites, area_params->num_pat);
+			} 
 
 			if (tt > 0) {
 				model.run_step(tt, f, disp_params->disp_rate, aes_params->t_hide1, aes_params->t_hide2, aes_params->t_wake1,
@@ -817,9 +635,6 @@ Model::Model(AreaParams &area, InitialPopsParams &initial, LifeParams &life)
 	mean_dev = life.mean_dev;
 	min_dev = life.min_dev;
 
-	//my_sites.clear();
-	//my_tt = 0;
-
 	dev_duration_probs.fill(0);
 }
 
@@ -839,68 +654,22 @@ void Model::initiate()
 	sites.clear();
 
 	for (int ii=0; ii < num_pat; ++ii) {
-		Patch pp;
-
-		// set patch parameters
-		double x = random_real() * side;
-		double y = random_real() * side;
-		pp.coords = {x, y};
-
-		// clear all other patch parameter values - will become Patch constructor
-		pp.connec_indices.clear();
-		pp.connec_weights.clear();
-
-		for (int i=0; i < num_gen; ++i) {
-			for (int a=0; a < max_dev + 1; ++a) {
-				pp.J[i][a] = 0; 
-			}
-			pp.M[i] = 0;
-			pp.V[i] = 0;
-			for (int j=0; j < num_gen; ++j) {
-				pp.F[i][j] = 0;
-				pp.aes_F[i][j] = 0;
-			}
-		}
-		pp.comp = 0;
-		pp.mate_rate = 0;
-		pp.tot_J = 0;
-		pp.tot_M = 0;
-
+		Patch pp(side);
 		sites.push_back(pp);
 	}
 	
 	populate_sites();
-
 	set_dev_duration_probs(min_dev, max_dev);
 
 	set_connec(side, pa.max_disp); // Dispersal set-up
 }
 
-// Populates the local site with a (wild) mosquito population of different types (age and sex), according to the initial values provided
+// Populates all sites with a (wild) mosquito population of different types (age and sex)
 void Model::populate_sites() 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		for (int a=0; a < max_dev + 1; ++a) {
-			sites[pat].J[0][a] += initial_WJ;
-			to.J[0] += initial_WJ;
-			to.tot_J += initial_WJ;
-			sites[pat].tot_J += initial_WJ;
-		}
-			
-		sites[pat].M[0] = initial_WM;
-		to.M[0] += initial_WM;
-		to.tot_M += initial_WM;
-		sites[pat].tot_M += initial_WM;
-
-		sites[pat].V[0] = initial_WV;
-		to.V[0] += initial_WV;
-		to.tot_V += initial_WV;
-
-		sites[pat].F[0][0] = initial_WF;
-		to.F[0] += initial_WF;
-		to.tot_F += initial_WF;
+		sites[pat].populate(initial_WJ, initial_WM, initial_WV, initial_WF);
 	}
-
 	update_comp();
 	update_mate();
 }
@@ -922,7 +691,7 @@ void Model::set_dev_duration_probs(int min_time, int max_time)
 void Model::update_comp() 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].comp = (1 - mu_j) * std::pow(alpha0 / (alpha0 + sites[pat].tot_J), 1.0 / mean_dev);
+		sites[pat].update_comp(mu_j, alpha0, mean_dev);
 	}
 }
 
@@ -930,7 +699,7 @@ void Model::update_comp()
 void Model::update_mate() 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].mate_rate = sites[pat].tot_M / (beta + sites[pat].tot_M);
+		sites[pat].update_mate(beta);
 	}
 }
 
@@ -956,26 +725,9 @@ void Model::juv_get_older()
 	for (int i=0; i < num_gen; ++i) {
 		to.J[i] = 0;
 	}
-	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].tot_J = 0;
-	}
 
 	for (int pat=0; pat < sites.size(); ++pat) {
-		for (int i=0; i < num_gen; ++i) {
-			for (int a=0; a < max_dev; ++a) {
-				// number of juveniles that survive aging by a day are placed into the new older age group	
-				sites[pat].J[i][a] = random_binomial(sites[pat].J[i][a+1], sites[pat].comp);
-				sites[pat].tot_J += sites[pat].J[i][a];
-				to.J[i] += sites[pat].J[i][a];
-			}
-		}
-		// youngest ones have all aged by one day so none left in this age group
-		for (int i=0; i < num_gen; ++i) {
-			sites[pat].J[i][max_dev] = 0;
-			sites[pat].tot_J += sites[pat].J[i][max_dev];
-			to.J[i] += sites[pat].J[i][max_dev];
-		} 
-		
+		sites[pat].juv_get_older(max_dev);
 		to.tot_J += sites[pat].tot_J;
 	}
 }
@@ -984,25 +736,7 @@ void Model::juv_get_older()
 void Model::adults_die()
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		for (int i=0; i < num_gen; ++i) {
-			long long int m = random_binomial(sites[pat].M[i], mu_a); // number of males that die
-			sites[pat].M[i] -= m;
-			sites[pat].tot_M -= m;
-			to.M[i] -= m;
-			to.tot_M -= m;	
-
-			long long int v = random_binomial(sites[pat].V[i], mu_a);
-			sites[pat].V[i] -= v;
-			to.V[i] -= v;
-			to.tot_V -= v;	
-
-			for (int j=0; j < num_gen; ++j) {
-				long long int f = random_binomial(sites[pat].F[i][j], mu_a);
-				sites[pat].F[i][j] -= f;
-				to.F[i] -= f;
-				to.tot_F -= f;	
-			}
-		}
+		sites[pat].adults_die(mu_a);
 	}
 }
 
@@ -1010,24 +744,8 @@ void Model::adults_die()
 // male genotype j. Mating is carried out in each site across the simulation area.
 void Model::virgins_mate() 
 {
-	std::array<long long int, num_gen> v;
-	std::vector<long long int> v_c;
 	for (int pat=0; pat < sites.size(); ++pat) {
-		for (int i=0; i < num_gen; ++i) {
-			v[i] = random_binomial(sites[pat].V[i], sites[pat].mate_rate); // how many V will mate
-			if (v[i] > 0) {
-				v_c = random_multinomial(v[i], sites[pat].M); // how many V with given genotype will carry each of the male genotypes
-				for (int j=0; j < num_gen; j++) {
-					sites[pat].F[i][j] += v_c[j];
-				}
-
-				sites[pat].V[i] -= v[i];
-				to.F[i] += v[i];
-				to.V[i] -= v[i];
-				to.tot_V -= v[i];
-				to.tot_F += v[i];
-			}
-		}
+		sites[pat].virgins_mate();
 	}
 }
 
@@ -1035,49 +753,377 @@ void Model::virgins_mate()
 // Egg-laying is carried out in all sites across the simulation area.
 void Model::lay_eggs(const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f)
 {
-	std::vector<long long int> j_new;
+	for (int pat=0; pat < sites.size(); ++pat) {
+		sites[pat].lay_eggs(f, theta, dev_duration_probs);
+	}
+}
+
+// Turns juveniles into adults, depending on eclosion survival rate, across all sites in the simulation area.
+void Model::juv_eclose()
+{
+	for (int pat=0; pat < sites.size(); ++pat) {
+		sites[pat].juv_eclose();
+	}
+}
+
+// Returns the periodic distance between two points in the simulation area with boundaries x = side, y = side
+double Model::distance(double side, std::array<double, 2> point1, std::array<double, 2> point2) 
+{
+	double x_dist = 0;
+	double y_dist = 0;
+	double x1 = point1[0];
+	double y1 = point1[1];
+	double x2 = point2[0];
+	double y2 = point2[1];
+
+	if (std::abs(x1 - x2) > side - std::abs(x1 - x2)) {
+		x_dist = side - std::abs(x1 - x2);
+	} 
+	else if (std::abs(x1 - x2) <= side - std::abs(x1 - x2)) {
+		x_dist = std::abs(x1 - x2);
+	}
+
+	if (std::abs(y1 - y2) > side - std::abs(y1 - y2)) {
+		y_dist = side - std::abs(y1 - y2);
+	}
+	else if (std::abs(y1 - y2) <= side - std::abs(y1 - y2)) {
+		y_dist = std::abs(y1 - y2);
+	}
+
+	return std::sqrt((x_dist * x_dist) + (y_dist * y_dist));
+}
+
+// Computes the inter-patch connectivities
+void Model::set_connec(double side, double max_disp) 
+{
+	for (int pat=0; pat < sites.size(); ++pat) {
+		sites[pat].connec_indices.clear();
+		sites[pat].connec_weights.clear();
+		for (int new_pat=0; new_pat < sites.size(); ++new_pat) {
+			double dd = distance(side, sites[pat].coords, sites[new_pat].coords);
+			if (dd < max_disp) {
+				sites[pat].connec_indices.push_back(new_pat); 
+				double ww = max_disp - dd;
+				sites[pat].connec_weights.push_back(ww); 
+			}
+		}
+	}
+	
+}
+
+// Selects and updates the number of adults that disperse from and to each patch, depending on the patch connectivities
+void Model::adults_disperse(double disp_rate) 
+{
+	// reset values
 	for (int pat=0; pat < sites.size(); ++pat) {
 		for (int i=0; i < num_gen; ++i) {
-			for (int j=0; j < num_gen; ++j) {
-				for (int k=0; k < num_gen; ++k) {
-					double num = theta * sites[pat].F[i][j] * f[i][j][k]; // expected number of eggs laid with k genotype
-					long long int eggs = random_poisson(num); // actual number of eggs laid sampled from random distribution
+			sites[pat].move_M[i] = 0;
 
-					j_new = random_multinomial(eggs, dev_duration_probs); // number of eggs that start in each different age class (according to different juvenile development times)
-					for (int t=0; t < max_dev + 1; ++t) { // juveniles created with assigned remaining time to develop
-						sites[pat].J[k][t] += j_new[t];
+			for (int j=0; j < num_gen; ++j) {
+				sites[pat].move_F[i][j] = 0;
+			}
+		}
+	}
+
+	if (sites.size() > 1) {
+		// number of adults dispersing from each patch
+		for (int pat=0; pat < sites.size(); ++pat) {
+			for (int i=0; i < num_gen; ++i) {
+				// if (sites[pat].connec_indices > 0) // include this if de-activate self-dispersal
+				sites[pat].move_M[i] = random_binomial(sites[pat].M[i], disp_rate); // how many males will disperse from patch
+				sites[pat].M[i] -= sites[pat].move_M[i];
+				sites[pat].tot_M -= sites[pat].move_M[i];
+
+				for (int j=0; j < num_gen; ++j) {
+					sites[pat].move_F[i][j] = random_binomial(sites[pat].F[i][j], disp_rate);
+					sites[pat].F[i][j] -= sites[pat].move_F[i][j]; 
+				}
+			}
+		}
+
+		// number of adults dispersing to each patch
+		std::vector<long long int> m_disp;
+		std::vector<long long int> f_disp;
+		for (int pat=0; pat < sites.size(); ++pat) {
+			for (int i=0; i < num_gen; ++i) {
+				// how many males (for each genotype) will disperse to each of the connected patches for the given patch
+				if (sites[pat].move_M[i] > 0) {
+					m_disp = random_multinomial(sites[pat].move_M[i], sites[pat].connec_weights);
+					for (int new_pat=0; new_pat < m_disp.size(); ++new_pat) {
+						sites[sites[pat].connec_indices[new_pat]].M[i] += m_disp[new_pat];
 					}
-					
-					to.J[k] += eggs;
-					to.tot_J += eggs;
+				}
+
+				for (int j=0; j < num_gen; ++j) {
+					if (sites[pat].move_F[i][j] > 0) {
+						f_disp = random_multinomial(sites[pat].move_F[i][j], sites[pat].connec_weights);
+						for (int new_pat=0; new_pat < f_disp.size(); ++new_pat) {
+							sites[sites[pat].connec_indices[new_pat]].F[i][j] += f_disp[new_pat];
+						}
+					}
 				}
 			}
 		}
 	}
 }
 
-// Transforms juveniles into adults, depending on eclosion survival rate, across all sites in the simulation area.
-void Model::juv_eclose()
+// Calculates the number of mated females going into aestivation on the given day and updates the population numbers, depending on the survival rate of going into aestivation
+void Model::hide(double psi, double mu_aes) 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
 		for (int i=0; i < num_gen; ++i) {
-			long long int surv = random_binomial(sites[pat].J[i][0], sites[pat].comp); // number of juveniles that survive eclosion
-			if (surv > 0) {	
-				// roughly half of the juveniles become male and half female following a distribution
-				long long int surv_m = random_binomial(surv, 0.5); 
-				sites[pat].tot_M += surv_m;
-				sites[pat].M[i] += surv_m; 
-				to.M[i] += surv_m;
-				to.tot_M += surv_m;
-				sites[pat].V[i] += surv - surv_m;
-				to.V[i] += surv - surv_m;
-				to.tot_V += surv - surv_m;
+			for (int j=0; j < num_gen; ++j) {
+				long long int f = random_binomial(sites[pat].F[i][j], psi); // number of females that attempt to go into aestivation
+				sites[pat].F[i][j] -= f;
+				to.F[i] -= f;
+				to.tot_F -= f;
+				sites[pat].aes_F[i][j] += random_binomial(f, 1 - mu_aes);	// number that survive going into aestivation
 			}
 		}
 	}
 }
 
-// Creates LocalData, Totals and CoordinateList output files
+// Calculates the number of mated females coming out of aestivation on the given day and updates the population numbers
+void Model::wake(int day, int t_wake2) 
+{
+	double prob = 1.0 / (1.0 + t_wake2 - (day%365)); // probability of a female waking on a given day
+	for (int pat=0; pat < sites.size(); ++pat) {
+		for (int i=0; i < num_gen; ++i) {
+			for(int j=0; j < num_gen; ++j) {
+				long long int f = random_binomial(sites[pat].aes_F[i][j], prob); // number of females that wake up from aestivation on the given day
+				sites[pat].F[i][j] += f;
+				to.F[i] += f;
+				to.tot_F += f;
+				sites[pat].aes_F[i][j] -= f;	
+			}
+		}
+	}
+}
+
+// Releases the gene drive mosquitoes into the simulation area
+void Model::release_gene_drive(int num_driver_M, int num_driver_sites, int num_pat)
+{
+	int num_rel_sites = std::min(num_pat, num_driver_sites);
+	std::vector<int> rel_patches = select_driver_sites(num_rel_sites);
+	put_driver_sites(rel_patches, num_driver_M);
+}
+
+// Selects random sites for release of the gene drive
+std::vector<int> Model::select_driver_sites(int num_driver_sites) 
+{
+	std::vector<int> rel_patches; // patches in which to release the gene drive (contains indices to the patches in Site vector)
+	while (rel_patches.size() < num_driver_sites) {
+		int rel_pat = random_discrete(0, sites.size() - 1);
+
+		// only pick unique sites within the central area to release the gene drive
+		auto is_unique = (rel_patches.end() == std::find(rel_patches.begin(), rel_patches.end(), rel_pat));
+		if (is_unique) { 
+			rel_patches.push_back(rel_pat);
+		}
+	}
+
+	return rel_patches;
+}
+
+// Adds drive heterozygous (WD) male mosquitoes to the selected sites
+void Model::put_driver_sites(const std::vector<int>& patches, int num_driver_M) 
+{
+	for (const auto& pat : patches) {
+		if (pat >= 0 && pat < sites.size()) {
+			sites[pat].M[1] += num_driver_M;
+			sites[pat].tot_M += num_driver_M;
+
+			// updating totals
+			to.M[1] += num_driver_M;
+			to.tot_M += num_driver_M;
+		}
+	}
+
+	update_mate();
+}
+
+Patch::Patch(double side) 
+{
+	// set patch parameters
+	double x = random_real() * side;
+	double y = random_real() * side;
+	coords = {x, y};
+
+	// clear all other patch parameter values - will become Patch constructor
+	connec_indices.clear();
+	connec_weights.clear();
+
+	for (int i=0; i < num_gen; ++i) {
+		for (int a=0; a < max_dev + 1; ++a) {
+			J[i][a] = 0; 
+		}
+		M[i] = 0;
+		move_M[i] = 0;
+		V[i] = 0;
+		for (int j=0; j < num_gen; ++j) {
+			F[i][j] = 0;
+			move_F[i][j] = 0;
+			aes_F[i][j] = 0;
+		}
+	}
+	comp = 0;
+	mate_rate = 0;
+	tot_J = 0;
+	tot_M = 0;
+}
+
+// Populates the local site with a (wild) mosquito population of different types (age and sex)
+void Patch::populate(int initial_WJ, int initial_WM, int initial_WV, int initial_WF) 
+{
+	for (int a=0; a < max_dev + 1; ++a) {
+			J[0][a] += initial_WJ;
+			to.J[0] += initial_WJ;
+			to.tot_J += initial_WJ;
+			tot_J += initial_WJ;
+	}
+			
+	M[0] = initial_WM;
+	to.M[0] += initial_WM;
+	to.tot_M += initial_WM;
+	tot_M += initial_WM;
+
+	V[0] = initial_WV;
+	to.V[0] += initial_WV;
+	to.tot_V += initial_WV;
+
+	F[0][0] = initial_WF;
+	to.F[0] += initial_WF;
+	to.tot_F += initial_WF;
+}
+
+// Ages the juvenile population in different age groups by a day within the local site
+void Patch::juv_get_older(int max_dev) 
+{
+	long long int new_tot_J = 0;
+	for (int i=0; i < num_gen; ++i) {
+		long long int j_gen = 0;
+		for (int a=0; a < max_dev; ++a) {
+			// number of juveniles that survive aging by a day are placed into the new older age group	
+			J[i][a] = random_binomial(J[i][a+1], comp);
+			j_gen += J[i][a];
+		}
+		// youngest ones have all aged by one day so none left in this age group
+		J[i][max_dev] = 0;
+		j_gen += J[i][max_dev];
+
+		new_tot_J += j_gen;
+		to.J[i] += j_gen;
+	}
+	tot_J = new_tot_J;
+	to.tot_J += new_tot_J;
+}
+
+// Selects the number of adults that die in the given day and updates population numbers within the local site
+void Patch::adults_die(double mu_a)
+{
+	for (int i=0; i < num_gen; ++i) {
+		long long int m = random_binomial(M[i], mu_a); // number of males that die
+		M[i] -= m;
+		tot_M -= m;
+		to.M[i] -= m;
+		to.tot_M -= m;	
+
+		long long int v = random_binomial(V[i], mu_a);
+		V[i] -= v;
+		to.V[i] -= v;
+		to.tot_V -= v;	
+
+		for (int j=0; j < num_gen; ++j) {
+			long long int f = random_binomial(F[i][j], mu_a);
+			F[i][j] -= f;
+			to.F[i] -= f;
+			to.tot_F -= f;	
+		}
+	}
+}
+
+// Selects the number of virgins that mate in the given day with a male of genotype j, and tranforms them into mated females carrying
+// male genotype j. Mating is carried out within the local site.
+void Patch::virgins_mate() 
+{
+	std::array<long long int, num_gen> v;
+	std::vector<long long int> v_c;
+	for (int i=0; i < num_gen; ++i) {
+		v[i] = random_binomial(V[i], mate_rate); // how many V will mate
+		if (v[i] > 0) {
+			v_c = random_multinomial(v[i], M); // how many V with given genotype will carry each of the male genotypes
+			for (int j=0; j < num_gen; j++) {
+				F[i][j] += v_c[j];
+			}
+
+			V[i] -= v[i];
+			to.F[i] += v[i];
+			to.V[i] -= v[i];
+			to.tot_V -= v[i];
+			to.tot_F += v[i];
+		}
+	}
+	
+}
+
+// Calculates the number of eggs laid on the given day and updates the number of juveniles within the local site, depending on egg
+// survival rates.
+void Patch::lay_eggs(const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f, double theta, 
+ const std::array<double, max_dev+1> &dev_duration_probs)
+{
+	std::vector<long long int> j_new;
+	for (int i=0; i < num_gen; ++i) {
+		for (int j=0; j < num_gen; ++j) {
+			for (int k=0; k < num_gen; ++k) {
+				double num = theta * F[i][j] * f[i][j][k]; // expected number of eggs laid with k genotype
+				long long int eggs = random_poisson(num); // actual number of eggs laid sampled from random distribution
+
+				j_new = random_multinomial(eggs, dev_duration_probs); // number of eggs that start in each different age class (according to different juvenile development times)
+				for (int t=0; t < max_dev + 1; ++t) { // juveniles created with assigned remaining time to develop
+					J[k][t] += j_new[t];
+				}
+				
+				to.J[k] += eggs;
+				to.tot_J += eggs;
+			}
+		}
+	}
+}
+
+// Turns juveniles into adults, depending on eclosion survival rate, within the local site.
+void Patch::juv_eclose() 
+{
+	for (int i=0; i < num_gen; ++i) {
+		long long int surv = random_binomial(J[i][0], comp); // number of juveniles that survive eclosion
+		if (surv > 0) {	
+			// roughly half of the juveniles become male and half female following a distribution
+			long long int surv_m = random_binomial(surv, 0.5); 
+			M[i] += surv_m; 
+
+			tot_M += surv_m;
+			to.M[i] += surv_m;
+			to.tot_M += surv_m;
+
+			V[i] += surv - surv_m;
+			to.V[i] += surv - surv_m;
+			to.tot_V += surv - surv_m;
+		}
+	}
+}
+
+// Updates the juvenile survival probability in the local site
+void Patch::update_comp(double mu_j, double alpha0, double mean_dev)
+{
+	comp = (1 - mu_j) * std::pow(alpha0 / (alpha0 + tot_J), 1.0 / mean_dev);
+}
+
+// Updates the mating rate parameter in the local site
+void Patch::update_mate(double beta)
+{
+	mate_rate = tot_M / (beta + tot_M);
+}
+
+// Creates LocalData, Totals and CoordinateList output .txt files
 Record::Record(RecordParams &rec_params, int run) 
 {
 	rec_start = rec_params.rec_start;
