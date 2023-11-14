@@ -800,7 +800,7 @@ void Model::set_connec(double side, double max_disp)
 		sites[pat].connec_indices.clear();
 		sites[pat].connec_weights.clear();
 		for (int new_pat=0; new_pat < sites.size(); ++new_pat) {
-			double dd = distance(side, sites[pat].coords, sites[new_pat].coords);
+			double dd = distance(side, sites[pat].get_coords(), sites[new_pat].get_coords());
 			if (dd < max_disp) {
 				sites[pat].connec_indices.push_back(new_pat); 
 				double ww = max_disp - dd;
@@ -830,13 +830,12 @@ void Model::adults_disperse(double disp_rate)
 		for (int pat=0; pat < sites.size(); ++pat) {
 			for (int i=0; i < num_gen; ++i) {
 				// if (sites[pat].connec_indices > 0) // include this if de-activate self-dispersal
-				sites[pat].move_M[i] = random_binomial(sites[pat].M[i], disp_rate); // how many males will disperse from patch
-				sites[pat].M[i] -= sites[pat].move_M[i];
-				sites[pat].tot_M -= sites[pat].move_M[i];
+				sites[pat].move_M[i] = random_binomial(sites[pat].get_M()[i], disp_rate); // how many males will disperse from patch
+				sites[pat].M_disperse_out(i);
 
 				for (int j=0; j < num_gen; ++j) {
-					sites[pat].move_F[i][j] = random_binomial(sites[pat].F[i][j], disp_rate);
-					sites[pat].F[i][j] -= sites[pat].move_F[i][j]; 
+					sites[pat].move_F[i][j] = random_binomial(sites[pat].get_F()[i][j], disp_rate);
+					sites[pat].F_disperse_out(i, j);
 				}
 			}
 		}
@@ -850,7 +849,7 @@ void Model::adults_disperse(double disp_rate)
 				if (sites[pat].move_M[i] > 0) {
 					m_disp = random_multinomial(sites[pat].move_M[i], sites[pat].connec_weights);
 					for (int new_pat=0; new_pat < m_disp.size(); ++new_pat) {
-						sites[sites[pat].connec_indices[new_pat]].M[i] += m_disp[new_pat];
+						sites[sites[pat].connec_indices[new_pat]].M_disperse_in(i, m_disp[new_pat]);
 					}
 				}
 
@@ -858,7 +857,7 @@ void Model::adults_disperse(double disp_rate)
 					if (sites[pat].move_F[i][j] > 0) {
 						f_disp = random_multinomial(sites[pat].move_F[i][j], sites[pat].connec_weights);
 						for (int new_pat=0; new_pat < f_disp.size(); ++new_pat) {
-							sites[sites[pat].connec_indices[new_pat]].F[i][j] += f_disp[new_pat];
+							sites[sites[pat].connec_indices[new_pat]].F_disperse_in(i, j, f_disp[new_pat]);
 						}
 					}
 				}
@@ -873,11 +872,9 @@ void Model::hide(double psi, double mu_aes)
 	for (int pat=0; pat < sites.size(); ++pat) {
 		for (int i=0; i < num_gen; ++i) {
 			for (int j=0; j < num_gen; ++j) {
-				long long int f = random_binomial(sites[pat].F[i][j], psi); // number of females that attempt to go into aestivation
-				sites[pat].F[i][j] -= f;
-				to.F[i] -= f;
-				to.tot_F -= f;
-				sites[pat].aes_F[i][j] += random_binomial(f, 1 - mu_aes);	// number that survive going into aestivation
+				long long int f = random_binomial(sites[pat].get_F()[i][j], psi); // number of females that attempt to go into aestivation
+				long long int aes_f = random_binomial(f, 1 - mu_aes);	// number that survive going into aestivation
+				sites[pat].F_hide(i, j, f, aes_f);
 			}
 		}
 	}
@@ -890,11 +887,9 @@ void Model::wake(int day, int t_wake2)
 	for (int pat=0; pat < sites.size(); ++pat) {
 		for (int i=0; i < num_gen; ++i) {
 			for(int j=0; j < num_gen; ++j) {
-				long long int f = random_binomial(sites[pat].aes_F[i][j], prob); // number of females that wake up from aestivation on the given day
-				sites[pat].F[i][j] += f;
-				to.F[i] += f;
-				to.tot_F += f;
-				sites[pat].aes_F[i][j] -= f;	
+				// number of females that wake up from aestivation on the given day
+				long long int f = random_binomial(sites[pat].aes_F[i][j], prob);
+				sites[pat].F_wake(i, j, f);
 			}
 		}
 	}
@@ -930,7 +925,8 @@ void Model::put_driver_sites(const std::vector<int>& patches, int num_driver_M)
 {
 	for (const auto& pat : patches) {
 		if (pat >= 0 && pat < sites.size()) {
-			sites[pat].M[1] += num_driver_M;
+			sites[pat].add_driver_M(num_driver_M);
+
 			sites[pat].tot_M += num_driver_M;
 
 			// updating totals
@@ -938,7 +934,6 @@ void Model::put_driver_sites(const std::vector<int>& patches, int num_driver_M)
 			to.tot_M += num_driver_M;
 		}
 	}
-
 	update_mate();
 }
 
@@ -994,6 +989,78 @@ void Patch::populate(int initial_WJ, int initial_WM, int initial_WV, int initial
 	F[0][0] = initial_WF;
 	to.F[0] += initial_WF;
 	to.tot_F += initial_WF;
+}
+
+// Returns the coordinates of the site on the simulation area
+std::array<double, 2> Patch::get_coords() 
+{
+	return coords;
+}
+
+// Returns an array of number of males with each genotype
+std::array<long long int, num_gen> Patch::get_M() 
+{
+	return M;
+}
+
+// Returns a 2D array of number of females with each female and carrying mated male genotype
+std::array<std::array<long long int, num_gen>, num_gen> Patch::get_F() 
+{
+	return F;
+}
+
+// Removes males from the population as they disperse out.
+void Patch::M_disperse_out(int gen) 
+{
+	M[gen] -= move_M[gen];
+
+	tot_M -= move_M[gen];
+}
+
+// Removes females from the population as they disperse out.
+void Patch::F_disperse_out(int f_gen, int m_gen) 
+{
+	F[f_gen][m_gen] -= move_F[f_gen][m_gen];
+}
+
+// Introduces new males into the population as they disperse in.
+void Patch::M_disperse_in(int gen, long long int m_disp) 
+{
+	M[gen] += m_disp;
+}
+
+// Introduces new females into the population as they disperse in.
+void Patch::F_disperse_in(int f_gen, int m_gen, long long int f_disp) 
+{
+	F[f_gen][m_gen] += f_disp;
+}
+
+// Updates active female population numbers after they attempt to go into aestivation.
+void Patch::F_hide(int f_gen, int m_gen, long long int f_try, long long int f_succeed)
+{
+	F[f_gen][m_gen] -= f_try;
+
+	to.F[f_gen] -= f_try;
+	to.tot_F -= f_try;
+
+	aes_F[f_gen][m_gen] += f_succeed;
+}
+
+// Updates active female population numbers after they wake from aestivation.
+void Patch::F_wake(int f_gen, int m_gen, long long int f_wake)
+{
+	F[f_gen][m_gen] += f_wake;
+
+	to.F[f_gen] += f_wake;
+	to.tot_F += f_wake;
+
+	aes_F[f_gen][m_gen] -= f_wake;
+}
+
+// Introduces driver heterozygous males into the population.
+void Patch::add_driver_M(int num_driver_M) 
+{
+	M[1] += num_driver_M;
 }
 
 // Ages the juvenile population in different age groups by a day within the local site
@@ -1180,7 +1247,8 @@ void Record::record_global(int day)
 void Record::record_coords() 
 {
 	for (int pat=0; pat < sites.size(); pat += rec_sites_freq) {
-		coord_list << pat+1 << "\t" << sites[pat].coords[0] << "\t" << sites[pat].coords[1] << std::endl;
+		std::array<double, 2> pat_coords = sites[pat].get_coords();
+		coord_list << pat+1 << "\t" << pat_coords[0] << "\t" << pat_coords[1] << std::endl;
 	}
 }
 

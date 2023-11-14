@@ -250,6 +250,23 @@ public:
 	Patch(double side);
 	void populate(int initial_WJ, int initial_WM, int initial_WV, int initial_WF);
 
+	std::array<double, 2> get_coords();
+	std::array<long long int, num_gen> get_M();
+	std::array<std::array<long long int, num_gen>, num_gen> get_F();
+	
+	// interface to Dispersal
+	void M_disperse_out(int gen);
+	void F_disperse_out(int f_gen, int m_gen);
+	void M_disperse_in(int gen, long long int m_disp);
+	void F_disperse_in(int f_gen, int m_gen, long long int f_disp);
+
+	// interface to Aestivation
+	void F_hide(int f_gen, int m_gen, long long int f_try, long long int f_succeed);
+	void F_wake(int f_gen, int m_gen, long long int f_wake);
+
+	// interface to GeneDrive 
+	void add_driver_M(int num_driver_M);
+
 	// life-processes for the local site
 	void juv_get_older(int max_dev);
 	void adults_die(double mu_a);
@@ -259,23 +276,34 @@ public:
 	void juv_eclose();
 	void update_comp(double mu_j, double alpha0, double mean_dev);
 	void update_mate(double beta);
-
-	std::array<double, 2> coords; // (x, y) coordinates of the site 
-	std::array<std::array<long long int, max_dev+1>, num_gen> J; // 2D array of the number of juvenile mosquitoes with each genotype and in each age group in the local site. Age ordered from oldest (0 days left to eclosion) to youngest (TL - 1 days left)
+ 
 	long long int tot_J; // total number of juvenile mosquitoes in the local site
-	std::array<long long int, num_gen> M; // array of the number of male mosquitoes with each genotype in the local site
+	std::array<long long int, num_gen> M; // number of male mosquitoes with each genotype
 	long long int tot_M; // total number of male mosquitoes in the local site
-	std::array<long long int, num_gen> V; // array of total number of unmated female (virgin) mosquitoes with each genotype in the local site
-	std::array<std::array<long long int, num_gen>, num_gen> F; // 2D array of the number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j	
-	std::array<std::array<long long int, num_gen>, num_gen> aes_F;	// 2D array of the number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j that have gone into aestivation
-	std::array<std::array<long long int, num_gen>, num_gen> move_F; // 2D array of the number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j that will be dispersing from the local site 	
-	std::array<long long int, num_gen> move_M; // array of the number of male mosquitoes with each genotype that will be dispersing from the local site
-	long double comp; // survival probability per juvenile per day (both density-dependent and independent factors)
-	long double mate_rate; // probability of an unmated (virgin) female mating on a given day
+	// number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j	
+	std::array<std::array<long long int, num_gen>, num_gen> F; 
+	// number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j that have gone into aestivation
+	std::array<std::array<long long int, num_gen>, num_gen> aes_F;
+	// number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j that will be dispersing from the local site 	
+	std::array<std::array<long long int, num_gen>, num_gen> move_F; 
+	// number of male mosquitoes with each genotype that will be dispersing from the local site
+	std::array<long long int, num_gen> move_M; 
 
 	// for determining connectivities between patches
-	std::vector<int> connec_indices; // vector of patch indices of those patches that are connected to the selected patch
-	std::vector<double> connec_weights; // vector of patch connection weights of those patches that are connected to the selected patch. Correspond to the respective element in connecIND
+	std::vector<int> connec_indices; // patch indices of the patches connected to the selected patch
+	// patch connection weights corresponding to the connected patches listed in connec_indices (same order)
+	std::vector<double> connec_weights; 
+
+private:
+	std::array<double, 2> coords; // (x, y) coordinates of the site
+
+	// number of juvenile mosquitoes with each genotype and in each age group.
+	// Age ordered from oldest (0 days left to eclosion) to youngest (TL - 1 days left)
+	std::array<std::array<long long int, max_dev+1>, num_gen> J; 
+	std::array<long long int, num_gen> V; // number of unmated female (virgin) mosquitoes with each genotype
+
+	long double comp; // survival probability per juvenile per day (both density-dependent and independent factors)
+	long double mate_rate; // probability of an unmated (virgin) female mating on a given day
 };
 
 // Records model data.
