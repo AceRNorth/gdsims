@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 #include <array>
-#include <cstdlib> // for exit function
 #include <random>  
 #include <cmath> 
 #include <numeric>  
@@ -15,8 +14,6 @@
 const int max_dev = 20; // juvenile development time (egg to adult) expressed as days left till eclosion (eclosion on day 0)
 const int num_gen = 6; // number of different genotypes in the mosquito population
 
-//void check_counts(int day, char ref); 
-
 // Random number generator functions
 
 double random_real();
@@ -26,18 +23,6 @@ long long int random_binomial(long long int n, double p);
 std::vector<long long int> random_multinomial(long long int n, const std::vector<double>& probs);
 std::vector<long long int> random_multinomial(long long int n, const std::array<long long int, num_gen>& probs);
 std::vector<long long int> random_multinomial(long long int n, const std::array<double, max_dev+1>& probs);
-
-// Contains the total population numbers over all space (all patches) for different mosquito types
-struct Totals {
-	std::array<long long int, num_gen> J; // array of total number of juvenile mosquitoes with each genotype (over all space)
-	std::array<long long int, num_gen> M; // array of total number of male mosquitoes with each genotype (over all space)
-	std::array<long long int, num_gen> V; // array of total number of unmated female (virgin) mosquitoes with each genotype (over all space)
-	std::array<long long int, num_gen> F; // array of total number of mated female mosquitoes with each genotype (over all space)
-	long long int tot_J; // total number of juvenile mosquitoes of all genotypes (over all space)
-	long long int tot_M; // total number of male mosquitoes of all genotypes (over all space)
-	long long int tot_V; // total number of unmated female (virgin) mosquitoes of all genotypes (over all space)
-	long long int tot_F; // total number of mated female mosquitoes of all genotypes (over all space)
-};	
 
 // Contains the model parameters
 struct Pars {
@@ -193,6 +178,12 @@ public:
 	void initiate();
 	void run_step(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f, double disp_rate, int t_hide1, int t_hide2, int t_wake1, int t_wake2, double psi, double mu_aes);
 
+	long long int calculate_tot_J(); 
+	long long int calculate_tot_M();
+	long long int calculate_tot_V();
+	long long int calculate_tot_F();
+	std::array<long long int, num_gen> calculate_tot_M_gen();
+	
 	// Dispersal functions
 	double distance(double side, std::array<double, 2> point1, std::array<double, 2> point2);
 	void set_connec(double side, double max_disp);
@@ -253,6 +244,11 @@ public:
 	std::array<double, 2> get_coords();
 	std::array<long long int, num_gen> get_M();
 	std::array<std::array<long long int, num_gen>, num_gen> get_F();
+
+	long long int calculate_tot_J();
+	long long int calculate_tot_M();
+	long long int calculate_tot_V();
+	long long int calculate_tot_F();
 	
 	// interface to Dispersal
 	void M_disperse_out(int gen);
@@ -277,11 +273,6 @@ public:
 	void update_comp(double mu_j, double alpha0, double mean_dev);
 	void update_mate(double beta);
  
-	long long int tot_J; // total number of juvenile mosquitoes in the local site
-	std::array<long long int, num_gen> M; // number of male mosquitoes with each genotype
-	long long int tot_M; // total number of male mosquitoes in the local site
-	// number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j	
-	std::array<std::array<long long int, num_gen>, num_gen> F; 
 	// number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j that have gone into aestivation
 	std::array<std::array<long long int, num_gen>, num_gen> aes_F;
 	// number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j that will be dispersing from the local site 	
@@ -300,7 +291,10 @@ private:
 	// number of juvenile mosquitoes with each genotype and in each age group.
 	// Age ordered from oldest (0 days left to eclosion) to youngest (TL - 1 days left)
 	std::array<std::array<long long int, max_dev+1>, num_gen> J; 
+	std::array<long long int, num_gen> M; // number of male mosquitoes with each genotype
 	std::array<long long int, num_gen> V; // number of unmated female (virgin) mosquitoes with each genotype
+	// number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j	
+	std::array<std::array<long long int, num_gen>, num_gen> F; 
 
 	long double comp; // survival probability per juvenile per day (both density-dependent and independent factors)
 	long double mate_rate; // probability of an unmated (virgin) female mating on a given day
@@ -311,9 +305,9 @@ class Record {
 public:
 	Record(RecordParams &rec_params, int run);
 	void record_local(int day);
-	void record_global(int day);
+	void record_global(int day, const std::array<long long int, num_gen> &tot_M_gen);
 	void record_coords();
-	void output_totals(int day);
+	void output_totals(int day, long long int tot_J, long long int tot_M, long long int tot_V, long long int tot_F);
 
 private:
 	// recording window and intervals

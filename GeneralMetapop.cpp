@@ -8,7 +8,6 @@ std::mt19937 twister(1);
 
 // global structs
 Pars pa; 
-Totals to; 
 std::vector<Patch> sites; 
 
 int main()
@@ -363,82 +362,6 @@ std::vector<long long int> random_multinomial(long long int n, const std::array<
 	return result;
 }
 
-// For debugging, manually calculates total populations counts for F, M, V, J mosquito types and compares with total parameters
-// void check_counts(int day, char ref) 
-// {
-// 	long long int tot_F = 0;
-// 	long long int tot_M = 0;
-// 	long long int tot_J = 0;
-// 	long long int tot_V = 0;
-// 	long long int tot_F_B = 0;
-// 	long long int tot_M_B = 0;
-// 	long long int tot_J_B = 0;
-// 	long long int tot_V_B = 0;
-	
-// 	for (int pat=0; pat < sites.size(); ++pat) {
-// 		for (int i=0; i < num_gen; ++i){
-// 			for (int j=0; j < num_gen; ++j) {
-// 				if (sites[pat].F[i][j] < 0) {
-// 					std::cout << day << "\t" << ref << " F neg  " << i << "\t" << j << "\t" << sites[pat].F[i][j] << std::endl;
-// 					std::exit(1);
-// 				}
-// 			}
-// 		}
-
-// 		for (int i=0; i < num_gen; ++i) {
-// 			tot_F += std::accumulate(sites[pat].F[i].begin(), sites[pat].F[i].end(), 0);
-// 		}
-
-// 		tot_M += std::accumulate(sites[pat].M.begin(), sites[pat].M.end(), 0);
-// 		tot_V += std::accumulate(sites[pat].V.begin(), sites[pat].V.end(), 0);
-// 		for (int i=0; i < num_gen; ++i) {
-// 			for (int a=0; a < max_dev + 1; ++a) {
-// 				tot_J += sites[pat].J[i][a];
-// 			}
-// 		}
-// 	}
-
-// 	tot_F_B += std::accumulate(to.F.begin(), to.F.end(), 0);
-// 	tot_M_B += std::accumulate(to.M.begin(), to.M.end(), 0);
-// 	tot_V_B += std::accumulate(to.V.begin(), to.V.end(), 0);
-// 	tot_J_B += std::accumulate(to.J.begin(), to.J.end(), 0);
-
-// 	if (tot_F != to.tot_F) {
-// 		std::cout << day << "\t" << ref << " F count error  " << tot_F << "\t" << tot_F_B << "\t" << to.tot_F << std::endl;
-// 		std::exit(1);
-// 	}
-// 	if (tot_M != to.tot_M) {
-// 		std::cout << day << "\t" << ref << " M count error  " << tot_M << "\t" << tot_M_B << "\t" << to.tot_M << std::endl;
-// 		std::exit(1);
-// 	}
-// 	if (tot_V != to.tot_V) {
-// 		std::cout << day << "\t" << ref << " V count error  " << tot_V << "\t" << tot_V_B << "\t" << to.tot_V << std::endl;
-// 		std::exit(1);
-// 	}
-// 	if (tot_J != to.tot_J) {
-// 		std::cout << day << "\t" << ref << " J count error  " << tot_J << "\t" << tot_J_B << "\t" << to.tot_J << std::endl;
-// 		std::exit(1);
-// 	}
-// 	if (tot_F_B != to.tot_F) {
-// 		std::cout << day << "\t" << ref << " F count errorB  " << tot_F_B << "\t" << to.tot_F << std::endl;
-// 		std::exit(1);
-// 	}
-// 	if (tot_M_B != to.tot_M) {
-// 		std::cout << day << "\t" << ref << " M count errorB  " << tot_M_B << "\t" << to.tot_M << std::endl;
-// 		std::exit(1);
-// 	}
-// 	if (tot_V_B != to.tot_V) {
-// 		std::cout << day << "\t" << ref << " V count errorB  " << tot_V_B << "\t" << to.tot_V << std::endl;
-// 		std::exit(1);
-// 	}
-// 	if (tot_J_B != to.tot_J) {
-// 		std::cout << day << "\t" << ref << " J count errorB  " << tot_J_B << "\t" << to.tot_J << std::endl;
-// 		std::exit(1);
-// 	}
-// }
-
-// New classes
-
 SimController::SimController(ProgressionParams &prog, AreaParams &area, LifeParams &life, InheritanceParams &inher,
  ReleaseParams &rel, DispersalParams &disp, AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec)
 { 
@@ -594,7 +517,7 @@ void SimController::run_reps(int n)
 		data.record_coords();
 		
 		// previous run_model() - runs the simulation once for simulated time max_time
-		for(int tt=0; tt <= max_t; ++tt) { // current day of the simulation 
+		for (int tt=0; tt <= max_t; ++tt) { // current day of the simulation 
 			if (tt == rel_params->driver_start) {
 				model.release_gene_drive(rel_params->num_driver_M, rel_params->num_driver_sites, area_params->num_pat);
 			} 
@@ -606,8 +529,8 @@ void SimController::run_reps(int n)
 
 			// recording
 			if (tt % rec_params->rec_interval_global == 0) {
-				data.output_totals(tt);
-				data.record_global(tt);
+				data.output_totals(tt, model.calculate_tot_J(), model.calculate_tot_M(), model.calculate_tot_V(), model.calculate_tot_F());
+				data.record_global(tt, model.calculate_tot_M_gen());
 			}
 			if ((tt == 0) || (tt >= rec_params->rec_start && tt <= rec_params->rec_end && tt % rec_params->rec_interval_local == 0)) {
 				data.record_local(tt);
@@ -641,16 +564,6 @@ Model::Model(AreaParams &area, InitialPopsParams &initial, LifeParams &life)
 // Sets up the model architecture 
 void Model::initiate()
 {
-	for (int i=0; i < num_gen; ++i) {
-		to.J[i] = 0;
-		to.M[i] = 0;
-		to.V[i] = 0;
-		to.F[i] = 0;
-	}
-	to.tot_J = 0;
-	to.tot_M = 0;
-	to.tot_V = 0;
-	to.tot_F = 0;
 	sites.clear();
 
 	for (int ii=0; ii < num_pat; ++ii) {
@@ -717,18 +630,65 @@ void Model::run_step(int day, const std::array<std::array<std::array <double, nu
 	update_mate();
 }
 
+// Returns the total number of juveniles across all ages and genotypes and across the simulation area
+long long int Model::calculate_tot_J()
+{
+	long long int tot_J = 0;
+	for (int pat = 0; pat < sites.size(); ++pat) {
+		tot_J += sites[pat].calculate_tot_J();
+	}
+	return tot_J;
+}
+
+// Returns the total number of males across all genotypes and across the simulation area
+long long int Model::calculate_tot_M()
+{
+	long long int tot_M = 0;
+	for (int pat = 0; pat < sites.size(); ++pat) {
+		tot_M += sites[pat].calculate_tot_M();
+	}
+	return tot_M;
+}
+
+// Returns the total number of unmated females (virgins) across all genotypes and across the simulation area
+long long int Model::calculate_tot_V()
+{
+	long long int tot_V = 0;
+	for (int pat = 0; pat < sites.size(); ++pat) {
+		tot_V += sites[pat].calculate_tot_V();
+	}
+	return tot_V;
+}
+
+// Returns the total number of mated females across all female and carrying-male genotypes and across the simulation area
+long long int Model::calculate_tot_F()
+{
+	long long int tot_F = 0;
+	for (int pat = 0; pat < sites.size(); ++pat) {
+		tot_F += sites[pat].calculate_tot_F();
+	}
+	return tot_F;
+}
+
+// Returns the total number of males of each genotype across the simulation area
+std::array<long long int, num_gen> Model::calculate_tot_M_gen() 
+{
+	std::array<long long int, num_gen> tot_M_gen;
+	tot_M_gen.fill(0);
+	for (int pat = 0; pat < sites.size(); ++pat) {
+		std::array<long long int, num_gen> m_pat = sites[pat].get_M();
+		for (int i = 0; i < num_gen; ++i) {
+			tot_M_gen[i] += m_pat[i];
+		}
+	}
+	return tot_M_gen;
+}
+
 // Ages the juvenile population in different age groups by a day across the simulation area
 void Model::juv_get_older() 
 {
-	// reset totals
-	to.tot_J = 0;
-	for (int i=0; i < num_gen; ++i) {
-		to.J[i] = 0;
-	}
-
 	for (int pat=0; pat < sites.size(); ++pat) {
 		sites[pat].juv_get_older(max_dev);
-		to.tot_J += sites[pat].tot_J;
 	}
 }
 
@@ -829,7 +789,6 @@ void Model::adults_disperse(double disp_rate)
 		// number of adults dispersing from each patch
 		for (int pat=0; pat < sites.size(); ++pat) {
 			for (int i=0; i < num_gen; ++i) {
-				// if (sites[pat].connec_indices > 0) // include this if de-activate self-dispersal
 				sites[pat].move_M[i] = random_binomial(sites[pat].get_M()[i], disp_rate); // how many males will disperse from patch
 				sites[pat].M_disperse_out(i);
 
@@ -845,8 +804,8 @@ void Model::adults_disperse(double disp_rate)
 		std::vector<long long int> f_disp;
 		for (int pat=0; pat < sites.size(); ++pat) {
 			for (int i=0; i < num_gen; ++i) {
-				// how many males (for each genotype) will disperse to each of the connected patches for the given patch
 				if (sites[pat].move_M[i] > 0) {
+					// how many males of the given genotype will disperse to each of the connected patches from the given patch
 					m_disp = random_multinomial(sites[pat].move_M[i], sites[pat].connec_weights);
 					for (int new_pat=0; new_pat < m_disp.size(); ++new_pat) {
 						sites[sites[pat].connec_indices[new_pat]].M_disperse_in(i, m_disp[new_pat]);
@@ -926,12 +885,6 @@ void Model::put_driver_sites(const std::vector<int>& patches, int num_driver_M)
 	for (const auto& pat : patches) {
 		if (pat >= 0 && pat < sites.size()) {
 			sites[pat].add_driver_M(num_driver_M);
-
-			sites[pat].tot_M += num_driver_M;
-
-			// updating totals
-			to.M[1] += num_driver_M;
-			to.tot_M += num_driver_M;
 		}
 	}
 	update_mate();
@@ -963,32 +916,17 @@ Patch::Patch(double side)
 	}
 	comp = 0;
 	mate_rate = 0;
-	tot_J = 0;
-	tot_M = 0;
 }
 
 // Populates the local site with a (wild) mosquito population of different types (age and sex)
 void Patch::populate(int initial_WJ, int initial_WM, int initial_WV, int initial_WF) 
 {
 	for (int a=0; a < max_dev + 1; ++a) {
-			J[0][a] += initial_WJ;
-			to.J[0] += initial_WJ;
-			to.tot_J += initial_WJ;
-			tot_J += initial_WJ;
-	}
-			
+		J[0][a] += initial_WJ;
+	}	
 	M[0] = initial_WM;
-	to.M[0] += initial_WM;
-	to.tot_M += initial_WM;
-	tot_M += initial_WM;
-
 	V[0] = initial_WV;
-	to.V[0] += initial_WV;
-	to.tot_V += initial_WV;
-
 	F[0][0] = initial_WF;
-	to.F[0] += initial_WF;
-	to.tot_F += initial_WF;
 }
 
 // Returns the coordinates of the site on the simulation area
@@ -1009,12 +947,54 @@ std::array<std::array<long long int, num_gen>, num_gen> Patch::get_F()
 	return F;
 }
 
+// Returns the total number of juveniles across all ages and genotypes
+long long int Patch::calculate_tot_J() 
+{
+	long long int tot_J = 0;
+	for (int i = 0; i < num_gen; ++i) {
+		for (int a = 0; a < max_dev+1; ++a) {
+			tot_J += J[i][a];
+		}
+	}
+	return tot_J;
+}
+
+// Returns the total number of males across all genotypes
+long long int Patch::calculate_tot_M() 
+{
+	long long int tot_M = 0;
+	for (const auto& m : M) {
+		tot_M += m;
+	}
+	return tot_M;
+}
+
+// Returns the total number of unmated females (virgins) across all genotypes
+long long int Patch::calculate_tot_V()
+{
+	long long int tot_V = 0;
+	for (const auto& v : V) {
+		tot_V += v;
+	}
+	return tot_V;
+}
+
+// Returns the total number of mated females across all female and carrying-male genotypes
+long long int Patch::calculate_tot_F()
+{
+	long long int tot_F = 0;
+	for (int i = 0; i < num_gen; ++i) {
+		for (int j = 0; j < num_gen; ++j) {
+			tot_F += F[i][j];
+		}
+	}
+	return tot_F;
+}
+
 // Removes males from the population as they disperse out.
 void Patch::M_disperse_out(int gen) 
 {
 	M[gen] -= move_M[gen];
-
-	tot_M -= move_M[gen];
 }
 
 // Removes females from the population as they disperse out.
@@ -1039,10 +1019,6 @@ void Patch::F_disperse_in(int f_gen, int m_gen, long long int f_disp)
 void Patch::F_hide(int f_gen, int m_gen, long long int f_try, long long int f_succeed)
 {
 	F[f_gen][m_gen] -= f_try;
-
-	to.F[f_gen] -= f_try;
-	to.tot_F -= f_try;
-
 	aes_F[f_gen][m_gen] += f_succeed;
 }
 
@@ -1050,10 +1026,6 @@ void Patch::F_hide(int f_gen, int m_gen, long long int f_try, long long int f_su
 void Patch::F_wake(int f_gen, int m_gen, long long int f_wake)
 {
 	F[f_gen][m_gen] += f_wake;
-
-	to.F[f_gen] += f_wake;
-	to.tot_F += f_wake;
-
 	aes_F[f_gen][m_gen] -= f_wake;
 }
 
@@ -1066,23 +1038,13 @@ void Patch::add_driver_M(int num_driver_M)
 // Ages the juvenile population in different age groups by a day within the local site
 void Patch::juv_get_older(int max_dev) 
 {
-	long long int new_tot_J = 0;
 	for (int i=0; i < num_gen; ++i) {
-		long long int j_gen = 0;
 		for (int a=0; a < max_dev; ++a) {
 			// number of juveniles that survive aging by a day are placed into the new older age group	
 			J[i][a] = random_binomial(J[i][a+1], comp);
-			j_gen += J[i][a];
 		}
-		// youngest ones have all aged by one day so none left in this age group
-		J[i][max_dev] = 0;
-		j_gen += J[i][max_dev];
-
-		new_tot_J += j_gen;
-		to.J[i] += j_gen;
+		J[i][max_dev] = 0; // youngest ones have all aged by one day so none left in this age group
 	}
-	tot_J = new_tot_J;
-	to.tot_J += new_tot_J;
 }
 
 // Selects the number of adults that die in the given day and updates population numbers within the local site
@@ -1091,20 +1053,13 @@ void Patch::adults_die(double mu_a)
 	for (int i=0; i < num_gen; ++i) {
 		long long int m = random_binomial(M[i], mu_a); // number of males that die
 		M[i] -= m;
-		tot_M -= m;
-		to.M[i] -= m;
-		to.tot_M -= m;	
 
 		long long int v = random_binomial(V[i], mu_a);
-		V[i] -= v;
-		to.V[i] -= v;
-		to.tot_V -= v;	
+		V[i] -= v;	
 
 		for (int j=0; j < num_gen; ++j) {
 			long long int f = random_binomial(F[i][j], mu_a);
 			F[i][j] -= f;
-			to.F[i] -= f;
-			to.tot_F -= f;	
 		}
 	}
 }
@@ -1122,12 +1077,7 @@ void Patch::virgins_mate()
 			for (int j=0; j < num_gen; j++) {
 				F[i][j] += v_c[j];
 			}
-
 			V[i] -= v[i];
-			to.F[i] += v[i];
-			to.V[i] -= v[i];
-			to.tot_V -= v[i];
-			to.tot_F += v[i];
 		}
 	}
 	
@@ -1149,9 +1099,6 @@ void Patch::lay_eggs(const std::array<std::array<std::array <double, num_gen>, n
 				for (int t=0; t < max_dev + 1; ++t) { // juveniles created with assigned remaining time to develop
 					J[k][t] += j_new[t];
 				}
-				
-				to.J[k] += eggs;
-				to.tot_J += eggs;
 			}
 		}
 	}
@@ -1166,14 +1113,7 @@ void Patch::juv_eclose()
 			// roughly half of the juveniles become male and half female following a distribution
 			long long int surv_m = random_binomial(surv, 0.5); 
 			M[i] += surv_m; 
-
-			tot_M += surv_m;
-			to.M[i] += surv_m;
-			to.tot_M += surv_m;
-
 			V[i] += surv - surv_m;
-			to.V[i] += surv - surv_m;
-			to.tot_V += surv - surv_m;
 		}
 	}
 }
@@ -1181,12 +1121,14 @@ void Patch::juv_eclose()
 // Updates the juvenile survival probability in the local site
 void Patch::update_comp(double mu_j, double alpha0, double mean_dev)
 {
+	long long int tot_J = calculate_tot_J();
 	comp = (1 - mu_j) * std::pow(alpha0 / (alpha0 + tot_J), 1.0 / mean_dev);
 }
 
 // Updates the mating rate parameter in the local site
 void Patch::update_mate(double beta)
 {
+	long long int tot_M = calculate_tot_M();
 	mate_rate = tot_M / (beta + tot_M);
 }
 
@@ -1226,7 +1168,7 @@ void Record::record_local(int day)
 {
 	for (int pat=0; pat < sites.size(); pat += rec_sites_freq) {
 		local_data << day << "\t" << pat+1;
-		for (const auto& m_gen : sites[pat].M) {
+		for (const auto& m_gen : sites[pat].get_M()) {
 			local_data << "\t" << m_gen;
 		}
 		local_data << std::endl;
@@ -1234,10 +1176,10 @@ void Record::record_local(int day)
 }
 
 // Records the total number of males (over all sites) of each genotype
-void Record::record_global(int day) 
+void Record::record_global(int day, const std::array<long long int, num_gen> &tot_M_gen)
 {
 	global_data << day;
-	for (const auto& m_gen : to.M) {
+	for (const auto& m_gen : tot_M_gen) {
 		global_data << "\t" << m_gen;
 	}
 	global_data << std::endl;
@@ -1253,9 +1195,9 @@ void Record::record_coords()
 }
 
 // Outputs to screen the J, M, V, F totals over the simulation area for the given day
-void Record::output_totals(int day)
+void Record::output_totals(int day, long long int tot_J, long long int tot_M, long long int tot_V, long long int tot_F)
 {
-	std::cout << day << "\t" << to.tot_J << "\t" << to.tot_M << "\t" << to.tot_V << "\t" << to.tot_F << std::endl;
+	std::cout << day << "\t" << tot_J << "\t" << tot_M << "\t" << tot_V << "\t" << tot_F << std::endl;
 }
 
 Exception::Exception() {}
