@@ -24,49 +24,6 @@ std::vector<long long int> random_multinomial(long long int n, const std::vector
 std::vector<long long int> random_multinomial(long long int n, const std::array<long long int, num_gen>& probs);
 std::vector<long long int> random_multinomial(long long int n, const std::array<double, max_dev+1>& probs);
 
-// Contains the model parameters
-struct Pars {
-	// mosquito life-process parameters
-	double mu_j; // juvenile density independent mortality rate per day
-	double mu_a; // adult mortality rate per day 
-	double beta; // parameter that controls mating rate
-	double theta; // average egg laying rate of wildtype females (eggs per day)
-	double alpha0; // baseline contribution to carrying capacity
-	std::array<double, max_dev+1> dev_duration_probs; // array of probabilities of juvenile development duration for a new juvenile
-	// (index indicates the number of days to develop or, equivalently, the age class the new juvenile starts at)
-	int min_dev; // minimum development time for a juvenile (in days)
-	double mean_dev; // mean juvenile development time (in days)
-
-	// simulation area parameters
-	double side; // size of the square simulation area (side x side) (km)
-	int num_pat; // number of population sites chosen for the simulation
-
-	// dispersal parameters
-	double disp_rate; // adult dispersal rate
-	double max_disp; // maximum distance at which two sites are connected (km)
-
-	// aestivation parameters
-	double psi; // aestivation rate
-	double mu_aes; // aestivation mortality
-	int t_hide1; // start day of aestivation-entering period (day number of the year), not included
-	int t_hide2; // end day of aestivation-entering period (day number of the year)
-	int t_wake1; // start day of aestivation-waking period (day number of the year), not included
-	int t_wake2; // end day of aestivation-waking period (day number of the year)
-
-	// gene drive parameters
-	double gamma; // rate of r2 allele formation from W/D meiosis
-	double xi; // somatic Cas9 expression fitness cost
-	double e; // homing rate in females
-
-	std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> f; // f_ijk is the fraction of genotype k offspring from mother with genotype i mated to father with genotype j
-
-	// data-recording parameters
-	int set_label; // 'set of runs' index label for output files
-	int run_label; // 'run' index label in given set of runs for output files
-};
-
-// New classes
-
 // Model progression parameters
 struct ProgressionParams {
 	const int num_runs; // number of simulation replicates to run
@@ -139,7 +96,6 @@ struct RecordParams {
 
 	// output filename labels
 	const int set_label; // 'set of runs' index label for output files
-	const int run_label; // 'run' index label in given set of runs for output files
 };
 
 
@@ -171,34 +127,46 @@ private:
 	void run_reps(int n);
 };
 
+class Patch;
+
 // Runs the model.
 class Model {
 public:
-	Model(AreaParams &area, InitialPopsParams &initial, LifeParams &life);
+	std::vector<Patch> sites;
+
+	Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp_param, 
+		ReleaseParams *rel);
 	void initiate();
-	void run_step(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f, double disp_rate, int t_hide1, int t_hide2, int t_wake1, int t_wake2, double psi, double mu_aes);
+	void run_step(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f);
 
 	long long int calculate_tot_J(); 
 	long long int calculate_tot_M();
 	long long int calculate_tot_V();
 	long long int calculate_tot_F();
 	std::array<long long int, num_gen> calculate_tot_M_gen();
+	std::vector<Patch> get_sites() const;
+	std::size_t get_sites_size();
 	
 	// Dispersal functions
 	double distance(double side, std::array<double, 2> point1, std::array<double, 2> point2);
-	void set_connec(double side, double max_disp);
-	void adults_disperse(double disp_rate);
+	void set_connec(double side);
+	void adults_disperse();
 
 	// Aestivation functions
-	void hide(double psi, double mu_aes);
-	void wake(int day, int t_wake2);
+	void hide();
+	void wake(int day);
 
 	// Gene drive functions
 	void release_gene_drive(int num_driver_M, int num_driver_sites, int num_pat);
 	std::vector<int> select_driver_sites(int num_driver_sites);
 	void put_driver_sites(const std::vector<int>& patches, int num_driver_M);
+	bool is_release_time(int day);
 
 private:
+	DispersalParams *disp_params; // dispersal parameters
+	AestivationParams *aes_params; // aestivation parameters
+	ReleaseParams *rel_params; // gene drive release parameters
+
 	// simulation area parameters
 	int num_pat; // number of population sites chosen for the simulation
 	double side; // size of the square simulation area (side x side) (km)
@@ -241,9 +209,9 @@ public:
 	Patch(double side);
 	void populate(int initial_WJ, int initial_WM, int initial_WV, int initial_WF);
 
-	std::array<double, 2> get_coords();
-	std::array<long long int, num_gen> get_M();
-	std::array<std::array<long long int, num_gen>, num_gen> get_F();
+	std::array<double, 2> get_coords() const;
+	std::array<long long int, num_gen> get_M() const;
+	std::array<std::array<long long int, num_gen>, num_gen> get_F() const;
 
 	long long int calculate_tot_J();
 	long long int calculate_tot_M();
@@ -303,11 +271,14 @@ private:
 // Records model data.
 class Record {
 public:
-	Record(RecordParams &rec_params, int run);
-	void record_local(int day);
+	Record(RecordParams *rec_params, int rep);
+	void record_coords(const std::vector<Patch> &sites);
 	void record_global(int day, const std::array<long long int, num_gen> &tot_M_gen);
-	void record_coords();
 	void output_totals(int day, long long int tot_J, long long int tot_M, long long int tot_V, long long int tot_F);
+	void record_local(int day, const std::vector<Patch> &sites);
+
+	bool is_rec_local_time(int day);
+	bool is_rec_global_time(int day);
 
 private:
 	// recording window and intervals
@@ -318,8 +289,8 @@ private:
 	int rec_sites_freq; // fraction of sites to collect local data for (1 is all sites, 10 is 1 in 10 etc)
 
 	// output filename labels
-	int set_label; // 'set of runs' index label for output files
-	int run_label; // 'run' index label in given set of runs for output files
+	int set_label; // 'set of repetitions' index label for output files
+	int rep_label; // 'repetition' index label in given set of repetitions for output files
 
 	std::ostringstream os1, os2, os3; // filenames
 	std::ofstream local_data, global_data, coord_list; // file objects

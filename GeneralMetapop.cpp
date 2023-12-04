@@ -6,10 +6,6 @@ std::random_device rd;
 //std::mt19937 twister(rd());
 std::mt19937 twister(1);
 
-// global structs
-Pars pa; 
-std::vector<Patch> sites; 
-
 int main()
 {	
 	// input parameters
@@ -59,7 +55,6 @@ int main()
 	int rec_interval_local;
 	int rec_sites_freq; 
 	int set_label; 
-	int run_label;
 
 	bool invalid_input = true;
 	std::cout << "Please enter the input parameters for the model:" << std::endl;
@@ -96,7 +91,6 @@ int main()
 			std::cin >> rec_interval_local;
 			std::cin >> rec_sites_freq;
 			std::cin >> set_label;
-			std::cin >> run_label;
 
 			// input validation
 			if (num_runs <= 0) throw OutOfBoundsException("num_runs");
@@ -132,7 +126,6 @@ int main()
 			if (rec_interval_local < 1) throw OutOfBoundsException("rec_interval_local");
 			if (rec_sites_freq < 1) throw OutOfBoundsException("rec_sites_freq");
 			if (set_label < 0) throw OutOfBoundsException("set_label");
-			if (run_label < 0) throw OutOfBoundsException("run_label");
 			if (rec_start >= rec_end) throw InvalidIntervalException("rec_start", "rec_end");
 			if (psi > 0) {
 				if (t_hide1 >= t_hide2) throw InvalidIntervalException("t_hide1", "t_hide2");
@@ -186,26 +179,7 @@ int main()
 	DispersalParams disp{disp_rate, max_disp};
 	AestivationParams aes{psi, mu_aes, t_hide1, t_hide2, t_wake1, t_wake2};
 	InitialPopsParams initial;
-	RecordParams rec{rec_start, rec_end, rec_interval_global, rec_interval_local, rec_sites_freq, set_label, run_label};
-
-	// temporary initialisation of old param struct variables needed
-	pa.num_pat = area.num_pat;
-	pa.side = area.side;
-	pa.mu_j = life.mu_j;
-	pa.mu_a = life.mu_a;
-	pa.beta = life.beta;
-	pa.theta = life.theta;
-	pa.alpha0 = life.alpha0;
-	pa.mean_dev = life.mean_dev;
-	pa.min_dev = life.min_dev;
-	pa.disp_rate = disp.disp_rate;
-	pa.max_disp = disp.max_disp;
-	pa.psi = aes.psi;
-	pa.mu_aes = aes.mu_aes;
-	pa.t_hide1 = aes.t_hide1;
-	pa.t_hide2 = aes.t_hide2;
-	pa.t_wake1 = aes.t_wake1;
-	pa.t_wake2 = aes.t_wake2;
+	RecordParams rec{rec_start, rec_end, rec_interval_global, rec_interval_local, rec_sites_freq, set_label};
 
 	auto start = std::chrono::steady_clock::now();
 
@@ -508,57 +482,54 @@ void SimController::set_inheritance()
 // Runs the simulation n times, recording data in output files.
 void SimController::run_reps(int n) 
 {
-	int run_label = rec_params->run_label;
-	for (int j=1; j<=n; ++j) {
-		Record data(*rec_params, run_label);
-		Model model(*area_params, *initial_params, *life_params);
-
+	for (int rep=1; rep<=n; ++rep) {
+		Model model(area_params, initial_params, life_params, aes_params, disp_params, rel_params);
+		Record data(rec_params, rep);
 		model.initiate();
-		data.record_coords();
+		data.record_coords(model.get_sites());
 		
-		// previous run_model() - runs the simulation once for simulated time max_time
 		for (int tt=0; tt <= max_t; ++tt) { // current day of the simulation 
-			if (tt == rel_params->driver_start) {
+			if (model.is_release_time(tt)) {
 				model.release_gene_drive(rel_params->num_driver_M, rel_params->num_driver_sites, area_params->num_pat);
 			} 
-
 			if (tt > 0) {
-				model.run_step(tt, f, disp_params->disp_rate, aes_params->t_hide1, aes_params->t_hide2, aes_params->t_wake1,
-				 aes_params->t_wake2, aes_params->psi, aes_params->mu_aes);
+				model.run_step(tt, f);
 			}
 
-			// recording
-			if (tt % rec_params->rec_interval_global == 0) {
-				data.output_totals(tt, model.calculate_tot_J(), model.calculate_tot_M(), model.calculate_tot_V(), model.calculate_tot_F());
+			if (data.is_rec_global_time(tt)) {
+				data.output_totals(tt, model.calculate_tot_J(), model.calculate_tot_M(), model.calculate_tot_V(),
+				 model.calculate_tot_F());
 				data.record_global(tt, model.calculate_tot_M_gen());
 			}
-			if ((tt == 0) || (tt >= rec_params->rec_start && tt <= rec_params->rec_end && tt % rec_params->rec_interval_local == 0)) {
-				data.record_local(tt);
+			if (data.is_rec_local_time(tt)) {
+				data.record_local(tt, model.get_sites());
 			}
 		}
-
-		run_label++;
 	}
-
 }
 
-Model::Model(AreaParams &area, InitialPopsParams &initial, LifeParams &life) 
+Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
+	ReleaseParams *rel) 
 {
-	num_pat = area.num_pat;
-	side = area.side;
-	initial_WJ = initial.initial_WJ;
-	initial_WM = initial.initial_WM;
-	initial_WV = initial.initial_WV;
-	initial_WF = initial.initial_WF;
-	mu_j = life.mu_j;
-	mu_a = life.mu_a;
-	beta = life.beta;
-	theta = life.theta;
-	alpha0 = life.alpha0;
-	mean_dev = life.mean_dev;
-	min_dev = life.min_dev;
+	num_pat = area->num_pat;
+	side = area->side;
+	initial_WJ = initial->initial_WJ;
+	initial_WM = initial->initial_WM;
+	initial_WV = initial->initial_WV;
+	initial_WF = initial->initial_WF;
+	mu_j = life->mu_j;
+	mu_a = life->mu_a;
+	beta = life->beta;
+	theta = life->theta;
+	alpha0 = life->alpha0;
+	mean_dev = life->mean_dev;
+	min_dev = life->min_dev;
 
 	dev_duration_probs.fill(0);
+
+	disp_params = disp;
+	aes_params = aes;
+	rel_params = rel;
 }
 
 // Sets up the model architecture 
@@ -574,7 +545,7 @@ void Model::initiate()
 	populate_sites();
 	set_dev_duration_probs(min_dev, max_dev);
 
-	set_connec(side, pa.max_disp); // Dispersal set-up
+	set_connec(side); // Dispersal set-up
 }
 
 // Populates all sites with a (wild) mosquito population of different types (age and sex)
@@ -616,16 +587,16 @@ void Model::update_mate()
 	}
 }
 
-void Model::run_step(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f, double disp_rate, int t_hide1, int t_hide2, int t_wake1, int t_wake2, double psi, double mu_aes) 
+void Model::run_step(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f) 
 {
 	juv_get_older();
 	adults_die();
 	virgins_mate();
-	adults_disperse(disp_rate);
+	adults_disperse();
 	lay_eggs(f);
 	juv_eclose();
-	if (day%365 > t_hide1 && day%365 <= t_hide2 && psi > 0.00001) hide(psi, mu_aes);
-	if (day%365 > t_wake1 && day%365 <= t_wake2 && psi > 0.00001) wake(day, t_wake2);
+	if (day%365 > aes_params->t_hide1 && day%365 <= aes_params->t_hide2 && aes_params->psi > 0.00001) hide();
+	if (day%365 > aes_params->t_wake1 && day%365 <= aes_params->t_wake2 && aes_params->psi > 0.00001) wake(day);
 	update_comp();
 	update_mate();
 }
@@ -682,6 +653,16 @@ std::array<long long int, num_gen> Model::calculate_tot_M_gen()
 		}
 	}
 	return tot_M_gen;
+}
+
+std::vector<Patch> Model::get_sites() const
+{
+	return sites;
+}
+
+std::size_t Model::get_sites_size() 
+{
+	return sites.size();
 }
 
 // Ages the juvenile population in different age groups by a day across the simulation area
@@ -754,16 +735,16 @@ double Model::distance(double side, std::array<double, 2> point1, std::array<dou
 }
 
 // Computes the inter-patch connectivities
-void Model::set_connec(double side, double max_disp) 
+void Model::set_connec(double side) 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
 		sites[pat].connec_indices.clear();
 		sites[pat].connec_weights.clear();
 		for (int new_pat=0; new_pat < sites.size(); ++new_pat) {
 			double dd = distance(side, sites[pat].get_coords(), sites[new_pat].get_coords());
-			if (dd < max_disp) {
+			if (dd < (disp_params->max_disp)) {
 				sites[pat].connec_indices.push_back(new_pat); 
-				double ww = max_disp - dd;
+				double ww = (disp_params->max_disp) - dd;
 				sites[pat].connec_weights.push_back(ww); 
 			}
 		}
@@ -772,7 +753,7 @@ void Model::set_connec(double side, double max_disp)
 }
 
 // Selects and updates the number of adults that disperse from and to each patch, depending on the patch connectivities
-void Model::adults_disperse(double disp_rate) 
+void Model::adults_disperse() 
 {
 	// reset values
 	for (int pat=0; pat < sites.size(); ++pat) {
@@ -789,11 +770,11 @@ void Model::adults_disperse(double disp_rate)
 		// number of adults dispersing from each patch
 		for (int pat=0; pat < sites.size(); ++pat) {
 			for (int i=0; i < num_gen; ++i) {
-				sites[pat].move_M[i] = random_binomial(sites[pat].get_M()[i], disp_rate); // how many males will disperse from patch
+				sites[pat].move_M[i] = random_binomial(sites[pat].get_M()[i], disp_params->disp_rate); // how many males will disperse from patch
 				sites[pat].M_disperse_out(i);
 
 				for (int j=0; j < num_gen; ++j) {
-					sites[pat].move_F[i][j] = random_binomial(sites[pat].get_F()[i][j], disp_rate);
+					sites[pat].move_F[i][j] = random_binomial(sites[pat].get_F()[i][j], disp_params->disp_rate);
 					sites[pat].F_disperse_out(i, j);
 				}
 			}
@@ -826,13 +807,13 @@ void Model::adults_disperse(double disp_rate)
 }
 
 // Calculates the number of mated females going into aestivation on the given day and updates the population numbers, depending on the survival rate of going into aestivation
-void Model::hide(double psi, double mu_aes) 
+void Model::hide() 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
 		for (int i=0; i < num_gen; ++i) {
 			for (int j=0; j < num_gen; ++j) {
-				long long int f = random_binomial(sites[pat].get_F()[i][j], psi); // number of females that attempt to go into aestivation
-				long long int aes_f = random_binomial(f, 1 - mu_aes);	// number that survive going into aestivation
+				long long int f = random_binomial(sites[pat].get_F()[i][j], aes_params->psi); // number of females that attempt to go into aestivation
+				long long int aes_f = random_binomial(f, 1 - (aes_params->mu_aes));	// number that survive going into aestivation
 				sites[pat].F_hide(i, j, f, aes_f);
 			}
 		}
@@ -840,9 +821,9 @@ void Model::hide(double psi, double mu_aes)
 }
 
 // Calculates the number of mated females coming out of aestivation on the given day and updates the population numbers
-void Model::wake(int day, int t_wake2) 
+void Model::wake(int day) 
 {
-	double prob = 1.0 / (1.0 + t_wake2 - (day%365)); // probability of a female waking on a given day
+	double prob = 1.0 / (1.0 + (aes_params->t_wake2) - (day%365)); // probability of a female waking on a given day
 	for (int pat=0; pat < sites.size(); ++pat) {
 		for (int i=0; i < num_gen; ++i) {
 			for(int j=0; j < num_gen; ++j) {
@@ -890,6 +871,11 @@ void Model::put_driver_sites(const std::vector<int>& patches, int num_driver_M)
 	update_mate();
 }
 
+bool Model::is_release_time(int day) 
+{
+	return day == rel_params->driver_start;
+}
+
 Patch::Patch(double side) 
 {
 	// set patch parameters
@@ -930,19 +916,19 @@ void Patch::populate(int initial_WJ, int initial_WM, int initial_WV, int initial
 }
 
 // Returns the coordinates of the site on the simulation area
-std::array<double, 2> Patch::get_coords() 
+std::array<double, 2> Patch::get_coords() const
 {
 	return coords;
 }
 
 // Returns an array of number of males with each genotype
-std::array<long long int, num_gen> Patch::get_M() 
+std::array<long long int, num_gen> Patch::get_M() const
 {
 	return M;
 }
 
 // Returns a 2D array of number of females with each female and carrying mated male genotype
-std::array<std::array<long long int, num_gen>, num_gen> Patch::get_F() 
+std::array<std::array<long long int, num_gen>, num_gen> Patch::get_F() const
 {
 	return F;
 }
@@ -1133,24 +1119,24 @@ void Patch::update_mate(double beta)
 }
 
 // Creates LocalData, Totals and CoordinateList output .txt files
-Record::Record(RecordParams &rec_params, int run) 
+Record::Record(RecordParams *rec_params, int rep) 
 {
-	rec_start = rec_params.rec_start;
-	rec_end = rec_params.rec_end;
-	rec_interval_global = rec_params.rec_interval_global;
-	rec_interval_local = rec_params.rec_interval_local;
-	rec_sites_freq = rec_params.rec_sites_freq;
-	set_label = rec_params.set_label;
-	run_label = run;
+	rec_start = rec_params->rec_start;
+	rec_end = rec_params->rec_end;
+	rec_interval_global = rec_params->rec_interval_global;
+	rec_interval_local = rec_params->rec_interval_local;
+	rec_sites_freq = rec_params->rec_sites_freq;
+	set_label = rec_params->set_label;
+	rep_label = rep;
 
 	std::filesystem::path output_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files";
 	std::filesystem::current_path(output_path);
 	
-	os1 << "LocalData" << set_label << "run" << run_label << ".txt"; 
+	os1 << "LocalData" << set_label << "run" << rep_label << ".txt"; 
 	local_data.open(os1.str());
-	os2 << "Totals" << set_label << "run" << run_label << ".txt";
+	os2 << "Totals" << set_label << "run" << rep_label << ".txt";
 	global_data.open(os2.str());
-	os3 << "CoordinateList" << set_label << "run" << run_label << ".txt";
+	os3 << "CoordinateList" << set_label << "run" << rep_label << ".txt";
 	coord_list.open(os3.str());
 
 	local_data << "Male populations of each genotype at each site\n";
@@ -1163,15 +1149,12 @@ Record::Record(RecordParams &rec_params, int run)
 	coord_list << "Site" << "\t" << "x" << "\t" << "y" << std::endl;
 }
 
-// Records the number of males of each genotype at each site
-void Record::record_local(int day) 
+// Records the x and y coordinates of each site
+void Record::record_coords(const std::vector<Patch> &sites) 
 {
 	for (int pat=0; pat < sites.size(); pat += rec_sites_freq) {
-		local_data << day << "\t" << pat+1;
-		for (const auto& m_gen : sites[pat].get_M()) {
-			local_data << "\t" << m_gen;
-		}
-		local_data << std::endl;
+		std::array<double, 2> pat_coords = sites[pat].get_coords();
+		coord_list << pat+1 << "\t" << pat_coords[0] << "\t" << pat_coords[1] << std::endl;
 	}
 }
 
@@ -1185,19 +1168,33 @@ void Record::record_global(int day, const std::array<long long int, num_gen> &to
 	global_data << std::endl;
 }
 
-// Records the x and y coordinates of each site
-void Record::record_coords() 
-{
-	for (int pat=0; pat < sites.size(); pat += rec_sites_freq) {
-		std::array<double, 2> pat_coords = sites[pat].get_coords();
-		coord_list << pat+1 << "\t" << pat_coords[0] << "\t" << pat_coords[1] << std::endl;
-	}
-}
-
 // Outputs to screen the J, M, V, F totals over the simulation area for the given day
 void Record::output_totals(int day, long long int tot_J, long long int tot_M, long long int tot_V, long long int tot_F)
 {
 	std::cout << day << "\t" << tot_J << "\t" << tot_M << "\t" << tot_V << "\t" << tot_F << std::endl;
+}
+
+
+// Records the number of males of each genotype at each site
+void Record::record_local(int day, const std::vector<Patch> &sites) 
+{
+	for (int pat=0; pat < sites.size(); pat += rec_sites_freq) {
+		local_data << day << "\t" << pat+1;
+		for (const auto& m_gen : sites[pat].get_M()) {
+			local_data << "\t" << m_gen;
+		}
+		local_data << std::endl;
+	}
+}
+
+bool Record::is_rec_global_time(int day)
+{
+	return day % rec_interval_global == 0;
+}
+
+bool Record::is_rec_local_time(int day) 
+{
+	return (day == 0) || (day >= rec_start && day <= rec_end && day % rec_interval_local == 0);
 }
 
 Exception::Exception() {}
