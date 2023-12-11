@@ -6,4 +6,5 @@
 .vscode
 Dispersal version/
 New totals system version/
-Testing/Aestivation data
+Testing/*
+!Testing/Test oracle data

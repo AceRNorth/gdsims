@@ -36,7 +36,7 @@ for j in range(0, num_sets):
 num_runs = 2 # later take from pd read table
 num_sets = 10 # later take from number of folders in oracle folder
 
-make_plot = False
+make_plot = True
 
 for j in range(0, num_sets):
     print("Set " + str(j+1))

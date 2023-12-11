@@ -104,7 +104,8 @@ class SimController {
 public:
 	SimController(ProgressionParams &prog, AreaParams &area, LifeParams &life, InheritanceParams &inher,
  		ReleaseParams &rel, DispersalParams &disp, AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec); 
-	void run_sim();
+	void set_inheritance(); 
+	void run_reps();
 
 private:
 	int num_runs; // number of simulation replicates to run
@@ -119,12 +120,9 @@ private:
 	InitialPopsParams *initial_params; // initial population values
 	RecordParams *rec_params; // data-recording parameters
 
+	// inheritance
 	// f_ijk is the fraction of genotype k offspring from mother with genotype i mated to father with genotype j
 	std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> f;
-
-	void set_inheritance(); 
-	void initiate_sim();
-	void run_reps(int n);
 };
 
 class Patch;
@@ -151,6 +149,8 @@ public:
 	double distance(double side, std::array<double, 2> point1, std::array<double, 2> point2);
 	void set_connec(double side);
 	void adults_disperse();
+	std::vector<std::array<long long int, num_gen>> M_dispersing_out();
+	std::vector<std::array<std::array<long long int, num_gen>, num_gen>> F_dispersing_out();
 
 	// Aestivation functions
 	void hide();
@@ -219,14 +219,15 @@ public:
 	long long int calculate_tot_F();
 	
 	// interface to Dispersal
-	void M_disperse_out(int gen);
-	void F_disperse_out(int f_gen, int m_gen);
-	void M_disperse_in(int gen, long long int m_disp);
+	void M_disperse_out(const std::array<long long int, num_gen> &m_out);
+	void F_disperse_out(const std::array<std::array<long long int, num_gen>, num_gen> &f_out);
+	void M_disperse_in(int gen, long long int m_in);
 	void F_disperse_in(int f_gen, int m_gen, long long int f_disp);
 
 	// interface to Aestivation
-	void F_hide(int f_gen, int m_gen, long long int f_try, long long int f_succeed);
-	void F_wake(int f_gen, int m_gen, long long int f_wake);
+	void F_hide(const std::array<std::array<long long int, num_gen>, num_gen> &f_try, 
+		const std::array<std::array<long long int, num_gen>, num_gen> &f_succeed);
+	void F_wake(const std::array<std::array<long long int, num_gen>, num_gen> &f_wake);
 
 	// interface to GeneDrive 
 	void add_driver_M(int num_driver_M);
@@ -243,10 +244,6 @@ public:
  
 	// number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j that have gone into aestivation
 	std::array<std::array<long long int, num_gen>, num_gen> aes_F;
-	// number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j that will be dispersing from the local site 	
-	std::array<std::array<long long int, num_gen>, num_gen> move_F; 
-	// number of male mosquitoes with each genotype that will be dispersing from the local site
-	std::array<long long int, num_gen> move_M; 
 
 	// for determining connectivities between patches
 	std::vector<int> connec_indices; // patch indices of the patches connected to the selected patch

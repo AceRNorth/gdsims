@@ -185,7 +185,8 @@ int main()
 
 	// run simulation
 	SimController simulation(prog, area, life, inher, rel, disp, aes, initial, rec);
-	simulation.run_sim();
+	simulation.set_inheritance();
+	simulation.run_reps();
 
 	auto finish = std::chrono::steady_clock::now();
 	double elapsed_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(finish - start).count();
@@ -359,18 +360,18 @@ SimController::SimController(ProgressionParams &prog, AreaParams &area, LifePara
 	}
 }
 
-// Runs the simulation
-void SimController::run_sim()
-{
-	initiate_sim();
-	run_reps(num_runs);
-}
+// // Runs the simulation
+// void SimController::run_sim()
+// {
+// 	initiate_sim();
+// 	run_reps(num_runs);
+// }
 
-// Sets up the model architecture for the simulation
-void SimController::initiate_sim()
-{
-	set_inheritance();
-}
+// // Sets up the model architecture for the simulation
+// void SimController::initiate_sim()
+// {
+// 	set_inheritance();
+// }
 
 // Sets the values of the f_{ijk} fraction for the gene drive considering r2 resistant alleles
 // f_{ijk} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j
@@ -480,9 +481,9 @@ void SimController::set_inheritance()
 }
 
 // Runs the simulation n times, recording data in output files.
-void SimController::run_reps(int n) 
+void SimController::run_reps() 
 {
-	for (int rep=1; rep<=n; ++rep) {
+	for (int rep=1; rep <= num_runs; ++rep) {
 		Model model(area_params, initial_params, life_params, aes_params, disp_params, rel_params);
 		Record data(rec_params, rep);
 		model.initiate();
@@ -739,84 +740,108 @@ void Model::set_connec(double side)
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
 		sites[pat].connec_indices.clear();
-		sites[pat].connec_weights.clear();
+		sites[pat].connec_weights.clear(); 
 		for (int new_pat=0; new_pat < sites.size(); ++new_pat) {
 			double dd = distance(side, sites[pat].get_coords(), sites[new_pat].get_coords());
 			if (dd < (disp_params->max_disp)) {
 				sites[pat].connec_indices.push_back(new_pat); 
-				double ww = (disp_params->max_disp) - dd;
-				sites[pat].connec_weights.push_back(ww); 
+				double weight = (disp_params->max_disp) - dd;
+				sites[pat].connec_weights.push_back(weight); 
 			}
 		}
 	}
-	
 }
 
 // Selects and updates the number of adults that disperse from and to each patch, depending on the patch connectivities
 void Model::adults_disperse() 
-{
-	// reset values
-	for (int pat=0; pat < sites.size(); ++pat) {
-		for (int i=0; i < num_gen; ++i) {
-			sites[pat].move_M[i] = 0;
-
-			for (int j=0; j < num_gen; ++j) {
-				sites[pat].move_F[i][j] = 0;
-			}
-		}
-	}
-
+{ 
 	if (sites.size() > 1) {
-		// number of adults dispersing from each patch
-		for (int pat=0; pat < sites.size(); ++pat) {
-			for (int i=0; i < num_gen; ++i) {
-				sites[pat].move_M[i] = random_binomial(sites[pat].get_M()[i], disp_params->disp_rate); // how many males will disperse from patch
-				sites[pat].M_disperse_out(i);
-
-				for (int j=0; j < num_gen; ++j) {
-					sites[pat].move_F[i][j] = random_binomial(sites[pat].get_F()[i][j], disp_params->disp_rate);
-					sites[pat].F_disperse_out(i, j);
-				}
-			}
+		// adults dispersing out from each patch 
+		std::vector<std::array<long long int, num_gen>> m_move = M_dispersing_out(); // males dispersing from each patch
+		for (std::size_t pat = 0; pat < sites.size(); ++pat) { // update population numbers
+			sites[pat].M_disperse_out(m_move[pat]);
 		}
 
-		// number of adults dispersing to each patch
+		std::vector<std::array<std::array<long long int, num_gen>, num_gen>> f_move = F_dispersing_out();
+		for (std::size_t pat = 0; pat < sites.size(); ++pat) { 
+			sites[pat].F_disperse_out(f_move[pat]);
+		}
+			
+		// adults dispersing to each patch
 		std::vector<long long int> m_disp;
 		std::vector<long long int> f_disp;
-		for (int pat=0; pat < sites.size(); ++pat) {
-			for (int i=0; i < num_gen; ++i) {
-				if (sites[pat].move_M[i] > 0) {
-					// how many males of the given genotype will disperse to each of the connected patches from the given patch
-					m_disp = random_multinomial(sites[pat].move_M[i], sites[pat].connec_weights);
-					for (int new_pat=0; new_pat < m_disp.size(); ++new_pat) {
-						sites[sites[pat].connec_indices[new_pat]].M_disperse_in(i, m_disp[new_pat]);
-					}
+		//std::vector<std::vector<long long int>> m_in;
+		//std::vector<std::vector<std::vector<long long int>>> f_in;
+		for (std::size_t pat=0; pat < sites.size(); ++pat) {
+			for (std::size_t i=0; i < num_gen; ++i) {
+				// how many males of the given genotype will disperse to each of the connected patches from the given patch
+				m_disp = random_multinomial(m_move[pat][i], sites[pat].connec_weights);
+				for (std::size_t new_pat=0; new_pat < m_disp.size(); ++new_pat) {
+					sites[sites[pat].connec_indices[new_pat]].M_disperse_in(i, m_disp[new_pat]);
 				}
-
-				for (int j=0; j < num_gen; ++j) {
-					if (sites[pat].move_F[i][j] > 0) {
-						f_disp = random_multinomial(sites[pat].move_F[i][j], sites[pat].connec_weights);
-						for (int new_pat=0; new_pat < f_disp.size(); ++new_pat) {
-							sites[sites[pat].connec_indices[new_pat]].F_disperse_in(i, j, f_disp[new_pat]);
-						}
+			}
+		}
+		for (std::size_t pat = 0; pat < sites.size(); ++pat) {
+			for (std::size_t i = 0; i < num_gen; ++i) {
+				for (std::size_t j=0; j < num_gen; ++j) {
+					f_disp = random_multinomial(f_move[pat][i][j], sites[pat].connec_weights);
+					for (std::size_t new_pat=0; new_pat < f_disp.size(); ++new_pat) {
+						sites[sites[pat].connec_indices[new_pat]].F_disperse_in(i, j, f_disp[new_pat]);
 					}
 				}
 			}
 		}
 	}
+}
+
+// Returns the number of males (of each genotype) dispersing out from each patch.
+std::vector<std::array<long long int, num_gen>> Model::M_dispersing_out()
+{
+	std::vector<std::array<long long int, num_gen>> m_move;	
+	std::array<long long int, num_gen> m;
+	std::array<long long int, num_gen> m_out;
+	for (int pat=0; pat < sites.size(); ++pat) {
+		m = sites[pat].get_M();
+		for (int i=0; i < num_gen; ++i) {
+			m_out[i] = random_binomial(m[i], disp_params->disp_rate); // how many males will disperse from the given patch
+		}
+		m_move.push_back(m_out);
+	}
+	return m_move;
+}
+
+std::vector<std::array<std::array<long long int, num_gen>, num_gen>> Model::F_dispersing_out()
+{
+	std::vector<std::array<std::array<long long int, num_gen>, num_gen>> f_move; 
+	std::array<std::array<long long int, num_gen>, num_gen> f;
+	std::array<std::array<long long int, num_gen>, num_gen> f_out;
+	for (int pat=0; pat < sites.size(); ++pat) {
+		f = sites[pat].get_F();
+		for (int i=0; i < num_gen; ++i) {
+			for (int j=0; j < num_gen; ++j) {
+				f_out[i][j] = random_binomial(f[i][j], disp_params->disp_rate); // how many females will disperse from the given patch
+			}
+		}
+		f_move.push_back(f_out);
+	}
+	return f_move;
 }
 
 // Calculates the number of mated females going into aestivation on the given day and updates the population numbers, depending on the survival rate of going into aestivation
 void Model::hide() 
 {
+	std::array<std::array<long long int, num_gen>, num_gen> f;
+	std::array<std::array<long long int, num_gen>, num_gen> f_try;
+	std::array<std::array<long long int, num_gen>, num_gen> f_aes;
 	for (int pat=0; pat < sites.size(); ++pat) {
+		f = sites[pat].get_F();
 		for (int i=0; i < num_gen; ++i) {
 			for (int j=0; j < num_gen; ++j) {
-				long long int f = random_binomial(sites[pat].get_F()[i][j], aes_params->psi); // number of females that attempt to go into aestivation
-				long long int aes_f = random_binomial(f, 1 - (aes_params->mu_aes));	// number that survive going into aestivation
-				sites[pat].F_hide(i, j, f, aes_f);
+				f_try[i][j] = random_binomial(f[i][j], aes_params->psi); // number of females that attempt to go into aestivation
+				f_aes[i][j] = random_binomial(f_try[i][j], 1 - (aes_params->mu_aes));	// number that survive going into aestivation
 			}
 		}
+		sites[pat].F_hide(f_try, f_aes);
 	}
 }
 
@@ -824,14 +849,16 @@ void Model::hide()
 void Model::wake(int day) 
 {
 	double prob = 1.0 / (1.0 + (aes_params->t_wake2) - (day%365)); // probability of a female waking on a given day
+	
+	std::array<std::array<long long int, num_gen>, num_gen> f_w;
 	for (int pat=0; pat < sites.size(); ++pat) {
 		for (int i=0; i < num_gen; ++i) {
 			for(int j=0; j < num_gen; ++j) {
 				// number of females that wake up from aestivation on the given day
-				long long int f = random_binomial(sites[pat].aes_F[i][j], prob);
-				sites[pat].F_wake(i, j, f);
+				f_w[i][j] = random_binomial(sites[pat].aes_F[i][j], prob);
 			}
 		}
+		sites[pat].F_wake(f_w);
 	}
 }
 
@@ -892,11 +919,9 @@ Patch::Patch(double side)
 			J[i][a] = 0; 
 		}
 		M[i] = 0;
-		move_M[i] = 0;
 		V[i] = 0;
 		for (int j=0; j < num_gen; ++j) {
 			F[i][j] = 0;
-			move_F[i][j] = 0;
 			aes_F[i][j] = 0;
 		}
 	}
@@ -978,21 +1003,27 @@ long long int Patch::calculate_tot_F()
 }
 
 // Removes males from the population as they disperse out.
-void Patch::M_disperse_out(int gen) 
+void Patch::M_disperse_out(const std::array<long long int, num_gen> &m_out) 
 {
-	M[gen] -= move_M[gen];
+	for (std::size_t i = 0; i < m_out.size(); ++i) {
+		M[i] -= m_out[i];
+	}
 }
 
 // Removes females from the population as they disperse out.
-void Patch::F_disperse_out(int f_gen, int m_gen) 
+void Patch::F_disperse_out(const std::array<std::array<long long int, num_gen>, num_gen> &f_out) 
 {
-	F[f_gen][m_gen] -= move_F[f_gen][m_gen];
+	for (std::size_t i = 0; i < f_out.size(); ++i) {
+		for (std::size_t j = 0; j < f_out[0].size(); ++j) {
+			F[i][j] -= f_out[i][j];
+		}
+	}
 }
 
 // Introduces new males into the population as they disperse in.
-void Patch::M_disperse_in(int gen, long long int m_disp) 
+void Patch::M_disperse_in(int gen, long long int m_in) 
 {
-	M[gen] += m_disp;
+	M[gen] += m_in;
 }
 
 // Introduces new females into the population as they disperse in.
@@ -1002,17 +1033,26 @@ void Patch::F_disperse_in(int f_gen, int m_gen, long long int f_disp)
 }
 
 // Updates active female population numbers after they attempt to go into aestivation.
-void Patch::F_hide(int f_gen, int m_gen, long long int f_try, long long int f_succeed)
+void Patch::F_hide(const std::array<std::array<long long int, num_gen>, num_gen> &f_try,
+ const std::array<std::array<long long int, num_gen>, num_gen> &f_succeed)
 {
-	F[f_gen][m_gen] -= f_try;
-	aes_F[f_gen][m_gen] += f_succeed;
+	for (std::size_t i = 0; i < F.size(); ++i) {
+		for (std::size_t j = 0; j < F[0].size(); ++j) {
+			F[i][j] -= f_try[i][j];
+			aes_F[i][j] += f_succeed[i][j];
+		}
+	}
 }
 
 // Updates active female population numbers after they wake from aestivation.
-void Patch::F_wake(int f_gen, int m_gen, long long int f_wake)
+void Patch::F_wake(const std::array<std::array<long long int, num_gen>, num_gen> &f_wake)
 {
-	F[f_gen][m_gen] += f_wake;
-	aes_F[f_gen][m_gen] -= f_wake;
+	for (std::size_t i = 0; i < F.size(); ++i) {
+		for (std::size_t j = 0; j < F[0].size(); ++j) {
+			F[i][j] += f_wake[i][j];
+			aes_F[i][j] -= f_wake[i][j];
+		}
+	}
 }
 
 // Introduces driver heterozygous males into the population.
