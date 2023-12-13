@@ -146,8 +146,16 @@ public:
 	std::size_t get_sites_size();
 	
 	// Dispersal functions
+
+	// connected patch indices ordered by each patch in sites, such that the first element contains the indices of all the patches
+	// connected to the first sites patch, second element has all connection indices to the second sites patch, etc.
+	std::vector<std::vector<int>> connec_indices; 
+	// connection weights of the connected patches ordered by each patch in sites, such that the first element contains the connection
+	// weights between the first patch in sites and all the patches connected to it, the second element has all connection weights
+	// between the second sites element and all other patches connected to it, etc.
+	std::vector<std::vector<double>> connec_weights; 
 	double distance(double side, std::array<double, 2> point1, std::array<double, 2> point2);
-	void set_connec(double side);
+	void set_connecs(double side);
 	void adults_disperse();
 	std::vector<std::array<long long int, num_gen>> M_dispersing_out();
 	std::vector<std::array<std::array<long long int, num_gen>, num_gen>> F_dispersing_out();
@@ -246,9 +254,9 @@ public:
 	std::array<std::array<long long int, num_gen>, num_gen> aes_F;
 
 	// for determining connectivities between patches
-	std::vector<int> connec_indices; // patch indices of the patches connected to the selected patch
+	// std::vector<int> connec_indices; // patch indices of the patches connected to the selected patch
 	// patch connection weights corresponding to the connected patches listed in connec_indices (same order)
-	std::vector<double> connec_weights; 
+	// std::vector<double> connec_weights; 
 
 private:
 	std::array<double, 2> coords; // (x, y) coordinates of the site

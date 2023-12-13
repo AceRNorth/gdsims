@@ -528,6 +528,8 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 
 	dev_duration_probs.fill(0);
 
+	connec_indices.clear();
+	connec_weights.clear();
 	disp_params = disp;
 	aes_params = aes;
 	rel_params = rel;
@@ -546,7 +548,7 @@ void Model::initiate()
 	populate_sites();
 	set_dev_duration_probs(min_dev, max_dev);
 
-	set_connec(side); // Dispersal set-up
+	set_connecs(side); // Dispersal set-up
 }
 
 // Populates all sites with a (wild) mosquito population of different types (age and sex)
@@ -736,58 +738,60 @@ double Model::distance(double side, std::array<double, 2> point1, std::array<dou
 }
 
 // Computes the inter-patch connectivities
-void Model::set_connec(double side) 
+void Model::set_connecs(double side) 
 {
+	std::vector<int> connec_indices_pat;
+	std::vector<double> connec_weights_pat;
 	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].connec_indices.clear();
-		sites[pat].connec_weights.clear(); 
+		connec_indices_pat.clear();
+		connec_weights_pat.clear();
 		for (int new_pat=0; new_pat < sites.size(); ++new_pat) {
 			double dd = distance(side, sites[pat].get_coords(), sites[new_pat].get_coords());
 			if (dd < (disp_params->max_disp)) {
-				sites[pat].connec_indices.push_back(new_pat); 
+				connec_indices_pat.push_back(new_pat); 
 				double weight = (disp_params->max_disp) - dd;
-				sites[pat].connec_weights.push_back(weight); 
+				connec_weights_pat.push_back(weight); 
 			}
 		}
+		connec_indices.push_back(connec_indices_pat);
+		connec_weights.push_back(connec_weights_pat);
 	}
 }
 
 // Selects and updates the number of adults that disperse from and to each patch, depending on the patch connectivities
 void Model::adults_disperse() 
 { 
-	if (sites.size() > 1) {
-		// adults dispersing out from each patch 
-		std::vector<std::array<long long int, num_gen>> m_move = M_dispersing_out(); // males dispersing from each patch
-		for (std::size_t pat = 0; pat < sites.size(); ++pat) { // update population numbers
-			sites[pat].M_disperse_out(m_move[pat]);
-		}
+	// adults dispersing out from each patch 
+	std::vector<std::array<long long int, num_gen>> m_move = M_dispersing_out(); // males dispersing from each patch
+	for (std::size_t pat = 0; pat < sites.size(); ++pat) { // update population numbers
+		sites[pat].M_disperse_out(m_move[pat]);
+	}
 
-		std::vector<std::array<std::array<long long int, num_gen>, num_gen>> f_move = F_dispersing_out();
-		for (std::size_t pat = 0; pat < sites.size(); ++pat) { 
-			sites[pat].F_disperse_out(f_move[pat]);
-		}
-			
-		// adults dispersing to each patch
-		std::vector<long long int> m_disp;
-		std::vector<long long int> f_disp;
-		//std::vector<std::vector<long long int>> m_in;
-		//std::vector<std::vector<std::vector<long long int>>> f_in;
-		for (std::size_t pat=0; pat < sites.size(); ++pat) {
-			for (std::size_t i=0; i < num_gen; ++i) {
-				// how many males of the given genotype will disperse to each of the connected patches from the given patch
-				m_disp = random_multinomial(m_move[pat][i], sites[pat].connec_weights);
-				for (std::size_t new_pat=0; new_pat < m_disp.size(); ++new_pat) {
-					sites[sites[pat].connec_indices[new_pat]].M_disperse_in(i, m_disp[new_pat]);
-				}
+	std::vector<std::array<std::array<long long int, num_gen>, num_gen>> f_move = F_dispersing_out();
+	for (std::size_t pat = 0; pat < sites.size(); ++pat) { 
+		sites[pat].F_disperse_out(f_move[pat]);
+	}
+		
+	// adults dispersing to each patch
+	std::vector<long long int> m_disp_by_new_pat;
+	for (std::size_t pat=0; pat < sites.size(); ++pat) {
+		for (std::size_t i=0; i < num_gen; ++i) {
+			// how many males of the given patch and given genotype will disperse to each of its connected patches
+			m_disp_by_new_pat = random_multinomial(m_move[pat][i], connec_weights[pat]);
+
+			for (std::size_t new_pat=0; new_pat < m_disp_by_new_pat.size(); ++new_pat) {
+				sites[connec_indices[pat][new_pat]].M_disperse_in(i, m_disp_by_new_pat[new_pat]);
 			}
 		}
-		for (std::size_t pat = 0; pat < sites.size(); ++pat) {
-			for (std::size_t i = 0; i < num_gen; ++i) {
-				for (std::size_t j=0; j < num_gen; ++j) {
-					f_disp = random_multinomial(f_move[pat][i][j], sites[pat].connec_weights);
-					for (std::size_t new_pat=0; new_pat < f_disp.size(); ++new_pat) {
-						sites[sites[pat].connec_indices[new_pat]].F_disperse_in(i, j, f_disp[new_pat]);
-					}
+	}
+
+	std::vector<long long int> f_disp_by_new_pat;
+	for (std::size_t pat = 0; pat < sites.size(); ++pat) {
+		for (std::size_t i = 0; i < num_gen; ++i) {
+			for (std::size_t j=0; j < num_gen; ++j) {
+				f_disp_by_new_pat = random_multinomial(f_move[pat][i][j], connec_weights[pat]);
+				for (std::size_t new_pat=0; new_pat < f_disp_by_new_pat.size(); ++new_pat) {
+					sites[connec_indices[pat][new_pat]].F_disperse_in(i, j, f_disp_by_new_pat[new_pat]);
 				}
 			}
 		}
@@ -905,14 +909,9 @@ bool Model::is_release_time(int day)
 
 Patch::Patch(double side) 
 {
-	// set patch parameters
 	double x = random_real() * side;
 	double y = random_real() * side;
 	coords = {x, y};
-
-	// clear all other patch parameter values - will become Patch constructor
-	connec_indices.clear();
-	connec_weights.clear();
 
 	for (int i=0; i < num_gen; ++i) {
 		for (int a=0; a < max_dev + 1; ++a) {
