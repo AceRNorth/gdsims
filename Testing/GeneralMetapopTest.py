@@ -11,7 +11,6 @@ num_sets = 10
 for j in range(0, num_sets):
     # Read input parameter set from .csv file
     params = pd.read_table("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\Parameters - new layout v3.csv", delimiter=",")
-    #params = pd.read_table("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\Parameters.csv", delimiter=",")
     labels = params[["Parameter"]]
     labels = labels.drop(index=0)
     input_data = params[["set " + str(j+1)]]
@@ -24,7 +23,6 @@ for j in range(0, num_sets):
     # Run C++ model with input data
     os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files")
     proc = subprocess.Popen(["C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\GeneralMetapop.exe"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
-    #proc = subprocess.Popen(["C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\Prepared for testing version\\General.exe"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
     outs, errs = proc.communicate(input=input_string)
 
 
@@ -36,14 +34,13 @@ for j in range(0, num_sets):
 num_runs = 2 # later take from pd read table
 num_sets = 10 # later take from number of folders in oracle folder
 
-make_plot = True
+make_plot = False
 
 for j in range(0, num_sets):
     print("Set " + str(j+1))
     for i in range(0, num_runs):
         # import oracle data
         os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Testing\\Test oracle data\\Set" + str(j+1))
-        #os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\Prepared for testing version\\Set" + str(j+1))
         totals_oracle = np.loadtxt("Totals" + str(j+1) + "run" + str(i+1) + ".txt", skiprows=2)
         times_oracle = totals_oracle[:, 0]
         tot_males_oracle = totals_oracle[:, 1:]
@@ -66,7 +63,6 @@ for j in range(0, num_sets):
         
         # import test data
         os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files")
-        #os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\Prepared for testing version2\\Set" + str(j+1))
         totals_test = np.loadtxt("Totals" + str(j+1) + "run" + str(i+1) + ".txt", skiprows=2)
         times_test = totals_test[:, 0]
         tot_males_test = totals_test[:, 1:]

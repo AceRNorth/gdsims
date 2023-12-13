@@ -541,14 +541,20 @@ void Model::initiate()
 	sites.clear();
 
 	for (int ii=0; ii < num_pat; ++ii) {
-		Patch pp(side);
-		sites.push_back(pp);
+		add_patch();
 	}
 	
 	populate_sites();
 	set_dev_duration_probs(min_dev, max_dev);
 
 	set_connecs(side); // Dispersal set-up
+}
+
+// Adds a patch to the sites. 
+void Model::add_patch()
+{
+	Patch pp(side);
+	sites.push_back(pp);
 }
 
 // Populates all sites with a (wild) mosquito population of different types (age and sex)

@@ -197,6 +197,7 @@ private:
 	// (index indicates the number of days to develop or, equivalently, the age class the new juvenile starts at)
 
 	// initiation methods
+	void add_patch();
 	void populate_sites();
 	void set_dev_duration_probs(int min_time, int max_time);
 
