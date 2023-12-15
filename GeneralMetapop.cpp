@@ -535,33 +535,33 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 	rel_params = rel;
 }
 
+Model::~Model() 
+{
+	for (auto pat : sites) {
+		delete pat;
+	}
+}
+
 // Sets up the model architecture 
 void Model::initiate()
 {
 	sites.clear();
-
 	for (int ii=0; ii < num_pat; ++ii) {
-		add_patch();
-	}
+		Patch* pp = new Patch(side);
+		sites.push_back(pp);
 	
+	}
 	populate_sites();
 	set_dev_duration_probs(min_dev, max_dev);
 
 	set_connecs(side); // Dispersal set-up
 }
 
-// Adds a patch to the sites. 
-void Model::add_patch()
-{
-	Patch pp(side);
-	sites.push_back(pp);
-}
-
 // Populates all sites with a (wild) mosquito population of different types (age and sex)
 void Model::populate_sites() 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].populate(initial_WJ, initial_WM, initial_WV, initial_WF);
+		sites[pat]->populate(initial_WJ, initial_WM, initial_WV, initial_WF);
 	}
 	update_comp();
 	update_mate();
@@ -584,7 +584,7 @@ void Model::set_dev_duration_probs(int min_time, int max_time)
 void Model::update_comp() 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].update_comp(mu_j, alpha0, mean_dev);
+		sites[pat]->update_comp(mu_j, alpha0, mean_dev);
 	}
 }
 
@@ -592,7 +592,7 @@ void Model::update_comp()
 void Model::update_mate() 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].update_mate(beta);
+		sites[pat]->update_mate(beta);
 	}
 }
 
@@ -615,7 +615,7 @@ long long int Model::calculate_tot_J()
 {
 	long long int tot_J = 0;
 	for (int pat = 0; pat < sites.size(); ++pat) {
-		tot_J += sites[pat].calculate_tot_J();
+		tot_J += sites[pat]->calculate_tot_J();
 	}
 	return tot_J;
 }
@@ -625,7 +625,7 @@ long long int Model::calculate_tot_M()
 {
 	long long int tot_M = 0;
 	for (int pat = 0; pat < sites.size(); ++pat) {
-		tot_M += sites[pat].calculate_tot_M();
+		tot_M += sites[pat]->calculate_tot_M();
 	}
 	return tot_M;
 }
@@ -635,7 +635,7 @@ long long int Model::calculate_tot_V()
 {
 	long long int tot_V = 0;
 	for (int pat = 0; pat < sites.size(); ++pat) {
-		tot_V += sites[pat].calculate_tot_V();
+		tot_V += sites[pat]->calculate_tot_V();
 	}
 	return tot_V;
 }
@@ -645,7 +645,7 @@ long long int Model::calculate_tot_F()
 {
 	long long int tot_F = 0;
 	for (int pat = 0; pat < sites.size(); ++pat) {
-		tot_F += sites[pat].calculate_tot_F();
+		tot_F += sites[pat]->calculate_tot_F();
 	}
 	return tot_F;
 }
@@ -656,7 +656,7 @@ std::array<long long int, num_gen> Model::calculate_tot_M_gen()
 	std::array<long long int, num_gen> tot_M_gen;
 	tot_M_gen.fill(0);
 	for (int pat = 0; pat < sites.size(); ++pat) {
-		std::array<long long int, num_gen> m_pat = sites[pat].get_M();
+		std::array<long long int, num_gen> m_pat = sites[pat]->get_M();
 		for (int i = 0; i < num_gen; ++i) {
 			tot_M_gen[i] += m_pat[i];
 		}
@@ -664,7 +664,7 @@ std::array<long long int, num_gen> Model::calculate_tot_M_gen()
 	return tot_M_gen;
 }
 
-std::vector<Patch> Model::get_sites() const
+std::vector<Patch*> Model::get_sites() const
 {
 	return sites;
 }
@@ -678,7 +678,7 @@ std::size_t Model::get_sites_size()
 void Model::juv_get_older() 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].juv_get_older(max_dev);
+		sites[pat]->juv_get_older(max_dev);
 	}
 }
 
@@ -686,7 +686,7 @@ void Model::juv_get_older()
 void Model::adults_die()
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].adults_die(mu_a);
+		sites[pat]->adults_die(mu_a);
 	}
 }
 
@@ -695,7 +695,7 @@ void Model::adults_die()
 void Model::virgins_mate() 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].virgins_mate();
+		sites[pat]->virgins_mate();
 	}
 }
 
@@ -704,7 +704,7 @@ void Model::virgins_mate()
 void Model::lay_eggs(const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f)
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].lay_eggs(f, theta, dev_duration_probs);
+		sites[pat]->lay_eggs(f, theta, dev_duration_probs);
 	}
 }
 
@@ -712,7 +712,7 @@ void Model::lay_eggs(const std::array<std::array<std::array <double, num_gen>, n
 void Model::juv_eclose()
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat].juv_eclose();
+		sites[pat]->juv_eclose();
 	}
 }
 
@@ -752,7 +752,7 @@ void Model::set_connecs(double side)
 		connec_indices_pat.clear();
 		connec_weights_pat.clear();
 		for (int new_pat=0; new_pat < sites.size(); ++new_pat) {
-			double dd = distance(side, sites[pat].get_coords(), sites[new_pat].get_coords());
+			double dd = distance(side, sites[pat]->get_coords(), sites[new_pat]->get_coords());
 			if (dd < (disp_params->max_disp)) {
 				connec_indices_pat.push_back(new_pat); 
 				double weight = (disp_params->max_disp) - dd;
@@ -770,12 +770,12 @@ void Model::adults_disperse()
 	// adults dispersing out from each patch 
 	std::vector<std::array<long long int, num_gen>> m_move = M_dispersing_out(); // males dispersing from each patch
 	for (std::size_t pat = 0; pat < sites.size(); ++pat) { // update population numbers
-		sites[pat].M_disperse_out(m_move[pat]);
+		sites[pat]->M_disperse_out(m_move[pat]);
 	}
 
 	std::vector<std::array<std::array<long long int, num_gen>, num_gen>> f_move = F_dispersing_out();
 	for (std::size_t pat = 0; pat < sites.size(); ++pat) { 
-		sites[pat].F_disperse_out(f_move[pat]);
+		sites[pat]->F_disperse_out(f_move[pat]);
 	}
 		
 	// adults dispersing to each patch
@@ -786,7 +786,7 @@ void Model::adults_disperse()
 			m_disp_by_new_pat = random_multinomial(m_move[pat][i], connec_weights[pat]);
 
 			for (std::size_t new_pat=0; new_pat < m_disp_by_new_pat.size(); ++new_pat) {
-				sites[connec_indices[pat][new_pat]].M_disperse_in(i, m_disp_by_new_pat[new_pat]);
+				sites[connec_indices[pat][new_pat]]->M_disperse_in(i, m_disp_by_new_pat[new_pat]);
 			}
 		}
 	}
@@ -797,7 +797,7 @@ void Model::adults_disperse()
 			for (std::size_t j=0; j < num_gen; ++j) {
 				f_disp_by_new_pat = random_multinomial(f_move[pat][i][j], connec_weights[pat]);
 				for (std::size_t new_pat=0; new_pat < f_disp_by_new_pat.size(); ++new_pat) {
-					sites[connec_indices[pat][new_pat]].F_disperse_in(i, j, f_disp_by_new_pat[new_pat]);
+					sites[connec_indices[pat][new_pat]]->F_disperse_in(i, j, f_disp_by_new_pat[new_pat]);
 				}
 			}
 		}
@@ -811,7 +811,7 @@ std::vector<std::array<long long int, num_gen>> Model::M_dispersing_out()
 	std::array<long long int, num_gen> m;
 	std::array<long long int, num_gen> m_out;
 	for (int pat=0; pat < sites.size(); ++pat) {
-		m = sites[pat].get_M();
+		m = sites[pat]->get_M();
 		for (int i=0; i < num_gen; ++i) {
 			m_out[i] = random_binomial(m[i], disp_params->disp_rate); // how many males will disperse from the given patch
 		}
@@ -826,7 +826,7 @@ std::vector<std::array<std::array<long long int, num_gen>, num_gen>> Model::F_di
 	std::array<std::array<long long int, num_gen>, num_gen> f;
 	std::array<std::array<long long int, num_gen>, num_gen> f_out;
 	for (int pat=0; pat < sites.size(); ++pat) {
-		f = sites[pat].get_F();
+		f = sites[pat]->get_F();
 		for (int i=0; i < num_gen; ++i) {
 			for (int j=0; j < num_gen; ++j) {
 				f_out[i][j] = random_binomial(f[i][j], disp_params->disp_rate); // how many females will disperse from the given patch
@@ -844,14 +844,14 @@ void Model::hide()
 	std::array<std::array<long long int, num_gen>, num_gen> f_try;
 	std::array<std::array<long long int, num_gen>, num_gen> f_aes;
 	for (int pat=0; pat < sites.size(); ++pat) {
-		f = sites[pat].get_F();
+		f = sites[pat]->get_F();
 		for (int i=0; i < num_gen; ++i) {
 			for (int j=0; j < num_gen; ++j) {
 				f_try[i][j] = random_binomial(f[i][j], aes_params->psi); // number of females that attempt to go into aestivation
 				f_aes[i][j] = random_binomial(f_try[i][j], 1 - (aes_params->mu_aes));	// number that survive going into aestivation
 			}
 		}
-		sites[pat].F_hide(f_try, f_aes);
+		sites[pat]->F_hide(f_try, f_aes);
 	}
 }
 
@@ -865,10 +865,10 @@ void Model::wake(int day)
 		for (int i=0; i < num_gen; ++i) {
 			for(int j=0; j < num_gen; ++j) {
 				// number of females that wake up from aestivation on the given day
-				f_w[i][j] = random_binomial(sites[pat].aes_F[i][j], prob);
+				f_w[i][j] = random_binomial(sites[pat]->aes_F[i][j], prob);
 			}
 		}
-		sites[pat].F_wake(f_w);
+		sites[pat]->F_wake(f_w);
 	}
 }
 
@@ -902,7 +902,7 @@ void Model::put_driver_sites(const std::vector<int>& patches, int num_driver_M)
 {
 	for (const auto& pat : patches) {
 		if (pat >= 0 && pat < sites.size()) {
-			sites[pat].add_driver_M(num_driver_M);
+			sites[pat]->add_driver_M(num_driver_M);
 		}
 	}
 	update_mate();
@@ -1195,10 +1195,10 @@ Record::Record(RecordParams *rec_params, int rep)
 }
 
 // Records the x and y coordinates of each site
-void Record::record_coords(const std::vector<Patch> &sites) 
+void Record::record_coords(const std::vector<Patch*> &sites) 
 {
 	for (int pat=0; pat < sites.size(); pat += rec_sites_freq) {
-		std::array<double, 2> pat_coords = sites[pat].get_coords();
+		std::array<double, 2> pat_coords = sites[pat]->get_coords();
 		coord_list << pat+1 << "\t" << pat_coords[0] << "\t" << pat_coords[1] << std::endl;
 	}
 }
@@ -1221,11 +1221,11 @@ void Record::output_totals(int day, long long int tot_J, long long int tot_M, lo
 
 
 // Records the number of males of each genotype at each site
-void Record::record_local(int day, const std::vector<Patch> &sites) 
+void Record::record_local(int day, const std::vector<Patch*> &sites) 
 {
 	for (int pat=0; pat < sites.size(); pat += rec_sites_freq) {
 		local_data << day << "\t" << pat+1;
-		for (const auto& m_gen : sites[pat].get_M()) {
+		for (const auto& m_gen : sites[pat]->get_M()) {
 			local_data << "\t" << m_gen;
 		}
 		local_data << std::endl;

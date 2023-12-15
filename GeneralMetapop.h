@@ -130,10 +130,11 @@ class Patch;
 // Runs the model.
 class Model {
 public:
-	std::vector<Patch> sites;
+	std::vector<Patch*> sites;
 
 	Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp_param, 
 		ReleaseParams *rel);
+	~Model();
 	void initiate();
 	void run_step(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f);
 
@@ -142,7 +143,7 @@ public:
 	long long int calculate_tot_V();
 	long long int calculate_tot_F();
 	std::array<long long int, num_gen> calculate_tot_M_gen();
-	std::vector<Patch> get_sites() const;
+	std::vector<Patch*> get_sites() const;
 	std::size_t get_sites_size();
 	
 	// Dispersal functions
@@ -196,8 +197,9 @@ private:
 	std::array<double, max_dev+1> dev_duration_probs; // array of probabilities of juvenile development duration for a new juvenile
 	// (index indicates the number of days to develop or, equivalently, the age class the new juvenile starts at)
 
-	// initiation methods
 	void add_patch();
+
+	// initiation methods
 	void populate_sites();
 	void set_dev_duration_probs(int min_time, int max_time);
 
@@ -278,10 +280,10 @@ private:
 class Record {
 public:
 	Record(RecordParams *rec_params, int rep);
-	void record_coords(const std::vector<Patch> &sites);
+	void record_coords(const std::vector<Patch*> &sites);
 	void record_global(int day, const std::array<long long int, num_gen> &tot_M_gen);
 	void output_totals(int day, long long int tot_J, long long int tot_M, long long int tot_V, long long int tot_F);
-	void record_local(int day, const std::vector<Patch> &sites);
+	void record_local(int day, const std::vector<Patch*> &sites);
 
 	bool is_rec_local_time(int day);
 	bool is_rec_global_time(int day);
