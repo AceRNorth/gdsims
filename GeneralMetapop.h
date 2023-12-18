@@ -98,7 +98,6 @@ struct RecordParams {
 	const int set_label; // 'set of runs' index label for output files
 };
 
-
 // Sets up and controls the flow of the simulation.
 class SimController {
 public:
@@ -126,12 +125,11 @@ private:
 };
 
 class Patch;
+class Dispersal;
 
 // Runs the model.
 class Model {
 public:
-	std::vector<Patch*> sites;
-
 	Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp_param, 
 		ReleaseParams *rel);
 	~Model();
@@ -145,21 +143,6 @@ public:
 	std::array<long long int, num_gen> calculate_tot_M_gen();
 	std::vector<Patch*> get_sites() const;
 	std::size_t get_sites_size();
-	
-	// Dispersal functions
-
-	// connected patch indices ordered by each patch in sites, such that the first element contains the indices of all the patches
-	// connected to the first sites patch, second element has all connection indices to the second sites patch, etc.
-	std::vector<std::vector<int>> connec_indices; 
-	// connection weights of the connected patches ordered by each patch in sites, such that the first element contains the connection
-	// weights between the first patch in sites and all the patches connected to it, the second element has all connection weights
-	// between the second sites element and all other patches connected to it, etc.
-	std::vector<std::vector<double>> connec_weights; 
-	double distance(double side, std::array<double, 2> point1, std::array<double, 2> point2);
-	void set_connecs(double side);
-	void adults_disperse();
-	std::vector<std::array<long long int, num_gen>> M_dispersing_out();
-	std::vector<std::array<std::array<long long int, num_gen>, num_gen>> F_dispersing_out();
 
 	// Aestivation functions
 	void hide();
@@ -172,9 +155,11 @@ public:
 	bool is_release_time(int day);
 
 private:
-	DispersalParams *disp_params; // dispersal parameters
-	AestivationParams *aes_params; // aestivation parameters
-	ReleaseParams *rel_params; // gene drive release parameters
+	std::vector<Patch*> sites;
+	Dispersal* dispersal;
+
+	AestivationParams* aes_params; // aestivation parameters
+	ReleaseParams* rel_params; // gene drive release parameters
 
 	// simulation area parameters
 	int num_pat; // number of population sites chosen for the simulation
@@ -196,8 +181,6 @@ private:
 	int min_dev; // minimum development time for a juvenile (in days)
 	std::array<double, max_dev+1> dev_duration_probs; // array of probabilities of juvenile development duration for a new juvenile
 	// (index indicates the number of days to develop or, equivalently, the age class the new juvenile starts at)
-
-	void add_patch();
 
 	// initiation methods
 	void populate_sites();
@@ -256,11 +239,6 @@ public:
 	// number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j that have gone into aestivation
 	std::array<std::array<long long int, num_gen>, num_gen> aes_F;
 
-	// for determining connectivities between patches
-	// std::vector<int> connec_indices; // patch indices of the patches connected to the selected patch
-	// patch connection weights corresponding to the connected patches listed in connec_indices (same order)
-	// std::vector<double> connec_weights; 
-
 private:
 	std::array<double, 2> coords; // (x, y) coordinates of the site
 
@@ -274,6 +252,29 @@ private:
 
 	long double comp; // survival probability per juvenile per day (both density-dependent and independent factors)
 	long double mate_rate; // probability of an unmated (virgin) female mating on a given day
+};
+
+class Dispersal {
+public:
+	Dispersal(DispersalParams *params);
+	void set_connecs(double side, std::vector<Patch*> &sites);
+	void adults_disperse(std::vector<Patch*> &sites);
+
+private:
+	double disp_rate; // adult dispersal rate
+	double max_disp; // maximum distance at which two sites are connected (km)
+
+	// connected patch indices ordered by each patch in sites, such that the first element contains the indices of all the patches
+	// connected to the first sites patch, second element has all connection indices to the second sites patch, etc.
+	std::vector<std::vector<int>> connec_indices; 
+	// connection weights of the connected patches ordered by each patch in sites, such that the first element contains the connection
+	// weights between the first patch in sites and all the patches connected to it, the second element has all connection weights
+	// between the second sites element and all other patches connected to it, etc.
+	std::vector<std::vector<double>> connec_weights; 
+
+	double distance(double side, std::array<double, 2> point1, std::array<double, 2> point2);
+	std::vector<std::array<long long int, num_gen>> M_dispersing_out(const std::vector<Patch*> &sites);
+	std::vector<std::array<std::array<long long int, num_gen>, num_gen>> F_dispersing_out(const std::vector<Patch*> &sites);
 };
 
 // Records model data.
