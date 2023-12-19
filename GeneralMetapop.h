@@ -126,6 +126,7 @@ private:
 
 class Patch;
 class Dispersal;
+class Aestivation;
 
 // Runs the model.
 class Model {
@@ -142,11 +143,6 @@ public:
 	long long int calculate_tot_F();
 	std::array<long long int, num_gen> calculate_tot_M_gen();
 	std::vector<Patch*> get_sites() const;
-	std::size_t get_sites_size();
-
-	// Aestivation functions
-	void hide();
-	void wake(int day);
 
 	// Gene drive functions
 	void release_gene_drive(int num_driver_M, int num_driver_sites, int num_pat);
@@ -157,8 +153,8 @@ public:
 private:
 	std::vector<Patch*> sites;
 	Dispersal* dispersal;
+	Aestivation* aestivation;
 
-	AestivationParams* aes_params; // aestivation parameters
 	ReleaseParams* rel_params; // gene drive release parameters
 
 	// simulation area parameters
@@ -211,20 +207,6 @@ public:
 	long long int calculate_tot_M();
 	long long int calculate_tot_V();
 	long long int calculate_tot_F();
-	
-	// interface to Dispersal
-	void M_disperse_out(const std::array<long long int, num_gen> &m_out);
-	void F_disperse_out(const std::array<std::array<long long int, num_gen>, num_gen> &f_out);
-	void M_disperse_in(int gen, long long int m_in);
-	void F_disperse_in(int f_gen, int m_gen, long long int f_disp);
-
-	// interface to Aestivation
-	void F_hide(const std::array<std::array<long long int, num_gen>, num_gen> &f_try, 
-		const std::array<std::array<long long int, num_gen>, num_gen> &f_succeed);
-	void F_wake(const std::array<std::array<long long int, num_gen>, num_gen> &f_wake);
-
-	// interface to GeneDrive 
-	void add_driver_M(int num_driver_M);
 
 	// life-processes for the local site
 	void juv_get_older(int max_dev);
@@ -235,9 +217,19 @@ public:
 	void juv_eclose();
 	void update_comp(double mu_j, double alpha0, double mean_dev);
 	void update_mate(double beta);
- 
-	// number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j that have gone into aestivation
-	std::array<std::array<long long int, num_gen>, num_gen> aes_F;
+	
+	// interface to Dispersal
+	void M_disperse_out(const std::array<long long int, num_gen> &m_out);
+	void F_disperse_out(const std::array<std::array<long long int, num_gen>, num_gen> &f_out);
+	void M_disperse_in(int gen, long long int m_in);
+	void F_disperse_in(int f_gen, int m_gen, long long int f_disp);
+
+	// interface to Aestivation
+	void F_hide(const std::array<std::array<long long int, num_gen>, num_gen> &f_try);
+	void F_wake(const std::array<std::array<long long int, num_gen>, num_gen> &f_wake);
+
+	// interface to GeneDrive 
+	void add_driver_M(int num_driver_M);
 
 private:
 	std::array<double, 2> coords; // (x, y) coordinates of the site
@@ -252,6 +244,27 @@ private:
 
 	long double comp; // survival probability per juvenile per day (both density-dependent and independent factors)
 	long double mate_rate; // probability of an unmated (virgin) female mating on a given day
+};
+
+class Aestivation {
+public:
+	Aestivation(AestivationParams *params, int sites_size);
+	void hide(std::vector<Patch*> &sites);
+	void wake(int day, std::vector<Patch*> &sites);
+	bool is_hide_time(int day);
+	bool is_wake_time(int day);
+
+private:
+	double psi; // aestivation rate
+	double mu_aes; // aestivation mortality
+	int t_hide1; // start day of aestivation-entering period (day number of the year), not included
+	int t_hide2; // end day of aestivation-entering period (day number of the year)
+	int t_wake1; // start day of aestivation-waking period (day number of the year), not included
+	int t_wake2; // end day of aestivation-waking period (day number of the year)
+
+	// number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j that have gone into
+	// aestivation from each patch
+	std::vector<std::array<std::array<long long int, num_gen>, num_gen>> aes_F;
 };
 
 class Dispersal {

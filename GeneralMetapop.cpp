@@ -515,8 +515,6 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 
 	dev_duration_probs.fill(0);
 
-	//disp_params = disp;
-	aes_params = aes;
 	rel_params = rel;
 
 	sites.clear();
@@ -525,7 +523,8 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 		sites.push_back(pp);
 	
 	}
-
+	Aestivation* new_aestivation = new Aestivation(aes, sites.size());
+	aestivation = new_aestivation;
 	Dispersal* new_dispersal = new Dispersal(disp);
 	dispersal = new_dispersal;
 }
@@ -535,7 +534,7 @@ Model::~Model()
 	for (auto pat : sites) {
 		delete pat;
 	}
-
+	delete aestivation;
 	delete dispersal;
 }
 
@@ -594,8 +593,8 @@ void Model::run_step(int day, const std::array<std::array<std::array <double, nu
 	dispersal->adults_disperse(sites);
 	lay_eggs(f);
 	juv_eclose();
-	if (day%365 > aes_params->t_hide1 && day%365 <= aes_params->t_hide2 && aes_params->psi > 0.00001) hide();
-	if (day%365 > aes_params->t_wake1 && day%365 <= aes_params->t_wake2 && aes_params->psi > 0.00001) wake(day);
+	if (aestivation->is_hide_time(day)) aestivation->hide(sites);
+	if (aestivation->is_wake_time(day)) aestivation->wake(day, sites);
 	update_comp();
 	update_mate();
 }
@@ -659,11 +658,6 @@ std::vector<Patch*> Model::get_sites() const
 	return sites;
 }
 
-std::size_t Model::get_sites_size() 
-{
-	return sites.size();
-}
-
 // Ages the juvenile population in different age groups by a day across the simulation area
 void Model::juv_get_older() 
 {
@@ -703,41 +697,6 @@ void Model::juv_eclose()
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
 		sites[pat]->juv_eclose();
-	}
-}
-
-// Calculates the number of mated females going into aestivation on the given day and updates the population numbers, depending on the survival rate of going into aestivation
-void Model::hide() 
-{
-	std::array<std::array<long long int, num_gen>, num_gen> f;
-	std::array<std::array<long long int, num_gen>, num_gen> f_try;
-	std::array<std::array<long long int, num_gen>, num_gen> f_aes;
-	for (int pat=0; pat < sites.size(); ++pat) {
-		f = sites[pat]->get_F();
-		for (int i=0; i < num_gen; ++i) {
-			for (int j=0; j < num_gen; ++j) {
-				f_try[i][j] = random_binomial(f[i][j], aes_params->psi); // number of females that attempt to go into aestivation
-				f_aes[i][j] = random_binomial(f_try[i][j], 1 - (aes_params->mu_aes));	// number that survive going into aestivation
-			}
-		}
-		sites[pat]->F_hide(f_try, f_aes);
-	}
-}
-
-// Calculates the number of mated females coming out of aestivation on the given day and updates the population numbers
-void Model::wake(int day) 
-{
-	double prob = 1.0 / (1.0 + (aes_params->t_wake2) - (day%365)); // probability of a female waking on a given day
-	
-	std::array<std::array<long long int, num_gen>, num_gen> f_w;
-	for (int pat=0; pat < sites.size(); ++pat) {
-		for (int i=0; i < num_gen; ++i) {
-			for(int j=0; j < num_gen; ++j) {
-				// number of females that wake up from aestivation on the given day
-				f_w[i][j] = random_binomial(sites[pat]->aes_F[i][j], prob);
-			}
-		}
-		sites[pat]->F_wake(f_w);
 	}
 }
 
@@ -796,7 +755,6 @@ Patch::Patch(double side)
 		V[i] = 0;
 		for (int j=0; j < num_gen; ++j) {
 			F[i][j] = 0;
-			aes_F[i][j] = 0;
 		}
 	}
 	comp = 0;
@@ -907,13 +865,11 @@ void Patch::F_disperse_in(int f_gen, int m_gen, long long int f_disp)
 }
 
 // Updates active female population numbers after they attempt to go into aestivation.
-void Patch::F_hide(const std::array<std::array<long long int, num_gen>, num_gen> &f_try,
- const std::array<std::array<long long int, num_gen>, num_gen> &f_succeed)
+void Patch::F_hide(const std::array<std::array<long long int, num_gen>, num_gen> &f_try)
 {
 	for (std::size_t i = 0; i < F.size(); ++i) {
 		for (std::size_t j = 0; j < F[0].size(); ++j) {
 			F[i][j] -= f_try[i][j];
-			aes_F[i][j] += f_succeed[i][j];
 		}
 	}
 }
@@ -924,7 +880,6 @@ void Patch::F_wake(const std::array<std::array<long long int, num_gen>, num_gen>
 	for (std::size_t i = 0; i < F.size(); ++i) {
 		for (std::size_t j = 0; j < F[0].size(); ++j) {
 			F[i][j] += f_wake[i][j];
-			aes_F[i][j] -= f_wake[i][j];
 		}
 	}
 }
@@ -1157,6 +1112,76 @@ std::vector<std::array<std::array<long long int, num_gen>, num_gen>> Dispersal::
 		f_move.push_back(f_out);
 	}
 	return f_move;
+}
+
+Aestivation::Aestivation(AestivationParams *params, int sites_size) 
+{
+	psi = params->psi;
+	mu_aes = params->mu_aes;
+	t_hide1 = params->t_hide1;
+	t_hide2 = params->t_hide2;
+	t_wake1 = params->t_wake1;
+	t_wake2 = params->t_wake2;
+
+	aes_F.clear();
+
+	std::array<std::array<long long int, num_gen>, num_gen> f;
+	for (int i=0; i < num_gen; ++i) {
+		for (int j=0; j < num_gen; ++j) {
+			f[i][j] = 0;
+		}
+	}
+
+	for (int pat=0; pat < sites_size; ++pat) {
+		aes_F.push_back(f);
+	}
+}
+
+// Sends a number of females into aestivation, with numbers that succeed depending on the survival rate of going into aestivation
+void Aestivation::hide(std::vector<Patch*> &sites) 
+{
+	std::array<std::array<long long int, num_gen>, num_gen> f;
+	std::array<std::array<long long int, num_gen>, num_gen> f_try;
+	std::array<std::array<long long int, num_gen>, num_gen> f_aes;
+	for (int pat=0; pat < sites.size(); ++pat) {
+		f = sites[pat]->get_F();
+		for (int i=0; i < num_gen; ++i) {
+			for (int j=0; j < num_gen; ++j) {
+				f_try[i][j] = random_binomial(f[i][j], psi); // number of females that attempt to go into aestivation
+				f_aes[i][j] = random_binomial(f_try[i][j], 1 - mu_aes);	// number that survive going into aestivation
+				aes_F[pat][i][j] += f_aes[i][j]; // move aestivating females into a separate box variable
+			}
+		}
+		sites[pat]->F_hide(f_try); // update population numbers
+	}
+}
+
+// Brings back to the sites a number of females that had gone into aestivation 
+void Aestivation::wake(int day, std::vector<Patch*> &sites) 
+{
+	double prob = 1.0 / (1.0 + t_wake2 - (day%365)); // probability of a female waking on a given day
+	
+	std::array<std::array<long long int, num_gen>, num_gen> f_w;
+	for (int pat=0; pat < sites.size(); ++pat) {
+		for (int i=0; i < num_gen; ++i) {
+			for(int j=0; j < num_gen; ++j) {
+				// number of females that wake up from aestivation on the given day
+				f_w[i][j] = random_binomial(aes_F[pat][i][j], prob);
+				aes_F[pat][i][j] -= f_w[i][j];
+			}
+		}
+		sites[pat]->F_wake(f_w);
+	}
+}
+
+bool Aestivation::is_hide_time(int day) 
+{
+	return day%365 > t_hide1 && day%365 <= t_hide2 && psi > 0.00001;
+}
+
+bool Aestivation::is_wake_time(int day) 
+{
+	return day%365 > t_wake1 && day%365 <= t_wake2 && psi > 0.00001;
 }
 
 // Creates LocalData, Totals and CoordinateList output .txt files
