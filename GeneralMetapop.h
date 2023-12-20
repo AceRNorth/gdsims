@@ -127,6 +127,7 @@ private:
 class Patch;
 class Dispersal;
 class Aestivation;
+class GDRelease;
 
 // Runs the model.
 class Model {
@@ -135,6 +136,7 @@ public:
 		ReleaseParams *rel);
 	~Model();
 	void initiate();
+	void run(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f);
 	void run_step(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f);
 
 	long long int calculate_tot_J(); 
@@ -144,18 +146,11 @@ public:
 	std::array<long long int, num_gen> calculate_tot_M_gen();
 	std::vector<Patch*> get_sites() const;
 
-	// Gene drive functions
-	void release_gene_drive(int num_driver_M, int num_driver_sites, int num_pat);
-	std::vector<int> select_driver_sites(int num_driver_sites);
-	void put_driver_sites(const std::vector<int>& patches, int num_driver_M);
-	bool is_release_time(int day);
-
 private:
 	std::vector<Patch*> sites;
 	Dispersal* dispersal;
 	Aestivation* aestivation;
-
-	ReleaseParams* rel_params; // gene drive release parameters
+	GDRelease* gd_release;
 
 	// simulation area parameters
 	int num_pat; // number of population sites chosen for the simulation
@@ -196,7 +191,7 @@ private:
 // Contains the information of a local mosquito population
 class Patch {
 public:
-	Patch(double side);
+	Patch(double side, LifeParams* params);
 	void populate(int initial_WJ, int initial_WM, int initial_WV, int initial_WF);
 
 	std::array<double, 2> get_coords() const;
@@ -216,7 +211,7 @@ public:
 		double theta, const std::array<double, max_dev+1> &dev_duration_probs);
 	void juv_eclose();
 	void update_comp(double mu_j, double alpha0, double mean_dev);
-	void update_mate(double beta);
+	void update_mate();
 	
 	// interface to Dispersal
 	void M_disperse_out(const std::array<long long int, num_gen> &m_out);
@@ -228,12 +223,13 @@ public:
 	void F_hide(const std::array<std::array<long long int, num_gen>, num_gen> &f_try);
 	void F_wake(const std::array<std::array<long long int, num_gen>, num_gen> &f_wake);
 
-	// interface to GeneDrive 
+	// interface to GDRelease
 	void add_driver_M(int num_driver_M);
 
 private:
-	std::array<double, 2> coords; // (x, y) coordinates of the site
+	LifeParams* params; 
 
+	std::array<double, 2> coords; // (x, y) coordinates of the site
 	// number of juvenile mosquitoes with each genotype and in each age group.
 	// Age ordered from oldest (0 days left to eclosion) to youngest (TL - 1 days left)
 	std::array<std::array<long long int, max_dev+1>, num_gen> J; 
@@ -246,6 +242,7 @@ private:
 	long double mate_rate; // probability of an unmated (virgin) female mating on a given day
 };
 
+// Implement aestivative behaviour for the collection of mosquito sites. 
 class Aestivation {
 public:
 	Aestivation(AestivationParams *params, int sites_size);
@@ -267,9 +264,10 @@ private:
 	std::vector<std::array<std::array<long long int, num_gen>, num_gen>> aes_F;
 };
 
+// Implements dispersion across all mosquito sites in the collection. 
 class Dispersal {
 public:
-	Dispersal(DispersalParams *params);
+	Dispersal(DispersalParams* params);
 	void set_connecs(double side, std::vector<Patch*> &sites);
 	void adults_disperse(std::vector<Patch*> &sites);
 
@@ -288,6 +286,22 @@ private:
 	double distance(double side, std::array<double, 2> point1, std::array<double, 2> point2);
 	std::vector<std::array<long long int, num_gen>> M_dispersing_out(const std::vector<Patch*> &sites);
 	std::vector<std::array<std::array<long long int, num_gen>, num_gen>> F_dispersing_out(const std::vector<Patch*> &sites);
+};
+
+// Implements gene drive release of mosquitoes into the collection of mosquito sites.
+class GDRelease {
+public:
+	GDRelease(ReleaseParams* params);
+	void release_gene_drive(std::vector<Patch*> &sites);
+	bool is_release_time(int day);
+
+private:
+	int driver_start; // time to start releasing drive alleles into the mosquito population
+	int num_driver_M; // number of drive heterozygous (WD) male mosquitoes per release
+	int num_driver_sites; // number of gene drive release sites per year
+
+	std::vector<Patch*> select_driver_sites(int num_rel_sites, const std::vector<Patch*> &sites);
+	void put_driver_sites(std::vector<Patch*>& rel_sites, std::vector<Patch*> &sites);
 };
 
 // Records model data.

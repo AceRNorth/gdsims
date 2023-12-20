@@ -477,12 +477,7 @@ void SimController::run_reps()
 		data.record_coords(model.get_sites());
 
 		for (int tt=0; tt <= max_t; ++tt) { // current day of the simulation 
-			if (model.is_release_time(tt)) {
-				model.release_gene_drive(rel_params->num_driver_M, rel_params->num_driver_sites, area_params->num_pat);
-			} 
-			if (tt > 0) {
-				model.run_step(tt, f);
-			}
+			model.run(tt, f);
 
 			if (data.is_rec_global_time(tt)) {
 				data.output_totals(tt, model.calculate_tot_J(), model.calculate_tot_M(), model.calculate_tot_V(),
@@ -515,11 +510,9 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 
 	dev_duration_probs.fill(0);
 
-	rel_params = rel;
-
 	sites.clear();
 	for (int ii=0; ii < num_pat; ++ii) {
-		Patch* pp = new Patch(side);
+		Patch* pp = new Patch(side, life);
 		sites.push_back(pp);
 	
 	}
@@ -527,6 +520,8 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 	aestivation = new_aestivation;
 	Dispersal* new_dispersal = new Dispersal(disp);
 	dispersal = new_dispersal;
+	GDRelease* new_gd_release = new GDRelease(rel);
+	gd_release = new_gd_release;
 }
 
 Model::~Model() 
@@ -536,6 +531,7 @@ Model::~Model()
 	}
 	delete aestivation;
 	delete dispersal;
+	delete gd_release;
 }
 
 // Sets up the model architecture 
@@ -581,10 +577,22 @@ void Model::update_comp()
 void Model::update_mate() 
 {
 	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat]->update_mate(beta);
+		sites[pat]->update_mate();
 	}
 }
 
+// Handles which model event to run depending on the day of the simulation.
+void Model::run(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f)
+{
+	if (gd_release->is_release_time(day)) {
+		gd_release->release_gene_drive(sites);
+	} 
+	if (day > 0) {
+		run_step(day, f);
+	}
+}
+
+// Runs the daily mosquito life-processes for all sites, including dispersal and aestivation.
 void Model::run_step(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f) 
 {
 	juv_get_older();
@@ -700,49 +708,10 @@ void Model::juv_eclose()
 	}
 }
 
-// Releases the gene drive mosquitoes into the simulation area
-void Model::release_gene_drive(int num_driver_M, int num_driver_sites, int num_pat)
+Patch::Patch(double side, LifeParams* par) 
 {
-	int num_rel_sites = std::min(num_pat, num_driver_sites);
-	std::vector<int> rel_patches = select_driver_sites(num_rel_sites);
-	put_driver_sites(rel_patches, num_driver_M);
-}
+	params = par;
 
-// Selects random sites for release of the gene drive
-std::vector<int> Model::select_driver_sites(int num_driver_sites) 
-{
-	std::vector<int> rel_patches; // patches in which to release the gene drive (contains indices to the patches in Site vector)
-	while (rel_patches.size() < num_driver_sites) {
-		int rel_pat = random_discrete(0, sites.size() - 1);
-
-		// only pick unique sites within the central area to release the gene drive
-		auto is_unique = (rel_patches.end() == std::find(rel_patches.begin(), rel_patches.end(), rel_pat));
-		if (is_unique) { 
-			rel_patches.push_back(rel_pat);
-		}
-	}
-
-	return rel_patches;
-}
-
-// Adds drive heterozygous (WD) male mosquitoes to the selected sites
-void Model::put_driver_sites(const std::vector<int>& patches, int num_driver_M) 
-{
-	for (const auto& pat : patches) {
-		if (pat >= 0 && pat < sites.size()) {
-			sites[pat]->add_driver_M(num_driver_M);
-		}
-	}
-	update_mate();
-}
-
-bool Model::is_release_time(int day) 
-{
-	return day == rel_params->driver_start;
-}
-
-Patch::Patch(double side) 
-{
 	double x = random_real() * side;
 	double y = random_real() * side;
 	coords = {x, y};
@@ -888,6 +857,7 @@ void Patch::F_wake(const std::array<std::array<long long int, num_gen>, num_gen>
 void Patch::add_driver_M(int num_driver_M) 
 {
 	M[1] += num_driver_M;
+	update_mate();
 }
 
 // Ages the juvenile population in different age groups by a day within the local site
@@ -981,10 +951,10 @@ void Patch::update_comp(double mu_j, double alpha0, double mean_dev)
 }
 
 // Updates the mating rate parameter in the local site
-void Patch::update_mate(double beta)
+void Patch::update_mate()
 {
 	long long int tot_M = calculate_tot_M();
-	mate_rate = tot_M / (beta + tot_M);
+	mate_rate = tot_M / ((params->beta) + tot_M);
 }
 
 Dispersal::Dispersal(DispersalParams *params) 
@@ -1182,6 +1152,50 @@ bool Aestivation::is_hide_time(int day)
 bool Aestivation::is_wake_time(int day) 
 {
 	return day%365 > t_wake1 && day%365 <= t_wake2 && psi > 0.00001;
+}
+
+GDRelease::GDRelease(ReleaseParams* params)
+{
+	driver_start = params->driver_start;
+	num_driver_M = params->num_driver_M;
+	num_driver_sites = params->num_driver_sites;
+}
+
+// Releases the gene drive mosquitoes into the simulation area
+void GDRelease::release_gene_drive(std::vector<Patch*> &sites)
+{
+	int num_rel_sites = std::min(int(sites.size()), num_driver_sites);
+	std::vector<Patch*> rel_sites = select_driver_sites(num_rel_sites, sites);
+	put_driver_sites(rel_sites, sites);
+}
+
+bool GDRelease::is_release_time(int day) 
+{
+	return day == driver_start;
+}
+
+// Selects randomly and returns the release sites for the gene drive
+std::vector<Patch*> GDRelease::select_driver_sites(int num_rel_sites, const std::vector<Patch*> &sites) 
+{
+	std::vector<Patch*> rel_patches; // patches in which to release the gene drive
+	while (rel_patches.size() < num_rel_sites) {
+		int rel_pat = random_discrete(0, sites.size() - 1);
+
+		// only pick unique sites within the central area to release the gene drive
+		auto is_unique = (rel_patches.end() == std::find(rel_patches.begin(), rel_patches.end(), sites[rel_pat]));
+		if (is_unique) { 
+			rel_patches.push_back(sites[rel_pat]);
+		}
+	}
+	return rel_patches;
+}
+
+// Adds drive heterozygous (WD) male mosquitoes to the release sites
+void GDRelease::put_driver_sites(std::vector<Patch*>& rel_sites, std::vector<Patch*> &sites)
+{
+	for (const auto& rel_pat : rel_sites) {
+		rel_pat->add_driver_M(num_driver_M);
+	}
 }
 
 // Creates LocalData, Totals and CoordinateList output .txt files
