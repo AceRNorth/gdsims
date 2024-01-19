@@ -8,3 +8,7 @@ Dispersal version/
 New totals system version/
 Testing/*
 !Testing/Test oracle data
+build/
+lib/
+old files/
+Output files/

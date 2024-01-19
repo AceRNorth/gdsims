@@ -23,13 +23,13 @@ outs, errs = proc.communicate(input=input_string)
 #%% Plot global output (totals) from model
 os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files")
 
-totals = np.loadtxt("Totals10run2.txt", skiprows=2)
+totals = np.loadtxt("Totals1run1.txt", skiprows=2)
 
 times = totals[:, 0]
 total_males = totals[:, 1:]
 
 plt.figure()
-plt.title("Totals test data for set 10 run 2")
+plt.title("Total males across the area - set 1 run 1")
 plt.xlabel("Day")
 plt.ylabel("Total number of individuals")
 plt.plot(times, total_males[:, 0], label="$M_{WW}$")
