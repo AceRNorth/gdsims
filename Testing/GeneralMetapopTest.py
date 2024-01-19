@@ -21,8 +21,11 @@ for j in range(0, num_sets):
     input_string = " ".join(str(i) for i in input_list)
     
     # Run C++ model with input data
+    # Directory for output files
     os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files")
-    proc = subprocess.Popen(["C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\GeneralMetapop.exe"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
+    # .exe file for the program
+    #proc = subprocess.Popen(["C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\GeneralMetapop.exe"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
+    proc = subprocess.Popen(["C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\cmake_gdsimsapp.exe"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
     outs, errs = proc.communicate(input=input_string)
 
 

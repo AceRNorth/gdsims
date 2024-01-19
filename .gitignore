@@ -1,6 +1,5 @@
 *.odt
 *.xlsx
-*.txt
 *.nb
 *.exe
 .vscode
