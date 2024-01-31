@@ -5,9 +5,9 @@
 .vscode
 Dispersal version/
 New totals system version/
-Testing/*
-!Testing/Test oracle data
+testing/*
+!testing/oracle data
 build/
 lib/
 old files/
-Output files/
+output files/

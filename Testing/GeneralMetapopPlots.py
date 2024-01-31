@@ -16,12 +16,12 @@ input_list = input_data["set 1"].tolist()
 input_string = " ".join(str(i) for i in input_list)
 
 # Run C++ model with input data
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files")
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\output files")
 proc = subprocess.Popen(["C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\GeneralMetapop.exe"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
 outs, errs = proc.communicate(input=input_string)
 
 #%% Plot global output (totals) from model
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Testing\\current version set10 data")
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\testing\\current version set10 data")
 
 totals = np.loadtxt("Totals1run1.txt", skiprows=2)
 

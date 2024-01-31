@@ -5,6 +5,16 @@
 
 int main()
 {	
+	ProgressionParams prog;
+	AreaParams area;
+	LifeParams life;
+	InheritanceParams inher;
+	ReleaseParams rel;
+	DispersalParams disp;
+	AestivationParams aes;
+	InitialPopsParams initial;
+	RecordParams rec;
+
 	// input parameters
 	// progression parameters
 	int num_runs;
@@ -163,16 +173,38 @@ int main()
 		invalid_input = false;
 	}
 
-	// create data structures from validated parameters
-	ProgressionParams prog{num_runs, max_t};
-	AreaParams area{num_pat, side};
-	LifeParams life{mu_j, mu_a, beta, theta, alpha0, mean_dev, min_dev};
-	InheritanceParams inher{gamma, xi, e};
-	ReleaseParams rel{driver_start, num_driver_M, num_driver_sites};
-	DispersalParams disp{disp_rate, max_disp};
-	AestivationParams aes{psi, mu_aes, t_hide1, t_hide2, t_wake1, t_wake2};
-	InitialPopsParams initial;
-	RecordParams rec{rec_start, rec_end, rec_interval_global, rec_interval_local, rec_sites_freq, set_label};
+	prog.num_runs = num_runs;
+	prog.max_t =  max_t;
+	area.num_pat = num_pat;
+	area.side = side;
+	life.mu_j = mu_j;
+	life.mu_a = mu_a;
+	life.beta = beta;
+	life.theta = theta;
+	life.alpha0 = alpha0;
+	life.mean_dev = mean_dev;
+	life.min_dev = min_dev;
+	inher.gamma = gamma;
+	inher.xi = xi;
+	inher.e = e;
+	rel.driver_start = driver_start;
+	rel.num_driver_M = num_driver_M;
+	rel.num_driver_sites = num_driver_sites;
+	disp.disp_rate = disp_rate;
+	disp.max_disp = max_disp;
+	aes.psi = psi;
+	aes.mu_aes = mu_aes;
+	aes.t_hide1 = t_hide1;
+	aes.t_hide2 = t_hide2;
+	aes.t_wake1 = t_wake1;
+	aes.t_wake2 = t_wake2;
+	rec.rec_start = rec_start;
+	rec.rec_end = rec_end;
+	rec.rec_interval_global = rec_interval_global;
+	rec.rec_interval_local = rec_interval_local;
+	rec.rec_sites_freq = rec_sites_freq;
+	rec.set_label = set_label;
+
 
 	auto start = std::chrono::steady_clock::now();
 

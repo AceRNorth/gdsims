@@ -16,7 +16,7 @@ Record::Record(RecordParams *rec_params, int rep)
 	set_label = rec_params->set_label;
 	rep_label = rep;
 
-	std::filesystem::path output_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files";
+	std::filesystem::path output_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\output files";
 	std::filesystem::current_path(output_path);
 	
 	os1 << "LocalData" << set_label << "run" << rep_label << ".txt"; 

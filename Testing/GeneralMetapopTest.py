@@ -22,7 +22,7 @@ for j in range(0, num_sets):
     
     # Run C++ model with input data
     # Directory for output files
-    os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files")
+    os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\output files")
     # .exe file for the program
     #proc = subprocess.Popen(["C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\GeneralMetapop.exe"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
     proc = subprocess.Popen(["C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\cmake_gdsimsapp.exe"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
@@ -43,7 +43,7 @@ for j in range(0, num_sets):
     print("Set " + str(j+1))
     for i in range(0, num_runs):
         # import oracle data
-        os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Testing\\Test oracle data\\Set" + str(j+1))
+        os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\testing\\oracle data\\set" + str(j+1))
         totals_oracle = np.loadtxt("Totals" + str(j+1) + "run" + str(i+1) + ".txt", skiprows=2)
         times_oracle = totals_oracle[:, 0]
         tot_males_oracle = totals_oracle[:, 1:]
@@ -65,7 +65,7 @@ for j in range(0, num_sets):
             plt.legend()
         
         # import test data
-        os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files")
+        os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\output files")
         totals_test = np.loadtxt("Totals" + str(j+1) + "run" + str(i+1) + ".txt", skiprows=2)
         times_test = totals_test[:, 0]
         tot_males_test = totals_test[:, 1:]
