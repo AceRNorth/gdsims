@@ -38,6 +38,9 @@ void Patch::populate(int initial_WJ, int initial_WM, int initial_WV, int initial
 	M[0] = initial_WM;
 	V[0] = initial_WV;
 	F[0][0] = initial_WF;
+
+	update_comp();
+	update_mate();
 }
 
 // Returns the coordinates of the site on the simulation area
@@ -108,6 +111,7 @@ void Patch::M_disperse_out(const std::array<long long int, num_gen> &m_out)
 	for (std::size_t i = 0; i < m_out.size(); ++i) {
 		M[i] -= m_out[i];
 	}
+	update_mate();
 }
 
 // Removes females from the population as they disperse out.
@@ -124,6 +128,7 @@ void Patch::F_disperse_out(const std::array<std::array<long long int, num_gen>, 
 void Patch::M_disperse_in(int gen, long long int m_in) 
 {
 	M[gen] += m_in;
+	update_mate();
 }
 
 // Introduces new females into the population as they disperse in.
@@ -186,6 +191,8 @@ void Patch::adults_die(double mu_a)
 			F[i][j] -= f;
 		}
 	}
+
+	update_mate();
 }
 
 // Selects the number of virgins that mate in the given day with a male of genotype j, and tranforms them into mated females carrying
@@ -226,6 +233,8 @@ void Patch::lay_eggs(const std::array<std::array<std::array <double, num_gen>, n
 			}
 		}
 	}
+
+	update_comp();
 }
 
 // Turns juveniles into adults, depending on eclosion survival rate, within the local site.
@@ -240,13 +249,14 @@ void Patch::juv_eclose()
 			V[i] += surv - surv_m;
 		}
 	}
+	update_mate();
 }
 
 // Updates the juvenile survival probability in the local site
-void Patch::update_comp(double mu_j, double alpha0, double mean_dev)
+void Patch::update_comp()
 {
 	long long int tot_J = calculate_tot_J();
-	comp = (1 - mu_j) * std::pow(alpha0 / (alpha0 + tot_J), 1.0 / mean_dev);
+	comp = (1 - (params->mu_j)) * std::pow((params->alpha0) / ((params->alpha0) + tot_J), 1.0 / (params->mean_dev));
 }
 
 // Updates the mating rate parameter in the local site

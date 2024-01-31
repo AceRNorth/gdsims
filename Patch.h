@@ -30,7 +30,7 @@ public:
 	void lay_eggs(const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f, 
 		double theta, const std::array<double, max_dev+1> &dev_duration_probs);
 	void juv_eclose();
-	void update_comp(double mu_j, double alpha0, double mean_dev);
+	void update_comp();
 	void update_mate();
 	
 	// interface to Dispersal

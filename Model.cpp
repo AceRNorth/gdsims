@@ -67,8 +67,6 @@ void Model::populate_sites()
 	for (int pat=0; pat < sites.size(); ++pat) {
 		sites[pat]->populate(initial_WJ, initial_WM, initial_WV, initial_WF);
 	}
-	update_comp();
-	update_mate();
 }
 
 // Sets probabilities of juvenile eclosion for different age groups
@@ -85,20 +83,20 @@ void Model::set_dev_duration_probs(int min_time, int max_time)
 }
 
 // Updates the juvenile survival probability in all sites
-void Model::update_comp() 
-{
-	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat]->update_comp(mu_j, alpha0, mean_dev);
-	}
-}
+// void Model::update_comp() 
+// {
+// 	for (int pat=0; pat < sites.size(); ++pat) {
+// 		sites[pat]->update_comp();
+// 	}
+// }
 
 // Updates the mating rate parameter in all sites
-void Model::update_mate() 
-{
-	for (int pat=0; pat < sites.size(); ++pat) {
-		sites[pat]->update_mate();
-	}
-}
+// void Model::update_mate() 
+// {
+// 	for (int pat=0; pat < sites.size(); ++pat) {
+// 		sites[pat]->update_mate();
+// 	}
+// }
 
 // Handles which model event to run depending on the day of the simulation.
 void Model::run(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f)
@@ -122,8 +120,6 @@ void Model::run_step(int day, const std::array<std::array<std::array <double, nu
 	juv_eclose();
 	if (aestivation->is_hide_time(day)) aestivation->hide(sites);
 	if (aestivation->is_wake_time(day)) aestivation->wake(day, sites);
-	update_comp();
-	update_mate();
 }
 
 // Returns the total number of juveniles across all ages and genotypes and across the simulation area

@@ -66,8 +66,8 @@ private:
 	void virgins_mate();
 	void lay_eggs(const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f);
 	void juv_eclose();
-	void update_comp();
-	void update_mate();
+	//void update_comp();
+	//void update_mate();
 
 };
 

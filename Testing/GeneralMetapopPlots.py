@@ -21,7 +21,7 @@ proc = subprocess.Popen(["C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\P
 outs, errs = proc.communicate(input=input_string)
 
 #%% Plot global output (totals) from model
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Output files")
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Testing\\current version set10 data")
 
 totals = np.loadtxt("Totals1run1.txt", skiprows=2)
 
@@ -29,7 +29,7 @@ times = totals[:, 0]
 total_males = totals[:, 1:]
 
 plt.figure()
-plt.title("Total males across the area - set 1 run 1")
+plt.title("Total males across the area - set 10 run " + str(i))
 plt.xlabel("Day")
 plt.ylabel("Total number of individuals")
 plt.plot(times, total_males[:, 0], label="$M_{WW}$")
@@ -39,21 +39,5 @@ plt.plot(times, total_males[:, 3], label="$M_{WR}$")
 plt.plot(times, total_males[:, 4], label="$M_{RR}$")
 plt.plot(times, total_males[:, 5], label="$M_{DR}$")
 plt.legend()
-
-
-# os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop")
-
-# aes = np.loadtxt("AestivationData1.txt")
-# times = aes[:, 0]
-# aes_surv = aes[:, 1:]
-
-# plt.plot(times, aes_surv[:, 1], label="surv")
-# plt.legend()
-
-
-# plt.figure()
-# plt.plot(times, aes_surv[:, 0], label="comp")
-# plt.legend()
-
 
 
