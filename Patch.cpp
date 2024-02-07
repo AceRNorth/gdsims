@@ -177,8 +177,9 @@ void Patch::juv_get_older(int max_dev)
 }
 
 // Selects the number of adults that die in the given day and updates population numbers within the local site
-void Patch::adults_die(double mu_a)
+void Patch::adults_die()
 {
+	double mu_a = params->mu_a;
 	for (int i=0; i < num_gen; ++i) {
 		long long int m = random_binomial(M[i], mu_a); // number of males that die
 		M[i] -= m;
@@ -216,14 +217,14 @@ void Patch::virgins_mate()
 
 // Calculates the number of eggs laid on the given day and updates the number of juveniles within the local site, depending on egg
 // survival rates.
-void Patch::lay_eggs(const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f, double theta, 
+void Patch::lay_eggs(const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_fraction,
  const std::array<double, max_dev+1> &dev_duration_probs)
 {
 	std::vector<long long int> j_new;
 	for (int i=0; i < num_gen; ++i) {
 		for (int j=0; j < num_gen; ++j) {
 			for (int k=0; k < num_gen; ++k) {
-				double num = theta * F[i][j] * f[i][j][k]; // expected number of eggs laid with k genotype
+				double num = (params->theta) * F[i][j] * inher_fraction[i][j][k]; // expected number of eggs laid with k genotype
 				long long int eggs = random_poisson(num); // actual number of eggs laid sampled from random distribution
 
 				j_new = random_multinomial(eggs, dev_duration_probs); // number of eggs that start in each different age class (according to different juvenile development times)

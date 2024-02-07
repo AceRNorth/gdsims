@@ -22,7 +22,7 @@ public:
 private:
 	int num_runs; // number of simulation replicates to run
 	int max_t; // maximum simulated time (in days)
-	
+
 	AreaParams *area_params; // model area parameters
 	LifeParams *life_params; // model life-process parameters
 	InheritanceParams *inher_params; // gene drive inheritance parameters
@@ -34,7 +34,7 @@ private:
 
 	// inheritance
 	// f_ijk is the fraction of genotype k offspring from mother with genotype i mated to father with genotype j
-	std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> f;
+	std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> inher_fraction;
 };
 
 #endif //SIMULATION_H

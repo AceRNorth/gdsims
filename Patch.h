@@ -25,10 +25,10 @@ public:
 
 	// life-processes for the local site
 	void juv_get_older(int max_dev);
-	void adults_die(double mu_a);
+	void adults_die();
 	void virgins_mate();
-	void lay_eggs(const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f, 
-		double theta, const std::array<double, max_dev+1> &dev_duration_probs);
+	void lay_eggs(const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &f,
+	 const std::array<double, max_dev+1> &dev_duration_probs);
 	void juv_eclose();
 	void update_comp();
 	void update_mate();

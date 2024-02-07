@@ -1,5 +1,7 @@
 #include <iostream>
+#include <limits>
 #include <chrono>
+#include <vector>
 #include "Simulation.h"
 #include "Params.h"
 
@@ -14,7 +16,7 @@ int main()
 	AestivationParams aes;
 	InitialPopsParams initial;
 	RecordParams rec;
-
+	
 	// input parameters
 	// progression parameters
 	int num_runs;
@@ -63,9 +65,12 @@ int main()
 	int rec_sites_freq; 
 	int set_label; 
 
-	bool invalid_input = true;
+// ****** old bit
+	bool invalid_input2 = true;
 	std::cout << "Please enter the input parameters for the model:" << std::endl;
-	while (invalid_input){
+	while (invalid_input2) {
+		std::cin.clear();
+
 		std::cin >> num_runs; 
 		std::cin >> max_t;
 		std::cin >> num_pat; 
@@ -170,7 +175,7 @@ int main()
 			std::cout << "This simulation will only record local data for day 0." << std::endl;
 		}
 
-		invalid_input = false;
+		invalid_input2 = false;
 	}
 
 	prog.num_runs = num_runs;
@@ -217,6 +222,8 @@ int main()
 	double elapsed_seconds = std::chrono::duration_cast<std::chrono::duration<double>>(finish - start).count();
 	std::cout << "Program run time: " << std::endl;
 	printf("%.10f\n", elapsed_seconds);
+	
+// *** old bit
 	
 	return 0;
 }

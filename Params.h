@@ -1,7 +1,9 @@
 #ifndef PARAMS_H
 #define PARAMS_H
 
-// Model progression parameters
+// ** These parameters should not be modified after being passed to the Simulation or Model **
+
+// Simulation progression parameters
 struct ProgressionParams {
 	int num_runs = 1; // number of simulation replicates to run
 	int max_t = 1000; // maximum simulated time (in days)

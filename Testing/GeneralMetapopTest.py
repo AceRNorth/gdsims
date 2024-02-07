@@ -121,3 +121,91 @@ for j in range(0, num_sets):
         print("")
     
     print("")
+    
+#%% Only one set
+
+j = 1 # set number
+num_runs = 2 
+make_plot = False
+
+print("Set " + str(j))
+for i in range(0, num_runs):
+    # import oracle data
+    os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\testing\\oracle data\\set" + str(j))
+    totals_oracle = np.loadtxt("Totals" + str(j) + "run" + str(i+1) + ".txt", skiprows=2)
+    times_oracle = totals_oracle[:, 0]
+    tot_males_oracle = totals_oracle[:, 1:]
+    coords_oracle = np.loadtxt("CoordinateList" + str(j) + "run" + str(i+1) + ".txt", skiprows=2)
+    local_oracle = np.loadtxt("LocalData" + str(j) + "run" + str(i+1) + ".txt", skiprows=2)
+    
+    # plot oracle data
+    if make_plot:
+        plt.figure()
+        plt.title("Totals oracle data for " + "set " + str(j) + " run " + str(i+1))
+        plt.xlabel("Day")
+        plt.ylabel("Total number of individuals")
+        plt.plot(times_oracle, tot_males_oracle[:, 0], label="$M_{WW}$")
+        plt.plot(times_oracle, tot_males_oracle[:, 1], label="$M_{WD}$")
+        plt.plot(times_oracle, tot_males_oracle[:, 2], label="$M_{DD}$")
+        plt.plot(times_oracle, tot_males_oracle[:, 3], label="$M_{WR}$")
+        plt.plot(times_oracle, tot_males_oracle[:, 4], label="$M_{RR}$")
+        plt.plot(times_oracle, tot_males_oracle[:, 5], label="$M_{DR}$")
+        plt.legend()
+    
+    # import test data
+    os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\output files")
+    totals_test = np.loadtxt("Totals" + str(j) + "run" + str(i+1) + ".txt", skiprows=2)
+    times_test = totals_test[:, 0]
+    tot_males_test = totals_test[:, 1:]
+    coords_test = np.loadtxt("CoordinateList" + str(j) + "run" + str(i+1) + ".txt", skiprows=2)
+    local_test = np.loadtxt("LocalData" + str(j) + "run" + str(i+1) + ".txt", skiprows=2)
+    
+    # plot test data
+    if make_plot:
+        plt.figure()
+        plt.title("Totals test data for " + "set " + str(j) + " run " + str(i+1))
+        plt.xlabel("Day")
+        plt.ylabel("Total number of individuals")
+        plt.plot(times_test, tot_males_test[:, 0], label="$M_{WW}$")
+        plt.plot(times_test, tot_males_test[:, 1], label="$M_{WD}$")
+        plt.plot(times_test, tot_males_test[:, 2], label="$M_{DD}$")
+        plt.plot(times_test, tot_males_test[:, 3], label="$M_{WR}$")
+        plt.plot(times_test, tot_males_test[:, 4], label="$M_{RR}$")
+        plt.plot(times_test, tot_males_test[:, 5], label="$M_{DR}$")
+        plt.legend()
+    
+    # compare
+    print("Test results for " + "set " + str(j) + " run " + str(i+1) + ":")
+    if totals_test.shape == totals_oracle.shape:
+        print("Totals data array sizes are equal")
+    else:
+        print("Totals data array sizes are NOT equal!")
+        
+    if (totals_test == totals_oracle).all():
+        print("Totals data arrays are equal")
+    else:
+        print("Totals data arrays are NOT equal!")
+        
+        
+    if coords_test.shape == coords_oracle.shape:
+        print("Coords data array sizes are equal")
+    else:
+        print("Coords data array sizes are NOT equal!")
+    if (coords_test == coords_oracle).all():
+        print("Coords data arrays are equal")
+    else:
+        print("Coords data arrays are NOT equal!")
+        
+    
+    if local_test.shape == local_oracle.shape:
+        print("Local data array sizes are equal")
+    else:
+        print("Local data array sizes are NOT equal!")
+    if (local_test == local_oracle).all():
+        print("Local data arrays are equal")
+    else:
+        print("Local data arrays are NOT equal!")
+        
+    print("")
+
+print("")

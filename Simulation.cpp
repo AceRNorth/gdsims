@@ -24,7 +24,7 @@ Simulation::Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &li
 	for (int i=0; i < num_gen; ++i) {
 		for (int j=0; j < num_gen; ++j) {
 			for (int k=0; k < num_gen; ++k) {
-				f[i][j][k] = 0;
+				inher_fraction[i][j][k] = 0;
 			}
 		}
 	}
@@ -85,52 +85,52 @@ void Simulation::set_inheritance()
 		for (int i=0; i<6; ++i) {
 			for (int j=0; j<6; ++j) {
 				if (i==0) {
-					if (j==0) f[i][j][k] = f_ww_ww[k];
-					else if (j==1) f[i][j][k] = f_ww_wd[k];
-					else if (j==2) f[i][j][k] = f_ww_dd[k];
-					else if (j==3) f[i][j][k] = f_ww_wr[k];
-					else if (j==4) f[i][j][k] = f_ww_rr[k];
-					else if (j==5) f[i][j][k] = f_ww_dr[k];
+					if (j==0) inher_fraction[i][j][k] = f_ww_ww[k];
+					else if (j==1) inher_fraction[i][j][k] = f_ww_wd[k];
+					else if (j==2) inher_fraction[i][j][k] = f_ww_dd[k];
+					else if (j==3) inher_fraction[i][j][k] = f_ww_wr[k];
+					else if (j==4) inher_fraction[i][j][k] = f_ww_rr[k];
+					else if (j==5) inher_fraction[i][j][k] = f_ww_dr[k];
 				}
 				else if (i==1) {
-					if (j==0) f[i][j][k] = f_wd_ww[k];
-					else if (j==1) f[i][j][k] = f_wd_wd[k];
-					else if (j==2) f[i][j][k] = f_wd_dd[k];
-					else if (j==3) f[i][j][k] = f_wd_wr[k];
-					else if (j==4) f[i][j][k] = f_wd_rr[k];
-					else if (j==5) f[i][j][k] = f_wd_dr[k];
+					if (j==0) inher_fraction[i][j][k] = f_wd_ww[k];
+					else if (j==1) inher_fraction[i][j][k] = f_wd_wd[k];
+					else if (j==2) inher_fraction[i][j][k] = f_wd_dd[k];
+					else if (j==3) inher_fraction[i][j][k] = f_wd_wr[k];
+					else if (j==4) inher_fraction[i][j][k] = f_wd_rr[k];
+					else if (j==5) inher_fraction[i][j][k] = f_wd_dr[k];
 				}
 				else if (i==2) {
-					if (j==0) f[i][j][k] = f_dd_ww[k];
-					else if (j==1) f[i][j][k] = f_dd_wd[k];
-					else if (j==2) f[i][j][k] = f_dd_dd[k];
-					else if (j==3) f[i][j][k] = f_dd_wr[k];
-					else if (j==4) f[i][j][k] = f_dd_rr[k];
-					else if (j==5) f[i][j][k] = f_dd_dr[k];
+					if (j==0) inher_fraction[i][j][k] = f_dd_ww[k];
+					else if (j==1) inher_fraction[i][j][k] = f_dd_wd[k];
+					else if (j==2) inher_fraction[i][j][k] = f_dd_dd[k];
+					else if (j==3) inher_fraction[i][j][k] = f_dd_wr[k];
+					else if (j==4) inher_fraction[i][j][k] = f_dd_rr[k];
+					else if (j==5) inher_fraction[i][j][k] = f_dd_dr[k];
 				}
 				else if (i==3) {
-					if (j==0) f[i][j][k] = f_wr_ww[k];
-					else if (j==1) f[i][j][k] = f_wr_wd[k];
-					else if (j==2) f[i][j][k] = f_wr_dd[k];
-					else if (j==3) f[i][j][k] = f_wr_wr[k];
-					else if (j==4) f[i][j][k] = f_wr_rr[k];
-					else if (j==5) f[i][j][k] = f_wr_dr[k];
+					if (j==0) inher_fraction[i][j][k] = f_wr_ww[k];
+					else if (j==1) inher_fraction[i][j][k] = f_wr_wd[k];
+					else if (j==2) inher_fraction[i][j][k] = f_wr_dd[k];
+					else if (j==3) inher_fraction[i][j][k] = f_wr_wr[k];
+					else if (j==4) inher_fraction[i][j][k] = f_wr_rr[k];
+					else if (j==5) inher_fraction[i][j][k] = f_wr_dr[k];
 				}
 				else if (i==4) {
-					if (j==0) f[i][j][k] = f_rr_ww[k];
-					else if (j==1) f[i][j][k] = f_rr_wd[k];
-					else if (j==2) f[i][j][k] = f_rr_dd[k];
-					else if (j==3) f[i][j][k] = f_rr_wr[k];
-					else if (j==4) f[i][j][k] = f_rr_rr[k];
-					else if (j==5) f[i][j][k] = f_rr_dr[k];
+					if (j==0) inher_fraction[i][j][k] = f_rr_ww[k];
+					else if (j==1) inher_fraction[i][j][k] = f_rr_wd[k];
+					else if (j==2) inher_fraction[i][j][k] = f_rr_dd[k];
+					else if (j==3) inher_fraction[i][j][k] = f_rr_wr[k];
+					else if (j==4) inher_fraction[i][j][k] = f_rr_rr[k];
+					else if (j==5) inher_fraction[i][j][k] = f_rr_dr[k];
 				}
 				else if (i==5) {
-					if (j==0) f[i][j][k] = f_dr_ww[k];
-					else if (j==1) f[i][j][k] = f_dr_wd[k];
-					else if (j==2) f[i][j][k] = f_dr_dd[k];
-					else if (j==3) f[i][j][k] = f_dr_wr[k];
-					else if (j==4) f[i][j][k] = f_dr_rr[k];
-					else if (j==5) f[i][j][k] = f_dr_dr[k];
+					if (j==0) inher_fraction[i][j][k] = f_dr_ww[k];
+					else if (j==1) inher_fraction[i][j][k] = f_dr_wd[k];
+					else if (j==2) inher_fraction[i][j][k] = f_dr_dd[k];
+					else if (j==3) inher_fraction[i][j][k] = f_dr_wr[k];
+					else if (j==4) inher_fraction[i][j][k] = f_dr_rr[k];
+					else if (j==5) inher_fraction[i][j][k] = f_dr_dr[k];
 				}
 			}
 		}
@@ -147,7 +147,7 @@ void Simulation::run_reps()
 		data.record_coords(model.get_sites());
 
 		for (int tt=0; tt <= max_t; ++tt) { // current day of the simulation 
-			model.run(tt, f);
+			model.run(tt, inher_fraction);
 
 			if (data.is_rec_global_time(tt)) {
 				data.output_totals(tt, model.calculate_tot_J(), model.calculate_tot_M(), model.calculate_tot_V(),
