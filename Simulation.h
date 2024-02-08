@@ -14,9 +14,9 @@ void invalid_interval_msg(const std::string& param1, const std::string& param2);
 // Sets up and controls the flow of the simulation.
 class Simulation {
 public:
-	Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &life, InheritanceParams &inher,
- 		ReleaseParams &rel, DispersalParams &disp, AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec); 
-	void set_inheritance(); 
+	Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &life, ReleaseParams &rel, DispersalParams &disp,
+	 AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec); 
+	void set_inheritance(InheritanceParams inher_params); 
 	void run_reps();
 
 private:
@@ -25,7 +25,6 @@ private:
 
 	AreaParams *area_params; // model area parameters
 	LifeParams *life_params; // model life-process parameters
-	InheritanceParams *inher_params; // gene drive inheritance parameters
 	ReleaseParams *rel_params; // gene drive release model parameters
 	DispersalParams *disp_params; // dispersal model parameters
 	AestivationParams *aes_params; // aestivation model parameters

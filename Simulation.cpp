@@ -7,14 +7,13 @@
 
 using namespace constants;
 
-Simulation::Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &life, InheritanceParams &inher,
- ReleaseParams &rel, DispersalParams &disp, AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec)
+Simulation::Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &life, ReleaseParams &rel, DispersalParams &disp,
+ AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec)
 { 
 	num_runs = prog.num_runs;
 	max_t = prog.max_t;
 	area_params = &area;
 	life_params = &life;
-	inher_params = &inher;
 	rel_params = &rel;
 	disp_params = &disp;
 	aes_params = &aes;
@@ -32,11 +31,11 @@ Simulation::Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &li
 
 // Sets the values of the f_{ijk} fraction for the gene drive considering r2 resistant alleles
 // f_{ijk} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j
-void Simulation::set_inheritance()
+void Simulation::set_inheritance(InheritanceParams inher_params)
 {
-	double gamma = inher_params->gamma;
-	double xi = inher_params->xi;
-	double e = inher_params->e;
+	double gamma = inher_params.gamma;
+	double xi = inher_params.xi;
+	double e = inher_params.e;
 
 	// fraction of genotypes with index 0: ww, 1: wd, 2: dd, 3: wr, 4: rr, 5: dr
 	std::array<double, 6> f_ww_ww = {1, 0, 0, 0, 0, 0};

@@ -214,8 +214,8 @@ int main()
 	auto start = std::chrono::steady_clock::now();
 
 	// run simulation
-	Simulation simulation(prog, area, life, inher, rel, disp, aes, initial, rec);
-	simulation.set_inheritance();
+	Simulation simulation(prog, area, life, rel, disp, aes, initial, rec);
+	simulation.set_inheritance(inher);
 	simulation.run_reps();
 
 	auto finish = std::chrono::steady_clock::now();
