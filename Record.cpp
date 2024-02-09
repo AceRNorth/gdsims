@@ -16,8 +16,11 @@ Record::Record(RecordParams *rec_params, int rep)
 	set_label = rec_params->set_label;
 	rep_label = rep;
 
-	std::filesystem::path output_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\output files";
-	std::filesystem::current_path(output_path);
+	// create folder for destination of output files 
+	if (!std::filesystem::exists("./output_files")) {
+		std::filesystem::create_directory("output_files");
+	}
+	std::filesystem::current_path("./output_files");
 	
 	os1 << "LocalData" << set_label << "run" << rep_label << ".txt"; 
 	local_data.open(os1.str());
@@ -34,6 +37,11 @@ Record::Record(RecordParams *rec_params, int rep)
 
 	coord_list << "Coordinate list of the sites\n";
 	coord_list << "Site" << "\t" << "x" << "\t" << "y" << std::endl;
+}
+
+Record::~Record()
+{
+	std::filesystem::current_path("..");
 }
 
 // Records the x and y coordinates of each site
@@ -58,7 +66,11 @@ void Record::record_global(int day, const std::array<long long int, num_gen> &to
 // Outputs to screen the J, M, V, F totals over the simulation area for the given day
 void Record::output_totals(int day, long long int tot_J, long long int tot_M, long long int tot_V, long long int tot_F)
 {
-	std::cout << day << "\t" << tot_J << "\t" << tot_M << "\t" << tot_V << "\t" << tot_F << std::endl;
+	if (day == 0) {
+		std::cout << "\n" << "rep " << rep_label << "\n";
+		std::cout << "day" << "   " << "total J" << "   " << "total M" << "   " << "total V" << "   " << "total F" << "\n";
+	}
+	std::cout << day << "     " << tot_J << "   " << tot_M << "   " << tot_V << "   " << tot_F << std::endl;
 }
 
 // Records the number of males of each genotype at each site
