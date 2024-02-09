@@ -243,6 +243,7 @@ void Patch::juv_eclose()
 {
 	for (int i=0; i < num_gen; ++i) {
 		long long int surv = random_binomial(J[i][0], comp); // number of juveniles that survive eclosion
+		J[i][0] = 0; // all the oldest juveniles either successfully eclose or die
 		if (surv > 0) {	
 			// roughly half of the juveniles become male and half female following a distribution
 			long long int surv_m = random_binomial(surv, 0.5); 
@@ -250,6 +251,7 @@ void Patch::juv_eclose()
 			V[i] += surv - surv_m;
 		}
 	}
+	update_comp();
 	update_mate();
 }
 
