@@ -1,5 +1,4 @@
 #include <array>
-#include <iostream> // for error messages
 #include "Simulation.h"
 #include "constants.h"
 #include "Model.h"
@@ -158,14 +157,4 @@ void Simulation::run_reps()
 			}
 		}
 	}
-}
-
-void out_of_bounds_msg(const std::string& par) 
-{
-	std::cout << "The parameter " << par << " is out of bounds. Please enter all the input parameters again." << std::endl;
-}
-
-void invalid_interval_msg(const std::string& param1, const std::string& param2) 
-{
-	std::cout << "The parameters " << param1 << ", " << param2 << " do not constitute a valid interval. Please enter all the input parameters again." << std::endl;
 }

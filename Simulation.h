@@ -2,14 +2,10 @@
 #define SIMULATION_H
 
 #include <array>
-#include <string> // for error messages
 #include "constants.h"
 #include "Params.h"
 
 using namespace constants;
-
-void out_of_bounds_msg(const std::string& par);
-void invalid_interval_msg(const std::string& param1, const std::string& param2);
 
 // Sets up and controls the flow of the simulation.
 class Simulation {

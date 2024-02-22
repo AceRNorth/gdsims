@@ -4,7 +4,29 @@ import subprocess
 import numpy as np
 import matplotlib.pyplot as plt
 
-#%% Run C++ program for test case parameters from file
+#%% Run C++ Program with UI
+
+# ** Modify output files folder path and .exe filepath as needed! **
+output_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build"
+exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\cmake_gdsimsapp.exe"
+
+# Selecting sets to run
+sets = [i for i in range(1, 11)]
+    
+# ** Select other combinations of sets by listing below and uncommenting**
+# sets = [1, 4, 7]
+
+for j in range(0, len(sets)):
+        input_string = str(sets[j]) + "\n" + "y" + "\n"
+        
+        # Run C++ model with input data
+        os.chdir(output_folder_path) # directory for output files
+        # .exe file for the program
+        print("Running set", sets[j], "...")
+        proc = subprocess.Popen([exe_filepath], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
+        outs, errs = proc.communicate(input=input_string)
+        
+#%% Run C++ program for test case parameters from file -- old versions without UI
 
 # ** Modify parameter table .csv filepath, output files folder path and .exe filepath as needed! **
 param_csv_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\Parameters - new layout v3.csv"
@@ -22,8 +44,7 @@ for i in range(0, len(sets)):
     sets[i] = int(sets[i].removeprefix("set "))
     
 # ** Select other combinations of sets by listing below and uncommenting**
-# sets = [1, 4, 7]
-
+#sets = [10]
 for j in range(0, len(sets)):
     if ("set " + str(sets[j])) in params:
         input_data = params[["set " + str(sets[j])]]
@@ -43,7 +64,7 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\testing\\oracle data"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Testing\\oracle data"
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
