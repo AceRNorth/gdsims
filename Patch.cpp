@@ -44,7 +44,7 @@ void Patch::populate(int initial_WJ, int initial_WM, int initial_WV, int initial
 }
 
 // Returns the coordinates of the site on the simulation area
-std::array<double, 2> Patch::get_coords() const
+Point Patch::get_coords() const
 {
 	return coords;
 }

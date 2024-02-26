@@ -5,7 +5,7 @@ include(CTest)
 enable_testing()
 
 add_executable(cmake_gdsimsapp main.cpp)
-add_library(cmake_gdsimsapp_lib STATIC Simulation.h Simulation.cpp random.h random.cpp constants.h Params.h Record.cpp Record.h
+add_library(cmake_gdsimsapp_lib STATIC Simulation.h Simulation.cpp random.h random.cpp constants.h Params.h Record.cpp Record.h Point.h
 Dispersal.h Dispersal.cpp GDRelease.h GDRelease.cpp Aestivation.h Aestivation.cpp Patch.h Patch.cpp Model.h Model.cpp)
 
 find_library(GDSIMS_LIBRARY cmake_gdsimsapp_lib lib)

@@ -22,7 +22,7 @@ void Dispersal::set_connecs(double side, std::vector<Patch*> &sites)
 		connec_indices_pat.clear();
 		connec_weights_pat.clear();
 		for (int new_pat=0; new_pat < sites.size(); ++new_pat) {
-			double dd = distance(side, sites[pat]->get_coords(), sites[new_pat]->get_coords());
+			double dd = distance(sites[pat]->get_coords(), sites[new_pat]->get_coords(), side);
 			if (dd < max_disp) {
 				connec_indices_pat.push_back(new_pat); 
 				double weight = max_disp - dd;
@@ -74,27 +74,23 @@ void Dispersal::adults_disperse(std::vector<Patch*> &sites)
 }
 
 // Returns the periodic distance between two points in the simulation area with boundaries x = side, y = side
-double Dispersal::distance(double side, std::array<double, 2> point1, std::array<double, 2> point2) 
+double Dispersal::distance(const Point &p1, const Point &p2, double side) 
 {
 	double x_dist = 0;
 	double y_dist = 0;
-	double x1 = point1[0];
-	double y1 = point1[1];
-	double x2 = point2[0];
-	double y2 = point2[1];
 
-	if (std::abs(x1 - x2) > side - std::abs(x1 - x2)) {
-		x_dist = side - std::abs(x1 - x2);
+	if (std::abs(p1.x - p2.x) > side - std::abs(p1.x - p2.x)) {
+		x_dist = side - std::abs(p1.x - p2.x);
 	} 
-	else if (std::abs(x1 - x2) <= side - std::abs(x1 - x2)) {
-		x_dist = std::abs(x1 - x2);
+	else {
+		x_dist = std::abs(p1.x - p2.x);
 	}
 
-	if (std::abs(y1 - y2) > side - std::abs(y1 - y2)) {
-		y_dist = side - std::abs(y1 - y2);
+	if (std::abs(p1.y - p2.y) > side - std::abs(p1.y - p2.y)) {
+		y_dist = side - std::abs(p1.y - p2.y);
 	}
-	else if (std::abs(y1 - y2) <= side - std::abs(y1 - y2)) {
-		y_dist = std::abs(y1 - y2);
+	else {
+		y_dist = std::abs(p1.y - p2.y);
 	}
 
 	return std::sqrt((x_dist * x_dist) + (y_dist * y_dist));

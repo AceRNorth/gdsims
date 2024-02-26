@@ -6,6 +6,7 @@
 #include "constants.h"
 #include "Params.h"
 #include "Patch.h"
+#include "Point.h"
 
 using namespace constants;
 
@@ -30,7 +31,7 @@ private:
 	// between the second sites element and all other patches connected to it, etc.
 	std::vector<std::vector<double>> connec_weights; 
 
-	double distance(double side, std::array<double, 2> point1, std::array<double, 2> point2);
+	double distance(const Point &p1, const Point &p2, double side);
 	std::vector<std::array<long long int, num_gen>> M_dispersing_out(const std::vector<Patch*> &sites);
 	std::vector<std::array<std::array<long long int, num_gen>, num_gen>> F_dispersing_out(const std::vector<Patch*> &sites);
 };

@@ -48,8 +48,8 @@ Record::~Record()
 void Record::record_coords(const std::vector<Patch*> &sites) 
 {
 	for (int pat=0; pat < sites.size(); pat += rec_sites_freq) {
-		std::array<double, 2> pat_coords = sites[pat]->get_coords();
-		coord_list << pat+1 << "\t" << pat_coords[0] << "\t" << pat_coords[1] << std::endl;
+		auto coords = sites[pat]->get_coords();
+		coord_list << pat+1 << "\t" << coords.x << "\t" << coords.y << std::endl;
 	}
 }
 
