@@ -9,14 +9,15 @@
 #include "Dispersal.h"
 #include "Aestivation.h"
 #include "GDRelease.h"
+#include "Point.h"
 
 using namespace constants;
 
 // Runs the model.
 class Model {
 public:
-	Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp_param, 
-		ReleaseParams *rel);
+	Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
+		ReleaseParams *rel, BoundaryType boundary = BoundaryType::Toroid, std::vector<Point> coords = {});
 	~Model();
 	void initiate();
 	void run(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_fraction);

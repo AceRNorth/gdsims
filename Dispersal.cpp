@@ -7,14 +7,15 @@
 
 using namespace constants;
 
-Dispersal::Dispersal(DispersalParams *params) 
+Dispersal::Dispersal(DispersalParams* params, BoundaryStrategy* boundary) 
 {
 	disp_rate = params->disp_rate;
 	max_disp = params->max_disp;
+	boundary_strategy = boundary;
 }
 
 // Computes the inter-patch connectivities (connec_indices and connec_weights)
-void Dispersal::set_connecs(double side, std::vector<Patch*> &sites)
+void Dispersal::set_connecs(std::vector<Patch*> &sites)
 {
 	std::vector<int> connec_indices_pat;
 	std::vector<double> connec_weights_pat;
@@ -22,7 +23,7 @@ void Dispersal::set_connecs(double side, std::vector<Patch*> &sites)
 		connec_indices_pat.clear();
 		connec_weights_pat.clear();
 		for (int new_pat=0; new_pat < sites.size(); ++new_pat) {
-			double dd = distance(sites[pat]->get_coords(), sites[new_pat]->get_coords(), side);
+			double dd = boundary_strategy->distance(sites[pat]->get_coords(), sites[new_pat]->get_coords());
 			if (dd < max_disp) {
 				connec_indices_pat.push_back(new_pat); 
 				double weight = max_disp - dd;

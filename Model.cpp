@@ -1,5 +1,6 @@
 #include <vector>
 #include <cmath>
+#include <cassert>
 #include "Model.h"
 #include "random.h"
 #include "constants.h"
@@ -7,11 +8,12 @@
 #include "Dispersal.h"
 #include "GDRelease.h"
 #include "Aestivation.h"
+#include "BoundaryStrategy.h"
 
 using namespace constants;
 
 Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-	ReleaseParams *rel) 
+	ReleaseParams *rel, BoundaryType boundary, std::vector<Point> coords)
 {
 	num_pat = area->num_pat;
 	side = area->side;
@@ -20,15 +22,37 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 	dev_duration_probs.fill(0);
 
 	sites.clear();
-	for (int ii=0; ii < num_pat; ++ii) {
-		Patch* pp = new Patch(side, life);
-		sites.push_back(pp);
-	
+
+	if (!coords.empty()) {
+		assert(coords.size() == num_pat);
+		for (int i=0; i < num_pat; ++i) {
+			Patch* pp = new Patch(life, coords[i]);
+			sites.push_back(pp);
+		}
 	}
+	else {
+		for (int i=0; i < num_pat; ++i) {
+			Patch* pp = new Patch(life, side);
+			sites.push_back(pp);
+		}
+	}
+
 	Aestivation* new_aestivation = new Aestivation(aes, sites.size());
 	aestivation = new_aestivation;
-	Dispersal* new_dispersal = new Dispersal(disp);
+
+	BoundaryStrategy* bs;
+	if (boundary == Toroid) {
+		bs = new ToroidalBoundaryStrategy(side);
+	}
+	else if (boundary == Edge) {
+		bs = new EdgeBoundaryStrategy(side);
+	}
+	else {
+		bs = new ToroidalBoundaryStrategy(side);
+	}
+	Dispersal* new_dispersal = new Dispersal(disp, bs);
 	dispersal = new_dispersal;
+
 	GDRelease* new_gd_release = new GDRelease(rel);
 	gd_release = new_gd_release;
 }
@@ -48,7 +72,7 @@ void Model::initiate()
 {
 	populate_sites();
 	set_dev_duration_probs(min_dev, max_dev);
-	dispersal->set_connecs(side, sites); 
+	dispersal->set_connecs(sites); 
 }
 
 // Populates all sites with a (wild) mosquito population of different types (age and sex)

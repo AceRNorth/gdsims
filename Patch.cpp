@@ -7,13 +7,38 @@
 
 using namespace constants;
 
-Patch::Patch(double side, LifeParams* par) 
+// Sets coordinates randomly on the square space of side side.
+Patch::Patch(LifeParams* par, double side) 
 {
 	params = par;
-
+	
 	double x = random_real() * side;
 	double y = random_real() * side;
 	coords = {x, y};
+
+	for (int i=0; i < num_gen; ++i) {
+		for (int a=0; a < max_dev + 1; ++a) {
+			J[i][a] = 0; 
+		}
+		M[i] = 0;
+		V[i] = 0;
+		for (int j=0; j < num_gen; ++j) {
+			F[i][j] = 0;
+		}
+	}
+	comp = 0;
+	mate_rate = 0;
+}
+
+// Sets chosen coordinates.
+Patch::Patch(LifeParams* par, Point point) 
+{
+	params = par;
+	coords = point;
+
+	// include to be able to compare data to oracle when testing
+	double x = random_real();
+	double y = random_real();
 
 	for (int i=0; i < num_gen; ++i) {
 		for (int a=0; a < max_dev + 1; ++a) {

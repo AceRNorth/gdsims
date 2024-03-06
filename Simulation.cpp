@@ -1,9 +1,13 @@
 #include <array>
 #include <iostream> // for error messages
+#include <filesystem>
+#include <sstream>
+#include <string>
 #include "Simulation.h"
 #include "constants.h"
 #include "Model.h"
 #include "Record.h"
+#include "input.h"
 
 using namespace constants;
 
@@ -27,6 +31,57 @@ Simulation::Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &li
 			}
 		}
 	}
+
+	sites_coords.clear();
+	boundary_type = BoundaryType::Toroid;
+}
+
+// Sets the sites' coordinates from a .txt file, unless any errors are thrown.
+void Simulation::set_coords(const std::string& filename) 
+{
+	sites_coords.clear();
+
+	auto filepath = std::filesystem::path(std::string("./")+filename);
+	if (!std::filesystem::exists(filepath) || !std::filesystem::is_regular_file(filepath)) {
+		std::cerr << "Invalid filename. Make sure the file is in the program directory." << std::endl;
+	}
+	else {
+		std::ifstream file(filename);
+		std::string line;
+		std::vector<Point> temp;
+		if (file.is_open()) {
+			for(int i=0; std::getline(file, line); ++i) {
+				std::stringstream linestream(line);
+				if (line.size() == 0) break;
+
+				double x, y;
+				int err = 0;
+				if (!read_and_validate_type(linestream, x, "x" + std::to_string(i+1), "double")) err++;
+				if (!read_and_validate_type(linestream, y, "y" + std::to_string(i+1), "double")) err++;
+				
+				if (boundary_type == Toroid) {
+					if (!check_bounds("x" + std::to_string(i+1), x, 0.0, true, area_params->side, true)) err++;
+					if (!check_bounds("y" + std::to_string(i+1), y, 0.0, true, area_params->side, true)) err++;
+				}
+				if (err == 0) {
+					temp.push_back({x, y});
+				}
+			}
+		}
+		file.close();
+
+		if (temp.size() != area_params->num_pat) {
+			std::cerr << "Error: the number of valid coordinates in the file does not match num_pat." << std::endl;
+		}
+		else {
+			sites_coords = temp;
+		}
+	}		
+}
+
+void Simulation::set_boundary_type(BoundaryType boundary) 
+{
+	boundary_type = boundary;
 }
 
 // Sets the values of the f_{ijk} fraction for the gene drive considering r2 resistant alleles
@@ -140,7 +195,7 @@ void Simulation::set_inheritance(InheritanceParams inher_params)
 void Simulation::run_reps() 
 {
 	for (int rep=1; rep <= num_runs; ++rep) {
-		Model model(area_params, initial_params, life_params, aes_params, disp_params, rel_params);
+		Model model(area_params, initial_params, life_params, aes_params, disp_params, rel_params, boundary_type, sites_coords);
 		Record data(rec_params, rep);
 		model.initiate();
 		data.record_coords(model.get_sites());

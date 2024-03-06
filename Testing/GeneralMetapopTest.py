@@ -22,7 +22,7 @@ for i in range(0, len(sets)):
     sets[i] = int(sets[i].removeprefix("set "))
     
 # ** Select other combinations of sets by listing below and uncommenting**
-# sets = [1, 4, 7]
+#sets = [10]
 
 for j in range(0, len(sets)):
     if ("set " + str(sets[j])) in params:
@@ -43,12 +43,12 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\testing\\oracle data"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Testing\\oracle data\\toroid"
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
 sets = [i for i in range(1, 11)]
-# sets = [1, 4, 7]       
+#sets = [2]       
 
 # ** Modify the list of num_runs in each set selected as needed **
 num_runs_list = [2 for i in range(0, len(sets))]

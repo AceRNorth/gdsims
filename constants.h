@@ -8,4 +8,6 @@ namespace constants
     const int num_gen = 6; // number of different genotypes in the mosquito population
 }
 
+enum BoundaryType{Toroid, Edge};
+
 #endif //CONSTANTS_H

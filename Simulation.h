@@ -2,9 +2,11 @@
 #define SIMULATION_H
 
 #include <array>
+#include <vector>
 #include <string> // for error messages
 #include "constants.h"
 #include "Params.h"
+#include "Point.h"
 
 using namespace constants;
 
@@ -16,6 +18,8 @@ class Simulation {
 public:
 	Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &life, ReleaseParams &rel, DispersalParams &disp,
 	 AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec); 
+	void set_coords(const std::string& coords_file);
+	void set_boundary_type(BoundaryType boundary);
 	void set_inheritance(InheritanceParams inher_params); 
 	void run_reps();
 
@@ -30,6 +34,10 @@ private:
 	AestivationParams *aes_params; // aestivation model parameters
 	InitialPopsParams *initial_params; // initial population values
 	RecordParams *rec_params; // data-recording parameters
+
+	// additional parameter options
+	std::vector<Point> sites_coords; // 2D coordinates for the sites on the simulated square
+	BoundaryType boundary_type;
 
 	// inheritance
 	// f_ijk is the fraction of genotype k offspring from mother with genotype i mated to father with genotype j

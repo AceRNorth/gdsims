@@ -4,6 +4,7 @@
 #include <vector>
 #include "Simulation.h"
 #include "Params.h"
+#include "constants.h"
 
 int main()
 {	
@@ -210,11 +211,12 @@ int main()
 	rec.rec_sites_freq = rec_sites_freq;
 	rec.set_label = set_label;
 
-
 	auto start = std::chrono::steady_clock::now();
 
 	// run simulation
 	Simulation simulation(prog, area, life, rel, disp, aes, initial, rec);
+	simulation.set_boundary_type(Toroid);
+	//simulation.set_coords("coords.txt");
 	simulation.set_inheritance(inher);
 	simulation.run_reps();
 

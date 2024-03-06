@@ -12,7 +12,8 @@ using namespace constants;
 // Contains the information of a local mosquito population
 class Patch {
 public:
-	Patch(double side, LifeParams* params);
+	Patch(LifeParams* par, double side);
+	Patch(LifeParams* par, Point point);
 	void populate(int initial_WJ, int initial_WM, int initial_WV, int initial_WF);
 
 	Point get_coords() const;
