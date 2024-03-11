@@ -34,6 +34,7 @@ Simulation::Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &li
 
 	sites_coords.clear();
 	boundary_type = BoundaryType::Toroid;
+	connec_type = ConnecType::Simple;
 }
 
 // Sets the sites' coordinates from a .txt file, unless any errors are thrown.
@@ -82,6 +83,11 @@ void Simulation::set_coords(const std::string& filename)
 void Simulation::set_boundary_type(BoundaryType boundary) 
 {
 	boundary_type = boundary;
+}
+
+void Simulation::set_connec_type(ConnecType connec)
+{
+	connec_type = connec;
 }
 
 // Sets the values of the f_{ijk} fraction for the gene drive considering r2 resistant alleles
@@ -195,7 +201,8 @@ void Simulation::set_inheritance(InheritanceParams inher_params)
 void Simulation::run_reps() 
 {
 	for (int rep=1; rep <= num_runs; ++rep) {
-		Model model(area_params, initial_params, life_params, aes_params, disp_params, rel_params, boundary_type, sites_coords);
+		Model model(area_params, initial_params, life_params, aes_params, disp_params, rel_params, boundary_type, connec_type,
+		 sites_coords);
 		Record data(rec_params, rep);
 		model.initiate();
 		data.record_coords(model.get_sites());

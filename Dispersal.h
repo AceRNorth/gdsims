@@ -8,6 +8,7 @@
 #include "Patch.h"
 #include "Point.h"
 #include "BoundaryStrategy.h"
+#include "ConnecStrategy.h"
 
 using namespace constants;
 
@@ -16,7 +17,8 @@ class Patch;
 // Implements dispersion across all mosquito sites in the collection. 
 class Dispersal {
 public:
-	Dispersal(DispersalParams* params, BoundaryStrategy* boundary);
+	Dispersal(DispersalParams* params, BoundaryType boundary, double side, ConnecType connec);
+	~Dispersal();
 	void set_connecs(std::vector<Patch*> &sites);
 	void adults_disperse(std::vector<Patch*> &sites);
 
@@ -33,8 +35,8 @@ private:
 	std::vector<std::vector<double>> connec_weights; 
 
 	BoundaryStrategy* boundary_strategy;
+	ConnecStrategy* connec_strategy;
 
-	double distance(const Point &p1, const Point &p2, double side);
 	std::vector<std::array<long long int, num_gen>> M_dispersing_out(const std::vector<Patch*> &sites);
 	std::vector<std::array<std::array<long long int, num_gen>, num_gen>> F_dispersing_out(const std::vector<Patch*> &sites);
 };

@@ -20,6 +20,7 @@ public:
 	 AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec); 
 	void set_coords(const std::string& coords_file);
 	void set_boundary_type(BoundaryType boundary);
+	void set_connec_type(ConnecType connec);
 	void set_inheritance(InheritanceParams inher_params); 
 	void run_reps();
 
@@ -38,6 +39,7 @@ private:
 	// additional parameter options
 	std::vector<Point> sites_coords; // 2D coordinates for the sites on the simulated square
 	BoundaryType boundary_type;
+	ConnecType connec_type;
 
 	// inheritance
 	// f_ijk is the fraction of genotype k offspring from mother with genotype i mated to father with genotype j

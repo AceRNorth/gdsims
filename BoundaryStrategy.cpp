@@ -1,6 +1,7 @@
 #include <cmath>
 #include "BoundaryStrategy.h"
 
+// Calculates the periodic distance between two points in the simulation area with boundaries x = side, y = side
 double ToroidalBoundaryStrategy::distance(const Point &p1, const Point &p2)
 {
     double x_dist = 0;
@@ -23,6 +24,8 @@ double ToroidalBoundaryStrategy::distance(const Point &p1, const Point &p2)
 	return std::sqrt((x_dist * x_dist) + (y_dist * y_dist));
 }
 
+
+// Calculates the distance between two points
 double EdgeBoundaryStrategy::distance(const Point &p1, const Point &p2)
 {
     return sqrt(std::pow(p2.x - p1.x, 2) + std::pow(p2.y - p1.y, 2));

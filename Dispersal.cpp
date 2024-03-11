@@ -5,34 +5,50 @@
 #include "random.h"
 #include "constants.h"
 
+#include <iostream>
+
 using namespace constants;
 
-Dispersal::Dispersal(DispersalParams* params, BoundaryStrategy* boundary) 
+Dispersal::Dispersal(DispersalParams* params, BoundaryType boundary, double side, ConnecType connec) 
 {
 	disp_rate = params->disp_rate;
 	max_disp = params->max_disp;
-	boundary_strategy = boundary;
+	
+	if (boundary == Toroid) {
+		boundary_strategy = new ToroidalBoundaryStrategy(side);
+	}
+	else if (boundary == Edge) {
+		boundary_strategy = new EdgeBoundaryStrategy(side);
+	}
+	else {
+		boundary_strategy = new ToroidalBoundaryStrategy(side);
+	}
+	
+	if (connec == Simple) {
+		connec_strategy = new SimpleConnecStrategy(max_disp, boundary_strategy);
+	}
+	else if (connec == Wedge) {
+		connec_strategy = new WedgeConnecStrategy(max_disp, boundary_strategy);
+	}
+	else {
+		connec_strategy = new SimpleConnecStrategy(max_disp, boundary_strategy);
+	}
 }
 
-// Computes the inter-patch connectivities (connec_indices and connec_weights)
+Dispersal::~Dispersal()
+{
+	delete boundary_strategy;
+	delete connec_strategy;
+}
+
+// Sets the inter-patch connectivities
 void Dispersal::set_connecs(std::vector<Patch*> &sites)
 {
-	std::vector<int> connec_indices_pat;
-	std::vector<double> connec_weights_pat;
-	for (int pat=0; pat < sites.size(); ++pat) {
-		connec_indices_pat.clear();
-		connec_weights_pat.clear();
-		for (int new_pat=0; new_pat < sites.size(); ++new_pat) {
-			double dd = boundary_strategy->distance(sites[pat]->get_coords(), sites[new_pat]->get_coords());
-			if (dd < max_disp) {
-				connec_indices_pat.push_back(new_pat); 
-				double weight = max_disp - dd;
-				connec_weights_pat.push_back(weight); 
-			}
-		}
-		connec_indices.push_back(connec_indices_pat);
-		connec_weights.push_back(connec_weights_pat);
-	}
+	connec_indices.clear();
+	connec_weights.clear();
+	auto connecs = connec_strategy->compute_connecs(sites);
+	connec_indices = connecs.first;
+	connec_weights = connecs.second;
 }
 
 // Carries out dispersal by adults from and to each patch, depending on the patch connectivities
@@ -72,29 +88,6 @@ void Dispersal::adults_disperse(std::vector<Patch*> &sites)
 			}
 		}
 	}
-}
-
-// Returns the periodic distance between two points in the simulation area with boundaries x = side, y = side
-double Dispersal::distance(const Point &p1, const Point &p2, double side) 
-{
-	double x_dist = 0;
-	double y_dist = 0;
-
-	if (std::abs(p1.x - p2.x) > side - std::abs(p1.x - p2.x)) {
-		x_dist = side - std::abs(p1.x - p2.x);
-	} 
-	else {
-		x_dist = std::abs(p1.x - p2.x);
-	}
-
-	if (std::abs(p1.y - p2.y) > side - std::abs(p1.y - p2.y)) {
-		y_dist = side - std::abs(p1.y - p2.y);
-	}
-	else {
-		y_dist = std::abs(p1.y - p2.y);
-	}
-
-	return std::sqrt((x_dist * x_dist) + (y_dist * y_dist));
 }
 
 // Returns the number of males (of each genotype) dispersing out from each patch.

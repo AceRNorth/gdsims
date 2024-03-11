@@ -215,7 +215,8 @@ int main()
 
 	// run simulation
 	Simulation simulation(prog, area, life, rel, disp, aes, initial, rec);
-	simulation.set_boundary_type(Toroid);
+	simulation.set_boundary_type(Edge);
+	simulation.set_connec_type(Wedge);
 	//simulation.set_coords("coords.txt");
 	simulation.set_inheritance(inher);
 	simulation.run_reps();

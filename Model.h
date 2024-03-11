@@ -17,7 +17,8 @@ using namespace constants;
 class Model {
 public:
 	Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-		ReleaseParams *rel, BoundaryType boundary = BoundaryType::Toroid, std::vector<Point> coords = {});
+		ReleaseParams *rel, BoundaryType boundary = BoundaryType::Toroid, ConnecType connec = ConnecType::Simple,
+		 std::vector<Point> coords = {});
 	~Model();
 	void initiate();
 	void run(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_fraction);

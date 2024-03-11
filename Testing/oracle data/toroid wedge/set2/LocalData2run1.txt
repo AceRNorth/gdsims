@@ -1,0 +1,8 @@
+Male populations of each genotype at each site
+Day	Site	WW	WD	DD	WR	RR	DR
+0	1	50000	0	0	0	0	0
+200	1	34075	857	0	0	0	0
+400	1	19620	11655	1960	375	2	140
+600	1	2	165	2777	2	11	243
+800	1	0	0	0	0	0	0
+1000	1	0	0	0	0	0	0

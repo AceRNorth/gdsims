@@ -8,12 +8,11 @@
 #include "Dispersal.h"
 #include "GDRelease.h"
 #include "Aestivation.h"
-#include "BoundaryStrategy.h"
 
 using namespace constants;
 
 Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-	ReleaseParams *rel, BoundaryType boundary, std::vector<Point> coords)
+	ReleaseParams *rel, BoundaryType boundary, ConnecType connec, std::vector<Point> coords)
 {
 	num_pat = area->num_pat;
 	side = area->side;
@@ -40,17 +39,7 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 	Aestivation* new_aestivation = new Aestivation(aes, sites.size());
 	aestivation = new_aestivation;
 
-	BoundaryStrategy* bs;
-	if (boundary == Toroid) {
-		bs = new ToroidalBoundaryStrategy(side);
-	}
-	else if (boundary == Edge) {
-		bs = new EdgeBoundaryStrategy(side);
-	}
-	else {
-		bs = new ToroidalBoundaryStrategy(side);
-	}
-	Dispersal* new_dispersal = new Dispersal(disp, bs);
+	Dispersal* new_dispersal = new Dispersal(disp, boundary, side, connec);
 	dispersal = new_dispersal;
 
 	GDRelease* new_gd_release = new GDRelease(rel);
