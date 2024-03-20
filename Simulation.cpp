@@ -34,7 +34,7 @@ Simulation::Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &li
 
 	sites_coords.clear();
 	boundary_type = BoundaryType::Toroid;
-	connec_type = ConnecType::Simple;
+	disp_type = DispersalType::DistanceKernel;
 }
 
 // Sets the sites' coordinates from a .txt file, unless any errors are thrown.
@@ -85,9 +85,9 @@ void Simulation::set_boundary_type(BoundaryType boundary)
 	boundary_type = boundary;
 }
 
-void Simulation::set_connec_type(ConnecType connec)
+void Simulation::set_dispersal_type(DispersalType disp)
 {
-	connec_type = connec;
+	disp_type = disp;
 }
 
 // Sets the values of the f_{ijk} fraction for the gene drive considering r2 resistant alleles
@@ -201,7 +201,7 @@ void Simulation::set_inheritance(InheritanceParams inher_params)
 void Simulation::run_reps() 
 {
 	for (int rep=1; rep <= num_runs; ++rep) {
-		Model model(area_params, initial_params, life_params, aes_params, disp_params, rel_params, boundary_type, connec_type,
+		Model model(area_params, initial_params, life_params, aes_params, disp_params, rel_params, boundary_type, disp_type, 
 		 sites_coords);
 		Record data(rec_params, rep);
 		model.initiate();

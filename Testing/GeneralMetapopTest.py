@@ -22,7 +22,7 @@ for i in range(0, len(sets)):
     sets[i] = int(sets[i].removeprefix("set "))
     
 # ** Select other combinations of sets by listing below and uncommenting**
-#sets = [10]
+#sets = [11]
 
 for j in range(0, len(sets)):
     if ("set " + str(sets[j])) in params:
@@ -43,23 +43,23 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Testing\\oracle data\\edge"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Testing\\oracle data\\edge distance kernel"
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
-sets = [i for i in range(1, 11)]
-#sets = [2]       
+sets = [i for i in range(1, 12)]
+#sets = [11]       
 
 # ** Modify the list of num_runs in each set selected as needed **
 num_runs_list = [2 for i in range(0, len(sets))]
 # num_runs_list = [2, 3, 1]
 
-make_plot = True
+make_plot = False
 
 for j in range(0, len(sets)):
     print("Set " + str(sets[j]))
     for i in range(1, num_runs_list[j] + 1):
-        # import oracle data
+        #import oracle data
         os.chdir(os.path.join(oracle_folder_path, "set" + str(sets[j])))
         totals_oracle = np.loadtxt("Totals" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
         times_oracle = totals_oracle[:, 0]

@@ -3,12 +3,12 @@
 
 #include <vector>
 #include <array>
+#include <utility>
 #include "constants.h"
 #include "Params.h"
 #include "Patch.h"
 #include "Point.h"
 #include "BoundaryStrategy.h"
-#include "ConnecStrategy.h"
 
 using namespace constants;
 
@@ -17,12 +17,12 @@ class Patch;
 // Implements dispersion across all mosquito sites in the collection. 
 class Dispersal {
 public:
-	Dispersal(DispersalParams* params, BoundaryType boundary, double side, ConnecType connec);
+	Dispersal(DispersalParams* params, BoundaryType boundary, double side);
 	~Dispersal();
-	void set_connecs(std::vector<Patch*> &sites);
-	void adults_disperse(std::vector<Patch*> &sites);
+	virtual void set_connecs(std::vector<Patch*> &sites) = 0;
+	virtual void adults_disperse(std::vector<Patch*> &sites) = 0;
 
-private:
+protected:
 	double disp_rate; // adult dispersal rate
 	double max_disp; // maximum distance at which two sites are connected (km)
 
@@ -35,10 +35,35 @@ private:
 	std::vector<std::vector<double>> connec_weights; 
 
 	BoundaryStrategy* boundary_strategy;
-	ConnecStrategy* connec_strategy;
 
 	std::vector<std::array<long long int, num_gen>> M_dispersing_out(const std::vector<Patch*> &sites);
 	std::vector<std::array<std::array<long long int, num_gen>, num_gen>> F_dispersing_out(const std::vector<Patch*> &sites);
+};
+
+
+class DistanceKernelDispersal: public Dispersal {
+public:
+	DistanceKernelDispersal(DispersalParams* params, BoundaryType boundary, double side): Dispersal(params, boundary, side) {};
+	void set_connecs(std::vector<Patch*> &sites) override;
+	void adults_disperse(std::vector<Patch*> &sites) override;
+
+private:
+	std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> compute_connecs(std::vector<Patch*> &sites);
+};
+
+class WedgeDispersal: public Dispersal {
+public:
+	WedgeDispersal(DispersalParams* params, BoundaryType boundary, double side): Dispersal(params, boundary, side) {};
+	void set_connecs(std::vector<Patch*> &sites) override;
+	void adults_disperse(std::vector<Patch*> &sites) override;
+
+private:
+	std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> compute_connecs(std::vector<Patch*> &sites);
+	std::pair<std::vector<std::pair<double, double>>, double> compute_interval_union(const std::pair<double, double>& qq,
+        const std::vector<std::pair<double, double>>& input);
+    double wrap_around(double value, double range); 
+    std::vector<int> get_sorted_positions(const std::vector<double>& numbers);
+    std::vector<std::vector<double>> compute_distances(const std::vector<Patch*> &sites);
 };
 
 #endif //DISPERSAL_H

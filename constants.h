@@ -9,6 +9,6 @@ namespace constants
 }
 
 enum BoundaryType{Toroid, Edge};
-enum ConnecType{Simple, Wedge};
+enum DispersalType{DistanceKernel, Wedge};
 
 #endif //CONSTANTS_H

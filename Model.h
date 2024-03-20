@@ -17,7 +17,7 @@ using namespace constants;
 class Model {
 public:
 	Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-		ReleaseParams *rel, BoundaryType boundary = BoundaryType::Toroid, ConnecType connec = ConnecType::Simple,
+		ReleaseParams *rel, BoundaryType boundary = BoundaryType::Toroid, DispersalType disp_type = DispersalType::DistanceKernel,
 		 std::vector<Point> coords = {});
 	~Model();
 	void initiate();
