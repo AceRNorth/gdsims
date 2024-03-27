@@ -53,11 +53,13 @@ private:
 
 class WedgeDispersal: public Dispersal {
 public:
-	WedgeDispersal(DispersalParams* params, BoundaryType boundary, double side): Dispersal(params, boundary, side) {};
+	WedgeDispersal(DispersalParams* params, BoundaryType boundary, double side);
 	void set_connecs(std::vector<Patch*> &sites) override;
 	void adults_disperse(std::vector<Patch*> &sites) override;
 
 private:
+	std::vector<double> connec_weights_sum;
+
 	std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> compute_connecs(std::vector<Patch*> &sites);
 	std::pair<std::vector<std::pair<double, double>>, double> compute_interval_union(const std::pair<double, double>& qq,
         const std::vector<std::pair<double, double>>& input);

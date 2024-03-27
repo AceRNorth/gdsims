@@ -11,3 +11,5 @@ build/
 lib/
 old files/
 output files/
+html/
+Doxyfile
