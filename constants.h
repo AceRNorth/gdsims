@@ -9,6 +9,6 @@ namespace constants
 }
 
 enum BoundaryType{Toroid, Edge};
-enum DispersalType{DistanceKernel, Wedge};
+enum DispersalType{DistanceKernel, Radial};
 
 #endif //CONSTANTS_H

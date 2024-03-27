@@ -43,7 +43,7 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Testing\\oracle data\\edge wedge"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Testing\\oracle data\\edge radial"
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **

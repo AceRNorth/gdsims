@@ -51,9 +51,9 @@ private:
 	std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> compute_connecs(std::vector<Patch*> &sites);
 };
 
-class WedgeDispersal: public Dispersal {
+class RadialDispersal: public Dispersal {
 public:
-	WedgeDispersal(DispersalParams* params, BoundaryType boundary, double side);
+	RadialDispersal(DispersalParams* params, BoundaryType boundary, double side);
 	void set_connecs(std::vector<Patch*> &sites) override;
 	void adults_disperse(std::vector<Patch*> &sites) override;
 

@@ -43,8 +43,8 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 	if (disp_type == DistanceKernel) {
 		new_disp = new DistanceKernelDispersal(disp, boundary, side);
 	}
-	else if (disp_type == Wedge) {
-		new_disp = new WedgeDispersal(disp, boundary, side);
+	else if (disp_type == Radial) {
+		new_disp = new RadialDispersal(disp, boundary, side);
 	}
 	else {
 		new_disp = new DistanceKernelDispersal(disp, boundary, side);

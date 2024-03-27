@@ -143,12 +143,12 @@ std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> Dista
     return {connec_indices, connec_weights};
 }
 
-WedgeDispersal::WedgeDispersal(DispersalParams* params, BoundaryType boundary, double side): Dispersal(params, boundary, side) {
+RadialDispersal::RadialDispersal(DispersalParams* params, BoundaryType boundary, double side): Dispersal(params, boundary, side) {
 	connec_weights_sum.clear();
 }
 
 // Sets the inter-patch connectivities
-void WedgeDispersal::set_connecs(std::vector<Patch*> &sites) {
+void RadialDispersal::set_connecs(std::vector<Patch*> &sites) {
 	connec_indices.clear();
 	connec_weights.clear();
 	auto connecs = compute_connecs(sites);
@@ -166,7 +166,7 @@ void WedgeDispersal::set_connecs(std::vector<Patch*> &sites) {
 }
 
 // Carries out dispersal by adults from and to each patch, depending on the patch connectivities
-void WedgeDispersal::adults_disperse(std::vector<Patch*> &sites) {
+void RadialDispersal::adults_disperse(std::vector<Patch*> &sites) {
 	// adults dispersing out from each patch 
 	std::vector<std::array<long long int, num_gen>> m_move = M_dispersing_out(sites); // males dispersing from each patch
 	for (int pat = 0; pat < sites.size(); ++pat) { // update population numbers
@@ -212,7 +212,7 @@ void WedgeDispersal::adults_disperse(std::vector<Patch*> &sites) {
 }
 
 // Computes the set of connection indices and weights for a group of patches based on the wedge connection assumptions
-std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> WedgeDispersal::compute_connecs(std::vector<Patch*> &sites) {
+std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> RadialDispersal::compute_connecs(std::vector<Patch*> &sites) {
 	 int num_sites = sites.size();
 	std::vector<std::vector<double>> connec_weights(num_sites);
 	std::vector<std::vector<int>> connec_indices(num_sites);
@@ -286,12 +286,12 @@ std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> Wedge
 	return {connec_indices, connec_weights};
 }
 
-double WedgeDispersal::wrap_around(double value, double range)
+double RadialDispersal::wrap_around(double value, double range)
 {
 	return std::fmod(std::fmod(value, range) + range, range);
 }
 
-std::pair<std::vector<std::pair<double, double>>, double> WedgeDispersal::compute_interval_union(const std::pair<double, double>& qq,
+std::pair<std::vector<std::pair<double, double>>, double> RadialDispersal::compute_interval_union(const std::pair<double, double>& qq,
  const std::vector<std::pair<double, double>>& input)
 {
 	// Create a vector to store the union of intervals
@@ -328,7 +328,7 @@ std::pair<std::vector<std::pair<double, double>>, double> WedgeDispersal::comput
 }
 
 // Retuns the indices of the elements in the vector, sorted by numeric value in ascending order
-std::vector<int> WedgeDispersal::get_sorted_positions(const std::vector<double>& numbers) 
+std::vector<int> RadialDispersal::get_sorted_positions(const std::vector<double>& numbers) 
 {
 	// Create a vector of indices (0 to N-1)
 	std::vector<int> indices(numbers.size());
@@ -341,7 +341,7 @@ std::vector<int> WedgeDispersal::get_sorted_positions(const std::vector<double>&
 }
 
 // Computes the inter-point distances for a list of points
-std::vector<std::vector<double>> WedgeDispersal::compute_distances(const std::vector<Patch*>& sites) 
+std::vector<std::vector<double>> RadialDispersal::compute_distances(const std::vector<Patch*>& sites) 
 {
 	std::vector<std::vector<double>> distances;
 	for (int i=0; i < sites.size(); ++i) {
