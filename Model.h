@@ -9,16 +9,23 @@
 #include "Dispersal.h"
 #include "Aestivation.h"
 #include "GDRelease.h"
+#include "Seasonality.h"
 #include "Point.h"
 
 using namespace constants;
+
+class Patch;
+class Aestivation;
+class Dispersal;
+class GDRelease;
+class Seasonality;
 
 // Runs the model.
 class Model {
 public:
 	Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-		ReleaseParams *rel, BoundaryType boundary = BoundaryType::Toroid, DispersalType disp_type = DispersalType::DistanceKernel,
-		 std::vector<Point> coords = {});
+		ReleaseParams *rel, double alpha0, double alpha1, double amp, BoundaryType boundary = BoundaryType::Toroid,
+		DispersalType disp_type = DispersalType::DistanceKernel, std::vector<Point> coords = {});
 	~Model();
 	void initiate();
 	void run(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_fraction);
@@ -29,12 +36,18 @@ public:
 	long long int calculate_tot_F();
 	std::array<long long int, num_gen> calculate_tot_M_gen();
 	std::vector<Patch*> get_sites() const;
+	int get_day() const;
+	double get_alpha(double alpha0);
+
 
 private:
 	std::vector<Patch*> sites;
 	Dispersal* dispersal;
 	Aestivation* aestivation;
 	GDRelease* gd_release;
+	Seasonality* seasonality;
+
+	int day_sim; // current day of the simulation
 
 	// simulation area parameters
 	int num_pat; // number of population sites chosen for the simulation

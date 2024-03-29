@@ -32,7 +32,6 @@ int main()
 	double mu_a;
 	double beta;
 	double theta;
-	double alpha0;
 	double mean_dev;
 	int min_dev;
 
@@ -58,6 +57,11 @@ int main()
 	int t_wake1; 
 	int t_wake2;
 
+	// seasonality parameters
+	double alpha0;
+	double alpha1;
+	double amp;
+
 	// data-recording parameters
 	int rec_start; 
 	int rec_end;
@@ -79,8 +83,7 @@ int main()
 		std::cin >> mu_j;
 		std::cin >> mu_a; 
 		std::cin >> beta; 
-		std::cin >> theta; 
-		std::cin >> alpha0; 
+		std::cin >> theta;  
 		std::cin >> mean_dev; 
 		std::cin >> min_dev;
 		std::cin >> gamma; 
@@ -97,6 +100,9 @@ int main()
 		std::cin >> t_hide2;
 		std::cin >> t_wake1; 
 		std::cin >> t_wake2;
+		std::cin >> alpha0;
+		std::cin >> alpha1;
+		std::cin >> amp;
 		std::cin >> rec_start;
 		std::cin >> rec_end;
 		std::cin >> rec_interval_global;
@@ -113,7 +119,6 @@ int main()
 		if (mu_a <= 0 || mu_a >= 1) {out_of_bounds_msg("mu_a"); continue;}
 		if (beta <= 0) {out_of_bounds_msg("beta"); continue;}
 		if (theta <= 0) {out_of_bounds_msg("theta"); continue;}
-		if (alpha0 <= 0) {out_of_bounds_msg("alpha0"); continue;}
 		if (mean_dev <= 0) {out_of_bounds_msg("mean_dev"); continue;}
 		if (min_dev <= 0) {out_of_bounds_msg("min_dev"); continue;}
 		if (gamma < 0 || gamma > 1) {out_of_bounds_msg("gamma"); continue;}
@@ -132,6 +137,9 @@ int main()
 			if (t_wake1 < 1 || t_wake1 > 365) {out_of_bounds_msg("t_wake1"); continue;}
 			if (t_wake2 < 1 || t_wake2 > 365) {out_of_bounds_msg("t_wake2"); continue;}
 		}
+		if (alpha0 <= 0) {out_of_bounds_msg("alpha0"); continue;}
+		if (alpha1 < 0) {out_of_bounds_msg("alpha1"); continue;}
+		if (amp < 0 || amp > 1) {out_of_bounds_msg("amp"); continue;}
 		if (rec_start < 0) {out_of_bounds_msg("rec_start"); continue;}
 		if (rec_end < 0) {out_of_bounds_msg("rec_end"); continue;}
 		if (rec_interval_global < 1) {out_of_bounds_msg("rec_interval_global"); continue;}
@@ -187,7 +195,6 @@ int main()
 	life.mu_a = mu_a;
 	life.beta = beta;
 	life.theta = theta;
-	life.alpha0 = alpha0;
 	life.mean_dev = mean_dev;
 	life.min_dev = min_dev;
 	inher.gamma = gamma;
@@ -214,7 +221,7 @@ int main()
 	auto start = std::chrono::steady_clock::now();
 
 	// run simulation
-	Simulation simulation(prog, area, life, rel, disp, aes, initial, rec);
+	Simulation simulation(prog, area, life, rel, disp, aes, initial, rec, alpha0, alpha1, amp);
 	simulation.set_boundary_type(Edge);
 	simulation.set_dispersal_type(Radial);
 	//simulation.set_coords("coords.txt");

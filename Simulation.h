@@ -17,7 +17,7 @@ void invalid_interval_msg(const std::string& param1, const std::string& param2);
 class Simulation {
 public:
 	Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &life, ReleaseParams &rel, DispersalParams &disp,
-	 AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec); 
+	 AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec, double a0, double a1, double ampl); 
 	void set_coords(const std::string& coords_file);
 	void set_boundary_type(BoundaryType boundary);
 	void set_dispersal_type(DispersalType disp);
@@ -35,6 +35,9 @@ private:
 	AestivationParams *aes_params; // aestivation model parameters
 	InitialPopsParams *initial_params; // initial population values
 	RecordParams *rec_params; // data-recording parameters
+	double alpha0; // seasonality parameter
+	double alpha1; // seasonality parameter
+	double amp; // seasonality parameter
 
 	// additional parameter options
 	std::vector<Point> sites_coords; // 2D coordinates for the sites on the simulated square

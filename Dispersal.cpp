@@ -12,9 +12,6 @@
 
 using namespace constants;
 
-const double PI = 3.14159265;
-const double TWOPI = 2 * PI;
-
 Dispersal::Dispersal(DispersalParams* params, BoundaryType boundary, double side) 
 {
 	disp_rate = params->disp_rate;
@@ -258,8 +255,8 @@ std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> Radia
 				if (loc2.y - loc1.y <= 0 && loc2.x - loc1.x >= 0) {
 					theta = 2*PI + std::atan((loc2.y - loc1.y) / (loc2.x - loc1.x)); 
 				}
-				double t_min = wrap_around((theta - alpha) / TWOPI, 1);
-				double t_plus = wrap_around((theta + alpha) / TWOPI, 1);
+				double t_min = wrap_around((theta - alpha) / (2*PI), 1);
+				double t_plus = wrap_around((theta + alpha) / (2*PI), 1);
 				if (t_min > t_plus) {
 					qq = {t_min, 1};
 					auto result = compute_interval_union(qq, intervals);

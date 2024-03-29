@@ -12,7 +12,8 @@
 using namespace constants;
 
 Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-	ReleaseParams *rel, BoundaryType boundary, DispersalType disp_type, std::vector<Point> coords)
+	ReleaseParams *rel, double alpha0, double alpha1, double amp, BoundaryType boundary, DispersalType disp_type,
+	std::vector<Point> coords)
 {
 	num_pat = area->num_pat;
 	side = area->side;
@@ -20,18 +21,19 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 	min_dev = life->min_dev;
 	dev_duration_probs.fill(0);
 
+	day_sim = 0;
 	sites.clear();
 
 	if (!coords.empty()) {
 		assert(coords.size() == num_pat);
 		for (int i=0; i < num_pat; ++i) {
-			Patch* pp = new Patch(life, coords[i]);
+			Patch* pp = new Patch(this, life, alpha0, coords[i]);
 			sites.push_back(pp);
 		}
 	}
 	else {
 		for (int i=0; i < num_pat; ++i) {
-			Patch* pp = new Patch(life, side);
+			Patch* pp = new Patch(this, life, alpha0, side);
 			sites.push_back(pp);
 		}
 	}
@@ -53,6 +55,9 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 
 	GDRelease* new_gd_release = new GDRelease(rel);
 	gd_release = new_gd_release;
+
+	Seasonality* new_season = new Seasonality(alpha1, amp);
+	seasonality = new_season;
 }
 
 Model::~Model() 
@@ -63,6 +68,7 @@ Model::~Model()
 	delete aestivation;
 	delete dispersal;
 	delete gd_release;
+	delete seasonality;
 }
 
 // Sets up the model architecture 
@@ -97,6 +103,7 @@ void Model::set_dev_duration_probs(int min_time, int max_time)
 // Handles which model event to run depending on the day of the simulation.
 void Model::run(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_fraction)
 {
+	day_sim = day;
 	if (gd_release->is_release_time(day)) {
 		gd_release->release_gene_drive(sites);
 	} 
@@ -175,6 +182,17 @@ std::array<long long int, num_gen> Model::calculate_tot_M_gen()
 std::vector<Patch*> Model::get_sites() const
 {
 	return sites;
+}
+
+int Model::get_day() const
+{
+	return day_sim;
+}
+
+double Model::get_alpha(double alpha0)
+{
+	double alpha = seasonality->alpha(day_sim, alpha0);
+	return alpha;
 }
 
 // Ages the juvenile population in different age groups by a day across the simulation area

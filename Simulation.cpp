@@ -12,7 +12,7 @@
 using namespace constants;
 
 Simulation::Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &life, ReleaseParams &rel, DispersalParams &disp,
- AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec)
+ AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec, double a0, double a1, double ampl)
 { 
 	num_runs = prog.num_runs;
 	max_t = prog.max_t;
@@ -23,6 +23,9 @@ Simulation::Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &li
 	aes_params = &aes;
 	initial_params = &initial;
 	rec_params = &rec;
+	alpha0 = a0;
+	alpha1 = a1;
+	amp = ampl;
 	
 	for (int i=0; i < num_gen; ++i) {
 		for (int j=0; j < num_gen; ++j) {
@@ -201,8 +204,8 @@ void Simulation::set_inheritance(InheritanceParams inher_params)
 void Simulation::run_reps() 
 {
 	for (int rep=1; rep <= num_runs; ++rep) {
-		Model model(area_params, initial_params, life_params, aes_params, disp_params, rel_params, boundary_type, disp_type, 
-		 sites_coords);
+		Model model(area_params, initial_params, life_params, aes_params, disp_params, rel_params, alpha0, alpha1, amp, boundary_type,
+		 disp_type, sites_coords);
 		Record data(rec_params, rep);
 		model.initiate();
 		data.record_coords(model.get_sites());

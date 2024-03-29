@@ -4,16 +4,19 @@
 #include <array>
 #include "Patch.h"
 #include "constants.h"
+#include "Model.h"
 #include "Params.h"
 #include "Point.h"
 
 using namespace constants;
 
+class Model;
+
 // Contains the information of a local mosquito population
 class Patch {
 public:
-	Patch(LifeParams* par, double side);
-	Patch(LifeParams* par, Point point);
+	Patch(Model* mod, LifeParams* par, double a0, double side);
+	Patch(Model* mod, LifeParams* par, double a0, Point point);
 	void populate(int initial_WJ, int initial_WM, int initial_WV, int initial_WF);
 
 	Point get_coords() const;
@@ -49,7 +52,9 @@ public:
 	void add_driver_M(int num_driver_M);
 
 private:
+	Model* model; // for calls to get_day()
 	LifeParams* params; 
+	double alpha0; // baseline contribution to carrying capacity
 
 	Point coords; // (x, y) coordinates of the site
 	// number of juvenile mosquitoes with each genotype and in each age group.

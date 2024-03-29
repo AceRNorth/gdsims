@@ -8,9 +8,11 @@
 using namespace constants;
 
 // Sets coordinates randomly on the square space of side side.
-Patch::Patch(LifeParams* par, double side) 
+Patch::Patch(Model* mod, LifeParams* par, double a0, double side) 
 {
+	model = mod;
 	params = par;
+	alpha0 = a0;
 	
 	double x = random_real() * side;
 	double y = random_real() * side;
@@ -31,9 +33,11 @@ Patch::Patch(LifeParams* par, double side)
 }
 
 // Sets chosen coordinates.
-Patch::Patch(LifeParams* par, Point point) 
+Patch::Patch(Model* mod, LifeParams* par, double a0, Point point) 
 {
+	model = mod;
 	params = par;
+	alpha0 = a0;
 	coords = point;
 
 	// include to be able to compare data to oracle when testing
@@ -283,8 +287,10 @@ void Patch::juv_eclose()
 // Updates the juvenile survival probability in the local site
 void Patch::update_comp()
 {
+	int d = model->get_day();
+	double alpha = model->get_alpha(alpha0);
 	long long int tot_J = calculate_tot_J();
-	comp = (1 - (params->mu_j)) * std::pow((params->alpha0) / ((params->alpha0) + tot_J), 1.0 / (params->mean_dev));
+	comp = (1 - (params->mu_j)) * std::pow(alpha / (alpha + tot_J), 1.0 / (params->mean_dev));
 }
 
 // Updates the mating rate parameter in the local site
