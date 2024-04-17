@@ -105,7 +105,7 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 	GDRelease* new_gd_release = new GDRelease(rel);
 	gd_release = new_gd_release;
 
-	Seasonality* new_season = new ExpRainfall(alpha1, res, rain);
+	Seasonality* new_season = new InputRainfall(alpha1, res, rain);
 	seasonality = new_season;
 }
 
