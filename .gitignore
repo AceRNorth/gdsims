@@ -14,3 +14,4 @@ output files/
 html/
 latex/
 Doxyfile
+test.cpp

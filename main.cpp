@@ -61,6 +61,7 @@ int main()
 	double alpha0;
 	double alpha1;
 	double amp;
+	double resp;
 
 	// data-recording parameters
 	int rec_start; 
@@ -103,6 +104,7 @@ int main()
 		std::cin >> alpha0;
 		std::cin >> alpha1;
 		std::cin >> amp;
+		std::cin >> resp;
 		std::cin >> rec_start;
 		std::cin >> rec_end;
 		std::cin >> rec_interval_global;
@@ -140,6 +142,7 @@ int main()
 		if (alpha0 <= 0) {out_of_bounds_msg("alpha0"); continue;}
 		if (alpha1 < 0) {out_of_bounds_msg("alpha1"); continue;}
 		if (amp < 0 || amp > 1) {out_of_bounds_msg("amp"); continue;}
+		if (resp < 0) {out_of_bounds_msg("resp"); continue;}
 		if (rec_start < 0) {out_of_bounds_msg("rec_start"); continue;}
 		if (rec_end < 0) {out_of_bounds_msg("rec_end"); continue;}
 		if (rec_interval_global < 1) {out_of_bounds_msg("rec_interval_global"); continue;}
@@ -224,7 +227,8 @@ int main()
 	Simulation simulation(prog, area, life, rel, disp, aes, initial, rec, alpha0, alpha1, amp);
 	simulation.set_boundary_type(Edge);
 	simulation.set_dispersal_type(Radial);
-	//simulation.set_coords("coords.txt");
+	//simulation.set_coords("coords_set6run1.txt");
+	simulation.set_rainfall(resp, "rainfall.txt");
 	simulation.set_inheritance(inher);
 	simulation.run_reps();
 

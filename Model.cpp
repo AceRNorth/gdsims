@@ -12,7 +12,7 @@
 using namespace constants;
 
 Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-	ReleaseParams *rel, double alpha0, double alpha1, double amp, BoundaryType boundary, DispersalType disp_type,
+	ReleaseParams *rel, double alpha0, double alpha1, double amp, BoundaryType boundary, DispersalType disp_type, 
 	std::vector<Point> coords)
 {
 	num_pat = area->num_pat;
@@ -56,7 +56,56 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 	GDRelease* new_gd_release = new GDRelease(rel);
 	gd_release = new_gd_release;
 
-	Seasonality* new_season = new Seasonality(alpha1, amp);
+	Seasonality* new_season = new SineRainfall(alpha1, amp);
+	seasonality = new_season;
+}
+
+Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
+	ReleaseParams *rel, double alpha0, double alpha1, double res, std::vector<double> rain, BoundaryType boundary,
+	DispersalType disp_type, std::vector<Point> coords)
+{
+	num_pat = area->num_pat;
+	side = area->side;
+	initial_pops = initial;
+	min_dev = life->min_dev;
+	dev_duration_probs.fill(0);
+
+	day_sim = 0;
+	sites.clear();
+
+	if (!coords.empty()) {
+		assert(coords.size() == num_pat);
+		for (int i=0; i < num_pat; ++i) {
+			Patch* pp = new Patch(this, life, alpha0, coords[i]);
+			sites.push_back(pp);
+		}
+	}
+	else {
+		for (int i=0; i < num_pat; ++i) {
+			Patch* pp = new Patch(this, life, alpha0, side);
+			sites.push_back(pp);
+		}
+	}
+
+	Aestivation* new_aestivation = new Aestivation(aes, sites.size());
+	aestivation = new_aestivation;
+
+	Dispersal* new_disp;
+	if (disp_type == DistanceKernel) {
+		new_disp = new DistanceKernelDispersal(disp, boundary, side);
+	}
+	else if (disp_type == Radial) {
+		new_disp = new RadialDispersal(disp, boundary, side);
+	}
+	else {
+		new_disp = new DistanceKernelDispersal(disp, boundary, side);
+	}
+	dispersal = new_disp;
+
+	GDRelease* new_gd_release = new GDRelease(rel);
+	gd_release = new_gd_release;
+
+	Seasonality* new_season = new ExpRainfall(alpha1, res, rain);
 	seasonality = new_season;
 }
 
@@ -103,7 +152,7 @@ void Model::set_dev_duration_probs(int min_time, int max_time)
 // Handles which model event to run depending on the day of the simulation.
 void Model::run(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_fraction)
 {
-	day_sim = day;
+	day_sim = day; // used later for seasonality
 	if (gd_release->is_release_time(day)) {
 		gd_release->release_gene_drive(sites);
 	} 

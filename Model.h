@@ -25,7 +25,12 @@ class Model {
 public:
 	Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
 		ReleaseParams *rel, double alpha0, double alpha1, double amp, BoundaryType boundary = BoundaryType::Toroid,
-		DispersalType disp_type = DispersalType::DistanceKernel, std::vector<Point> coords = {});
+		DispersalType disp_type = DispersalType::DistanceKernel,
+		std::vector<Point> coords = {});
+	Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
+		ReleaseParams *rel, double alpha0, double alpha1, double res, std::vector<double> rain,
+		BoundaryType boundary = BoundaryType::Toroid, DispersalType disp_type = DispersalType::DistanceKernel,
+		std::vector<Point> coords = {});
 	~Model();
 	void initiate();
 	void run(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_fraction);
