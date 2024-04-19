@@ -13,3 +13,4 @@ long long int random_binomial(long long int n, double p);
 std::vector<long long int> random_multinomial(long long int n, const std::vector<double>& probs);
 std::vector<long long int> random_multinomial(long long int n, const std::array<long long int, num_gen>& probs);
 std::vector<long long int> random_multinomial(long long int n, const std::array<double, max_dev+1>& probs);
+double random_lognormal(double des_mean, double des_var);

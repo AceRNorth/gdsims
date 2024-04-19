@@ -12,7 +12,7 @@
 using namespace constants;
 
 Simulation::Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &life, ReleaseParams &rel, DispersalParams &disp,
- AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec, double a0, double a1, double ampl)
+ AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec, double a0_mean, double a0_var, double a1, double ampl)
 { 
 	num_runs = prog.num_runs;
 	max_t = prog.max_t;
@@ -23,7 +23,8 @@ Simulation::Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &li
 	aes_params = &aes;
 	initial_params = &initial;
 	rec_params = &rec;
-	alpha0 = a0;
+	alpha0_mean = a0_mean;
+	alpha0_variance = a0_var;
 	alpha1 = a1;
 	amp = ampl;
 	
@@ -250,12 +251,12 @@ void Simulation::run_reps()
 	for (int rep=1; rep <= num_runs; ++rep) {
 		Model* model;
 		if (rainfall.empty()) {
-			model = new Model(area_params, initial_params, life_params, aes_params, disp_params, rel_params, alpha0, alpha1, amp, boundary_type,
-		 		disp_type, sites_coords);
+			model = new Model(area_params, initial_params, life_params, aes_params, disp_params, rel_params, alpha0_mean,
+			 alpha0_variance, alpha1, amp, boundary_type, disp_type, sites_coords);
 		}
 		else {
-			model = new Model(area_params, initial_params, life_params, aes_params, disp_params, rel_params, alpha0, alpha1, resp, rainfall,
-				boundary_type, disp_type, sites_coords);
+			model = new Model(area_params, initial_params, life_params, aes_params, disp_params, rel_params, alpha0_mean,
+			 alpha0_variance, alpha1, resp, rainfall, boundary_type, disp_type, sites_coords);
 		}
 		Record data(rec_params, rep);
 		model->initiate();

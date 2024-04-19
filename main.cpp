@@ -58,7 +58,8 @@ int main()
 	int t_wake2;
 
 	// seasonality parameters
-	double alpha0;
+	double alpha0_mean;
+	double alpha0_variance;
 	double alpha1;
 	double amp;
 	double resp;
@@ -101,7 +102,8 @@ int main()
 		std::cin >> t_hide2;
 		std::cin >> t_wake1; 
 		std::cin >> t_wake2;
-		std::cin >> alpha0;
+		std::cin >> alpha0_mean;
+		std::cin >> alpha0_variance;
 		std::cin >> alpha1;
 		std::cin >> amp;
 		std::cin >> resp;
@@ -139,7 +141,8 @@ int main()
 			if (t_wake1 < 1 || t_wake1 > 365) {out_of_bounds_msg("t_wake1"); continue;}
 			if (t_wake2 < 1 || t_wake2 > 365) {out_of_bounds_msg("t_wake2"); continue;}
 		}
-		if (alpha0 <= 0) {out_of_bounds_msg("alpha0"); continue;}
+		if (alpha0_mean <= 0) {out_of_bounds_msg("alpha0_mean"); continue;}
+		if (alpha0_variance < 0) {out_of_bounds_msg("alpha0_variance"); continue;}
 		if (alpha1 < 0) {out_of_bounds_msg("alpha1"); continue;}
 		if (amp < 0 || amp > 1) {out_of_bounds_msg("amp"); continue;}
 		if (resp < 0) {out_of_bounds_msg("resp"); continue;}
@@ -224,11 +227,11 @@ int main()
 	auto start = std::chrono::steady_clock::now();
 
 	// run simulation
-	Simulation simulation(prog, area, life, rel, disp, aes, initial, rec, alpha0, alpha1, amp);
+	Simulation simulation(prog, area, life, rel, disp, aes, initial, rec, alpha0_mean, alpha0_variance, alpha1, amp);
 	simulation.set_boundary_type(Edge);
 	simulation.set_dispersal_type(Radial);
 	//simulation.set_coords("coords_set6run1.txt");
-	simulation.set_rainfall(resp, "rainfall.txt");
+	//simulation.set_rainfall(resp, "rainfall.txt");
 	simulation.set_inheritance(inher);
 	simulation.run_reps();
 

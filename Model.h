@@ -24,11 +24,11 @@ class Seasonality;
 class Model {
 public:
 	Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-		ReleaseParams *rel, double alpha0, double alpha1, double amp, BoundaryType boundary = BoundaryType::Toroid,
+		ReleaseParams *rel, double a0_mean, double a0_var, double alpha1, double amp, BoundaryType boundary = BoundaryType::Toroid,
 		DispersalType disp_type = DispersalType::DistanceKernel,
 		std::vector<Point> coords = {});
 	Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-		ReleaseParams *rel, double alpha0, double alpha1, double res, std::vector<double> rain,
+		ReleaseParams *rel, double a0_mean, double a0_var, double alpha1, double res, std::vector<double> rain,
 		BoundaryType boundary = BoundaryType::Toroid, DispersalType disp_type = DispersalType::DistanceKernel,
 		std::vector<Point> coords = {});
 	~Model();
@@ -43,7 +43,6 @@ public:
 	std::vector<Patch*> get_sites() const;
 	int get_day() const;
 	double get_alpha(double alpha0);
-
 
 private:
 	std::vector<Patch*> sites;
@@ -65,6 +64,11 @@ private:
 	int min_dev; // minimum development time for a juvenile (in days)
 	std::array<double, max_dev+1> dev_duration_probs; // array of probabilities of juvenile development duration for a new juvenile
 	// (index indicates the number of days to develop or, equivalently, the age class the new juvenile starts at)
+
+	// Patch construction parameters
+	double alpha0_mean; // mean of the baseline carrying capacity
+    double alpha0_variance; // variance of the baseline carrying capacity
+	double alpha0();
 
 	// initiation methods
 	void populate_sites();

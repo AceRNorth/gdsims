@@ -12,13 +12,15 @@
 using namespace constants;
 
 Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-	ReleaseParams *rel, double alpha0, double alpha1, double amp, BoundaryType boundary, DispersalType disp_type, 
+	ReleaseParams *rel, double a0_mean, double a0_var, double alpha1, double amp, BoundaryType boundary, DispersalType disp_type, 
 	std::vector<Point> coords)
 {
 	num_pat = area->num_pat;
 	side = area->side;
 	initial_pops = initial;
 	min_dev = life->min_dev;
+	alpha0_mean = a0_mean;
+	alpha0_variance = a0_var;
 	dev_duration_probs.fill(0);
 
 	day_sim = 0;
@@ -27,13 +29,13 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 	if (!coords.empty()) {
 		assert(coords.size() == num_pat);
 		for (int i=0; i < num_pat; ++i) {
-			Patch* pp = new Patch(this, life, alpha0, coords[i]);
+			Patch* pp = new Patch(this, life, alpha0(), coords[i]);
 			sites.push_back(pp);
 		}
 	}
 	else {
 		for (int i=0; i < num_pat; ++i) {
-			Patch* pp = new Patch(this, life, alpha0, side);
+			Patch* pp = new Patch(this, life, alpha0(), side);
 			sites.push_back(pp);
 		}
 	}
@@ -61,13 +63,15 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 }
 
 Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-	ReleaseParams *rel, double alpha0, double alpha1, double res, std::vector<double> rain, BoundaryType boundary,
+	ReleaseParams *rel, double a0_mean, double a0_var, double alpha1, double res, std::vector<double> rain, BoundaryType boundary,
 	DispersalType disp_type, std::vector<Point> coords)
 {
 	num_pat = area->num_pat;
 	side = area->side;
 	initial_pops = initial;
 	min_dev = life->min_dev;
+	alpha0_mean = a0_mean;
+	alpha0_variance = a0_var;
 	dev_duration_probs.fill(0);
 
 	day_sim = 0;
@@ -76,13 +80,13 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 	if (!coords.empty()) {
 		assert(coords.size() == num_pat);
 		for (int i=0; i < num_pat; ++i) {
-			Patch* pp = new Patch(this, life, alpha0, coords[i]);
+			Patch* pp = new Patch(this, life, alpha0(), coords[i]);
 			sites.push_back(pp);
 		}
 	}
 	else {
 		for (int i=0; i < num_pat; ++i) {
-			Patch* pp = new Patch(this, life, alpha0, side);
+			Patch* pp = new Patch(this, life, alpha0(), side);
 			sites.push_back(pp);
 		}
 	}
@@ -118,6 +122,11 @@ Model::~Model()
 	delete dispersal;
 	delete gd_release;
 	delete seasonality;
+}
+
+double Model::alpha0() 
+{
+   return random_lognormal(alpha0_mean, alpha0_variance);
 }
 
 // Sets up the model architecture 
