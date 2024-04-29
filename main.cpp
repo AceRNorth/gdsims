@@ -230,8 +230,8 @@ int main()
 	Simulation simulation(prog, area, life, rel, disp, aes, initial, rec, alpha0_mean, alpha0_variance, alpha1, amp);
 	simulation.set_boundary_type(Edge);
 	simulation.set_dispersal_type(Radial);
-	//simulation.set_coords("coords_set6run1.txt");
-	//simulation.set_rainfall(resp, "rainfall.txt");
+	simulation.set_coords("coords_set6run1.txt");
+	simulation.set_rainfall(resp, "rainfall.txt");
 	simulation.set_inheritance(inher);
 	simulation.run_reps();
 

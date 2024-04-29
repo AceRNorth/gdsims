@@ -1,5 +1,4 @@
 #include <vector>
-#include <cmath>
 #include <cassert>
 #include "Model.h"
 #include "random.h"
@@ -124,6 +123,7 @@ Model::~Model()
 	delete seasonality;
 }
 
+// Returns a random value for the baseline contribution to the carrying capacity.
 double Model::alpha0() 
 {
    return random_lognormal(alpha0_mean, alpha0_variance);

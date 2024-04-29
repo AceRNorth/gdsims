@@ -154,6 +154,8 @@ std::vector<long long int> random_multinomial(long long int n, const std::array<
 	return result;
 }
 
+// Returns a random draw (non-negative floating-point number) from a lognormal distribution with desired mean des_mean and
+// desired variance des_var
 double random_lognormal(double des_mean, double des_var) 
 {
     double mean = std::log(std::pow(des_mean, 2) / std::sqrt(std::pow(des_mean, 2) + des_var));

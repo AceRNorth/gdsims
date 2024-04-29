@@ -66,8 +66,8 @@ private:
 	// (index indicates the number of days to develop or, equivalently, the age class the new juvenile starts at)
 
 	// Patch construction parameters
-	double alpha0_mean; // mean of the baseline carrying capacity
-    double alpha0_variance; // variance of the baseline carrying capacity
+	double alpha0_mean; // mean of the baseline contribution to the carrying capacity
+    double alpha0_variance; // variance of the baseline contribution to the carrying capacity
 	double alpha0();
 
 	// initiation methods
