@@ -15,3 +15,6 @@ html/
 latex/
 Doxyfile
 test.cpp
+test.exe
+alpha0_test.py
+performance tests/

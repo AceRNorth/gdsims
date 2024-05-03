@@ -15,7 +15,7 @@ sets = [i for i in range(1, 17)]
     
 # ** Select other combinations of sets by listing below and uncommenting**
 # sets = [1, 4, 7]
-sets = [1]
+#sets = [1]
 
 for j in range(0, len(sets)):
     input_string = str(sets[j]) + "\n" + "y" + "\n"
@@ -89,7 +89,7 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Testing\\oracle data\\edge radial"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Testing\\oracle data\\toroid distance kernel"
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
