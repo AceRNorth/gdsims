@@ -21,7 +21,6 @@ struct LifeParams {
 	double mu_a = 0.125; // adult mortality rate per day
 	double beta = 100.0; // parameter that controls mating rate
 	double theta = 9.0; // average egg laying rate of wildtype females (eggs per day)
-	double alpha0 = 100000.0; // baseline contribution to carrying capacity
 	double mean_dev = 15.0; // mean juvenile development time (in days)
 	int min_dev = 10; // minimum development time for a juvenile (in days)
 };

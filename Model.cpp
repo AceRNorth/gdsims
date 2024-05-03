@@ -1,5 +1,5 @@
 #include <vector>
-#include <cmath>
+#include <cassert>
 #include "Model.h"
 #include "random.h"
 #include "constants.h"
@@ -11,26 +11,105 @@
 using namespace constants;
 
 Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-	ReleaseParams *rel) 
+	ReleaseParams *rel, double a0_mean, double a0_var, double alpha1, double amp, BoundaryType boundary, DispersalType disp_type, 
+	std::vector<Point> coords)
 {
 	num_pat = area->num_pat;
 	side = area->side;
 	initial_pops = initial;
 	min_dev = life->min_dev;
+	alpha0_mean = a0_mean;
+	alpha0_variance = a0_var;
 	dev_duration_probs.fill(0);
 
+	day_sim = 0;
 	sites.clear();
-	for (int ii=0; ii < num_pat; ++ii) {
-		Patch* pp = new Patch(side, life);
-		sites.push_back(pp);
-	
+
+	if (!coords.empty()) {
+		assert(coords.size() == num_pat);
+		for (int i=0; i < num_pat; ++i) {
+			Patch* pp = new Patch(this, life, alpha0(), coords[i]);
+			sites.push_back(pp);
+		}
 	}
+	else {
+		for (int i=0; i < num_pat; ++i) {
+			Patch* pp = new Patch(this, life, alpha0(), side);
+			sites.push_back(pp);
+		}
+	}
+
 	Aestivation* new_aestivation = new Aestivation(aes, sites.size());
 	aestivation = new_aestivation;
-	Dispersal* new_dispersal = new Dispersal(disp);
-	dispersal = new_dispersal;
+
+	Dispersal* new_disp;
+	if (disp_type == DistanceKernel) {
+		new_disp = new DistanceKernelDispersal(disp, boundary, side);
+	}
+	else if (disp_type == Radial) {
+		new_disp = new RadialDispersal(disp, boundary, side);
+	}
+	else {
+		new_disp = new DistanceKernelDispersal(disp, boundary, side);
+	}
+	dispersal = new_disp;
+
 	GDRelease* new_gd_release = new GDRelease(rel);
 	gd_release = new_gd_release;
+
+	Seasonality* new_season = new SineRainfall(alpha1, amp);
+	seasonality = new_season;
+}
+
+Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
+	ReleaseParams *rel, double a0_mean, double a0_var, double alpha1, double res, std::vector<double> rain, BoundaryType boundary,
+	DispersalType disp_type, std::vector<Point> coords)
+{
+	num_pat = area->num_pat;
+	side = area->side;
+	initial_pops = initial;
+	min_dev = life->min_dev;
+	alpha0_mean = a0_mean;
+	alpha0_variance = a0_var;
+	dev_duration_probs.fill(0);
+
+	day_sim = 0;
+	sites.clear();
+
+	if (!coords.empty()) {
+		assert(coords.size() == num_pat);
+		for (int i=0; i < num_pat; ++i) {
+			Patch* pp = new Patch(this, life, alpha0(), coords[i]);
+			sites.push_back(pp);
+		}
+	}
+	else {
+		for (int i=0; i < num_pat; ++i) {
+			Patch* pp = new Patch(this, life, alpha0(), side);
+			sites.push_back(pp);
+		}
+	}
+
+	Aestivation* new_aestivation = new Aestivation(aes, sites.size());
+	aestivation = new_aestivation;
+
+	Dispersal* new_disp;
+	if (disp_type == DistanceKernel) {
+		new_disp = new DistanceKernelDispersal(disp, boundary, side);
+	}
+	else if (disp_type == Radial) {
+		new_disp = new RadialDispersal(disp, boundary, side);
+	}
+	else {
+		new_disp = new DistanceKernelDispersal(disp, boundary, side);
+	}
+	dispersal = new_disp;
+
+	GDRelease* new_gd_release = new GDRelease(rel);
+	gd_release = new_gd_release;
+
+	Seasonality* new_season = new InputRainfall(alpha1, res, rain);
+	seasonality = new_season;
 }
 
 Model::~Model() 
@@ -41,6 +120,13 @@ Model::~Model()
 	delete aestivation;
 	delete dispersal;
 	delete gd_release;
+	delete seasonality;
+}
+
+// Returns a random value for the baseline contribution to the carrying capacity.
+double Model::alpha0() 
+{
+   return random_lognormal(alpha0_mean, alpha0_variance);
 }
 
 // Sets up the model architecture 
@@ -48,7 +134,7 @@ void Model::initiate()
 {
 	populate_sites();
 	set_dev_duration_probs(min_dev, max_dev);
-	dispersal->set_connecs(side, sites); 
+	dispersal->set_connecs(sites); 
 }
 
 // Populates all sites with a (wild) mosquito population of different types (age and sex)
@@ -75,6 +161,7 @@ void Model::set_dev_duration_probs(int min_time, int max_time)
 // Handles which model event to run depending on the day of the simulation.
 void Model::run(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_fraction)
 {
+	day_sim = day; // used later for seasonality
 	if (gd_release->is_release_time(day)) {
 		gd_release->release_gene_drive(sites);
 	} 
@@ -153,6 +240,17 @@ std::array<long long int, num_gen> Model::calculate_tot_M_gen()
 std::vector<Patch*> Model::get_sites() const
 {
 	return sites;
+}
+
+int Model::get_day() const
+{
+	return day_sim;
+}
+
+double Model::get_alpha(double alpha0)
+{
+	double alpha = seasonality->alpha(day_sim, alpha0);
+	return alpha;
 }
 
 // Ages the juvenile population in different age groups by a day across the simulation area

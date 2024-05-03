@@ -4,17 +4,22 @@
 #include <array>
 #include "Patch.h"
 #include "constants.h"
+#include "Model.h"
 #include "Params.h"
+#include "Point.h"
 
 using namespace constants;
+
+class Model;
 
 // Contains the information of a local mosquito population
 class Patch {
 public:
-	Patch(double side, LifeParams* params);
+	Patch(Model* mod, LifeParams* par, double a0, double side);
+	Patch(Model* mod, LifeParams* par, double a0, Point point);
 	void populate(int initial_WJ, int initial_WM, int initial_WV, int initial_WF);
 
-	std::array<double, 2> get_coords() const;
+	Point get_coords() const;
 	std::array<long long int, num_gen> get_M() const;
 	std::array<std::array<long long int, num_gen>, num_gen> get_F() const;
 
@@ -47,11 +52,13 @@ public:
 	void add_driver_M(int num_driver_M);
 
 private:
+	Model* model; // for calls to get_day()
 	LifeParams* params; 
+	double alpha0; // baseline contribution to carrying capacity
 
-	std::array<double, 2> coords; // (x, y) coordinates of the site
+	Point coords; // (x, y) coordinates of the site
 	// number of juvenile mosquitoes with each genotype and in each age group.
-	// Age ordered from oldest (0 days left to eclosion) to youngest (TL - 1 days left)
+	// age ordered from oldest (0 days left to eclosion) to youngest (max_dev - 1 days left)
 	std::array<std::array<long long int, max_dev+1>, num_gen> J; 
 	std::array<long long int, num_gen> M; // number of male mosquitoes with each genotype
 	std::array<long long int, num_gen> V; // number of unmated female (virgin) mosquitoes with each genotype

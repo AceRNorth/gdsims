@@ -7,11 +7,13 @@
 #include <vector>
 #include "Simulation.h"
 #include "Params.h"
-#include "input.h"
+#include "inputval.h"
+#include "InputParams.h"
 
 int main()
 {	
-	std::vector<InputParams> sets = {set1, set2, set3, set4, set5, set6, set7, set8, set9, set10};
+	std::vector<InputParams> sets = {set1, set2, set3, set4, set5, set6, set7, set8, set9, set10, set11, set12, set13, set14, set15,
+	 set16};
 
 	ProgressionParams prog;
 	AreaParams area;
@@ -37,7 +39,6 @@ int main()
 	double mu_a;
 	double beta;
 	double theta;
-	double alpha0;
 	double mean_dev;
 	int min_dev;
 
@@ -63,6 +64,13 @@ int main()
 	int t_wake1; 
 	int t_wake2;
 
+	// seasonality parameters
+	double alpha0_mean;
+	double alpha0_variance;
+	double alpha1;
+	double amp;
+	double resp;
+
 	// data-recording parameters
 	int rec_start; 
 	int rec_end;
@@ -85,9 +93,15 @@ int main()
 		std::cout << "Set 8  - high aestivation \n";
 		std::cout << "Set 9  - no gene drive \n";
 		std::cout << "Set 10 - high gene drive \n";
+		std::cout << "Set 11 - 1 population, full dispersal \n";
+		std::cout << "Set 12 - low seasonality, default rainfall \n";
+		std::cout << "Set 13 - high seasonality, default rainfall \n";
+		std::cout << "Set 14 - low seasonality, pre-defined rainfall \n";
+		std::cout << "Set 15 - high seasonality, pre-defined rainfall \n";
+		std::cout << "Set 16 - alpha0 variance \n";
 		std::cout << "Set 100  - custom \n";
 		std::cout << "Default parameter sets include gene drive and dispersal but don't include aestivation unless otherwise stated. \n \n";
-		std::cout << "Please select which parameter set (1-10, 100) you'd like to preview, \n";
+		std::cout << "Please select which parameter set (1-16, 100) you'd like to preview, \n";
 		std::cout << "or enter 0 to exit the program:" << std::endl;
 
 		int option1;
@@ -99,7 +113,7 @@ int main()
 			do {
 				std::cin.clear();
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "Invalid option. Please enter a number between 0 and 10 (or 100):" << std::endl;
+				std::cout << "Invalid option. Please enter a number between 0 and 16 (or 100):" << std::endl;
 				std::cin >> option1;
 			} while (std::cin.fail() || std::cin.peek() != '\n' || option1 < 0 || (option1 > sets.size() && option1 != 100));
 		}
@@ -117,8 +131,7 @@ int main()
 				std::cout << "mu_j                 " << "\n"; 
 				std::cout << "mu_a                 " << "\n"; 
 				std::cout << "beta                 " << "\n"; 
-				std::cout << "theta                " << "\n"; 
-				std::cout << "alpha0               " << "\n"; 
+				std::cout << "theta                " << "\n";  
 				std::cout << "mean_dev             " << "\n"; 
 				std::cout << "min_dev              " << "\n"; 
 				std::cout << "gamma                " << "\n"; 
@@ -134,7 +147,12 @@ int main()
 				std::cout << "t_hide1              " << "\n"; 
 				std::cout << "t_hide2              " << "\n"; 
 				std::cout << "t_wake1              " << "\n"; 
-				std::cout << "t_wake2              " << "\n"; 
+				std::cout << "t_wake2              " << "\n";
+				std::cout << "alpha0_mean          " << "\n";
+				std::cout << "alpha0_variance      " << "\n";
+				std::cout << "alpha1               " << "\n";
+				std::cout << "amp                  " << "\n";
+				std::cout << "resp                 " << "\n"; 
 				std::cout << "rec_start            " << "\n"; 
 				std::cout << "rec_end              " << "\n"; 
 				std::cout << "rec_interval_global  " << "\n"; 
@@ -160,37 +178,41 @@ int main()
 
 				std::ifstream file(params_filename);
 				if (file.is_open()) {
-					if (!read_and_validate_type(file, num_runs, "num_runs", "int")) continue;
-					if (!read_and_validate_type(file, max_t, "max_t", "int")) continue;
-					if (!read_and_validate_type(file, num_pat, "num_pat", "int")) continue;
-					if (!read_and_validate_type(file, side, "side", "double")) continue;
-					if (!read_and_validate_type(file, mu_j, "mu_j", "double")) continue;
-					if (!read_and_validate_type(file, mu_a, "mu_a", "double")) continue;
-					if (!read_and_validate_type(file, beta, "beta", "double")) continue;
-					if (!read_and_validate_type(file, theta, "theta", "double")) continue;
-					if (!read_and_validate_type(file, alpha0, "alpha0", "double")) continue;
-					if (!read_and_validate_type(file, mean_dev, "mean_dev", "double")) continue;
-					if (!read_and_validate_type(file, min_dev, "min_dev", "int")) continue;
-					if (!read_and_validate_type(file, gamma, "gamma", "double")) continue;
-					if (!read_and_validate_type(file, xi, "xi", "double")) continue;
-					if (!read_and_validate_type(file, e, "e", "double")) continue;
-					if (!read_and_validate_type(file, driver_start, "driver_start", "int")) continue;
-					if (!read_and_validate_type(file, num_driver_M, "num_driver_M", "int")) continue;
-					if (!read_and_validate_type(file, num_driver_sites, "num_driver_sites", "int")) continue;
-					if (!read_and_validate_type(file, disp_rate, "disp_rate", "double")) continue;
-					if (!read_and_validate_type(file, max_disp, "max_disp", "double")) continue;
-					if (!read_and_validate_type(file, psi, "psi", "double")) continue;
-					if (!read_and_validate_type(file, mu_aes, "mu_aes", "double")) continue;
-					if (!read_and_validate_type(file, t_hide1, "t_hide1", "int")) continue;
-					if (!read_and_validate_type(file, t_hide2, "t_hide2", "int")) continue;
-					if (!read_and_validate_type(file, t_wake1, "t_wake1", "int")) continue;
-					if (!read_and_validate_type(file, t_wake2, "t_wake2", "int")) continue;
-					if (!read_and_validate_type(file, rec_start, "rec_start", "int")) continue;
-					if (!read_and_validate_type(file, rec_end, "rec_end", "int")) continue;
-					if (!read_and_validate_type(file, rec_interval_global, "rec_interval_global", "int")) continue;
-					if (!read_and_validate_type(file, rec_interval_local, "rec_interval_local", "int")) continue;
-					if (!read_and_validate_type(file, rec_sites_freq, "rec_sites_freq", "int")) continue;
-					if (!read_and_validate_type(file, set_label, "set_label", "int")) continue;
+					if (!file_read_and_validate_type(file, num_runs, "num_runs", "int")) continue;
+					if (!file_read_and_validate_type(file, max_t, "max_t", "int")) continue;
+					if (!file_read_and_validate_type(file, num_pat, "num_pat", "int")) continue;
+					if (!file_read_and_validate_type(file, side, "side", "double")) continue;
+					if (!file_read_and_validate_type(file, mu_j, "mu_j", "double")) continue;
+					if (!file_read_and_validate_type(file, mu_a, "mu_a", "double")) continue;
+					if (!file_read_and_validate_type(file, beta, "beta", "double")) continue;
+					if (!file_read_and_validate_type(file, theta, "theta", "double")) continue;
+					if (!file_read_and_validate_type(file, mean_dev, "mean_dev", "double")) continue;
+					if (!file_read_and_validate_type(file, min_dev, "min_dev", "int")) continue;
+					if (!file_read_and_validate_type(file, gamma, "gamma", "double")) continue;
+					if (!file_read_and_validate_type(file, xi, "xi", "double")) continue;
+					if (!file_read_and_validate_type(file, e, "e", "double")) continue;
+					if (!file_read_and_validate_type(file, driver_start, "driver_start", "int")) continue;
+					if (!file_read_and_validate_type(file, num_driver_M, "num_driver_M", "int")) continue;
+					if (!file_read_and_validate_type(file, num_driver_sites, "num_driver_sites", "int")) continue;
+					if (!file_read_and_validate_type(file, disp_rate, "disp_rate", "double")) continue;
+					if (!file_read_and_validate_type(file, max_disp, "max_disp", "double")) continue;
+					if (!file_read_and_validate_type(file, psi, "psi", "double")) continue;
+					if (!file_read_and_validate_type(file, mu_aes, "mu_aes", "double")) continue;
+					if (!file_read_and_validate_type(file, t_hide1, "t_hide1", "int")) continue;
+					if (!file_read_and_validate_type(file, t_hide2, "t_hide2", "int")) continue;
+					if (!file_read_and_validate_type(file, t_wake1, "t_wake1", "int")) continue;
+					if (!file_read_and_validate_type(file, t_wake2, "t_wake2", "int")) continue;
+					if (!file_read_and_validate_type(file, alpha0_mean, "alpha0_mean", "double")) continue;
+					if (!file_read_and_validate_type(file, alpha0_variance, "alpha0_variance", "double")) continue;
+					if (!file_read_and_validate_type(file, alpha1, "alpha1", "double")) continue;
+					if (!file_read_and_validate_type(file, amp, "amp", "double")) continue;
+					if (!file_read_and_validate_type(file, resp, "resp", "double")) continue;
+					if (!file_read_and_validate_type(file, rec_start, "rec_start", "int")) continue;
+					if (!file_read_and_validate_type(file, rec_end, "rec_end", "int")) continue;
+					if (!file_read_and_validate_type(file, rec_interval_global, "rec_interval_global", "int")) continue;
+					if (!file_read_and_validate_type(file, rec_interval_local, "rec_interval_local", "int")) continue;
+					if (!file_read_and_validate_type(file, rec_sites_freq, "rec_sites_freq", "int")) continue;
+					if (!file_read_and_validate_type(file, set_label, "set_label", "int")) continue;
 				}
 				file.close();
 
@@ -204,7 +226,6 @@ int main()
 				if (!check_bounds("mu_a", mu_a, 0.0, false, 1.0, false)) bound_errors++;
 				if (!check_bounds("beta", beta, 0.0, false)) bound_errors++;
 				if (!check_bounds("theta", theta, 0.0, false)) bound_errors++;
-				if (!check_bounds("alpha0", alpha0, 0.0, false)) bound_errors++;
 				if (!check_bounds("mean_dev", mean_dev, 0.0, false)) bound_errors++;
 				if (!check_bounds("min_dev", min_dev, 0, false)) bound_errors++;
 				if (!check_bounds("gamma", gamma, 0.0, true, 1.0, true)) bound_errors++;
@@ -223,6 +244,11 @@ int main()
 					if (!check_bounds("t_wake1", t_wake1, 1, true, 365, true)) bound_errors++;
 					if (!check_bounds("t_wake2", t_wake2, 1, true, 365, true)) bound_errors++;
 				}
+				if (!check_bounds("alpha0_mean", alpha0_mean, 0.0, false)) bound_errors++;
+				if (!check_bounds("alpha0_variance", alpha0_variance, 0.0, true)) bound_errors++;
+				if (!check_bounds("alpha1", alpha1, 0.0, true)) bound_errors++;
+				if (!check_bounds("amp", amp, 0.0, true, 1.0, true)) bound_errors++;
+				if (!check_bounds("resp", resp, 0.0, true)) bound_errors++;
 				if (!check_bounds("rec_start", rec_start, 0)) bound_errors++;
 				if (!check_bounds("rec_end", rec_end, 0)) bound_errors++;
 				if (!check_bounds("rec_interval_global", rec_interval_global, 1)) bound_errors++;
@@ -255,7 +281,6 @@ int main()
 			std::cout << "mu_a                 " << mu_a << "\n"; 
 			std::cout << "beta                 " << beta << "\n"; 
 			std::cout << "theta                " << theta << "\n"; 
-			std::cout << "alpha0               " << alpha0 << "\n"; 
 			std::cout << "mean_dev             " << mean_dev << "\n"; 
 			std::cout << "min_dev              " << min_dev << "\n"; 
 			std::cout << "gamma                " << gamma << "\n"; 
@@ -272,6 +297,11 @@ int main()
 			std::cout << "t_hide2              " << t_hide2 << "\n"; 
 			std::cout << "t_wake1              " << t_wake1 << "\n"; 
 			std::cout << "t_wake2              " << t_wake2 << "\n"; 
+			std::cout << "alpha0_mean          " << alpha0_mean << "\n"; 
+			std::cout << "alpha0_variance      " << alpha0_variance << "\n";
+			std::cout << "alpha1               " << alpha1 << "\n";
+			std::cout << "amp                  " << amp << "\n";
+			std::cout << "resp                 " << resp << "\n";
 			std::cout << "rec_start            " << rec_start << "\n"; 
 			std::cout << "rec_end              " << rec_end << "\n"; 
 			std::cout << "rec_interval_global  " << rec_interval_global << "\n"; 
@@ -309,6 +339,7 @@ int main()
 				std::cout << "Warning: the interval between rec_start and max_t is larger than rec_interval_local. ";
 				std::cout << "This simulation will only record local data for day 0." << std::endl;
 			}
+
 			std::cout << "\n" << "Would you like to run the simulation with this set of parameters? (y/n)" << std::endl;
 
 			std::cin.clear();
@@ -331,7 +362,6 @@ int main()
 						life.mu_a = mu_a;
 						life.beta = beta;
 						life.theta = theta;
-						life.alpha0 = alpha0;
 						life.mean_dev = mean_dev;
 						life.min_dev = min_dev;
 						inher.gamma = gamma;
@@ -355,11 +385,162 @@ int main()
 						rec.rec_sites_freq = rec_sites_freq;
 						rec.set_label = set_label;
 
-						auto start_1 = std::chrono::steady_clock::now();
-
-						// run simulation
-						Simulation simulation_1(prog, area, life, rel, disp, aes, initial, rec);
+						// set up simulation
+						Simulation simulation_1(prog, area, life, rel, disp, aes, initial, rec, alpha0_mean, alpha0_variance, alpha1,
+						 amp);
 						simulation_1.set_inheritance(inher);
+
+						// advanced option setting
+						char option3;
+						bool invalid_option_adv_enter = true;
+						std::cout << "Would you like to set any advanced options before running? (y/n)" << std::endl;
+						while (invalid_option_adv_enter) {
+							option3 = 'n';
+							std::cin >> option3;
+							std::cin.clear();
+							std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+							bool invalid_option_adv_num = true;
+							switch (option3) {
+								case 'y':
+									int option4;
+									while (invalid_option_adv_num) {
+										std::cout << "\nAdvanced options: \n";
+										std::cout << "1 - Boundary type \n";
+										std::cout << "2 - Dispersal type \n";
+										std::cout << "3 - Custom rainfall \n";
+										std::cout << "4 - Custom patch coordinates \n";
+										std::cout << "0 - Exit advanced options and run the program" << std::endl;
+										std::cin.clear();
+										std::cin >> option4;
+										if (std::cin.fail() || std::cin.peek() != '\n' || option4 < 0 || option4 > 4) {
+											do {
+												std::cin.clear();
+												std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+												std::cout << "Invalid option. Please enter a number between 0 and 4:" << std::endl;
+												std::cin >> option4;
+											} while (std::cin.fail() || std::cin.peek() != '\n' || option4 < 0 || option4 > 4);
+										}
+										if (option4 == 0) {
+											invalid_option_adv_enter = false;
+											invalid_option_adv_num = false;
+										}
+										else if (option4 == 1) {
+											char boundary_option;
+											bool invalid_boundary_option = true;
+											BoundaryType boundary_type;
+											std::vector<std::string> boundaries = {"Toroid", "Edge"};
+											std::cout << "Boundary type options: " << boundaries[0] << " / " << boundaries[1];
+											std::cout << " (t/e)" << std::endl;
+											while (invalid_boundary_option) {
+												std::cin >> boundary_option;
+												std::cin.clear();
+												std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+												switch (boundary_option) {
+													case 't':
+														boundary_type = Toroid;
+														invalid_boundary_option = false;
+														break;
+													case 'e':
+														boundary_type = Edge;
+														invalid_boundary_option = false;
+														break;
+													default:
+														std::cout << "\n" << "Invalid option. Please select again:" << std::endl;
+														break;
+												}
+											}
+											simulation_1.set_boundary_type(boundary_type);
+											std::cout << "Boundary type set to " << boundaries[boundary_type] << "." << std::endl;
+										}
+										else if (option4 == 2) {
+											char disp_option;
+											bool invalid_disp_option = true;
+											DispersalType disp_type;
+											std::vector<std::string> dispersal_types = {"Distance Kernel", "Radial"};
+											std::cout << "Dispersal type options: " << dispersal_types[0] << " / " << dispersal_types[1];
+											std::cout << " (d/r)" << std::endl;
+											while (invalid_disp_option) {
+												std::cin >> disp_option;
+												std::cin.clear();
+												std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+												switch (disp_option) {
+													case 'd':
+														disp_type = DistanceKernel;
+														invalid_disp_option = false;
+														break;
+													case 'r':
+														disp_type = Radial;
+														invalid_disp_option = false;
+														break;
+													default:
+														std::cout << "\n" << "Invalid option. Please select again:" << std::endl;
+														break;
+												}
+											}
+											simulation_1.set_dispersal_type(disp_type);
+											std::cout << "Dispersal type set to " << dispersal_types[disp_type] << "." << std::endl;
+										}
+										else if (option4 == 3) {
+											std::cout << "Note: the resp value used for custom rainfall will be the one ";
+											std::cout << "previously entered as part of the simulation parameters." << std::endl;
+											std::string rainfall_filename;
+											std::cout << "Please enter the filename of the rainfall file (e.g. 'rainfall.txt'). ";
+											std::cout << "This must be a .txt file: " << std::endl;
+											std::cin >> rainfall_filename;
+
+											auto rainfall_filepath = std::filesystem::path(std::string("./")+rainfall_filename);
+											if (std::cin.fail() || !std::filesystem::exists(rainfall_filepath) ||
+											 !std::filesystem::is_regular_file(rainfall_filepath)) {
+												do {
+												std::cin.clear();
+												std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+												std::cout << "Invalid filename. Please make sure the file is in your current directory ";
+												std::cout << "and enter the filename again:" << std::endl;
+												std::cin >> rainfall_filename;
+												rainfall_filepath = std::filesystem::path(std::string("./")+rainfall_filename);
+												} while (std::cin.fail() || !std::filesystem::exists(rainfall_filepath) ||
+												 !std::filesystem::is_regular_file(rainfall_filepath));
+											}
+											simulation_1.set_rainfall(resp, rainfall_filename);
+											std::cout << "Custom rainfall values set." << std::endl;
+										}
+										else if (option4 == 4) {
+											std::string coords_filename;
+											std::cout << "\n" << "Please enter the filename of the patch coordinates file ";
+											std::cout << "(e.g. 'coords.txt'). ";
+											std::cout << "This must be a .txt file in x y \\n x y table format." << std::endl;
+											std::cin >> coords_filename;
+
+											auto coords_filepath = std::filesystem::path(std::string("./")+coords_filename);
+											if (std::cin.fail() || !std::filesystem::exists(coords_filepath) ||
+											 !std::filesystem::is_regular_file(coords_filepath)) {
+												do {
+												std::cin.clear();
+												std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+												std::cout << "Invalid filename. Please make sure the file is in your current directory ";
+												std::cout << "and enter the filename again:" << std::endl;
+												std::cin >> coords_filename;
+												coords_filepath = std::filesystem::path(std::string("./")+coords_filename);
+												} while (std::cin.fail() || !std::filesystem::exists(coords_filepath) ||
+												 !std::filesystem::is_regular_file(coords_filepath));
+											}
+											simulation_1.set_coords(coords_filename);
+											std::cout << "Custom coordinates set." << std::endl;
+										}
+									}
+									break;
+								case 'n':
+									std::cout << std::endl;
+									invalid_option_adv_enter = false;
+									break;
+								default:
+									std::cout << "\n" << "Invalid option. Please select again:" << std::endl;
+									break;
+							}
+						}
+
+						// run the simulation;
+						auto start_1 = std::chrono::steady_clock::now();
 						simulation_1.run_reps();
 
 						auto finish_1 = std::chrono::steady_clock::now();
@@ -391,8 +572,7 @@ int main()
 			std::cout << "mu_j                 " << sets[option1 - 1].mu_j << "\n"; 
 			std::cout << "mu_a                 " << sets[option1 - 1].mu_a << "\n"; 
 			std::cout << "beta                 " << sets[option1 - 1].beta << "\n"; 
-			std::cout << "theta                " << sets[option1 - 1].theta << "\n"; 
-			std::cout << "alpha0               " << sets[option1 - 1].alpha0 << "\n"; 
+			std::cout << "theta                " << sets[option1 - 1].theta << "\n";  
 			std::cout << "mean_dev             " << sets[option1 - 1].mean_dev << "\n"; 
 			std::cout << "min_dev              " << sets[option1 - 1].min_dev << "\n"; 
 			std::cout << "gamma                " << sets[option1 - 1].gamma << "\n"; 
@@ -408,7 +588,12 @@ int main()
 			std::cout << "t_hide1              " << sets[option1 - 1].t_hide1 << "\n"; 
 			std::cout << "t_hide2              " << sets[option1 - 1].t_hide2 << "\n"; 
 			std::cout << "t_wake1              " << sets[option1 - 1].t_wake1 << "\n"; 
-			std::cout << "t_wake2              " << sets[option1 - 1].t_wake2 << "\n"; 
+			std::cout << "t_wake2              " << sets[option1 - 1].t_wake2 << "\n";
+			std::cout << "alpha0_mean          " << sets[option1 - 1].alpha0_mean << "\n";
+			std::cout << "alpha0_variance      " << sets[option1 - 1].alpha0_variance << "\n"; 
+			std::cout << "alpha1               " << sets[option1 - 1].alpha1 << "\n";
+			std::cout << "amp                  " << sets[option1 - 1].amp << "\n";
+			std::cout << "resp                 " << sets[option1 - 1].resp << "\n";
 			std::cout << "rec_start            " << sets[option1 - 1].rec_start << "\n"; 
 			std::cout << "rec_end              " << sets[option1 - 1].rec_end << "\n"; 
 			std::cout << "rec_interval_global  " << sets[option1 - 1].rec_interval_global << "\n"; 
@@ -437,7 +622,6 @@ int main()
 						life.mu_a = sim_params.mu_a;
 						life.beta = sim_params.beta;
 						life.theta = sim_params.theta;
-						life.alpha0 = sim_params.alpha0;
 						life.mean_dev = sim_params.mean_dev;
 						life.min_dev = sim_params.min_dev;
 						inher.gamma = sim_params.gamma;
@@ -464,7 +648,11 @@ int main()
 						auto start = std::chrono::steady_clock::now();
 
 						// run simulation
-						Simulation simulation(prog, area, life, rel, disp, aes, initial, rec);
+						Simulation simulation(prog, area, life, rel, disp, aes, initial, rec, sim_params.alpha0_mean,
+						 sim_params.alpha0_variance, sim_params.alpha1, sim_params.amp);
+						if (option1 == 14 || option1 == 15) {
+							simulation.set_rainfall(sim_params.resp, "rainfall.txt");
+						} 
 						simulation.set_inheritance(inher);
 						simulation.run_reps();
 

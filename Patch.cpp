@@ -7,13 +7,42 @@
 
 using namespace constants;
 
-Patch::Patch(double side, LifeParams* par) 
+// Sets coordinates randomly on the square space of side side.
+Patch::Patch(Model* mod, LifeParams* par, double a0, double side) 
 {
+	model = mod;
 	params = par;
-
+	alpha0 = a0;
+	
 	double x = random_real() * side;
 	double y = random_real() * side;
 	coords = {x, y};
+
+	for (int i=0; i < num_gen; ++i) {
+		for (int a=0; a < max_dev + 1; ++a) {
+			J[i][a] = 0; 
+		}
+		M[i] = 0;
+		V[i] = 0;
+		for (int j=0; j < num_gen; ++j) {
+			F[i][j] = 0;
+		}
+	}
+	comp = 0;
+	mate_rate = 0;
+}
+
+// Sets chosen coordinates.
+Patch::Patch(Model* mod, LifeParams* par, double a0, Point point) 
+{
+	model = mod;
+	params = par;
+	alpha0 = a0;
+	coords = point;
+
+	// include to be able to compare data to oracle when testing
+	double x = random_real();
+	double y = random_real();
 
 	for (int i=0; i < num_gen; ++i) {
 		for (int a=0; a < max_dev + 1; ++a) {
@@ -44,7 +73,7 @@ void Patch::populate(int initial_WJ, int initial_WM, int initial_WV, int initial
 }
 
 // Returns the coordinates of the site on the simulation area
-std::array<double, 2> Patch::get_coords() const
+Point Patch::get_coords() const
 {
 	return coords;
 }
@@ -258,8 +287,10 @@ void Patch::juv_eclose()
 // Updates the juvenile survival probability in the local site
 void Patch::update_comp()
 {
+	int d = model->get_day();
+	double alpha = model->get_alpha(alpha0);
 	long long int tot_J = calculate_tot_J();
-	comp = (1 - (params->mu_j)) * std::pow((params->alpha0) / ((params->alpha0) + tot_J), 1.0 / (params->mean_dev));
+	comp = (1 - (params->mu_j)) * std::pow(alpha / (alpha + tot_J), 1.0 / (params->mean_dev));
 }
 
 // Updates the mating rate parameter in the local site

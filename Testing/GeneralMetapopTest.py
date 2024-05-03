@@ -4,34 +4,57 @@ import subprocess
 import numpy as np
 import matplotlib.pyplot as plt
 
-#%% Run C++ Program with UI
+#%% Run C++ Program with UI - pre-defined sets
 
 # ** Modify output files folder path and .exe filepath as needed! **
 output_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build"
-exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\cmake_gdsimsapp.exe"
+exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\gdsimsapp.exe"
 
 # Selecting sets to run
-sets = [i for i in range(1, 11)]
+sets = [i for i in range(1, 17)]
     
 # ** Select other combinations of sets by listing below and uncommenting**
 # sets = [1, 4, 7]
+sets = [1]
 
 for j in range(0, len(sets)):
-        input_string = str(sets[j]) + "\n" + "y" + "\n"
+    input_string = str(sets[j]) + "\n" + "y" + "\n"
+    
+    # Run C++ model with input data
+    os.chdir(output_folder_path) # directory for output files
+    # .exe file for the program
+    print("Running set", sets[j], "...")
+    proc = subprocess.Popen([exe_filepath], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
+    outs, errs = proc.communicate(input=input_string)
         
-        # Run C++ model with input data
-        os.chdir(output_folder_path) # directory for output files
-        # .exe file for the program
-        print("Running set", sets[j], "...")
-        proc = subprocess.Popen([exe_filepath], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
-        outs, errs = proc.communicate(input=input_string)
+#%% Run C++ Program with UI - custom set
+
+# ** Modify output files folder path and .exe filepath as needed! **
+output_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build"
+exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\gdsimsapp.exe"
+params_filename = "params.txt" # file should be in the build folder (same as .exe)
+
+input_string = "100" + "\n" + params_filename + "\n" + "y" +"\n" + "y" + "\n"
+
+# if want advanced options, uncomment below line
+# e.g. setting boundary type to edge and dispersal type to radial
+input_string += "1" + "\n" + "e" + "\n" + "2" + "\n" + "r" + "\n" 
+
+input_string += "0" + "\n"
+    
+# Run C++ model with input data
+os.chdir(output_folder_path) # directory for output files
+# .exe file for the program
+print("Running custom set...")
+proc = subprocess.Popen([exe_filepath], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
+outs, errs = proc.communicate(input=input_string)     
         
 #%% Run C++ program for test case parameters from file -- old versions without UI
 
 # ** Modify parameter table .csv filepath, output files folder path and .exe filepath as needed! **
-param_csv_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\Parameters - new layout v3.csv"
+param_csv_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\Parameters - new layout v5.csv"
 output_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build"
-exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\cmake_gdsimsapp.exe"
+exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\gdsimsapp.exe"
 
 # Read input parameter set from .csv file
 params = pd.read_table(param_csv_filepath, delimiter=",")
@@ -44,7 +67,9 @@ for i in range(0, len(sets)):
     sets[i] = int(sets[i].removeprefix("set "))
     
 # ** Select other combinations of sets by listing below and uncommenting**
-#sets = [10]
+#sets = [i for i in range(1, 17) if i not in (14,15)]
+
+
 for j in range(0, len(sets)):
     if ("set " + str(sets[j])) in params:
         input_data = params[["set " + str(sets[j])]]
@@ -64,12 +89,13 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Testing\\oracle data"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\Testing\\oracle data\\edge radial"
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
-sets = [i for i in range(1, 11)]
-# sets = [1, 4, 7]       
+sets = [i for i in range(1, 17)]
+#sets = [1, 7]
+sets = [1]
 
 # ** Modify the list of num_runs in each set selected as needed **
 num_runs_list = [2 for i in range(0, len(sets))]
@@ -80,8 +106,9 @@ make_plot = True
 for j in range(0, len(sets)):
     print("Set " + str(sets[j]))
     for i in range(1, num_runs_list[j] + 1):
-        # import oracle data
+        #import oracle data
         os.chdir(os.path.join(oracle_folder_path, "set" + str(sets[j])))
+        #os.chdir(oracle_folder_path)
         totals_oracle = np.loadtxt("Totals" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
         times_oracle = totals_oracle[:, 0]
         tot_males_oracle = totals_oracle[:, 1:]
