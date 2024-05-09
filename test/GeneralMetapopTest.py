@@ -27,27 +27,61 @@ for j in range(0, len(sets)):
     proc = subprocess.Popen([exe_filepath], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
     outs, errs = proc.communicate(input=input_string)
         
+#%% Make .txt params files for each test set of parameters
+
+param_csv_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\Parameters - new layout v5.csv"
+
+# Read input parameter set from .csv file
+params = pd.read_table(param_csv_filepath, delimiter=",")
+labels = params[["Parameter"]]
+labels = labels.drop(index=0)
+
+# Selecting sets to run
+sets = [col for col in params if col.startswith('set ')]
+for i in range(0, len(sets)):
+    sets[i] = int(sets[i].removeprefix("set "))
+
+
+for j in range(0, len(sets)):
+    if ("set " + str(sets[j])) in params:
+        input_data = params[["set " + str(sets[j])]]
+        input_data = input_data.drop(index=0)
+        input_data = input_data.rename(dict(zip(input_data.index, labels["Parameter"])), axis=0)
+        display(input_data)
+        
+        os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build")
+        filename = "params_set" + str(sets[j]) + ".txt"
+        input_data.to_csv(filename, header=False, index=False)
+
 #%% Run C++ Program with UI - custom set
 
 # ** Modify output files folder path and .exe filepath as needed! **
 output_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build"
 exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\gdsimsapp.exe"
-params_filename = "params.txt" # file should be in the build folder (same as .exe)
 
-input_string = "100" + "\n" + params_filename + "\n" + "y" +"\n" + "y" + "\n"
+sets = [i for i in range(1, 17)]
+sets = [1]
 
-# if want advanced options, uncomment below line
-# e.g. setting boundary type to edge and dispersal type to radial
-input_string += "1" + "\n" + "e" + "\n" + "2" + "\n" + "r" + "\n" 
-
-input_string += "0" + "\n"
+for j in range(0, len(sets)):
+    params_filename = "params_set" + str(sets[j]) + ".txt"
+    input_string = "100" + "\n" + params_filename + "\n" + "y" +"\n" + "y" + "\n"
     
-# Run C++ model with input data
-os.chdir(output_folder_path) # directory for output files
-# .exe file for the program
-print("Running custom set...")
-proc = subprocess.Popen([exe_filepath], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
-outs, errs = proc.communicate(input=input_string)     
+    if j == (14 - 1) or j == (15 - 1):
+        input_string += "3" + "\n" + "rainfall.txt" + "\n"
+    # if want advanced options, uncomment below line
+    # e.g. setting boundary type to edge and dispersal type to radial
+    input_string += "1" + "\n" + "t" + "\n" + "2" + "\n" + "d" + "\n" 
+    # e.g. setting custom coords file
+    input_string += "4" + "\n" + "coords_set1run1.txt" + "\n"
+    
+    input_string += "0" + "\n"
+        
+    # Run C++ model with input data
+    os.chdir(output_folder_path) # directory for output files
+    # .exe file for the program
+    print("Running custom set " + str(sets[j]) + "...")
+    proc = subprocess.Popen([exe_filepath], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
+    outs, errs = proc.communicate(input=input_string)     
         
 #%% Run C++ program for test case parameters from file -- old versions without UI
 
@@ -95,13 +129,13 @@ test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Pr
 # ** Modify the list of set numbers selected as needed **
 sets = [i for i in range(1, 17)]
 #sets = [1, 7]
-#sets = [1]
+sets = [1]
 
 # ** Modify the list of num_runs in each set selected as needed **
 num_runs_list = [2 for i in range(0, len(sets))]
 # num_runs_list = [2, 3, 1]
 
-make_plot = False
+make_plot = True
 
 for j in range(0, len(sets)):
     print("Set " + str(sets[j]))

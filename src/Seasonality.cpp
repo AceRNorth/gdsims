@@ -1,4 +1,5 @@
 #include <cmath>
+#include <vector>
 #include "Seasonality.h"
 #include "constants.h"
 

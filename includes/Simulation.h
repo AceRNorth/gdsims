@@ -3,7 +3,7 @@
 
 #include <array>
 #include <vector>
-#include <string> // for error messages
+#include <string>
 #include "constants.h"
 #include "Params.h"
 #include "Point.h"

@@ -3,6 +3,7 @@
 #include <sstream>
 #include <fstream>
 #include <vector>
+#include <iomanip>
 #include "Record.h"
 
 // Creates LocalData, Totals and CoordinateList output .txt files
@@ -47,10 +48,13 @@ Record::~Record()
 // Records the x and y coordinates of each site
 void Record::record_coords(const std::vector<Patch*> &sites) 
 {
+	const auto default_precision{std::cout.precision()};
+	constexpr auto max_precision{std::numeric_limits<double>::digits10 + 1};
 	for (int pat=0; pat < sites.size(); pat += rec_sites_freq) {
 		auto coords = sites[pat]->get_coords();
-		coord_list << pat+1 << "\t" << coords.x << "\t" << coords.y << std::endl;
+		coord_list << pat+1 << "\t" << std::setprecision(max_precision) << coords.x << "\t" << coords.y << std::endl;
 	}
+	coord_list << std::setprecision(default_precision);
 }
 
 // Records the total number of males (over all sites) of each genotype

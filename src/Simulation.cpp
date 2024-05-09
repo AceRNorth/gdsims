@@ -1,6 +1,8 @@
 #include <array>
+#include <vector>
 #include <iostream> // for error messages
 #include <filesystem>
+#include <fstream>
 #include <sstream>
 #include <string>
 #include "Simulation.h"
