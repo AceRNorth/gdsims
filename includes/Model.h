@@ -23,14 +23,10 @@ class Seasonality;
 // Runs the model.
 class Model {
 public:
-	Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-		ReleaseParams *rel, double a0_mean, double a0_var, double alpha1, double amp, BoundaryType boundary = BoundaryType::Toroid,
-		DispersalType disp_type = DispersalType::DistanceKernel,
-		std::vector<Point> coords = {});
-	Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-		ReleaseParams *rel, double a0_mean, double a0_var, double alpha1, double res, std::vector<double> rain,
-		BoundaryType boundary = BoundaryType::Toroid, DispersalType disp_type = DispersalType::DistanceKernel,
-		std::vector<Point> coords = {});
+	Model(ModelParams *params, SineRainfallParams *season, double a0_mean, double a0_var, BoundaryType boundary = BoundaryType::Toroid,
+		DispersalType disp_type = DispersalType::DistanceKernel, std::vector<Point> coords = {});
+	Model(ModelParams *params, InputRainfallParams *season, double a0_mean, double a0_var, BoundaryType boundary = BoundaryType::Toroid,
+	    DispersalType disp_type = DispersalType::DistanceKernel, std::vector<Point> coords = {});
 	~Model();
 	void initiate();
 	void run(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_fraction);

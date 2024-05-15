@@ -13,22 +13,59 @@
 
 using namespace constants;
 
-Simulation::Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &life, ReleaseParams &rel, DispersalParams &disp,
- AestivationParams &aes, InitialPopsParams &initial, RecordParams &rec, double a0_mean, double a0_var, double a1, double ampl)
+Simulation::Simulation(InputParams input)
 { 
-	num_runs = prog.num_runs;
-	max_t = prog.max_t;
-	area_params = &area;
-	life_params = &life;
-	rel_params = &rel;
-	disp_params = &disp;
-	aes_params = &aes;
-	initial_params = &initial;
-	rec_params = &rec;
-	alpha0_mean = a0_mean;
-	alpha0_variance = a0_var;
-	alpha1 = a1;
-	amp = ampl;
+	num_runs = input.num_runs;
+	max_t = input.max_t;
+
+	model_params = new ModelParams;
+	model_params->area = new AreaParams;
+	model_params->area->num_pat = input.num_pat;
+	model_params->area->side = input.side;
+	model_params->life = new LifeParams;
+	model_params->life->mu_j = input.mu_j;
+	model_params->life->mu_a = input.mu_a;
+	model_params->life->beta = input.beta;
+	model_params->life->theta = input.theta;
+	model_params->life->mean_dev = input.mean_dev;
+	model_params->life->min_dev = input.min_dev;
+	model_params->rel = new ReleaseParams;
+	model_params->rel->driver_start = input.driver_start;
+	model_params->rel->num_driver_M = input.num_driver_M;
+	model_params->rel->num_driver_sites = input.num_driver_sites;
+	model_params->disp = new DispersalParams;
+	model_params->disp->disp_rate = input.disp_rate;
+	model_params->disp->max_disp = input.max_disp;
+	model_params->aes = new AestivationParams;
+	model_params->aes->psi = input.psi;
+	model_params->aes->mu_aes = input.mu_aes;
+	model_params->aes->t_hide1 = input.t_hide1;
+	model_params->aes->t_hide2 = input.t_hide2;
+	model_params->aes->t_wake1 = input.t_wake1;
+	model_params->aes->t_wake2 = input.t_wake2;
+	model_params->initial = new InitialPopsParams;
+	model_params->initial->initial_WJ = input.initial_WJ;
+	model_params->initial->initial_WM = input.initial_WM;
+	model_params->initial->initial_WV = input.initial_WV;
+	model_params->initial->initial_WF = input.initial_WF;
+
+	sine_rainfall_params = new SineRainfallParams;
+	sine_rainfall_params->alpha1 = input.alpha1;
+	sine_rainfall_params->amp = input.amp;
+	input_rainfall_params = new InputRainfallParams;
+	input_rainfall_params->alpha1 = input.alpha1;
+	input_rainfall_params->resp = input.resp;
+	(input_rainfall_params->rainfall).clear();
+	alpha0_mean = input.alpha0_mean;
+	alpha0_variance = input.alpha0_variance;
+
+	rec_params = new RecordParams;
+	rec_params->rec_start = input.rec_start;
+	rec_params->rec_end = input.rec_end;
+	rec_params->rec_interval_global = input.rec_interval_global;
+	rec_params->rec_interval_local = input.rec_interval_local;
+	rec_params->rec_sites_freq = input.rec_sites_freq;
+	rec_params->set_label = input.set_label;
 	
 	for (int i=0; i < num_gen; ++i) {
 		for (int j=0; j < num_gen; ++j) {
@@ -39,9 +76,22 @@ Simulation::Simulation(ProgressionParams &prog, AreaParams &area, LifeParams &li
 	}
 
 	sites_coords.clear();
-	rainfall.clear();
 	boundary_type = BoundaryType::Toroid;
 	disp_type = DispersalType::DistanceKernel;
+}
+
+Simulation::~Simulation() 
+{
+	delete model_params->area;
+	delete model_params->life;
+	delete model_params->rel;
+	delete model_params->disp;
+	delete model_params->aes;
+	delete model_params->initial;
+	delete model_params;
+	delete sine_rainfall_params;
+	delete input_rainfall_params;
+	delete rec_params;
 }
 
 // Sets the sites' coordinates from a .txt file, unless any errors are thrown.
@@ -68,8 +118,8 @@ void Simulation::set_coords(const std::string& filename)
 				if (!read_and_validate_type(linestream, y, "y" + std::to_string(i+1), "double")) err++;
 				
 				if (boundary_type == Toroid) {
-					if (!check_bounds("x" + std::to_string(i+1), x, 0.0, true, area_params->side, true)) err++;
-					if (!check_bounds("y" + std::to_string(i+1), y, 0.0, true, area_params->side, true)) err++;
+					if (!check_bounds("x" + std::to_string(i+1), x, 0.0, true, model_params->area->side, true)) err++;
+					if (!check_bounds("y" + std::to_string(i+1), y, 0.0, true, model_params->area->side, true)) err++;
 				}
 				if (err == 0) {
 					temp.push_back({x, y});
@@ -78,7 +128,7 @@ void Simulation::set_coords(const std::string& filename)
 		}
 		file.close();
 
-		if (temp.size() != area_params->num_pat) {
+		if (temp.size() != model_params->area->num_pat) {
 			std::cerr << "Error: the number of valid coordinates in the file does not match num_pat." << std::endl;
 		}
 		else {
@@ -101,10 +151,9 @@ void Simulation::set_dispersal_type(DispersalType disp)
 // Sets the daily rainfall values from a .txt file, unless any errors are thrown. 
 // These can be daily values for a year cycle, or daily values for all the simulated days.
 // A year is assumed to be 365 days.
-void Simulation::set_rainfall(double res, const std::string& filename)
+void Simulation::set_rainfall(const std::string& filename)
 {
-	resp = res;
-	rainfall.clear();
+	input_rainfall_params->rainfall.clear();
 
 	auto filepath = std::filesystem::path(std::string("./")+filename);
 	if (!std::filesystem::exists(filepath) || !std::filesystem::is_regular_file(filepath)) {
@@ -132,7 +181,7 @@ void Simulation::set_rainfall(double res, const std::string& filename)
 		file.close();
 
 		if (temp.size() == 365 || temp.size() == max_t) {
-			rainfall = temp;
+			input_rainfall_params->rainfall = temp;
 		}
 		else {
 			std::cout << "temp size: " << temp.size() << std::endl;
@@ -253,13 +302,11 @@ void Simulation::run_reps()
 {
 	for (int rep=1; rep <= num_runs; ++rep) {
 		Model* model;
-		if (rainfall.empty()) {
-			model = new Model(area_params, initial_params, life_params, aes_params, disp_params, rel_params, alpha0_mean,
-			 alpha0_variance, alpha1, amp, boundary_type, disp_type, sites_coords);
+		if (!((input_rainfall_params->rainfall).empty())) {
+			model = new Model(model_params, input_rainfall_params, alpha0_mean, alpha0_variance, boundary_type, disp_type, sites_coords);
 		}
 		else {
-			model = new Model(area_params, initial_params, life_params, aes_params, disp_params, rel_params, alpha0_mean,
-			 alpha0_variance, alpha1, resp, rainfall, boundary_type, disp_type, sites_coords);
+			model = new Model(model_params, sine_rainfall_params, alpha0_mean, alpha0_variance, boundary_type, disp_type, sites_coords);
 		}
 		Record data(rec_params, rep);
 		model->initiate();

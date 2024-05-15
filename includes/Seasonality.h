@@ -2,6 +2,7 @@
 #define SEASONALITY_H
 
 #include <vector>
+#include "Params.h"
 
 class Seasonality {
 public:
@@ -14,7 +15,7 @@ protected:
 
 class SineRainfall: public Seasonality {
 public:
-    SineRainfall(double alpha1, double amp);
+    SineRainfall(SineRainfallParams *params);
     double alpha(int day, double alpha0) override;
 
 private:
@@ -23,11 +24,11 @@ private:
 
 class InputRainfall: public Seasonality {
 public:
-    InputRainfall(double alpha1, double res, std::vector<double> rain);
+    InputRainfall(InputRainfallParams *params);
     double alpha(int day, double alpha0) override;
 
 private:
-    double resp; // carrying capacity's responsiveness to rainfall factor
+    double resp; // carrying capacity's responsiveness to rainfall contribution
     std::vector<double> rainfall; // daily rainfall for every day of the year
 };
 

@@ -60,7 +60,7 @@ output_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Progr
 exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\gdsimsapp.exe"
 
 sets = [i for i in range(1, 17)]
-sets = [1]
+#sets = [1]
 
 for j in range(0, len(sets)):
     params_filename = "params_set" + str(sets[j]) + ".txt"
@@ -70,9 +70,9 @@ for j in range(0, len(sets)):
         input_string += "3" + "\n" + "rainfall.txt" + "\n"
     # if want advanced options, uncomment below line
     # e.g. setting boundary type to edge and dispersal type to radial
-    input_string += "1" + "\n" + "t" + "\n" + "2" + "\n" + "d" + "\n" 
+    input_string += "1" + "\n" + "e" + "\n" + "2" + "\n" + "r" + "\n" 
     # e.g. setting custom coords file
-    input_string += "4" + "\n" + "coords_set1run1.txt" + "\n"
+    #input_string += "4" + "\n" + "coords_set1run1.txt" + "\n"
     
     input_string += "0" + "\n"
         
@@ -123,19 +123,19 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\edge_radial"
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
 sets = [i for i in range(1, 17)]
 #sets = [1, 7]
-sets = [1]
+#sets = [1]
 
 # ** Modify the list of num_runs in each set selected as needed **
 num_runs_list = [2 for i in range(0, len(sets))]
 # num_runs_list = [2, 3, 1]
 
-make_plot = True
+make_plot = False
 
 for j in range(0, len(sets)):
     print("Set " + str(sets[j]))

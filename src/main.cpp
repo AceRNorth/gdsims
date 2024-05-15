@@ -9,21 +9,12 @@
 #include "Params.h"
 #include "inputval.h"
 #include "InputParams.h"
+#include "sets.h"
 
 int main()
 {	
 	std::vector<InputParams> sets = {set1, set2, set3, set4, set5, set6, set7, set8, set9, set10, set11, set12, set13, set14, set15,
 	 set16};
-
-	ProgressionParams prog;
-	AreaParams area;
-	LifeParams life;
-	InheritanceParams inher;
-	ReleaseParams rel;
-	DispersalParams disp;
-	AestivationParams aes;
-	InitialPopsParams initial;
-	RecordParams rec;
 	
 	// input parameters
 	// progression parameters
@@ -354,40 +345,50 @@ int main()
 				switch (option2) {
 					case 'y':
 					{
-						prog.num_runs = num_runs;
-						prog.max_t = max_t;
-						area.num_pat = num_pat;
-						area.side = side;
-						life.mu_j = mu_j;
-						life.mu_a = mu_a;
-						life.beta = beta;
-						life.theta = theta;
-						life.mean_dev = mean_dev;
-						life.min_dev = min_dev;
+						InputParams custom_input;
+						custom_input.num_runs = num_runs;
+						custom_input.max_t = max_t;
+						custom_input.num_pat = num_pat;
+						custom_input.side = side;
+						custom_input.mu_j = mu_j;
+						custom_input.mu_a = mu_a;
+						custom_input.beta = beta;
+						custom_input.theta = theta;
+						custom_input.mean_dev = mean_dev;
+						custom_input.min_dev = min_dev;
+						custom_input.gamma = gamma;
+						custom_input.xi = xi;
+						custom_input.e = e;
+						custom_input.driver_start = driver_start;
+						custom_input.num_driver_M = num_driver_M;
+						custom_input.num_driver_sites = num_driver_sites;
+						custom_input.disp_rate = disp_rate;
+						custom_input.max_disp = max_disp;
+						custom_input.psi = psi;
+						custom_input.mu_aes = mu_aes;
+						custom_input.t_hide1 = t_hide1;
+						custom_input.t_hide2 = t_hide2;
+						custom_input.t_wake1 = t_wake1;
+						custom_input.t_wake2 = t_wake2;
+						custom_input.alpha0_mean = alpha0_mean;
+						custom_input.alpha0_variance = alpha0_variance;
+						custom_input.alpha1 = alpha1;
+						custom_input.amp = amp;
+						custom_input.resp = resp;
+						custom_input.rec_start = rec_start;
+						custom_input.rec_end = rec_end;
+						custom_input.rec_interval_global = rec_interval_global;
+						custom_input.rec_interval_local = rec_interval_local;
+						custom_input.rec_sites_freq = rec_sites_freq;
+						custom_input.set_label = set_label;
+
+						InheritanceParams inher;
 						inher.gamma = gamma;
 						inher.xi = xi;
 						inher.e = e;
-						rel.driver_start = driver_start;
-						rel.num_driver_M = num_driver_M;
-						rel.num_driver_sites = num_driver_sites;
-						disp.disp_rate = disp_rate;
-						disp.max_disp = max_disp;
-						aes.psi = psi;
-						aes.mu_aes = mu_aes;
-						aes.t_hide1 = t_hide1;
-						aes.t_hide2 = t_hide2;
-						aes.t_wake1 = t_wake1;
-						aes.t_wake2 = t_wake2;
-						rec.rec_start = rec_start;
-						rec.rec_end = rec_end;
-						rec.rec_interval_global = rec_interval_global;
-						rec.rec_interval_local = rec_interval_local;
-						rec.rec_sites_freq = rec_sites_freq;
-						rec.set_label = set_label;
 
 						// set up simulation
-						Simulation simulation_1(prog, area, life, rel, disp, aes, initial, rec, alpha0_mean, alpha0_variance, alpha1,
-						 amp);
+						Simulation simulation_1(custom_input);
 						simulation_1.set_inheritance(inher);
 
 						// advanced option setting
@@ -501,7 +502,7 @@ int main()
 												} while (std::cin.fail() || !std::filesystem::exists(rainfall_filepath) ||
 												 !std::filesystem::is_regular_file(rainfall_filepath));
 											}
-											simulation_1.set_rainfall(resp, rainfall_filename);
+											simulation_1.set_rainfall(rainfall_filename);
 											std::cout << "Custom rainfall values set." << std::endl;
 										}
 										else if (option4 == 4) {
@@ -614,44 +615,17 @@ int main()
 					{
 						InputParams sim_params = sets[option1 - 1];
 
-						prog.num_runs = sim_params.num_runs;
-						prog.max_t = sim_params.max_t;
-						area.num_pat = sim_params.num_pat;
-						area.side = sim_params.side;
-						life.mu_j = sim_params.mu_j;
-						life.mu_a = sim_params.mu_a;
-						life.beta = sim_params.beta;
-						life.theta = sim_params.theta;
-						life.mean_dev = sim_params.mean_dev;
-						life.min_dev = sim_params.min_dev;
+						InheritanceParams inher;
 						inher.gamma = sim_params.gamma;
 						inher.xi = sim_params.xi;
 						inher.e = sim_params.e;
-						rel.driver_start = sim_params.driver_start;
-						rel.num_driver_M = sim_params.num_driver_M;
-						rel.num_driver_sites = sim_params.num_driver_sites;
-						disp.disp_rate = sim_params.disp_rate;
-						disp.max_disp = sim_params.max_disp;
-						aes.psi = sim_params.psi;
-						aes.mu_aes = sim_params.mu_aes;
-						aes.t_hide1 = sim_params.t_hide1;
-						aes.t_hide2 = sim_params.t_hide2;
-						aes.t_wake1 = sim_params.t_wake1;
-						aes.t_wake2 = sim_params.t_wake2;
-						rec.rec_start = sim_params.rec_start;
-						rec.rec_end = sim_params.rec_end;
-						rec.rec_interval_global = sim_params.rec_interval_global;
-						rec.rec_interval_local = sim_params.rec_interval_local;
-						rec.rec_sites_freq = sim_params.rec_sites_freq;
-						rec.set_label = sim_params.set_label;
-
+						
 						auto start = std::chrono::steady_clock::now();
 
 						// run simulation
-						Simulation simulation(prog, area, life, rel, disp, aes, initial, rec, sim_params.alpha0_mean,
-						 sim_params.alpha0_variance, sim_params.alpha1, sim_params.amp);
+						Simulation simulation(sim_params);
 						if (option1 == 14 || option1 == 15) {
-							simulation.set_rainfall(sim_params.resp, "rainfall.txt");
+							simulation.set_rainfall("rainfall.txt");
 						} 
 						simulation.set_inheritance(inher);
 						simulation.run_reps();

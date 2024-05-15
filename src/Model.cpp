@@ -10,14 +10,13 @@
 
 using namespace constants;
 
-Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-	ReleaseParams *rel, double a0_mean, double a0_var, double alpha1, double amp, BoundaryType boundary, DispersalType disp_type, 
-	std::vector<Point> coords)
+Model::Model(ModelParams *params, SineRainfallParams *season, double a0_mean, double a0_var, BoundaryType boundary, DispersalType disp_type,
+ std::vector<Point> coords)
 {
-	num_pat = area->num_pat;
-	side = area->side;
-	initial_pops = initial;
-	min_dev = life->min_dev;
+	num_pat = params->area->num_pat;
+	side = params->area->side;
+	initial_pops = params->initial;
+	min_dev = params->life->min_dev;
 	alpha0_mean = a0_mean;
 	alpha0_variance = a0_var;
 	dev_duration_probs.fill(0);
@@ -28,47 +27,46 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 	if (!coords.empty()) {
 		assert(coords.size() == num_pat);
 		for (int i=0; i < num_pat; ++i) {
-			Patch* pp = new Patch(this, life, alpha0(), coords[i]);
+			Patch* pp = new Patch(this, params->life, alpha0(), coords[i]);
 			sites.push_back(pp);
 		}
 	}
 	else {
 		for (int i=0; i < num_pat; ++i) {
-			Patch* pp = new Patch(this, life, alpha0(), side);
+			Patch* pp = new Patch(this, params->life, alpha0(), side);
 			sites.push_back(pp);
 		}
 	}
 
-	Aestivation* new_aestivation = new Aestivation(aes, sites.size());
+	Aestivation* new_aestivation = new Aestivation(params->aes, sites.size());
 	aestivation = new_aestivation;
 
 	Dispersal* new_disp;
 	if (disp_type == DistanceKernel) {
-		new_disp = new DistanceKernelDispersal(disp, boundary, side);
+		new_disp = new DistanceKernelDispersal(params->disp, boundary, side);
 	}
 	else if (disp_type == Radial) {
-		new_disp = new RadialDispersal(disp, boundary, side);
+		new_disp = new RadialDispersal(params->disp, boundary, side);
 	}
 	else {
-		new_disp = new DistanceKernelDispersal(disp, boundary, side);
+		new_disp = new DistanceKernelDispersal(params->disp, boundary, side);
 	}
 	dispersal = new_disp;
 
-	GDRelease* new_gd_release = new GDRelease(rel);
+	GDRelease* new_gd_release = new GDRelease(params->rel);
 	gd_release = new_gd_release;
 
-	Seasonality* new_season = new SineRainfall(alpha1, amp);
-	seasonality = new_season;
+	Seasonality* new_seasonality = new SineRainfall(season);
+	seasonality = new_seasonality;
 }
 
-Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, AestivationParams *aes, DispersalParams *disp, 
-	ReleaseParams *rel, double a0_mean, double a0_var, double alpha1, double res, std::vector<double> rain, BoundaryType boundary,
-	DispersalType disp_type, std::vector<Point> coords)
+Model::Model(ModelParams *params, InputRainfallParams *season, double a0_mean, double a0_var, BoundaryType boundary, DispersalType disp_type,
+ std::vector<Point> coords)
 {
-	num_pat = area->num_pat;
-	side = area->side;
-	initial_pops = initial;
-	min_dev = life->min_dev;
+	num_pat = params->area->num_pat;
+	side = params->area->side;
+	initial_pops = params->initial;
+	min_dev = params->life->min_dev;
 	alpha0_mean = a0_mean;
 	alpha0_variance = a0_var;
 	dev_duration_probs.fill(0);
@@ -79,37 +77,37 @@ Model::Model(AreaParams *area, InitialPopsParams *initial, LifeParams *life, Aes
 	if (!coords.empty()) {
 		assert(coords.size() == num_pat);
 		for (int i=0; i < num_pat; ++i) {
-			Patch* pp = new Patch(this, life, alpha0(), coords[i]);
+			Patch* pp = new Patch(this, params->life, alpha0(), coords[i]);
 			sites.push_back(pp);
 		}
 	}
 	else {
 		for (int i=0; i < num_pat; ++i) {
-			Patch* pp = new Patch(this, life, alpha0(), side);
+			Patch* pp = new Patch(this, params->life, alpha0(), side);
 			sites.push_back(pp);
 		}
 	}
 
-	Aestivation* new_aestivation = new Aestivation(aes, sites.size());
+	Aestivation* new_aestivation = new Aestivation(params->aes, sites.size());
 	aestivation = new_aestivation;
 
 	Dispersal* new_disp;
 	if (disp_type == DistanceKernel) {
-		new_disp = new DistanceKernelDispersal(disp, boundary, side);
+		new_disp = new DistanceKernelDispersal(params->disp, boundary, side);
 	}
 	else if (disp_type == Radial) {
-		new_disp = new RadialDispersal(disp, boundary, side);
+		new_disp = new RadialDispersal(params->disp, boundary, side);
 	}
 	else {
-		new_disp = new DistanceKernelDispersal(disp, boundary, side);
+		new_disp = new DistanceKernelDispersal(params->disp, boundary, side);
 	}
 	dispersal = new_disp;
 
-	GDRelease* new_gd_release = new GDRelease(rel);
+	GDRelease* new_gd_release = new GDRelease(params->rel);
 	gd_release = new_gd_release;
 
-	Seasonality* new_season = new InputRainfall(alpha1, res, rain);
-	seasonality = new_season;
+	Seasonality* new_seasonality = new InputRainfall(season);
+	seasonality = new_seasonality;
 }
 
 Model::~Model() 

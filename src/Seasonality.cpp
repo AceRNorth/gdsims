@@ -5,9 +5,9 @@
 
 using namespace constants;
 
-SineRainfall::SineRainfall(double alpha1, double ampl): Seasonality(alpha1) 
+SineRainfall::SineRainfall(SineRainfallParams *params): Seasonality(params->alpha1) 
 {
-    amp = ampl;
+    amp = params->amp;
 }
 
 // Computes the carrying-capacity alpha value for the given day and alpha0. Models rainfall contribution as a sine wave.
@@ -17,12 +17,12 @@ double SineRainfall::alpha(int day, double alpha0)
 	return alpha;
 }
 
-InputRainfall::InputRainfall(double alpha1, double res, std::vector<double> rain): Seasonality(alpha1) 
+InputRainfall::InputRainfall(InputRainfallParams *params): Seasonality(params->alpha1) 
 {
-    resp = res;
+    resp = params->resp;
 
-    if (!rain.empty()) {
-        rainfall = rain;
+    if (!((params->rainfall).empty())) {
+        rainfall = params->rainfall;
     }
     else {
         for (int i = 0; i < 365; ++i) {
