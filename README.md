@@ -1,5 +1,5 @@
 # GeneralMetapop
-
+GeneralMetapop is a metapopulation simulation program modelling mosquito populations and their response to gene drive release. The main aims of the project are to create a model program that is maintainable, extensible and widely accessible.
 
 ## Requirements:
 - C++17-compatible compiler or higher (e.g. MinGW g++ $\geq$ 8.0)
