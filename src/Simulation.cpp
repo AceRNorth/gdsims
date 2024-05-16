@@ -74,6 +74,8 @@ Simulation::Simulation(InputParams input)
 			}
 		}
 	}
+	InheritanceParams mendelian = {0, 0, 0};
+	set_inheritance(mendelian);
 
 	sites_coords.clear();
 	boundary_type = BoundaryType::Toroid;
