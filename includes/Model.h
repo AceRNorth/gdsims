@@ -23,13 +23,13 @@ class Seasonality;
 // Runs the model.
 class Model {
 public:
-	Model(ModelParams *params, SineRainfallParams *season, double a0_mean, double a0_var, BoundaryType boundary = BoundaryType::Toroid,
-		DispersalType disp_type = DispersalType::DistanceKernel, std::vector<Point> coords = {});
-	Model(ModelParams *params, InputRainfallParams *season, double a0_mean, double a0_var, BoundaryType boundary = BoundaryType::Toroid,
-	    DispersalType disp_type = DispersalType::DistanceKernel, std::vector<Point> coords = {});
+	Model(ModelParams *params, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_frac, SineRainfallParams *season, double a0_mean, double a0_var,
+	 BoundaryType boundary = BoundaryType::Toroid, DispersalType disp_type = DispersalType::DistanceKernel, std::vector<Point> coords = {});
+	Model(ModelParams *params, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_frac, InputRainfallParams *season, double a0_mean, double a0_var,
+	 BoundaryType boundary = BoundaryType::Toroid, DispersalType disp_type = DispersalType::DistanceKernel, std::vector<Point> coords = {});
 	~Model();
 	void initiate();
-	void run(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_fraction);
+	void run(int day);
 
 	long long int calculate_tot_J(); 
 	long long int calculate_tot_M();
@@ -61,6 +61,10 @@ private:
 	std::array<double, max_dev+1> dev_duration_probs; // array of probabilities of juvenile development duration for a new juvenile
 	// (index indicates the number of days to develop or, equivalently, the age class the new juvenile starts at)
 
+	// inheritance
+	// f_ijk is the fraction of genotype k offspring from mother with genotype i mated to father with genotype j
+	std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> inher_fraction;
+
 	// Patch construction parameters
 	double alpha0_mean; // mean of the baseline contribution to the carrying capacity
     double alpha0_variance; // variance of the baseline contribution to the carrying capacity
@@ -71,11 +75,11 @@ private:
 	void set_dev_duration_probs(int min_time, int max_time);
 
 	// life-processes - interface with Patch
-	void run_step(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_fraction);
+	void run_step(int day);
 	void juv_get_older();
 	void adults_die();
 	void virgins_mate();
-	void lay_eggs(const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_fraction);
+	void lay_eggs();
 	void juv_eclose();
 };
 

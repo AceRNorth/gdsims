@@ -305,17 +305,17 @@ void Simulation::run_reps()
 	for (int rep=1; rep <= num_runs; ++rep) {
 		Model* model;
 		if (!((input_rainfall_params->rainfall).empty())) {
-			model = new Model(model_params, input_rainfall_params, alpha0_mean, alpha0_variance, boundary_type, disp_type, sites_coords);
+			model = new Model(model_params, inher_fraction, input_rainfall_params, alpha0_mean, alpha0_variance, boundary_type, disp_type, sites_coords);
 		}
 		else {
-			model = new Model(model_params, sine_rainfall_params, alpha0_mean, alpha0_variance, boundary_type, disp_type, sites_coords);
+			model = new Model(model_params, inher_fraction, sine_rainfall_params, alpha0_mean, alpha0_variance, boundary_type, disp_type, sites_coords);
 		}
 		Record data(rec_params, rep);
 		model->initiate();
 		data.record_coords(model->get_sites());
 
 		for (int tt=0; tt <= max_t; ++tt) { // current day of the simulation 
-			model->run(tt, inher_fraction);
+			model->run(tt);
 
 			if (data.is_rec_global_time(tt)) {
 				data.output_totals(tt, model->calculate_tot_J(), model->calculate_tot_M(), model->calculate_tot_V(),

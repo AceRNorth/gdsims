@@ -627,7 +627,7 @@ int main()
 						if (option1 == 14 || option1 == 15) {
 							simulation.set_rainfall("rainfall.txt");
 						} 
-						//simulation.set_inheritance(inher);
+						simulation.set_inheritance(inher);
 						simulation.run_reps();
 
 						auto finish = std::chrono::steady_clock::now();

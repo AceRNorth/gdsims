@@ -10,8 +10,8 @@
 
 using namespace constants;
 
-Model::Model(ModelParams *params, SineRainfallParams *season, double a0_mean, double a0_var, BoundaryType boundary, DispersalType disp_type,
- std::vector<Point> coords)
+Model::Model(ModelParams *params, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_frac, SineRainfallParams *season, double a0_mean, double a0_var,
+ BoundaryType boundary, DispersalType disp_type, std::vector<Point> coords)
 {
 	num_pat = params->area->num_pat;
 	side = params->area->side;
@@ -20,6 +20,7 @@ Model::Model(ModelParams *params, SineRainfallParams *season, double a0_mean, do
 	alpha0_mean = a0_mean;
 	alpha0_variance = a0_var;
 	dev_duration_probs.fill(0);
+	inher_fraction = inher_frac;
 
 	day_sim = 0;
 	sites.clear();
@@ -60,8 +61,8 @@ Model::Model(ModelParams *params, SineRainfallParams *season, double a0_mean, do
 	seasonality = new_seasonality;
 }
 
-Model::Model(ModelParams *params, InputRainfallParams *season, double a0_mean, double a0_var, BoundaryType boundary, DispersalType disp_type,
- std::vector<Point> coords)
+Model::Model(ModelParams *params, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_frac, InputRainfallParams *season, double a0_mean,
+ double a0_var, BoundaryType boundary, DispersalType disp_type, std::vector<Point> coords)
 {
 	num_pat = params->area->num_pat;
 	side = params->area->side;
@@ -70,6 +71,7 @@ Model::Model(ModelParams *params, InputRainfallParams *season, double a0_mean, d
 	alpha0_mean = a0_mean;
 	alpha0_variance = a0_var;
 	dev_duration_probs.fill(0);
+	inher_fraction = inher_frac;
 
 	day_sim = 0;
 	sites.clear();
@@ -157,25 +159,25 @@ void Model::set_dev_duration_probs(int min_time, int max_time)
 }
 
 // Handles which model event to run depending on the day of the simulation.
-void Model::run(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_fraction)
+void Model::run(int day)
 {
 	day_sim = day; // used later for seasonality
 	if (gd_release->is_release_time(day)) {
 		gd_release->release_gene_drive(sites);
 	} 
 	if (day > 0) {
-		run_step(day, inher_fraction);
+		run_step(day);
 	}
 }
 
 // Runs the daily mosquito life-processes for all sites, including dispersal and aestivation.
-void Model::run_step(int day, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_fraction) 
+void Model::run_step(int day) 
 {
 	juv_get_older();
 	adults_die();
 	virgins_mate();
 	dispersal->adults_disperse(sites);
-	lay_eggs(inher_fraction);
+	lay_eggs();
 	juv_eclose();
 	if (aestivation->is_hide_time(day)) aestivation->hide(sites);
 	if (aestivation->is_wake_time(day)) aestivation->wake(day, sites);
@@ -278,7 +280,7 @@ void Model::virgins_mate()
 
 // Calculates the number of eggs laid on the given day and updates the number of juveniles, depending on egg survival rates.
 // Egg-laying is carried out in all sites across the simulation area.
-void Model::lay_eggs(const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_fraction)
+void Model::lay_eggs()
 {
 	for (auto pat : sites) {
 		pat->lay_eggs(inher_fraction, dev_duration_probs);

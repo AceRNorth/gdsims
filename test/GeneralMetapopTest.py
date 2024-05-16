@@ -12,10 +12,10 @@ exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming
 
 # Selecting sets to run
 sets = [i for i in range(1, 17)]
-    
+#sets = [12, 13]
+
 # ** Select other combinations of sets by listing below and uncommenting**
 # sets = [1, 4, 7]
-sets = [1, 9]
 
 for j in range(0, len(sets)):
     input_string = str(sets[j]) + "\n" + "y" + "\n"
@@ -123,13 +123,12 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\edge_radial"
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
 sets = [i for i in range(1, 17)]
-sets = [1, 9]
-#sets = [1]
+#sets = [12, 13]
 
 # ** Modify the list of num_runs in each set selected as needed **
 num_runs_list = [2 for i in range(0, len(sets))]
