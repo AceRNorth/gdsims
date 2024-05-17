@@ -11,8 +11,6 @@
 #include "Record.h"
 #include "inputval.h"
 
-using namespace constants;
-
 Simulation::Simulation(InputParams input)
 { 
 	num_runs = input.num_runs;
@@ -67,9 +65,9 @@ Simulation::Simulation(InputParams input)
 	rec_params->rec_sites_freq = input.rec_sites_freq;
 	rec_params->set_label = input.set_label;
 	
-	for (int i=0; i < num_gen; ++i) {
-		for (int j=0; j < num_gen; ++j) {
-			for (int k=0; k < num_gen; ++k) {
+	for (int i=0; i < constants::num_gen; ++i) {
+		for (int j=0; j < constants::num_gen; ++j) {
+			for (int k=0; k < constants::num_gen; ++k) {
 				inher_fraction[i][j][k] = 0;
 			}
 		}

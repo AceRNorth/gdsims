@@ -1,5 +1,5 @@
-#ifndef INPUTPARAMS_H
-#define INPUTPARAMS_H
+#ifndef GENERALMETAPOP_INPUTPARAMS_H
+#define GENERALMETAPOP_INPUTPARAMS_H
 
 struct InputParams {
 	int num_runs; // number of simulation replicates to run
@@ -52,4 +52,4 @@ struct InputParams {
 	int set_label; // 'set of runs' index label for output files
 };
 
-#endif //INPUTPARAMS_H
+#endif //GENERALMETAPOP_INPUTPARAMS_H

@@ -10,8 +10,8 @@
 
 using namespace constants;
 
-Model::Model(ModelParams *params, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_frac, SineRainfallParams *season, double a0_mean, double a0_var,
- BoundaryType boundary, DispersalType disp_type, std::vector<Point> coords)
+Model::Model(ModelParams *params, const std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> &inher_frac, SineRainfallParams *season,
+ double a0_mean, double a0_var, BoundaryType boundary, DispersalType disp_type, std::vector<Point> coords)
 {
 	num_pat = params->area->num_pat;
 	side = params->area->side;
@@ -61,8 +61,8 @@ Model::Model(ModelParams *params, const std::array<std::array<std::array <double
 	seasonality = new_seasonality;
 }
 
-Model::Model(ModelParams *params, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_frac, InputRainfallParams *season, double a0_mean,
- double a0_var, BoundaryType boundary, DispersalType disp_type, std::vector<Point> coords)
+Model::Model(ModelParams *params, const std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> &inher_frac, InputRainfallParams *season,
+ double a0_mean, double a0_var, BoundaryType boundary, DispersalType disp_type, std::vector<Point> coords)
 {
 	num_pat = params->area->num_pat;
 	side = params->area->side;
@@ -133,7 +133,7 @@ double Model::alpha0()
 void Model::initiate()
 {
 	populate_sites();
-	set_dev_duration_probs(min_dev, max_dev);
+	set_dev_duration_probs(min_dev, constants::max_dev);
 	dispersal->set_connecs(sites); 
 }
 
@@ -224,13 +224,13 @@ long long int Model::calculate_tot_F()
 }
 
 // Returns the total number of males of each genotype across the simulation area
-std::array<long long int, num_gen> Model::calculate_tot_M_gen() 
+std::array<long long int, constants::num_gen> Model::calculate_tot_M_gen() 
 {
-	std::array<long long int, num_gen> tot_M_gen;
+	std::array<long long int, constants::num_gen> tot_M_gen;
 	tot_M_gen.fill(0);
 	for (auto pat : sites) {
-		std::array<long long int, num_gen> m_pat = pat->get_M();
-		for (int i = 0; i < num_gen; ++i) {
+		std::array<long long int, constants::num_gen> m_pat = pat->get_M();
+		for (int i = 0; i < constants::num_gen; ++i) {
 			tot_M_gen[i] += m_pat[i];
 		}
 	}
@@ -257,7 +257,7 @@ double Model::get_alpha(double alpha0)
 void Model::juv_get_older() 
 {
 	for (auto pat : sites) {
-		pat->juv_get_older(max_dev);
+		pat->juv_get_older();
 	}
 }
 

@@ -1,5 +1,5 @@
-#ifndef SIMULATION_H
-#define SIMULATION_H
+#ifndef GENERALMETAPOP_SIMULATION_H
+#define GENERALMETAPOP_SIMULATION_H
 
 #include <array>
 #include <vector>
@@ -8,8 +8,6 @@
 #include "Params.h"
 #include "InputParams.h"
 #include "Point.h"
-
-using namespace constants;
 
 // Sets up and controls the flow of the simulation.
 class Simulation {
@@ -42,7 +40,7 @@ private:
 
 	// inheritance
 	// f_ijk is the fraction of genotype k offspring from mother with genotype i mated to father with genotype j
-	std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> inher_fraction;
+	std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> inher_fraction;
 };
 
-#endif //SIMULATION_H
+#endif //GENERALMETAPOP_SIMULATION_H

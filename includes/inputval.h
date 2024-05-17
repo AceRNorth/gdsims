@@ -1,5 +1,5 @@
-#ifndef INPUTVAL_H
-#define INPUTVAL_H
+#ifndef GENERALMETAPOP_INPUTVAL_H
+#define GENERALMETAPOP_INPUTVAL_H
 
 #include <iostream>
 #include <fstream>
@@ -62,4 +62,4 @@ bool read_and_validate_type(std::stringstream &linestream, T &par, const std::st
     return true;
 }
 
-#endif //INPUTVAL_H
+#endif //GENERALMETAPOP_INPUTVAL_H

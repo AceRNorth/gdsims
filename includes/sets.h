@@ -1,5 +1,5 @@
-#ifndef SETS_H
-#define SETS_H
+#ifndef GENERALMETAPOP_SETS_H
+#define GENERALMETAPOP_SETS_H
 #include "InputParams.h"
 
 InputParams set1 = {
@@ -610,4 +610,4 @@ InputParams set16 = {
     .set_label = 16
 };
 
-#endif //SETS_H
+#endif //GENERALMETAPOP_SETS_H

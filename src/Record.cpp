@@ -58,7 +58,7 @@ void Record::record_coords(const std::vector<Patch*> &sites)
 }
 
 // Records the total number of males (over all sites) of each genotype
-void Record::record_global(int day, const std::array<long long int, num_gen> &tot_M_gen)
+void Record::record_global(int day, const std::array<long long int, constants::num_gen> &tot_M_gen)
 {
 	global_data << day;
 	for (const auto& m_gen : tot_M_gen) {

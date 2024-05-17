@@ -1,5 +1,5 @@
-#ifndef DISPERSAL_H
-#define DISPERSAL_H
+#ifndef GENERALMETAPOP_DISPERSAL_H
+#define GENERALMETAPOP_DISPERSAL_H
 
 #include <vector>
 #include <array>
@@ -9,8 +9,6 @@
 #include "Patch.h"
 #include "Point.h"
 #include "BoundaryStrategy.h"
-
-using namespace constants;
 
 class Patch;
 
@@ -36,8 +34,8 @@ protected:
 
 	BoundaryStrategy* boundary_strategy;
 
-	std::vector<std::array<long long int, num_gen>> M_dispersing_out(const std::vector<Patch*> &sites);
-	std::vector<std::array<std::array<long long int, num_gen>, num_gen>> F_dispersing_out(const std::vector<Patch*> &sites);
+	std::vector<std::array<long long int, constants::num_gen>> M_dispersing_out(const std::vector<Patch*> &sites);
+	std::vector<std::array<std::array<long long int, constants::num_gen>, constants::num_gen>> F_dispersing_out(const std::vector<Patch*> &sites);
 };
 
 
@@ -68,4 +66,4 @@ private:
     std::vector<std::vector<double>> compute_distances(const std::vector<Patch*> &sites);
 };
 
-#endif //DISPERSAL_H
+#endif //GENERALMETAPOP_DISPERSAL_H

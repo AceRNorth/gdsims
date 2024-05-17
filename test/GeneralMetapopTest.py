@@ -123,7 +123,7 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\edge_radial"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel"
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
@@ -134,7 +134,7 @@ sets = [i for i in range(1, 17)]
 num_runs_list = [2 for i in range(0, len(sets))]
 # num_runs_list = [2, 3, 1]
 
-make_plot = False
+make_plot = True
 
 for j in range(0, len(sets)):
     print("Set " + str(sets[j]))

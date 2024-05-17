@@ -1,5 +1,5 @@
-#ifndef PARAMS_H
-#define PARAMS_H
+#ifndef GENERALMETAPOP_PARAMS_H
+#define GENERALMETAPOP_PARAMS_H
 
 // ** These parameters should not be modified after being passed to the Simulation or Model **
 
@@ -97,4 +97,4 @@ struct RecordParams {
 	int set_label; // 'set of runs' index label for output files
 };
 
-#endif //PARAMS_H
+#endif //GENERALMETAPOP_PARAMS_H

@@ -1,13 +1,11 @@
-#ifndef AESTIVATION_H
-#define AESTIVATION_H
+#ifndef GENERALMETAPOP_AESTIVATION_H
+#define GENERALMETAPOP_AESTIVATION_H
 
 #include <vector>
 #include <array>
 #include "Params.h"
 #include "Patch.h"
 #include "constants.h"
-
-using namespace constants;
 
 class Patch;
 
@@ -30,7 +28,7 @@ private:
 
 	// number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j that have gone into
 	// aestivation from each patch
-	std::vector<std::array<std::array<long long int, num_gen>, num_gen>> aes_F;
+	std::vector<std::array<std::array<long long int, constants::num_gen>, constants::num_gen>> aes_F;
 };
 
-#endif //AESTIVATION_H
+#endif //GENERALMETAPOP_AESTIVATION_H

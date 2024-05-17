@@ -1,5 +1,5 @@
-#ifndef BOUNDARYSTRATEGY_H
-#define BOUNDARYSTRATEGY_H
+#ifndef GENERALMETAPOP_BOUNDARYSTRATEGY_H
+#define GENERALMETAPOP_BOUNDARYSTRATEGY_H
 
 #include "Point.h"
 
@@ -24,4 +24,4 @@ public:
     double distance(const Point& p1, const Point& p2) override;
 };
 
-#endif //BOUNDARYSTRATEGY_H
+#endif //GENERALMETAPOP_BOUNDARYSTRATEGY_H

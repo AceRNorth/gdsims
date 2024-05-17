@@ -4,8 +4,6 @@
 #include "random.h"
 #include "constants.h"
 
-using namespace constants;
-
 Aestivation::Aestivation(AestivationParams *params, int sites_size) 
 {
 	psi = params->psi;
@@ -17,9 +15,9 @@ Aestivation::Aestivation(AestivationParams *params, int sites_size)
 
 	aes_F.clear();
 
-	std::array<std::array<long long int, num_gen>, num_gen> f;
-	for (int i=0; i < num_gen; ++i) {
-		for (int j=0; j < num_gen; ++j) {
+	std::array<std::array<long long int, constants::num_gen>, constants::num_gen> f;
+	for (int i=0; i < constants::num_gen; ++i) {
+		for (int j=0; j < constants::num_gen; ++j) {
 			f[i][j] = 0;
 		}
 	}
@@ -32,13 +30,13 @@ Aestivation::Aestivation(AestivationParams *params, int sites_size)
 // Sends a number of females into aestivation, with numbers that succeed depending on the survival rate of going into aestivation
 void Aestivation::hide(std::vector<Patch*> &sites) 
 {
-	std::array<std::array<long long int, num_gen>, num_gen> f;
-	std::array<std::array<long long int, num_gen>, num_gen> f_try;
-	std::array<std::array<long long int, num_gen>, num_gen> f_aes;
+	std::array<std::array<long long int, constants::num_gen>, constants::num_gen> f;
+	std::array<std::array<long long int, constants::num_gen>, constants::num_gen> f_try;
+	std::array<std::array<long long int, constants::num_gen>, constants::num_gen> f_aes;
 	for (int pat=0; pat < sites.size(); ++pat) {
 		f = sites[pat]->get_F();
-		for (int i=0; i < num_gen; ++i) {
-			for (int j=0; j < num_gen; ++j) {
+		for (int i=0; i < constants::num_gen; ++i) {
+			for (int j=0; j < constants::num_gen; ++j) {
 				f_try[i][j] = random_binomial(f[i][j], psi); // number of females that attempt to go into aestivation
 				f_aes[i][j] = random_binomial(f_try[i][j], 1 - mu_aes);	// number that survive going into aestivation
 				aes_F[pat][i][j] += f_aes[i][j]; // move aestivating females into a separate box variable
@@ -53,10 +51,10 @@ void Aestivation::wake(int day, std::vector<Patch*> &sites)
 {
 	double prob = 1.0 / (1.0 + t_wake2 - (day%365)); // probability of a female waking on a given day
 	
-	std::array<std::array<long long int, num_gen>, num_gen> f_w;
+	std::array<std::array<long long int, constants::num_gen>, constants::num_gen> f_w;
 	for (int pat=0; pat < sites.size(); ++pat) {
-		for (int i=0; i < num_gen; ++i) {
-			for(int j=0; j < num_gen; ++j) {
+		for (int i=0; i < constants::num_gen; ++i) {
+			for(int j=0; j < constants::num_gen; ++j) {
 				// number of females that wake up from aestivation on the given day
 				f_w[i][j] = random_binomial(aes_F[pat][i][j], prob);
 				aes_F[pat][i][j] -= f_w[i][j];

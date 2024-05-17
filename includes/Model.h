@@ -1,5 +1,5 @@
-#ifndef MODEL_H
-#define MODEL_H
+#ifndef GENERALMETAPOP_MODEL_H
+#define GENERALMETAPOP_MODEL_H
 
 #include <vector>
 #include <array>
@@ -12,8 +12,6 @@
 #include "Seasonality.h"
 #include "Point.h"
 
-using namespace constants;
-
 class Patch;
 class Aestivation;
 class Dispersal;
@@ -23,10 +21,10 @@ class Seasonality;
 // Runs the model.
 class Model {
 public:
-	Model(ModelParams *params, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_frac, SineRainfallParams *season, double a0_mean, double a0_var,
-	 BoundaryType boundary = BoundaryType::Toroid, DispersalType disp_type = DispersalType::DistanceKernel, std::vector<Point> coords = {});
-	Model(ModelParams *params, const std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> &inher_frac, InputRainfallParams *season, double a0_mean, double a0_var,
-	 BoundaryType boundary = BoundaryType::Toroid, DispersalType disp_type = DispersalType::DistanceKernel, std::vector<Point> coords = {});
+	Model(ModelParams *params, const std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> &inher_frac, SineRainfallParams *season,
+	 double a0_mean, double a0_var, BoundaryType boundary = BoundaryType::Toroid, DispersalType disp_type = DispersalType::DistanceKernel, std::vector<Point> coords = {});
+	Model(ModelParams *params, const std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> &inher_frac, InputRainfallParams *season,
+	 double a0_mean, double a0_var, BoundaryType boundary = BoundaryType::Toroid, DispersalType disp_type = DispersalType::DistanceKernel, std::vector<Point> coords = {});
 	~Model();
 	void initiate();
 	void run(int day);
@@ -35,7 +33,7 @@ public:
 	long long int calculate_tot_M();
 	long long int calculate_tot_V();
 	long long int calculate_tot_F();
-	std::array<long long int, num_gen> calculate_tot_M_gen();
+	std::array<long long int, constants::num_gen> calculate_tot_M_gen();
 	std::vector<Patch*> get_sites() const;
 	int get_day() const;
 	double get_alpha(double alpha0);
@@ -58,12 +56,12 @@ private:
 
 	// juvenile development parameters - common for all Patches
 	int min_dev; // minimum development time for a juvenile (in days)
-	std::array<double, max_dev+1> dev_duration_probs; // array of probabilities of juvenile development duration for a new juvenile
+	std::array<double, constants::max_dev+1> dev_duration_probs; // array of probabilities of juvenile development duration for a new juvenile
 	// (index indicates the number of days to develop or, equivalently, the age class the new juvenile starts at)
 
 	// inheritance
 	// f_ijk is the fraction of genotype k offspring from mother with genotype i mated to father with genotype j
-	std::array<std::array<std::array <double, num_gen>, num_gen>, num_gen> inher_fraction;
+	std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> inher_fraction;
 
 	// Patch construction parameters
 	double alpha0_mean; // mean of the baseline contribution to the carrying capacity
@@ -83,4 +81,4 @@ private:
 	void juv_eclose();
 };
 
-#endif //MODEL_H
+#endif //GENERALMETAPOP_MODEL_H

@@ -1,5 +1,5 @@
-#ifndef POINT_H
-#define POINT_H
+#ifndef GENERALMETAPOP_POINT_H
+#define GENERALMETAPOP_POINT_H
 
 // Represents a 2D point.
 struct Point {
@@ -7,4 +7,4 @@ struct Point {
 	double y = 0;
 };
 
-#endif //POINT_H
+#endif //GENERALMETAPOP_POINT_H

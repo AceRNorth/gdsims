@@ -1,5 +1,5 @@
-#ifndef SEASONALITY_H
-#define SEASONALITY_H
+#ifndef GENERALMETAPOP_SEASONALITY_H
+#define GENERALMETAPOP_SEASONALITY_H
 
 #include <vector>
 #include "Params.h"
@@ -32,4 +32,4 @@ private:
     std::vector<double> rainfall; // daily rainfall for every day of the year
 };
 
-#endif //SEASONALITY_H
+#endif //GENERALMETAPOP_SEASONALITY_H

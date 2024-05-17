@@ -3,8 +3,6 @@
 #include "Seasonality.h"
 #include "constants.h"
 
-using namespace constants;
-
 SineRainfall::SineRainfall(SineRainfallParams *params): Seasonality(params->alpha1) 
 {
     amp = params->amp;
@@ -13,7 +11,7 @@ SineRainfall::SineRainfall(SineRainfallParams *params): Seasonality(params->alph
 // Computes the carrying-capacity alpha value for the given day and alpha0. Models rainfall contribution as a sine wave.
 double SineRainfall::alpha(int day, double alpha0)
 {
-    double alpha = alpha0 + alpha1*(1 + amp*std::sin(2 * PI * day/365));
+    double alpha = alpha0 + alpha1*(1 + amp*std::sin(2 * constants::pi * day/365));
 	return alpha;
 }
 

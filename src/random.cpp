@@ -6,8 +6,6 @@
 #include "random.h"
 #include "constants.h"
 
-using namespace constants;
-
 // random number seed
 std::random_device rd;
 //std::mt19937 twister(rd());
@@ -105,7 +103,7 @@ std::vector<long long int> random_multinomial(long long int n, const std::vector
 }
 
 // Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities <probs>
-std::vector<long long int> random_multinomial(long long int n, const std::array<long long int, num_gen>& probs) 
+std::vector<long long int> random_multinomial(long long int n, const std::array<long long int, constants::num_gen>& probs) 
 {
 	int num_outcomes = probs.size();
 	double sum_p = 0.0;
@@ -130,7 +128,7 @@ std::vector<long long int> random_multinomial(long long int n, const std::array<
 }
 
 // Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities <probs>
-std::vector<long long int> random_multinomial(long long int n, const std::array<double, max_dev+1>& probs) 
+std::vector<long long int> random_multinomial(long long int n, const std::array<double, constants::max_dev+1>& probs) 
 {
 	int num_outcomes = probs.size();
 	double sum_p = 0.0;

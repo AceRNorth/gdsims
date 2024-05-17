@@ -1,5 +1,5 @@
-#ifndef GDRELEASE_H
-#define GDRELEASE_H
+#ifndef GENERALMETAPOP_GDRELEASE_H
+#define GENERALMETAPOP_GDRELEASE_H
 
 #include <vector>
 #include "Params.h"
@@ -23,4 +23,4 @@ private:
 	void put_driver_sites(std::vector<Patch*>& rel_sites, std::vector<Patch*> &sites);
 };
 
-#endif //GDRELEASE_H
+#endif //GENERALMETAPOP_GDRELEASE_H

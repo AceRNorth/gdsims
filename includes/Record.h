@@ -1,5 +1,5 @@
-#ifndef RECORD_H
-#define RECORD_H
+#ifndef GENERALMETAPOP_RECORD_H
+#define GENERALMETAPOP_RECORD_H
 
 #include <sstream>
 #include <fstream>
@@ -9,15 +9,13 @@
 #include "Patch.h"
 #include "Params.h"
 
-using namespace constants;
-
 // Records model data.
 class Record {
 public:
 	Record(RecordParams *rec_params, int rep);
 	~Record();
 	void record_coords(const std::vector<Patch*> &sites);
-	void record_global(int day, const std::array<long long int, num_gen> &tot_M_gen);
+	void record_global(int day, const std::array<long long int, constants::num_gen> &tot_M_gen);
 	void output_totals(int day, long long int tot_J, long long int tot_M, long long int tot_V, long long int tot_F);
 	void record_local(int day, const std::vector<Patch*> &sites);
 
@@ -40,4 +38,4 @@ private:
 	std::ofstream local_data, global_data, coord_list; // file objects
 };
 
-#endif //RECORD_H
+#endif //GENERALMETAPOP_RECORD_H
