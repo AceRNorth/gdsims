@@ -14,7 +14,7 @@
 int main()
 {	
 	std::vector<InputParams> sets = {set1, set2, set3, set4, set5, set6, set7, set8, set9, set10, set11, set12, set13, set14, set15,
-	 set16};
+	 set16, set17};
 	
 	// input parameters
 	// progression parameters
@@ -90,9 +90,10 @@ int main()
 		std::cout << "Set 14 - low seasonality, pre-defined rainfall \n";
 		std::cout << "Set 15 - high seasonality, pre-defined rainfall \n";
 		std::cout << "Set 16 - alpha0 variance \n";
+		std::cout << "Set 17 - multiple release times \n";
 		std::cout << "Set 100  - custom \n";
 		std::cout << "Default parameter sets include gene drive and dispersal but don't include aestivation unless otherwise stated. \n \n";
-		std::cout << "Please select which parameter set (1-16, 100) you'd like to preview, \n";
+		std::cout << "Select which parameter set (1-" << std::to_string(sets.size()) << ", 100) you'd like to preview, \n";
 		std::cout << "or enter 0 to exit the program:" << std::endl;
 
 		int option1;
@@ -104,7 +105,7 @@ int main()
 			do {
 				std::cin.clear();
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "Invalid option. Please enter a number between 0 and 16 (or 100):" << std::endl;
+				std::cout << "Invalid option. Please enter a number between 0 and " << std::to_string(sets.size()) << " (or 100):" << std::endl;
 				std::cin >> option1;
 			} while (std::cin.fail() || std::cin.peek() != '\n' || option1 < 0 || (option1 > sets.size() && option1 != 100));
 		}
@@ -152,7 +153,7 @@ int main()
 				std::cout << "set_label            " << "\n"; 
 
 				std::string params_filename;
-				std::cout << "\n" << "Please enter the filename of the parameters file (e.g. 'params.txt'). ";
+				std::cout << "\n" << "Enter the filename of the parameters file (e.g. 'params.txt'). ";
 				std::cout << "This must be a .txt file with parameter values in the above order and format: " << std::endl;
 				std::cin >> params_filename;
 
@@ -161,7 +162,7 @@ int main()
 					do {
 					std::cin.clear();
 					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-					std::cout << "Invalid filename. Please make sure the file is in your current directory and enter the filename again:" << std::endl;
+					std::cout << "Invalid filename. Make sure the file is in your current directory and enter the filename again:" << std::endl;
 					std::cin >> params_filename;
 					params_filepath = std::filesystem::path(std::string("./")+params_filename);
 					} while (std::cin.fail() || !std::filesystem::exists(params_filepath) || !std::filesystem::is_regular_file(params_filepath));
@@ -410,16 +411,17 @@ int main()
 										std::cout << "2 - Dispersal type \n";
 										std::cout << "3 - Custom rainfall \n";
 										std::cout << "4 - Custom patch coordinates \n";
+										std::cout << "5 - Multiple gene drive release times \n";
 										std::cout << "0 - Exit advanced options and run the program" << std::endl;
 										std::cin.clear();
 										std::cin >> option4;
-										if (std::cin.fail() || std::cin.peek() != '\n' || option4 < 0 || option4 > 4) {
+										if (std::cin.fail() || std::cin.peek() != '\n' || option4 < 0 || option4 > 5) {
 											do {
 												std::cin.clear();
 												std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-												std::cout << "Invalid option. Please enter a number between 0 and 4:" << std::endl;
+												std::cout << "Invalid option. Please enter a number between 0 and 5:" << std::endl;
 												std::cin >> option4;
-											} while (std::cin.fail() || std::cin.peek() != '\n' || option4 < 0 || option4 > 4);
+											} while (std::cin.fail() || std::cin.peek() != '\n' || option4 < 0 || option4 > 5);
 										}
 										if (option4 == 0) {
 											invalid_option_adv_enter = false;
@@ -485,8 +487,8 @@ int main()
 											std::cout << "Note: the resp value used for custom rainfall will be the one ";
 											std::cout << "previously entered as part of the simulation parameters." << std::endl;
 											std::string rainfall_filename;
-											std::cout << "Please enter the filename of the rainfall file (e.g. 'rainfall.txt'). ";
-											std::cout << "This must be a .txt file: " << std::endl;
+											std::cout << "Enter the filename of the rainfall file (e.g. 'rainfall.txt'). ";
+											std::cout << "This must be a .txt file with values delimited by \\n: " << std::endl;
 											std::cin >> rainfall_filename;
 
 											auto rainfall_filepath = std::filesystem::path(std::string("./")+rainfall_filename);
@@ -495,7 +497,7 @@ int main()
 												do {
 												std::cin.clear();
 												std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-												std::cout << "Invalid filename. Please make sure the file is in your current directory ";
+												std::cout << "Invalid filename. Make sure the file is in your current directory ";
 												std::cout << "and enter the filename again:" << std::endl;
 												std::cin >> rainfall_filename;
 												rainfall_filepath = std::filesystem::path(std::string("./")+rainfall_filename);
@@ -507,9 +509,9 @@ int main()
 										}
 										else if (option4 == 4) {
 											std::string coords_filename;
-											std::cout << "\n" << "Please enter the filename of the patch coordinates file ";
+											std::cout << "\n" << "Enter the filename of the patch coordinates file ";
 											std::cout << "(e.g. 'coords.txt'). ";
-											std::cout << "This must be a .txt file in x y \\n x y table format." << std::endl;
+											std::cout << "This must be a .txt file in x y \\n x y table format:" << std::endl;
 											std::cin >> coords_filename;
 
 											auto coords_filepath = std::filesystem::path(std::string("./")+coords_filename);
@@ -518,7 +520,7 @@ int main()
 												do {
 												std::cin.clear();
 												std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-												std::cout << "Invalid filename. Please make sure the file is in your current directory ";
+												std::cout << "Invalid filename. Make sure the file is in your current directory ";
 												std::cout << "and enter the filename again:" << std::endl;
 												std::cin >> coords_filename;
 												coords_filepath = std::filesystem::path(std::string("./")+coords_filename);
@@ -527,6 +529,29 @@ int main()
 											}
 											simulation_1.set_coords(coords_filename);
 											std::cout << "Custom coordinates set." << std::endl;
+										}
+										else if (option4 == 5) {
+											std::string times_filename;
+											std::cout << "\n" << "Enter the filename of the gene drive release times";
+											std::cout << "(e.g. 'rel_times.txt'). ";
+											std::cout << "This must be a .txt file, with values delimited by \\n:" << std::endl;
+											std::cin >> times_filename;
+
+											auto times_filepath = std::filesystem::path(std::string("./")+times_filename);
+											if (std::cin.fail() || !std::filesystem::exists(times_filepath) ||
+											 !std::filesystem::is_regular_file(times_filepath)) {
+												do {
+												std::cin.clear();
+												std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+												std::cout << "Invalid filename. Make sure the file is in your current directory ";
+												std::cout << "and enter the filename again:" << std::endl;
+												std::cin >> times_filename;
+												times_filepath = std::filesystem::path(std::string("./")+times_filename);
+												} while (std::cin.fail() || !std::filesystem::exists(times_filepath) ||
+												 !std::filesystem::is_regular_file(times_filepath));
+											}
+											simulation_1.set_release_times(times_filename);
+											std::cout << "Multiple release times set." << std::endl;
 										}
 									}
 									break;
@@ -624,9 +649,8 @@ int main()
 
 						// run simulation
 						Simulation simulation(sim_params);
-						if (option1 == 14 || option1 == 15) {
-							simulation.set_rainfall("rainfall.txt");
-						} 
+						if (option1 == 14 || option1 == 15) {simulation.set_rainfall("rainfall.txt");}
+						if (option1 == 17) {simulation.set_release_times("rel_times.txt");}
 						simulation.set_inheritance(inher);
 						simulation.run_reps();
 

@@ -12,7 +12,7 @@ exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming
 
 # Selecting sets to run
 sets = [i for i in range(1, 17)]
-#sets = [12, 13]
+sets = [17]
 
 # ** Select other combinations of sets by listing below and uncommenting**
 # sets = [1, 4, 7]
@@ -29,7 +29,7 @@ for j in range(0, len(sets)):
         
 #%% Make .txt params files for each test set of parameters
 
-param_csv_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\Parameters - new layout v5.csv"
+param_csv_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\GDSiMS Documentation and Files\\Parameters - new layout v6.csv"
 
 # Read input parameter set from .csv file
 params = pd.read_table(param_csv_filepath, delimiter=",")
@@ -40,6 +40,7 @@ labels = labels.drop(index=0)
 sets = [col for col in params if col.startswith('set ')]
 for i in range(0, len(sets)):
     sets[i] = int(sets[i].removeprefix("set "))
+sets = [17]
 
 
 for j in range(0, len(sets)):
@@ -59,15 +60,18 @@ for j in range(0, len(sets)):
 output_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build"
 exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\gdsimsapp.exe"
 
-sets = [i for i in range(1, 17)]
-#sets = [1]
+sets = [i for i in range(1, 18)]
+#sets = [17]
 
 for j in range(0, len(sets)):
     params_filename = "params_set" + str(sets[j]) + ".txt"
     input_string = "100" + "\n" + params_filename + "\n" + "y" +"\n" + "y" + "\n"
     
-    if j == (14 - 1) or j == (15 - 1):
+    if sets[j] == 14 or sets[j] == 15:
         input_string += "3" + "\n" + "rainfall.txt" + "\n"
+    if sets[j] == 17:
+        input_string += "5" + "\n" + "rel_times.txt" + "\n"
+        
     # if want advanced options, uncomment below line
     # e.g. setting boundary type to edge and dispersal type to radial
     input_string += "1" + "\n" + "e" + "\n" + "2" + "\n" + "r" + "\n" 
@@ -123,18 +127,18 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_radial"
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
-sets = [i for i in range(1, 17)]
-#sets = [12, 13]
+sets = [i for i in range(1, 18)]
+#sets = [17]
 
 # ** Modify the list of num_runs in each set selected as needed **
 num_runs_list = [2 for i in range(0, len(sets))]
 # num_runs_list = [2, 3, 1]
 
-make_plot = True
+make_plot = False
 
 for j in range(0, len(sets)):
     print("Set " + str(sets[j]))

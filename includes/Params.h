@@ -1,6 +1,8 @@
 #ifndef GENERALMETAPOP_PARAMS_H
 #define GENERALMETAPOP_PARAMS_H
 
+#include <vector>
+
 // ** These parameters should not be modified after being passed to the Simulation or Model **
 
 // Simulation progression parameters
@@ -34,9 +36,9 @@ struct InheritanceParams {
 
 // Gene drive release model parameters
 struct ReleaseParams {
-	int driver_start; // time to start releasing drive alleles into the mosquito population
 	int num_driver_M; // number of drive heterozygous (WD) male mosquitoes per release
 	int num_driver_sites; // number of gene drive release sites per year
+	std::vector<int> release_times; // days on which the gene drive mosquitoes will be released
 };
 
 // Dispersal model parameters

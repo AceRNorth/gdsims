@@ -15,9 +15,10 @@ public:
 	bool is_release_time(int day);
 
 private:
-	int driver_start; // time to start releasing drive alleles into the mosquito population
 	int num_driver_M; // number of drive heterozygous (WD) male mosquitoes per release
 	int num_driver_sites; // number of gene drive release sites per year
+	std::vector<int> release_times; // days on which the gene drive mosquitoes will be released
+	std::vector<std::vector<Patch*>> release_sites;
 
 	std::vector<Patch*> select_driver_sites(int num_rel_sites, const std::vector<Patch*> &sites);
 	void put_driver_sites(std::vector<Patch*>& rel_sites, std::vector<Patch*> &sites);

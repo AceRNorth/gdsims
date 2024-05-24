@@ -28,7 +28,7 @@ Simulation::Simulation(InputParams input)
 	model_params->life->mean_dev = input.mean_dev;
 	model_params->life->min_dev = input.min_dev;
 	model_params->rel = new ReleaseParams;
-	model_params->rel->driver_start = input.driver_start;
+	model_params->rel->release_times.push_back(input.driver_start);
 	model_params->rel->num_driver_M = input.num_driver_M;
 	model_params->rel->num_driver_sites = input.num_driver_sites;
 	model_params->disp = new DispersalParams;
@@ -184,8 +184,45 @@ void Simulation::set_rainfall(const std::string& filename)
 			input_rainfall_params->rainfall = temp;
 		}
 		else {
-			std::cout << "temp size: " << temp.size() << std::endl;
 			std::cerr << "Error: the number of valid daily rainfall values in the file is not 365 or max_t." << std::endl;
+		}
+	}		
+}
+
+void Simulation::set_release_times(const std::string& filename) 
+{
+	auto filepath = std::filesystem::path(std::string("./")+filename);
+	if (!std::filesystem::exists(filepath) || !std::filesystem::is_regular_file(filepath)) {
+		std::cerr << "Invalid filename. Make sure the file is in the program directory." << std::endl;
+	}
+	else {
+		std::ifstream file(filename);
+		std::string line;
+		std::vector<int> temp;
+		int tot_err = 0;
+		if (file.is_open()) {
+			for(int i=0; std::getline(file, line); ++i) {
+				std::stringstream linestream(line);
+				if (line.size() == 0) break;
+
+				int r_d;
+				int err = 0;
+				if (!read_and_validate_type(linestream, r_d, "release_day" + std::to_string(i+1), "int")) err++;
+				if (!check_bounds("release_day" + std::to_string(i+1), r_d, 0, true, max_t, true)) err++;
+
+				if (err == 0) {
+					temp.push_back(r_d);
+				}
+				else tot_err += 1;
+			}
+		}
+		file.close();
+
+		if (tot_err == 0) {
+			model_params->rel->release_times = temp;
+		}
+		else {
+			std::cerr << "There were errors in the file. The simulation will run with rel_times = driver_start" << std::endl;
 		}
 	}		
 }

@@ -610,4 +610,42 @@ InputParams set16 = {
     .set_label = 16
 };
 
+InputParams set17 = {
+    .num_runs = 2, 
+    .max_t = 1000,
+    .num_pat = 50,
+    .side = 1.0,
+    .mu_j = 0.05, 
+    .mu_a = 0.125,
+    .beta = 100.0,
+    .theta = 9.0,
+    .mean_dev = 15.0,
+    .min_dev = 10,
+    .gamma = 0.025,
+    .xi = 0.2, 
+    .e = 0.95,
+    .driver_start = 200,
+    .num_driver_M = 10000, 
+    .num_driver_sites = 5,
+    .disp_rate = 0.01,
+    .max_disp = 0.2, 
+    .psi = 0.0,
+    .mu_aes = 0.0, 
+    .t_hide1 = 0,
+    .t_hide2 = 0, 
+    .t_wake1 = 0, 
+    .t_wake2 = 0,
+    .alpha0_mean = 100000.0,
+    .alpha0_variance = 0.0,
+    .alpha1 = 0.0,
+    .amp = 0.0,
+    .resp = 0.0,
+    .rec_start = 0,
+    .rec_end = 1000,
+    .rec_interval_global = 1,
+    .rec_interval_local = 200,
+    .rec_sites_freq = 1,
+    .set_label = 17
+};
+
 #endif //GENERALMETAPOP_SETS_H

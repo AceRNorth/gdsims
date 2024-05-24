@@ -6,9 +6,10 @@
 
 GDRelease::GDRelease(ReleaseParams* params)
 {
-	driver_start = params->driver_start;
 	num_driver_M = params->num_driver_M;
 	num_driver_sites = params->num_driver_sites;
+	release_times = params->release_times;
+	release_sites.clear();
 }
 
 // Releases the gene drive mosquitoes into the simulation area
@@ -17,11 +18,12 @@ void GDRelease::release_gene_drive(std::vector<Patch*> &sites)
 	int num_rel_sites = std::min(int(sites.size()), num_driver_sites);
 	std::vector<Patch*> rel_sites = select_driver_sites(num_rel_sites, sites);
 	put_driver_sites(rel_sites, sites);
+	release_sites.push_back(rel_sites); // store release sites for recording purposes
 }
 
 bool GDRelease::is_release_time(int day) 
 {
-	return day == driver_start;
+	return (std::find(release_times.begin(), release_times.end(), day) == release_times.end()) ? false : true;
 }
 
 // Selects randomly and returns the release sites for the gene drive
