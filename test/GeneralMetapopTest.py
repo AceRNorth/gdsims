@@ -7,12 +7,11 @@ import matplotlib.pyplot as plt
 #%% Run C++ Program with UI - pre-defined sets
 
 # ** Modify output files folder path and .exe filepath as needed! **
-output_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build"
-exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\gdsimsapp.exe"
+output_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapopCopy\\GeneralMetapop\\build"
+exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapopCopy\\GeneralMetapop\\build\\gdsimsapp.exe"
 
 # Selecting sets to run
-sets = [i for i in range(1, 17)]
-sets = [17]
+sets = [i for i in range(1, 18)]
 
 # ** Select other combinations of sets by listing below and uncommenting**
 # sets = [1, 4, 7]
@@ -26,7 +25,47 @@ for j in range(0, len(sets)):
     print("Running set", sets[j], "...")
     proc = subprocess.Popen([exe_filepath], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
     outs, errs = proc.communicate(input=input_string)
+    
+#%% Run C++ program with alternate main - text file input
+
+output_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build"
+exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\gdsimsapp.exe"
+
+# Selecting sets to run
+sets = [i for i in range(1, 18)]
+#first_sets = [i for i in range(1, 14)]
+#sets = first_sets + [16]
+#sets = [14, 15]
+
+# ** Select other combinations of sets by listing below and uncommenting**
+# sets = [1, 4, 7]
+
+for j in range(0, len(sets)):
+        input_filename = "input_params_set" + str(sets[j]) + "_tr.txt"
+        input_string = input_filename + "\n"
         
+        # Run C++ model with input data
+        os.chdir(output_folder_path) # directory for output files
+        # .exe file for the program
+        print("Running set", sets[j], "...")
+        proc = subprocess.Popen([exe_filepath], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
+        outs, errs = proc.communicate(input=input_string)
+
+        
+#%% Make .txt coords files for each test set of parameters
+data_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_radial"
+output_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build"
+
+sets = [i for i in range(1, 18)]
+num_runs_list = [2 for i in range(0, len(sets))]
+
+for j in range(0, len(sets)):
+    for i in range(1, num_runs_list[j] + 1):
+        os.chdir(os.path.join(data_filepath, "set" + str(sets[j])))
+        coords = np.loadtxt("CoordinateList" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2, usecols=(1,2), ndmin=2)
+        os.chdir(output_filepath)
+        np.savetxt("coords_set" + str(sets[j]) + "run" + str(i) + "_tr.txt", coords, fmt='%s')
+
 #%% Make .txt params files for each test set of parameters
 
 param_csv_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\GDSiMS Documentation and Files\\Parameters - new layout v6.csv"
@@ -40,19 +79,25 @@ labels = labels.drop(index=0)
 sets = [col for col in params if col.startswith('set ')]
 for i in range(0, len(sets)):
     sets[i] = int(sets[i].removeprefix("set "))
-sets = [17]
-
+#sets = [17]
 
 for j in range(0, len(sets)):
     if ("set " + str(sets[j])) in params:
         input_data = params[["set " + str(sets[j])]]
         input_data = input_data.drop(index=0)
-        input_data = input_data.rename(dict(zip(input_data.index, labels["Parameter"])), axis=0)
-        display(input_data)
+        #input_data = input_data.rename(dict(zip(input_data.index, labels["Parameter"])), axis=0)
         
         os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build")
-        filename = "params_set" + str(sets[j]) + ".txt"
-        input_data.to_csv(filename, header=False, index=False)
+        filename = "input_" +"params_set" + str(sets[j]) + "_tr.txt" ##
+        input_data.to_csv(filename, sep='\n', header=False, index=False)
+        with open(filename, 'a') as f: ##
+            f.write("t \n" + "r \n" + "coords_set" + str(sets[j]) + "run1" + "_tr.txt" + "\n") ##
+            if (sets[j] == 14 or sets[j] == 15):
+                f.write("rainfall.txt" + "\n" + "none" + "\n")
+            elif sets[j] == 17:
+                f.write("none" + "\n" + "rel_times.txt" + "\n")
+            else:
+                f.write("none" + "\n" + "none" + "\n")
 
 #%% Run C++ Program with UI - custom set
 
@@ -61,7 +106,7 @@ output_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Progr
 exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\gdsimsapp.exe"
 
 sets = [i for i in range(1, 18)]
-#sets = [17]
+#sets = [1]
 
 for j in range(0, len(sets)):
     params_filename = "params_set" + str(sets[j]) + ".txt"
@@ -74,9 +119,10 @@ for j in range(0, len(sets)):
         
     # if want advanced options, uncomment below line
     # e.g. setting boundary type to edge and dispersal type to radial
-    input_string += "1" + "\n" + "e" + "\n" + "2" + "\n" + "r" + "\n" 
+    input_string += "1" + "\n" + "t" + "\n" + "2" + "\n" + "d" + "\n" 
     # e.g. setting custom coords file
     #input_string += "4" + "\n" + "coords_set1run1.txt" + "\n"
+    input_string += "4" + "\n" + "coords_set" + str(sets[j]) + "run1" + "_td.txt" + "\n"
     
     input_string += "0" + "\n"
         
@@ -127,18 +173,20 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_radial"
-test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel"
+test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapopCopy\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
 sets = [i for i in range(1, 18)]
-#sets = [17]
+#sets = [2]
+#first_sets = [i for i in range(1, 14)]
+#sets = first_sets + [16]
 
 # ** Modify the list of num_runs in each set selected as needed **
 num_runs_list = [2 for i in range(0, len(sets))]
 # num_runs_list = [2, 3, 1]
 
-make_plot = False
+make_plot = True
 
 for j in range(0, len(sets)):
     print("Set " + str(sets[j]))
