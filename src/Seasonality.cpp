@@ -33,11 +33,14 @@ InputRainfall::InputRainfall(InputRainfallParams *params): Seasonality(params->a
 double InputRainfall::alpha(int day, double alpha0)
 {
     double r_d;
-    if (rainfall.size() == 365) {
-        r_d = rainfall.size() > 365 ? rainfall.at(day) : rainfall.at(day%365);
-    }
+    if (day == 0) {r_d = rainfall.at(0);} // use day1 rainfall value for day0 as well, to set up the environmental conditions
     else {
-        r_d = rainfall.at(day);
+        if (rainfall.size() == 365) {
+            r_d = day <= 365 ? rainfall.at(day - 1) : rainfall.at(((day - 1)%365)); // simulation days start from 1
+        }
+        else {
+            r_d = rainfall.at(day - 1); // simulation days start from 1
+        }
     }
     double alpha = alpha0 + alpha1*(1 - std::exp(-resp * r_d));
     return alpha;
