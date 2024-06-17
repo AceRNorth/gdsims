@@ -76,6 +76,7 @@ Simulation::Simulation(InputParams input)
 	set_inheritance(mendelian);
 
 	sites_coords.clear();
+	release_sites.clear();
 	boundary_type = BoundaryType::Toroid;
 	disp_type = DispersalType::DistanceKernel;
 }
@@ -94,10 +95,11 @@ Simulation::~Simulation()
 	delete rec_params;
 }
 
-// Sets the sites' coordinates from a .txt file, unless any errors are thrown.
+// Sets the sites' coordinates from a .txt file, as well as which are release sites, unless any errors are thrown.
 void Simulation::set_coords(const std::string& filename) 
 {
 	sites_coords.clear();
+	release_sites.clear();
 
 	auto filepath = std::filesystem::path(std::string("./")+filename);
 	if (!std::filesystem::exists(filepath) || !std::filesystem::is_regular_file(filepath)) {
@@ -106,33 +108,45 @@ void Simulation::set_coords(const std::string& filename)
 	else {
 		std::ifstream file(filename);
 		std::string line;
-		std::vector<Point> temp;
+		std::vector<Point> temp_coords;
+		std::vector<int> temp_rel_sites;
 		if (file.is_open()) {
 			for(int i=0; std::getline(file, line); ++i) {
 				std::stringstream linestream(line);
 				if (line.size() == 0) break;
 
 				double x, y;
+				char is_rel_site;
 				int err = 0;
 				if (!read_and_validate_type(linestream, x, "x" + std::to_string(i+1), "double")) err++;
 				if (!read_and_validate_type(linestream, y, "y" + std::to_string(i+1), "double")) err++;
+				if (!read_and_validate_type(linestream, is_rel_site, "is_rel_site" + std::to_string(i+1), "char")) err++;
 				
 				if (boundary_type == Toroid) {
 					if (!check_bounds("x" + std::to_string(i+1), x, 0.0, true, model_params->area->side, true)) err++;
 					if (!check_bounds("y" + std::to_string(i+1), y, 0.0, true, model_params->area->side, true)) err++;
 				}
+				if (!(is_rel_site == 'y' || is_rel_site == 'n')) 
+				{
+					std::cerr << "Error: the parameter is_rel_site" << std::to_string(i+1) << " contains an invalid value. ";
+					std::cerr << "Allowed values are 'y' or 'n'." << std::endl;
+					err++;
+				} 
+
 				if (err == 0) {
-					temp.push_back({x, y});
+					temp_coords.push_back({x, y});
+					if (is_rel_site == 'y') {temp_rel_sites.push_back(i);}
 				}
 			}
 		}
 		file.close();
 
-		if (temp.size() != model_params->area->num_pat) {
+		if (temp_coords.size() != model_params->area->num_pat) {
 			std::cerr << "Error: the number of valid coordinates in the file does not match num_pat." << std::endl;
 		}
 		else {
-			sites_coords = temp;
+			sites_coords = temp_coords;
+			release_sites = temp_rel_sites;
 		}
 	}		
 }
@@ -340,10 +354,10 @@ void Simulation::run_reps()
 	for (int rep=1; rep <= num_runs; ++rep) {
 		Model* model;
 		if (!((input_rainfall_params->rainfall).empty())) {
-			model = new Model(model_params, inher_fraction, input_rainfall_params, alpha0_mean, alpha0_variance, boundary_type, disp_type, sites_coords);
+			model = new Model(model_params, inher_fraction, input_rainfall_params, alpha0_mean, alpha0_variance, release_sites, boundary_type, disp_type, sites_coords);
 		}
 		else {
-			model = new Model(model_params, inher_fraction, sine_rainfall_params, alpha0_mean, alpha0_variance, boundary_type, disp_type, sites_coords);
+			model = new Model(model_params, inher_fraction, sine_rainfall_params, alpha0_mean, alpha0_variance, release_sites, boundary_type, disp_type, sites_coords);
 		}
 		Record data(rec_params, rep);
 		model->initiate();

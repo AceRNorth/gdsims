@@ -511,7 +511,7 @@ int main()
 											std::string coords_filename;
 											std::cout << "\n" << "Enter the filename of the patch coordinates file ";
 											std::cout << "(e.g. 'coords.txt'). ";
-											std::cout << "This must be a .txt file in x y \\n x y table format:" << std::endl;
+											std::cout << "This must be a .txt file in x y char\\n x y char table format:" << std::endl;
 											std::cin >> coords_filename;
 
 											auto coords_filepath = std::filesystem::path(std::string("./")+coords_filename);

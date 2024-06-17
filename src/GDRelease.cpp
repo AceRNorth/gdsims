@@ -4,32 +4,39 @@
 #include "Patch.h"
 #include "random.h"
 
-GDRelease::GDRelease(ReleaseParams* params)
-{
-	num_driver_M = params->num_driver_M;
-	num_driver_sites = params->num_driver_sites;
-	release_times = params->release_times;
-	release_sites.clear();
-}
-
 // Releases the gene drive mosquitoes into the simulation area
-void GDRelease::release_gene_drive(std::vector<Patch*> &sites)
+void GDRelease::release_gene_drive(int day, std::vector<Patch*> &sites) 
 {
-	int num_rel_sites = std::min(int(sites.size()), num_driver_sites);
-	std::vector<Patch*> rel_sites = select_driver_sites(num_rel_sites, sites);
-	put_driver_sites(rel_sites, sites);
-	release_sites.push_back(rel_sites); // store release sites for recording purposes
+    if (is_release_time(day)) {
+        auto rel_sites = select_driver_sites(day, sites);
+        put_driver_sites(rel_sites);
+    }
 }
 
-bool GDRelease::is_release_time(int day) 
+// Checks if the day is a chosen release time
+bool GDRelease::is_release_time(int day)
 {
 	return (std::find(release_times.begin(), release_times.end(), day) == release_times.end()) ? false : true;
 }
 
-// Selects randomly and returns the release sites for the gene drive
-std::vector<Patch*> GDRelease::select_driver_sites(int num_rel_sites, const std::vector<Patch*> &sites) 
+// Adds drive heterozygous (WD) male mosquitoes to the release sites
+void GDRelease::put_driver_sites(std::vector<Patch*>& rel_sites) 
 {
-	std::vector<Patch*> rel_patches; // patches in which to release the gene drive
+    for (const auto& rel_pat : rel_sites) {
+		rel_pat->add_driver_M(num_driver_M);
+	}
+}
+
+RandomGDRelease::RandomGDRelease(ReleaseParams* params): GDRelease(params->num_driver_M, params->release_times)
+{
+	num_driver_sites = params->num_driver_sites;
+}
+
+// Selects random release sites for the selected release time
+std::vector<Patch*> RandomGDRelease::select_driver_sites(int day, const std::vector<Patch*> &sites)
+{
+    int num_rel_sites = std::min(int(sites.size()), num_driver_sites);
+    std::vector<Patch*> rel_patches; // patches in which to release the gene drive
 	while (rel_patches.size() < num_rel_sites) {
 		int rel_pat = random_discrete(0, sites.size() - 1);
 
@@ -42,10 +49,15 @@ std::vector<Patch*> GDRelease::select_driver_sites(int num_rel_sites, const std:
 	return rel_patches;
 }
 
-// Adds drive heterozygous (WD) male mosquitoes to the release sites
-void GDRelease::put_driver_sites(std::vector<Patch*>& rel_sites, std::vector<Patch*> &sites)
+SchedGDRelease::SchedGDRelease(ReleaseParams* params, std::vector<int> rel_sites, std::vector<Patch*> &sites): GDRelease(params->num_driver_M, params->release_times) 
+{	
+    for (const auto& s : rel_sites) { // convert indices relative to sites vector into patch pointers
+        release_sites.push_back(sites.at(s));
+    }
+}
+
+// Selects the release sites corresponding to the selected release time
+std::vector<Patch*> SchedGDRelease::select_driver_sites(int day, const std::vector<Patch*> &sites)
 {
-	for (const auto& rel_pat : rel_sites) {
-		rel_pat->add_driver_M(num_driver_M);
-	}
+	return release_sites;
 }

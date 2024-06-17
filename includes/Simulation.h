@@ -36,6 +36,7 @@ private:
 
 	// additional parameter options
 	std::vector<Point> sites_coords; // 2D coordinates for the sites on the simulated square
+	std::vector<int> release_sites; // indices relative to coords vector for the gene drive release sites
 	BoundaryType boundary_type;
 	DispersalType disp_type;
 

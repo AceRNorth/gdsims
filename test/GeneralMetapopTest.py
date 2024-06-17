@@ -53,7 +53,7 @@ for j in range(0, len(sets)):
 
         
 #%% Make .txt coords files for each test set of parameters
-data_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_radial"
+data_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\edge_distance_kernel"
 output_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build"
 
 sets = [i for i in range(1, 18)]
@@ -63,8 +63,16 @@ for j in range(0, len(sets)):
     for i in range(1, num_runs_list[j] + 1):
         os.chdir(os.path.join(data_filepath, "set" + str(sets[j])))
         coords = np.loadtxt("CoordinateList" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2, usecols=(1,2), ndmin=2)
+        rel_sites = []
+        for k in range(0, len(coords)):
+                if (k < 5):
+                    rel_sites.append(['y'])
+                else:
+                    rel_sites.append(['n'])
+        
+        coords = np.hstack((coords, rel_sites))
         os.chdir(output_filepath)
-        np.savetxt("coords_set" + str(sets[j]) + "run" + str(i) + "_tr.txt", coords, fmt='%s')
+        np.savetxt("coords_set" + str(sets[j]) + "run" + str(i) + "_ed.txt", coords, fmt='%s')
 
 #%% Make .txt params files for each test set of parameters
 
@@ -122,7 +130,7 @@ for j in range(0, len(sets)):
     input_string += "1" + "\n" + "e" + "\n" + "2" + "\n" + "r" + "\n" 
     # e.g. setting custom coords file
     #input_string += "4" + "\n" + "coords_set1run1.txt" + "\n"
-    #input_string += "4" + "\n" + "coords_set" + str(sets[j]) + "run1" + "_td.txt" + "\n"
+    input_string += "4" + "\n" + "coords_set" + str(sets[j]) + "run1" + "_er.txt" + "\n"
     
     input_string += "0" + "\n"
         
@@ -178,15 +186,13 @@ test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Pr
 
 # ** Modify the list of set numbers selected as needed **
 sets = [i for i in range(1, 18)]
-#sets = [14, 15]
-#first_sets = [i for i in range(1, 14)]
-#sets = first_sets + [16]
+#sets = [9]
 
 # ** Modify the list of num_runs in each set selected as needed **
 num_runs_list = [2 for i in range(0, len(sets))]
 # num_runs_list = [2, 3, 1]
 
-make_plot = False
+make_plot = True
 
 for j in range(0, len(sets)):
     print("Set " + str(sets[j]))

@@ -11,7 +11,7 @@
 using namespace constants;
 
 Model::Model(ModelParams *params, const std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> &inher_frac, SineRainfallParams *season,
- double a0_mean, double a0_var, BoundaryType boundary, DispersalType disp_type, std::vector<Point> coords)
+ double a0_mean, double a0_var, std::vector<int> rel_sites, BoundaryType boundary, DispersalType disp_type, std::vector<Point> coords)
 {
 	num_pat = params->area->num_pat;
 	side = params->area->side;
@@ -54,7 +54,13 @@ Model::Model(ModelParams *params, const std::array<std::array<std::array <double
 	}
 	dispersal = new_disp;
 
-	GDRelease* new_gd_release = new GDRelease(params->rel);
+	GDRelease* new_gd_release;
+	if (coords.empty()) {
+		new_gd_release = new RandomGDRelease(params->rel);
+	}
+	else {
+		new_gd_release = new SchedGDRelease(params->rel, rel_sites, sites);
+	}
 	gd_release = new_gd_release;
 
 	Seasonality* new_seasonality = new SineRainfall(season);
@@ -62,7 +68,7 @@ Model::Model(ModelParams *params, const std::array<std::array<std::array <double
 }
 
 Model::Model(ModelParams *params, const std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> &inher_frac, InputRainfallParams *season,
- double a0_mean, double a0_var, BoundaryType boundary, DispersalType disp_type, std::vector<Point> coords)
+ double a0_mean, double a0_var, std::vector<int> rel_sites, BoundaryType boundary, DispersalType disp_type, std::vector<Point> coords)
 {
 	num_pat = params->area->num_pat;
 	side = params->area->side;
@@ -105,7 +111,13 @@ Model::Model(ModelParams *params, const std::array<std::array<std::array <double
 	}
 	dispersal = new_disp;
 
-	GDRelease* new_gd_release = new GDRelease(params->rel);
+	GDRelease* new_gd_release;
+	if (!rel_sites.empty()) {
+		new_gd_release = new SchedGDRelease(params->rel, rel_sites, sites);
+	}
+	else {
+		new_gd_release = new RandomGDRelease(params->rel);
+	}
 	gd_release = new_gd_release;
 
 	Seasonality* new_seasonality = new InputRainfall(season);
@@ -162,9 +174,7 @@ void Model::set_dev_duration_probs(int min_time, int max_time)
 void Model::run(int day)
 {
 	day_sim = day; // used later for seasonality
-	if (gd_release->is_release_time(day)) {
-		gd_release->release_gene_drive(sites);
-	} 
+	gd_release->release_gene_drive(day, sites);
 	if (day > 0) {
 		run_step(day);
 	}
