@@ -288,7 +288,7 @@ void Patch::update_comp()
 	int d = model->get_day();
 	double alpha = model->get_alpha(alpha0);
 	long long int tot_J = calculate_tot_J();
-	comp = (1 - (params->mu_j)) * std::pow(alpha / (alpha + tot_J), 1.0 / (params->mean_dev));
+	comp = (1 - (params->mu_j)) * std::pow(alpha / (alpha + tot_J), params->comp_power);
 }
 
 // Updates the mating rate parameter in the local site

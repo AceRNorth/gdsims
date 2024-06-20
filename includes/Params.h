@@ -23,7 +23,7 @@ struct LifeParams {
 	double mu_a; // adult mortality rate per day
 	double beta; // parameter that controls mating rate
 	double theta; // average egg laying rate of wildtype females (eggs per day)
-	double mean_dev; // mean juvenile development time (in days)
+	double comp_power;
 	int min_dev; // minimum development time for a juvenile (in days)
 };
 

@@ -25,7 +25,7 @@ Simulation::Simulation(InputParams input)
 	model_params->life->mu_a = input.mu_a;
 	model_params->life->beta = input.beta;
 	model_params->life->theta = input.theta;
-	model_params->life->mean_dev = input.mean_dev;
+	model_params->life->comp_power = input.comp_power;
 	model_params->life->min_dev = input.min_dev;
 	model_params->rel = new ReleaseParams;
 	model_params->rel->release_times.push_back(input.driver_start);

@@ -13,8 +13,7 @@
 
 int main()
 {	
-	std::vector<InputParams> sets = {set1, set2, set3, set4, set5, set6, set7, set8, set9, set10, set11, set12, set13, set14, set15,
-	 set16, set17};
+	std::vector<InputParams> sets = {set1, set2, set3, set4, set5, set6, set7, set8, set9, set10, set11, set12, set13, set14, set15, set16, set17, set18};
 	
 	// input parameters
 	// progression parameters
@@ -30,7 +29,7 @@ int main()
 	double mu_a;
 	double beta;
 	double theta;
-	double mean_dev;
+	double comp_power;
 	int min_dev;
 
 	// gene drive inheritance parameters
@@ -91,6 +90,7 @@ int main()
 		std::cout << "Set 15 - high seasonality, pre-defined rainfall \n";
 		std::cout << "Set 16 - alpha0 variance \n";
 		std::cout << "Set 17 - multiple release times \n";
+		std::cout << "Set 18 - high juvenile survival probability \n";
 		std::cout << "Set 100  - custom \n";
 		std::cout << "Default parameter sets include gene drive and dispersal but don't include aestivation unless otherwise stated. \n \n";
 		std::cout << "Select which parameter set (1-" << std::to_string(sets.size()) << ", 100) you'd like to preview, \n";
@@ -124,7 +124,7 @@ int main()
 				std::cout << "mu_a                 " << "\n"; 
 				std::cout << "beta                 " << "\n"; 
 				std::cout << "theta                " << "\n";  
-				std::cout << "mean_dev             " << "\n"; 
+				std::cout << "comp_power           " << "\n"; 
 				std::cout << "min_dev              " << "\n"; 
 				std::cout << "gamma                " << "\n"; 
 				std::cout << "xi                   " << "\n"; 
@@ -178,7 +178,7 @@ int main()
 					if (!file_read_and_validate_type(file, mu_a, "mu_a", "double")) continue;
 					if (!file_read_and_validate_type(file, beta, "beta", "double")) continue;
 					if (!file_read_and_validate_type(file, theta, "theta", "double")) continue;
-					if (!file_read_and_validate_type(file, mean_dev, "mean_dev", "double")) continue;
+					if (!file_read_and_validate_type(file, comp_power, "comp_power", "double")) continue;
 					if (!file_read_and_validate_type(file, min_dev, "min_dev", "int")) continue;
 					if (!file_read_and_validate_type(file, gamma, "gamma", "double")) continue;
 					if (!file_read_and_validate_type(file, xi, "xi", "double")) continue;
@@ -218,7 +218,7 @@ int main()
 				if (!check_bounds("mu_a", mu_a, 0.0, false, 1.0, false)) bound_errors++;
 				if (!check_bounds("beta", beta, 0.0, false)) bound_errors++;
 				if (!check_bounds("theta", theta, 0.0, false)) bound_errors++;
-				if (!check_bounds("mean_dev", mean_dev, 0.0, false)) bound_errors++;
+				if (!check_bounds("comp_power", comp_power, 0.0, false)) bound_errors++;
 				if (!check_bounds("min_dev", min_dev, 0, false)) bound_errors++;
 				if (!check_bounds("gamma", gamma, 0.0, true, 1.0, true)) bound_errors++;
 				if (!check_bounds("xi", xi, 0.0, true, 1.0, true)) bound_errors++;
@@ -273,7 +273,7 @@ int main()
 			std::cout << "mu_a                 " << mu_a << "\n"; 
 			std::cout << "beta                 " << beta << "\n"; 
 			std::cout << "theta                " << theta << "\n"; 
-			std::cout << "mean_dev             " << mean_dev << "\n"; 
+			std::cout << "comp_power           " << comp_power << "\n"; 
 			std::cout << "min_dev              " << min_dev << "\n"; 
 			std::cout << "gamma                " << gamma << "\n"; 
 			std::cout << "xi                   " << xi << "\n"; 
@@ -355,7 +355,7 @@ int main()
 						custom_input.mu_a = mu_a;
 						custom_input.beta = beta;
 						custom_input.theta = theta;
-						custom_input.mean_dev = mean_dev;
+						custom_input.comp_power = comp_power;
 						custom_input.min_dev = min_dev;
 						custom_input.gamma = gamma;
 						custom_input.xi = xi;
@@ -599,7 +599,7 @@ int main()
 			std::cout << "mu_a                 " << sets[option1 - 1].mu_a << "\n"; 
 			std::cout << "beta                 " << sets[option1 - 1].beta << "\n"; 
 			std::cout << "theta                " << sets[option1 - 1].theta << "\n";  
-			std::cout << "mean_dev             " << sets[option1 - 1].mean_dev << "\n"; 
+			std::cout << "comp_power           " << sets[option1 - 1].comp_power << "\n"; 
 			std::cout << "min_dev              " << sets[option1 - 1].min_dev << "\n"; 
 			std::cout << "gamma                " << sets[option1 - 1].gamma << "\n"; 
 			std::cout << "xi                   " << sets[option1 - 1].xi << "\n"; 
