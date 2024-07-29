@@ -11,10 +11,10 @@ output_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Progr
 exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\gdsimsapp.exe"
 
 # Selecting sets to run
-#sets = [i for i in range(1, 19)]
+sets = [i for i in range(1, 19)]
 
 # ** Select other combinations of sets by listing below and uncommenting**
-sets = [18]
+#sets = [18]
 
 for j in range(0, len(sets)):
     input_string = str(sets[j]) + "\n" + "y" + "\n"
@@ -143,7 +143,7 @@ output_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Progr
 exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\gdsimsapp.exe"
 
 sets = [i for i in range(1, 19)]
-sets = [18]
+sets = [100]
 
 for j in range(0, len(sets)):
     params_filename = "params_set" + str(sets[j]) + ".txt"
@@ -156,7 +156,7 @@ for j in range(0, len(sets)):
         
     # if want advanced options, uncomment below line
     # e.g. setting boundary type to edge and dispersal type to radial
-    input_string += "1" + "\n" + "t" + "\n" + "2" + "\n" + "d" + "\n" 
+    #input_string += "1" + "\n" + "t" + "\n" + "2" + "\n" + "d" + "\n" 
     # e.g. setting custom coords file
     #input_string += "4" + "\n" + "coords_set1run1.txt" + "\n"
     #input_string += "4" + "\n" + "coords_set" + str(sets[j]) + "run1" + "_td.txt" + "\n"
@@ -214,8 +214,8 @@ oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Progr
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
-sets = [i for i in range(1, 19)]
-sets = [18]
+#sets = [i for i in range(1, 19)]
+sets = [17]
 
 # ** Modify the list of num_runs in each set selected as needed **
 num_runs_list = [2 for i in range(0, len(sets))]
