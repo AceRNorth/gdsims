@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_09e761304027c904456130627fd4dcf5" kind="dir">
+    <compoundname>includes</compoundname>
+    <innerfile refid="_aestivation_8h">Aestivation.h</innerfile>
+    <innerfile refid="_boundary_strategy_8h">BoundaryStrategy.h</innerfile>
+    <innerfile refid="constants_8h">constants.h</innerfile>
+    <innerfile refid="_dispersal_8h">Dispersal.h</innerfile>
+    <innerfile refid="_g_d_release_8h">GDRelease.h</innerfile>
+    <innerfile refid="_input_params_8h">InputParams.h</innerfile>
+    <innerfile refid="inputval_8h">inputval.h</innerfile>
+    <innerfile refid="_model_8h">Model.h</innerfile>
+    <innerfile refid="_params_8h">Params.h</innerfile>
+    <innerfile refid="_patch_8h">Patch.h</innerfile>
+    <innerfile refid="_point_8h">Point.h</innerfile>
+    <innerfile refid="random_8h">random.h</innerfile>
+    <innerfile refid="_record_8h">Record.h</innerfile>
+    <innerfile refid="_seasonality_8h">Seasonality.h</innerfile>
+    <innerfile refid="sets_8h">sets.h</innerfile>
+    <innerfile refid="_simulation_8h">Simulation.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/"/>
+  </compounddef>
+</doxygen>

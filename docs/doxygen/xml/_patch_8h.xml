@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_patch_8h" kind="file" language="C++">
+    <compoundname>Patch.h</compoundname>
+    <includes local="no">array</includes>
+    <includes refid="_patch_8h" local="yes">Patch.h</includes>
+    <includes refid="constants_8h" local="yes">constants.h</includes>
+    <includes refid="_model_8h" local="yes">Model.h</includes>
+    <includes refid="_params_8h" local="yes">Params.h</includes>
+    <includes refid="_point_8h" local="yes">Point.h</includes>
+    <includedby refid="_aestivation_8h" local="yes">includes/Aestivation.h</includedby>
+    <includedby refid="_dispersal_8h" local="yes">includes/Dispersal.h</includedby>
+    <includedby refid="_g_d_release_8h" local="yes">includes/GDRelease.h</includedby>
+    <includedby refid="_model_8h" local="yes">includes/Model.h</includedby>
+    <includedby refid="_patch_8h" local="yes">includes/Patch.h</includedby>
+    <includedby refid="_record_8h" local="yes">includes/Record.h</includedby>
+    <includedby refid="_g_d_release_8cpp" local="yes">src/GDRelease.cpp</includedby>
+    <includedby refid="_model_8cpp" local="yes">src/Model.cpp</includedby>
+    <includedby refid="_patch_8cpp" local="yes">src/Patch.cpp</includedby>
+    <incdepgraph>
+      <node id="11">
+        <label>Aestivation.h</label>
+        <link refid="_aestivation_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>BoundaryStrategy.h</label>
+        <link refid="_boundary_strategy_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Dispersal.h</label>
+        <link refid="_dispersal_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>GDRelease.h</label>
+        <link refid="_g_d_release_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Model.h</label>
+        <link refid="_model_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Params.h</label>
+        <link refid="_params_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>includes/Patch.h</label>
+        <link refid="_patch_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Point.h</label>
+        <link refid="_point_8h_source"/>
+      </node>
+      <node id="13">
+        <label>Seasonality.h</label>
+        <link refid="_seasonality_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>constants.h</label>
+        <link refid="constants_8h_source"/>
+      </node>
+      <node id="2">
+        <label>array</label>
+      </node>
+      <node id="8">
+        <label>utility</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>includes/Aestivation.h</label>
+        <link refid="_aestivation_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>includes/Dispersal.h</label>
+        <link refid="_dispersal_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>includes/GDRelease.h</label>
+        <link refid="_g_d_release_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>includes/Model.h</label>
+        <link refid="_model_8h_source"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>includes/Patch.h</label>
+        <link refid="_patch_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>includes/Record.h</label>
+        <link refid="_record_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_patch" prot="public">Patch</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>GENERALMETAPOP_PATCH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GENERALMETAPOP_PATCH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;array&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Patch.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;constants.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Model.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Params.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Point.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_model" kindref="compound">Model</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_patch" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_patch" kindref="compound">Patch</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_patch_1a8f0ac2f89a3d9065ea6df83662cf1410" kindref="member">Patch</ref>(<ref refid="class_model" kindref="compound">Model</ref>*<sp/>mod,<sp/><ref refid="struct_life_params" kindref="compound">LifeParams</ref>*<sp/>par,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>side);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_patch_1a8f0ac2f89a3d9065ea6df83662cf1410" kindref="member">Patch</ref>(<ref refid="class_model" kindref="compound">Model</ref>*<sp/>mod,<sp/><ref refid="struct_life_params" kindref="compound">LifeParams</ref>*<sp/>par,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0,<sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/>point);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patch_1ada58f98a20b459b05e7d4b986de3aeee" kindref="member">populate</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>initial_WJ,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>initial_WM,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>initial_WV,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>initial_WF);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/><ref refid="class_patch_1a384ca47849b58d7f215d5a7aaa8049bb" kindref="member">get_coords</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;<sp/><ref refid="class_patch_1a18366a21df794d2cebbbdfe3195734a5" kindref="member">get_M</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/><ref refid="class_patch_1a7754f3fd7fb22af2c3661d4d5229ab2d" kindref="member">get_F</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_patch_1a3071272790d2c5cde8675e94a306ac0a" kindref="member">calculate_tot_J</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_patch_1adf7fcfe3a5b2b00afe76c9dac3aea50c" kindref="member">calculate_tot_M</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_patch_1af90e1ce58bd0c009e6dc9e939d2ee81d" kindref="member">calculate_tot_V</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_patch_1a55c95af0f8a5c1d7ac885a828a873865" kindref="member">calculate_tot_F</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>life-processes<sp/>for<sp/>the<sp/>local<sp/>site</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patch_1a1ac1a35f87b779415c9c0f91f0235add" kindref="member">juv_get_older</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patch_1a57e9e06fbf179f6d3c808dee1522f6a9" kindref="member">adults_die</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patch_1a831b026c31ae2bbb56b04e8cc8fa2277" kindref="member">virgins_mate</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patch_1acbbe56b0cc3e9e65720191eb92bd33f3" kindref="member">lay_eggs</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;std::array&lt;std::array<sp/>&lt;double,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>&amp;f,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;double,<sp/>constants::max_dev+1&gt;<sp/>&amp;dev_duration_probs);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patch_1a935e1a959a81d818c161b1182a45e958" kindref="member">juv_eclose</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patch_1abfcba309e2ecc8eb224b89a5f11d6042" kindref="member">update_comp</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patch_1a14846b95a2c4032ae4de370abc5ddb04" kindref="member">update_mate</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>interface<sp/>to<sp/>Dispersal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patch_1a2ef705901ca9492bad465c4392fe84cf" kindref="member">M_disperse_out</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;<sp/>&amp;m_out);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patch_1af11ef5b41bc1c8e274368396a0e506ef" kindref="member">F_disperse_out</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>&amp;f_out);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patch_1a6e8160f0e8dc961b25aa89d273cdfc2e" kindref="member">M_disperse_in</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>gen,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_in);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patch_1a4b3a7d2c76b525c22175e48784951d5e" kindref="member">F_disperse_in</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>f_gen,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_gen,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>f_disp);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>interface<sp/>to<sp/>Aestivation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patch_1a9cae604040d09f1d07faee40bddb46f3" kindref="member">F_hide</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>&amp;f_try);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patch_1a696522469c14fcb175f419f5e5540279" kindref="member">F_wake</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>&amp;f_wake);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>interface<sp/>to<sp/>GDRelease</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patch_1a40d8e016a59e2c0fafa5c4a840f54aaa" kindref="member">add_driver_M</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_driver_M);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model" kindref="compound">Model</ref>*<sp/>model;<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_life_params" kindref="compound">LifeParams</ref>*<sp/>params;<sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alpha0;<sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/>coords;<sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;std::array&lt;long<sp/>long<sp/>int,<sp/>constants::max_dev+1&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>J;<sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;<sp/>M;<sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;<sp/>V;<sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>F;<sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>comp;<sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>mate_rate;<sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//GENERALMETAPOP_PATCH_H</highlight></codeline>
+    </programlisting>
+    <location file="includes/Patch.h"/>
+  </compounddef>
+</doxygen>

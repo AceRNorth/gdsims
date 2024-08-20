@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="struct_aestivation_params" kind="struct" language="C++" prot="public">
+    <compoundname>AestivationParams</compoundname>
+    <includes refid="_params_8h" local="no">Params.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_aestivation_params_1aa75b996e48bd9a575f2d779b457e9676" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double AestivationParams::psi</definition>
+        <argsstring></argsstring>
+        <name>psi</name>
+        <qualifiedname>AestivationParams::psi</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_aestivation" kindref="compound">Aestivation</ref> rate. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="66" column="8" bodyfile="includes/Params.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_aestivation_params_1ace83fbaf99df64c684945c11657e0e2d" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double AestivationParams::mu_aes</definition>
+        <argsstring></argsstring>
+        <name>mu_aes</name>
+        <qualifiedname>AestivationParams::mu_aes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_aestivation" kindref="compound">Aestivation</ref> mortality. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="67" column="8" bodyfile="includes/Params.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_aestivation_params_1a5c9103b6a2967fd10ceac34d74e873c5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int AestivationParams::t_hide1</definition>
+        <argsstring></argsstring>
+        <name>t_hide1</name>
+        <qualifiedname>AestivationParams::t_hide1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start day of aestivation-hiding period (exclusive). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="68" column="5" bodyfile="includes/Params.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_aestivation_params_1aa2e60eba548455a01bd70fcf7801b204" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int AestivationParams::t_hide2</definition>
+        <argsstring></argsstring>
+        <name>t_hide2</name>
+        <qualifiedname>AestivationParams::t_hide2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>End day of aestivation-entering period (inclusive). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="69" column="5" bodyfile="includes/Params.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_aestivation_params_1a09830242cd97a95bd90f6107f5d65be1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int AestivationParams::t_wake1</definition>
+        <argsstring></argsstring>
+        <name>t_wake1</name>
+        <qualifiedname>AestivationParams::t_wake1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start day of aestivation-waking period (exclusive). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="70" column="5" bodyfile="includes/Params.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_aestivation_params_1a523922bc6514f3d1623385060367cec0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int AestivationParams::t_wake2</definition>
+        <argsstring></argsstring>
+        <name>t_wake2</name>
+        <qualifiedname>AestivationParams::t_wake2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>End day of aestivation-waking period (inclusive). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="71" column="5" bodyfile="includes/Params.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_aestivation" kindref="compound">Aestivation</ref> model parameters. </para>
+    </detaileddescription>
+    <location file="includes/Params.h" line="65" column="1" bodyfile="includes/Params.h" bodystart="65" bodyend="72"/>
+    <listofallmembers>
+      <member refid="struct_aestivation_params_1ace83fbaf99df64c684945c11657e0e2d" prot="public" virt="non-virtual"><scope>AestivationParams</scope><name>mu_aes</name></member>
+      <member refid="struct_aestivation_params_1aa75b996e48bd9a575f2d779b457e9676" prot="public" virt="non-virtual"><scope>AestivationParams</scope><name>psi</name></member>
+      <member refid="struct_aestivation_params_1a5c9103b6a2967fd10ceac34d74e873c5" prot="public" virt="non-virtual"><scope>AestivationParams</scope><name>t_hide1</name></member>
+      <member refid="struct_aestivation_params_1aa2e60eba548455a01bd70fcf7801b204" prot="public" virt="non-virtual"><scope>AestivationParams</scope><name>t_hide2</name></member>
+      <member refid="struct_aestivation_params_1a09830242cd97a95bd90f6107f5d65be1" prot="public" virt="non-virtual"><scope>AestivationParams</scope><name>t_wake1</name></member>
+      <member refid="struct_aestivation_params_1a523922bc6514f3d1623385060367cec0" prot="public" virt="non-virtual"><scope>AestivationParams</scope><name>t_wake2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

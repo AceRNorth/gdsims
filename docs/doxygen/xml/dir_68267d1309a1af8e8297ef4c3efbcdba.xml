@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerfile refid="_aestivation_8cpp">Aestivation.cpp</innerfile>
+    <innerfile refid="_boundary_strategy_8cpp">BoundaryStrategy.cpp</innerfile>
+    <innerfile refid="_dispersal_8cpp">Dispersal.cpp</innerfile>
+    <innerfile refid="_g_d_release_8cpp">GDRelease.cpp</innerfile>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <innerfile refid="main2_8cpp">main2.cpp</innerfile>
+    <innerfile refid="_model_8cpp">Model.cpp</innerfile>
+    <innerfile refid="_patch_8cpp">Patch.cpp</innerfile>
+    <innerfile refid="random_8cpp">random.cpp</innerfile>
+    <innerfile refid="_record_8cpp">Record.cpp</innerfile>
+    <innerfile refid="_seasonality_8cpp">Seasonality.cpp</innerfile>
+    <innerfile refid="_simulation_8cpp">Simulation.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/"/>
+  </compounddef>
+</doxygen>

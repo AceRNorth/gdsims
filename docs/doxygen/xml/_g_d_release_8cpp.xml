@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_g_d_release_8cpp" kind="file" language="C++">
+    <compoundname>GDRelease.cpp</compoundname>
+    <includes local="no">vector</includes>
+    <includes local="no">algorithm</includes>
+    <includes refid="_g_d_release_8h" local="yes">GDRelease.h</includes>
+    <includes refid="_patch_8h" local="yes">Patch.h</includes>
+    <includes refid="random_8h" local="yes">random.h</includes>
+    <incdepgraph>
+      <node id="14">
+        <label>Aestivation.h</label>
+        <link refid="_aestivation_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>BoundaryStrategy.h</label>
+        <link refid="_boundary_strategy_8h_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Dispersal.h</label>
+        <link refid="_dispersal_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>GDRelease.h</label>
+        <link refid="_g_d_release_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Model.h</label>
+        <link refid="_model_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Params.h</label>
+        <link refid="_params_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Patch.h</label>
+        <link refid="_patch_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Point.h</label>
+        <link refid="_point_8h_source"/>
+      </node>
+      <node id="15">
+        <label>Seasonality.h</label>
+        <link refid="_seasonality_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>constants.h</label>
+        <link refid="constants_8h_source"/>
+      </node>
+      <node id="16">
+        <label>random.h</label>
+        <link refid="random_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/GDRelease.cpp</label>
+        <link refid="_g_d_release_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>algorithm</label>
+      </node>
+      <node id="7">
+        <label>array</label>
+      </node>
+      <node id="11">
+        <label>utility</label>
+      </node>
+      <node id="2">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GDRelease.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Patch.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;random.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Releases<sp/>the<sp/>gene<sp/>drive<sp/>mosquitoes<sp/>into<sp/>the<sp/>simulation<sp/>area</highlight></codeline>
+<codeline lineno="13"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_d_release_1ac69ecb74bc31ac1d57764be524c68ca7" kindref="member">GDRelease::release_gene_drive</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day,<sp/>std::vector&lt;Patch*&gt;<sp/>&amp;sites)<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_g_d_release_1a69a14d4b9e59ee1e1375d76630da00e3" kindref="member">is_release_time</ref>(day))<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>rel_sites<sp/>=<sp/>select_driver_sites(day,<sp/>sites);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_g_d_release_1a46170fb6a9f1a248346206b99773b684" kindref="member">put_driver_sites</ref>(rel_sites);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_g_d_release_1a69a14d4b9e59ee1e1375d76630da00e3" kindref="member">GDRelease::is_release_time</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(std::find(<ref refid="class_g_d_release_1af257d77564ffbd7c694f57533dde7282" kindref="member">release_times</ref>.begin(),<sp/><ref refid="class_g_d_release_1af257d77564ffbd7c694f57533dde7282" kindref="member">release_times</ref>.end(),<sp/>day)<sp/>==<sp/><ref refid="class_g_d_release_1af257d77564ffbd7c694f57533dde7282" kindref="member">release_times</ref>.end())<sp/>?<sp/>false<sp/>:<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_d_release_1a46170fb6a9f1a248346206b99773b684" kindref="member">GDRelease::put_driver_sites</ref>(std::vector&lt;Patch*&gt;&amp;<sp/>rel_sites)<sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>rel_pat<sp/>:<sp/>rel_sites)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rel_pat-&gt;add_driver_M(<ref refid="class_g_d_release_1a7ac47883a59de0732047fccf0a1cf6e0" kindref="member">num_driver_M</ref>);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><ref refid="class_random_g_d_release_1abbf9f26d2fa13619476400ce3b0e17b8" kindref="member">RandomGDRelease::RandomGDRelease</ref>(<ref refid="struct_release_params" kindref="compound">ReleaseParams</ref>*<sp/>params):<sp/><ref refid="class_g_d_release" kindref="compound">GDRelease</ref>(params-&gt;num_driver_M,<sp/>params-&gt;release_times)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>num_driver_sites<sp/>=<sp/>params-&gt;<ref refid="struct_release_params_1a58423db2e16b0553d09ebec4d0d8a625" kindref="member">num_driver_sites</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">std::vector&lt;Patch*&gt;<sp/>RandomGDRelease::select_driver_sites(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;Patch*&gt;<sp/>&amp;sites)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_rel_sites<sp/>=<sp/>std::min(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">(sites.size()),<sp/>num_driver_sites);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Patch*&gt;<sp/>rel_patches;<sp/></highlight><highlight class="comment">//<sp/>patches<sp/>in<sp/>which<sp/>to<sp/>release<sp/>the<sp/>gene<sp/>drive</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(rel_patches.size()<sp/>&lt;<sp/>num_rel_sites)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rel_pat<sp/>=<sp/>random_discrete(0,<sp/>sites.size()<sp/>-<sp/>1);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>only<sp/>pick<sp/>unique<sp/>sites<sp/>within<sp/>the<sp/>central<sp/>area<sp/>to<sp/>release<sp/>the<sp/>gene<sp/>drive</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>is_unique<sp/>=<sp/>(rel_patches.end()<sp/>==<sp/>std::find(rel_patches.begin(),<sp/>rel_patches.end(),<sp/>sites[rel_pat]));</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is_unique)<sp/>{<sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rel_patches.push_back(sites[rel_pat]);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rel_patches;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><ref refid="class_sched_g_d_release_1a5bfb7430747b3f7764b085eec40173be" kindref="member">SchedGDRelease::SchedGDRelease</ref>(<ref refid="struct_release_params" kindref="compound">ReleaseParams</ref>*<sp/>params,<sp/>std::vector&lt;int&gt;<sp/>rel_sites,<sp/>std::vector&lt;Patch*&gt;<sp/>&amp;sites):<sp/><ref refid="class_g_d_release" kindref="compound">GDRelease</ref>(params-&gt;num_driver_M,<sp/>params-&gt;release_times)<sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>s<sp/>:<sp/>rel_sites)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>convert<sp/>indices<sp/>relative<sp/>to<sp/>sites<sp/>vector<sp/>into<sp/>patch<sp/>pointers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>release_sites.push_back(sites.at(s));</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Selects<sp/>the<sp/>release<sp/>sites<sp/>corresponding<sp/>to<sp/>the<sp/>selected<sp/>release<sp/>time</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">std::vector&lt;Patch*&gt;<sp/>SchedGDRelease::select_driver_sites(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;Patch*&gt;<sp/>&amp;sites)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>release_sites;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/GDRelease.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_dispersal_8h" kind="file" language="C++">
+    <compoundname>Dispersal.h</compoundname>
+    <includes local="no">vector</includes>
+    <includes local="no">array</includes>
+    <includes local="no">utility</includes>
+    <includes refid="constants_8h" local="yes">constants.h</includes>
+    <includes refid="_params_8h" local="yes">Params.h</includes>
+    <includes refid="_patch_8h" local="yes">Patch.h</includes>
+    <includes refid="_point_8h" local="yes">Point.h</includes>
+    <includes refid="_boundary_strategy_8h" local="yes">BoundaryStrategy.h</includes>
+    <includedby refid="_model_8h" local="yes">includes/Model.h</includedby>
+    <includedby refid="_dispersal_8cpp" local="yes">src/Dispersal.cpp</includedby>
+    <includedby refid="_model_8cpp" local="yes">src/Model.cpp</includedby>
+    <incdepgraph>
+      <node id="9">
+        <label>Aestivation.h</label>
+        <link refid="_aestivation_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>BoundaryStrategy.h</label>
+        <link refid="_boundary_strategy_8h_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>includes/Dispersal.h</label>
+        <link refid="_dispersal_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>GDRelease.h</label>
+        <link refid="_g_d_release_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Model.h</label>
+        <link refid="_model_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Params.h</label>
+        <link refid="_params_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Patch.h</label>
+        <link refid="_patch_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Point.h</label>
+        <link refid="_point_8h_source"/>
+      </node>
+      <node id="11">
+        <label>Seasonality.h</label>
+        <link refid="_seasonality_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>constants.h</label>
+        <link refid="constants_8h_source"/>
+      </node>
+      <node id="3">
+        <label>array</label>
+      </node>
+      <node id="4">
+        <label>utility</label>
+      </node>
+      <node id="2">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>includes/Aestivation.h</label>
+        <link refid="_aestivation_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>includes/Dispersal.h</label>
+        <link refid="_dispersal_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>includes/GDRelease.h</label>
+        <link refid="_g_d_release_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>includes/Model.h</label>
+        <link refid="_model_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>includes/Patch.h</label>
+        <link refid="_patch_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>includes/Record.h</label>
+        <link refid="_record_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_dispersal" prot="public">Dispersal</innerclass>
+    <innerclass refid="class_distance_kernel_dispersal" prot="public">DistanceKernelDispersal</innerclass>
+    <innerclass refid="class_radial_dispersal" prot="public">RadialDispersal</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>GENERALMETAPOP_DISPERSAL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GENERALMETAPOP_DISPERSAL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;array&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;constants.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Params.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Patch.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Point.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;BoundaryStrategy.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_patch" kindref="compound">Patch</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="class_dispersal" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_dispersal" kindref="compound">Dispersal</ref><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_dispersal_1a4eb55d34c12749b33bd68d4c8bfee61a" kindref="member">Dispersal</ref>(<ref refid="struct_dispersal_params" kindref="compound">DispersalParams</ref>*<sp/>params,<sp/>BoundaryType<sp/>boundary,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>side);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_dispersal_1aed1dabe97b773b3616811b648b170350" kindref="member">~Dispersal</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_connecs(std::vector&lt;Patch*&gt;<sp/>&amp;sites)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>adults_disperse(std::vector&lt;Patch*&gt;<sp/>&amp;sites)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26" refid="class_dispersal_1ac4a92820d2e1967895862466abd1c701" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_dispersal_1ac4a92820d2e1967895862466abd1c701" kindref="member">disp_rate</ref>;<sp/></highlight></codeline>
+<codeline lineno="27" refid="class_dispersal_1a8b95350f1ca6fd7c635944dd776b806f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_dispersal_1a8b95350f1ca6fd7c635944dd776b806f" kindref="member">max_disp</ref>;<sp/></highlight></codeline>
+<codeline lineno="29" refid="class_dispersal_1ae829e3cc99c732c2e4e15995a6aabc75" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;int&gt;&gt;<sp/><ref refid="class_dispersal_1ae829e3cc99c732c2e4e15995a6aabc75" kindref="member">connec_indices</ref>;<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="class_dispersal_1a5837fcddaf8f9fa9cff545828be47d5a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;double&gt;&gt;<sp/><ref refid="class_dispersal_1a5837fcddaf8f9fa9cff545828be47d5a" kindref="member">connec_weights</ref>;<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref>*<sp/>boundary_strategy;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;&gt;<sp/><ref refid="class_dispersal_1a5ffa246788b8c993b6a34e8c8387d863" kindref="member">M_dispersing_out</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;Patch*&gt;<sp/>&amp;sites);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::array&lt;std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;&gt;<sp/><ref refid="class_dispersal_1ade53b8a69c5eea72536bcf2c7ef76857" kindref="member">F_dispersing_out</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;Patch*&gt;<sp/>&amp;sites);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="class_distance_kernel_dispersal" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_distance_kernel_dispersal" kindref="compound">DistanceKernelDispersal</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_dispersal" kindref="compound">Dispersal</ref><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="51" refid="class_distance_kernel_dispersal_1a451ffadeea98f45c0db9515fc12e050c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_distance_kernel_dispersal_1a451ffadeea98f45c0db9515fc12e050c" kindref="member">DistanceKernelDispersal</ref>(<ref refid="struct_dispersal_params" kindref="compound">DispersalParams</ref>*<sp/>params,<sp/>BoundaryType<sp/>boundary,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>side):<sp/><ref refid="class_dispersal" kindref="compound">Dispersal</ref>(params,<sp/>boundary,<sp/>side)<sp/>{};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_distance_kernel_dispersal_1a980ed0ba571a2adf1e856f408d914078" kindref="member">set_connecs</ref>(std::vector&lt;Patch*&gt;<sp/>&amp;sites)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_distance_kernel_dispersal_1a8f42419dd4e180ed62680ffab734c677" kindref="member">adults_disperse</ref>(std::vector&lt;Patch*&gt;<sp/>&amp;sites)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>std::pair&lt;std::vector&lt;std::vector&lt;int&gt;&gt;,<sp/>std::vector&lt;std::vector&lt;double&gt;&gt;&gt;<sp/>compute_connecs(std::vector&lt;Patch*&gt;<sp/>&amp;sites);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="class_radial_dispersal" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_radial_dispersal" kindref="compound">RadialDispersal</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_dispersal" kindref="compound">Dispersal</ref><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_radial_dispersal_1ac63e6e6d97e7c720b6e6ef349e07c711" kindref="member">RadialDispersal</ref>(<ref refid="struct_dispersal_params" kindref="compound">DispersalParams</ref>*<sp/>params,<sp/>BoundaryType<sp/>boundary,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>side);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_radial_dispersal_1a363d41e54203e0cd6cadb0667b1f6548" kindref="member">set_connecs</ref>(std::vector&lt;Patch*&gt;<sp/>&amp;sites)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_radial_dispersal_1aa3bca3cc8b2d80af4bd11d91cacf09bb" kindref="member">adults_disperse</ref>(std::vector&lt;Patch*&gt;<sp/>&amp;sites)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>connec_weights_sum;<sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>std::pair&lt;std::vector&lt;std::vector&lt;int&gt;&gt;,<sp/>std::vector&lt;std::vector&lt;double&gt;&gt;&gt;<sp/>compute_connecs(std::vector&lt;Patch*&gt;<sp/>&amp;sites);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>std::pair&lt;std::vector&lt;std::pair&lt;double,<sp/>double&gt;&gt;,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&gt;<sp/>compute_interval_union(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::pair&lt;double,<sp/>double&gt;&amp;<sp/>qq,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;std::pair&lt;double,<sp/>double&gt;&gt;&amp;<sp/>input);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>wrap_around(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>range);<sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>get_sorted_positions(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;double&gt;&amp;<sp/>numbers);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;double&gt;&gt;<sp/>compute_distances(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;Patch*&gt;<sp/>&amp;sites);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//GENERALMETAPOP_DISPERSAL_H</highlight></codeline>
+    </programlisting>
+    <location file="includes/Dispersal.h"/>
+  </compounddef>
+</doxygen>

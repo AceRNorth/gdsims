@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_point_8h" kind="file" language="C++">
+    <compoundname>Point.h</compoundname>
+    <includedby refid="_boundary_strategy_8h" local="yes">includes/BoundaryStrategy.h</includedby>
+    <includedby refid="_dispersal_8h" local="yes">includes/Dispersal.h</includedby>
+    <includedby refid="_model_8h" local="yes">includes/Model.h</includedby>
+    <includedby refid="_patch_8h" local="yes">includes/Patch.h</includedby>
+    <includedby refid="_simulation_8h" local="yes">includes/Simulation.h</includedby>
+    <invincdepgraph>
+      <node id="6">
+        <label>includes/Aestivation.h</label>
+        <link refid="_aestivation_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>includes/BoundaryStrategy.h</label>
+        <link refid="_boundary_strategy_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>includes/Dispersal.h</label>
+        <link refid="_dispersal_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>includes/GDRelease.h</label>
+        <link refid="_g_d_release_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>includes/Model.h</label>
+        <link refid="_model_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>includes/Patch.h</label>
+        <link refid="_patch_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>includes/Point.h</label>
+        <link refid="_point_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>includes/Record.h</label>
+        <link refid="_record_8h_source"/>
+      </node>
+      <node id="9">
+        <label>includes/Simulation.h</label>
+        <link refid="_simulation_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_point" prot="public">Point</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>GENERALMETAPOP_POINT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GENERALMETAPOP_POINT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="struct_point" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_point" kindref="compound">Point</ref><sp/>{</highlight></codeline>
+<codeline lineno="6" refid="struct_point_1ab99c56589bc8ad5fa5071387110a5bc7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_point_1ab99c56589bc8ad5fa5071387110a5bc7" kindref="member">x</ref><sp/>=<sp/>0;<sp/></highlight></codeline>
+<codeline lineno="7" refid="struct_point_1afa38be143ae800e6ad69ce8ed4df62d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_point_1afa38be143ae800e6ad69ce8ed4df62d8" kindref="member">y</ref><sp/>=<sp/>0;<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//GENERALMETAPOP_POINT_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="includes/Point.h"/>
+  </compounddef>
+</doxygen>

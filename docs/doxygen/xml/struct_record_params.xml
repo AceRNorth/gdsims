@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="struct_record_params" kind="struct" language="C++" prot="public">
+    <compoundname>RecordParams</compoundname>
+    <includes refid="_params_8h" local="no">Params.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_record_params_1a89c527d5630d1aec0fc05ed61ee8b715" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RecordParams::rec_start</definition>
+        <argsstring></argsstring>
+        <name>rec_start</name>
+        <qualifiedname>RecordParams::rec_start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start time for the data recording window (in days) (inclusive). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="118" column="5" bodyfile="includes/Params.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_record_params_1aca901320e2ed318d7d65698175dae21f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RecordParams::rec_end</definition>
+        <argsstring></argsstring>
+        <name>rec_end</name>
+        <qualifiedname>RecordParams::rec_end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>End time for the data recording window (in days) (inclusive). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="119" column="5" bodyfile="includes/Params.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_record_params_1a37fe54bf39f62735f32270d20d820bcc" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RecordParams::rec_interval_global</definition>
+        <argsstring></argsstring>
+        <name>rec_interval_global</name>
+        <qualifiedname>RecordParams::rec_interval_global</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time interval for global data recording/output. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="120" column="5" bodyfile="includes/Params.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_record_params_1a4d6ee2751b9b53199d38f79970031733" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RecordParams::rec_interval_local</definition>
+        <argsstring></argsstring>
+        <name>rec_interval_local</name>
+        <qualifiedname>RecordParams::rec_interval_local</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time interval at which to collect/record local data (in days). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="121" column="5" bodyfile="includes/Params.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_record_params_1a16d83a9c06faa37230c3b34eb9f0d081" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RecordParams::rec_sites_freq</definition>
+        <argsstring></argsstring>
+        <name>rec_sites_freq</name>
+        <qualifiedname>RecordParams::rec_sites_freq</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fraction of sites to collect local data for (1 is all sites, 10 is 1 in 10 etc). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="122" column="5" bodyfile="includes/Params.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_record_params_1a9df186c8b9f5788c29d023a41ba8088e" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RecordParams::set_label</definition>
+        <argsstring></argsstring>
+        <name>set_label</name>
+        <qualifiedname>RecordParams::set_label</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>&apos;Set of repetitions&apos; index label for output files. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="125" column="5" bodyfile="includes/Params.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Data-recording parameters. </para>
+    </detaileddescription>
+    <location file="includes/Params.h" line="116" column="1" bodyfile="includes/Params.h" bodystart="116" bodyend="126"/>
+    <listofallmembers>
+      <member refid="struct_record_params_1aca901320e2ed318d7d65698175dae21f" prot="public" virt="non-virtual"><scope>RecordParams</scope><name>rec_end</name></member>
+      <member refid="struct_record_params_1a37fe54bf39f62735f32270d20d820bcc" prot="public" virt="non-virtual"><scope>RecordParams</scope><name>rec_interval_global</name></member>
+      <member refid="struct_record_params_1a4d6ee2751b9b53199d38f79970031733" prot="public" virt="non-virtual"><scope>RecordParams</scope><name>rec_interval_local</name></member>
+      <member refid="struct_record_params_1a16d83a9c06faa37230c3b34eb9f0d081" prot="public" virt="non-virtual"><scope>RecordParams</scope><name>rec_sites_freq</name></member>
+      <member refid="struct_record_params_1a89c527d5630d1aec0fc05ed61ee8b715" prot="public" virt="non-virtual"><scope>RecordParams</scope><name>rec_start</name></member>
+      <member refid="struct_record_params_1a9df186c8b9f5788c29d023a41ba8088e" prot="public" virt="non-virtual"><scope>RecordParams</scope><name>set_label</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

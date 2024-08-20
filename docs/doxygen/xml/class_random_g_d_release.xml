@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_random_g_d_release" kind="class" language="C++" prot="public">
+    <compoundname>RandomGDRelease</compoundname>
+    <basecompoundref refid="class_g_d_release" prot="public" virt="non-virtual">GDRelease</basecompoundref>
+    <includes refid="_g_d_release_8h" local="no">GDRelease.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_random_g_d_release_1aa45f254b5d9bfa9239e5ec3833f33cf5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RandomGDRelease::num_driver_sites</definition>
+        <argsstring></argsstring>
+        <name>num_driver_sites</name>
+        <qualifiedname>RandomGDRelease::num_driver_sites</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of gene drive release sites per release. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GDRelease.h" line="38" column="9" bodyfile="includes/GDRelease.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_random_g_d_release_1abbf9f26d2fa13619476400ce3b0e17b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RandomGDRelease::RandomGDRelease</definition>
+        <argsstring>(ReleaseParams *params)</argsstring>
+        <name>RandomGDRelease</name>
+        <qualifiedname>RandomGDRelease::RandomGDRelease</qualifiedname>
+        <param>
+          <type><ref refid="struct_release_params" kindref="compound">ReleaseParams</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_random_g_d_release" kindref="compound">RandomGDRelease</ref> constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>gene drive release parameters </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GDRelease.h" line="36" column="5" bodyfile="src/GDRelease.cpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_random_g_d_release_1a3dfe5435b6e54b577bd6e30ccc1117d6" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt;</type>
+        <definition>std::vector&lt; Patch * &gt; RandomGDRelease::select_driver_sites</definition>
+        <argsstring>(int day, const std::vector&lt; Patch * &gt; &amp;sites) override</argsstring>
+        <name>select_driver_sites</name>
+        <qualifiedname>RandomGDRelease::select_driver_sites</qualifiedname>
+        <reimplements refid="class_g_d_release_1a941e51bbc4999dacdb4f22277ffdebbf">select_driver_sites</reimplements>
+        <param>
+          <type>int</type>
+          <declname>day</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>sites</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Selects random release sites.</para>
+<para>Relevant parameters include the number of driver sites. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">day</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simulation day </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sites</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector of all <ref refid="class_patch" kindref="compound">Patch</ref> objects </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The chosen release sites. </para>
+</simplesect>
+<simplesect kind="see"><para>RandomGDRelease::num_driver_sites </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GDRelease.h" line="39" column="17" bodyfile="src/GDRelease.cpp" bodystart="62" bodyend="76"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Implements gene drive release for randomised release sites.</para>
+<para>Release sites are randomised upon each release time. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>GDRelease</label>
+        <link refid="class_g_d_release"/>
+      </node>
+      <node id="1">
+        <label>RandomGDRelease</label>
+        <link refid="class_random_g_d_release"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>GDRelease</label>
+        <link refid="class_g_d_release"/>
+      </node>
+      <node id="1">
+        <label>RandomGDRelease</label>
+        <link refid="class_random_g_d_release"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/GDRelease.h" line="34" column="1" bodyfile="includes/GDRelease.h" bodystart="34" bodyend="40"/>
+    <listofallmembers>
+      <member refid="class_g_d_release_1a7d3d5cfa8f9d71e08383edf435fcfdbb" prot="public" virt="non-virtual"><scope>RandomGDRelease</scope><name>GDRelease</name></member>
+      <member refid="class_g_d_release_1a69a14d4b9e59ee1e1375d76630da00e3" prot="protected" virt="non-virtual"><scope>RandomGDRelease</scope><name>is_release_time</name></member>
+      <member refid="class_g_d_release_1a7ac47883a59de0732047fccf0a1cf6e0" prot="protected" virt="non-virtual"><scope>RandomGDRelease</scope><name>num_driver_M</name></member>
+      <member refid="class_random_g_d_release_1aa45f254b5d9bfa9239e5ec3833f33cf5" prot="private" virt="non-virtual"><scope>RandomGDRelease</scope><name>num_driver_sites</name></member>
+      <member refid="class_g_d_release_1a46170fb6a9f1a248346206b99773b684" prot="protected" virt="non-virtual"><scope>RandomGDRelease</scope><name>put_driver_sites</name></member>
+      <member refid="class_random_g_d_release_1abbf9f26d2fa13619476400ce3b0e17b8" prot="public" virt="non-virtual"><scope>RandomGDRelease</scope><name>RandomGDRelease</name></member>
+      <member refid="class_g_d_release_1ac69ecb74bc31ac1d57764be524c68ca7" prot="public" virt="non-virtual"><scope>RandomGDRelease</scope><name>release_gene_drive</name></member>
+      <member refid="class_g_d_release_1af257d77564ffbd7c694f57533dde7282" prot="protected" virt="non-virtual"><scope>RandomGDRelease</scope><name>release_times</name></member>
+      <member refid="class_random_g_d_release_1a3dfe5435b6e54b577bd6e30ccc1117d6" prot="private" virt="virtual"><scope>RandomGDRelease</scope><name>select_driver_sites</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

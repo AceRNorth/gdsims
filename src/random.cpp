@@ -11,21 +11,33 @@ std::random_device rd;
 //std::mt19937 twister(rd());
 std::mt19937 twister(1);
 
-// Returns a random floating-point number from a uniform real distribution of 0.0 to 1.0
+/**
+ * Returns a random floating-point number from a uniform real distribution of 0.0 to 1.0.
+ * @return The random number.
+ */
 double random_real() 
 {
 	std::uniform_real_distribution<> dist(0.0, 1.0);
 	return dist(twister);
 }
 
-// Returns a random integer number from a uniform discrete distribution of a to b
+/**
+ * Returns a random integer number from a uniform discrete distribution of a to b.
+ * @param[in] a lower value of the distribution range
+ * @param[in] b upper value of the distribution range
+ * @return The random number.
+ */
 int random_discrete(int a, int b) 
 {
 	std::uniform_int_distribution<> dist(a, b);
 	return dist(twister);
 }
 
-// Returns a random draw (non-negative integer) from the Poisson distribution with mean lambda (using normal distribution approximation when lambda > 30)
+/**
+ * Returns a random draw (non-negative integer) from the Poisson distribution with mean lambda (using normal distribution approximation when lambda > 30)
+ * @param[in] lambda mean of the distribution
+ * @return The random number.
+ */ 
 long long int random_poisson(double lambda) 
 {
 	long long int result;
@@ -47,8 +59,13 @@ long long int random_poisson(double lambda)
 	return result;
 }
 
-// Returns a random draw (non-negative integer) from the Binomial distribution B(N,p)
-// Uses Normal and Poisson distribution approximations for large N
+/**
+ * Returns a random draw (non-negative integer) from the Binomial distribution B(N,p).
+ * Uses Normal and Poisson distribution approximations for large N.
+ * @param[in] n number of trials
+ * @param[in] p success probability
+ * @return The random number.
+ */ 
 long long int random_binomial(long long int n, double p) 
 {
 	long long int result;
@@ -77,7 +94,12 @@ long long int random_binomial(long long int n, double p)
 	return result;
 }
 
-// Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities <probs>
+/**
+ * Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs.
+ * @param[in] n 	number of trials
+ * @param[in] probs vector of probabilities for each outcome
+ * @return A vector of the number of successes for each outcome (in the same order as the probabilities).
+ */
 std::vector<long long int> random_multinomial(long long int n, const std::vector<double>& probs) 
 {
 	int num_outcomes = probs.size();
@@ -102,7 +124,12 @@ std::vector<long long int> random_multinomial(long long int n, const std::vector
 	return result;
 }
 
-// Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities <probs>
+/**
+ * Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs.  
+ * @param[in] n 	number of trials
+ * @param[in] probs array of probabilities for each outcome (each genotype).
+ * @return A vector of the number of successes for each outcome (in the same order as the probabilities).
+ */
 std::vector<long long int> random_multinomial(long long int n, const std::array<long long int, constants::num_gen>& probs) 
 {
 	int num_outcomes = probs.size();
@@ -127,7 +154,12 @@ std::vector<long long int> random_multinomial(long long int n, const std::array<
 	return result;
 }
 
-// Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities <probs>
+/**
+ * Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs.
+ * @param[in] n 	number of trials
+ * @param[in] probs array of probabilities for each outcome (each age group)
+ * @return A vector of the number of successes for each outcome (in the same order as the probabilities).
+ */
 std::vector<long long int> random_multinomial(long long int n, const std::array<double, constants::max_dev+1>& probs) 
 {
 	int num_outcomes = probs.size();
@@ -152,8 +184,12 @@ std::vector<long long int> random_multinomial(long long int n, const std::array<
 	return result;
 }
 
-// Returns a random draw (non-negative floating-point number) from a lognormal distribution with desired mean des_mean and
-// desired variance des_var
+/**
+ * Returns a random draw (non-negative floating-point number) from a lognormal distribution with desired mean des_mean and desired variance des_var.
+ * @param[in] des_mean 	desired mean
+ * @param[in] des_var	desired variance
+ * @return The random number.
+ */
 double random_lognormal(double des_mean, double des_var) 
 {
     double mean = std::log(std::pow(des_mean, 2) / std::sqrt(std::pow(des_mean, 2) + des_var));

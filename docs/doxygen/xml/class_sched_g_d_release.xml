@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_sched_g_d_release" kind="class" language="C++" prot="public">
+    <compoundname>SchedGDRelease</compoundname>
+    <basecompoundref refid="class_g_d_release" prot="public" virt="non-virtual">GDRelease</basecompoundref>
+    <includes refid="_g_d_release_8h" local="no">GDRelease.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_sched_g_d_release_1a84d5e62bd160c6ff007b31db117b24e7" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt;</type>
+        <definition>std::vector&lt;Patch*&gt; SchedGDRelease::release_sites</definition>
+        <argsstring></argsstring>
+        <name>release_sites</name>
+        <qualifiedname>SchedGDRelease::release_sites</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gene drive release sites. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GDRelease.h" line="50" column="13" bodyfile="includes/GDRelease.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_sched_g_d_release_1a5bfb7430747b3f7764b085eec40173be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SchedGDRelease::SchedGDRelease</definition>
+        <argsstring>(ReleaseParams *params, std::vector&lt; int &gt; rel_sites, std::vector&lt; Patch * &gt; &amp;sites)</argsstring>
+        <name>SchedGDRelease</name>
+        <qualifiedname>SchedGDRelease::SchedGDRelease</qualifiedname>
+        <param>
+          <type><ref refid="struct_release_params" kindref="compound">ReleaseParams</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; int &gt;</type>
+          <declname>rel_sites</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>sites</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_sched_g_d_release" kindref="compound">SchedGDRelease</ref> constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>gene drive release parameters </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rel_sites</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>chosen release sites, indices relative to Model::sites </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sites</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector of all <ref refid="class_patch" kindref="compound">Patch</ref> objects </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GDRelease.h" line="48" column="1" bodyfile="src/GDRelease.cpp" bodystart="84" bodyend="89"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_sched_g_d_release_1a40212411e7dd81dac953dd0d6f9ad4ad" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt;</type>
+        <definition>std::vector&lt; Patch * &gt; SchedGDRelease::select_driver_sites</definition>
+        <argsstring>(int day, const std::vector&lt; Patch * &gt; &amp;sites) override</argsstring>
+        <name>select_driver_sites</name>
+        <qualifiedname>SchedGDRelease::select_driver_sites</qualifiedname>
+        <reimplements refid="class_g_d_release_1a941e51bbc4999dacdb4f22277ffdebbf">select_driver_sites</reimplements>
+        <param>
+          <type>int</type>
+          <declname>day</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>sites</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Selects the release sites corresponding to the selected release time. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">day</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simulation day </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sites</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector of all <ref refid="class_patch" kindref="compound">Patch</ref> objects </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The release sites. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GDRelease.h" line="51" column="17" bodyfile="src/GDRelease.cpp" bodystart="98" bodyend="101"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Implements gene drive release for pre-selected release sites.</para>
+<para>Release sites are kept the same for each release, using the same pre-selected sites. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>GDRelease</label>
+        <link refid="class_g_d_release"/>
+      </node>
+      <node id="1">
+        <label>SchedGDRelease</label>
+        <link refid="class_sched_g_d_release"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>GDRelease</label>
+        <link refid="class_g_d_release"/>
+      </node>
+      <node id="1">
+        <label>SchedGDRelease</label>
+        <link refid="class_sched_g_d_release"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/GDRelease.h" line="46" column="1" bodyfile="includes/GDRelease.h" bodystart="46" bodyend="52"/>
+    <listofallmembers>
+      <member refid="class_g_d_release_1a7d3d5cfa8f9d71e08383edf435fcfdbb" prot="public" virt="non-virtual"><scope>SchedGDRelease</scope><name>GDRelease</name></member>
+      <member refid="class_g_d_release_1a69a14d4b9e59ee1e1375d76630da00e3" prot="protected" virt="non-virtual"><scope>SchedGDRelease</scope><name>is_release_time</name></member>
+      <member refid="class_g_d_release_1a7ac47883a59de0732047fccf0a1cf6e0" prot="protected" virt="non-virtual"><scope>SchedGDRelease</scope><name>num_driver_M</name></member>
+      <member refid="class_g_d_release_1a46170fb6a9f1a248346206b99773b684" prot="protected" virt="non-virtual"><scope>SchedGDRelease</scope><name>put_driver_sites</name></member>
+      <member refid="class_g_d_release_1ac69ecb74bc31ac1d57764be524c68ca7" prot="public" virt="non-virtual"><scope>SchedGDRelease</scope><name>release_gene_drive</name></member>
+      <member refid="class_sched_g_d_release_1a84d5e62bd160c6ff007b31db117b24e7" prot="private" virt="non-virtual"><scope>SchedGDRelease</scope><name>release_sites</name></member>
+      <member refid="class_g_d_release_1af257d77564ffbd7c694f57533dde7282" prot="protected" virt="non-virtual"><scope>SchedGDRelease</scope><name>release_times</name></member>
+      <member refid="class_sched_g_d_release_1a5bfb7430747b3f7764b085eec40173be" prot="public" virt="non-virtual"><scope>SchedGDRelease</scope><name>SchedGDRelease</name></member>
+      <member refid="class_sched_g_d_release_1a40212411e7dd81dac953dd0d6f9ad4ad" prot="private" virt="virtual"><scope>SchedGDRelease</scope><name>select_driver_sites</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_record_8cpp" kind="file" language="C++">
+    <compoundname>Record.cpp</compoundname>
+    <includes local="no">filesystem</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">iomanip</includes>
+    <includes refid="_record_8h" local="yes">Record.h</includes>
+    <incdepgraph>
+      <node id="18">
+        <label>Aestivation.h</label>
+        <link refid="_aestivation_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>BoundaryStrategy.h</label>
+        <link refid="_boundary_strategy_8h_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Dispersal.h</label>
+        <link refid="_dispersal_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>GDRelease.h</label>
+        <link refid="_g_d_release_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Model.h</label>
+        <link refid="_model_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Params.h</label>
+        <link refid="_params_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Patch.h</label>
+        <link refid="_patch_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>Point.h</label>
+        <link refid="_point_8h_source"/>
+      </node>
+      <node id="8">
+        <label>Record.h</label>
+        <link refid="_record_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Seasonality.h</label>
+        <link refid="_seasonality_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>constants.h</label>
+        <link refid="constants_8h_source"/>
+      </node>
+      <node id="1">
+        <label>src/Record.cpp</label>
+        <link refid="_record_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>array</label>
+      </node>
+      <node id="2">
+        <label>filesystem</label>
+      </node>
+      <node id="5">
+        <label>fstream</label>
+      </node>
+      <node id="7">
+        <label>iomanip</label>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+      <node id="4">
+        <label>sstream</label>
+      </node>
+      <node id="15">
+        <label>utility</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;filesystem&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iomanip&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Record.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><ref refid="class_record_1a977db4fb6aaa9ac09b0d17ba676cabda" kindref="member">Record::Record</ref>(<ref refid="struct_record_params" kindref="compound">RecordParams</ref>*<sp/>rec_params,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rep)<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>rec_start<sp/>=<sp/>rec_params-&gt;<ref refid="struct_record_params_1a89c527d5630d1aec0fc05ed61ee8b715" kindref="member">rec_start</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>rec_end<sp/>=<sp/>rec_params-&gt;<ref refid="struct_record_params_1aca901320e2ed318d7d65698175dae21f" kindref="member">rec_end</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>rec_interval_global<sp/>=<sp/>rec_params-&gt;<ref refid="struct_record_params_1a37fe54bf39f62735f32270d20d820bcc" kindref="member">rec_interval_global</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>rec_interval_local<sp/>=<sp/>rec_params-&gt;<ref refid="struct_record_params_1a4d6ee2751b9b53199d38f79970031733" kindref="member">rec_interval_local</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>rec_sites_freq<sp/>=<sp/>rec_params-&gt;<ref refid="struct_record_params_1a16d83a9c06faa37230c3b34eb9f0d081" kindref="member">rec_sites_freq</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>set_label<sp/>=<sp/>rec_params-&gt;<ref refid="struct_record_params_1a9df186c8b9f5788c29d023a41ba8088e" kindref="member">set_label</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>rep_label<sp/>=<sp/>rep;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>folder<sp/>for<sp/>destination<sp/>of<sp/>output<sp/>files<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!std::filesystem::exists(</highlight><highlight class="stringliteral">&quot;./output_files&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::filesystem::create_directory(</highlight><highlight class="stringliteral">&quot;output_files&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>std::filesystem::current_path(</highlight><highlight class="stringliteral">&quot;./output_files&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>os1<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;LocalData&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>set_label<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;run&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>rep_label<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.txt&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>local_data.open(os1.str());</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>os2<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Totals&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>set_label<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;run&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>rep_label<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.txt&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>global_data.open(os2.str());</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>os3<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;CoordinateList&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>set_label<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;run&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>rep_label<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.txt&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>coord_list.open(os3.str());</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>local_data<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Male<sp/>populations<sp/>of<sp/>each<sp/>genotype<sp/>at<sp/>each<sp/>site\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>local_data<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Day&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Site&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;WW&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;WD&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;DD&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;WR&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;RR&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;DR&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>global_data<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Total<sp/>males<sp/>of<sp/>each<sp/>genotype\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>global_data<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Day&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;WW&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;WD&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;DD&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;WR&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;RR&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;DR&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>coord_list<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Coordinate<sp/>list<sp/>of<sp/>the<sp/>sites\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>coord_list<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Site&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><ref refid="class_record_1ad2ce1a99d866834ab53dedd788cb1ea6" kindref="member">Record::~Record</ref>()</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>std::filesystem::current_path(</highlight><highlight class="stringliteral">&quot;..&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_record_1a0c4d71ceed2e84f89273a73a304fcc4c" kindref="member">Record::record_coords</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;Patch*&gt;<sp/>&amp;sites)<sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>default_precision{std::cout.precision()};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>max_precision{std::numeric_limits&lt;double&gt;::digits10<sp/>+<sp/>1};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pat=0;<sp/>pat<sp/>&lt;<sp/>sites.size();<sp/>pat<sp/>+=<sp/>rec_sites_freq)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>coords<sp/>=<sp/>sites[pat]-&gt;get_coords();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>coord_list<sp/>&lt;&lt;<sp/>pat+1<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::setprecision(max_precision)<sp/>&lt;&lt;<sp/>coords.x<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>coords.y<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>coord_list<sp/>&lt;&lt;<sp/>std::setprecision(default_precision);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_record_1aa8ed3bd4fdee0c2dddbb5cec2f685577" kindref="member">Record::record_global</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;<sp/>&amp;tot_M_gen)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>global_data<sp/>&lt;&lt;<sp/>day;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>m_gen<sp/>:<sp/>tot_M_gen)<sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>global_data<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>m_gen;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>global_data<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_record_1a27622a9c11aa4a86ca123456ef0ad236" kindref="member">Record::output_totals</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tot_J,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tot_M,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tot_V,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tot_F)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(day<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;rep<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>rep_label<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;day&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;total<sp/>J&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;total<sp/>M&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;total<sp/>V&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;total<sp/>F&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>day<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>tot_J<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>tot_M<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>tot_V<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>tot_F<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_record_1a8e504c6253ef29fa5c86d216e3f28e1c" kindref="member">Record::record_local</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;Patch*&gt;<sp/>&amp;sites)<sp/></highlight></codeline>
+<codeline lineno="117"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pat=0;<sp/>pat<sp/>&lt;<sp/>sites.size();<sp/>pat<sp/>+=<sp/>rec_sites_freq)<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>local_data<sp/>&lt;&lt;<sp/>day<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>pat+1;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>m_gen<sp/>:<sp/>sites[pat]-&gt;get_M())<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>local_data<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>m_gen;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>local_data<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_record_1a97f3aed77c0f4b5979da3a9a11bce42c" kindref="member">Record::is_rec_global_time</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>day<sp/>%<sp/>rec_interval_global<sp/>==<sp/>0;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_record_1ae6b89328b0fcaa2bfa5eebe819782b50" kindref="member">Record::is_rec_local_time</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day)<sp/></highlight></codeline>
+<codeline lineno="148"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(day<sp/>==<sp/>0)<sp/>||<sp/>(day<sp/>&gt;=<sp/>rec_start<sp/>&amp;&amp;<sp/>day<sp/>&lt;=<sp/>rec_end<sp/>&amp;&amp;<sp/>day<sp/>%<sp/>rec_interval_local<sp/>==<sp/>0);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/Record.cpp"/>
+  </compounddef>
+</doxygen>

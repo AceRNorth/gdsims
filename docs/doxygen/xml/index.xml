@@ -1,0 +1,443 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.10.0" xml:lang="en-US">
+  <compound refid="class_aestivation" kind="class"><name>Aestivation</name>
+    <member refid="class_aestivation_1a8549d806f88e898cdd61219d75d517e1" kind="variable"><name>psi</name></member>
+    <member refid="class_aestivation_1a8ba05278f1dce1144e82c32abd540dc0" kind="variable"><name>mu_aes</name></member>
+    <member refid="class_aestivation_1af08e1211410a782de9d592829c6619e6" kind="variable"><name>t_hide1</name></member>
+    <member refid="class_aestivation_1a22078820c3b6d2c0b410379fb85ba495" kind="variable"><name>t_hide2</name></member>
+    <member refid="class_aestivation_1a786f12e5e6b5be06c83fa21fc3b070f0" kind="variable"><name>t_wake1</name></member>
+    <member refid="class_aestivation_1a63e9e51ce52b0df684c04584e30d89bd" kind="variable"><name>t_wake2</name></member>
+    <member refid="class_aestivation_1af713622c387e052969ec6d2ceef88213" kind="variable"><name>aes_F</name></member>
+    <member refid="class_aestivation_1a51e62f2785f14f40c74698c76da16f41" kind="function"><name>Aestivation</name></member>
+    <member refid="class_aestivation_1a43390ce5cf1f9be08cf9b82d8cce00f3" kind="function"><name>hide</name></member>
+    <member refid="class_aestivation_1ade758967c3a5d774e15ffd2836b6e21d" kind="function"><name>wake</name></member>
+    <member refid="class_aestivation_1ad52ef1d1e4febab22176ac1690f22d76" kind="function"><name>is_hide_time</name></member>
+    <member refid="class_aestivation_1a28d413fd0b0ab424b5071832de34e86c" kind="function"><name>is_wake_time</name></member>
+  </compound>
+  <compound refid="struct_aestivation_params" kind="struct"><name>AestivationParams</name>
+    <member refid="struct_aestivation_params_1aa75b996e48bd9a575f2d779b457e9676" kind="variable"><name>psi</name></member>
+    <member refid="struct_aestivation_params_1ace83fbaf99df64c684945c11657e0e2d" kind="variable"><name>mu_aes</name></member>
+    <member refid="struct_aestivation_params_1a5c9103b6a2967fd10ceac34d74e873c5" kind="variable"><name>t_hide1</name></member>
+    <member refid="struct_aestivation_params_1aa2e60eba548455a01bd70fcf7801b204" kind="variable"><name>t_hide2</name></member>
+    <member refid="struct_aestivation_params_1a09830242cd97a95bd90f6107f5d65be1" kind="variable"><name>t_wake1</name></member>
+    <member refid="struct_aestivation_params_1a523922bc6514f3d1623385060367cec0" kind="variable"><name>t_wake2</name></member>
+  </compound>
+  <compound refid="struct_area_params" kind="struct"><name>AreaParams</name>
+    <member refid="struct_area_params_1ae2dcd6b60485cc3a2f54b70355987385" kind="variable"><name>num_pat</name></member>
+    <member refid="struct_area_params_1a25bc9f9baa5f3b4f9352101dfec36a99" kind="variable"><name>side</name></member>
+  </compound>
+  <compound refid="class_boundary_strategy" kind="class"><name>BoundaryStrategy</name>
+    <member refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kind="variable"><name>side</name></member>
+    <member refid="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" kind="function"><name>BoundaryStrategy</name></member>
+    <member refid="class_boundary_strategy_1ab845b40ed83aeb78018c23f45565cd0e" kind="function"><name>distance</name></member>
+  </compound>
+  <compound refid="class_dispersal" kind="class"><name>Dispersal</name>
+    <member refid="class_dispersal_1ac4a92820d2e1967895862466abd1c701" kind="variable"><name>disp_rate</name></member>
+    <member refid="class_dispersal_1a8b95350f1ca6fd7c635944dd776b806f" kind="variable"><name>max_disp</name></member>
+    <member refid="class_dispersal_1ae829e3cc99c732c2e4e15995a6aabc75" kind="variable"><name>connec_indices</name></member>
+    <member refid="class_dispersal_1a5837fcddaf8f9fa9cff545828be47d5a" kind="variable"><name>connec_weights</name></member>
+    <member refid="class_dispersal_1ab408b6c47b542c65c99e2c141962e81e" kind="variable"><name>boundary_strategy</name></member>
+    <member refid="class_dispersal_1a4eb55d34c12749b33bd68d4c8bfee61a" kind="function"><name>Dispersal</name></member>
+    <member refid="class_dispersal_1aed1dabe97b773b3616811b648b170350" kind="function"><name>~Dispersal</name></member>
+    <member refid="class_dispersal_1aef84d06c465ccb461d1cfb39e82de838" kind="function"><name>set_connecs</name></member>
+    <member refid="class_dispersal_1a90638547dc5983463ee88d89a9167b5a" kind="function"><name>adults_disperse</name></member>
+    <member refid="class_dispersal_1a5ffa246788b8c993b6a34e8c8387d863" kind="function"><name>M_dispersing_out</name></member>
+    <member refid="class_dispersal_1ade53b8a69c5eea72536bcf2c7ef76857" kind="function"><name>F_dispersing_out</name></member>
+  </compound>
+  <compound refid="struct_dispersal_params" kind="struct"><name>DispersalParams</name>
+    <member refid="struct_dispersal_params_1a9a6b644b1897710b43f94688b73b42b4" kind="variable"><name>disp_rate</name></member>
+    <member refid="struct_dispersal_params_1a9f7d0b061d1024b76f726c795a4df4cd" kind="variable"><name>max_disp</name></member>
+  </compound>
+  <compound refid="class_distance_kernel_dispersal" kind="class"><name>DistanceKernelDispersal</name>
+    <member refid="class_distance_kernel_dispersal_1a451ffadeea98f45c0db9515fc12e050c" kind="function"><name>DistanceKernelDispersal</name></member>
+    <member refid="class_distance_kernel_dispersal_1a980ed0ba571a2adf1e856f408d914078" kind="function"><name>set_connecs</name></member>
+    <member refid="class_distance_kernel_dispersal_1a8f42419dd4e180ed62680ffab734c677" kind="function"><name>adults_disperse</name></member>
+    <member refid="class_distance_kernel_dispersal_1afc863f141fc20f64d770f3b54e8fd8f9" kind="function"><name>compute_connecs</name></member>
+  </compound>
+  <compound refid="class_edge_boundary_strategy" kind="class"><name>EdgeBoundaryStrategy</name>
+    <member refid="class_edge_boundary_strategy_1a1746c13f06d1b1514c32a41ef6804389" kind="function"><name>EdgeBoundaryStrategy</name></member>
+    <member refid="class_edge_boundary_strategy_1a58bed301f6c5f63a491bad0ebe982752" kind="function"><name>distance</name></member>
+  </compound>
+  <compound refid="class_g_d_release" kind="class"><name>GDRelease</name>
+    <member refid="class_g_d_release_1a7ac47883a59de0732047fccf0a1cf6e0" kind="variable"><name>num_driver_M</name></member>
+    <member refid="class_g_d_release_1af257d77564ffbd7c694f57533dde7282" kind="variable"><name>release_times</name></member>
+    <member refid="class_g_d_release_1a7d3d5cfa8f9d71e08383edf435fcfdbb" kind="function"><name>GDRelease</name></member>
+    <member refid="class_g_d_release_1ac69ecb74bc31ac1d57764be524c68ca7" kind="function"><name>release_gene_drive</name></member>
+    <member refid="class_g_d_release_1a69a14d4b9e59ee1e1375d76630da00e3" kind="function"><name>is_release_time</name></member>
+    <member refid="class_g_d_release_1a941e51bbc4999dacdb4f22277ffdebbf" kind="function"><name>select_driver_sites</name></member>
+    <member refid="class_g_d_release_1a46170fb6a9f1a248346206b99773b684" kind="function"><name>put_driver_sites</name></member>
+  </compound>
+  <compound refid="struct_inheritance_params" kind="struct"><name>InheritanceParams</name>
+    <member refid="struct_inheritance_params_1af0f03901f9ab61ad32d860a629319933" kind="variable"><name>gamma</name></member>
+    <member refid="struct_inheritance_params_1ad465251fe02c73cfdf5a183f66a38c3a" kind="variable"><name>xi</name></member>
+    <member refid="struct_inheritance_params_1a21c21bbae006decbedd489a7f8dbf631" kind="variable"><name>e</name></member>
+  </compound>
+  <compound refid="struct_initial_pops_params" kind="struct"><name>InitialPopsParams</name>
+    <member refid="struct_initial_pops_params_1a223e4fba21b1219765b0aaffb794cb7c" kind="variable"><name>initial_WJ</name></member>
+    <member refid="struct_initial_pops_params_1affa8fc67eb8a0fc91227b5034b38bdc3" kind="variable"><name>initial_WM</name></member>
+    <member refid="struct_initial_pops_params_1a13e0588763c9fcaf905384cd34866aaf" kind="variable"><name>initial_WV</name></member>
+    <member refid="struct_initial_pops_params_1ac125c56f73e260d96236434d57dd1599" kind="variable"><name>initial_WF</name></member>
+  </compound>
+  <compound refid="struct_input_params" kind="struct"><name>InputParams</name>
+    <member refid="struct_input_params_1ab541958fd9e07697d71f0ea16e618de2" kind="variable"><name>num_runs</name></member>
+    <member refid="struct_input_params_1a2ff1e7d5dd5c45bf804f0701072200f4" kind="variable"><name>max_t</name></member>
+    <member refid="struct_input_params_1a62f9db260cddf268056a39c133e971f7" kind="variable"><name>num_pat</name></member>
+    <member refid="struct_input_params_1a1c3cdff052b3a5b67b56b6d9f24fd0c1" kind="variable"><name>side</name></member>
+    <member refid="struct_input_params_1a746b1ef46c9498a5dd09b825ea4b7a24" kind="variable"><name>mu_j</name></member>
+    <member refid="struct_input_params_1ad5675a09a39929aa98cd569cb4c4403f" kind="variable"><name>mu_a</name></member>
+    <member refid="struct_input_params_1a4fb2cae8d6b3a9585e386b2bfeb03299" kind="variable"><name>beta</name></member>
+    <member refid="struct_input_params_1a7183128711c0a119f7fc72e94ae6bdd4" kind="variable"><name>theta</name></member>
+    <member refid="struct_input_params_1a99ec67370f4794427a09d93630b248e3" kind="variable"><name>comp_power</name></member>
+    <member refid="struct_input_params_1a2593d199fff80f091dfd1cf576c5c54f" kind="variable"><name>min_dev</name></member>
+    <member refid="struct_input_params_1a746acff494ce4f310d92d67bfcbed018" kind="variable"><name>gamma</name></member>
+    <member refid="struct_input_params_1a2f34329974d0d04d9027f00955c4bc99" kind="variable"><name>xi</name></member>
+    <member refid="struct_input_params_1a803f48bc190f6b07b317539429626ee3" kind="variable"><name>e</name></member>
+    <member refid="struct_input_params_1a0bd5fad3e6b9c0fe9a889aa42ae9abf6" kind="variable"><name>driver_start</name></member>
+    <member refid="struct_input_params_1a99737ba534111f33e3882576b93eb88a" kind="variable"><name>num_driver_M</name></member>
+    <member refid="struct_input_params_1ac071e4057a91d95a69871d8f07ad9bcb" kind="variable"><name>num_driver_sites</name></member>
+    <member refid="struct_input_params_1a52529a486affcbf464037cf78e1610ad" kind="variable"><name>disp_rate</name></member>
+    <member refid="struct_input_params_1a7c92eaa0ddaa679b439b0d9aa6a30086" kind="variable"><name>max_disp</name></member>
+    <member refid="struct_input_params_1adc5b2a93829b4fa4eafa0e804446558a" kind="variable"><name>psi</name></member>
+    <member refid="struct_input_params_1af4132ca26a4a4ce1e19c46c89d8aee38" kind="variable"><name>mu_aes</name></member>
+    <member refid="struct_input_params_1a5d0c54631c85331b117bed861883fba5" kind="variable"><name>t_hide1</name></member>
+    <member refid="struct_input_params_1ae17cce0a7ef61941a6e97158ebf80f1c" kind="variable"><name>t_hide2</name></member>
+    <member refid="struct_input_params_1aa0b9fe354099482dfdead7877fd3409b" kind="variable"><name>t_wake1</name></member>
+    <member refid="struct_input_params_1a4542cd7e2b6b2b386a9e63e08c2b527f" kind="variable"><name>t_wake2</name></member>
+    <member refid="struct_input_params_1a2056a53757ab38ff189bca6870d2f7d5" kind="variable"><name>alpha0_mean</name></member>
+    <member refid="struct_input_params_1a4497eea80bab35f4d09bb8aa1fd71c3e" kind="variable"><name>alpha0_variance</name></member>
+    <member refid="struct_input_params_1a811a584ea9d14cb5223d56efaa8f68c5" kind="variable"><name>alpha1</name></member>
+    <member refid="struct_input_params_1ab02eb338f46a10a8144e4219292c34c9" kind="variable"><name>amp</name></member>
+    <member refid="struct_input_params_1a113b8e6f08c2123150b03908be887817" kind="variable"><name>resp</name></member>
+    <member refid="struct_input_params_1a4194d9346cbff529ae873c304699d2c5" kind="variable"><name>initial_WJ</name></member>
+    <member refid="struct_input_params_1aa8bdf3859ec5f900b12c23f01ba28504" kind="variable"><name>initial_WM</name></member>
+    <member refid="struct_input_params_1af73a502e495c5f5e8b5c6d5b0f92125e" kind="variable"><name>initial_WV</name></member>
+    <member refid="struct_input_params_1af7bf83f2f03a3ed0f16265796dd0d25d" kind="variable"><name>initial_WF</name></member>
+    <member refid="struct_input_params_1a6e73a95f47dcfa05263838b0b1f3ad27" kind="variable"><name>rec_start</name></member>
+    <member refid="struct_input_params_1a1223c275e31ee8b901b5d5a274d85c74" kind="variable"><name>rec_end</name></member>
+    <member refid="struct_input_params_1a88ac9f864219bc930cda1f52aa0920b3" kind="variable"><name>rec_interval_global</name></member>
+    <member refid="struct_input_params_1ae1a85942abb2e6e81ee33bb395fee17d" kind="variable"><name>rec_interval_local</name></member>
+    <member refid="struct_input_params_1a0aa285f32fbb33162549d1480f36e1f0" kind="variable"><name>rec_sites_freq</name></member>
+    <member refid="struct_input_params_1a07f5774fe964faa2107831863f75ab1c" kind="variable"><name>set_label</name></member>
+  </compound>
+  <compound refid="class_input_rainfall" kind="class"><name>InputRainfall</name>
+    <member refid="class_input_rainfall_1adb68f5eb090485f2a362e227aeaf91c8" kind="variable"><name>resp</name></member>
+    <member refid="class_input_rainfall_1a44c851f69b6dc275e65799c52c7e9cde" kind="variable"><name>rainfall</name></member>
+    <member refid="class_input_rainfall_1a20330f7ca100d2b1fb3e2432bded83f2" kind="function"><name>InputRainfall</name></member>
+    <member refid="class_input_rainfall_1a7599fc9d35cae87ac87f98d2ccb6b3fb" kind="function"><name>alpha</name></member>
+  </compound>
+  <compound refid="struct_input_rainfall_params" kind="struct"><name>InputRainfallParams</name>
+    <member refid="struct_input_rainfall_params_1ac48f83260dd19b3a6164cb98a03bd6ee" kind="variable"><name>alpha1</name></member>
+    <member refid="struct_input_rainfall_params_1ac84460995670184a4eee972e9e25b2a6" kind="variable"><name>resp</name></member>
+    <member refid="struct_input_rainfall_params_1a368dfef89d1edb458ad34e8f4bebbe87" kind="variable"><name>rainfall</name></member>
+  </compound>
+  <compound refid="struct_life_params" kind="struct"><name>LifeParams</name>
+    <member refid="struct_life_params_1a02c6d31cc4adf7efc95abf6707c9f75b" kind="variable"><name>mu_j</name></member>
+    <member refid="struct_life_params_1a528e234b9f36c9ee20e1e65ccb6f18ac" kind="variable"><name>mu_a</name></member>
+    <member refid="struct_life_params_1a2cf17ed50803c966c18b4d1ca30b442c" kind="variable"><name>beta</name></member>
+    <member refid="struct_life_params_1aea4fb1949f3ae9889fbd022ce728c1e2" kind="variable"><name>theta</name></member>
+    <member refid="struct_life_params_1a113c7b28bb3132aa7e9e34f5380f0837" kind="variable"><name>comp_power</name></member>
+    <member refid="struct_life_params_1a68805af09da4a9755cdd659dfd6fddd9" kind="variable"><name>min_dev</name></member>
+  </compound>
+  <compound refid="class_model" kind="class"><name>Model</name>
+    <member refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kind="variable"><name>sites</name></member>
+    <member refid="class_model_1a76d71b89f763d239c57657156b143231" kind="variable"><name>dispersal</name></member>
+    <member refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kind="variable"><name>aestivation</name></member>
+    <member refid="class_model_1a9d0be7ddf0f62f9e9444ab5be8be8da6" kind="variable"><name>gd_release</name></member>
+    <member refid="class_model_1a9d3cb8400740de092adeaa6fdea121a8" kind="variable"><name>seasonality</name></member>
+    <member refid="class_model_1a864dafb787704b50f6b3ca2b416533df" kind="variable"><name>day_sim</name></member>
+    <member refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kind="variable"><name>num_pat</name></member>
+    <member refid="class_model_1ad456b9a7464879d80abb19f1d14971cf" kind="variable"><name>side</name></member>
+    <member refid="class_model_1a9f55ce896e1332f492570af65cfe76d4" kind="variable"><name>initial_pops</name></member>
+    <member refid="class_model_1af1ba01eda7176a872d16eff80fa8cde9" kind="variable"><name>min_dev</name></member>
+    <member refid="class_model_1a1d8427bbcb5f7e9db04d213111e208ba" kind="variable"><name>dev_duration_probs</name></member>
+    <member refid="class_model_1a0fb3ac96dac77d8c0f67142ab70ad899" kind="variable"><name>inher_fraction</name></member>
+    <member refid="class_model_1a106416d6d9dc6510bda17ea0b6b1b588" kind="variable"><name>alpha0_mean</name></member>
+    <member refid="class_model_1ad10cafc06c6b49b020c22efb034f8362" kind="variable"><name>alpha0_variance</name></member>
+    <member refid="class_model_1a46b88e44d343b0bc26544e1e77538e5b" kind="function"><name>Model</name></member>
+    <member refid="class_model_1a9665e30ee5c6339b78966f628dcdf468" kind="function"><name>Model</name></member>
+    <member refid="class_model_1ad6ebd2062a0b823db841a0b88baac4c0" kind="function"><name>~Model</name></member>
+    <member refid="class_model_1a3d359ced00aacc31a7b50c53b8b1e340" kind="function"><name>initiate</name></member>
+    <member refid="class_model_1a7e4eb741e72b3946a9166dceed6fc02d" kind="function"><name>run</name></member>
+    <member refid="class_model_1a8aaa1031c217f20626283a360d44b53f" kind="function"><name>calculate_tot_J</name></member>
+    <member refid="class_model_1ab92b4e7f88b556e690391528330ba6af" kind="function"><name>calculate_tot_M</name></member>
+    <member refid="class_model_1a0d762e0b53f2f1443b59d1425366cfc4" kind="function"><name>calculate_tot_V</name></member>
+    <member refid="class_model_1a8be5555da392871558de820795938a04" kind="function"><name>calculate_tot_F</name></member>
+    <member refid="class_model_1a6d5f4f68f41e76c3e966e312d2f6e9e3" kind="function"><name>calculate_tot_M_gen</name></member>
+    <member refid="class_model_1a17b3a93529de4ef762254f9a1932b67e" kind="function"><name>get_sites</name></member>
+    <member refid="class_model_1a6499bfa0eeb48133e352ce72f79aee9d" kind="function"><name>get_day</name></member>
+    <member refid="class_model_1a04c1c541fc6d4f4c12f854b971197ea5" kind="function"><name>get_alpha</name></member>
+    <member refid="class_model_1ad1efe8336546de49c99d0d8c8ec8e6e8" kind="function"><name>alpha0</name></member>
+    <member refid="class_model_1add15fa39b2e8fda3fefc551de4d0e1bb" kind="function"><name>populate_sites</name></member>
+    <member refid="class_model_1a1b78097ea008a3b4cc36b321c7d42289" kind="function"><name>set_dev_duration_probs</name></member>
+    <member refid="class_model_1ae7c17f3d562ffc8baea8945ba4ffd3c3" kind="function"><name>run_step</name></member>
+    <member refid="class_model_1a2a3151eb1bb6333c2ba103f0c7c6c475" kind="function"><name>juv_get_older</name></member>
+    <member refid="class_model_1ae2fa6af0cf426e1df144e4dcbee4069d" kind="function"><name>adults_die</name></member>
+    <member refid="class_model_1a76f26441a5112d1f596d5b9317734be4" kind="function"><name>virgins_mate</name></member>
+    <member refid="class_model_1a85c48027be32159a36337531249a435a" kind="function"><name>lay_eggs</name></member>
+    <member refid="class_model_1af30fafd15a6451c20c3dcef622aaf6d0" kind="function"><name>juv_eclose</name></member>
+  </compound>
+  <compound refid="struct_model_params" kind="struct"><name>ModelParams</name>
+    <member refid="struct_model_params_1a53c7cd827ceb1f96a1e4ffd850efc096" kind="variable"><name>area</name></member>
+    <member refid="struct_model_params_1a6cb4a8401e0037d73a4cb8bf82705dbf" kind="variable"><name>initial</name></member>
+    <member refid="struct_model_params_1ae0c846a42a36f1e6bc6eccb35bf55763" kind="variable"><name>life</name></member>
+    <member refid="struct_model_params_1a87446d8f4e014fdfd555bd74b8b7fd70" kind="variable"><name>aes</name></member>
+    <member refid="struct_model_params_1a3bdf0759e5b47d434f45982452a39b81" kind="variable"><name>disp</name></member>
+    <member refid="struct_model_params_1a77b9b6eab4e2185ef28937f8a438f08d" kind="variable"><name>rel</name></member>
+  </compound>
+  <compound refid="class_patch" kind="class"><name>Patch</name>
+    <member refid="class_patch_1a037a39e096bd12a5fb5299caa7505671" kind="variable"><name>model</name></member>
+    <member refid="class_patch_1a79f803e7bb4536f9b0127b0dfe76c1ab" kind="variable"><name>params</name></member>
+    <member refid="class_patch_1a5b781b751c5a39bb3a94640e3542a517" kind="variable"><name>alpha0</name></member>
+    <member refid="class_patch_1ab18c50790301400e0a1130dbd4867db9" kind="variable"><name>coords</name></member>
+    <member refid="class_patch_1a9ec8ec87984a6e18efa7afd83e6df081" kind="variable"><name>J</name></member>
+    <member refid="class_patch_1a6e9cda8c3620873eaadf23db0f5a7b27" kind="variable"><name>M</name></member>
+    <member refid="class_patch_1ae4195468f66138a8bf7f0c37701098da" kind="variable"><name>V</name></member>
+    <member refid="class_patch_1a9e6066355010ba73abb33d8d41714677" kind="variable"><name>F</name></member>
+    <member refid="class_patch_1a9807128f092d63158e4d75279b508557" kind="variable"><name>comp</name></member>
+    <member refid="class_patch_1a31046a60938f68ee9db3d779e2ba9dbe" kind="variable"><name>mate_rate</name></member>
+    <member refid="class_patch_1a8f0ac2f89a3d9065ea6df83662cf1410" kind="function"><name>Patch</name></member>
+    <member refid="class_patch_1a891de9d894bd3c2e3d800c58c82d7485" kind="function"><name>Patch</name></member>
+    <member refid="class_patch_1ada58f98a20b459b05e7d4b986de3aeee" kind="function"><name>populate</name></member>
+    <member refid="class_patch_1a384ca47849b58d7f215d5a7aaa8049bb" kind="function"><name>get_coords</name></member>
+    <member refid="class_patch_1a18366a21df794d2cebbbdfe3195734a5" kind="function"><name>get_M</name></member>
+    <member refid="class_patch_1a7754f3fd7fb22af2c3661d4d5229ab2d" kind="function"><name>get_F</name></member>
+    <member refid="class_patch_1a3071272790d2c5cde8675e94a306ac0a" kind="function"><name>calculate_tot_J</name></member>
+    <member refid="class_patch_1adf7fcfe3a5b2b00afe76c9dac3aea50c" kind="function"><name>calculate_tot_M</name></member>
+    <member refid="class_patch_1af90e1ce58bd0c009e6dc9e939d2ee81d" kind="function"><name>calculate_tot_V</name></member>
+    <member refid="class_patch_1a55c95af0f8a5c1d7ac885a828a873865" kind="function"><name>calculate_tot_F</name></member>
+    <member refid="class_patch_1a1ac1a35f87b779415c9c0f91f0235add" kind="function"><name>juv_get_older</name></member>
+    <member refid="class_patch_1a57e9e06fbf179f6d3c808dee1522f6a9" kind="function"><name>adults_die</name></member>
+    <member refid="class_patch_1a831b026c31ae2bbb56b04e8cc8fa2277" kind="function"><name>virgins_mate</name></member>
+    <member refid="class_patch_1acbbe56b0cc3e9e65720191eb92bd33f3" kind="function"><name>lay_eggs</name></member>
+    <member refid="class_patch_1a935e1a959a81d818c161b1182a45e958" kind="function"><name>juv_eclose</name></member>
+    <member refid="class_patch_1abfcba309e2ecc8eb224b89a5f11d6042" kind="function"><name>update_comp</name></member>
+    <member refid="class_patch_1a14846b95a2c4032ae4de370abc5ddb04" kind="function"><name>update_mate</name></member>
+    <member refid="class_patch_1a2ef705901ca9492bad465c4392fe84cf" kind="function"><name>M_disperse_out</name></member>
+    <member refid="class_patch_1af11ef5b41bc1c8e274368396a0e506ef" kind="function"><name>F_disperse_out</name></member>
+    <member refid="class_patch_1a6e8160f0e8dc961b25aa89d273cdfc2e" kind="function"><name>M_disperse_in</name></member>
+    <member refid="class_patch_1a4b3a7d2c76b525c22175e48784951d5e" kind="function"><name>F_disperse_in</name></member>
+    <member refid="class_patch_1a9cae604040d09f1d07faee40bddb46f3" kind="function"><name>F_hide</name></member>
+    <member refid="class_patch_1a696522469c14fcb175f419f5e5540279" kind="function"><name>F_wake</name></member>
+    <member refid="class_patch_1a40d8e016a59e2c0fafa5c4a840f54aaa" kind="function"><name>add_driver_M</name></member>
+  </compound>
+  <compound refid="struct_point" kind="struct"><name>Point</name>
+    <member refid="struct_point_1ab99c56589bc8ad5fa5071387110a5bc7" kind="variable"><name>x</name></member>
+    <member refid="struct_point_1afa38be143ae800e6ad69ce8ed4df62d8" kind="variable"><name>y</name></member>
+  </compound>
+  <compound refid="struct_progression_params" kind="struct"><name>ProgressionParams</name>
+    <member refid="struct_progression_params_1a431c275eade9e61300a16411d077d175" kind="variable"><name>num_runs</name></member>
+    <member refid="struct_progression_params_1ac46e203808a1cde29efe72b01dfcef4e" kind="variable"><name>max_t</name></member>
+  </compound>
+  <compound refid="class_radial_dispersal" kind="class"><name>RadialDispersal</name>
+    <member refid="class_radial_dispersal_1a58a082ed4dfcec4a9f66fb6753a70522" kind="variable"><name>connec_weights_sum</name></member>
+    <member refid="class_radial_dispersal_1ac63e6e6d97e7c720b6e6ef349e07c711" kind="function"><name>RadialDispersal</name></member>
+    <member refid="class_radial_dispersal_1a363d41e54203e0cd6cadb0667b1f6548" kind="function"><name>set_connecs</name></member>
+    <member refid="class_radial_dispersal_1aa3bca3cc8b2d80af4bd11d91cacf09bb" kind="function"><name>adults_disperse</name></member>
+    <member refid="class_radial_dispersal_1ad09b4df09539d8b421c8d7ed3199d0c4" kind="function"><name>compute_connecs</name></member>
+    <member refid="class_radial_dispersal_1ae456b5d871312e16812fb6c4024288f6" kind="function"><name>compute_interval_union</name></member>
+    <member refid="class_radial_dispersal_1a55a26db2720e9bf5811aa51cf3a8d873" kind="function"><name>wrap_around</name></member>
+    <member refid="class_radial_dispersal_1a4df7ea1ccbcc88991b3e63a46f0e0bb1" kind="function"><name>get_sorted_positions</name></member>
+    <member refid="class_radial_dispersal_1a28a558e2dcb75b8db11fd424aa66243e" kind="function"><name>compute_distances</name></member>
+  </compound>
+  <compound refid="class_random_g_d_release" kind="class"><name>RandomGDRelease</name>
+    <member refid="class_random_g_d_release_1aa45f254b5d9bfa9239e5ec3833f33cf5" kind="variable"><name>num_driver_sites</name></member>
+    <member refid="class_random_g_d_release_1abbf9f26d2fa13619476400ce3b0e17b8" kind="function"><name>RandomGDRelease</name></member>
+    <member refid="class_random_g_d_release_1a3dfe5435b6e54b577bd6e30ccc1117d6" kind="function"><name>select_driver_sites</name></member>
+  </compound>
+  <compound refid="class_record" kind="class"><name>Record</name>
+    <member refid="class_record_1a13b20ef61772014de98c3d87354ad1e9" kind="variable"><name>rec_start</name></member>
+    <member refid="class_record_1a0598ebe2ae342bf3dc7be5a156ad4c34" kind="variable"><name>rec_end</name></member>
+    <member refid="class_record_1a3086c7b10d3d1a9983703d0865230cfa" kind="variable"><name>rec_interval_global</name></member>
+    <member refid="class_record_1a9217590af69eb03412ac2c82c4fd853e" kind="variable"><name>rec_interval_local</name></member>
+    <member refid="class_record_1a8ab507dfcfb593428a8c23a81877fac3" kind="variable"><name>rec_sites_freq</name></member>
+    <member refid="class_record_1a6af350cda36acab3641fce143db9e23f" kind="variable"><name>set_label</name></member>
+    <member refid="class_record_1ae9d8484927a4355098e0838c4d9a9314" kind="variable"><name>rep_label</name></member>
+    <member refid="class_record_1a5b2c0fc66b1b06b02f0fb485c2e7b4d1" kind="variable"><name>os1</name></member>
+    <member refid="class_record_1a41aeed0c4345e36767be33f8c906a5b8" kind="variable"><name>os2</name></member>
+    <member refid="class_record_1a980b8c85bb233ad19544124db3634465" kind="variable"><name>os3</name></member>
+    <member refid="class_record_1aef62117702c3e667f8353be450f7c176" kind="variable"><name>local_data</name></member>
+    <member refid="class_record_1a09e1fe18d5084ac207ff42cfcec68858" kind="variable"><name>global_data</name></member>
+    <member refid="class_record_1a2165facbe1dd7fa3b3196b799eb7bbc4" kind="variable"><name>coord_list</name></member>
+    <member refid="class_record_1a977db4fb6aaa9ac09b0d17ba676cabda" kind="function"><name>Record</name></member>
+    <member refid="class_record_1ad2ce1a99d866834ab53dedd788cb1ea6" kind="function"><name>~Record</name></member>
+    <member refid="class_record_1a0c4d71ceed2e84f89273a73a304fcc4c" kind="function"><name>record_coords</name></member>
+    <member refid="class_record_1aa8ed3bd4fdee0c2dddbb5cec2f685577" kind="function"><name>record_global</name></member>
+    <member refid="class_record_1a27622a9c11aa4a86ca123456ef0ad236" kind="function"><name>output_totals</name></member>
+    <member refid="class_record_1a8e504c6253ef29fa5c86d216e3f28e1c" kind="function"><name>record_local</name></member>
+    <member refid="class_record_1ae6b89328b0fcaa2bfa5eebe819782b50" kind="function"><name>is_rec_local_time</name></member>
+    <member refid="class_record_1a97f3aed77c0f4b5979da3a9a11bce42c" kind="function"><name>is_rec_global_time</name></member>
+  </compound>
+  <compound refid="struct_record_params" kind="struct"><name>RecordParams</name>
+    <member refid="struct_record_params_1a89c527d5630d1aec0fc05ed61ee8b715" kind="variable"><name>rec_start</name></member>
+    <member refid="struct_record_params_1aca901320e2ed318d7d65698175dae21f" kind="variable"><name>rec_end</name></member>
+    <member refid="struct_record_params_1a37fe54bf39f62735f32270d20d820bcc" kind="variable"><name>rec_interval_global</name></member>
+    <member refid="struct_record_params_1a4d6ee2751b9b53199d38f79970031733" kind="variable"><name>rec_interval_local</name></member>
+    <member refid="struct_record_params_1a16d83a9c06faa37230c3b34eb9f0d081" kind="variable"><name>rec_sites_freq</name></member>
+    <member refid="struct_record_params_1a9df186c8b9f5788c29d023a41ba8088e" kind="variable"><name>set_label</name></member>
+  </compound>
+  <compound refid="struct_release_params" kind="struct"><name>ReleaseParams</name>
+    <member refid="struct_release_params_1ad8eab6bc3fe0bed5e774c63d7f43f350" kind="variable"><name>num_driver_M</name></member>
+    <member refid="struct_release_params_1a58423db2e16b0553d09ebec4d0d8a625" kind="variable"><name>num_driver_sites</name></member>
+    <member refid="struct_release_params_1a1c79ed7605dac900e139a7e805ba2c97" kind="variable"><name>release_times</name></member>
+  </compound>
+  <compound refid="class_sched_g_d_release" kind="class"><name>SchedGDRelease</name>
+    <member refid="class_sched_g_d_release_1a84d5e62bd160c6ff007b31db117b24e7" kind="variable"><name>release_sites</name></member>
+    <member refid="class_sched_g_d_release_1a5bfb7430747b3f7764b085eec40173be" kind="function"><name>SchedGDRelease</name></member>
+    <member refid="class_sched_g_d_release_1a40212411e7dd81dac953dd0d6f9ad4ad" kind="function"><name>select_driver_sites</name></member>
+  </compound>
+  <compound refid="class_seasonality" kind="class"><name>Seasonality</name>
+    <member refid="class_seasonality_1ac69d88cb94f794d9e317b7d259eaff64" kind="variable"><name>alpha1</name></member>
+    <member refid="class_seasonality_1a58daa86e6a5d8f1b1b8d4db8c9389870" kind="function"><name>Seasonality</name></member>
+    <member refid="class_seasonality_1a86bfbdfc639ab1a08e3643e05b55d6f1" kind="function"><name>alpha</name></member>
+  </compound>
+  <compound refid="class_simulation" kind="class"><name>Simulation</name>
+    <member refid="class_simulation_1a8e1d4d667e07e3f7e453bbb936dd0c5a" kind="variable"><name>num_runs</name></member>
+    <member refid="class_simulation_1adc775015be74841e3f9f99550af987bd" kind="variable"><name>max_t</name></member>
+    <member refid="class_simulation_1a28f56093772a2f20dd286ac7b225c030" kind="variable"><name>model_params</name></member>
+    <member refid="class_simulation_1a83058587f6835f69b4b249f1382a76ee" kind="variable"><name>rec_params</name></member>
+    <member refid="class_simulation_1ac42205211628f51d8f680b6522ca663e" kind="variable"><name>sine_rainfall_params</name></member>
+    <member refid="class_simulation_1a43023bf5f1ee507b61a8a07b61cbdf2f" kind="variable"><name>input_rainfall_params</name></member>
+    <member refid="class_simulation_1a4067cd6f026a45b6fdef80682669ffd4" kind="variable"><name>alpha0_mean</name></member>
+    <member refid="class_simulation_1ac74b6c9f7665a081c686f088f8db950c" kind="variable"><name>alpha0_variance</name></member>
+    <member refid="class_simulation_1a73b6b686f5dca876da14e5b79f8123a5" kind="variable"><name>sites_coords</name></member>
+    <member refid="class_simulation_1a3e12749f5e0c59d3343fb7ac68faabea" kind="variable"><name>release_sites</name></member>
+    <member refid="class_simulation_1ac1bea19f5a9917fbff711bc9f652cff5" kind="variable"><name>boundary_type</name></member>
+    <member refid="class_simulation_1a978ed04ac5ec2c121cb0e9875a88195d" kind="variable"><name>disp_type</name></member>
+    <member refid="class_simulation_1a5bf54d592f89fb121f5f8225d2761e30" kind="variable"><name>inher_fraction</name></member>
+    <member refid="class_simulation_1a78403ca84dfef50ffa06c053648347a6" kind="function"><name>Simulation</name></member>
+    <member refid="class_simulation_1a80fad3f57dfaf195a36f7bc49bc88279" kind="function"><name>~Simulation</name></member>
+    <member refid="class_simulation_1ab365e7a0000cae028998efae63b7d0c1" kind="function"><name>set_coords</name></member>
+    <member refid="class_simulation_1ac6575f63c78f7fffff4817665f5a0f05" kind="function"><name>set_boundary_type</name></member>
+    <member refid="class_simulation_1a451b81744f93c2470a28d75bece48783" kind="function"><name>set_dispersal_type</name></member>
+    <member refid="class_simulation_1abc5c5d0891de7943820db3e6682cd125" kind="function"><name>set_rainfall</name></member>
+    <member refid="class_simulation_1a7d774bb0496b0ea95c2c88afc0d24731" kind="function"><name>set_release_times</name></member>
+    <member refid="class_simulation_1ac5440a772e9d7788c588a795a7821fb6" kind="function"><name>set_inheritance</name></member>
+    <member refid="class_simulation_1a46325953f7df60733d519b8b3cd1de61" kind="function"><name>run_reps</name></member>
+  </compound>
+  <compound refid="class_sine_rainfall" kind="class"><name>SineRainfall</name>
+    <member refid="class_sine_rainfall_1a83a33e17ca162e92beea4ba741807d63" kind="variable"><name>amp</name></member>
+    <member refid="class_sine_rainfall_1a5400eca90b6aae50317446023a020f6c" kind="function"><name>SineRainfall</name></member>
+    <member refid="class_sine_rainfall_1a208a62a5176ae5db43120cf938a7f067" kind="function"><name>alpha</name></member>
+  </compound>
+  <compound refid="struct_sine_rainfall_params" kind="struct"><name>SineRainfallParams</name>
+    <member refid="struct_sine_rainfall_params_1aec270841a6b4ef8d30f963378a924d6e" kind="variable"><name>alpha1</name></member>
+    <member refid="struct_sine_rainfall_params_1a08519d3070e7acb0e281d4513c4fc78c" kind="variable"><name>amp</name></member>
+  </compound>
+  <compound refid="class_toroidal_boundary_strategy" kind="class"><name>ToroidalBoundaryStrategy</name>
+    <member refid="class_toroidal_boundary_strategy_1a5ea5b1bb1027b4722d19ece1d1209509" kind="function"><name>ToroidalBoundaryStrategy</name></member>
+    <member refid="class_toroidal_boundary_strategy_1a262f8bca65f10efa4e88c1aa67ac41ee" kind="function"><name>distance</name></member>
+  </compound>
+  <compound refid="namespaceconstants" kind="namespace"><name>constants</name>
+    <member refid="namespaceconstants_1ab5cd2d6cdf356d98576ea193f6a54476" kind="variable"><name>max_dev</name></member>
+    <member refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kind="variable"><name>num_gen</name></member>
+    <member refid="namespaceconstants_1a204a0248d18871c4d4d1b3e9a69ff495" kind="variable"><name>pi</name></member>
+  </compound>
+  <compound refid="_aestivation_8h" kind="file"><name>Aestivation.h</name>
+  </compound>
+  <compound refid="_boundary_strategy_8h" kind="file"><name>BoundaryStrategy.h</name>
+  </compound>
+  <compound refid="constants_8h" kind="file"><name>constants.h</name>
+    <member refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8" kind="enum"><name>BoundaryType</name></member>
+    <member refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d" kind="enumvalue"><name>Toroid</name></member>
+    <member refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8a7f0bc3a17ff45e6a7c3fe52b35db1888" kind="enumvalue"><name>Edge</name></member>
+    <member refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04a" kind="enum"><name>DispersalType</name></member>
+    <member refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf" kind="enumvalue"><name>DistanceKernel</name></member>
+    <member refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3709dd357d0541fa8a1fc6b2238fa583" kind="enumvalue"><name>Radial</name></member>
+  </compound>
+  <compound refid="_dispersal_8h" kind="file"><name>Dispersal.h</name>
+  </compound>
+  <compound refid="_g_d_release_8h" kind="file"><name>GDRelease.h</name>
+  </compound>
+  <compound refid="_input_params_8h" kind="file"><name>InputParams.h</name>
+  </compound>
+  <compound refid="inputval_8h" kind="file"><name>inputval.h</name>
+    <member refid="inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517" kind="function"><name>check_bounds</name></member>
+    <member refid="inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be" kind="function"><name>check_interval</name></member>
+    <member refid="inputval_8h_1a38cf9054c93e1fced65fe33940dda566" kind="function"><name>file_read_and_validate_type</name></member>
+    <member refid="inputval_8h_1adc1edb0039433704b7af2b7b850cabce" kind="function"><name>read_and_validate_type</name></member>
+  </compound>
+  <compound refid="_model_8h" kind="file"><name>Model.h</name>
+  </compound>
+  <compound refid="_params_8h" kind="file"><name>Params.h</name>
+  </compound>
+  <compound refid="_patch_8h" kind="file"><name>Patch.h</name>
+  </compound>
+  <compound refid="_point_8h" kind="file"><name>Point.h</name>
+  </compound>
+  <compound refid="random_8h" kind="file"><name>random.h</name>
+    <member refid="random_8h_1a108ff3fb960f77177389a96a01ed1c74" kind="function"><name>random_real</name></member>
+    <member refid="random_8h_1af03c0e74140efa3114c4cd1361da5548" kind="function"><name>random_discrete</name></member>
+    <member refid="random_8h_1a2b4b3dc20892808a0220d878773ba864" kind="function"><name>random_poisson</name></member>
+    <member refid="random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f" kind="function"><name>random_binomial</name></member>
+    <member refid="random_8h_1a180e4f01c99b4c4fae00714c08fa647b" kind="function"><name>random_multinomial</name></member>
+    <member refid="random_8h_1ae9bfea9d70562b34509b4ff50c57e117" kind="function"><name>random_multinomial</name></member>
+    <member refid="random_8h_1ab522b309a12c730ad270008709c19d09" kind="function"><name>random_multinomial</name></member>
+    <member refid="random_8h_1ab1651a929e139f6da870eae2f0c641e0" kind="function"><name>random_lognormal</name></member>
+  </compound>
+  <compound refid="_record_8h" kind="file"><name>Record.h</name>
+  </compound>
+  <compound refid="_seasonality_8h" kind="file"><name>Seasonality.h</name>
+  </compound>
+  <compound refid="sets_8h" kind="file"><name>sets.h</name>
+    <member refid="sets_8h_1abc6aedbb3f573c686c86355a0152cb0f" kind="variable"><name>set1</name></member>
+    <member refid="sets_8h_1ae1b091107fc020012eef20a253c146d9" kind="variable"><name>set2</name></member>
+    <member refid="sets_8h_1a7dde3ad386503ecf760970b7b3203397" kind="variable"><name>set3</name></member>
+    <member refid="sets_8h_1ad10456498cc73264e039a11d139830f5" kind="variable"><name>set4</name></member>
+    <member refid="sets_8h_1a36aaa5887733856580f46f165708b38e" kind="variable"><name>set5</name></member>
+    <member refid="sets_8h_1ab4c69bd62d6eba4ce0cfefaeb3077289" kind="variable"><name>set6</name></member>
+    <member refid="sets_8h_1a87baba5fedd8c30dcf53b37e14dafc94" kind="variable"><name>set7</name></member>
+    <member refid="sets_8h_1a03a6f5d6f4b4551c0ae561e305c43025" kind="variable"><name>set8</name></member>
+    <member refid="sets_8h_1ab5de9597265e321d12d3e5a066f0eaa8" kind="variable"><name>set9</name></member>
+    <member refid="sets_8h_1aa09c4cdefed9eaa61256d2b5cb0b732c" kind="variable"><name>set10</name></member>
+    <member refid="sets_8h_1a88a9f4a43efbcf5c6d749b6643f70aed" kind="variable"><name>set11</name></member>
+    <member refid="sets_8h_1a21e55cd74dab5142a5091558da28c10f" kind="variable"><name>set12</name></member>
+    <member refid="sets_8h_1a7ad564261f554031dc1519c0edd236e7" kind="variable"><name>set13</name></member>
+    <member refid="sets_8h_1a73303c2526731d145b8664cad21a9e8e" kind="variable"><name>set14</name></member>
+    <member refid="sets_8h_1ad7b1c08d333973eac0968643b7181b7a" kind="variable"><name>set15</name></member>
+    <member refid="sets_8h_1ac0b911529cfb4370afe22fc09b1d5cc5" kind="variable"><name>set16</name></member>
+    <member refid="sets_8h_1a05ad2773b128b34c212e8c7443a498a2" kind="variable"><name>set17</name></member>
+    <member refid="sets_8h_1a5eb719a1d018c42f11afb028705799f7" kind="variable"><name>set18</name></member>
+  </compound>
+  <compound refid="_simulation_8h" kind="file"><name>Simulation.h</name>
+  </compound>
+  <compound refid="_aestivation_8cpp" kind="file"><name>Aestivation.cpp</name>
+  </compound>
+  <compound refid="_boundary_strategy_8cpp" kind="file"><name>BoundaryStrategy.cpp</name>
+  </compound>
+  <compound refid="_dispersal_8cpp" kind="file"><name>Dispersal.cpp</name>
+  </compound>
+  <compound refid="_g_d_release_8cpp" kind="file"><name>GDRelease.cpp</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="main2_8cpp" kind="file"><name>main2.cpp</name>
+    <member refid="main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_model_8cpp" kind="file"><name>Model.cpp</name>
+  </compound>
+  <compound refid="_patch_8cpp" kind="file"><name>Patch.cpp</name>
+  </compound>
+  <compound refid="random_8cpp" kind="file"><name>random.cpp</name>
+    <member refid="random_8cpp_1a7071b0092ad8c5b57d6cc40c5f803df5" kind="variable"><name>rd</name></member>
+    <member refid="random_8cpp_1af3edb3b1a762ddbe5539bc80ef5e023c" kind="function"><name>twister</name></member>
+    <member refid="random_8cpp_1a108ff3fb960f77177389a96a01ed1c74" kind="function"><name>random_real</name></member>
+    <member refid="random_8cpp_1af03c0e74140efa3114c4cd1361da5548" kind="function"><name>random_discrete</name></member>
+    <member refid="random_8cpp_1a2b4b3dc20892808a0220d878773ba864" kind="function"><name>random_poisson</name></member>
+    <member refid="random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f" kind="function"><name>random_binomial</name></member>
+    <member refid="random_8cpp_1a180e4f01c99b4c4fae00714c08fa647b" kind="function"><name>random_multinomial</name></member>
+    <member refid="random_8cpp_1ae9bfea9d70562b34509b4ff50c57e117" kind="function"><name>random_multinomial</name></member>
+    <member refid="random_8cpp_1ab522b309a12c730ad270008709c19d09" kind="function"><name>random_multinomial</name></member>
+    <member refid="random_8cpp_1ab1651a929e139f6da870eae2f0c641e0" kind="function"><name>random_lognormal</name></member>
+  </compound>
+  <compound refid="_record_8cpp" kind="file"><name>Record.cpp</name>
+  </compound>
+  <compound refid="_seasonality_8cpp" kind="file"><name>Seasonality.cpp</name>
+  </compound>
+  <compound refid="_simulation_8cpp" kind="file"><name>Simulation.cpp</name>
+  </compound>
+  <compound refid="dir_09e761304027c904456130627fd4dcf5" kind="dir"><name>includes</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>

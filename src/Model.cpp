@@ -10,7 +10,20 @@
 
 using namespace constants;
 
-Model::Model(ModelParams *params, const std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> &inher_frac, SineRainfallParams *season,
+/**
+ * Model constructor.
+ * Builds the components of the model.
+ * @param[in] params 		model parameters
+ * @param[in] inher_frac 	inheritance fraction
+ * @param[in] season 		seasonality parameters for sinusoid rainfall
+ * @param[in] a0_mean 		alpha0 mean (mean of the baseline contribution to the carrying capacity)
+ * @param[in] a0_var 		alpha0 variance (variance of the baseline contribution to the carrying capacity)
+ * @param[in] rel_sites		release sites (indices relative to the coords vector)
+ * @param[in] boundary		boundary type
+ * @param[in] disp_type		dispersal type
+ * @param[in] coords		site coordinates vector
+ */
+Model::Model(ModelParams* params, const std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> &inher_frac, SineRainfallParams* season,
  double a0_mean, double a0_var, std::vector<int> rel_sites, BoundaryType boundary, DispersalType disp_type, std::vector<Point> coords)
 {
 	num_pat = params->area->num_pat;
@@ -67,7 +80,20 @@ Model::Model(ModelParams *params, const std::array<std::array<std::array <double
 	seasonality = new_seasonality;
 }
 
-Model::Model(ModelParams *params, const std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> &inher_frac, InputRainfallParams *season,
+/**
+ * Model constructor.
+ * Builds the components of the model.
+ * @param[in] params 		model parameters
+ * @param[in] inher_frac 	inheritance fraction
+ * @param[in] season 		seasonality parameters for input rainfall data
+ * @param[in] a0_mean 		alpha0 mean (mean of the baseline contribution to the carrying capacity)
+ * @param[in] a0_var 		alpha0 variance (variance of the baseline contribution to the carrying capacity)
+ * @param[in] rel_sites		release sites (indices relative to the coords vector)
+ * @param[in] boundary		boundary type
+ * @param[in] disp_type		dispersal type
+ * @param[in] coords		site coordinates vector
+ */
+Model::Model(ModelParams* params, const std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> &inher_frac, InputRainfallParams *season,
  double a0_mean, double a0_var, std::vector<int> rel_sites, BoundaryType boundary, DispersalType disp_type, std::vector<Point> coords)
 {
 	num_pat = params->area->num_pat;
@@ -124,6 +150,9 @@ Model::Model(ModelParams *params, const std::array<std::array<std::array <double
 	seasonality = new_seasonality;
 }
 
+/**
+ * Model destructor.
+ */
 Model::~Model() 
 {
 	for (auto pat : sites) {
@@ -135,13 +164,20 @@ Model::~Model()
 	delete seasonality;
 }
 
-// Returns a random value for the baseline contribution to the carrying capacity.
+/**
+ * Returns a random value for the baseline contribution to the carrying capacity (alpha0). 
+ * @details The random value is obtained as a random draw from a lognormal distribution with desired mean alpha0_mean and desired variance alpha0_variance.
+ * @return A random draw of alpha0.
+ * @see Model::alpha0_mean, Model::alpha0_variance
+ */
 double Model::alpha0() 
 {
    return random_lognormal(alpha0_mean, alpha0_variance);
 }
 
-// Sets up the model architecture 
+/**
+ * Sets up the model architecture. 
+ */
 void Model::initiate()
 {
 	populate_sites();
@@ -149,15 +185,21 @@ void Model::initiate()
 	dispersal->set_connecs(sites); 
 }
 
-// Populates all sites with a (wild) mosquito population of different types (age and sex)
+/**
+ * Populates all sites with a wild mosquito population of different types (age and sex).
+ */
 void Model::populate_sites() 
 {
 	for (auto pat : sites) {
 		pat->populate(initial_pops->initial_WJ, initial_pops->initial_WM, initial_pops->initial_WV, initial_pops->initial_WF);
 	}
 }
-
-// Sets probabilities of juvenile eclosion for different age groups
+ 
+/**
+ * Sets probabilities of juvenile eclosion for different age groups.
+ * @param[in] min_time minimum development time (in days)
+ * @param[in] max_time maximum development time (in days)
+ */
 void Model::set_dev_duration_probs(int min_time, int max_time) 
 {
 	for (int a=0; a < max_time + 1; ++a) {
@@ -170,7 +212,11 @@ void Model::set_dev_duration_probs(int min_time, int max_time)
     }
 }
 
-// Handles which model event to run depending on the day of the simulation.
+/**
+ * Runs the daily step of the model.
+ * @details The life processes do not run during the initialisation day (day 0).
+ * @param[in] day simulation day
+ */ 
 void Model::run(int day)
 {
 	day_sim = day; // used later for seasonality
@@ -180,7 +226,10 @@ void Model::run(int day)
 	}
 }
 
-// Runs the daily mosquito life-processes for all sites, including dispersal and aestivation.
+/**
+ * Runs the daily mosquito life-processes for all sites, including dispersal and aestivation.
+ * @param[in] day simulation day
+ */
 void Model::run_step(int day) 
 {
 	juv_get_older();
@@ -193,7 +242,11 @@ void Model::run_step(int day)
 	if (aestivation->is_wake_time(day)) aestivation->wake(day, sites);
 }
 
-// Returns the total number of juveniles across all ages and genotypes and across the simulation area
+/**
+ * Returns the total number of juveniles across all ages and genotypes and across all patches.
+ * @return The total number of juveniles in the model run. 
+ * @see Patch::J
+ */
 long long int Model::calculate_tot_J()
 {
 	long long int tot_J = 0;
@@ -202,8 +255,12 @@ long long int Model::calculate_tot_J()
 	}
 	return tot_J;
 }
-
-// Returns the total number of males across all genotypes and across the simulation area
+ 
+/**
+ * Returns the total number of males across all genotypes and across all patches.
+ * @return The total number of males in the model run.
+ * @see Patch::M
+ */
 long long int Model::calculate_tot_M()
 {
 	long long int tot_M = 0;
@@ -213,7 +270,11 @@ long long int Model::calculate_tot_M()
 	return tot_M;
 }
 
-// Returns the total number of unmated females (virgins) across all genotypes and across the simulation area
+/**
+ * Returns the total number of virgin (unmated) females across all genotypes and across all patches.
+ * @return The total number of virgin (unmated) females in the model run.
+ * @see Patch::V
+ */
 long long int Model::calculate_tot_V()
 {
 	long long int tot_V = 0;
@@ -223,7 +284,11 @@ long long int Model::calculate_tot_V()
 	return tot_V;
 }
 
-// Returns the total number of mated females across all female and carrying-male genotypes and across the simulation area
+/**
+ * Returns the total number of mated females across all female and male sperm genotypes and across all patches.
+ * @return The total number of mated females in the model run.
+ * @see Patch::F
+ */
 long long int Model::calculate_tot_F()
 {
 	long long int tot_F = 0;
@@ -233,7 +298,11 @@ long long int Model::calculate_tot_F()
 	return tot_F;
 }
 
-// Returns the total number of males of each genotype across the simulation area
+/**
+ * Returns the total number of males of each genotype across all patches.
+ * @return The total number of males in the model run, divided by genotype.
+ * @see Patch::M
+ */
 std::array<long long int, constants::num_gen> Model::calculate_tot_M_gen() 
 {
 	std::array<long long int, constants::num_gen> tot_M_gen;
@@ -247,23 +316,40 @@ std::array<long long int, constants::num_gen> Model::calculate_tot_M_gen()
 	return tot_M_gen;
 }
 
+/**
+ * Returns the sites vector.
+ * @return The sites vector, containing all Patch objects. 
+ * @see Model::sites, Patch
+ */
 std::vector<Patch*> Model::get_sites() const
 {
 	return sites;
 }
 
+/**
+ * Returns the current simulation day.
+ * @return The simulation day.
+ */
 int Model::get_day() const
 {
 	return day_sim;
 }
 
+/**
+ * Returns the carrying capacity for the given alpha0 (the baseline contribution to it) and the current day.
+ * @param[in] alpha0 baseline contribution to the carrying capacity
+ * @see Seasonality::alpha()
+ */
 double Model::get_alpha(double alpha0)
 {
 	double alpha = seasonality->alpha(day_sim, alpha0);
 	return alpha;
 }
 
-// Ages the juvenile population in different age groups by a day across the simulation area
+/**
+ * Carries out juvenile aging across all patches.
+ * @see Patch::juv_get_older()
+ */
 void Model::juv_get_older() 
 {
 	for (auto pat : sites) {
@@ -271,7 +357,10 @@ void Model::juv_get_older()
 	}
 }
 
-// Selects the number of adults that die in the given day and updates population numbers across the simulation area
+/**
+ * Carries out adult mortality across all patches.
+ * @see Patch::adults_die()
+ */
 void Model::adults_die()
 {
 	for (auto pat : sites) {
@@ -279,8 +368,10 @@ void Model::adults_die()
 	}
 }
 
-// Selects the number of virgins that mate in the given day with a male of genotype j, and tranforms them into mated females carrying
-// male genotype j. Mating is carried out in each site across the simulation area.
+/**
+ * Carries out mating across all patches.
+ * @see Patch::virgins_mate()
+ */
 void Model::virgins_mate() 
 {
 	for (auto pat : sites) {
@@ -288,8 +379,10 @@ void Model::virgins_mate()
 	}
 }
 
-// Calculates the number of eggs laid on the given day and updates the number of juveniles, depending on egg survival rates.
-// Egg-laying is carried out in all sites across the simulation area.
+/**
+ * Carries out egg-laying across all patches.
+ * @see Patch::lay_eggs()
+ */
 void Model::lay_eggs()
 {
 	for (auto pat : sites) {
@@ -297,7 +390,11 @@ void Model::lay_eggs()
 	}
 }
 
-// Turns juveniles into adults, depending on eclosion survival rate, across all sites in the simulation area.
+/**
+ * Carries out juvenile eclosion across all patches.
+ * @see Patch::juv_eclose()
+ */ 
+
 void Model::juv_eclose()
 {
 	for (auto pat : sites) {

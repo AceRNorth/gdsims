@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_boundary_strategy" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>BoundaryStrategy</compoundname>
+    <derivedcompoundref refid="class_edge_boundary_strategy" prot="public" virt="non-virtual">EdgeBoundaryStrategy</derivedcompoundref>
+    <derivedcompoundref refid="class_toroidal_boundary_strategy" prot="public" virt="non-virtual">ToroidalBoundaryStrategy</derivedcompoundref>
+    <includes refid="_boundary_strategy_8h" local="no">BoundaryStrategy.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double BoundaryStrategy::side</definition>
+        <argsstring></argsstring>
+        <name>side</name>
+        <qualifiedname>BoundaryStrategy::side</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Size of one side of the simulation square. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/BoundaryStrategy.h" line="19" column="12" bodyfile="includes/BoundaryStrategy.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>BoundaryStrategy::BoundaryStrategy</definition>
+        <argsstring>(double side)</argsstring>
+        <name>BoundaryStrategy</name>
+        <qualifiedname>BoundaryStrategy::BoundaryStrategy</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>side</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref> constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">side</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of one side of the simulation square </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/BoundaryStrategy.h" line="15" column="5" bodyfile="includes/BoundaryStrategy.h" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_boundary_strategy_1ab845b40ed83aeb78018c23f45565cd0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double BoundaryStrategy::distance</definition>
+        <argsstring>(const Point &amp;p1, const Point &amp;p2)=0</argsstring>
+        <name>distance</name>
+        <qualifiedname>BoundaryStrategy::distance</qualifiedname>
+        <reimplementedby refid="class_toroidal_boundary_strategy_1a262f8bca65f10efa4e88c1aa67ac41ee">distance</reimplementedby>
+        <reimplementedby refid="class_edge_boundary_strategy_1a58bed301f6c5f63a491bad0ebe982752">distance</reimplementedby>
+        <param>
+          <type>const <ref refid="struct_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/BoundaryStrategy.h" line="16" column="20"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Boundary strategy base class. Defines the interface for boundary-type classes. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>BoundaryStrategy</label>
+        <link refid="class_boundary_strategy"/>
+      </node>
+      <node id="2">
+        <label>EdgeBoundaryStrategy</label>
+        <link refid="class_edge_boundary_strategy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ToroidalBoundaryStrategy</label>
+        <link refid="class_toroidal_boundary_strategy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="includes/BoundaryStrategy.h" line="9" column="1" bodyfile="includes/BoundaryStrategy.h" bodystart="9" bodyend="20"/>
+    <listofallmembers>
+      <member refid="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" prot="public" virt="non-virtual"><scope>BoundaryStrategy</scope><name>BoundaryStrategy</name></member>
+      <member refid="class_boundary_strategy_1ab845b40ed83aeb78018c23f45565cd0e" prot="public" virt="pure-virtual"><scope>BoundaryStrategy</scope><name>distance</name></member>
+      <member refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" prot="protected" virt="non-virtual"><scope>BoundaryStrategy</scope><name>side</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

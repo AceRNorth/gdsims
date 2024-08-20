@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_g_d_release" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>GDRelease</compoundname>
+    <derivedcompoundref refid="class_random_g_d_release" prot="public" virt="non-virtual">RandomGDRelease</derivedcompoundref>
+    <derivedcompoundref refid="class_sched_g_d_release" prot="public" virt="non-virtual">SchedGDRelease</derivedcompoundref>
+    <includes refid="_g_d_release_8h" local="no">GDRelease.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_g_d_release_1a7ac47883a59de0732047fccf0a1cf6e0" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GDRelease::num_driver_M</definition>
+        <argsstring></argsstring>
+        <name>num_driver_M</name>
+        <qualifiedname>GDRelease::num_driver_M</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of drive heterozygous (WD) male mosquitoes per release. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GDRelease.h" line="23" column="5" bodyfile="includes/GDRelease.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_g_d_release_1af257d77564ffbd7c694f57533dde7282" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; GDRelease::release_times</definition>
+        <argsstring></argsstring>
+        <name>release_times</name>
+        <qualifiedname>GDRelease::release_times</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Days on which the gene drive mosquitoes will be released. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GDRelease.h" line="24" column="13" bodyfile="includes/GDRelease.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_g_d_release_1a7d3d5cfa8f9d71e08383edf435fcfdbb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GDRelease::GDRelease</definition>
+        <argsstring>(int num_driver_M, std::vector&lt; int &gt; rel_times)</argsstring>
+        <name>GDRelease</name>
+        <qualifiedname>GDRelease::GDRelease</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>num_driver_M</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; int &gt;</type>
+          <declname>rel_times</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_g_d_release" kindref="compound">GDRelease</ref> constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">num_driver_M</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of drive heterozygous (WD) male mosquitoes per release </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rel_times</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>days on which the gene drive mosquitoes will be released </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GDRelease.h" line="20" column="1" bodyfile="includes/GDRelease.h" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_g_d_release_1ac69ecb74bc31ac1d57764be524c68ca7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GDRelease::release_gene_drive</definition>
+        <argsstring>(int day, std::vector&lt; Patch * &gt; &amp;sites)</argsstring>
+        <name>release_gene_drive</name>
+        <qualifiedname>GDRelease::release_gene_drive</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>day</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>sites</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Releases the gene drive mosquitoes into the simulation area if it is time for release. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">day</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simulation day </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">sites</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector of all <ref refid="class_patch" kindref="compound">Patch</ref> objects </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GDRelease.h" line="21" column="6" bodyfile="src/GDRelease.cpp" bodystart="13" bodyend="19"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_g_d_release_1a69a14d4b9e59ee1e1375d76630da00e3" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GDRelease::is_release_time</definition>
+        <argsstring>(int day)</argsstring>
+        <name>is_release_time</name>
+        <qualifiedname>GDRelease::is_release_time</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>day</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determines if the day is a chosen release time. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">day</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simulation day </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>As you would expect. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_g_d_release_1af257d77564ffbd7c694f57533dde7282" kindref="member">GDRelease::release_times</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GDRelease.h" line="25" column="6" bodyfile="src/GDRelease.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_g_d_release_1a941e51bbc4999dacdb4f22277ffdebbf" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt;</type>
+        <definition>virtual std::vector&lt; Patch * &gt; GDRelease::select_driver_sites</definition>
+        <argsstring>(int day, const std::vector&lt; Patch * &gt; &amp;sites)=0</argsstring>
+        <name>select_driver_sites</name>
+        <qualifiedname>GDRelease::select_driver_sites</qualifiedname>
+        <reimplementedby refid="class_random_g_d_release_1a3dfe5435b6e54b577bd6e30ccc1117d6">select_driver_sites</reimplementedby>
+        <reimplementedby refid="class_sched_g_d_release_1a40212411e7dd81dac953dd0d6f9ad4ad">select_driver_sites</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>day</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>sites</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GDRelease.h" line="26" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_g_d_release_1a46170fb6a9f1a248346206b99773b684" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GDRelease::put_driver_sites</definition>
+        <argsstring>(std::vector&lt; Patch * &gt; &amp;rel_sites)</argsstring>
+        <name>put_driver_sites</name>
+        <qualifiedname>GDRelease::put_driver_sites</qualifiedname>
+        <param>
+          <type>std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>rel_sites</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds drive heterozygous (WD) male mosquitoes to the release sites.</para>
+<para>Relevant parameters include the number of male driver mosquitoes to be released at each site. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">rel_sites</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>release sites </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_g_d_release_1a7ac47883a59de0732047fccf0a1cf6e0" kindref="member">GDRelease::num_driver_M</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/GDRelease.h" line="27" column="6" bodyfile="src/GDRelease.cpp" bodystart="38" bodyend="43"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Gene drive release base class. Defines the basic implementation of gene drive release in the model. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>GDRelease</label>
+        <link refid="class_g_d_release"/>
+      </node>
+      <node id="2">
+        <label>RandomGDRelease</label>
+        <link refid="class_random_g_d_release"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SchedGDRelease</label>
+        <link refid="class_sched_g_d_release"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="includes/GDRelease.h" line="13" column="1" bodyfile="includes/GDRelease.h" bodystart="13" bodyend="28"/>
+    <listofallmembers>
+      <member refid="class_g_d_release_1a7d3d5cfa8f9d71e08383edf435fcfdbb" prot="public" virt="non-virtual"><scope>GDRelease</scope><name>GDRelease</name></member>
+      <member refid="class_g_d_release_1a69a14d4b9e59ee1e1375d76630da00e3" prot="protected" virt="non-virtual"><scope>GDRelease</scope><name>is_release_time</name></member>
+      <member refid="class_g_d_release_1a7ac47883a59de0732047fccf0a1cf6e0" prot="protected" virt="non-virtual"><scope>GDRelease</scope><name>num_driver_M</name></member>
+      <member refid="class_g_d_release_1a46170fb6a9f1a248346206b99773b684" prot="protected" virt="non-virtual"><scope>GDRelease</scope><name>put_driver_sites</name></member>
+      <member refid="class_g_d_release_1ac69ecb74bc31ac1d57764be524c68ca7" prot="public" virt="non-virtual"><scope>GDRelease</scope><name>release_gene_drive</name></member>
+      <member refid="class_g_d_release_1af257d77564ffbd7c694f57533dde7282" prot="protected" virt="non-virtual"><scope>GDRelease</scope><name>release_times</name></member>
+      <member refid="class_g_d_release_1a941e51bbc4999dacdb4f22277ffdebbf" prot="protected" virt="pure-virtual"><scope>GDRelease</scope><name>select_driver_sites</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

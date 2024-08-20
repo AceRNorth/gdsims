@@ -1,0 +1,645 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="struct_input_params" kind="struct" language="C++" prot="public">
+    <compoundname>InputParams</compoundname>
+    <includes refid="_input_params_8h" local="no">InputParams.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_input_params_1ab541958fd9e07697d71f0ea16e618de2" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::num_runs</definition>
+        <argsstring></argsstring>
+        <name>num_runs</name>
+        <qualifiedname>InputParams::num_runs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of simulation replicates to run. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="8" column="5" bodyfile="includes/InputParams.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a2ff1e7d5dd5c45bf804f0701072200f4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::max_t</definition>
+        <argsstring></argsstring>
+        <name>max_t</name>
+        <qualifiedname>InputParams::max_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum simulated time (in days). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="9" column="5" bodyfile="includes/InputParams.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a62f9db260cddf268056a39c133e971f7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::num_pat</definition>
+        <argsstring></argsstring>
+        <name>num_pat</name>
+        <qualifiedname>InputParams::num_pat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of population sites chosen for the simulation. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="11" column="5" bodyfile="includes/InputParams.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a1c3cdff052b3a5b67b56b6d9f24fd0c1" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::side</definition>
+        <argsstring></argsstring>
+        <name>side</name>
+        <qualifiedname>InputParams::side</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Size of the square simulation area (side x side). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="12" column="8" bodyfile="includes/InputParams.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a746b1ef46c9498a5dd09b825ea4b7a24" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::mu_j</definition>
+        <argsstring></argsstring>
+        <name>mu_j</name>
+        <qualifiedname>InputParams::mu_j</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Juvenile density independent mortality rate per day. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="14" column="8" bodyfile="includes/InputParams.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1ad5675a09a39929aa98cd569cb4c4403f" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::mu_a</definition>
+        <argsstring></argsstring>
+        <name>mu_a</name>
+        <qualifiedname>InputParams::mu_a</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adult mortality rate per day. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="15" column="8" bodyfile="includes/InputParams.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a4fb2cae8d6b3a9585e386b2bfeb03299" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::beta</definition>
+        <argsstring></argsstring>
+        <name>beta</name>
+        <qualifiedname>InputParams::beta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parameter that controls mating rate. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="16" column="8" bodyfile="includes/InputParams.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a7183128711c0a119f7fc72e94ae6bdd4" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::theta</definition>
+        <argsstring></argsstring>
+        <name>theta</name>
+        <qualifiedname>InputParams::theta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Average egg laying rate of wildtype females (eggs per day). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="17" column="8" bodyfile="includes/InputParams.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a99ec67370f4794427a09d93630b248e3" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::comp_power</definition>
+        <argsstring></argsstring>
+        <name>comp_power</name>
+        <qualifiedname>InputParams::comp_power</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parameter that controls the juvenile survival probability. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="18" column="8" bodyfile="includes/InputParams.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a2593d199fff80f091dfd1cf576c5c54f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::min_dev</definition>
+        <argsstring></argsstring>
+        <name>min_dev</name>
+        <qualifiedname>InputParams::min_dev</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Minimum development time for a juvenile (in days). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="19" column="5" bodyfile="includes/InputParams.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a746acff494ce4f310d92d67bfcbed018" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::gamma</definition>
+        <argsstring></argsstring>
+        <name>gamma</name>
+        <qualifiedname>InputParams::gamma</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rate of r2 allele formation from W/D meiosis. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="21" column="8" bodyfile="includes/InputParams.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a2f34329974d0d04d9027f00955c4bc99" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::xi</definition>
+        <argsstring></argsstring>
+        <name>xi</name>
+        <qualifiedname>InputParams::xi</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Somatic Cas9 expression fitness cost. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="22" column="8" bodyfile="includes/InputParams.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a803f48bc190f6b07b317539429626ee3" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::e</definition>
+        <argsstring></argsstring>
+        <name>e</name>
+        <qualifiedname>InputParams::e</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Homing rate in females. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="23" column="8" bodyfile="includes/InputParams.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a0bd5fad3e6b9c0fe9a889aa42ae9abf6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::driver_start</definition>
+        <argsstring></argsstring>
+        <name>driver_start</name>
+        <qualifiedname>InputParams::driver_start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time to start releasing drive alleles into the mosquito population. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="25" column="5" bodyfile="includes/InputParams.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a99737ba534111f33e3882576b93eb88a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::num_driver_M</definition>
+        <argsstring></argsstring>
+        <name>num_driver_M</name>
+        <qualifiedname>InputParams::num_driver_M</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of drive heterozygous (WD) male mosquitoes per release. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="26" column="5" bodyfile="includes/InputParams.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1ac071e4057a91d95a69871d8f07ad9bcb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::num_driver_sites</definition>
+        <argsstring></argsstring>
+        <name>num_driver_sites</name>
+        <qualifiedname>InputParams::num_driver_sites</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of gene drive release sites per year. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="27" column="5" bodyfile="includes/InputParams.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a52529a486affcbf464037cf78e1610ad" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::disp_rate</definition>
+        <argsstring></argsstring>
+        <name>disp_rate</name>
+        <qualifiedname>InputParams::disp_rate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adult dispersal rate. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="29" column="8" bodyfile="includes/InputParams.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a7c92eaa0ddaa679b439b0d9aa6a30086" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::max_disp</definition>
+        <argsstring></argsstring>
+        <name>max_disp</name>
+        <qualifiedname>InputParams::max_disp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum dispersal distance at which two sites are connected. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="30" column="8" bodyfile="includes/InputParams.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1adc5b2a93829b4fa4eafa0e804446558a" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::psi</definition>
+        <argsstring></argsstring>
+        <name>psi</name>
+        <qualifiedname>InputParams::psi</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_aestivation" kindref="compound">Aestivation</ref> rate. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="32" column="8" bodyfile="includes/InputParams.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1af4132ca26a4a4ce1e19c46c89d8aee38" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::mu_aes</definition>
+        <argsstring></argsstring>
+        <name>mu_aes</name>
+        <qualifiedname>InputParams::mu_aes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_aestivation" kindref="compound">Aestivation</ref> mortality rate. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="33" column="8" bodyfile="includes/InputParams.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a5d0c54631c85331b117bed861883fba5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::t_hide1</definition>
+        <argsstring></argsstring>
+        <name>t_hide1</name>
+        <qualifiedname>InputParams::t_hide1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start day of aestivation-hiding period (exclusive). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="34" column="5" bodyfile="includes/InputParams.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1ae17cce0a7ef61941a6e97158ebf80f1c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::t_hide2</definition>
+        <argsstring></argsstring>
+        <name>t_hide2</name>
+        <qualifiedname>InputParams::t_hide2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>End day of aestivation-hiding period (inclusive). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="35" column="5" bodyfile="includes/InputParams.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1aa0b9fe354099482dfdead7877fd3409b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::t_wake1</definition>
+        <argsstring></argsstring>
+        <name>t_wake1</name>
+        <qualifiedname>InputParams::t_wake1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start day of aestivation-waking period (exclusive). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="36" column="5" bodyfile="includes/InputParams.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a4542cd7e2b6b2b386a9e63e08c2b527f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::t_wake2</definition>
+        <argsstring></argsstring>
+        <name>t_wake2</name>
+        <qualifiedname>InputParams::t_wake2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>End day of aestivation-waking period (inclusive). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="37" column="5" bodyfile="includes/InputParams.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a2056a53757ab38ff189bca6870d2f7d5" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::alpha0_mean</definition>
+        <argsstring></argsstring>
+        <name>alpha0_mean</name>
+        <qualifiedname>InputParams::alpha0_mean</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mean of the baseline contribution to the carrying capacity. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="38" column="12" bodyfile="includes/InputParams.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a4497eea80bab35f4d09bb8aa1fd71c3e" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::alpha0_variance</definition>
+        <argsstring></argsstring>
+        <name>alpha0_variance</name>
+        <qualifiedname>InputParams::alpha0_variance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Variance of the baseline contribution to the carrying capacity. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="39" column="12" bodyfile="includes/InputParams.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a811a584ea9d14cb5223d56efaa8f68c5" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::alpha1</definition>
+        <argsstring></argsstring>
+        <name>alpha1</name>
+        <qualifiedname>InputParams::alpha1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rainfall contribution factor to carrying capacity. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="40" column="12" bodyfile="includes/InputParams.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1ab02eb338f46a10a8144e4219292c34c9" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::amp</definition>
+        <argsstring></argsstring>
+        <name>amp</name>
+        <qualifiedname>InputParams::amp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Amplitude of rainfall fluctuations. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="41" column="12" bodyfile="includes/InputParams.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a113b8e6f08c2123150b03908be887817" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputParams::resp</definition>
+        <argsstring></argsstring>
+        <name>resp</name>
+        <qualifiedname>InputParams::resp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Carrying capacity&apos;s responsiveness to rainfall contribution. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="42" column="12" bodyfile="includes/InputParams.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a4194d9346cbff529ae873c304699d2c5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::initial_WJ</definition>
+        <argsstring></argsstring>
+        <name>initial_WJ</name>
+        <qualifiedname>InputParams::initial_WJ</qualifiedname>
+        <initializer>= 10000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of initial juvenile mosquitoes with wild homozygous (WW) genotype for each age group. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="44" column="5" bodyfile="includes/InputParams.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1aa8bdf3859ec5f900b12c23f01ba28504" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::initial_WM</definition>
+        <argsstring></argsstring>
+        <name>initial_WM</name>
+        <qualifiedname>InputParams::initial_WM</qualifiedname>
+        <initializer>= 50000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of initial adult male mosquitoes with wild homozygous (WW) genotype. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="45" column="5" bodyfile="includes/InputParams.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1af73a502e495c5f5e8b5c6d5b0f92125e" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::initial_WV</definition>
+        <argsstring></argsstring>
+        <name>initial_WV</name>
+        <qualifiedname>InputParams::initial_WV</qualifiedname>
+        <initializer>= 10000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of initial adult unmated female (virgin) mosquitoes with wild homozygous (WW) genotype. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="46" column="5" bodyfile="includes/InputParams.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1af7bf83f2f03a3ed0f16265796dd0d25d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::initial_WF</definition>
+        <argsstring></argsstring>
+        <name>initial_WF</name>
+        <qualifiedname>InputParams::initial_WF</qualifiedname>
+        <initializer>= 40000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of initial adult mated female mosquitoes with wild homozygous (WW) genotype. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="47" column="5" bodyfile="includes/InputParams.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a6e73a95f47dcfa05263838b0b1f3ad27" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::rec_start</definition>
+        <argsstring></argsstring>
+        <name>rec_start</name>
+        <qualifiedname>InputParams::rec_start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start time for the data recording window (inclusive). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="49" column="5" bodyfile="includes/InputParams.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a1223c275e31ee8b901b5d5a274d85c74" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::rec_end</definition>
+        <argsstring></argsstring>
+        <name>rec_end</name>
+        <qualifiedname>InputParams::rec_end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>End time for the data recording window (inclusive). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="50" column="5" bodyfile="includes/InputParams.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a88ac9f864219bc930cda1f52aa0920b3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::rec_interval_global</definition>
+        <argsstring></argsstring>
+        <name>rec_interval_global</name>
+        <qualifiedname>InputParams::rec_interval_global</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time interval for global data recording/output. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="51" column="5" bodyfile="includes/InputParams.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1ae1a85942abb2e6e81ee33bb395fee17d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::rec_interval_local</definition>
+        <argsstring></argsstring>
+        <name>rec_interval_local</name>
+        <qualifiedname>InputParams::rec_interval_local</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time interval at which to collect/record local data (in days). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="52" column="5" bodyfile="includes/InputParams.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a0aa285f32fbb33162549d1480f36e1f0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::rec_sites_freq</definition>
+        <argsstring></argsstring>
+        <name>rec_sites_freq</name>
+        <qualifiedname>InputParams::rec_sites_freq</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fraction of sites to collect local data for (1 is all sites, 10 is 1 in 10 etc). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="53" column="5" bodyfile="includes/InputParams.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_input_params_1a07f5774fe964faa2107831863f75ab1c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int InputParams::set_label</definition>
+        <argsstring></argsstring>
+        <name>set_label</name>
+        <qualifiedname>InputParams::set_label</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>&apos;Set of repetitions&apos; index label for output files. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/InputParams.h" line="54" column="5" bodyfile="includes/InputParams.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Input parameters for the simulation. </para>
+    </detaileddescription>
+    <location file="includes/InputParams.h" line="7" column="1" bodyfile="includes/InputParams.h" bodystart="7" bodyend="55"/>
+    <listofallmembers>
+      <member refid="struct_input_params_1a2056a53757ab38ff189bca6870d2f7d5" prot="public" virt="non-virtual"><scope>InputParams</scope><name>alpha0_mean</name></member>
+      <member refid="struct_input_params_1a4497eea80bab35f4d09bb8aa1fd71c3e" prot="public" virt="non-virtual"><scope>InputParams</scope><name>alpha0_variance</name></member>
+      <member refid="struct_input_params_1a811a584ea9d14cb5223d56efaa8f68c5" prot="public" virt="non-virtual"><scope>InputParams</scope><name>alpha1</name></member>
+      <member refid="struct_input_params_1ab02eb338f46a10a8144e4219292c34c9" prot="public" virt="non-virtual"><scope>InputParams</scope><name>amp</name></member>
+      <member refid="struct_input_params_1a4fb2cae8d6b3a9585e386b2bfeb03299" prot="public" virt="non-virtual"><scope>InputParams</scope><name>beta</name></member>
+      <member refid="struct_input_params_1a99ec67370f4794427a09d93630b248e3" prot="public" virt="non-virtual"><scope>InputParams</scope><name>comp_power</name></member>
+      <member refid="struct_input_params_1a52529a486affcbf464037cf78e1610ad" prot="public" virt="non-virtual"><scope>InputParams</scope><name>disp_rate</name></member>
+      <member refid="struct_input_params_1a0bd5fad3e6b9c0fe9a889aa42ae9abf6" prot="public" virt="non-virtual"><scope>InputParams</scope><name>driver_start</name></member>
+      <member refid="struct_input_params_1a803f48bc190f6b07b317539429626ee3" prot="public" virt="non-virtual"><scope>InputParams</scope><name>e</name></member>
+      <member refid="struct_input_params_1a746acff494ce4f310d92d67bfcbed018" prot="public" virt="non-virtual"><scope>InputParams</scope><name>gamma</name></member>
+      <member refid="struct_input_params_1af7bf83f2f03a3ed0f16265796dd0d25d" prot="public" virt="non-virtual"><scope>InputParams</scope><name>initial_WF</name></member>
+      <member refid="struct_input_params_1a4194d9346cbff529ae873c304699d2c5" prot="public" virt="non-virtual"><scope>InputParams</scope><name>initial_WJ</name></member>
+      <member refid="struct_input_params_1aa8bdf3859ec5f900b12c23f01ba28504" prot="public" virt="non-virtual"><scope>InputParams</scope><name>initial_WM</name></member>
+      <member refid="struct_input_params_1af73a502e495c5f5e8b5c6d5b0f92125e" prot="public" virt="non-virtual"><scope>InputParams</scope><name>initial_WV</name></member>
+      <member refid="struct_input_params_1a7c92eaa0ddaa679b439b0d9aa6a30086" prot="public" virt="non-virtual"><scope>InputParams</scope><name>max_disp</name></member>
+      <member refid="struct_input_params_1a2ff1e7d5dd5c45bf804f0701072200f4" prot="public" virt="non-virtual"><scope>InputParams</scope><name>max_t</name></member>
+      <member refid="struct_input_params_1a2593d199fff80f091dfd1cf576c5c54f" prot="public" virt="non-virtual"><scope>InputParams</scope><name>min_dev</name></member>
+      <member refid="struct_input_params_1ad5675a09a39929aa98cd569cb4c4403f" prot="public" virt="non-virtual"><scope>InputParams</scope><name>mu_a</name></member>
+      <member refid="struct_input_params_1af4132ca26a4a4ce1e19c46c89d8aee38" prot="public" virt="non-virtual"><scope>InputParams</scope><name>mu_aes</name></member>
+      <member refid="struct_input_params_1a746b1ef46c9498a5dd09b825ea4b7a24" prot="public" virt="non-virtual"><scope>InputParams</scope><name>mu_j</name></member>
+      <member refid="struct_input_params_1a99737ba534111f33e3882576b93eb88a" prot="public" virt="non-virtual"><scope>InputParams</scope><name>num_driver_M</name></member>
+      <member refid="struct_input_params_1ac071e4057a91d95a69871d8f07ad9bcb" prot="public" virt="non-virtual"><scope>InputParams</scope><name>num_driver_sites</name></member>
+      <member refid="struct_input_params_1a62f9db260cddf268056a39c133e971f7" prot="public" virt="non-virtual"><scope>InputParams</scope><name>num_pat</name></member>
+      <member refid="struct_input_params_1ab541958fd9e07697d71f0ea16e618de2" prot="public" virt="non-virtual"><scope>InputParams</scope><name>num_runs</name></member>
+      <member refid="struct_input_params_1adc5b2a93829b4fa4eafa0e804446558a" prot="public" virt="non-virtual"><scope>InputParams</scope><name>psi</name></member>
+      <member refid="struct_input_params_1a1223c275e31ee8b901b5d5a274d85c74" prot="public" virt="non-virtual"><scope>InputParams</scope><name>rec_end</name></member>
+      <member refid="struct_input_params_1a88ac9f864219bc930cda1f52aa0920b3" prot="public" virt="non-virtual"><scope>InputParams</scope><name>rec_interval_global</name></member>
+      <member refid="struct_input_params_1ae1a85942abb2e6e81ee33bb395fee17d" prot="public" virt="non-virtual"><scope>InputParams</scope><name>rec_interval_local</name></member>
+      <member refid="struct_input_params_1a0aa285f32fbb33162549d1480f36e1f0" prot="public" virt="non-virtual"><scope>InputParams</scope><name>rec_sites_freq</name></member>
+      <member refid="struct_input_params_1a6e73a95f47dcfa05263838b0b1f3ad27" prot="public" virt="non-virtual"><scope>InputParams</scope><name>rec_start</name></member>
+      <member refid="struct_input_params_1a113b8e6f08c2123150b03908be887817" prot="public" virt="non-virtual"><scope>InputParams</scope><name>resp</name></member>
+      <member refid="struct_input_params_1a07f5774fe964faa2107831863f75ab1c" prot="public" virt="non-virtual"><scope>InputParams</scope><name>set_label</name></member>
+      <member refid="struct_input_params_1a1c3cdff052b3a5b67b56b6d9f24fd0c1" prot="public" virt="non-virtual"><scope>InputParams</scope><name>side</name></member>
+      <member refid="struct_input_params_1a5d0c54631c85331b117bed861883fba5" prot="public" virt="non-virtual"><scope>InputParams</scope><name>t_hide1</name></member>
+      <member refid="struct_input_params_1ae17cce0a7ef61941a6e97158ebf80f1c" prot="public" virt="non-virtual"><scope>InputParams</scope><name>t_hide2</name></member>
+      <member refid="struct_input_params_1aa0b9fe354099482dfdead7877fd3409b" prot="public" virt="non-virtual"><scope>InputParams</scope><name>t_wake1</name></member>
+      <member refid="struct_input_params_1a4542cd7e2b6b2b386a9e63e08c2b527f" prot="public" virt="non-virtual"><scope>InputParams</scope><name>t_wake2</name></member>
+      <member refid="struct_input_params_1a7183128711c0a119f7fc72e94ae6bdd4" prot="public" virt="non-virtual"><scope>InputParams</scope><name>theta</name></member>
+      <member refid="struct_input_params_1a2f34329974d0d04d9027f00955c4bc99" prot="public" virt="non-virtual"><scope>InputParams</scope><name>xi</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

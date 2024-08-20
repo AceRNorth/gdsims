@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_toroidal_boundary_strategy" kind="class" language="C++" prot="public">
+    <compoundname>ToroidalBoundaryStrategy</compoundname>
+    <basecompoundref refid="class_boundary_strategy" prot="public" virt="non-virtual">BoundaryStrategy</basecompoundref>
+    <includes refid="_boundary_strategy_8h" local="no">BoundaryStrategy.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_toroidal_boundary_strategy_1a5ea5b1bb1027b4722d19ece1d1209509" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ToroidalBoundaryStrategy::ToroidalBoundaryStrategy</definition>
+        <argsstring>(double side)</argsstring>
+        <name>ToroidalBoundaryStrategy</name>
+        <qualifiedname>ToroidalBoundaryStrategy::ToroidalBoundaryStrategy</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>side</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/BoundaryStrategy.h" line="28" column="5" bodyfile="includes/BoundaryStrategy.h" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_toroidal_boundary_strategy_1a262f8bca65f10efa4e88c1aa67ac41ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double ToroidalBoundaryStrategy::distance</definition>
+        <argsstring>(const Point &amp;p1, const Point &amp;p2) override</argsstring>
+        <name>distance</name>
+        <qualifiedname>ToroidalBoundaryStrategy::distance</qualifiedname>
+        <reimplements refid="class_boundary_strategy_1ab845b40ed83aeb78018c23f45565cd0e">distance</reimplements>
+        <param>
+          <type>const <ref refid="struct_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates the shortest periodic distance between two points.</para>
+<para>The simulation area is assumed to have toroidal (or periodic) boundaries at x = side, y = side, and x and y to be in the range [0, side]. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>first point </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">p2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>second point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The shortest distance between the points. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="struct_point" kindref="compound">Point</ref>, <ref refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kindref="member">BoundaryStrategy::side</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/BoundaryStrategy.h" line="29" column="12" bodyfile="src/BoundaryStrategy.cpp" bodystart="12" bodyend="32"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Implements the distance method for toroidal boundary conditions.</para>
+<para>The simulation area is assumed to have periodic boundary conditions at x = side, y = side, and have ranges [0, side] in all directions. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BoundaryStrategy</label>
+        <link refid="class_boundary_strategy"/>
+      </node>
+      <node id="1">
+        <label>ToroidalBoundaryStrategy</label>
+        <link refid="class_toroidal_boundary_strategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>BoundaryStrategy</label>
+        <link refid="class_boundary_strategy"/>
+      </node>
+      <node id="1">
+        <label>ToroidalBoundaryStrategy</label>
+        <link refid="class_toroidal_boundary_strategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/BoundaryStrategy.h" line="26" column="1" bodyfile="includes/BoundaryStrategy.h" bodystart="26" bodyend="30"/>
+    <listofallmembers>
+      <member refid="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" prot="public" virt="non-virtual"><scope>ToroidalBoundaryStrategy</scope><name>BoundaryStrategy</name></member>
+      <member refid="class_toroidal_boundary_strategy_1a262f8bca65f10efa4e88c1aa67ac41ee" prot="public" virt="virtual"><scope>ToroidalBoundaryStrategy</scope><name>distance</name></member>
+      <member refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" prot="protected" virt="non-virtual"><scope>ToroidalBoundaryStrategy</scope><name>side</name></member>
+      <member refid="class_toroidal_boundary_strategy_1a5ea5b1bb1027b4722d19ece1d1209509" prot="public" virt="non-virtual"><scope>ToroidalBoundaryStrategy</scope><name>ToroidalBoundaryStrategy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

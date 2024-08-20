@@ -9,7 +9,9 @@
 
 class Patch;
 
-// Implement aestivative behaviour for the collection of mosquito sites. 
+/**
+ * Implements aestivative behaviour for the model.  
+ */
 class Aestivation {
 public:
 	Aestivation(AestivationParams *params, int sites_size);
@@ -19,16 +21,14 @@ public:
 	bool is_wake_time(int day);
 
 private:
-	double psi; // aestivation rate
-	double mu_aes; // aestivation mortality
-	int t_hide1; // start day of aestivation-entering period (day number of the year), not included
-	int t_hide2; // end day of aestivation-entering period (day number of the year)
-	int t_wake1; // start day of aestivation-waking period (day number of the year), not included
-	int t_wake2; // end day of aestivation-waking period (day number of the year)
+	double psi; /**< Aestivation rate. */ 
+	double mu_aes; /**< Aestivation mortality. */ 
+	int t_hide1; /**< Start day of aestivation-hiding period (exclusive). */ 
+	int t_hide2; /**< End day of aestivation-hiding period (inclusive). */ 
+	int t_wake1; /**< Start day of aestivation-waking period (exclusive). */ 
+	int t_wake2; /**< End day of aestivation-waking period (inclusive). */ 
 
-	// number of mated female mosquitoes F_{ij} with female genotype i and carrying mated male genotype j that have gone into
-	// aestivation from each patch
-	std::vector<std::array<std::array<long long int, constants::num_gen>, constants::num_gen>> aes_F;
+	std::vector<std::array<std::array<long long int, constants::num_gen>, constants::num_gen>> aes_F; /**< Number of mated female mosquitoes that have gone into aestivation from each patch. @details They follow the same genotypic structure as the mated females in Patch.*/
 };
 
 #endif //GENERALMETAPOP_AESTIVATION_H

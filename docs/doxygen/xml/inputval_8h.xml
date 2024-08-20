@@ -1,0 +1,457 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="inputval_8h" kind="file" language="C++">
+    <compoundname>inputval.h</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">string</includes>
+    <includes local="no">limits</includes>
+    <includes local="no">sstream</includes>
+    <includedby refid="_simulation_8cpp" local="yes">src/Simulation.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <includedby refid="main2_8cpp" local="yes">src/main2.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>includes/inputval.h</label>
+        <link refid="inputval_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>fstream</label>
+      </node>
+      <node id="2">
+        <label>iostream</label>
+      </node>
+      <node id="5">
+        <label>limits</label>
+      </node>
+      <node id="6">
+        <label>sstream</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool check_bounds</definition>
+        <argsstring>(const std::string &amp;par_name, T value, T lower_bound, bool inclusive_lower=true, T upper_bound=std::numeric_limits&lt; T &gt;::max(), bool inclusive_upper=true)</argsstring>
+        <name>check_bounds</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>par_name</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>lower_bound</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>inclusive_lower</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>upper_bound</declname>
+          <defval>std::numeric_limits&lt; T &gt;::max()</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>inclusive_upper</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if a value falls within bounds. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of the checked parameter </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">par_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the parameter value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>parameter value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lower_bound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value of the lower bound </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">inclusive_lower</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether the lower bound value is included in the bounds </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">upper_bound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value of the upper bound </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">inclusive_upper</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether the upper bound value is included in the bounds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Whether the value falls within bounds or not. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/inputval.h" line="22" column="6" bodyfile="includes/inputval.h" bodystart="22" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool check_interval</definition>
+        <argsstring>(const std::string &amp;start_name, const std::string &amp;stop_name, T start, T stop)</argsstring>
+        <name>check_interval</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>start_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>stop_name</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>stop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if two values constitute a valid interval. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of the interval values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">start_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the interval start parameter </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stop_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>name of the interval stop parameter </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start value of the interval </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>stop value of the interval </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/inputval.h" line="53" column="6" bodyfile="includes/inputval.h" bodystart="53" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="inputval_8h_1a38cf9054c93e1fced65fe33940dda566" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool file_read_and_validate_type</definition>
+        <argsstring>(std::ifstream &amp;file, T &amp;par, const std::string &amp;par_name, const std::string &amp;par_type)</argsstring>
+        <name>file_read_and_validate_type</name>
+        <param>
+          <type>std::ifstream &amp;</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>T &amp;</type>
+          <declname>par</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>par_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>par_type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads the next value from a filestream and assigns it to the parameter variable if the types match. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of the parameter value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filestream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">par</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>parameter variable </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">par_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>parameter name (for error messages) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">par_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>parameter type (for error messages) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Whether the assignment process has been successful. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/inputval.h" line="71" column="6" bodyfile="includes/inputval.h" bodystart="71" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="inputval_8h_1adc1edb0039433704b7af2b7b850cabce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool read_and_validate_type</definition>
+        <argsstring>(std::stringstream &amp;linestream, T &amp;par, const std::string &amp;par_name, const std::string &amp;par_type)</argsstring>
+        <name>read_and_validate_type</name>
+        <param>
+          <type>std::stringstream &amp;</type>
+          <declname>linestream</declname>
+        </param>
+        <param>
+          <type>T &amp;</type>
+          <declname>par</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>par_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>par_type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads the next value from a linestream and assigns it to the parameter variable if the types match. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of the parameter value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">linestream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>linestream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">par</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>parameter variable </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">par_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>parameter name (for error messages) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">par_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>parameter type (for error messages) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Whether the assignment process has been successful. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/inputval.h" line="90" column="6" bodyfile="includes/inputval.h" bodystart="90" bodyend="97"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>GENERALMETAPOP_INPUTVAL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GENERALMETAPOP_INPUTVAL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>check_bounds(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;par_name,<sp/>T<sp/>value,<sp/>T<sp/>lower_bound,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inclusive_lower<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/>T<sp/>upper_bound<sp/>=<sp/>std::numeric_limits&lt;T&gt;::max(),<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inclusive_upper<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(lower_bound<sp/>&gt;=<sp/>upper_bound)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Error:<sp/>lower_bound<sp/>must<sp/>be<sp/>less<sp/>than<sp/>upper_bound.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>lower_check<sp/>=<sp/>inclusive_lower<sp/>?<sp/>value<sp/>&gt;=<sp/>lower_bound<sp/>:<sp/>value<sp/>&gt;<sp/>lower_bound;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>upper_check<sp/>=<sp/>inclusive_upper<sp/>?<sp/>value<sp/>&lt;=<sp/>upper_bound<sp/>:<sp/>value<sp/>&lt;<sp/>upper_bound;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>lower_bound_char<sp/>=<sp/>inclusive_lower<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;\u2264&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>upper_bound_char<sp/>=<sp/>inclusive_upper<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;\u2264&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!lower_check<sp/>||<sp/>!upper_check)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>parameter<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>par_name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>is<sp/>out<sp/>of<sp/>bounds.<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>par_name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>should<sp/>be<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>lower_bound<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>lower_bound_char<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>par_name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/><sp/>upper_bound_char<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>upper_bound<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lower_check<sp/>&amp;&amp;<sp/>upper_check;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>check_interval(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;start_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;stop_name,<sp/>T<sp/>start,<sp/>T<sp/>stop)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(stop<sp/>&lt;=<sp/>start)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>parameters<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>start_name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>stop_name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>do<sp/>not<sp/>constitute<sp/>a<sp/>valid<sp/>interval.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>file_read_and_validate_type(std::ifstream<sp/>&amp;file,<sp/>T<sp/>&amp;par,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;par_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;par_type)<sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(file<sp/>&gt;&gt;<sp/>par))<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Error:<sp/>invalid<sp/>type<sp/>for<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>par_name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.<sp/>Expected<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>par_type<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>read_and_validate_type(std::stringstream<sp/>&amp;linestream,<sp/>T<sp/>&amp;par,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;par_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;par_type)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(linestream<sp/>&gt;&gt;<sp/>par))<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Error:<sp/>invalid<sp/>type<sp/>for<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>par_name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.<sp/>Expected<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>par_type<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//GENERALMETAPOP_INPUTVAL_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="includes/inputval.h"/>
+  </compounddef>
+</doxygen>

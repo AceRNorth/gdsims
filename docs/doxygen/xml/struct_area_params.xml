@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="struct_area_params" kind="struct" language="C++" prot="public">
+    <compoundname>AreaParams</compoundname>
+    <includes refid="_params_8h" local="no">Params.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_area_params_1ae2dcd6b60485cc3a2f54b70355987385" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int AreaParams::num_pat</definition>
+        <argsstring></argsstring>
+        <name>num_pat</name>
+        <qualifiedname>AreaParams::num_pat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of population sites chosen for the simulation. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="20" column="5" bodyfile="includes/Params.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_area_params_1a25bc9f9baa5f3b4f9352101dfec36a99" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double AreaParams::side</definition>
+        <argsstring></argsstring>
+        <name>side</name>
+        <qualifiedname>AreaParams::side</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Size of the square simulation area (side x side). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="21" column="8" bodyfile="includes/Params.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_model" kindref="compound">Model</ref> area parameters. </para>
+    </detaileddescription>
+    <location file="includes/Params.h" line="19" column="1" bodyfile="includes/Params.h" bodystart="19" bodyend="22"/>
+    <listofallmembers>
+      <member refid="struct_area_params_1ae2dcd6b60485cc3a2f54b70355987385" prot="public" virt="non-virtual"><scope>AreaParams</scope><name>num_pat</name></member>
+      <member refid="struct_area_params_1a25bc9f9baa5f3b4f9352101dfec36a99" prot="public" virt="non-virtual"><scope>AreaParams</scope><name>side</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
