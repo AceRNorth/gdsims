@@ -26,7 +26,7 @@ author = 'Sara Perez Vizan'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ["breathe", "exhale", "sphinx_copybutton"]
+extensions = ["breathe", "exhale", "sphinx_copybutton", "sphinx_toolbox.collapse"]
 
 # Configuration for the breathe extension
 # Which directory to read the Doxygen output from

@@ -9,7 +9,7 @@
 
    install
    usage
-   tutorials
+   tutorials/tutorials_root
    api/library_root
 
 GDSiMS documentation
@@ -41,7 +41,7 @@ Output files will be generated in an ``output_files`` subdirectory.
 
 For those comfortable with C++ programming, a code-based option also exists.
 
-More details on both options can be found in the Vignettes and User Guide.
+More details on both options can be found in the :doc:`tutorials/tutorials_root` and User Guide.
 
 .. warning::
 
@@ -60,8 +60,6 @@ More details on both options can be found in the Vignettes and User Guide.
    The CMake project must then be re-built and re-compiled (as in the Installation Instructions).
 
    When doing this, pre-defined set results will not match saved test data. 
-
-
 
 
 Indices and tables

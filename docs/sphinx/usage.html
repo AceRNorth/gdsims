@@ -52,7 +52,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'usage';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorials" href="tutorials.html" />
+    <link rel="next" title="Tutorials" href="tutorials/tutorials_root.html" />
     <link rel="prev" title="Installation" href="install.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -160,7 +160,17 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials/tutorials_root.html">Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial1.html">1. Running a pre-defined set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial2.html">2. Running a custom set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial3.html">3. Setting coordinates and release sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial4.html">4. Setting the boundary type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial5.html">5. Customising the gene drive release schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial6.html">6. Setting the dispersal type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial7.html">7. Customising seasonality</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api/library_root.html">Library API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/namespace_constants.html">Namespace constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/struct_aestivation_params.html">Struct AestivationParams</a></li>
@@ -383,7 +393,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -399,6 +411,20 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Usage</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-interface-cli">Command-line interface (CLI)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-main-file">User-defined main file</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -410,6 +436,34 @@ document.write(`
                   
   <section id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h1>
+<p>The program can be used in two ways: through a command-line interface or using the Simulation class directly in C++ code.</p>
+<p>There also exists a more advanced option, where you can use the Model and Record classes directly, discussed in the User Guide.</p>
+<section id="command-line-interface-cli">
+<h2>Command-line interface (CLI)<a class="headerlink" href="#command-line-interface-cli" title="Permalink to this heading">#</a></h2>
+<p>The CLI provides default sets of parameters to demonstrate specific behaviours, but also offers a custom parameter option. It provides instructions and prompts to set up the program run, making our program easy to use for non-programmers.</p>
+<a class="reference internal image-reference" href="_images/usage_CLI.png"><img alt="_images/usage_CLI.png" src="_images/usage_CLI.png" style="width: 682.4000000000001px; height: 324.8px;" /></a>
+<p>Our <a class="reference internal" href="tutorials/tutorials_root.html"><span class="doc">Tutorials</span></a> explain how to use the CLI in full detail.</p>
+</section>
+<section id="user-defined-main-file">
+<h2>User-defined main file<a class="headerlink" href="#user-defined-main-file" title="Permalink to this heading">#</a></h2>
+<p>For those comfortable with C++ programming, a user-defined main file may be specified to use the Simulation class directly.</p>
+<p>The new main file can be substituted in CMakeLists.txt as the executable source file:</p>
+<a class="reference internal image-reference" href="_images/usage_main2_cmakelists.png"><img alt="_images/usage_main2_cmakelists.png" src="_images/usage_main2_cmakelists.png" style="width: 667.2px; height: 274.40000000000003px;" /></a>
+<p>To run the simulation with the default parameters of set 1, main2.cpp would look like this:</p>
+<a class="reference internal image-reference" href="_images/usage_main2_file.png"><img alt="_images/usage_main2_file.png" src="_images/usage_main2_file.png" style="width: 284.0px; height: 229.60000000000002px;" /></a>
+<p>The CMake project will need to be re-built and re-compiled after making these changes (as explained in <a class="reference internal" href="install.html"><span class="doc">Installation</span></a>).</p>
+<p>More examples can be found in the User Guide.</p>
+</section>
+</section>
+<section id="output">
+<h1>Output<a class="headerlink" href="#output" title="Permalink to this heading">#</a></h1>
+<p>Upon running a set, output files will be created in a new subdirectory called <code class="docutils literal notranslate"><span class="pre">output_files</span></code>. This will contain:</p>
+<ul class="simple">
+<li><p>CoordinateList.txt</p></li>
+<li><p>LocalData.txt</p></li>
+<li><p>Totals.txt</p></li>
+</ul>
+<p>for each run of the set. Optional Python scripts are provided in the test directory for default visualisation options and running tests.</p>
 </section>
 
 
@@ -433,7 +487,7 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="tutorials.html"
+       href="tutorials/tutorials_root.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -447,6 +501,27 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Usage</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-interface-cli">Command-line interface (CLI)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-main-file">User-defined main file</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
