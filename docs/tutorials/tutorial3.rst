@@ -107,31 +107,31 @@ Let's use the coordinates file below to create a square grid of patches.
     .. code-block:: 
         :caption: docs/exercises/coords_grid.txt
 
-        0.0     0.0     n
-        0.2     0.0	    n
-        0.4	    0.0	    n
-        0.6	    0.0	    n
-        0.8	    0.0 	n
-        0.0	    0.2 	n
-        0.2	    0.2	    n
-        0.4	    0.2	    n
-        0.6	    0.2	    n
-        0.8	    0.2	    n
-        0.0	    0.4	    y
-        0.2 	0.4	    n
-        0.4	    0.4	    n
-        0.6	    0.4	    n
-        0.8	    0.4	    n
-        0.0 	0.6	    n
-        0.2	    0.6	    n
-        0.4	    0.6	    n
-        0.6	    0.6 	n
-        0.8 	0.6 	n
-        0.0	    0.8	    n
-        0.2	    0.8	    n
-        0.4	    0.8	    n
-        0.6	    0.8	    n
-        0.8	    0.8	    n
+        0.0    0.0    n
+        0.2    0.0    n
+        0.4    0.0    n
+        0.6    0.0    n
+        0.8    0.0    n
+        0.0    0.2    n
+        0.2    0.2    n
+        0.4    0.2    n
+        0.6    0.2    n
+        0.8    0.2    n
+        0.0    0.4    y
+        0.2    0.4    n
+        0.4    0.4    n
+        0.6    0.4    n
+        0.8    0.4    n
+        0.0    0.6    n
+        0.2    0.6    n
+        0.4    0.6    n
+        0.6    0.6    n
+        0.8    0.6    n
+        0.0    0.8    n
+        0.2    0.8    n
+        0.4    0.8    n
+        0.6    0.8    n
+        0.8    0.8    n
 
 Now we can enter the filename into the prompt. If there are no error messages, this will set the coordinates (more information on errors in the User Guide).
 

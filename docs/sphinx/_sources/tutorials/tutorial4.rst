@@ -14,6 +14,7 @@ As before, input your custom parameter and coordinates files (we will use the sa
 We can now choose option ``1 - Boundary type``. And enter ``e`` for Edge. 
 
 .. image:: ../images/tut4_set_edge.png
+    :scale: 80 %
 
 That's it! All that's left is running the program.
 With our output files, we can repeat the animation from the previous vignette and observe the changes. 
