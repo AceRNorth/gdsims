@@ -6,8 +6,13 @@
 #include <iomanip>
 #include "Record.h"
 
-// Creates LocalData, Totals and CoordinateList output .txt files
-Record::Record(RecordParams *rec_params, int rep) 
+/**
+ * Record constructor.
+ * Creates LocalData, Totals and CoordinateList output .txt files.
+ * @param[in] rec_params 	recording parameters
+ * @param[in] rep 			initial repetition label for the given set of runs
+ */
+Record::Record(RecordParams* rec_params, int rep) 
 {
 	rec_start = rec_params->rec_start;
 	rec_end = rec_params->rec_end;
@@ -40,12 +45,21 @@ Record::Record(RecordParams *rec_params, int rep)
 	coord_list << "Site" << "\t" << "x" << "\t" << "y" << std::endl;
 }
 
+/**
+ * Record destructor.
+ * Resets the current filepath so the output_files directory can be found in the next set of runs. 
+ */
 Record::~Record()
 {
 	std::filesystem::current_path("..");
 }
 
-// Records the x and y coordinates of each site
+/**
+ * @brief Records the coordinates of the population sites. 
+ * @details Relevant parameters include the fraction of sites to collect data for.
+ * @param[in] sites vector of all Patch objects
+ * @see Model::sites, Record::rec_sites_freq
+ */
 void Record::record_coords(const std::vector<Patch*> &sites) 
 {
 	const auto default_precision{std::cout.precision()};
@@ -57,7 +71,13 @@ void Record::record_coords(const std::vector<Patch*> &sites)
 	coord_list << std::setprecision(default_precision);
 }
 
-// Records the total number of males (over all sites) of each genotype
+/**
+ * @brief Records the total numbers of male mosquitoes for the given day, divided by genotype. 
+ * @details The totals are assumed to be across all sites. 
+ * @param[in] day 		simulation day
+ * @param[in] tot_M_gen total number of males divided by genotype
+ * @see Model::calculate_tot_M_gen(), Patch::M
+ */
 void Record::record_global(int day, const std::array<long long int, constants::num_gen> &tot_M_gen)
 {
 	global_data << day;
@@ -67,7 +87,16 @@ void Record::record_global(int day, const std::array<long long int, constants::n
 	global_data << std::endl;
 }
 
-// Outputs to screen the J, M, V, F totals over the simulation area for the given day
+/**
+ * @brief Outputs the total numbers of juvenile (J), male (M), virgin female (V) and mated female (F) mosquitoes for the given day.
+ * @details The totals are assumed to be across all sites, and over all genotypes and age groups. 
+ * @param[in] day 	simulation day
+ * @param[in] tot_J	total number of juveniles
+ * @param[in] tot_M	total number of males
+ * @param[in] tot_V	total number of virgin (unmated) females
+ * @param[in] tot_F	total number of mated females
+ * @see Patch::J, Patch::M, Patch::V, Patch::F
+ */
 void Record::output_totals(int day, long long int tot_J, long long int tot_M, long long int tot_V, long long int tot_F)
 {
 	if (day == 0) {
@@ -77,7 +106,13 @@ void Record::output_totals(int day, long long int tot_J, long long int tot_M, lo
 	std::cout << day << "     " << tot_J << "   " << tot_M << "   " << tot_V << "   " << tot_F << std::endl;
 }
 
-// Records the number of males of each genotype at each site
+/**
+ * @brief Records the number of males at each site for the given day.
+ * @details The number of males at each site is divided by genotype. Relevant parameters include the fraction of sites to collect data for.
+ * @param[in] day 	simulation day
+ * @param[in] sites vector of all Patch objects
+ * @see Model::sites, Record::rec_sites_freq
+ */
 void Record::record_local(int day, const std::vector<Patch*> &sites) 
 {
 	for (int pat=0; pat < sites.size(); pat += rec_sites_freq) {
@@ -89,11 +124,26 @@ void Record::record_local(int day, const std::vector<Patch*> &sites)
 	}
 }
 
+/**
+ * @brief Determines if it is time to record global data.
+ * @details The number of males at each site is divided by genotype.  
+ * @param[in] day 	simulation day
+ * @return As you would expect.
+ * @see Record::record_global()
+ */
 bool Record::is_rec_global_time(int day)
 {
 	return day % rec_interval_global == 0;
 }
 
+/**
+ * @brief Determines if it is time to record local data.
+ * @note The initialisation day (day 0) will always be recorded, and the recording window will be inclusive of the start and end times. 
+ * @details Other relevant parameters include the local recording interval. 
+ * @param[in] day 	simulation day
+ * @return As you would expect.
+ * @see Record::record_local(), Record::rec_start, Record::rec_end, Record::rec_interval_local
+ */
 bool Record::is_rec_local_time(int day) 
 {
 	return (day == 0) || (day >= rec_start && day <= rec_end && day % rec_interval_local == 0);

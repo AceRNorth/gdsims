@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespaceconstants" kind="namespace" language="C++">
+    <compoundname>constants</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceconstants_1ab5cd2d6cdf356d98576ea193f6a54476" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int constants::max_dev</definition>
+        <argsstring></argsstring>
+        <name>max_dev</name>
+        <qualifiedname>constants::max_dev</qualifiedname>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Juvenile development time (egg to adult) expressed as days left till eclosion (eclosion on day 0). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/constants.h" line="10" column="15" bodyfile="includes/constants.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int constants::num_gen</definition>
+        <argsstring></argsstring>
+        <name>num_gen</name>
+        <qualifiedname>constants::num_gen</qualifiedname>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The number of different genotypes in the mosquito population. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/constants.h" line="11" column="15" bodyfile="includes/constants.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconstants_1a204a0248d18871c4d4d1b3e9a69ff495" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double constants::pi</definition>
+        <argsstring></argsstring>
+        <name>pi</name>
+        <qualifiedname>constants::pi</qualifiedname>
+        <initializer>= 3.14159265</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Numerical constant PI (to 8 d.p.). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/constants.h" line="12" column="18" bodyfile="includes/constants.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Namespace for constants used throughout the program. </para>
+    </detaileddescription>
+    <location file="includes/constants.h" line="8" column="1"/>
+  </compounddef>
+</doxygen>

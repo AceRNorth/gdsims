@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_sine_rainfall" kind="class" language="C++" prot="public">
+    <compoundname>SineRainfall</compoundname>
+    <basecompoundref refid="class_seasonality" prot="public" virt="non-virtual">Seasonality</basecompoundref>
+    <includes refid="_seasonality_8h" local="no">Seasonality.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_sine_rainfall_1a83a33e17ca162e92beea4ba741807d63" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SineRainfall::amp</definition>
+        <argsstring></argsstring>
+        <name>amp</name>
+        <qualifiedname>SineRainfall::amp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Amplitude of rainfall fluctuations. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Seasonality.h" line="32" column="12" bodyfile="includes/Seasonality.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_sine_rainfall_1a5400eca90b6aae50317446023a020f6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SineRainfall::SineRainfall</definition>
+        <argsstring>(SineRainfallParams *params)</argsstring>
+        <name>SineRainfall</name>
+        <qualifiedname>SineRainfall::SineRainfall</qualifiedname>
+        <param>
+          <type><ref refid="struct_sine_rainfall_params" kindref="compound">SineRainfallParams</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_sine_rainfall" kindref="compound">SineRainfall</ref> constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>seasonality parameters for sine rainfall-type seasonality </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Seasonality.h" line="28" column="5" bodyfile="src/Seasonality.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sine_rainfall_1a208a62a5176ae5db43120cf938a7f067" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double SineRainfall::alpha</definition>
+        <argsstring>(int day, double alpha0) override</argsstring>
+        <name>alpha</name>
+        <qualifiedname>SineRainfall::alpha</qualifiedname>
+        <reimplements refid="class_seasonality_1a86bfbdfc639ab1a08e3643e05b55d6f1">alpha</reimplements>
+        <param>
+          <type>int</type>
+          <declname>day</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>alpha0</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes the carrying-capacity alpha value for the given day and alpha0. Models rainfall contribution as a sine wave. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">day</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simulation day </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>baseline contribution to the carrying capacity </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The carrying-capacity. </para>
+</simplesect>
+<simplesect kind="see"><para>Patch::alpha0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Seasonality.h" line="29" column="12" bodyfile="src/Seasonality.cpp" bodystart="24" bodyend="28"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Implements seasonality by modelling the rainfall contribution to carrying capacity as a sinusoid wave.</para>
+<para>Most useful for theoretical applications. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Seasonality</label>
+        <link refid="class_seasonality"/>
+      </node>
+      <node id="1">
+        <label>SineRainfall</label>
+        <link refid="class_sine_rainfall"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Seasonality</label>
+        <link refid="class_seasonality"/>
+      </node>
+      <node id="1">
+        <label>SineRainfall</label>
+        <link refid="class_sine_rainfall"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/Seasonality.h" line="26" column="1" bodyfile="includes/Seasonality.h" bodystart="26" bodyend="33"/>
+    <listofallmembers>
+      <member refid="class_sine_rainfall_1a208a62a5176ae5db43120cf938a7f067" prot="public" virt="virtual"><scope>SineRainfall</scope><name>alpha</name></member>
+      <member refid="class_seasonality_1ac69d88cb94f794d9e317b7d259eaff64" prot="protected" virt="non-virtual"><scope>SineRainfall</scope><name>alpha1</name></member>
+      <member refid="class_sine_rainfall_1a83a33e17ca162e92beea4ba741807d63" prot="private" virt="non-virtual"><scope>SineRainfall</scope><name>amp</name></member>
+      <member refid="class_seasonality_1a58daa86e6a5d8f1b1b8d4db8c9389870" prot="public" virt="non-virtual"><scope>SineRainfall</scope><name>Seasonality</name></member>
+      <member refid="class_sine_rainfall_1a5400eca90b6aae50317446023a020f6c" prot="public" virt="non-virtual"><scope>SineRainfall</scope><name>SineRainfall</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

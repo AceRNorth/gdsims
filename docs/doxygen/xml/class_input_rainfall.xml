@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_input_rainfall" kind="class" language="C++" prot="public">
+    <compoundname>InputRainfall</compoundname>
+    <basecompoundref refid="class_seasonality" prot="public" virt="non-virtual">Seasonality</basecompoundref>
+    <includes refid="_seasonality_8h" local="no">Seasonality.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_input_rainfall_1adb68f5eb090485f2a362e227aeaf91c8" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InputRainfall::resp</definition>
+        <argsstring></argsstring>
+        <name>resp</name>
+        <qualifiedname>InputRainfall::resp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Carrying capacity&apos;s responsiveness to the rainfall contribution. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Seasonality.h" line="45" column="12" bodyfile="includes/Seasonality.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_input_rainfall_1a44c851f69b6dc275e65799c52c7e9cde" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; InputRainfall::rainfall</definition>
+        <argsstring></argsstring>
+        <name>rainfall</name>
+        <qualifiedname>InputRainfall::rainfall</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Daily rainfall data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Seasonality.h" line="46" column="17" bodyfile="includes/Seasonality.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_input_rainfall_1a20330f7ca100d2b1fb3e2432bded83f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>InputRainfall::InputRainfall</definition>
+        <argsstring>(InputRainfallParams *params)</argsstring>
+        <name>InputRainfall</name>
+        <qualifiedname>InputRainfall::InputRainfall</qualifiedname>
+        <param>
+          <type><ref refid="struct_input_rainfall_params" kindref="compound">InputRainfallParams</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_input_rainfall" kindref="compound">InputRainfall</ref> constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>seasonality parameters for input rainfall-type seasonality </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Seasonality.h" line="41" column="5" bodyfile="src/Seasonality.cpp" bodystart="34" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_input_rainfall_1a7599fc9d35cae87ac87f98d2ccb6b3fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double InputRainfall::alpha</definition>
+        <argsstring>(int day, double alpha0) override</argsstring>
+        <name>alpha</name>
+        <qualifiedname>InputRainfall::alpha</qualifiedname>
+        <reimplements refid="class_seasonality_1a86bfbdfc639ab1a08e3643e05b55d6f1">alpha</reimplements>
+        <param>
+          <type>int</type>
+          <declname>day</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>alpha0</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes the carrying-capacity alpha value for the given day and alpha0. Models rainfall contribution as an exponential of daily rainfall. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">day</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simulation day </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>baseline contribution to the carrying capacity </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The carrying-capacity. </para>
+</simplesect>
+<simplesect kind="see"><para>Patch::alpha0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Seasonality.h" line="42" column="12" bodyfile="src/Seasonality.cpp" bodystart="55" bodyend="69"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Implements seasonality by modelling the rainfall contribution to carrying capacity from daily rainfall data. <simplesect kind="note"><para>This class expects rainfall data for either every day of a year (365 days) or every day of the simulation (max_t).Annual data will be automatically looped for simulations longer than a year. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>InputRainfall</label>
+        <link refid="class_input_rainfall"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Seasonality</label>
+        <link refid="class_seasonality"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>InputRainfall</label>
+        <link refid="class_input_rainfall"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Seasonality</label>
+        <link refid="class_seasonality"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/Seasonality.h" line="39" column="1" bodyfile="includes/Seasonality.h" bodystart="39" bodyend="47"/>
+    <listofallmembers>
+      <member refid="class_input_rainfall_1a7599fc9d35cae87ac87f98d2ccb6b3fb" prot="public" virt="virtual"><scope>InputRainfall</scope><name>alpha</name></member>
+      <member refid="class_seasonality_1ac69d88cb94f794d9e317b7d259eaff64" prot="protected" virt="non-virtual"><scope>InputRainfall</scope><name>alpha1</name></member>
+      <member refid="class_input_rainfall_1a20330f7ca100d2b1fb3e2432bded83f2" prot="public" virt="non-virtual"><scope>InputRainfall</scope><name>InputRainfall</name></member>
+      <member refid="class_input_rainfall_1a44c851f69b6dc275e65799c52c7e9cde" prot="private" virt="non-virtual"><scope>InputRainfall</scope><name>rainfall</name></member>
+      <member refid="class_input_rainfall_1adb68f5eb090485f2a362e227aeaf91c8" prot="private" virt="non-virtual"><scope>InputRainfall</scope><name>resp</name></member>
+      <member refid="class_seasonality_1a58daa86e6a5d8f1b1b8d4db8c9389870" prot="public" virt="non-virtual"><scope>InputRainfall</scope><name>Seasonality</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

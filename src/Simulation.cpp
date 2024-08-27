@@ -11,6 +11,11 @@
 #include "Record.h"
 #include "inputval.h"
 
+/**
+ * Simulation constructor.
+ * @param[in] input simulation parameters
+ * @see InputParams
+ */
 Simulation::Simulation(InputParams input)
 { 
 	num_runs = input.num_runs;
@@ -81,6 +86,9 @@ Simulation::Simulation(InputParams input)
 	disp_type = DispersalType::DistanceKernel;
 }
 
+/**
+ * Simualtion destructor.
+ */
 Simulation::~Simulation() 
 {
 	delete model_params->area;
@@ -95,7 +103,12 @@ Simulation::~Simulation()
 	delete rec_params;
 }
 
-// Sets the sites' coordinates from a .txt file, as well as which are release sites, unless any errors are thrown.
+/**
+ * Sets the sites' coordinates and the release sites from a file, unless any errors are thrown.
+ * The file should be structured in three columns, with x and y coordinates and whether the site is a release site (y/n) respectively. Values should be delimited by white space, and site rows should be delimited by new lines. 
+ * @warning The file should be in the program's running directory to be recognised.
+ * @param[in] filename coordinates filename
+ */
 void Simulation::set_coords(const std::string& filename) 
 {
 	sites_coords.clear();
@@ -151,20 +164,32 @@ void Simulation::set_coords(const std::string& filename)
 	}		
 }
 
+/** 
+ * Sets the boundary type for the model.
+ * @param[in] boundary boundary type
+ * @see BoundaryType, BoundaryStrategy
+ */
 void Simulation::set_boundary_type(BoundaryType boundary) 
 {
 	boundary_type = boundary;
 }
 
+/**
+ * Sets the dispersal type for the model.
+ * @param[in] disp dispersal type
+ * @see DispersalType, Dispersal
+ */
 void Simulation::set_dispersal_type(DispersalType disp)
 {
 	disp_type = disp;
 }
 
-
-// Sets the daily rainfall values from a .txt file, unless any errors are thrown. 
-// These can be daily values for a year cycle, or daily values for all the simulated days.
-// A year is assumed to be 365 days.
+/**
+ * Sets the daily rainfall values from a file, unless any errors are thrown.
+ * These can be daily values for a year cycle (365 days), or daily values for all the simulated days (max_t). 
+ * The values should be delimited by new lines.
+ * @param[in] filename rainfall filename
+ */
 void Simulation::set_rainfall(const std::string& filename)
 {
 	input_rainfall_params->rainfall.clear();
@@ -203,6 +228,12 @@ void Simulation::set_rainfall(const std::string& filename)
 	}		
 }
 
+/**
+ * Sets the release times for gene drive release from a file, unless any errors are thrown.
+ * Release times should be simulation day numbers within the maximum time of simulation.
+ * Values should be delimited by new lines.
+ * @param[in] filename release times filename
+ */
 void Simulation::set_release_times(const std::string& filename) 
 {
 	auto filepath = std::filesystem::path(std::string("./")+filename);
@@ -241,8 +272,11 @@ void Simulation::set_release_times(const std::string& filename)
 	}		
 }
 
-// Sets the values of the f_{ijk} fraction for the gene drive considering r2 resistant alleles
-// f_{ijk} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j
+/**
+ * Sets the values of the f_{ijk} inheritance fraction for the gene drive considering r2 resistant alleles. f_{ijk} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j.
+ * @param[in] inher_params inheritance parameters
+ * @see InheritanceParams
+ */
 void Simulation::set_inheritance(InheritanceParams inher_params)
 {
 	double gamma = inher_params.gamma;
@@ -348,7 +382,10 @@ void Simulation::set_inheritance(InheritanceParams inher_params)
 	}	
 }
 
-// Runs the simulation n times, recording data in output files.
+/**
+ * Runs the simulation num_runs times, recording data in output files.
+ * @see Simulation::num_runs, Record
+ */
 void Simulation::run_reps() 
 {
 	for (int rep=1; rep <= num_runs; ++rep) {

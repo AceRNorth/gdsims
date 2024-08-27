@@ -1,0 +1,14 @@
+.. _exhale_function_random_8cpp_1ab522b309a12c730ad270008709c19d09:
+
+Function random_multinomial(long long int, const std::array<double, constants::max_dev+1>&)
+===========================================================================================
+
+- Defined in :ref:`file_src_random.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: random_multinomial(long long int, const std::array<double, constants::max_dev+1>&)
+   :project: GDSiMS

@@ -5,7 +5,15 @@
 #include "random.h"
 #include "constants.h"
 
-// Sets coordinates randomly on the square space of side side.
+/**
+ * @brief Patch constructor for randomly generated coordinates.
+ * @details Sets coordinates randomly on the square simulation space of size side x side. 
+ * @note Coordinates range from 0 to side for bound checking purposes. 
+ * @param[in] mod 	Model pointer
+ * @param[in] par 	life parameters
+ * @param[in] a0 	alpha0 carrying capacity baseline
+ * @param[in] side 	side of the square simulation area
+ */
 Patch::Patch(Model* mod, LifeParams* par, double a0, double side) 
 {
 	model = mod;
@@ -30,7 +38,13 @@ Patch::Patch(Model* mod, LifeParams* par, double a0, double side)
 	mate_rate = 0;
 }
 
-// Sets chosen coordinates.
+/**
+ * @brief Patch constructor for custom coordinates.
+ * @param[in] mod 	Model pointer
+ * @param[in] par 	life parameters
+ * @param[in] a0 	alpha0 carrying capacity baseline
+ * @param[in] point	patch coordinates
+ */
 Patch::Patch(Model* mod, LifeParams* par, double a0, Point point) 
 {
 	model = mod;
@@ -38,7 +52,7 @@ Patch::Patch(Model* mod, LifeParams* par, double a0, Point point)
 	alpha0 = a0;
 	coords = point;
 
-	// include to be able to compare data to oracle when testing
+	// include to be able to compare data to test data when testing
 	double x = random_real();
 	double y = random_real();
 
@@ -56,7 +70,13 @@ Patch::Patch(Model* mod, LifeParams* par, double a0, Point point)
 	mate_rate = 0;
 }
 
-// Populates the local site with a (wild) mosquito population of different types (age and sex)
+/**
+ * @brief Populates the local site with a wild mosquito population.
+ * @param[in] initial_WJ The number of initial wild juveniles.
+ * @param[in] initial_WM The number of initial wild males.
+ * @param[in] initial_WV The number of initial wild virgin (unmated) females.
+ * @param[in] initial_WF The number of initial wild mated females.
+ */
 void Patch::populate(int initial_WJ, int initial_WM, int initial_WV, int initial_WF) 
 {
 	for (int a=0; a < constants::max_dev + 1; ++a) {
@@ -70,25 +90,41 @@ void Patch::populate(int initial_WJ, int initial_WM, int initial_WV, int initial
 	update_mate();
 }
 
-// Returns the coordinates of the site on the simulation area
+/**
+ * @brief Returns the coordinates of the patch.
+ * @return The coordinates of the patch. 
+ * @see Point, Patch::coords
+ */
 Point Patch::get_coords() const
 {
 	return coords;
 }
 
-// Returns an array of number of males with each genotype
+/**
+ * @brief Returns the number of males in the patch. 
+ * @return The number of males in the patch.
+ * @see Patch::M 
+ */
 std::array<long long int, constants::num_gen> Patch::get_M() const
 {
 	return M;
 }
 
-// Returns a 2D array of number of females with each female and carrying mated male genotype
+/**
+ * @brief Returns the number of females in the patch.
+ * @return The number of females in the patch. 
+ * @see Patch::F
+ */
 std::array<std::array<long long int, constants::num_gen>, constants::num_gen> Patch::get_F() const
 {
 	return F;
 }
 
-// Returns the total number of juveniles across all ages and genotypes
+/**
+ * @brief Calculates the total number of juveniles in the patch.
+ * @return The total number of juveniles in the patch across all ages and genotypes. 
+ * @see Patch::J
+ */
 long long int Patch::calculate_tot_J() 
 {
 	long long int tot_J = 0;
@@ -100,7 +136,11 @@ long long int Patch::calculate_tot_J()
 	return tot_J;
 }
 
-// Returns the total number of males across all genotypes
+/**
+ * @brief Calculates the total number of males in the patch.
+ * @return The total number of males in the patch across all genotypes.
+ * @see Patch::M
+ */
 long long int Patch::calculate_tot_M() 
 {
 	long long int tot_M = 0;
@@ -110,7 +150,11 @@ long long int Patch::calculate_tot_M()
 	return tot_M;
 }
 
-// Returns the total number of unmated females (virgins) across all genotypes
+/**
+ * @brief Calculates the total number of virgin (unmated) females in the patch.
+ * @return The total number of virgin (unmated) females in the patch across all genotypes.
+ * @see Patch::V
+ */
 long long int Patch::calculate_tot_V()
 {
 	long long int tot_V = 0;
@@ -120,7 +164,11 @@ long long int Patch::calculate_tot_V()
 	return tot_V;
 }
 
-// Returns the total number of mated females across all female and carrying-male genotypes
+/**
+ * @brief Calculates the total number of mated females in the patch.
+ * @return The total number of mated females in the patch across all female and male sperm genotypes.
+ * @see Patch::F
+ */
 long long int Patch::calculate_tot_F()
 {
 	long long int tot_F = 0;
@@ -132,7 +180,10 @@ long long int Patch::calculate_tot_F()
 	return tot_F;
 }
 
-// Removes males from the population as they disperse out.
+/**
+ * @brief Removes males from the patch as they disperse out. 
+ * @param[in] m_out The number of males dispersing out. 
+ */
 void Patch::M_disperse_out(const std::array<long long int, constants::num_gen> &m_out) 
 {
 	for (std::size_t i = 0; i < m_out.size(); ++i) {
@@ -141,7 +192,10 @@ void Patch::M_disperse_out(const std::array<long long int, constants::num_gen> &
 	update_mate();
 }
 
-// Removes females from the population as they disperse out.
+/**
+ * @brief Removes mated females from the patch as they disperse out. 
+ * @param[in] f_out The number of mated females dispersing out. 
+ */
 void Patch::F_disperse_out(const std::array<std::array<long long int, constants::num_gen>, constants::num_gen> &f_out) 
 {
 	for (std::size_t i = 0; i < f_out.size(); ++i) {
@@ -151,20 +205,32 @@ void Patch::F_disperse_out(const std::array<std::array<long long int, constants:
 	}
 }
 
-// Introduces new males into the population as they disperse in.
+/**
+ * @brief Introduces new males into the patch as they disperse in. 
+ * @param[in] gen	The genotype index for the males to disperse into M.
+ * @param[in] m_in 	The number of males dispersing in for the given genotype.
+ */
 void Patch::M_disperse_in(int gen, long long int m_in) 
 {
 	M[gen] += m_in;
 	update_mate();
 }
 
-// Introduces new females into the population as they disperse in.
+/**
+ * @brief Introduces new mated females into the patch as they disperse in. 
+ * @param[in] f_gen		The female genotype index for the females to disperse into F.
+ * @param[in] m_gen 	The male sperm genotype index for the females to disperse into F.
+ * @param[in] f_disp 	The number of females dispersing in for the given genotype combination. 
+ */
 void Patch::F_disperse_in(int f_gen, int m_gen, long long int f_disp) 
 {
 	F[f_gen][m_gen] += f_disp;
 }
 
-// Updates active female population numbers after they attempt to go into aestivation.
+/**
+ * @brief Removes those females from the patch that attempt to go into aestivation.
+ * @param[in] f_try The number of mated females that attempt to go into aestivation.
+ */
 void Patch::F_hide(const std::array<std::array<long long int, constants::num_gen>, constants::num_gen> &f_try)
 {
 	for (std::size_t i = 0; i < F.size(); ++i) {
@@ -174,7 +240,10 @@ void Patch::F_hide(const std::array<std::array<long long int, constants::num_gen
 	}
 }
 
-// Updates active female population numbers after they wake from aestivation.
+/**
+ * @brief Introduces back into the patch those females that wake up from aestivation.
+ * @param[in] f_wake The number of mated females from the given patch that wake up from aestivation.
+ */
 void Patch::F_wake(const std::array<std::array<long long int, constants::num_gen>, constants::num_gen> &f_wake)
 {
 	for (std::size_t i = 0; i < F.size(); ++i) {
@@ -184,14 +253,22 @@ void Patch::F_wake(const std::array<std::array<long long int, constants::num_gen
 	}
 }
 
-// Introduces driver heterozygous males into the population.
+/**
+ * @brief Introduces driver heterozygous males into the patch.
+ * @param[in] num_driver_M The number of driver heterozygous males to introduce.
+ */
 void Patch::add_driver_M(int num_driver_M) 
 {
 	M[1] += num_driver_M;
 	update_mate();
 }
 
-// Ages the juvenile population in different age groups by a day within the local site
+/**
+ * @brief Ages the juveniles of different age groups in the patch by a day.
+ * @note Not all juveniles survive the aging process.
+ * @details The number of surviving individuals in an age group (for a given genotype) is determined by a binomial distibution of juvenile survival probability. 
+ * @see Patch::comp 
+ */
 void Patch::juv_get_older() 
 {
 	for (int i=0; i < constants::num_gen; ++i) {
@@ -203,7 +280,11 @@ void Patch::juv_get_older()
 	}
 }
 
-// Selects the number of adults that die in the given day and updates population numbers within the local site
+/**
+ * @brief Removes dying adults from the patch.
+ * @details Determines the number of adults that die in the given day and removes them from the patch. The number of males that die (for a given genotype) is determined by a binomial distribution of adult mortality, and similarly for virgin and mated females.
+ * @see LifeParams::mu_a
+ */
 void Patch::adults_die()
 {
 	double mu_a = params->mu_a;
@@ -223,8 +304,11 @@ void Patch::adults_die()
 	update_mate();
 }
 
-// Selects the number of virgins that mate in the given day with a male of genotype j, and tranforms them into mated females carrying
-// male genotype j. Mating is carried out within the local site.
+/**
+ * @brief Mates a fraction of the virgin females in the patch.
+ * @details Determines the number of virgin females that mate in the given day (for a given female genotype) with a male of genotype j by using a binomial distribution of the mating rate. Then, tranforms the virgin females into mated females carrying male sperm of genotype j. Mating is carried out within the patch, and females only mate once. 
+ * @see Patch::mate_rate
+ */
 void Patch::virgins_mate() 
 {
 	std::array<long long int, constants::num_gen> v;
@@ -242,8 +326,14 @@ void Patch::virgins_mate()
 	
 }
 
-// Calculates the number of eggs laid on the given day and updates the number of juveniles within the local site, depending on egg
-// survival rates.
+// 
+/**
+ * @brief Females lay eggs, creating new juveniles. 
+ * @details Determines the number of eggs laid with genotype k on the given day by using a Poisson distribution. Other relevant parameters include the egg laying rate. Determines the development duration of these new juveniles using a multinomial distribution of development duration probabilities. 
+ * @param[in] inher_fraction 		inheritance fraction for new offspring
+ * @param[in] dev_duration_probs 	probabilities for juvenile development duration of new offspring
+ * @see Simulation::inher_fraction, Model::dev_duration_probs, LifeParams::theta
+ */
 void Patch::lay_eggs(const std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> &inher_fraction,
  const std::array<double, constants::max_dev+1> &dev_duration_probs)
 {
@@ -265,7 +355,12 @@ void Patch::lay_eggs(const std::array<std::array<std::array <double, constants::
 	update_comp();
 }
 
-// Turns juveniles into adults, depending on eclosion survival rate, within the local site.
+/**
+ * @brief Turns the oldest juveniles into adults.
+ * @note Not all juveniles survive eclosion. 
+ * @details The number of survivors is determined by a binomial distribution of the juvenile survival probability. Sex determination upon eclosion is determined by a binomial distribution with 0.5 probability. 
+ * @see Patch::comp
+ */
 void Patch::juv_eclose() 
 {
 	for (int i=0; i < constants::num_gen; ++i) {
@@ -282,7 +377,11 @@ void Patch::juv_eclose()
 	update_mate();
 }
 
-// Updates the juvenile survival probability in the local site
+/**
+ * @brief Updates the juvenile survival probability of the patch. 
+ * @details Relevant parameters include the juvenile mortality rate, the juvenile survival probability power and the carrying capacity.
+ * @see Seasonality::get_alpha(), Patch::alpha0, LifeParams::mu_j, LifeParams::comp_power, Patch::comp
+ */
 void Patch::update_comp()
 {
 	int d = model->get_day();
@@ -291,7 +390,11 @@ void Patch::update_comp()
 	comp = (1 - (params->mu_j)) * std::pow(alpha / (alpha + tot_J), params->comp_power);
 }
 
-// Updates the mating rate parameter in the local site
+/**
+ * @brief Updates the mating rate of the patch. 
+ * @details Relevant parameters include the beta parameter. 
+ * @see LifeParams::beta
+ */
 void Patch::update_mate()
 {
 	long long int tot_M = calculate_tot_M();

@@ -3,18 +3,34 @@
 #include "Seasonality.h"
 #include "constants.h"
 
+
+/**
+ * SineRainfall constructor.
+ * @param[in] params seasonality parameters for sine rainfall-type seasonality
+ */
 SineRainfall::SineRainfall(SineRainfallParams *params): Seasonality(params->alpha1) 
 {
     amp = params->amp;
 }
 
-// Computes the carrying-capacity alpha value for the given day and alpha0. Models rainfall contribution as a sine wave.
+// 
+/**
+ * Computes the carrying-capacity alpha value for the given day and alpha0. Models rainfall contribution as a sine wave.
+ * @param[in] day       simulation day
+ * @param[in] alpha0    baseline contribution to the carrying capacity
+ * @return The carrying-capacity.
+ * @see Patch::alpha0
+ */
 double SineRainfall::alpha(int day, double alpha0)
 {
     double alpha = alpha0 + alpha1*(1 + amp*std::sin(2 * constants::pi * day/365));
 	return alpha;
 }
 
+/**
+ * InputRainfall constructor.
+ * @param[in] params seasonality parameters for input rainfall-type seasonality
+ */
 InputRainfall::InputRainfall(InputRainfallParams *params): Seasonality(params->alpha1) 
 {
     resp = params->resp;
@@ -29,7 +45,13 @@ InputRainfall::InputRainfall(InputRainfallParams *params): Seasonality(params->a
     }
 }
 
-// Computes the carrying-capacity alpha value for the given day and alpha0. Models rainfall contribution as an exponential.
+/**
+ * Computes the carrying-capacity alpha value for the given day and alpha0. Models rainfall contribution as an exponential of daily rainfall.
+ * @param[in] day       simulation day
+ * @param[in] alpha0    baseline contribution to the carrying capacity
+ * @return The carrying-capacity.
+ * @see Patch::alpha0
+ */
 double InputRainfall::alpha(int day, double alpha0)
 {
     double r_d;

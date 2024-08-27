@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="struct_inheritance_params" kind="struct" language="C++" prot="public">
+    <compoundname>InheritanceParams</compoundname>
+    <includes refid="_params_8h" local="no">Params.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_inheritance_params_1af0f03901f9ab61ad32d860a629319933" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InheritanceParams::gamma</definition>
+        <argsstring></argsstring>
+        <name>gamma</name>
+        <qualifiedname>InheritanceParams::gamma</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rate of r2 allele formation from W/D meiosis. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="40" column="8" bodyfile="includes/Params.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_inheritance_params_1ad465251fe02c73cfdf5a183f66a38c3a" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InheritanceParams::xi</definition>
+        <argsstring></argsstring>
+        <name>xi</name>
+        <qualifiedname>InheritanceParams::xi</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Somatic Cas9 expression fitness cost. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="41" column="8" bodyfile="includes/Params.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_inheritance_params_1a21c21bbae006decbedd489a7f8dbf631" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double InheritanceParams::e</definition>
+        <argsstring></argsstring>
+        <name>e</name>
+        <qualifiedname>InheritanceParams::e</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Homing rate in females. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="42" column="8" bodyfile="includes/Params.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Gene drive inheritance parameters. </para>
+    </detaileddescription>
+    <location file="includes/Params.h" line="39" column="1" bodyfile="includes/Params.h" bodystart="39" bodyend="43"/>
+    <listofallmembers>
+      <member refid="struct_inheritance_params_1a21c21bbae006decbedd489a7f8dbf631" prot="public" virt="non-virtual"><scope>InheritanceParams</scope><name>e</name></member>
+      <member refid="struct_inheritance_params_1af0f03901f9ab61ad32d860a629319933" prot="public" virt="non-virtual"><scope>InheritanceParams</scope><name>gamma</name></member>
+      <member refid="struct_inheritance_params_1ad465251fe02c73cfdf5a183f66a38c3a" prot="public" virt="non-virtual"><scope>InheritanceParams</scope><name>xi</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

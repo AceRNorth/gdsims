@@ -1,0 +1,378 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_radial_dispersal" kind="class" language="C++" prot="public">
+    <compoundname>RadialDispersal</compoundname>
+    <basecompoundref refid="class_dispersal" prot="public" virt="non-virtual">Dispersal</basecompoundref>
+    <includes refid="_dispersal_8h" local="no">Dispersal.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_radial_dispersal_1a58a082ed4dfcec4a9f66fb6753a70522" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; RadialDispersal::connec_weights_sum</definition>
+        <argsstring></argsstring>
+        <name>connec_weights_sum</name>
+        <qualifiedname>RadialDispersal::connec_weights_sum</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sum of all the connection weights for each patch, ordered by Model::sites. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="70" column="13" bodyfile="includes/Dispersal.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_radial_dispersal_1ac63e6e6d97e7c720b6e6ef349e07c711" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RadialDispersal::RadialDispersal</definition>
+        <argsstring>(DispersalParams *params, BoundaryType boundary, double side)</argsstring>
+        <name>RadialDispersal</name>
+        <qualifiedname>RadialDispersal::RadialDispersal</qualifiedname>
+        <param>
+          <type><ref refid="struct_dispersal_params" kindref="compound">DispersalParams</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <param>
+          <type>BoundaryType</type>
+          <declname>boundary</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>side</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_radial_dispersal" kindref="compound">RadialDispersal</ref> constructor. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dispersal parameters </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">boundary</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>boundary type to use for calculating dispersal distances </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">side</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of one side of the simulation square </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="65" column="1" bodyfile="src/Dispersal.cpp" bodystart="182" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="class_radial_dispersal_1a363d41e54203e0cd6cadb0667b1f6548" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RadialDispersal::set_connecs</definition>
+        <argsstring>(std::vector&lt; Patch * &gt; &amp;sites) override</argsstring>
+        <name>set_connecs</name>
+        <qualifiedname>RadialDispersal::set_connecs</qualifiedname>
+        <reimplements refid="class_dispersal_1aef84d06c465ccb461d1cfb39e82de838">set_connecs</reimplements>
+        <param>
+          <type>std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>sites</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the inter-patch connectivities for dispersal. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sites</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector of all <ref refid="class_patch" kindref="compound">Patch</ref> objects </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="66" column="6" bodyfile="src/Dispersal.cpp" bodystart="190" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="class_radial_dispersal_1aa3bca3cc8b2d80af4bd11d91cacf09bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RadialDispersal::adults_disperse</definition>
+        <argsstring>(std::vector&lt; Patch * &gt; &amp;sites) override</argsstring>
+        <name>adults_disperse</name>
+        <qualifiedname>RadialDispersal::adults_disperse</qualifiedname>
+        <reimplements refid="class_dispersal_1a90638547dc5983463ee88d89a9167b5a">adults_disperse</reimplements>
+        <param>
+          <type>std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>sites</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Implements dispersal by adults from and to each patch, depending on the patch connectivities. <simplesect kind="note"><para>Only males and mated females are assumed to disperse from the patches. There is also dispersal mortality associated with this dispersal type.</para>
+</simplesect>
+Only those individuals that disperse out of a patch in a connected direction will survive. The number of males (of a given genotype) that survive dispersal out of their patch is determined by a random draw from a binomial distribution with probability of the total connection weight for all its connected patches. Of those, the number dispersing to each of the connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">sites</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector of all <ref refid="class_patch" kindref="compound">Patch</ref> objects </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>Model::sites, RadialDispersal::compute_connecs() </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="67" column="6" bodyfile="src/Dispersal.cpp" bodystart="214" bodyend="257"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_radial_dispersal_1ad09b4df09539d8b421c8d7ed3199d0c4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; std::vector&lt; std::vector&lt; int &gt; &gt;, std::vector&lt; std::vector&lt; double &gt; &gt; &gt;</type>
+        <definition>std::pair&lt; std::vector&lt; std::vector&lt; int &gt; &gt;, std::vector&lt; std::vector&lt; double &gt; &gt; &gt; RadialDispersal::compute_connecs</definition>
+        <argsstring>(std::vector&lt; Patch * &gt; &amp;sites)</argsstring>
+        <name>compute_connecs</name>
+        <qualifiedname>RadialDispersal::compute_connecs</qualifiedname>
+        <param>
+          <type>std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>sites</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes the set of connection indices and weights for a group of patches.</para>
+<para>If the distance between two patches is less than the the maximum dispersal distance, they are deemed to be connected. The connection weight is determined by ... <simplesect kind="note"><para>Under this dispersal type, patches are NOT connected to themselves. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sites</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector of all Patches objects </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as Model::sites, where the first item represents all connections to the first patch in Model::sites, etc. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="72" column="11" bodyfile="src/Dispersal.cpp" bodystart="266" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="class_radial_dispersal_1ae456b5d871312e16812fb6c4024288f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt;, double &gt;</type>
+        <definition>std::pair&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt;, double &gt; RadialDispersal::compute_interval_union</definition>
+        <argsstring>(const std::pair&lt; double, double &gt; &amp;qq, const std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;input)</argsstring>
+        <name>compute_interval_union</name>
+        <qualifiedname>RadialDispersal::compute_interval_union</qualifiedname>
+        <param>
+          <type>const std::pair&lt; double, double &gt; &amp;</type>
+          <declname>qq</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">qq</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>... </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="73" column="11" bodyfile="src/Dispersal.cpp" bodystart="357" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="class_radial_dispersal_1a55a26db2720e9bf5811aa51cf3a8d873" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double RadialDispersal::wrap_around</definition>
+        <argsstring>(double value, double range)</argsstring>
+        <name>wrap_around</name>
+        <qualifiedname>RadialDispersal::wrap_around</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>... <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">range</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>... </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>... </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="75" column="12" bodyfile="src/Dispersal.cpp" bodystart="346" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="class_radial_dispersal_1a4df7ea1ccbcc88991b3e63a46f0e0bb1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt; int &gt; RadialDispersal::get_sorted_positions</definition>
+        <argsstring>(const std::vector&lt; double &gt; &amp;numbers)</argsstring>
+        <name>get_sorted_positions</name>
+        <qualifiedname>RadialDispersal::get_sorted_positions</qualifiedname>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>numbers</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sorts the indices of the vector elements based on the numeric value of the corresponding element (in ascending order). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">numbers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector to sort </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The sorted indices vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="76" column="17" bodyfile="src/Dispersal.cpp" bodystart="399" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="function" id="class_radial_dispersal_1a28a558e2dcb75b8db11fd424aa66243e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::vector&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt; std::vector&lt; double &gt; &gt; RadialDispersal::compute_distances</definition>
+        <argsstring>(const std::vector&lt; Patch * &gt; &amp;sites)</argsstring>
+        <name>compute_distances</name>
+        <qualifiedname>RadialDispersal::compute_distances</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>sites</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes the inter-point distances for a list of points. ... <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sites</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector of all <ref refid="class_patch" kindref="compound">Patch</ref> objects </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The inter-point distances as a 2D vector, both axes in the order of the sites vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="77" column="17" bodyfile="src/Dispersal.cpp" bodystart="417" bodyend="430"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Implements dispersive behaviour for radial dispersal, where connection weights between patches are determined by the direction the patches are in relative to each other and other patches.</para>
+<para>Particularly, connection weights will be determined by the arc of the first patch&apos;s catchment radius covered by the second patch. Closer patches will reduce dispersal to further patches which are in the same interval. Those individuals that disperse in a direction with no patches will die. ... </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Dispersal</label>
+        <link refid="class_dispersal"/>
+      </node>
+      <node id="1">
+        <label>RadialDispersal</label>
+        <link refid="class_radial_dispersal"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>BoundaryStrategy</label>
+        <link refid="class_boundary_strategy"/>
+      </node>
+      <node id="2">
+        <label>Dispersal</label>
+        <link refid="class_dispersal"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>boundary_strategy</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>RadialDispersal</label>
+        <link refid="class_radial_dispersal"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/Dispersal.h" line="63" column="1" bodyfile="includes/Dispersal.h" bodystart="63" bodyend="78"/>
+    <listofallmembers>
+      <member refid="class_radial_dispersal_1aa3bca3cc8b2d80af4bd11d91cacf09bb" prot="public" virt="virtual"><scope>RadialDispersal</scope><name>adults_disperse</name></member>
+      <member refid="class_dispersal_1ab408b6c47b542c65c99e2c141962e81e" prot="protected" virt="non-virtual"><scope>RadialDispersal</scope><name>boundary_strategy</name></member>
+      <member refid="class_radial_dispersal_1ad09b4df09539d8b421c8d7ed3199d0c4" prot="private" virt="non-virtual"><scope>RadialDispersal</scope><name>compute_connecs</name></member>
+      <member refid="class_radial_dispersal_1a28a558e2dcb75b8db11fd424aa66243e" prot="private" virt="non-virtual"><scope>RadialDispersal</scope><name>compute_distances</name></member>
+      <member refid="class_radial_dispersal_1ae456b5d871312e16812fb6c4024288f6" prot="private" virt="non-virtual"><scope>RadialDispersal</scope><name>compute_interval_union</name></member>
+      <member refid="class_dispersal_1ae829e3cc99c732c2e4e15995a6aabc75" prot="protected" virt="non-virtual"><scope>RadialDispersal</scope><name>connec_indices</name></member>
+      <member refid="class_dispersal_1a5837fcddaf8f9fa9cff545828be47d5a" prot="protected" virt="non-virtual"><scope>RadialDispersal</scope><name>connec_weights</name></member>
+      <member refid="class_radial_dispersal_1a58a082ed4dfcec4a9f66fb6753a70522" prot="private" virt="non-virtual"><scope>RadialDispersal</scope><name>connec_weights_sum</name></member>
+      <member refid="class_dispersal_1ac4a92820d2e1967895862466abd1c701" prot="protected" virt="non-virtual"><scope>RadialDispersal</scope><name>disp_rate</name></member>
+      <member refid="class_dispersal_1a4eb55d34c12749b33bd68d4c8bfee61a" prot="public" virt="non-virtual"><scope>RadialDispersal</scope><name>Dispersal</name></member>
+      <member refid="class_dispersal_1ade53b8a69c5eea72536bcf2c7ef76857" prot="protected" virt="non-virtual"><scope>RadialDispersal</scope><name>F_dispersing_out</name></member>
+      <member refid="class_radial_dispersal_1a4df7ea1ccbcc88991b3e63a46f0e0bb1" prot="private" virt="non-virtual"><scope>RadialDispersal</scope><name>get_sorted_positions</name></member>
+      <member refid="class_dispersal_1a5ffa246788b8c993b6a34e8c8387d863" prot="protected" virt="non-virtual"><scope>RadialDispersal</scope><name>M_dispersing_out</name></member>
+      <member refid="class_dispersal_1a8b95350f1ca6fd7c635944dd776b806f" prot="protected" virt="non-virtual"><scope>RadialDispersal</scope><name>max_disp</name></member>
+      <member refid="class_radial_dispersal_1ac63e6e6d97e7c720b6e6ef349e07c711" prot="public" virt="non-virtual"><scope>RadialDispersal</scope><name>RadialDispersal</name></member>
+      <member refid="class_radial_dispersal_1a363d41e54203e0cd6cadb0667b1f6548" prot="public" virt="virtual"><scope>RadialDispersal</scope><name>set_connecs</name></member>
+      <member refid="class_radial_dispersal_1a55a26db2720e9bf5811aa51cf3a8d873" prot="private" virt="non-virtual"><scope>RadialDispersal</scope><name>wrap_around</name></member>
+      <member refid="class_dispersal_1aed1dabe97b773b3616811b648b170350" prot="public" virt="non-virtual"><scope>RadialDispersal</scope><name>~Dispersal</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

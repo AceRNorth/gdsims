@@ -1,0 +1,46 @@
+
+.. _file_src_Aestivation.cpp:
+
+File Aestivation.cpp
+====================
+
+|exhale_lsh| :ref:`Parent directory <dir_src>` (``src``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src\Aestivation.cpp``)
+------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_Aestivation.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Aestivation.h`` (:ref:`file_includes_Aestivation.h`)
+
+- ``array``
+
+- ``constants.h`` (:ref:`file_includes_constants.h`)
+
+- ``random.h`` (:ref:`file_includes_random.h`)
+
+- ``vector``
+
+
+
+
+

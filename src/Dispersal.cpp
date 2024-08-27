@@ -8,6 +8,13 @@
 #include "random.h"
 #include "constants.h"
 
+/**
+ * Dispersal constructor. 
+ * @details Determines what type of boundary strategy to use for calculating dispersal distances from the boundary type passed. 
+ * @param[in] params 	dispersal parameters
+ * @param[in] boundary 	boundary type to use for calculating dispersal distances
+ * @param[in] side 		size of one side of the simulation square
+ */
 Dispersal::Dispersal(DispersalParams* params, BoundaryType boundary, double side) 
 {
 	disp_rate = params->disp_rate;
@@ -24,12 +31,21 @@ Dispersal::Dispersal(DispersalParams* params, BoundaryType boundary, double side
 	}
 }
 
+/**
+ * Dispersal destructor.
+ */
 Dispersal::~Dispersal()
 {
 	delete boundary_strategy;
 }
 
-// Returns the number of males (of each genotype) dispersing out from each patch.
+/**
+ * Determines the number of males (of each genotype) dispersing out from each patch.
+ * @details The number of males of a given genotype dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate.
+ * @param[in] sites vector of all Patch objects
+ * @return The number of males dispersing out, divided by genotype and outgoing patch.
+ * @see Dispersal::disp_rate, Model::sites, Patch::M
+ */
 std::vector<std::array<long long int, constants::num_gen>> Dispersal::M_dispersing_out(const std::vector<Patch*> &sites) 
 {
 	std::vector<std::array<long long int, constants::num_gen>> m_move;	
@@ -45,7 +61,13 @@ std::vector<std::array<long long int, constants::num_gen>> Dispersal::M_dispersi
 	return m_move;
 }
 
-// Returns the number of females (of each genotype combination) dispersing out from each patch.
+/**
+ * Determines the number of mated females (of each genotype combination) dispersing out from each patch.
+ * @details The number of females of a given genotype conbination dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate.
+ * @param[in] sites vector of all Patch objects
+ * @return The number of mated females dispersing out, divided by female genotype, male sperm genotype and outgoing patch.
+ * @see Dispersal::disp_rate, Model::sites, Patch::F
+ */
 std::vector<std::array<std::array<long long int, constants::num_gen>, constants::num_gen>> Dispersal::F_dispersing_out(const std::vector<Patch*> &sites)
 {
 	std::vector<std::array<std::array<long long int, constants::num_gen>, constants::num_gen>> f_move; 
@@ -63,7 +85,10 @@ std::vector<std::array<std::array<long long int, constants::num_gen>, constants:
 	return f_move;
 }
 
-// Sets the inter-patch connectivities
+/**
+ * Sets the inter-patch connectivities for dispersal.
+ * @param[in] sites vector of all Patch objects
+ */
 void DistanceKernelDispersal::set_connecs(std::vector<Patch*> &sites) {
 	connec_indices.clear();
 	connec_weights.clear();
@@ -72,7 +97,13 @@ void DistanceKernelDispersal::set_connecs(std::vector<Patch*> &sites) {
 	connec_weights = connecs.second;
 }
 
-// Carries out dispersal by adults from and to each patch, depending on the patch connectivities
+/**
+ * Implements dispersal by adults from and to each patch, depending on the patch connectivities.
+ * @note Only males and mated females are assumed to disperse from the patches.
+ * @details All dispersing individuals are assumed to survive dispersal, and are guaranteed a connected patch to disperse to. The number of males dispersing from a given patch to each of its connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females.
+ * @param[in, out] sites vector of all Patch objects
+ * @see Model::sites
+ */
 void DistanceKernelDispersal::adults_disperse(std::vector<Patch*> &sites) {
 	// adults dispersing out from each patch 
 	std::vector<std::array<long long int, constants::num_gen>> m_move = M_dispersing_out(sites); // males dispersing from each patch
@@ -109,8 +140,14 @@ void DistanceKernelDispersal::adults_disperse(std::vector<Patch*> &sites) {
 		}
 	}
 }
-
-// Computes the set of connection indices and weights for a group of patches based on the simple connection assumptions
+ 
+/**
+ * Computes the set of connection indices and weights for a group of patches.
+ * @details If the distance between two patches is less than the the maximum dispersal distance, they are deemed to be connected. The connection weight is determined by the difference between the maximum dispersal distance and the distance between those patches. 
+ * @note Under this dispersal type, patches are deemed to be connected to themselves, resulting in self-dispersal. This is such that dispersal can take place even in 1-population models. 
+ * @param[in] sites vector of all Patches objects
+ * @return The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as Model::sites, where the first item represents all connections to the first patch in Model::sites, etc. 
+ */
 std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> DistanceKernelDispersal::compute_connecs(std::vector<Patch*>
  &sites) 
 {
@@ -136,11 +173,20 @@ std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> Dista
     return {connec_indices, connec_weights};
 }
 
+/**
+ * RadialDispersal constructor.
+ * @param[in] params 	dispersal parameters
+ * @param[in] boundary 	boundary type to use for calculating dispersal distances
+ * @param[in] side	 	size of one side of the simulation square
+ */
 RadialDispersal::RadialDispersal(DispersalParams* params, BoundaryType boundary, double side): Dispersal(params, boundary, side) {
 	connec_weights_sum.clear();
 }
 
-// Sets the inter-patch connectivities
+/**
+ * Sets the inter-patch connectivities for dispersal.
+ * @param[in] sites vector of all Patch objects
+ */
 void RadialDispersal::set_connecs(std::vector<Patch*> &sites) {
 	connec_indices.clear();
 	connec_weights.clear();
@@ -158,7 +204,13 @@ void RadialDispersal::set_connecs(std::vector<Patch*> &sites) {
 	connec_weights_sum = ws;
 }
 
-// Carries out dispersal by adults from and to each patch, depending on the patch connectivities
+/**
+ * Implements dispersal by adults from and to each patch, depending on the patch connectivities.
+ * @note Only males and mated females are assumed to disperse from the patches. There is also dispersal mortality associated with this dispersal type.
+ * @details Only those individuals that disperse out of a patch in a connected direction will survive. The number of males (of a given genotype) that survive dispersal out of their patch is determined by a random draw from a binomial distribution with probability of the total connection weight for all its connected patches. Of those, the number dispersing to each of the connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females.
+ * @param[in, out] sites vector of all Patch objects
+ * @see Model::sites, RadialDispersal::compute_connecs()
+ */
 void RadialDispersal::adults_disperse(std::vector<Patch*> &sites) {
 	// adults dispersing out from each patch 
 	std::vector<std::array<long long int, constants::num_gen>> m_move = M_dispersing_out(sites); // males dispersing from each patch
@@ -204,7 +256,13 @@ void RadialDispersal::adults_disperse(std::vector<Patch*> &sites) {
 	}
 }
 
-// Computes the set of connection indices and weights for a group of patches based on the wedge connection assumptions
+/**
+ * Computes the set of connection indices and weights for a group of patches.
+ * @details If the distance between two patches is less than the the maximum dispersal distance, they are deemed to be connected. The connection weight is determined by ...
+ * @note Under this dispersal type, patches are NOT connected to themselves. 
+ * @param[in] sites vector of all Patches objects
+ * @return The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as Model::sites, where the first item represents all connections to the first patch in Model::sites, etc. 
+ */
 std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> RadialDispersal::compute_connecs(std::vector<Patch*> &sites) {
 	 int num_sites = sites.size();
 	std::vector<std::vector<double>> connec_weights(num_sites);
@@ -279,11 +337,23 @@ std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> Radia
 	return {connec_indices, connec_weights};
 }
 
+/**
+ * ...
+ * @param[in] value ...
+ * @param[in] range ...
+ * @return ...
+ */
 double RadialDispersal::wrap_around(double value, double range)
 {
 	return std::fmod(std::fmod(value, range) + range, range);
 }
 
+/**
+ * ...
+ * @param[in] qq ...
+ * @param[in] input ...
+ * @return ...
+ */
 std::pair<std::vector<std::pair<double, double>>, double> RadialDispersal::compute_interval_union(const std::pair<double, double>& qq,
  const std::vector<std::pair<double, double>>& input)
 {
@@ -321,6 +391,11 @@ std::pair<std::vector<std::pair<double, double>>, double> RadialDispersal::compu
 }
 
 // Retuns the indices of the elements in the vector, sorted by numeric value in ascending order
+/**
+ * Sorts the indices of the vector elements based on the numeric value of the corresponding element (in ascending order).
+ * @param[in] numbers vector to sort
+ * @return The sorted indices vector.
+ */
 std::vector<int> RadialDispersal::get_sorted_positions(const std::vector<double>& numbers) 
 {
 	// Create a vector of indices (0 to N-1)
@@ -333,7 +408,12 @@ std::vector<int> RadialDispersal::get_sorted_positions(const std::vector<double>
 	return indices;
 }
 
-// Computes the inter-point distances for a list of points
+// 
+/**
+ * Computes the inter-point distances for a list of points. ...
+ * @param[in] sites vector of all Patch objects
+ * @return The inter-point distances as a 2D vector, both axes in the order of the sites vector. 
+ */
 std::vector<std::vector<double>> RadialDispersal::compute_distances(const std::vector<Patch*>& sites) 
 {
 	std::vector<std::vector<double>> distances;

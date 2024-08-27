@@ -1,0 +1,313 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_dispersal" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Dispersal</compoundname>
+    <derivedcompoundref refid="class_distance_kernel_dispersal" prot="public" virt="non-virtual">DistanceKernelDispersal</derivedcompoundref>
+    <derivedcompoundref refid="class_radial_dispersal" prot="public" virt="non-virtual">RadialDispersal</derivedcompoundref>
+    <includes refid="_dispersal_8h" local="no">Dispersal.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_dispersal_1ac4a92820d2e1967895862466abd1c701" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Dispersal::disp_rate</definition>
+        <argsstring></argsstring>
+        <name>disp_rate</name>
+        <qualifiedname>Dispersal::disp_rate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adult dispersal rate. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="26" column="8" bodyfile="includes/Dispersal.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dispersal_1a8b95350f1ca6fd7c635944dd776b806f" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Dispersal::max_disp</definition>
+        <argsstring></argsstring>
+        <name>max_disp</name>
+        <qualifiedname>Dispersal::max_disp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum distance at which two sites are connected. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="27" column="8" bodyfile="includes/Dispersal.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dispersal_1ae829e3cc99c732c2e4e15995a6aabc75" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; int &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;int&gt; &gt; Dispersal::connec_indices</definition>
+        <argsstring></argsstring>
+        <name>connec_indices</name>
+        <qualifiedname>Dispersal::connec_indices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Connected patch indices ordered by each patch in Model::sites, such that the first element contains the indices of all the patches connected to the first sites patch, etc. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="29" column="13" bodyfile="includes/Dispersal.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dispersal_1a5837fcddaf8f9fa9cff545828be47d5a" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;double&gt; &gt; Dispersal::connec_weights</definition>
+        <argsstring></argsstring>
+        <name>connec_weights</name>
+        <qualifiedname>Dispersal::connec_weights</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Connection weights of the connected patches ordered by each patch in Model::sites, such that the first element contains the connection weights between the first patch in sites and all the patches connected to it, etc. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="31" column="13" bodyfile="includes/Dispersal.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dispersal_1ab408b6c47b542c65c99e2c141962e81e" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref> *</type>
+        <definition>BoundaryStrategy* Dispersal::boundary_strategy</definition>
+        <argsstring></argsstring>
+        <name>boundary_strategy</name>
+        <qualifiedname>Dispersal::boundary_strategy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="33" column="18" bodyfile="includes/Dispersal.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_dispersal_1a4eb55d34c12749b33bd68d4c8bfee61a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dispersal::Dispersal</definition>
+        <argsstring>(DispersalParams *params, BoundaryType boundary, double side)</argsstring>
+        <name>Dispersal</name>
+        <qualifiedname>Dispersal::Dispersal</qualifiedname>
+        <param>
+          <type><ref refid="struct_dispersal_params" kindref="compound">DispersalParams</ref> *</type>
+          <declname>params</declname>
+        </param>
+        <param>
+          <type>BoundaryType</type>
+          <declname>boundary</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>side</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_dispersal" kindref="compound">Dispersal</ref> constructor.</para>
+<para>Determines what type of boundary strategy to use for calculating dispersal distances from the boundary type passed. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dispersal parameters </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">boundary</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>boundary type to use for calculating dispersal distances </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">side</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of one side of the simulation square </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="20" column="1" bodyfile="src/Dispersal.cpp" bodystart="18" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_dispersal_1aed1dabe97b773b3616811b648b170350" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dispersal::~Dispersal</definition>
+        <argsstring>()</argsstring>
+        <name>~Dispersal</name>
+        <qualifiedname>Dispersal::~Dispersal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_dispersal" kindref="compound">Dispersal</ref> destructor. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="21" column="1" bodyfile="src/Dispersal.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_dispersal_1aef84d06c465ccb461d1cfb39e82de838" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dispersal::set_connecs</definition>
+        <argsstring>(std::vector&lt; Patch * &gt; &amp;sites)=0</argsstring>
+        <name>set_connecs</name>
+        <qualifiedname>Dispersal::set_connecs</qualifiedname>
+        <reimplementedby refid="class_distance_kernel_dispersal_1a980ed0ba571a2adf1e856f408d914078">set_connecs</reimplementedby>
+        <reimplementedby refid="class_radial_dispersal_1a363d41e54203e0cd6cadb0667b1f6548">set_connecs</reimplementedby>
+        <param>
+          <type>std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>sites</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="22" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_dispersal_1a90638547dc5983463ee88d89a9167b5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Dispersal::adults_disperse</definition>
+        <argsstring>(std::vector&lt; Patch * &gt; &amp;sites)=0</argsstring>
+        <name>adults_disperse</name>
+        <qualifiedname>Dispersal::adults_disperse</qualifiedname>
+        <reimplementedby refid="class_distance_kernel_dispersal_1a8f42419dd4e180ed62680ffab734c677">adults_disperse</reimplementedby>
+        <reimplementedby refid="class_radial_dispersal_1aa3bca3cc8b2d80af4bd11d91cacf09bb">adults_disperse</reimplementedby>
+        <param>
+          <type>std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>sites</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="23" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_dispersal_1a5ffa246788b8c993b6a34e8c8387d863" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::array&lt; long long int, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::array&lt; long long int, constants::num_gen &gt; &gt; Dispersal::M_dispersing_out</definition>
+        <argsstring>(const std::vector&lt; Patch * &gt; &amp;sites)</argsstring>
+        <name>M_dispersing_out</name>
+        <qualifiedname>Dispersal::M_dispersing_out</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>sites</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determines the number of males (of each genotype) dispersing out from each patch.</para>
+<para>The number of males of a given genotype dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sites</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector of all <ref refid="class_patch" kindref="compound">Patch</ref> objects </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of males dispersing out, divided by genotype and outgoing patch. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_dispersal_1ac4a92820d2e1967895862466abd1c701" kindref="member">Dispersal::disp_rate</ref>, Model::sites, Patch::M </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="35" column="13" bodyfile="src/Dispersal.cpp" bodystart="49" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_dispersal_1ade53b8a69c5eea72536bcf2c7ef76857" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::array&lt; std::array&lt; long long int, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt;, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::array&lt; std::array&lt; long long int, constants::num_gen &gt;, constants::num_gen &gt; &gt; Dispersal::F_dispersing_out</definition>
+        <argsstring>(const std::vector&lt; Patch * &gt; &amp;sites)</argsstring>
+        <name>F_dispersing_out</name>
+        <qualifiedname>Dispersal::F_dispersing_out</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>sites</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determines the number of mated females (of each genotype combination) dispersing out from each patch.</para>
+<para>The number of females of a given genotype conbination dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sites</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector of all <ref refid="class_patch" kindref="compound">Patch</ref> objects </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of mated females dispersing out, divided by female genotype, male sperm genotype and outgoing patch. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_dispersal_1ac4a92820d2e1967895862466abd1c701" kindref="member">Dispersal::disp_rate</ref>, Model::sites, Patch::F </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Dispersal.h" line="36" column="13" bodyfile="src/Dispersal.cpp" bodystart="71" bodyend="86"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_dispersal" kindref="compound">Dispersal</ref> base class. Defines the interface for dispersal classes. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Dispersal</label>
+        <link refid="class_dispersal"/>
+      </node>
+      <node id="2">
+        <label>DistanceKernelDispersal</label>
+        <link refid="class_distance_kernel_dispersal"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>RadialDispersal</label>
+        <link refid="class_radial_dispersal"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>BoundaryStrategy</label>
+        <link refid="class_boundary_strategy"/>
+      </node>
+      <node id="1">
+        <label>Dispersal</label>
+        <link refid="class_dispersal"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>boundary_strategy</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/Dispersal.h" line="18" column="1" bodyfile="includes/Dispersal.h" bodystart="18" bodyend="37"/>
+    <listofallmembers>
+      <member refid="class_dispersal_1a90638547dc5983463ee88d89a9167b5a" prot="public" virt="pure-virtual"><scope>Dispersal</scope><name>adults_disperse</name></member>
+      <member refid="class_dispersal_1ab408b6c47b542c65c99e2c141962e81e" prot="protected" virt="non-virtual"><scope>Dispersal</scope><name>boundary_strategy</name></member>
+      <member refid="class_dispersal_1ae829e3cc99c732c2e4e15995a6aabc75" prot="protected" virt="non-virtual"><scope>Dispersal</scope><name>connec_indices</name></member>
+      <member refid="class_dispersal_1a5837fcddaf8f9fa9cff545828be47d5a" prot="protected" virt="non-virtual"><scope>Dispersal</scope><name>connec_weights</name></member>
+      <member refid="class_dispersal_1ac4a92820d2e1967895862466abd1c701" prot="protected" virt="non-virtual"><scope>Dispersal</scope><name>disp_rate</name></member>
+      <member refid="class_dispersal_1a4eb55d34c12749b33bd68d4c8bfee61a" prot="public" virt="non-virtual"><scope>Dispersal</scope><name>Dispersal</name></member>
+      <member refid="class_dispersal_1ade53b8a69c5eea72536bcf2c7ef76857" prot="protected" virt="non-virtual"><scope>Dispersal</scope><name>F_dispersing_out</name></member>
+      <member refid="class_dispersal_1a5ffa246788b8c993b6a34e8c8387d863" prot="protected" virt="non-virtual"><scope>Dispersal</scope><name>M_dispersing_out</name></member>
+      <member refid="class_dispersal_1a8b95350f1ca6fd7c635944dd776b806f" prot="protected" virt="non-virtual"><scope>Dispersal</scope><name>max_disp</name></member>
+      <member refid="class_dispersal_1aef84d06c465ccb461d1cfb39e82de838" prot="public" virt="pure-virtual"><scope>Dispersal</scope><name>set_connecs</name></member>
+      <member refid="class_dispersal_1aed1dabe97b773b3616811b648b170350" prot="public" virt="non-virtual"><scope>Dispersal</scope><name>~Dispersal</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

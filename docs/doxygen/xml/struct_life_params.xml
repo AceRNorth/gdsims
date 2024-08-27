@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="struct_life_params" kind="struct" language="C++" prot="public">
+    <compoundname>LifeParams</compoundname>
+    <includes refid="_params_8h" local="no">Params.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_life_params_1a02c6d31cc4adf7efc95abf6707c9f75b" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double LifeParams::mu_j</definition>
+        <argsstring></argsstring>
+        <name>mu_j</name>
+        <qualifiedname>LifeParams::mu_j</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Juvenile density independent mortality rate per day. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="28" column="8" bodyfile="includes/Params.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_life_params_1a528e234b9f36c9ee20e1e65ccb6f18ac" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double LifeParams::mu_a</definition>
+        <argsstring></argsstring>
+        <name>mu_a</name>
+        <qualifiedname>LifeParams::mu_a</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adult mortality rate per day. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="29" column="8" bodyfile="includes/Params.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_life_params_1a2cf17ed50803c966c18b4d1ca30b442c" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double LifeParams::beta</definition>
+        <argsstring></argsstring>
+        <name>beta</name>
+        <qualifiedname>LifeParams::beta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parameter that controls mating rate. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="30" column="8" bodyfile="includes/Params.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_life_params_1aea4fb1949f3ae9889fbd022ce728c1e2" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double LifeParams::theta</definition>
+        <argsstring></argsstring>
+        <name>theta</name>
+        <qualifiedname>LifeParams::theta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Average egg laying rate of wildtype females (eggs per day). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="31" column="8" bodyfile="includes/Params.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_life_params_1a113c7b28bb3132aa7e9e34f5380f0837" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double LifeParams::comp_power</definition>
+        <argsstring></argsstring>
+        <name>comp_power</name>
+        <qualifiedname>LifeParams::comp_power</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parameter that controls the juvenile survival probability. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="32" column="8" bodyfile="includes/Params.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_life_params_1a68805af09da4a9755cdd659dfd6fddd9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int LifeParams::min_dev</definition>
+        <argsstring></argsstring>
+        <name>min_dev</name>
+        <qualifiedname>LifeParams::min_dev</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Minimum development time for a juvenile (in days). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Params.h" line="33" column="5" bodyfile="includes/Params.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_model" kindref="compound">Model</ref> life-process parameters. </para>
+    </detaileddescription>
+    <location file="includes/Params.h" line="27" column="1" bodyfile="includes/Params.h" bodystart="27" bodyend="34"/>
+    <listofallmembers>
+      <member refid="struct_life_params_1a2cf17ed50803c966c18b4d1ca30b442c" prot="public" virt="non-virtual"><scope>LifeParams</scope><name>beta</name></member>
+      <member refid="struct_life_params_1a113c7b28bb3132aa7e9e34f5380f0837" prot="public" virt="non-virtual"><scope>LifeParams</scope><name>comp_power</name></member>
+      <member refid="struct_life_params_1a68805af09da4a9755cdd659dfd6fddd9" prot="public" virt="non-virtual"><scope>LifeParams</scope><name>min_dev</name></member>
+      <member refid="struct_life_params_1a528e234b9f36c9ee20e1e65ccb6f18ac" prot="public" virt="non-virtual"><scope>LifeParams</scope><name>mu_a</name></member>
+      <member refid="struct_life_params_1a02c6d31cc4adf7efc95abf6707c9f75b" prot="public" virt="non-virtual"><scope>LifeParams</scope><name>mu_j</name></member>
+      <member refid="struct_life_params_1aea4fb1949f3ae9889fbd022ce728c1e2" prot="public" virt="non-virtual"><scope>LifeParams</scope><name>theta</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

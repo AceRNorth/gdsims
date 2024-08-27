@@ -18,7 +18,10 @@ class Dispersal;
 class GDRelease;
 class Seasonality;
 
-// Runs the model.
+/**
+ * Runs the model.
+ * @see AreaParams, ModelParams
+ */ 
 class Model {
 public:
 	Model(ModelParams *params, const std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> &inher_frac, SineRainfallParams *season, double a0_mean, double a0_var, std::vector<int> rel_sites = {}, BoundaryType boundary = BoundaryType::Toroid, DispersalType disp_type = DispersalType::DistanceKernel, std::vector<Point> coords = {});
@@ -38,33 +41,30 @@ public:
 	double get_alpha(double alpha0);
 
 private:
-	std::vector<Patch*> sites;
+	std::vector<Patch*> sites; /**< Vector of all Patch objects. Contains the population sites over the whole simulation area. */
 	Dispersal* dispersal;
 	Aestivation* aestivation;
 	GDRelease* gd_release;
 	Seasonality* seasonality;
 
-	int day_sim; // current day of the simulation
+	int day_sim; /**< Current day of the simulation. */ 
 
 	// simulation area parameters
-	int num_pat; // number of population sites chosen for the simulation
-	double side; // size of the square simulation area (side x side) (km)
+	int num_pat; /**< Number of population sites (patches) chosen for the simulation. */ 
+	double side; /**< Size of the square simulation area (side x side). */ 
 
-	// initial population values - common for all Patches
-	InitialPopsParams *initial_pops;
+	InitialPopsParams *initial_pops; /**< Initial population values - common for all Patches. */
 
 	// juvenile development parameters - common for all Patches
-	int min_dev; // minimum development time for a juvenile (in days)
-	std::array<double, constants::max_dev+1> dev_duration_probs; // array of probabilities of juvenile development duration for a new juvenile
-	// (index indicates the number of days to develop or, equivalently, the age class the new juvenile starts at)
+	int min_dev; /**< Minimum development time for a juvenile (in days). */ 
+	std::array<double, constants::max_dev+1> dev_duration_probs; /**< Array of probabilities of juvenile development duration for a new juvenile (index indicates the number of days to develop or, equivalently, the age class the new juvenile starts at). */ 
 
 	// inheritance
-	// f_ijk is the fraction of genotype k offspring from mother with genotype i mated to father with genotype j
-	std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> inher_fraction;
+	std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> inher_fraction; /**< Inheritance fraction. f_ijk is the fraction of genotype k offspring from mother with genotype i mated to father with genotype j. */
 
 	// Patch construction parameters
-	double alpha0_mean; // mean of the baseline contribution to the carrying capacity
-    double alpha0_variance; // variance of the baseline contribution to the carrying capacity
+	double alpha0_mean; /**< Mean of the baseline contribution to the carrying capacity. */ 
+    double alpha0_variance; /**< Variance of the baseline contribution to the carrying capacity. */ 
 	double alpha0();
 
 	// initiation methods

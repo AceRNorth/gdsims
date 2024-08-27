@@ -1,0 +1,557 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_record" kind="class" language="C++" prot="public">
+    <compoundname>Record</compoundname>
+    <includes refid="_record_8h" local="no">Record.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_record_1a13b20ef61772014de98c3d87354ad1e9" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Record::rec_start</definition>
+        <argsstring></argsstring>
+        <name>rec_start</name>
+        <qualifiedname>Record::rec_start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start time for the data recording window (in days) (inclusive) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="35" column="5" bodyfile="includes/Record.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_record_1a0598ebe2ae342bf3dc7be5a156ad4c34" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Record::rec_end</definition>
+        <argsstring></argsstring>
+        <name>rec_end</name>
+        <qualifiedname>Record::rec_end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>End time for the data recording window (in days) (inclusive) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="36" column="5" bodyfile="includes/Record.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_record_1a3086c7b10d3d1a9983703d0865230cfa" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Record::rec_interval_global</definition>
+        <argsstring></argsstring>
+        <name>rec_interval_global</name>
+        <qualifiedname>Record::rec_interval_global</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time interval for global data recording (in days) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="37" column="5" bodyfile="includes/Record.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_record_1a9217590af69eb03412ac2c82c4fd853e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Record::rec_interval_local</definition>
+        <argsstring></argsstring>
+        <name>rec_interval_local</name>
+        <qualifiedname>Record::rec_interval_local</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time interval for local data recording (in days) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="38" column="5" bodyfile="includes/Record.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_record_1a8ab507dfcfb593428a8c23a81877fac3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Record::rec_sites_freq</definition>
+        <argsstring></argsstring>
+        <name>rec_sites_freq</name>
+        <qualifiedname>Record::rec_sites_freq</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fraction of sites to collect local data for (1 is all sites, 10 is 1 in 10 etc.). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="39" column="5" bodyfile="includes/Record.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_record_1a6af350cda36acab3641fce143db9e23f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Record::set_label</definition>
+        <argsstring></argsstring>
+        <name>set_label</name>
+        <qualifiedname>Record::set_label</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>&apos;Set of repetitions&apos; index label for output files. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="43" column="5" bodyfile="includes/Record.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_record_1ae9d8484927a4355098e0838c4d9a9314" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Record::rep_label</definition>
+        <argsstring></argsstring>
+        <name>rep_label</name>
+        <qualifiedname>Record::rep_label</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>&apos;Repetition&apos; index label for output files (within given set). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="44" column="5" bodyfile="includes/Record.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_record_1a5b2c0fc66b1b06b02f0fb485c2e7b4d1" prot="private" static="no" mutable="no">
+        <type>std::ostringstream</type>
+        <definition>std::ostringstream Record::os1</definition>
+        <argsstring></argsstring>
+        <name>os1</name>
+        <qualifiedname>Record::os1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Local data output filename </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="46" column="20" bodyfile="includes/Record.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_record_1a41aeed0c4345e36767be33f8c906a5b8" prot="private" static="no" mutable="no">
+        <type>std::ostringstream</type>
+        <definition>std::ostringstream Record::os2</definition>
+        <argsstring></argsstring>
+        <name>os2</name>
+        <qualifiedname>Record::os2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Global data output filename </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="47" column="20" bodyfile="includes/Record.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_record_1a980b8c85bb233ad19544124db3634465" prot="private" static="no" mutable="no">
+        <type>std::ostringstream</type>
+        <definition>std::ostringstream Record::os3</definition>
+        <argsstring></argsstring>
+        <name>os3</name>
+        <qualifiedname>Record::os3</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Coordinate data output filename </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="48" column="20" bodyfile="includes/Record.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_record_1aef62117702c3e667f8353be450f7c176" prot="private" static="no" mutable="no">
+        <type>std::ofstream</type>
+        <definition>std::ofstream Record::local_data</definition>
+        <argsstring></argsstring>
+        <name>local_data</name>
+        <qualifiedname>Record::local_data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Local data filestream object </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="49" column="15" bodyfile="includes/Record.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_record_1a09e1fe18d5084ac207ff42cfcec68858" prot="private" static="no" mutable="no">
+        <type>std::ofstream</type>
+        <definition>std::ofstream Record::global_data</definition>
+        <argsstring></argsstring>
+        <name>global_data</name>
+        <qualifiedname>Record::global_data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Global data filestream object </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="50" column="15" bodyfile="includes/Record.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_record_1a2165facbe1dd7fa3b3196b799eb7bbc4" prot="private" static="no" mutable="no">
+        <type>std::ofstream</type>
+        <definition>std::ofstream Record::coord_list</definition>
+        <argsstring></argsstring>
+        <name>coord_list</name>
+        <qualifiedname>Record::coord_list</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Coordinate data filestream object </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="51" column="15" bodyfile="includes/Record.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_record_1a977db4fb6aaa9ac09b0d17ba676cabda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Record::Record</definition>
+        <argsstring>(RecordParams *rec_params, int rep)</argsstring>
+        <name>Record</name>
+        <qualifiedname>Record::Record</qualifiedname>
+        <param>
+          <type><ref refid="struct_record_params" kindref="compound">RecordParams</ref> *</type>
+          <declname>rec_params</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rep</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_record" kindref="compound">Record</ref> constructor. Creates LocalData, Totals and CoordinateList output .txt files. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">rec_params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>recording parameters </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>initial repetition label for the given set of runs </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="22" column="1" bodyfile="src/Record.cpp" bodystart="15" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_record_1ad2ce1a99d866834ab53dedd788cb1ea6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Record::~Record</definition>
+        <argsstring>()</argsstring>
+        <name>~Record</name>
+        <qualifiedname>Record::~Record</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_record" kindref="compound">Record</ref> destructor. Resets the current filepath so the output_files directory can be found in the next set of runs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="23" column="1" bodyfile="src/Record.cpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_record_1a0c4d71ceed2e84f89273a73a304fcc4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Record::record_coords</definition>
+        <argsstring>(const std::vector&lt; Patch * &gt; &amp;sites)</argsstring>
+        <name>record_coords</name>
+        <qualifiedname>Record::record_coords</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>sites</declname>
+        </param>
+        <briefdescription>
+<para>Records the coordinates of the population sites. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Relevant parameters include the fraction of sites to collect data for. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">sites</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector of all <ref refid="class_patch" kindref="compound">Patch</ref> objects </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>Model::sites, Record::rec_sites_freq </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="24" column="6" bodyfile="src/Record.cpp" bodystart="63" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_record_1aa8ed3bd4fdee0c2dddbb5cec2f685577" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Record::record_global</definition>
+        <argsstring>(int day, const std::array&lt; long long int, constants::num_gen &gt; &amp;tot_M_gen)</argsstring>
+        <name>record_global</name>
+        <qualifiedname>Record::record_global</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>day</declname>
+        </param>
+        <param>
+          <type>const std::array&lt; long long int, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt; &amp;</type>
+          <declname>tot_M_gen</declname>
+        </param>
+        <briefdescription>
+<para>Records the total numbers of male mosquitoes for the given day, divided by genotype. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The totals are assumed to be across all sites. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">day</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simulation day </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tot_M_gen</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>total number of males divided by genotype </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_model_1a6d5f4f68f41e76c3e966e312d2f6e9e3" kindref="member">Model::calculate_tot_M_gen()</ref>, Patch::M </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="25" column="6" bodyfile="src/Record.cpp" bodystart="81" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_record_1a27622a9c11aa4a86ca123456ef0ad236" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Record::output_totals</definition>
+        <argsstring>(int day, long long int tot_J, long long int tot_M, long long int tot_V, long long int tot_F)</argsstring>
+        <name>output_totals</name>
+        <qualifiedname>Record::output_totals</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>day</declname>
+        </param>
+        <param>
+          <type>long long int</type>
+          <declname>tot_J</declname>
+        </param>
+        <param>
+          <type>long long int</type>
+          <declname>tot_M</declname>
+        </param>
+        <param>
+          <type>long long int</type>
+          <declname>tot_V</declname>
+        </param>
+        <param>
+          <type>long long int</type>
+          <declname>tot_F</declname>
+        </param>
+        <briefdescription>
+<para>Outputs the total numbers of juvenile (J), male (M), virgin female (V) and mated female (F) mosquitoes for the given day. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The totals are assumed to be across all sites, and over all genotypes and age groups. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">day</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simulation day </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tot_J</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>total number of juveniles </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tot_M</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>total number of males </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tot_V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>total number of virgin (unmated) females </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tot_F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>total number of mated females </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>Patch::J, Patch::M, Patch::V, Patch::F </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="26" column="6" bodyfile="src/Record.cpp" bodystart="100" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_record_1a8e504c6253ef29fa5c86d216e3f28e1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Record::record_local</definition>
+        <argsstring>(int day, const std::vector&lt; Patch * &gt; &amp;sites)</argsstring>
+        <name>record_local</name>
+        <qualifiedname>Record::record_local</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>day</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <declname>sites</declname>
+        </param>
+        <briefdescription>
+<para>Records the number of males at each site for the given day. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The number of males at each site is divided by genotype. Relevant parameters include the fraction of sites to collect data for. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">day</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simulation day </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">sites</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector of all <ref refid="class_patch" kindref="compound">Patch</ref> objects </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>Model::sites, Record::rec_sites_freq </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="27" column="6" bodyfile="src/Record.cpp" bodystart="116" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="class_record_1ae6b89328b0fcaa2bfa5eebe819782b50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Record::is_rec_local_time</definition>
+        <argsstring>(int day)</argsstring>
+        <name>is_rec_local_time</name>
+        <qualifiedname>Record::is_rec_local_time</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>day</declname>
+        </param>
+        <briefdescription>
+<para>Determines if it is time to record local data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The initialisation day (day 0) will always be recorded, and the recording window will be inclusive of the start and end times.</para>
+</simplesect>
+Other relevant parameters include the local recording interval. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">day</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simulation day </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>As you would expect. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_record_1a8e504c6253ef29fa5c86d216e3f28e1c" kindref="member">Record::record_local()</ref>, Record::rec_start, Record::rec_end, Record::rec_interval_local </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="29" column="6" bodyfile="src/Record.cpp" bodystart="147" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="class_record_1a97f3aed77c0f4b5979da3a9a11bce42c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Record::is_rec_global_time</definition>
+        <argsstring>(int day)</argsstring>
+        <name>is_rec_global_time</name>
+        <qualifiedname>Record::is_rec_global_time</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>day</declname>
+        </param>
+        <briefdescription>
+<para>Determines if it is time to record global data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The number of males at each site is divided by genotype. <linebreak/>
+ <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">day</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>simulation day </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>As you would expect. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_record_1aa8ed3bd4fdee0c2dddbb5cec2f685577" kindref="member">Record::record_global()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/Record.h" line="30" column="6" bodyfile="src/Record.cpp" bodystart="134" bodyend="137"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Records model data. Creates CoordinateList, Totals and LocalData output .txt files for each repetition of the model. CoordinateList: contains the coordinates of all recorded sites. Totals: contains the total numbers of males of each genotype across all sites, for each recorded day of the simulation. LocalData: contains the number of males of each genotype for each site on each simulated day that is recorded. <simplesect kind="see"><para><ref refid="struct_record_params" kindref="compound">RecordParams</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="includes/Record.h" line="20" column="1" bodyfile="includes/Record.h" bodystart="20" bodyend="52"/>
+    <listofallmembers>
+      <member refid="class_record_1a2165facbe1dd7fa3b3196b799eb7bbc4" prot="private" virt="non-virtual"><scope>Record</scope><name>coord_list</name></member>
+      <member refid="class_record_1a09e1fe18d5084ac207ff42cfcec68858" prot="private" virt="non-virtual"><scope>Record</scope><name>global_data</name></member>
+      <member refid="class_record_1a97f3aed77c0f4b5979da3a9a11bce42c" prot="public" virt="non-virtual"><scope>Record</scope><name>is_rec_global_time</name></member>
+      <member refid="class_record_1ae6b89328b0fcaa2bfa5eebe819782b50" prot="public" virt="non-virtual"><scope>Record</scope><name>is_rec_local_time</name></member>
+      <member refid="class_record_1aef62117702c3e667f8353be450f7c176" prot="private" virt="non-virtual"><scope>Record</scope><name>local_data</name></member>
+      <member refid="class_record_1a5b2c0fc66b1b06b02f0fb485c2e7b4d1" prot="private" virt="non-virtual"><scope>Record</scope><name>os1</name></member>
+      <member refid="class_record_1a41aeed0c4345e36767be33f8c906a5b8" prot="private" virt="non-virtual"><scope>Record</scope><name>os2</name></member>
+      <member refid="class_record_1a980b8c85bb233ad19544124db3634465" prot="private" virt="non-virtual"><scope>Record</scope><name>os3</name></member>
+      <member refid="class_record_1a27622a9c11aa4a86ca123456ef0ad236" prot="public" virt="non-virtual"><scope>Record</scope><name>output_totals</name></member>
+      <member refid="class_record_1a0598ebe2ae342bf3dc7be5a156ad4c34" prot="private" virt="non-virtual"><scope>Record</scope><name>rec_end</name></member>
+      <member refid="class_record_1a3086c7b10d3d1a9983703d0865230cfa" prot="private" virt="non-virtual"><scope>Record</scope><name>rec_interval_global</name></member>
+      <member refid="class_record_1a9217590af69eb03412ac2c82c4fd853e" prot="private" virt="non-virtual"><scope>Record</scope><name>rec_interval_local</name></member>
+      <member refid="class_record_1a8ab507dfcfb593428a8c23a81877fac3" prot="private" virt="non-virtual"><scope>Record</scope><name>rec_sites_freq</name></member>
+      <member refid="class_record_1a13b20ef61772014de98c3d87354ad1e9" prot="private" virt="non-virtual"><scope>Record</scope><name>rec_start</name></member>
+      <member refid="class_record_1a977db4fb6aaa9ac09b0d17ba676cabda" prot="public" virt="non-virtual"><scope>Record</scope><name>Record</name></member>
+      <member refid="class_record_1a0c4d71ceed2e84f89273a73a304fcc4c" prot="public" virt="non-virtual"><scope>Record</scope><name>record_coords</name></member>
+      <member refid="class_record_1aa8ed3bd4fdee0c2dddbb5cec2f685577" prot="public" virt="non-virtual"><scope>Record</scope><name>record_global</name></member>
+      <member refid="class_record_1a8e504c6253ef29fa5c86d216e3f28e1c" prot="public" virt="non-virtual"><scope>Record</scope><name>record_local</name></member>
+      <member refid="class_record_1ae9d8484927a4355098e0838c4d9a9314" prot="private" virt="non-virtual"><scope>Record</scope><name>rep_label</name></member>
+      <member refid="class_record_1a6af350cda36acab3641fce143db9e23f" prot="private" virt="non-virtual"><scope>Record</scope><name>set_label</name></member>
+      <member refid="class_record_1ad2ce1a99d866834ab53dedd788cb1ea6" prot="public" virt="non-virtual"><scope>Record</scope><name>~Record</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
