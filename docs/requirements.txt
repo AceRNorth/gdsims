@@ -1,6 +1,6 @@
-breathe>=4.34.0
-sphinx>=4.5.0
+breathe=4.35.0
+sphinx==5.0.2
 sphinx_book_theme
-exhale>=0.3.7
+exhale==0.3.7
 sphinx-copybutton
 sphinx-toolbox
