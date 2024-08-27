@@ -1,3 +1,4 @@
+doxygen
 breathe==4.35.0
 sphinx==5.0.2
 sphinx_book_theme
