@@ -15,6 +15,8 @@ jobs:
         uses: mattnotmitt/doxygen-action@v1.9.5
         with:
           working-directory: 'docs/doxygen'
+      - name: Install Doxygen (for exhale)
+        run: sudo apt-get update && sudo apt-get install -y doxygen
       - name: Check Doxygen Installation
         run: doxygen --version
       - name: Process the Doxygen output using Sphinx
