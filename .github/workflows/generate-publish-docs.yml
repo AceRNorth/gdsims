@@ -24,7 +24,7 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r docs/requirements.txt
       - name: Print working directory
-      - run: pwd
+        run: pwd
       - name: Process the Doxygen output using Sphinx
         run: sphinx-build -b html docs docs/sphinx
       - name: Deploy to Github pages
