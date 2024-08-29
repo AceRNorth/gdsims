@@ -26,10 +26,12 @@ jobs:
         with:
          auto-update-conda: true
          python-version: 3.11
+      - name: Initialise conda
+        run: conda init bash
+      - name: Source .bashrc
+        run: source ~/.bashrc
       - name: Create Conda environment
         run: conda create -n docs-env -y python=3.11
-      - name: Initialise conda
-        run: conda init
       - name: Activate Conda environment
         run: conda activate docs-env
       - name: Install sphinx with conda
