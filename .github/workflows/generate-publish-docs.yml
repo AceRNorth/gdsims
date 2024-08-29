@@ -21,11 +21,12 @@ jobs:
         run: echo "/usr/bin" >> $GITHUB_PATH
       - name: Check Doxygen Installation
         run: doxygen --version
+      - name: Install Python dependencies
+        run: pip install -r docs/requirements.txt
+      - name: Print working directory
+      - run: pwd
       - name: Process the Doxygen output using Sphinx
-        uses: ammaraskar/sphinx-action@master
-        with:
-          build-command: "sphinx-build -b html -v . sphinx"
-          docs-folder: 'docs/'
+        run: sphinx-build -b html docs docs/sphinx
       - name: Deploy to Github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
