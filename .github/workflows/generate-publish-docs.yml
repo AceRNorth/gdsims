@@ -21,10 +21,27 @@ jobs:
         run: echo "/usr/bin" >> $GITHUB_PATH
       - name: Check Doxygen Installation
         run: doxygen --version
-      - name: Install Python dependencies
-        run: pip install -r docs/requirements.txt
-      - name: Print working directory
-        run: pwd
+      - name: Set up Miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+         auto-update-conda: true
+         python-version: 3.11
+      - name: Create Conda environment
+        run: conda create -n docs-env -y python=3.11
+      - name: Activate Conda environment
+        run: conda activate docs-env
+      - name: Install sphinx with conda
+        run: conda install sphinx
+      - name: Install breathe with conda
+        run: conda install conda-forge::breathe
+      - name: Install exhale with conda
+        run: pip install exhale
+      - name: Install sphinx-book-theme with conda
+        run: conda install conda-forge::sphinx-book-theme
+      - name: Install sphinx-copybutton with conda
+        run: conda install conda-forge::sphinx-copybutton 
+      - name: Install sphinx-copybutton with conda
+        run: conda install conda-forge::sphinx-toolbox
       - name: Process the Doxygen output using Sphinx
         run: sphinx-build -b html docs docs/sphinx
       - name: Deploy to Github pages
