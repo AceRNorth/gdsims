@@ -299,8 +299,10 @@ std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> Radia
 				alpha = std::atan(radii[jj] / distances[i][jj]); 
 /*if(boundary == Edge)
 {
-if(2*std::abs(loc2.x-loc1.x)>side)loc2.x=loc2.x-side;
-if(2*std::abs(loc2.y-loc1.y)>side)loc2.y=loc2.y-side;
+if(2*(loc2.x-loc1.x)>side)loc2.x=loc2.x-side;
+if(2*(loc1.x-loc2.x)>side)loc2.x=loc2.x+side;
+if(2*(loc2.y-loc1.y)>side)loc2.y=loc2.y-side;
+if(2*(loc1.y-loc2.y)>side)loc2.y=loc2.y+side;
 };*/
 				if (loc2.y > loc1.y) 
 				{	
