@@ -207,7 +207,7 @@ void RadialDispersal::set_connecs(std::vector<Patch*> &sites) {
 /**
  * Implements dispersal by adults from and to each patch, depending on the patch connectivities.
  * @note Only males and mated females are assumed to disperse from the patches. There is also dispersal mortality associated with this dispersal type.
- * @details Only those individuals that disperse out of a patch in a connected direction will survive. The number of males (of a given genotype) that survive dispersal out of their patch is determined by a random draw from a binomial distribution with probability of the total connection weight for all its connected patches. Of those, the number dispersing to each of the connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females.
+ * @details Only those individuals that disperse out of a patch in a connected direction will survive. The number of dispersing males (of a given genotype) that survive dispersal out of their patch is determined by a random draw from a binomial distribution with probability of the total connection weight for all its connected patches. Of those, the number dispersing to each of the connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females.
  * @param[in, out] sites vector of all Patch objects
  * @see Model::sites, RadialDispersal::compute_connecs()
  */
@@ -258,7 +258,7 @@ void RadialDispersal::adults_disperse(std::vector<Patch*> &sites) {
 
 /**
  * Computes the set of connection indices and weights for a group of patches.
- * @details If the distance between two patches is less than the the maximum dispersal distance, they are deemed to be connected. The connection weight is determined by ...
+ * @details If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by angle of bisecting lines from the centre of the focal patch to the catchment of the recieving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum disperdal distance are not connected.
  * @note Under this dispersal type, patches are NOT connected to themselves. 
  * @param[in] sites vector of all Patches objects
  * @return The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as Model::sites, where the first item represents all connections to the first patch in Model::sites, etc. 
@@ -350,10 +350,10 @@ if(2*(loc1.y-loc2.y)>side)loc2.y=loc2.y+side;
 }
 
 /**
- * ...
- * @param[in] value ...
- * @param[in] range ...
- * @return ...
+ * Function to 'wrap' a real-valued number into the interval from zero to a maximum specified by the parameter 'range': if the input value is outside the interval it is wrapped around so that the output is within the interval.
+ * @param[in] value the real-valued number to be wrapped around
+ * @param[in] range the maximum value of the interval to be wrapped into
+ * @return the wrapped number within the interval
  */
 double RadialDispersal::wrap_around(double value, double range)
 {
@@ -361,10 +361,23 @@ double RadialDispersal::wrap_around(double value, double range)
 }
 
 /**
- * ...
- * @param[in] qq ...
- * @param[in] input ...
- * @return ...
+ * @brief Computes the union of overlapping intervals and calculates the difference in the sum of lengths between the merged intervals and the original intervals.
+ * @details This function takes a single interval `qq` and a vector of intervals `input`. It merges
+ * any overlapping intervals, includes the non-overlapping intervals as they are, and 
+ * calculates the total sum of lengths of the resulting intervals. It also computes the
+ * difference between the total sum of lengths of the merged intervals and the original 
+ * interval. This is required to compute the extent of flight path between a focal patch and a recieving patch, while accounting for the shadowing effect of nearer patches
+ * @param[in] qq A pair of doubles representing the interval to be merged with the input intervals.
+ *           The first value is the start of the interval, and the second value is the end of the interval.
+ * @param[in] input A vector of pairs of doubles, where each pair represents an interval. Each interval
+ *              has a start value (first) and an end value (second).
+ * @return A pair consisting of:
+ *         - A vector of pairs of doubles representing the union of the merged and non-overlapping intervals,
+ *           sorted by the start of each interval.
+ *         - A double representing the difference between the sum of lengths of the merged intervals and the 
+ *           original intervals.
+ * @note The function assumes that each interval in the input is well-formed, meaning that for each interval
+ *       `std::pair<double, double>`, the first value (start) is less than or equal to the second value (end).
  */
 std::pair<std::vector<std::pair<double, double>>, double> RadialDispersal::compute_interval_union(const std::pair<double, double>& qq,
  const std::vector<std::pair<double, double>>& input)
@@ -422,7 +435,7 @@ std::vector<int> RadialDispersal::get_sorted_positions(const std::vector<double>
 
 // 
 /**
- * Computes the inter-point distances for a list of points. ...
+ * Computes the inter-point distances for a list of points.
  * @param[in] sites vector of all Patch objects
  * @return The inter-point distances as a 2D vector, both axes in the order of the sites vector. 
  */
