@@ -1,0 +1,9 @@
+<map id="GDRelease::release_gene_drive" name="GDRelease::release_gene_drive">
+<area shape="rect" id="Node000001" title="Releases the gene drive mosquitoes into the simulation area if it is time for release." alt="" coords="5,56,143,99"/>
+<area shape="rect" id="Node000002" href="$class_g_d_release.html#a69a14d4b9e59ee1e1375d76630da00e3" title="Determines if the day is a chosen release time." alt="" coords="191,5,377,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,55,190,41,216,34,218,39,191,47,144,60"/>
+<area shape="rect" id="Node000003" href="$class_g_d_release.html#a46170fb6a9f1a248346206b99773b684" title="Adds drive heterozygous (WD) male mosquitoes to the release sites." alt="" coords="209,56,359,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,75,193,75,193,80,143,80"/>
+<area shape="rect" id="Node000004" href="$class_g_d_release.html#a941e51bbc4999dacdb4f22277ffdebbf" title=" " alt="" coords="200,123,368,165"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="144,97,201,115,199,120,142,102"/>
+</map>

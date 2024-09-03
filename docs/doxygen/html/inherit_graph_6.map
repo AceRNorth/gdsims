@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_g_d_release.html" title="Gene drive release base class." alt="" coords="5,31,93,57"/>
+<area shape="rect" id="Node000001" href="$class_random_g_d_release.html" title="Implements gene drive release for randomised release sites." alt="" coords="141,5,276,32"/>
+<area shape="poly" id="edge5_Node000000_Node000001" title=" " alt="" coords="108,32,140,27,141,32,108,37"/>
+<area shape="rect" id="Node000002" href="$class_sched_g_d_release.html" title="Implements gene drive release for pre&#45;selected release sites." alt="" coords="146,56,271,83"/>
+<area shape="poly" id="edge6_Node000000_Node000002" title=" " alt="" coords="109,51,146,57,146,62,108,56"/>
+</map>

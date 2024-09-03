@@ -1,0 +1,156 @@
+\chapter{General\+Metapop}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{GeneralMetapop@{GeneralMetapop}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+General\+Metapop is a metapopulation simulation program modelling mosquito populations and their response to gene drive release. The main aims of the project are to create a model program that is maintainable, extensible and widely accessible.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Requirements\+:}{Requirements\+:}}\label{md__r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyItemize}
+\item C++17-\/compatible compiler or higher (e.\+g. Min\+GW g++ \$\textbackslash{}geq\$ 8.\+0)
+\item CMake \$\textbackslash{}geq\$ 3.\+5.\+0
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Installation}{Installation}}\label{md__r_e_a_d_m_e_autotoc_md2}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysubsection{\texorpdfstring{Command Line\+: Windows}{Command Line\+: Windows}}\label{md__r_e_a_d_m_e_autotoc_md3}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{Additional Recommended Installations}{Additional Recommended Installations}}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyItemize}
+\item Git Bash
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{autotoc\+\_\+md5}{autotoc\+\_\+md5}}\label{md__r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyEnumerate}
+\item Open the Windows command prompt and check CMake and the C++ compiler have correctly been installed. The correct version should be set to run as default\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/-\/version}
+\DoxyCodeLine{g++\ -\/-\/version}
+
+\end{DoxyCode}
+
+\item Downloading the files\+:
+
+i. Clone the repository via Git Bash (recommended)\+:
+
+Install Git Bash and open. Navigate to your chosen directory and run this command to clone the repository\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ C:\(\backslash\)Users\(\backslash\)MyUser\(\backslash\)Projects}
+\DoxyCodeLine{git\ clone\ https://github.com/AceRNorth/GeneralMetapop.git}
+
+\end{DoxyCode}
+ ii. Alternatively, download the files as a ZIP folder, unzip and move to your chosen directory.
+
+
+\item Open the Windows command prompt again and navigate to your chosen directory.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ C:\(\backslash\)Users\(\backslash\)MyUser\(\backslash\)Projects\(\backslash\)GeneralMetapop}
+
+\end{DoxyCode}
+
+\item Create a directory called build where CMake files will be created, and navigate to it\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ build}
+\DoxyCodeLine{cd\ build}
+
+\end{DoxyCode}
+
+\item Run CMake to configure the CMake project\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ ..}
+
+\end{DoxyCode}
+
+
+This step might not succeed as some Windows systems have issues selecting a generator. You can run {\ttfamily cmake -\/-\/help} to view a list of available generators and then run CMake with one of them, e.\+g. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/G\ "{}MinGW\ Makefiles"{}\ ..}
+
+\end{DoxyCode}
+
+\item Build all CMake targets\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/-\/build\ .}
+
+\end{DoxyCode}
+
+\item Finally, run the executable file gdsimsapp.\+exe that has been created in the build directory 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{gdsimsapp.exe}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{\texorpdfstring{Command Line\+: Linux}{Command Line\+: Linux}}\label{md__r_e_a_d_m_e_autotoc_md6}
+
+\begin{DoxyEnumerate}
+\item Open the command prompt and check CMake and the C++ compiler have correctly been installed. The correct version should be set to run as default\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/-\/version}
+\DoxyCodeLine{g++\ -\/-\/version}
+
+\end{DoxyCode}
+ Some Linux distributions keep the default version set to an older version even after the newer one has been installed. A workaround to set this version will later be covered in step 5.
+\item Clone the repository\+: Navigate to your chosen directory and run this command to clone the repository\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ ./Projects}
+\DoxyCodeLine{git\ clone\ https://github.com/AceRNorth/GeneralMetapop.git}
+
+\end{DoxyCode}
+
+\item Navigate to the repository directory\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ GeneralMetapop}
+
+\end{DoxyCode}
+
+\item Create a directory called build where CMake files will be created, and navigate to it\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ build}
+\DoxyCodeLine{cd\ build}
+
+\end{DoxyCode}
+
+\item Run CMake to configure the CMake project\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ ..}
+
+\end{DoxyCode}
+
+
+This step might not succeed if the default compiler version doesn\textquotesingle{}t support C++17 and the $<$filesystem$>$ library. You can instead run it by setting the C++ compiler version, e.\+g. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/D\ CMAKE\_CXX\_COMPILER=g++13\ ..}
+
+\end{DoxyCode}
+
+
+If at any point you get CMake cache error messages, delete the CMake\+Cache file in the build directory and run cmake again.
+\item Build all CMake targets\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/-\/build\ .}
+
+\end{DoxyCode}
+
+\item Finally, run the executable file gdsimsapp that has been created in the build directory 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./gdsimsapp}
+
+\end{DoxyCode}
+ 
+\end{DoxyEnumerate}

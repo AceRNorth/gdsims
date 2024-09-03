@@ -1,0 +1,175 @@
+\doxysection{GDRelease Class Reference}
+\hypertarget{class_g_d_release}{}\label{class_g_d_release}\index{GDRelease@{GDRelease}}
+
+
+Gene drive release base class.  
+
+
+
+
+{\ttfamily \#include $<$GDRelease.\+h$>$}
+
+
+
+Inheritance diagram for GDRelease\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_g_d_release__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for GDRelease\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_g_d_release__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_g_d_release_a7d3d5cfa8f9d71e08383edf435fcfdbb}{GDRelease}} (int \mbox{\hyperlink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{num\+\_\+driver\+\_\+M}}, std\+::vector$<$ int $>$ rel\+\_\+times)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_g_d_release}{GDRelease} constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_d_release_ac69ecb74bc31ac1d57764be524c68ca7}{release\+\_\+gene\+\_\+drive}} (int day, std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
+\begin{DoxyCompactList}\small\item\em Releases the gene drive mosquitoes into the simulation area if it is time for release. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_g_d_release_a69a14d4b9e59ee1e1375d76630da00e3}{is\+\_\+release\+\_\+time}} (int day)
+\begin{DoxyCompactList}\small\item\em Determines if the day is a chosen release time. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_g_d_release_a941e51bbc4999dacdb4f22277ffdebbf}{select\+\_\+driver\+\_\+sites}} (int day, const std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)=0
+\item 
+void \mbox{\hyperlink{class_g_d_release_a46170fb6a9f1a248346206b99773b684}{put\+\_\+driver\+\_\+sites}} (std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&rel\+\_\+sites)
+\begin{DoxyCompactList}\small\item\em Adds drive heterozygous (WD) male mosquitoes to the release sites. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{num\+\_\+driver\+\_\+M}}
+\begin{DoxyCompactList}\small\item\em Number of drive heterozygous (WD) male mosquitoes per release. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_g_d_release_af257d77564ffbd7c694f57533dde7282}{release\+\_\+times}}
+\begin{DoxyCompactList}\small\item\em Days on which the gene drive mosquitoes will be released. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gene drive release base class. 
+
+Defines the basic implementation of gene drive release in the model. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_g_d_release_a7d3d5cfa8f9d71e08383edf435fcfdbb}\label{class_g_d_release_a7d3d5cfa8f9d71e08383edf435fcfdbb} 
+\index{GDRelease@{GDRelease}!GDRelease@{GDRelease}}
+\index{GDRelease@{GDRelease}!GDRelease@{GDRelease}}
+\doxysubsubsection{\texorpdfstring{GDRelease()}{GDRelease()}}
+{\footnotesize\ttfamily GDRelease\+::\+GDRelease (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+driver\+\_\+M,  }\item[{std\+::vector$<$ int $>$}]{rel\+\_\+times }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxylink{class_g_d_release}{GDRelease} constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num\+\_\+driver\+\_\+M} & number of drive heterozygous (WD) male mosquitoes per release \\
+\hline
+\mbox{\texttt{ in}}  & {\em rel\+\_\+times} & days on which the gene drive mosquitoes will be released \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_g_d_release_a69a14d4b9e59ee1e1375d76630da00e3}\label{class_g_d_release_a69a14d4b9e59ee1e1375d76630da00e3} 
+\index{GDRelease@{GDRelease}!is\_release\_time@{is\_release\_time}}
+\index{is\_release\_time@{is\_release\_time}!GDRelease@{GDRelease}}
+\doxysubsubsection{\texorpdfstring{is\_release\_time()}{is\_release\_time()}}
+{\footnotesize\ttfamily bool GDRelease\+::is\+\_\+release\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{day }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Determines if the day is a chosen release time. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em day} & simulation day \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+As you would expect. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_g_d_release_af257d77564ffbd7c694f57533dde7282}{GDRelease\+::release\+\_\+times} 
+\end{DoxySeeAlso}
+\Hypertarget{class_g_d_release_a46170fb6a9f1a248346206b99773b684}\label{class_g_d_release_a46170fb6a9f1a248346206b99773b684} 
+\index{GDRelease@{GDRelease}!put\_driver\_sites@{put\_driver\_sites}}
+\index{put\_driver\_sites@{put\_driver\_sites}!GDRelease@{GDRelease}}
+\doxysubsubsection{\texorpdfstring{put\_driver\_sites()}{put\_driver\_sites()}}
+{\footnotesize\ttfamily void GDRelease\+::put\+\_\+driver\+\_\+sites (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&}]{rel\+\_\+sites }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Adds drive heterozygous (WD) male mosquitoes to the release sites. 
+
+Relevant parameters include the number of male driver mosquitoes to be released at each site. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em rel\+\_\+sites} & release sites \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{GDRelease\+::num\+\_\+driver\+\_\+M} 
+\end{DoxySeeAlso}
+\Hypertarget{class_g_d_release_ac69ecb74bc31ac1d57764be524c68ca7}\label{class_g_d_release_ac69ecb74bc31ac1d57764be524c68ca7} 
+\index{GDRelease@{GDRelease}!release\_gene\_drive@{release\_gene\_drive}}
+\index{release\_gene\_drive@{release\_gene\_drive}!GDRelease@{GDRelease}}
+\doxysubsubsection{\texorpdfstring{release\_gene\_drive()}{release\_gene\_drive()}}
+{\footnotesize\ttfamily void GDRelease\+::release\+\_\+gene\+\_\+drive (\begin{DoxyParamCaption}\item[{int}]{day,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&}]{sites }\end{DoxyParamCaption})}
+
+
+
+Releases the gene drive mosquitoes into the simulation area if it is time for release. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em day} & simulation day \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_g_d_release_a941e51bbc4999dacdb4f22277ffdebbf}\label{class_g_d_release_a941e51bbc4999dacdb4f22277ffdebbf} 
+\index{GDRelease@{GDRelease}!select\_driver\_sites@{select\_driver\_sites}}
+\index{select\_driver\_sites@{select\_driver\_sites}!GDRelease@{GDRelease}}
+\doxysubsubsection{\texorpdfstring{select\_driver\_sites()}{select\_driver\_sites()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ GDRelease\+::select\+\_\+driver\+\_\+sites (\begin{DoxyParamCaption}\item[{int}]{day,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&}]{sites }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_random_g_d_release_a3dfe5435b6e54b577bd6e30ccc1117d6}{Random\+GDRelease}}, and \mbox{\hyperlink{class_sched_g_d_release_a40212411e7dd81dac953dd0d6f9ad4ad}{Sched\+GDRelease}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}\label{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0} 
+\index{GDRelease@{GDRelease}!num\_driver\_M@{num\_driver\_M}}
+\index{num\_driver\_M@{num\_driver\_M}!GDRelease@{GDRelease}}
+\doxysubsubsection{\texorpdfstring{num\_driver\_M}{num\_driver\_M}}
+{\footnotesize\ttfamily int GDRelease\+::num\+\_\+driver\+\_\+M\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of drive heterozygous (WD) male mosquitoes per release. 
+
+\Hypertarget{class_g_d_release_af257d77564ffbd7c694f57533dde7282}\label{class_g_d_release_af257d77564ffbd7c694f57533dde7282} 
+\index{GDRelease@{GDRelease}!release\_times@{release\_times}}
+\index{release\_times@{release\_times}!GDRelease@{GDRelease}}
+\doxysubsubsection{\texorpdfstring{release\_times}{release\_times}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ GDRelease\+::release\+\_\+times\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Days on which the gene drive mosquitoes will be released. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/includes/\mbox{\hyperlink{_g_d_release_8h}{GDRelease.\+h}}\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/src/\mbox{\hyperlink{_g_d_release_8cpp}{GDRelease.\+cpp}}\end{DoxyCompactItemize}

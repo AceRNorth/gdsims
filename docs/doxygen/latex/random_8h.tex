@@ -1,0 +1,186 @@
+\doxysection{C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/includes/random.h File Reference}
+\hypertarget{random_8h}{}\label{random_8h}\index{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h@{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include "{}constants.\+h"{}}\newline
+Include dependency graph for random.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{random_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{random_8h_a108ff3fb960f77177389a96a01ed1c74}{random\+\_\+real}} ()
+\begin{DoxyCompactList}\small\item\em Returns a random floating-\/point number from a uniform real distribution of 0.\+0 to 1.\+0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{random_8h_af03c0e74140efa3114c4cd1361da5548}{random\+\_\+discrete}} (int a, int b)
+\begin{DoxyCompactList}\small\item\em Returns a random integer number from a uniform discrete distribution of a to b. \end{DoxyCompactList}\item 
+long long int \mbox{\hyperlink{random_8h_a2b4b3dc20892808a0220d878773ba864}{random\+\_\+poisson}} (double lambda)
+\begin{DoxyCompactList}\small\item\em Returns a random draw (non-\/negative integer) from the Poisson distribution with mean lambda (using normal distribution approximation when lambda \texorpdfstring{$>$}{>} 30) \end{DoxyCompactList}\item 
+long long int \mbox{\hyperlink{random_8h_a4e7a8d4c70cb879b071d51ddec9a8b1f}{random\+\_\+binomial}} (long long int n, double p)
+\begin{DoxyCompactList}\small\item\em Returns a random draw (non-\/negative integer) from the Binomial distribution B(\+N,p). \end{DoxyCompactList}\item 
+std\+::vector$<$ long long int $>$ \mbox{\hyperlink{random_8h_a180e4f01c99b4c4fae00714c08fa647b}{random\+\_\+multinomial}} (long long int n, const std\+::vector$<$ double $>$ \&probs)
+\begin{DoxyCompactList}\small\item\em Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs. \end{DoxyCompactList}\item 
+std\+::vector$<$ long long int $>$ \mbox{\hyperlink{random_8h_ae9bfea9d70562b34509b4ff50c57e117}{random\+\_\+multinomial}} (long long int n, const std\+::array$<$ long long int, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ \&probs)
+\begin{DoxyCompactList}\small\item\em Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs. \end{DoxyCompactList}\item 
+std\+::vector$<$ long long int $>$ \mbox{\hyperlink{random_8h_ab522b309a12c730ad270008709c19d09}{random\+\_\+multinomial}} (long long int n, const std\+::array$<$ double, \mbox{\hyperlink{namespaceconstants_ab5cd2d6cdf356d98576ea193f6a54476}{constants\+::max\+\_\+dev}}+1 $>$ \&probs)
+\begin{DoxyCompactList}\small\item\em Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{random_8h_ab1651a929e139f6da870eae2f0c641e0}{random\+\_\+lognormal}} (double des\+\_\+mean, double des\+\_\+var)
+\begin{DoxyCompactList}\small\item\em Returns a random draw (non-\/negative floating-\/point number) from a lognormal distribution with desired mean des\+\_\+mean and desired variance des\+\_\+var. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{random_8h_a4e7a8d4c70cb879b071d51ddec9a8b1f}\label{random_8h_a4e7a8d4c70cb879b071d51ddec9a8b1f} 
+\index{random.h@{random.h}!random\_binomial@{random\_binomial}}
+\index{random\_binomial@{random\_binomial}!random.h@{random.h}}
+\doxysubsubsection{\texorpdfstring{random\_binomial()}{random\_binomial()}}
+{\footnotesize\ttfamily long long int random\+\_\+binomial (\begin{DoxyParamCaption}\item[{long long int}]{n,  }\item[{double}]{p }\end{DoxyParamCaption})}
+
+
+
+Returns a random draw (non-\/negative integer) from the Binomial distribution B(\+N,p). 
+
+Uses Normal and Poisson distribution approximations for large N. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & number of trials \\
+\hline
+\mbox{\texttt{ in}}  & {\em p} & success probability \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The random number. 
+\end{DoxyReturn}
+\Hypertarget{random_8h_af03c0e74140efa3114c4cd1361da5548}\label{random_8h_af03c0e74140efa3114c4cd1361da5548} 
+\index{random.h@{random.h}!random\_discrete@{random\_discrete}}
+\index{random\_discrete@{random\_discrete}!random.h@{random.h}}
+\doxysubsubsection{\texorpdfstring{random\_discrete()}{random\_discrete()}}
+{\footnotesize\ttfamily int random\+\_\+discrete (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+Returns a random integer number from a uniform discrete distribution of a to b. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & lower value of the distribution range \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & upper value of the distribution range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The random number. 
+\end{DoxyReturn}
+\Hypertarget{random_8h_ab1651a929e139f6da870eae2f0c641e0}\label{random_8h_ab1651a929e139f6da870eae2f0c641e0} 
+\index{random.h@{random.h}!random\_lognormal@{random\_lognormal}}
+\index{random\_lognormal@{random\_lognormal}!random.h@{random.h}}
+\doxysubsubsection{\texorpdfstring{random\_lognormal()}{random\_lognormal()}}
+{\footnotesize\ttfamily double random\+\_\+lognormal (\begin{DoxyParamCaption}\item[{double}]{des\+\_\+mean,  }\item[{double}]{des\+\_\+var }\end{DoxyParamCaption})}
+
+
+
+Returns a random draw (non-\/negative floating-\/point number) from a lognormal distribution with desired mean des\+\_\+mean and desired variance des\+\_\+var. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em des\+\_\+mean} & desired mean \\
+\hline
+\mbox{\texttt{ in}}  & {\em des\+\_\+var} & desired variance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The random number. 
+\end{DoxyReturn}
+\Hypertarget{random_8h_ab522b309a12c730ad270008709c19d09}\label{random_8h_ab522b309a12c730ad270008709c19d09} 
+\index{random.h@{random.h}!random\_multinomial@{random\_multinomial}}
+\index{random\_multinomial@{random\_multinomial}!random.h@{random.h}}
+\doxysubsubsection{\texorpdfstring{random\_multinomial()}{random\_multinomial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ long long int $>$ random\+\_\+multinomial (\begin{DoxyParamCaption}\item[{long long int}]{n,  }\item[{const std\+::array$<$ double, \mbox{\hyperlink{namespaceconstants_ab5cd2d6cdf356d98576ea193f6a54476}{constants\+::max\+\_\+dev}}+1 $>$ \&}]{probs }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & number of trials \\
+\hline
+\mbox{\texttt{ in}}  & {\em probs} & array of probabilities for each outcome (each age group) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of the number of successes for each outcome (in the same order as the probabilities). 
+\end{DoxyReturn}
+\Hypertarget{random_8h_ae9bfea9d70562b34509b4ff50c57e117}\label{random_8h_ae9bfea9d70562b34509b4ff50c57e117} 
+\index{random.h@{random.h}!random\_multinomial@{random\_multinomial}}
+\index{random\_multinomial@{random\_multinomial}!random.h@{random.h}}
+\doxysubsubsection{\texorpdfstring{random\_multinomial()}{random\_multinomial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ long long int $>$ random\+\_\+multinomial (\begin{DoxyParamCaption}\item[{long long int}]{n,  }\item[{const std\+::array$<$ long long int, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ \&}]{probs }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs. 
+
+~\newline
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & number of trials \\
+\hline
+\mbox{\texttt{ in}}  & {\em probs} & array of probabilities for each outcome (each genotype). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of the number of successes for each outcome (in the same order as the probabilities). 
+\end{DoxyReturn}
+\Hypertarget{random_8h_a180e4f01c99b4c4fae00714c08fa647b}\label{random_8h_a180e4f01c99b4c4fae00714c08fa647b} 
+\index{random.h@{random.h}!random\_multinomial@{random\_multinomial}}
+\index{random\_multinomial@{random\_multinomial}!random.h@{random.h}}
+\doxysubsubsection{\texorpdfstring{random\_multinomial()}{random\_multinomial()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ long long int $>$ random\+\_\+multinomial (\begin{DoxyParamCaption}\item[{long long int}]{n,  }\item[{const std\+::vector$<$ double $>$ \&}]{probs }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & number of trials \\
+\hline
+\mbox{\texttt{ in}}  & {\em probs} & vector of probabilities for each outcome \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of the number of successes for each outcome (in the same order as the probabilities). 
+\end{DoxyReturn}
+\Hypertarget{random_8h_a2b4b3dc20892808a0220d878773ba864}\label{random_8h_a2b4b3dc20892808a0220d878773ba864} 
+\index{random.h@{random.h}!random\_poisson@{random\_poisson}}
+\index{random\_poisson@{random\_poisson}!random.h@{random.h}}
+\doxysubsubsection{\texorpdfstring{random\_poisson()}{random\_poisson()}}
+{\footnotesize\ttfamily long long int random\+\_\+poisson (\begin{DoxyParamCaption}\item[{double}]{lambda }\end{DoxyParamCaption})}
+
+
+
+Returns a random draw (non-\/negative integer) from the Poisson distribution with mean lambda (using normal distribution approximation when lambda \texorpdfstring{$>$}{>} 30) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lambda} & mean of the distribution \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The random number. 
+\end{DoxyReturn}
+\Hypertarget{random_8h_a108ff3fb960f77177389a96a01ed1c74}\label{random_8h_a108ff3fb960f77177389a96a01ed1c74} 
+\index{random.h@{random.h}!random\_real@{random\_real}}
+\index{random\_real@{random\_real}!random.h@{random.h}}
+\doxysubsubsection{\texorpdfstring{random\_real()}{random\_real()}}
+{\footnotesize\ttfamily double random\+\_\+real (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a random floating-\/point number from a uniform real distribution of 0.\+0 to 1.\+0. 
+
+\begin{DoxyReturn}{Returns}
+The random number. 
+\end{DoxyReturn}

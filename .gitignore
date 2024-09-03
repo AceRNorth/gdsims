@@ -1,3 +1,7 @@
-CMakeLists*
+.gitignore
 main2.cpp
 build/*
+test.cpp
+test.exe
+test2.cpp
+.vscode

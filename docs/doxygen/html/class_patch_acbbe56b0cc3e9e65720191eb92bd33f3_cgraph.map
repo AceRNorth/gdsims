@@ -1,0 +1,28 @@
+<map id="Patch::lay_eggs" name="Patch::lay_eggs">
+<area shape="rect" id="Node000001" title="Females lay eggs, creating new juveniles." alt="" coords="5,56,121,83"/>
+<area shape="rect" id="Node000002" href="$random_8cpp.html#a180e4f01c99b4c4fae00714c08fa647b" title="Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where e..." alt="" coords="171,5,308,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,53,175,34,176,39,113,58"/>
+<area shape="rect" id="Node000004" href="$random_8cpp.html#a2b4b3dc20892808a0220d878773ba864" title="Returns a random draw (non&#45;negative integer) from the Poisson distribution with mean lambda (using no..." alt="" coords="562,56,679,83"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="121,67,547,67,547,72,121,72"/>
+<area shape="rect" id="Node000006" href="$class_patch.html#abfcba309e2ecc8eb224b89a5f11d6042" title="Updates the juvenile survival probability of the patch." alt="" coords="169,132,310,159"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="97,81,194,123,192,128,95,86"/>
+<area shape="rect" id="Node000003" href="$random_8cpp.html#a4e7a8d4c70cb879b071d51ddec9a8b1f" title="Returns a random draw (non&#45;negative integer) from the Binomial distribution B(N,p)." alt="" coords="374,5,493,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="309,16,358,16,358,21,309,21"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="486,30,555,49,553,54,485,35"/>
+<area shape="rect" id="Node000005" href="$random_8cpp.html#af3edb3b1a762ddbe5539bc80ef5e023c" title=" " alt="" coords="908,56,967,83"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="493,17,659,26,760,35,860,48,893,55,892,60,860,53,759,40,659,31,493,23"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="679,67,892,67,892,72,679,72"/>
+<area shape="rect" id="Node000007" href="$class_patch.html#a3071272790d2c5cde8675e94a306ac0a" title="Calculates the total number of juveniles in the patch." alt="" coords="358,208,508,235"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="272,157,359,194,376,200,374,205,357,198,270,162"/>
+<area shape="rect" id="Node000008" href="$class_model.html#a04c1c541fc6d4f4c12f854b971197ea5" title="Returns the carrying capacity for the given alpha0 (the baseline contribution to it) and the current ..." alt="" coords="373,107,493,133"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="310,133,358,127,358,132,311,139"/>
+<area shape="rect" id="Node000012" href="$class_model.html#a6499bfa0eeb48133e352ce72f79aee9d" title="Returns the current simulation day." alt="" coords="378,157,488,184"/>
+<area shape="poly" id="edge14_Node000006_Node000012" title=" " alt="" coords="311,152,363,159,362,164,310,157"/>
+<area shape="rect" id="Node000009" href="$class_seasonality.html#a86bfbdfc639ab1a08e3643e05b55d6f1" title=" " alt="" coords="556,107,685,133"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="494,117,541,117,541,123,494,123"/>
+<area shape="rect" id="Node000010" href="$class_model.html#ad1efe8336546de49c99d0d8c8ec8e6e8" title="Returns a random value for the baseline contribution to the carrying capacity (alpha0)." alt="" coords="569,157,672,184"/>
+<area shape="poly" id="edge11_Node000008_Node000010" title=" " alt="" coords="486,131,555,150,554,156,485,137"/>
+<area shape="rect" id="Node000011" href="$random_8cpp.html#ab1651a929e139f6da870eae2f0c641e0" title="Returns a random draw (non&#45;negative floating&#45;point number) from a lognormal distribution with desired..." alt="" coords="733,132,860,159"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="672,161,717,154,717,159,672,166"/>
+<area shape="poly" id="edge13_Node000011_Node000005" title=" " alt="" coords="822,129,897,88,899,93,824,134"/>
+</map>

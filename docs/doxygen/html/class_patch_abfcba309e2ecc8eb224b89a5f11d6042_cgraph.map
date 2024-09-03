@@ -1,0 +1,17 @@
+<map id="Patch::update_comp" name="Patch::update_comp">
+<area shape="rect" id="Node000001" title="Updates the juvenile survival probability of the patch." alt="" coords="5,56,147,83"/>
+<area shape="rect" id="Node000002" href="$class_patch.html#a3071272790d2c5cde8675e94a306ac0a" title="Calculates the total number of juveniles in the patch." alt="" coords="195,5,345,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,53,201,34,202,39,131,58"/>
+<area shape="rect" id="Node000003" href="$class_model.html#a04c1c541fc6d4f4c12f854b971197ea5" title="Returns the carrying capacity for the given alpha0 (the baseline contribution to it) and the current ..." alt="" coords="210,56,330,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="147,67,194,67,194,72,147,72"/>
+<area shape="rect" id="Node000008" href="$class_model.html#a6499bfa0eeb48133e352ce72f79aee9d" title="Returns the current simulation day." alt="" coords="215,107,325,133"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="131,81,202,100,201,105,129,86"/>
+<area shape="rect" id="Node000004" href="$class_seasonality.html#a86bfbdfc639ab1a08e3643e05b55d6f1" title=" " alt="" coords="393,31,521,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="330,59,377,52,378,57,331,64"/>
+<area shape="rect" id="Node000005" href="$class_model.html#ad1efe8336546de49c99d0d8c8ec8e6e8" title="Returns a random value for the baseline contribution to the carrying capacity (alpha0)." alt="" coords="406,81,508,108"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="331,75,391,83,390,88,330,80"/>
+<area shape="rect" id="Node000006" href="$random_8cpp.html#ab1651a929e139f6da870eae2f0c641e0" title="Returns a random draw (non&#45;negative floating&#45;point number) from a lognormal distribution with desired..." alt="" coords="569,81,697,108"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="509,92,554,92,554,97,509,97"/>
+<area shape="rect" id="Node000007" href="$random_8cpp.html#af3edb3b1a762ddbe5539bc80ef5e023c" title=" " alt="" coords="745,81,804,108"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="697,92,729,92,729,97,697,97"/>
+</map>

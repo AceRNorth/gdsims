@@ -32,6 +32,30 @@ double ToroidalBoundaryStrategy::distance(const Point &p1, const Point &p2)
 }
 
 /**
+ * Returns the relative position of the second point to the first.
+ * @param[in] loc1 point 1
+ * @param[in] loc2 point 2
+ * @return The relative coordinates of the second point.
+ */
+Point ToroidalBoundaryStrategy::relative_pos(const Point &p1, const Point &p2) 
+{
+	Point t2;
+	if (2*(p2.x - p1.x) > side) {
+		t2.x = p2.x - side;
+	}
+	if (2*(p1.x - p2.x) > side) {
+		t2.x = p2.x + side;
+	}
+	if (2*(p2.y - p1.y) > side) {
+		t2.y = p2.y - side;
+	}
+	if (2*(p1.y - p2.y) > side) {
+		t2.y = p2.y + side;
+	}
+	return t2;
+}
+
+/**
  * Calculates the distance between two points. 
  * @param[in] p1 first point
  * @param[in] p2 second point
@@ -41,4 +65,15 @@ double ToroidalBoundaryStrategy::distance(const Point &p1, const Point &p2)
 double EdgeBoundaryStrategy::distance(const Point &p1, const Point &p2)
 {
     return std::sqrt(std::pow(p2.x - p1.x, 2) + std::pow(p2.y - p1.y, 2));
+}
+
+/**
+ * Returns the relative position of the second point to the first.
+ * @param[in] loc1 point 1
+ * @param[in] loc2 point 2
+ * @return The relative coordinates of the second point.
+ */
+Point EdgeBoundaryStrategy::relative_pos(const Point &p1, const Point &p2) 
+{
+	return p2;
 }

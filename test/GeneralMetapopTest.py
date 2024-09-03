@@ -143,7 +143,7 @@ output_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Progr
 exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\gdsimsapp.exe"
 
 sets = [i for i in range(1, 19)]
-sets = [100]
+#sets = [100]
 
 for j in range(0, len(sets)):
     params_filename = "params_set" + str(sets[j]) + ".txt"
@@ -156,7 +156,7 @@ for j in range(0, len(sets)):
         
     # if want advanced options, uncomment below line
     # e.g. setting boundary type to edge and dispersal type to radial
-    #input_string += "1" + "\n" + "t" + "\n" + "2" + "\n" + "d" + "\n" 
+    input_string += "1" + "\n" + "e" + "\n" + "2" + "\n" + "r" + "\n" 
     # e.g. setting custom coords file
     #input_string += "4" + "\n" + "coords_set1run1.txt" + "\n"
     #input_string += "4" + "\n" + "coords_set" + str(sets[j]) + "run1" + "_td.txt" + "\n"
@@ -210,12 +210,12 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_radial"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\edge_radial"
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
-#sets = [i for i in range(1, 19)]
-sets = [2, 11]
+sets = [i for i in range(1, 19)]
+#sets = [2, 11]
 
 # ** Modify the list of num_runs in each set selected as needed **
 num_runs_list = [2 for i in range(0, len(sets))]
@@ -250,60 +250,60 @@ for j in range(0, len(sets)):
             plt.legend()
         
         # import test data
-    #     os.chdir(test_data_folder_path)
-    #     totals_test = np.loadtxt("Totals" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
-    #     times_test = totals_test[:, 0]
-    #     tot_males_test = totals_test[:, 1:]
-    #     coords_test = np.loadtxt("CoordinateList" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
-    #     local_test = np.loadtxt("LocalData" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
+        os.chdir(test_data_folder_path)
+        totals_test = np.loadtxt("Totals" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
+        times_test = totals_test[:, 0]
+        tot_males_test = totals_test[:, 1:]
+        coords_test = np.loadtxt("CoordinateList" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
+        local_test = np.loadtxt("LocalData" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
         
-    #     # plot test data
-    #     if make_plot:
-    #         plt.figure()
-    #         plt.title("Totals test data for " + "set " + str(sets[j]) + " run " + str(i))
-    #         plt.xlabel("Day")
-    #         plt.ylabel("Total number of individuals")
-    #         plt.plot(times_test, tot_males_test[:, 0], label="$M_{WW}$")
-    #         plt.plot(times_test, tot_males_test[:, 1], label="$M_{WD}$")
-    #         plt.plot(times_test, tot_males_test[:, 2], label="$M_{DD}$")
-    #         plt.plot(times_test, tot_males_test[:, 3], label="$M_{WR}$")
-    #         plt.plot(times_test, tot_males_test[:, 4], label="$M_{RR}$")
-    #         plt.plot(times_test, tot_males_test[:, 5], label="$M_{DR}$")
-    #         plt.legend()
+        # plot test data
+        if make_plot:
+            plt.figure()
+            plt.title("Totals test data for " + "set " + str(sets[j]) + " run " + str(i))
+            plt.xlabel("Day")
+            plt.ylabel("Total number of individuals")
+            plt.plot(times_test, tot_males_test[:, 0], label="$M_{WW}$")
+            plt.plot(times_test, tot_males_test[:, 1], label="$M_{WD}$")
+            plt.plot(times_test, tot_males_test[:, 2], label="$M_{DD}$")
+            plt.plot(times_test, tot_males_test[:, 3], label="$M_{WR}$")
+            plt.plot(times_test, tot_males_test[:, 4], label="$M_{RR}$")
+            plt.plot(times_test, tot_males_test[:, 5], label="$M_{DR}$")
+            plt.legend()
         
-    #     # compare
-    #     print("Test results for " + "set " + str(sets[j]) + " run " + str(i) + ":")
-    #     if totals_test.shape == totals_oracle.shape:
-    #         print("Totals data array sizes are equal")
-    #     else:
-    #         print("Totals data array sizes are NOT equal!")
+        # compare
+        print("Test results for " + "set " + str(sets[j]) + " run " + str(i) + ":")
+        if totals_test.shape == totals_oracle.shape:
+            print("Totals data array sizes are equal")
+        else:
+            print("Totals data array sizes are NOT equal!")
             
-    #     if (totals_test == totals_oracle).all():
-    #         print("Totals data arrays are equal")
-    #     else:
-    #         print("Totals data arrays are NOT equal!")
+        if (totals_test == totals_oracle).all():
+            print("Totals data arrays are equal")
+        else:
+            print("Totals data arrays are NOT equal!")
             
             
-    #     if coords_test.shape == coords_oracle.shape:
-    #         print("Coords data array sizes are equal")
-    #     else:
-    #         print("Coords data array sizes are NOT equal!")
-    #     if (coords_test == coords_oracle).all():
-    #         print("Coords data arrays are equal")
-    #     else:
-    #         print("Coords data arrays are NOT equal!")
+        if coords_test.shape == coords_oracle.shape:
+            print("Coords data array sizes are equal")
+        else:
+            print("Coords data array sizes are NOT equal!")
+        if (coords_test == coords_oracle).all():
+            print("Coords data arrays are equal")
+        else:
+            print("Coords data arrays are NOT equal!")
             
         
-    #     if local_test.shape == local_oracle.shape:
-    #         print("Local data array sizes are equal")
-    #     else:
-    #         print("Local data array sizes are NOT equal!")
-    #     if (local_test == local_oracle).all():
-    #         print("Local data arrays are equal")
-    #     else:
-    #         print("Local data arrays are NOT equal!")
+        if local_test.shape == local_oracle.shape:
+            print("Local data array sizes are equal")
+        else:
+            print("Local data array sizes are NOT equal!")
+        if (local_test == local_oracle).all():
+            print("Local data arrays are equal")
+        else:
+            print("Local data arrays are NOT equal!")
             
-    #     print("")
+        print("")
     
-    # print("")
+    print("")
     

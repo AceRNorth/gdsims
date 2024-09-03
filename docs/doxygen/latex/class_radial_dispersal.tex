@@ -1,0 +1,274 @@
+\doxysection{Radial\+Dispersal Class Reference}
+\hypertarget{class_radial_dispersal}{}\label{class_radial_dispersal}\index{RadialDispersal@{RadialDispersal}}
+
+
+Implements dispersive behaviour for radial dispersal, where connection weights between patches are determined by the direction the patches are in relative to each other and other patches.  
+
+
+
+
+{\ttfamily \#include $<$Dispersal.\+h$>$}
+
+
+
+Inheritance diagram for Radial\+Dispersal\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_radial_dispersal__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Radial\+Dispersal\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_radial_dispersal__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_radial_dispersal_ac63e6e6d97e7c720b6e6ef349e07c711}{Radial\+Dispersal}} (\mbox{\hyperlink{struct_dispersal_params}{Dispersal\+Params}} \texorpdfstring{$\ast$}{*}params, \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} boundary, double side)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_radial_dispersal}{Radial\+Dispersal} constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_radial_dispersal_a363d41e54203e0cd6cadb0667b1f6548}{set\+\_\+connecs}} (std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites) override
+\begin{DoxyCompactList}\small\item\em Sets the inter-\/patch connectivities for dispersal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_radial_dispersal_aa3bca3cc8b2d80af4bd11d91cacf09bb}{adults\+\_\+disperse}} (std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites) override
+\begin{DoxyCompactList}\small\item\em Implements dispersal by adults from and to each patch, depending on the patch connectivities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_dispersal}{Dispersal}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dispersal_a4eb55d34c12749b33bd68d4c8bfee61a}{Dispersal}} (\mbox{\hyperlink{struct_dispersal_params}{Dispersal\+Params}} \texorpdfstring{$\ast$}{*}params, \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} boundary, double side)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_dispersal}{Dispersal} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dispersal_aed1dabe97b773b3616811b648b170350}{\texorpdfstring{$\sim$}{\string~}\+Dispersal}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_dispersal}{Dispersal} destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ std\+::vector$<$ std\+::vector$<$ int $>$ $>$, std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \mbox{\hyperlink{class_radial_dispersal_ad09b4df09539d8b421c8d7ed3199d0c4}{compute\+\_\+connecs}} (std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
+\begin{DoxyCompactList}\small\item\em Computes the set of connection indices and weights for a group of patches. \end{DoxyCompactList}\item 
+std\+::pair$<$ std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$, double $>$ \mbox{\hyperlink{class_radial_dispersal_ae456b5d871312e16812fb6c4024288f6}{compute\+\_\+interval\+\_\+union}} (const std\+::pair$<$ double, double $>$ \&qq, const std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \&input)
+\begin{DoxyCompactList}\small\item\em ... \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_radial_dispersal_a55a26db2720e9bf5811aa51cf3a8d873}{wrap\+\_\+around}} (double value, double range)
+\begin{DoxyCompactList}\small\item\em ... \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_radial_dispersal_a4df7ea1ccbcc88991b3e63a46f0e0bb1}{get\+\_\+sorted\+\_\+positions}} (const std\+::vector$<$ double $>$ \&numbers)
+\begin{DoxyCompactList}\small\item\em Sorts the indices of the vector elements based on the numeric value of the corresponding element (in ascending order). \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{class_radial_dispersal_a28a558e2dcb75b8db11fd424aa66243e}{compute\+\_\+distances}} (const std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
+\begin{DoxyCompactList}\small\item\em Computes the inter-\/point distances for a list of points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_radial_dispersal_a58a082ed4dfcec4a9f66fb6753a70522}{connec\+\_\+weights\+\_\+sum}}
+\begin{DoxyCompactList}\small\item\em Sum of all the connection weights for each patch, ordered by \doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_dispersal}{Dispersal}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::array$<$ long long int, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ $>$ \mbox{\hyperlink{class_dispersal_a5ffa246788b8c993b6a34e8c8387d863}{M\+\_\+dispersing\+\_\+out}} (const std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
+\begin{DoxyCompactList}\small\item\em Determines the number of males (of each genotype) dispersing out from each patch. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::array$<$ std\+::array$<$ long long int, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ $>$ \mbox{\hyperlink{class_dispersal_ade53b8a69c5eea72536bcf2c7ef76857}{F\+\_\+dispersing\+\_\+out}} (const std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
+\begin{DoxyCompactList}\small\item\em Determines the number of mated females (of each genotype combination) dispersing out from each patch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_dispersal}{Dispersal}}}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_dispersal_ac4a92820d2e1967895862466abd1c701}{disp\+\_\+rate}}
+\begin{DoxyCompactList}\small\item\em Adult dispersal rate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dispersal_a8b95350f1ca6fd7c635944dd776b806f}{max\+\_\+disp}}
+\begin{DoxyCompactList}\small\item\em Maximum distance at which two sites are connected. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{class_dispersal_ae829e3cc99c732c2e4e15995a6aabc75}{connec\+\_\+indices}}
+\begin{DoxyCompactList}\small\item\em Connected patch indices ordered by each patch in \doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}, such that the first element contains the indices of all the patches connected to the first sites patch, etc. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{class_dispersal_a5837fcddaf8f9fa9cff545828be47d5a}{connec\+\_\+weights}}
+\begin{DoxyCompactList}\small\item\em Connection weights of the connected patches ordered by each patch in \doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}, such that the first element contains the connection weights between the first patch in sites and all the patches connected to it, etc. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_boundary_strategy}{Boundary\+Strategy}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_dispersal_ab408b6c47b542c65c99e2c141962e81e}{boundary\+\_\+strategy}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements dispersive behaviour for radial dispersal, where connection weights between patches are determined by the direction the patches are in relative to each other and other patches. 
+
+Particularly, connection weights will be determined by the arc of the first patch\textquotesingle{}s catchment radius covered by the second patch. Closer patches will reduce dispersal to further patches which are in the same interval. Those individuals that disperse in a direction with no patches will die. ... 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_radial_dispersal_ac63e6e6d97e7c720b6e6ef349e07c711}\label{class_radial_dispersal_ac63e6e6d97e7c720b6e6ef349e07c711} 
+\index{RadialDispersal@{RadialDispersal}!RadialDispersal@{RadialDispersal}}
+\index{RadialDispersal@{RadialDispersal}!RadialDispersal@{RadialDispersal}}
+\doxysubsubsection{\texorpdfstring{RadialDispersal()}{RadialDispersal()}}
+{\footnotesize\ttfamily Radial\+Dispersal\+::\+Radial\+Dispersal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_dispersal_params}{Dispersal\+Params}} \texorpdfstring{$\ast$}{*}}]{params,  }\item[{\mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}}}]{boundary,  }\item[{double}]{side }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_radial_dispersal}{Radial\+Dispersal} constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em params} & dispersal parameters \\
+\hline
+\mbox{\texttt{ in}}  & {\em boundary} & boundary type to use for calculating dispersal distances \\
+\hline
+\mbox{\texttt{ in}}  & {\em side} & size of one side of the simulation square \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_radial_dispersal_aa3bca3cc8b2d80af4bd11d91cacf09bb}\label{class_radial_dispersal_aa3bca3cc8b2d80af4bd11d91cacf09bb} 
+\index{RadialDispersal@{RadialDispersal}!adults\_disperse@{adults\_disperse}}
+\index{adults\_disperse@{adults\_disperse}!RadialDispersal@{RadialDispersal}}
+\doxysubsubsection{\texorpdfstring{adults\_disperse()}{adults\_disperse()}}
+{\footnotesize\ttfamily void Radial\+Dispersal\+::adults\+\_\+disperse (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&}]{sites }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements dispersal by adults from and to each patch, depending on the patch connectivities. 
+
+\begin{DoxyNote}{Note}
+Only males and mated females are assumed to disperse from the patches. There is also dispersal mortality associated with this dispersal type.
+\end{DoxyNote}
+Only those individuals that disperse out of a patch in a connected direction will survive. The number of males (of a given genotype) that survive dispersal out of their patch is determined by a random draw from a binomial distribution with probability of the total connection weight for all its connected patches. Of those, the number dispersing to each of the connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}, \doxylink{class_radial_dispersal_ad09b4df09539d8b421c8d7ed3199d0c4}{Radial\+Dispersal\+::compute\+\_\+connecs()} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_dispersal_a90638547dc5983463ee88d89a9167b5a}{Dispersal}}.
+
+\Hypertarget{class_radial_dispersal_ad09b4df09539d8b421c8d7ed3199d0c4}\label{class_radial_dispersal_ad09b4df09539d8b421c8d7ed3199d0c4} 
+\index{RadialDispersal@{RadialDispersal}!compute\_connecs@{compute\_connecs}}
+\index{compute\_connecs@{compute\_connecs}!RadialDispersal@{RadialDispersal}}
+\doxysubsubsection{\texorpdfstring{compute\_connecs()}{compute\_connecs()}}
+{\footnotesize\ttfamily std\+::pair$<$ std\+::vector$<$ std\+::vector$<$ int $>$ $>$, std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ Radial\+Dispersal\+::compute\+\_\+connecs (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&}]{sites }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Computes the set of connection indices and weights for a group of patches. 
+
+If the distance between two patches is less than the the maximum dispersal distance, they are deemed to be connected. The connection weight is determined by ... \begin{DoxyNote}{Note}
+Under this dispersal type, patches are NOT connected to themselves. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sites} & vector of all Patches objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as \doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}, where the first item represents all connections to the first patch in \doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}, etc. 
+\end{DoxyReturn}
+\Hypertarget{class_radial_dispersal_a28a558e2dcb75b8db11fd424aa66243e}\label{class_radial_dispersal_a28a558e2dcb75b8db11fd424aa66243e} 
+\index{RadialDispersal@{RadialDispersal}!compute\_distances@{compute\_distances}}
+\index{compute\_distances@{compute\_distances}!RadialDispersal@{RadialDispersal}}
+\doxysubsubsection{\texorpdfstring{compute\_distances()}{compute\_distances()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ Radial\+Dispersal\+::compute\+\_\+distances (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&}]{sites }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Computes the inter-\/point distances for a list of points. 
+
+... 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The inter-\/point distances as a 2D vector, both axes in the order of the sites vector. 
+\end{DoxyReturn}
+\Hypertarget{class_radial_dispersal_ae456b5d871312e16812fb6c4024288f6}\label{class_radial_dispersal_ae456b5d871312e16812fb6c4024288f6} 
+\index{RadialDispersal@{RadialDispersal}!compute\_interval\_union@{compute\_interval\_union}}
+\index{compute\_interval\_union@{compute\_interval\_union}!RadialDispersal@{RadialDispersal}}
+\doxysubsubsection{\texorpdfstring{compute\_interval\_union()}{compute\_interval\_union()}}
+{\footnotesize\ttfamily std\+::pair$<$ std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$, double $>$ Radial\+Dispersal\+::compute\+\_\+interval\+\_\+union (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ double, double $>$ \&}]{qq,  }\item[{const std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+... 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em qq} & ... \\
+\hline
+\mbox{\texttt{ in}}  & {\em input} & ... \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+... 
+\end{DoxyReturn}
+\Hypertarget{class_radial_dispersal_a4df7ea1ccbcc88991b3e63a46f0e0bb1}\label{class_radial_dispersal_a4df7ea1ccbcc88991b3e63a46f0e0bb1} 
+\index{RadialDispersal@{RadialDispersal}!get\_sorted\_positions@{get\_sorted\_positions}}
+\index{get\_sorted\_positions@{get\_sorted\_positions}!RadialDispersal@{RadialDispersal}}
+\doxysubsubsection{\texorpdfstring{get\_sorted\_positions()}{get\_sorted\_positions()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Radial\+Dispersal\+::get\+\_\+sorted\+\_\+positions (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{numbers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sorts the indices of the vector elements based on the numeric value of the corresponding element (in ascending order). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em numbers} & vector to sort \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sorted indices vector. 
+\end{DoxyReturn}
+\Hypertarget{class_radial_dispersal_a363d41e54203e0cd6cadb0667b1f6548}\label{class_radial_dispersal_a363d41e54203e0cd6cadb0667b1f6548} 
+\index{RadialDispersal@{RadialDispersal}!set\_connecs@{set\_connecs}}
+\index{set\_connecs@{set\_connecs}!RadialDispersal@{RadialDispersal}}
+\doxysubsubsection{\texorpdfstring{set\_connecs()}{set\_connecs()}}
+{\footnotesize\ttfamily void Radial\+Dispersal\+::set\+\_\+connecs (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&}]{sites }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the inter-\/patch connectivities for dispersal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_dispersal_aef84d06c465ccb461d1cfb39e82de838}{Dispersal}}.
+
+\Hypertarget{class_radial_dispersal_a55a26db2720e9bf5811aa51cf3a8d873}\label{class_radial_dispersal_a55a26db2720e9bf5811aa51cf3a8d873} 
+\index{RadialDispersal@{RadialDispersal}!wrap\_around@{wrap\_around}}
+\index{wrap\_around@{wrap\_around}!RadialDispersal@{RadialDispersal}}
+\doxysubsubsection{\texorpdfstring{wrap\_around()}{wrap\_around()}}
+{\footnotesize\ttfamily double Radial\+Dispersal\+::wrap\+\_\+around (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{double}]{range }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+... 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & ... \\
+\hline
+\mbox{\texttt{ in}}  & {\em range} & ... \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+... 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_radial_dispersal_a58a082ed4dfcec4a9f66fb6753a70522}\label{class_radial_dispersal_a58a082ed4dfcec4a9f66fb6753a70522} 
+\index{RadialDispersal@{RadialDispersal}!connec\_weights\_sum@{connec\_weights\_sum}}
+\index{connec\_weights\_sum@{connec\_weights\_sum}!RadialDispersal@{RadialDispersal}}
+\doxysubsubsection{\texorpdfstring{connec\_weights\_sum}{connec\_weights\_sum}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Radial\+Dispersal\+::connec\+\_\+weights\+\_\+sum\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sum of all the connection weights for each patch, ordered by \doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/includes/\mbox{\hyperlink{_dispersal_8h}{Dispersal.\+h}}\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/src/\mbox{\hyperlink{_dispersal_8cpp}{Dispersal.\+cpp}}\end{DoxyCompactItemize}

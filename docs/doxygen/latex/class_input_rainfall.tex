@@ -1,0 +1,139 @@
+\doxysection{Input\+Rainfall Class Reference}
+\hypertarget{class_input_rainfall}{}\label{class_input_rainfall}\index{InputRainfall@{InputRainfall}}
+
+
+Implements seasonality by modelling the rainfall contribution to carrying capacity from daily rainfall data.  
+
+
+
+
+{\ttfamily \#include $<$Seasonality.\+h$>$}
+
+
+
+Inheritance diagram for Input\+Rainfall\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{class_input_rainfall__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Input\+Rainfall\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{class_input_rainfall__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_input_rainfall_a20330f7ca100d2b1fb3e2432bded83f2}{Input\+Rainfall}} (\mbox{\hyperlink{struct_input_rainfall_params}{Input\+Rainfall\+Params}} \texorpdfstring{$\ast$}{*}params)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_input_rainfall}{Input\+Rainfall} constructor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_input_rainfall_a7599fc9d35cae87ac87f98d2ccb6b3fb}{alpha}} (int day, double alpha0) override
+\begin{DoxyCompactList}\small\item\em Computes the carrying-\/capacity alpha value for the given day and alpha0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_seasonality}{Seasonality}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_seasonality_a58daa86e6a5d8f1b1b8d4db8c9389870}{Seasonality}} (double \mbox{\hyperlink{class_seasonality_ac69d88cb94f794d9e317b7d259eaff64}{alpha1}})
+\begin{DoxyCompactList}\small\item\em \doxylink{class_seasonality}{Seasonality} constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_input_rainfall_adb68f5eb090485f2a362e227aeaf91c8}{resp}}
+\begin{DoxyCompactList}\small\item\em Carrying capacity\textquotesingle{}s responsiveness to the rainfall contribution. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_input_rainfall_a44c851f69b6dc275e65799c52c7e9cde}{rainfall}}
+\begin{DoxyCompactList}\small\item\em Daily rainfall data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_seasonality}{Seasonality}}}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_seasonality_ac69d88cb94f794d9e317b7d259eaff64}{alpha1}}
+\begin{DoxyCompactList}\small\item\em Carrying capacity factor accounting for rainfall contribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements seasonality by modelling the rainfall contribution to carrying capacity from daily rainfall data. 
+
+\begin{DoxyNote}{Note}
+This class expects rainfall data for either every day of a year (365 days) or every day of the simulation (max\+\_\+t).Annual data will be automatically looped for simulations longer than a year. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_input_rainfall_a20330f7ca100d2b1fb3e2432bded83f2}\label{class_input_rainfall_a20330f7ca100d2b1fb3e2432bded83f2} 
+\index{InputRainfall@{InputRainfall}!InputRainfall@{InputRainfall}}
+\index{InputRainfall@{InputRainfall}!InputRainfall@{InputRainfall}}
+\doxysubsubsection{\texorpdfstring{InputRainfall()}{InputRainfall()}}
+{\footnotesize\ttfamily Input\+Rainfall\+::\+Input\+Rainfall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_input_rainfall_params}{Input\+Rainfall\+Params}} \texorpdfstring{$\ast$}{*}}]{params }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_input_rainfall}{Input\+Rainfall} constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em params} & seasonality parameters for input rainfall-\/type seasonality \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_input_rainfall_a7599fc9d35cae87ac87f98d2ccb6b3fb}\label{class_input_rainfall_a7599fc9d35cae87ac87f98d2ccb6b3fb} 
+\index{InputRainfall@{InputRainfall}!alpha@{alpha}}
+\index{alpha@{alpha}!InputRainfall@{InputRainfall}}
+\doxysubsubsection{\texorpdfstring{alpha()}{alpha()}}
+{\footnotesize\ttfamily double Input\+Rainfall\+::alpha (\begin{DoxyParamCaption}\item[{int}]{day,  }\item[{double}]{alpha0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the carrying-\/capacity alpha value for the given day and alpha0. 
+
+Models rainfall contribution as an exponential of daily rainfall. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em day} & simulation day \\
+\hline
+\mbox{\texttt{ in}}  & {\em alpha0} & baseline contribution to the carrying capacity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The carrying-\/capacity. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_patch_a5b781b751c5a39bb3a94640e3542a517}{Patch\+::alpha0} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_seasonality_a86bfbdfc639ab1a08e3643e05b55d6f1}{Seasonality}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_input_rainfall_a44c851f69b6dc275e65799c52c7e9cde}\label{class_input_rainfall_a44c851f69b6dc275e65799c52c7e9cde} 
+\index{InputRainfall@{InputRainfall}!rainfall@{rainfall}}
+\index{rainfall@{rainfall}!InputRainfall@{InputRainfall}}
+\doxysubsubsection{\texorpdfstring{rainfall}{rainfall}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Input\+Rainfall\+::rainfall\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Daily rainfall data. 
+
+\Hypertarget{class_input_rainfall_adb68f5eb090485f2a362e227aeaf91c8}\label{class_input_rainfall_adb68f5eb090485f2a362e227aeaf91c8} 
+\index{InputRainfall@{InputRainfall}!resp@{resp}}
+\index{resp@{resp}!InputRainfall@{InputRainfall}}
+\doxysubsubsection{\texorpdfstring{resp}{resp}}
+{\footnotesize\ttfamily double Input\+Rainfall\+::resp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Carrying capacity\textquotesingle{}s responsiveness to the rainfall contribution. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/includes/\mbox{\hyperlink{_seasonality_8h}{Seasonality.\+h}}\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/src/\mbox{\hyperlink{_seasonality_8cpp}{Seasonality.\+cpp}}\end{DoxyCompactItemize}

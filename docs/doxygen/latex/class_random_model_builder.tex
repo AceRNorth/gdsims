@@ -1,0 +1,129 @@
+\doxysection{Random\+Model\+Builder Class Reference}
+\hypertarget{class_random_model_builder}{}\label{class_random_model_builder}\index{RandomModelBuilder@{RandomModelBuilder}}
+
+
+Inheritance diagram for Random\+Model\+Builder\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_random_model_builder__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Random\+Model\+Builder\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_random_model_builder__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_random_model_builder_a6025caf03bca20165839ea62d2677252}{Random\+Model\+Builder}} (\mbox{\hyperlink{struct_model_params}{Model\+Params}} \texorpdfstring{$\ast$}{*}pars)
+\item 
+void \mbox{\hyperlink{class_random_model_builder_aebcd45b5f6462663fa1806c3fb60d71e}{build\+\_\+patches}} () override
+\item 
+void \mbox{\hyperlink{class_random_model_builder_a8d278b71452c10e2df417f453c728aee}{build\+\_\+dispersal}} (\mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}} disp\+\_\+type) override
+\item 
+void \mbox{\hyperlink{class_random_model_builder_a58102e92667163768086ea362ca44422}{build\+\_\+gdrelease}} () override
+\item 
+void \mbox{\hyperlink{class_random_model_builder_a865a80aeef4972c425b7334570e2020e}{build\+\_\+seasonality}} (\mbox{\hyperlink{struct_sine_rainfall_params}{Sine\+Rainfall\+Params}} \mbox{\hyperlink{class_random_model_builder_a05ffeb9bdab1fc5f9a13cbc0c7fe0943}{params}}) override
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_model}{Model}} $>$ \mbox{\hyperlink{class_random_model_builder_a3f311fe902b81e9e2643186d5093e603}{get\+\_\+result}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_model_builder}{Model\+Builder}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_builder_a04d5ef28c9994fea2488d9afae1b6004}{Model\+Builder}} (\mbox{\hyperlink{struct_model_params}{Model\+Params}} \texorpdfstring{$\ast$}{*}params, double a0\+\_\+mean, double a0\+\_\+var, const std\+::array$<$ std\+::array$<$ std\+::array$<$ double, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ \&inher\+\_\+frac)
+\item 
+void \mbox{\hyperlink{class_model_builder_aaa8e57182529ea42eb3add0900e3c9e8}{build\+\_\+aestivation}} (int sites\+\_\+size)
+\item 
+virtual void \mbox{\hyperlink{class_model_builder_a3d73625741ed15e14954c9c09370ed81}{build\+\_\+seasonality}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_model}{Model}} $>$ \mbox{\hyperlink{class_random_model_builder_a18f7d0fd9093b5efe6cba1fd738a4d46}{model}}
+\item 
+\mbox{\hyperlink{struct_model_params}{Model\+Params}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_random_model_builder_a05ffeb9bdab1fc5f9a13cbc0c7fe0943}{params}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_random_model_builder_a6025caf03bca20165839ea62d2677252}\label{class_random_model_builder_a6025caf03bca20165839ea62d2677252} 
+\index{RandomModelBuilder@{RandomModelBuilder}!RandomModelBuilder@{RandomModelBuilder}}
+\index{RandomModelBuilder@{RandomModelBuilder}!RandomModelBuilder@{RandomModelBuilder}}
+\doxysubsubsection{\texorpdfstring{RandomModelBuilder()}{RandomModelBuilder()}}
+{\footnotesize\ttfamily Random\+Model\+Builder\+::\+Random\+Model\+Builder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_model_params}{Model\+Params}} \texorpdfstring{$\ast$}{*}}]{pars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_random_model_builder_a8d278b71452c10e2df417f453c728aee}\label{class_random_model_builder_a8d278b71452c10e2df417f453c728aee} 
+\index{RandomModelBuilder@{RandomModelBuilder}!build\_dispersal@{build\_dispersal}}
+\index{build\_dispersal@{build\_dispersal}!RandomModelBuilder@{RandomModelBuilder}}
+\doxysubsubsection{\texorpdfstring{build\_dispersal()}{build\_dispersal()}}
+{\footnotesize\ttfamily void Random\+Model\+Builder\+::build\+\_\+dispersal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}}}]{disp\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_model_builder_a4e7fb8fa223f4c4143733329d65e23e9}{Model\+Builder}}.
+
+\Hypertarget{class_random_model_builder_a58102e92667163768086ea362ca44422}\label{class_random_model_builder_a58102e92667163768086ea362ca44422} 
+\index{RandomModelBuilder@{RandomModelBuilder}!build\_gdrelease@{build\_gdrelease}}
+\index{build\_gdrelease@{build\_gdrelease}!RandomModelBuilder@{RandomModelBuilder}}
+\doxysubsubsection{\texorpdfstring{build\_gdrelease()}{build\_gdrelease()}}
+{\footnotesize\ttfamily void Random\+Model\+Builder\+::build\+\_\+gdrelease (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_model_builder_affc43c686018e57d4067d29fd740deb2}{Model\+Builder}}.
+
+\Hypertarget{class_random_model_builder_aebcd45b5f6462663fa1806c3fb60d71e}\label{class_random_model_builder_aebcd45b5f6462663fa1806c3fb60d71e} 
+\index{RandomModelBuilder@{RandomModelBuilder}!build\_patches@{build\_patches}}
+\index{build\_patches@{build\_patches}!RandomModelBuilder@{RandomModelBuilder}}
+\doxysubsubsection{\texorpdfstring{build\_patches()}{build\_patches()}}
+{\footnotesize\ttfamily void Random\+Model\+Builder\+::build\+\_\+patches (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_model_builder_a24225573b0348c3c3dbd3cd9e5602793}{Model\+Builder}}.
+
+\Hypertarget{class_random_model_builder_a865a80aeef4972c425b7334570e2020e}\label{class_random_model_builder_a865a80aeef4972c425b7334570e2020e} 
+\index{RandomModelBuilder@{RandomModelBuilder}!build\_seasonality@{build\_seasonality}}
+\index{build\_seasonality@{build\_seasonality}!RandomModelBuilder@{RandomModelBuilder}}
+\doxysubsubsection{\texorpdfstring{build\_seasonality()}{build\_seasonality()}}
+{\footnotesize\ttfamily void Random\+Model\+Builder\+::build\+\_\+seasonality (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sine_rainfall_params}{Sine\+Rainfall\+Params}}}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+\Hypertarget{class_random_model_builder_a3f311fe902b81e9e2643186d5093e603}\label{class_random_model_builder_a3f311fe902b81e9e2643186d5093e603} 
+\index{RandomModelBuilder@{RandomModelBuilder}!get\_result@{get\_result}}
+\index{get\_result@{get\_result}!RandomModelBuilder@{RandomModelBuilder}}
+\doxysubsubsection{\texorpdfstring{get\_result()}{get\_result()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_model}{Model}} $>$ Random\+Model\+Builder\+::get\+\_\+result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_model_builder_a9a7be468dafcc59208ad0d107ca00123}{Model\+Builder}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_random_model_builder_a18f7d0fd9093b5efe6cba1fd738a4d46}\label{class_random_model_builder_a18f7d0fd9093b5efe6cba1fd738a4d46} 
+\index{RandomModelBuilder@{RandomModelBuilder}!model@{model}}
+\index{model@{model}!RandomModelBuilder@{RandomModelBuilder}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_model}{Model}}$>$ Random\+Model\+Builder\+::model\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_random_model_builder_a05ffeb9bdab1fc5f9a13cbc0c7fe0943}\label{class_random_model_builder_a05ffeb9bdab1fc5f9a13cbc0c7fe0943} 
+\index{RandomModelBuilder@{RandomModelBuilder}!params@{params}}
+\index{params@{params}!RandomModelBuilder@{RandomModelBuilder}}
+\doxysubsubsection{\texorpdfstring{params}{params}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_model_params}{Model\+Params}}\texorpdfstring{$\ast$}{*} Random\+Model\+Builder\+::params\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_model_factory_8cpp}{Model\+Factory.\+cpp}}\end{DoxyCompactItemize}

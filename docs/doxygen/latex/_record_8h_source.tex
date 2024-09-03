@@ -1,0 +1,50 @@
+\doxysection{Record.\+h}
+\hypertarget{_record_8h_source}{}\label{_record_8h_source}\index{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h@{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h}}
+\mbox{\hyperlink{_record_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GENERALMETAPOP\_RECORD\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GENERALMETAPOP\_RECORD\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{constants_8h}{constants.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_patch_8h}{Patch.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_params_8h}{Params.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_record}{Record}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_record_a977db4fb6aaa9ac09b0d17ba676cabda}{Record}}(\mbox{\hyperlink{struct_record_params}{RecordParams}}\ *rec\_params,\ \textcolor{keywordtype}{int}\ rep);}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_record_ad2ce1a99d866834ab53dedd788cb1ea6}{\string~Record}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_record_a0c4d71ceed2e84f89273a73a304fcc4c}{record\_coords}}(\textcolor{keyword}{const}\ std::vector<Patch*>\ \&sites);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_record_aa8ed3bd4fdee0c2dddbb5cec2f685577}{record\_global}}(\textcolor{keywordtype}{int}\ day,\ \textcolor{keyword}{const}\ std::array<long\ long\ int,\ constants::num\_gen>\ \&tot\_M\_gen);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_record_a27622a9c11aa4a86ca123456ef0ad236}{output\_totals}}(\textcolor{keywordtype}{int}\ day,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ tot\_J,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ tot\_M,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ tot\_V,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ tot\_F);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_record_a8e504c6253ef29fa5c86d216e3f28e1c}{record\_local}}(\textcolor{keywordtype}{int}\ day,\ \textcolor{keyword}{const}\ std::vector<Patch*>\ \&sites);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_record_ae6b89328b0fcaa2bfa5eebe819782b50}{is\_rec\_local\_time}}(\textcolor{keywordtype}{int}\ day);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_record_a97f3aed77c0f4b5979da3a9a11bce42c}{is\_rec\_global\_time}}(\textcolor{keywordtype}{int}\ day);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ recording\ window\ and\ intervals}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_a13b20ef61772014de98c3d87354ad1e9}{rec\_start}};\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_a0598ebe2ae342bf3dc7be5a156ad4c34}{rec\_end}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_a3086c7b10d3d1a9983703d0865230cfa}{rec\_interval\_global}};\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_a9217590af69eb03412ac2c82c4fd853e}{rec\_interval\_local}};\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_a8ab507dfcfb593428a8c23a81877fac3}{rec\_sites\_freq}};\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ output\ filename\ labels}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_a6af350cda36acab3641fce143db9e23f}{set\_label}};\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_record_ae9d8484927a4355098e0838c4d9a9314}{rep\_label}};\ }
+\DoxyCodeLine{00046\ \ \ \ \ std::ostringstream\ \mbox{\hyperlink{class_record_a5b2c0fc66b1b06b02f0fb485c2e7b4d1}{os1}};\ }
+\DoxyCodeLine{00047\ \ \ \ \ std::ostringstream\ \mbox{\hyperlink{class_record_a41aeed0c4345e36767be33f8c906a5b8}{os2}};\ }
+\DoxyCodeLine{00048\ \ \ \ \ std::ostringstream\ \mbox{\hyperlink{class_record_a980b8c85bb233ad19544124db3634465}{os3}};\ }
+\DoxyCodeLine{00049\ \ \ \ \ std::ofstream\ \mbox{\hyperlink{class_record_aef62117702c3e667f8353be450f7c176}{local\_data}};\ }
+\DoxyCodeLine{00050\ \ \ \ \ std::ofstream\ \mbox{\hyperlink{class_record_a09e1fe18d5084ac207ff42cfcec68858}{global\_data}};\ }
+\DoxyCodeLine{00051\ \ \ \ \ std::ofstream\ \mbox{\hyperlink{class_record_a2165facbe1dd7fa3b3196b799eb7bbc4}{coord\_list}};\ }
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_RECORD\_H}}
+
+\end{DoxyCode}

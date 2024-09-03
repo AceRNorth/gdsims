@@ -1,0 +1,41 @@
+<map id="Model::run" name="Model::run">
+<area shape="rect" id="Node000001" title="Runs the daily step of the model." alt="" coords="5,261,88,288"/>
+<area shape="rect" id="Node000002" href="$class_g_d_release.html#ac69ecb74bc31ac1d57764be524c68ca7" title="Releases the gene drive mosquitoes into the simulation area if it is time for release." alt="" coords="136,89,273,132"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,259,170,141,174,145,63,263"/>
+<area shape="rect" id="Node000006" href="$class_model.html#ae7c17f3d562ffc8baea8945ba4ffd3c3" title="Runs the daily mosquito life&#45;processes for all sites, including dispersal and aestivation." alt="" coords="147,392,262,419"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="66,287,177,380,173,384,63,291"/>
+<area shape="rect" id="Node000003" href="$class_g_d_release.html#a69a14d4b9e59ee1e1375d76630da00e3" title="Determines if the day is a chosen release time." alt="" coords="321,5,507,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,86,276,63,320,42,338,35,340,40,322,46,278,68,240,91"/>
+<area shape="rect" id="Node000004" href="$class_g_d_release.html#a46170fb6a9f1a248346206b99773b684" title="Adds drive heterozygous (WD) male mosquitoes to the release sites." alt="" coords="339,56,489,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="273,97,323,89,324,94,274,102"/>
+<area shape="rect" id="Node000005" href="$class_g_d_release.html#a941e51bbc4999dacdb4f22277ffdebbf" title=" " alt="" coords="331,123,498,165"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="274,119,315,126,314,131,273,124"/>
+<area shape="rect" id="Node000007" href="$class_model.html#ae2fa6af0cf426e1df144e4dcbee4069d" title="Carries out adult mortality across all patches." alt="" coords="353,189,476,216"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="208,390,222,357,246,312,278,266,319,226,337,216,339,221,323,230,282,269,250,315,227,359,213,392"/>
+<area shape="rect" id="Node000008" href="$class_dispersal.html#a90638547dc5983463ee88d89a9167b5a" title=" " alt="" coords="327,240,501,267"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="212,390,254,335,284,303,320,276,330,271,333,275,322,281,288,307,258,338,216,393"/>
+<area shape="rect" id="Node000009" href="$class_aestivation.html#a43390ce5cf1f9be08cf9b82d8cce00f3" title="Hides aestivating females from their patches." alt="" coords="356,291,472,317"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="221,389,265,358,320,327,340,319,342,324,322,332,268,363,225,394"/>
+<area shape="rect" id="Node000013" href="$class_aestivation.html#ad52ef1d1e4febab22176ac1690f22d76" title="Determines if the time is within the aestivation hiding window." alt="" coords="332,341,497,368"/>
+<area shape="poly" id="edge13_Node000006_Node000013" title=" " alt="" coords="261,389,340,370,341,375,262,394"/>
+<area shape="rect" id="Node000014" href="$class_aestivation.html#a28d413fd0b0ab424b5071832de34e86c" title="Determines if the time is within the aestivation waking window." alt="" coords="329,392,500,419"/>
+<area shape="poly" id="edge14_Node000006_Node000014" title=" " alt="" coords="262,403,313,403,313,408,262,408"/>
+<area shape="rect" id="Node000015" href="$class_model.html#af30fafd15a6451c20c3dcef622aaf6d0" title="Carries out juvenile eclosion across all patches." alt="" coords="352,443,476,469"/>
+<area shape="poly" id="edge15_Node000006_Node000015" title=" " alt="" coords="262,416,341,436,340,441,261,422"/>
+<area shape="rect" id="Node000016" href="$class_model.html#a2a3151eb1bb6333c2ba103f0c7c6c475" title="Carries out juvenile aging across all patches." alt="" coords="345,493,484,520"/>
+<area shape="poly" id="edge16_Node000006_Node000016" title=" " alt="" coords="225,417,268,448,322,479,338,485,336,490,320,484,265,453,221,421"/>
+<area shape="rect" id="Node000017" href="$class_model.html#a85c48027be32159a36337531249a435a" title="Carries out egg&#45;laying across all patches." alt="" coords="356,544,472,571"/>
+<area shape="poly" id="edge17_Node000006_Node000017" title=" " alt="" coords="216,418,258,472,288,503,322,530,342,539,340,544,320,534,284,507,254,476,212,421"/>
+<area shape="rect" id="Node000018" href="$class_model.html#a76f26441a5112d1f596d5b9317734be4" title="Carries out mating across all patches." alt="" coords="346,595,482,621"/>
+<area shape="poly" id="edge18_Node000006_Node000018" title=" " alt="" coords="213,418,227,452,250,496,282,542,323,581,333,587,330,592,319,585,278,545,246,498,222,454,208,420"/>
+<area shape="rect" id="Node000019" href="$class_aestivation.html#ade758967c3a5d774e15ffd2836b6e21d" title="Wakes a fraction of the aestivating females." alt="" coords="353,645,475,672"/>
+<area shape="poly" id="edge19_Node000006_Node000019" title=" " alt="" coords="211,418,222,460,244,518,277,579,298,607,323,631,340,642,337,646,319,635,294,611,272,582,239,520,217,462,206,420"/>
+<area shape="rect" id="Node000010" href="$random_8cpp.html#a4e7a8d4c70cb879b071d51ddec9a8b1f" title="Returns a random draw (non&#45;negative integer) from the Binomial distribution B(N,p)." alt="" coords="555,468,675,495"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="474,311,509,327,541,356,568,389,604,452,599,455,563,392,537,359,506,332,472,316"/>
+<area shape="rect" id="Node000011" href="$random_8cpp.html#a2b4b3dc20892808a0220d878773ba864" title="Returns a random draw (non&#45;negative integer) from the Poisson distribution with mean lambda (using no..." alt="" coords="723,443,839,469"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="675,470,707,465,708,470,676,475"/>
+<area shape="rect" id="Node000012" href="$random_8cpp.html#af3edb3b1a762ddbe5539bc80ef5e023c" title=" " alt="" coords="887,468,946,495"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="675,479,871,479,871,484,675,484"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="840,464,872,470,871,476,839,470"/>
+<area shape="poly" id="edge20_Node000019_Node000010" title=" " alt="" coords="475,646,506,631,537,603,563,571,599,508,604,510,568,574,541,607,509,636,477,651"/>
+</map>

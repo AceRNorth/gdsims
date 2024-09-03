@@ -1,0 +1,17 @@
+<map id="Model::alpha0" name="Model::alpha0">
+<area shape="rect" id="Node000001" title="Returns a random value for the baseline contribution to the carrying capacity (alpha0)." alt="" coords="534,107,637,133"/>
+<area shape="rect" id="Node000002" href="$class_model.html#a04c1c541fc6d4f4c12f854b971197ea5" title="Returns the carrying capacity for the given alpha0 (the baseline contribution to it) and the current ..." alt="" coords="366,56,486,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="526,104,470,86,471,81,527,99"/>
+<area shape="rect" id="Node000007" href="$class_model.html#a9665e30ee5c6339b78966f628dcdf468" title="Model constructor." alt="" coords="377,107,476,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="519,123,476,123,476,117,519,117"/>
+<area shape="rect" id="Node000008" href="$class_model.html#a46b88e44d343b0bc26544e1e77538e5b" title="Model constructor." alt="" coords="377,157,476,184"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="527,141,471,159,470,154,526,136"/>
+<area shape="rect" id="Node000003" href="$class_patch.html#abfcba309e2ecc8eb224b89a5f11d6042" title="Updates the juvenile survival probability of the patch." alt="" coords="177,56,318,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="350,72,318,72,318,67,350,67"/>
+<area shape="rect" id="Node000004" href="$class_patch.html#a935e1a959a81d818c161b1182a45e958" title="Turns the oldest juveniles into adults." alt="" coords="5,5,129,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="182,54,116,35,118,30,183,49"/>
+<area shape="rect" id="Node000005" href="$class_patch.html#acbbe56b0cc3e9e65720191eb92bd33f3" title="Females lay eggs, creating new juveniles." alt="" coords="9,56,125,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="161,72,125,72,125,67,161,67"/>
+<area shape="rect" id="Node000006" href="$class_patch.html#ada58f98a20b459b05e7d4b986de3aeee" title="Populates the local site with a wild mosquito population." alt="" coords="11,107,123,133"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="183,90,118,109,116,104,182,85"/>
+</map>

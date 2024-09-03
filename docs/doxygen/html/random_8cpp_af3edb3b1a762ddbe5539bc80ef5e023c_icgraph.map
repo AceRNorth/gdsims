@@ -1,0 +1,78 @@
+<map id="twister" name="twister">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1436,613,1495,640"/>
+<area shape="rect" id="Node000002" href="$random_8cpp.html#a4e7a8d4c70cb879b071d51ddec9a8b1f" title="Returns a random draw (non&#45;negative integer) from the Binomial distribution B(N,p)." alt="" coords="867,335,986,361"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1432,607,1387,577,1265,510,1143,449,958,364,961,359,1145,444,1267,506,1389,572,1435,602"/>
+<area shape="rect" id="Node000021" href="$random_8cpp.html#af03c0e74140efa3114c4cd1361da5548" title="Returns a random integer number from a uniform discrete distribution of a to b." alt="" coords="1266,668,1383,695"/>
+<area shape="poly" id="edge27_Node000001_Node000021" title=" " alt="" coords="1422,646,1362,670,1360,665,1420,641"/>
+<area shape="rect" id="Node000023" href="$random_8cpp.html#ab1651a929e139f6da870eae2f0c641e0" title="Returns a random draw (non&#45;negative floating&#45;point number) from a lognormal distribution with desired..." alt="" coords="1261,613,1388,640"/>
+<area shape="poly" id="edge29_Node000001_Node000023" title=" " alt="" coords="1421,629,1389,629,1389,624,1421,624"/>
+<area shape="rect" id="Node000030" href="$random_8cpp.html#a2b4b3dc20892808a0220d878773ba864" title="Returns a random draw (non&#45;negative integer) from the Poisson distribution with mean lambda (using no..." alt="" coords="1065,563,1182,589"/>
+<area shape="poly" id="edge38_Node000001_Node000030" title=" " alt="" coords="1420,613,1387,604,1278,588,1182,580,1182,575,1279,582,1389,599,1422,608"/>
+<area shape="rect" id="Node000031" href="$random_8cpp.html#a108ff3fb960f77177389a96a01ed1c74" title="Returns a random floating&#45;point number from a uniform real distribution of 0.0 to 1...." alt="" coords="1278,731,1371,757"/>
+<area shape="poly" id="edge41_Node000001_Node000031" title=" " alt="" coords="1445,654,1420,681,1390,709,1354,732,1351,728,1386,705,1416,677,1442,650"/>
+<area shape="rect" id="Node000003" href="$class_patch.html#a57e9e06fbf179f6d3c808dee1522f6a9" title="Removes dying adults from the patch." alt="" coords="664,309,787,336"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="851,341,787,333,787,328,851,336"/>
+<area shape="rect" id="Node000004" href="$class_radial_dispersal.html#aa3bca3cc8b2d80af4bd11d91cacf09bb" title="Implements dispersal by adults from and to each patch, depending on the patch connectivities." alt="" coords="426,352,580,395"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="912,321,898,290,877,256,850,223,817,198,768,177,725,170,683,177,634,198,611,213,591,231,556,273,531,317,515,353,510,351,526,314,552,270,587,227,608,208,631,194,682,172,725,165,769,172,819,194,854,219,882,253,903,288,917,319"/>
+<area shape="rect" id="Node000005" href="$class_dispersal.html#ade53b8a69c5eea72536bcf2c7ef76857" title="Determines the number of mated females (of each genotype combination) dispersing out from each patch." alt="" coords="634,360,817,387"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="851,360,817,364,817,359,850,355"/>
+<area shape="rect" id="Node000007" href="$class_aestivation.html#a43390ce5cf1f9be08cf9b82d8cce00f3" title="Hides aestivating females from their patches." alt="" coords="667,56,784,83"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="918,320,908,271,889,211,860,149,840,121,816,97,801,86,783,79,785,74,803,82,820,93,844,118,864,146,894,209,913,270,924,319"/>
+<area shape="rect" id="Node000012" href="$class_patch.html#a935e1a959a81d818c161b1182a45e958" title="Turns the oldest juveniles into adults." alt="" coords="441,613,565,640"/>
+<area shape="poly" id="edge12_Node000002_Node000012" title=" " alt="" coords="919,378,906,415,885,459,856,503,820,541,790,561,758,578,690,603,623,618,565,626,564,621,622,613,688,598,756,573,787,557,816,537,852,500,880,456,901,413,914,376"/>
+<area shape="rect" id="Node000013" href="$class_patch.html#a1ac1a35f87b779415c9c0f91f0235add" title="Ages the juveniles of different age groups in the patch by a day." alt="" coords="656,107,795,133"/>
+<area shape="poly" id="edge13_Node000002_Node000013" title=" " alt="" coords="914,321,901,284,880,239,852,193,816,154,785,136,788,132,820,150,856,190,885,236,906,282,919,319"/>
+<area shape="rect" id="Node000014" href="$class_dispersal.html#a5ffa246788b8c993b6a34e8c8387d863" title="Determines the number of males (of each genotype) dispersing out from each patch." alt="" coords="633,411,818,437"/>
+<area shape="poly" id="edge14_Node000002_Node000014" title=" " alt="" coords="887,371,819,401,784,413,782,408,817,396,884,366"/>
+<area shape="rect" id="Node000015" href="$random_8cpp.html#ab522b309a12c730ad270008709c19d09" title="Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where e..." alt="" coords="657,208,794,235"/>
+<area shape="poly" id="edge17_Node000002_Node000015" title=" " alt="" coords="903,325,865,285,817,249,791,238,793,233,819,244,869,281,907,321"/>
+<area shape="rect" id="Node000016" href="$random_8cpp.html#ae9bfea9d70562b34509b4ff50c57e117" title="Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where e..." alt="" coords="657,259,794,285"/>
+<area shape="poly" id="edge18_Node000002_Node000016" title=" " alt="" coords="884,330,817,300,782,288,784,283,819,295,887,325"/>
+<area shape="rect" id="Node000017" href="$random_8cpp.html#a180e4f01c99b4c4fae00714c08fa647b" title="Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where e..." alt="" coords="657,461,794,488"/>
+<area shape="poly" id="edge19_Node000002_Node000017" title=" " alt="" coords="907,375,869,415,819,452,793,463,791,458,817,447,865,411,903,371"/>
+<area shape="rect" id="Node000019" href="$class_patch.html#a831b026c31ae2bbb56b04e8cc8fa2277" title="Mates a fraction of the virgin females in the patch." alt="" coords="435,499,571,525"/>
+<area shape="poly" id="edge24_Node000002_Node000019" title=" " alt="" coords="917,377,902,408,881,443,854,476,819,502,789,516,757,526,691,535,627,535,571,528,572,523,627,529,691,530,756,520,787,511,817,498,850,472,877,440,898,405,912,375"/>
+<area shape="rect" id="Node000020" href="$class_aestivation.html#ade758967c3a5d774e15ffd2836b6e21d" title="Wakes a fraction of the aestivating females." alt="" coords="664,5,787,32"/>
+<area shape="poly" id="edge25_Node000002_Node000020" title=" " alt="" coords="921,319,913,262,896,188,883,149,865,112,843,77,816,46,802,36,786,29,788,24,805,31,820,42,848,73,870,109,888,147,902,186,919,261,926,319"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="619,376,580,376,580,371,619,371"/>
+<area shape="rect" id="Node000006" href="$class_distance_kernel_dispersal.html#a8f42419dd4e180ed62680ffab734c677" title="Implements dispersal by adults from and to each patch, depending on the patch connectivities." alt="" coords="421,419,585,461"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="659,394,633,401,572,421,570,415,632,396,657,389"/>
+<area shape="rect" id="Node000008" href="$class_model.html#ae7c17f3d562ffc8baea8945ba4ffd3c3" title="Runs the daily mosquito life&#45;processes for all sites, including dispersal and aestivation." alt="" coords="446,31,560,57"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="652,64,561,53,561,48,652,58"/>
+<area shape="rect" id="Node000009" href="$class_model.html#a7e4eb741e72b3946a9166dceed6fc02d" title="Runs the daily step of the model." alt="" coords="291,31,373,57"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="430,47,374,47,374,41,430,41"/>
+<area shape="rect" id="Node000010" href="$class_simulation.html#a46325953f7df60733d519b8b3cd1de61" title="Runs the simulation num_runs times, recording data in output files." alt="" coords="103,31,243,57"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="275,47,244,47,244,41,275,41"/>
+<area shape="rect" id="Node000011" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,55,57"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="87,47,55,47,55,41,87,41"/>
+<area shape="poly" id="edge16_Node000014_Node000004" title=" " alt="" coords="648,409,580,393,581,388,649,404"/>
+<area shape="poly" id="edge15_Node000014_Node000006" title=" " alt="" coords="617,434,585,437,585,431,617,429"/>
+<area shape="poly" id="edge21_Node000017_Node000004" title=" " alt="" coords="644,458,631,452,616,441,606,430,583,409,562,397,565,393,586,404,610,427,620,437,634,447,646,453"/>
+<area shape="poly" id="edge20_Node000017_Node000006" title=" " alt="" coords="641,464,585,455,586,450,642,459"/>
+<area shape="rect" id="Node000018" href="$class_patch.html#acbbe56b0cc3e9e65720191eb92bd33f3" title="Females lay eggs, creating new juveniles." alt="" coords="445,563,561,589"/>
+<area shape="poly" id="edge22_Node000017_Node000018" title=" " alt="" coords="681,497,536,565,533,560,679,492"/>
+<area shape="poly" id="edge23_Node000017_Node000019" title=" " alt="" coords="642,491,572,503,571,498,641,486"/>
+<area shape="poly" id="edge26_Node000020_Node000008" title=" " alt="" coords="649,30,561,40,560,35,648,25"/>
+<area shape="rect" id="Node000022" href="$class_random_g_d_release.html#a3dfe5435b6e54b577bd6e30ccc1117d6" title="Selects random release sites." alt="" coords="1034,664,1213,707"/>
+<area shape="poly" id="edge28_Node000021_Node000022" title=" " alt="" coords="1250,685,1213,686,1213,681,1250,680"/>
+<area shape="rect" id="Node000024" href="$class_model.html#ad1efe8336546de49c99d0d8c8ec8e6e8" title="Returns a random value for the baseline contribution to the carrying capacity (alpha0)." alt="" coords="1072,613,1175,640"/>
+<area shape="poly" id="edge30_Node000023_Node000024" title=" " alt="" coords="1245,629,1175,629,1175,624,1245,624"/>
+<area shape="rect" id="Node000025" href="$class_model.html#a04c1c541fc6d4f4c12f854b971197ea5" title="Returns the carrying capacity for the given alpha0 (the baseline contribution to it) and the current ..." alt="" coords="866,613,986,640"/>
+<area shape="poly" id="edge31_Node000024_Node000025" title=" " alt="" coords="1057,629,987,629,987,624,1057,624"/>
+<area shape="rect" id="Node000028" href="$class_model.html#a9665e30ee5c6339b78966f628dcdf468" title="Model constructor." alt="" coords="877,664,976,691"/>
+<area shape="poly" id="edge36_Node000024_Node000028" title=" " alt="" coords="1058,646,977,667,976,662,1057,641"/>
+<area shape="rect" id="Node000029" href="$class_model.html#a46b88e44d343b0bc26544e1e77538e5b" title="Model constructor." alt="" coords="877,715,976,741"/>
+<area shape="poly" id="edge37_Node000024_Node000029" title=" " alt="" coords="1059,643,1036,654,1021,666,1012,678,1003,691,988,705,967,716,965,712,985,701,999,688,1008,675,1017,662,1033,650,1056,639"/>
+<area shape="rect" id="Node000026" href="$class_patch.html#abfcba309e2ecc8eb224b89a5f11d6042" title="Updates the juvenile survival probability of the patch." alt="" coords="655,664,796,691"/>
+<area shape="poly" id="edge32_Node000025_Node000026" title=" " alt="" coords="856,647,782,666,781,661,855,642"/>
+<area shape="poly" id="edge33_Node000026_Node000012" title=" " alt="" coords="648,663,564,643,565,638,649,657"/>
+<area shape="poly" id="edge34_Node000026_Node000018" title=" " alt="" coords="688,658,639,631,584,604,553,592,555,587,586,599,642,626,690,654"/>
+<area shape="rect" id="Node000027" href="$class_patch.html#ada58f98a20b459b05e7d4b986de3aeee" title="Populates the local site with a wild mosquito population." alt="" coords="447,664,559,691"/>
+<area shape="poly" id="edge35_Node000026_Node000027" title=" " alt="" coords="639,680,559,680,559,675,639,675"/>
+<area shape="poly" id="edge40_Node000030_Node000002" title=" " alt="" coords="1098,552,937,363,941,360,1102,549"/>
+<area shape="poly" id="edge39_Node000030_Node000018" title=" " alt="" coords="1050,579,561,579,561,573,1050,573"/>
+<area shape="rect" id="Node000032" href="$class_patch.html#a8f0ac2f89a3d9065ea6df83662cf1410" title="Patch constructor for randomly generated coordinates." alt="" coords="1075,731,1172,757"/>
+<area shape="poly" id="edge42_Node000031_Node000032" title=" " alt="" coords="1263,747,1173,747,1173,741,1263,741"/>
+<area shape="rect" id="Node000033" href="$class_patch.html#a891de9d894bd3c2e3d800c58c82d7485" title="Patch constructor for custom coordinates." alt="" coords="1075,781,1172,808"/>
+<area shape="poly" id="edge43_Node000031_Node000033" title=" " alt="" coords="1264,762,1173,785,1172,780,1262,757"/>
+</map>

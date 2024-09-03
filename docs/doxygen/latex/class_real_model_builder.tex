@@ -1,0 +1,106 @@
+\doxysection{Real\+Model\+Builder Class Reference}
+\hypertarget{class_real_model_builder}{}\label{class_real_model_builder}\index{RealModelBuilder@{RealModelBuilder}}
+
+
+Inheritance diagram for Real\+Model\+Builder\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{class_real_model_builder__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Real\+Model\+Builder\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{class_real_model_builder__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_real_model_builder_a90d221e3c886347abc98d65abeed5c40}{build\+\_\+patches}} (std\+::vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ coords) override
+\item 
+void \mbox{\hyperlink{class_real_model_builder_a5bf208e334d5d25b90609010296adc31}{build\+\_\+dispersal}} (\mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}} disp\+\_\+type) override
+\item 
+void \mbox{\hyperlink{class_real_model_builder_a46270dc1ecfd5b279908f24d71d80e59}{build\+\_\+gdrelease}} (std\+::vector$<$ int $>$ rel\+\_\+sites, std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ sites) override
+\item 
+void \mbox{\hyperlink{class_real_model_builder_a0d9c34f406d3c444ee4e2bb8551ab3f4}{build\+\_\+seasonality}} (\mbox{\hyperlink{struct_input_rainfall_params}{Input\+Rainfall\+Params}} params) override
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_model}{Model}} $>$ \mbox{\hyperlink{class_real_model_builder_a7ee0bb8036e46d47eb7a01ee0fca5a74}{get\+\_\+result}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_model_builder}{Model\+Builder}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_builder_a04d5ef28c9994fea2488d9afae1b6004}{Model\+Builder}} (\mbox{\hyperlink{struct_model_params}{Model\+Params}} \texorpdfstring{$\ast$}{*}params, double a0\+\_\+mean, double a0\+\_\+var, const std\+::array$<$ std\+::array$<$ std\+::array$<$ double, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ \&inher\+\_\+frac)
+\item 
+virtual void \mbox{\hyperlink{class_model_builder_a24225573b0348c3c3dbd3cd9e5602793}{build\+\_\+patches}} ()
+\item 
+void \mbox{\hyperlink{class_model_builder_aaa8e57182529ea42eb3add0900e3c9e8}{build\+\_\+aestivation}} (int sites\+\_\+size)
+\item 
+virtual void \mbox{\hyperlink{class_model_builder_affc43c686018e57d4067d29fd740deb2}{build\+\_\+gdrelease}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_model_builder_a3d73625741ed15e14954c9c09370ed81}{build\+\_\+seasonality}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_model}{Model}} $>$ \mbox{\hyperlink{class_real_model_builder_a5c8beaec98fe6708dd59fda88985f9fb}{model}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_real_model_builder_a5bf208e334d5d25b90609010296adc31}\label{class_real_model_builder_a5bf208e334d5d25b90609010296adc31} 
+\index{RealModelBuilder@{RealModelBuilder}!build\_dispersal@{build\_dispersal}}
+\index{build\_dispersal@{build\_dispersal}!RealModelBuilder@{RealModelBuilder}}
+\doxysubsubsection{\texorpdfstring{build\_dispersal()}{build\_dispersal()}}
+{\footnotesize\ttfamily void Real\+Model\+Builder\+::build\+\_\+dispersal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}}}]{disp\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_model_builder_a4e7fb8fa223f4c4143733329d65e23e9}{Model\+Builder}}.
+
+\Hypertarget{class_real_model_builder_a46270dc1ecfd5b279908f24d71d80e59}\label{class_real_model_builder_a46270dc1ecfd5b279908f24d71d80e59} 
+\index{RealModelBuilder@{RealModelBuilder}!build\_gdrelease@{build\_gdrelease}}
+\index{build\_gdrelease@{build\_gdrelease}!RealModelBuilder@{RealModelBuilder}}
+\doxysubsubsection{\texorpdfstring{build\_gdrelease()}{build\_gdrelease()}}
+{\footnotesize\ttfamily void Real\+Model\+Builder\+::build\+\_\+gdrelease (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{rel\+\_\+sites,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$}]{sites }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+\Hypertarget{class_real_model_builder_a90d221e3c886347abc98d65abeed5c40}\label{class_real_model_builder_a90d221e3c886347abc98d65abeed5c40} 
+\index{RealModelBuilder@{RealModelBuilder}!build\_patches@{build\_patches}}
+\index{build\_patches@{build\_patches}!RealModelBuilder@{RealModelBuilder}}
+\doxysubsubsection{\texorpdfstring{build\_patches()}{build\_patches()}}
+{\footnotesize\ttfamily void Real\+Model\+Builder\+::build\+\_\+patches (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$}]{coords }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+\Hypertarget{class_real_model_builder_a0d9c34f406d3c444ee4e2bb8551ab3f4}\label{class_real_model_builder_a0d9c34f406d3c444ee4e2bb8551ab3f4} 
+\index{RealModelBuilder@{RealModelBuilder}!build\_seasonality@{build\_seasonality}}
+\index{build\_seasonality@{build\_seasonality}!RealModelBuilder@{RealModelBuilder}}
+\doxysubsubsection{\texorpdfstring{build\_seasonality()}{build\_seasonality()}}
+{\footnotesize\ttfamily void Real\+Model\+Builder\+::build\+\_\+seasonality (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_input_rainfall_params}{Input\+Rainfall\+Params}}}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+\Hypertarget{class_real_model_builder_a7ee0bb8036e46d47eb7a01ee0fca5a74}\label{class_real_model_builder_a7ee0bb8036e46d47eb7a01ee0fca5a74} 
+\index{RealModelBuilder@{RealModelBuilder}!get\_result@{get\_result}}
+\index{get\_result@{get\_result}!RealModelBuilder@{RealModelBuilder}}
+\doxysubsubsection{\texorpdfstring{get\_result()}{get\_result()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_model}{Model}} $>$ Real\+Model\+Builder\+::get\+\_\+result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_model_builder_a9a7be468dafcc59208ad0d107ca00123}{Model\+Builder}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_real_model_builder_a5c8beaec98fe6708dd59fda88985f9fb}\label{class_real_model_builder_a5c8beaec98fe6708dd59fda88985f9fb} 
+\index{RealModelBuilder@{RealModelBuilder}!model@{model}}
+\index{model@{model}!RealModelBuilder@{RealModelBuilder}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_model}{Model}}$>$ Real\+Model\+Builder\+::model\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_model_factory_8cpp}{Model\+Factory.\+cpp}}\end{DoxyCompactItemize}

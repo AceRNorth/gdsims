@@ -1,0 +1,502 @@
+\doxysection{Input\+Params Struct Reference}
+\hypertarget{struct_input_params}{}\label{struct_input_params}\index{InputParams@{InputParams}}
+
+
+Input parameters for the simulation.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Params.\+h$>$}
+
+
+
+Collaboration diagram for Input\+Params\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{struct_input_params__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_input_params_ab541958fd9e07697d71f0ea16e618de2}{num\+\_\+runs}}
+\begin{DoxyCompactList}\small\item\em Number of simulation replicates to run. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_a2ff1e7d5dd5c45bf804f0701072200f4}{max\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Maximum simulated time (in days). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_a62f9db260cddf268056a39c133e971f7}{num\+\_\+pat}}
+\begin{DoxyCompactList}\small\item\em Number of population sites chosen for the simulation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_a1c3cdff052b3a5b67b56b6d9f24fd0c1}{side}}
+\begin{DoxyCompactList}\small\item\em Size of the square simulation area (side x side). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_a746b1ef46c9498a5dd09b825ea4b7a24}{mu\+\_\+j}}
+\begin{DoxyCompactList}\small\item\em Juvenile density independent mortality rate per day. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_ad5675a09a39929aa98cd569cb4c4403f}{mu\+\_\+a}}
+\begin{DoxyCompactList}\small\item\em Adult mortality rate per day. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_a4fb2cae8d6b3a9585e386b2bfeb03299}{beta}}
+\begin{DoxyCompactList}\small\item\em Parameter that controls mating rate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_a7183128711c0a119f7fc72e94ae6bdd4}{theta}}
+\begin{DoxyCompactList}\small\item\em Average egg laying rate of wildtype females (eggs per day). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_a99ec67370f4794427a09d93630b248e3}{comp\+\_\+power}}
+\begin{DoxyCompactList}\small\item\em Parameter that controls the juvenile survival probability. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_a2593d199fff80f091dfd1cf576c5c54f}{min\+\_\+dev}}
+\begin{DoxyCompactList}\small\item\em Minimum development time for a juvenile (in days). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_a746acff494ce4f310d92d67bfcbed018}{gamma}}
+\begin{DoxyCompactList}\small\item\em Rate of r2 allele formation from W/D meiosis. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_a2f34329974d0d04d9027f00955c4bc99}{xi}}
+\begin{DoxyCompactList}\small\item\em Somatic Cas9 expression fitness cost. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_a803f48bc190f6b07b317539429626ee3}{e}}
+\begin{DoxyCompactList}\small\item\em Homing rate in females. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_a0bd5fad3e6b9c0fe9a889aa42ae9abf6}{driver\+\_\+start}}
+\begin{DoxyCompactList}\small\item\em Time to start releasing drive alleles into the mosquito population. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_a99737ba534111f33e3882576b93eb88a}{num\+\_\+driver\+\_\+M}}
+\begin{DoxyCompactList}\small\item\em Number of drive heterozygous (WD) male mosquitoes per release. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_ac071e4057a91d95a69871d8f07ad9bcb}{num\+\_\+driver\+\_\+sites}}
+\begin{DoxyCompactList}\small\item\em Number of gene drive release sites per year. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_a52529a486affcbf464037cf78e1610ad}{disp\+\_\+rate}}
+\begin{DoxyCompactList}\small\item\em Adult dispersal rate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_a7c92eaa0ddaa679b439b0d9aa6a30086}{max\+\_\+disp}}
+\begin{DoxyCompactList}\small\item\em Maximum dispersal distance at which two sites are connected. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_adc5b2a93829b4fa4eafa0e804446558a}{psi}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_aestivation}{Aestivation} rate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_af4132ca26a4a4ce1e19c46c89d8aee38}{mu\+\_\+aes}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_aestivation}{Aestivation} mortality rate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_a5d0c54631c85331b117bed861883fba5}{t\+\_\+hide1}}
+\begin{DoxyCompactList}\small\item\em Start day of aestivation-\/hiding period (exclusive). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_ae17cce0a7ef61941a6e97158ebf80f1c}{t\+\_\+hide2}}
+\begin{DoxyCompactList}\small\item\em End day of aestivation-\/hiding period (inclusive). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_aa0b9fe354099482dfdead7877fd3409b}{t\+\_\+wake1}}
+\begin{DoxyCompactList}\small\item\em Start day of aestivation-\/waking period (exclusive). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_a4542cd7e2b6b2b386a9e63e08c2b527f}{t\+\_\+wake2}}
+\begin{DoxyCompactList}\small\item\em End day of aestivation-\/waking period (inclusive). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_a2056a53757ab38ff189bca6870d2f7d5}{alpha0\+\_\+mean}}
+\begin{DoxyCompactList}\small\item\em Mean of the baseline contribution to the carrying capacity. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_a4497eea80bab35f4d09bb8aa1fd71c3e}{alpha0\+\_\+variance}}
+\begin{DoxyCompactList}\small\item\em Variance of the baseline contribution to the carrying capacity. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_a811a584ea9d14cb5223d56efaa8f68c5}{alpha1}}
+\begin{DoxyCompactList}\small\item\em Rainfall contribution factor to carrying capacity. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_ab02eb338f46a10a8144e4219292c34c9}{amp}}
+\begin{DoxyCompactList}\small\item\em Amplitude of rainfall fluctuations. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_input_params_a113b8e6f08c2123150b03908be887817}{resp}}
+\begin{DoxyCompactList}\small\item\em Carrying capacity\textquotesingle{}s responsiveness to rainfall contribution. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_a4194d9346cbff529ae873c304699d2c5}{initial\+\_\+\+WJ}} = 10000
+\begin{DoxyCompactList}\small\item\em Number of initial juvenile mosquitoes with wild homozygous (WW) genotype for each age group. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_aa8bdf3859ec5f900b12c23f01ba28504}{initial\+\_\+\+WM}} = 50000
+\begin{DoxyCompactList}\small\item\em Number of initial adult male mosquitoes with wild homozygous (WW) genotype. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_af73a502e495c5f5e8b5c6d5b0f92125e}{initial\+\_\+\+WV}} = 10000
+\begin{DoxyCompactList}\small\item\em Number of initial adult unmated female (virgin) mosquitoes with wild homozygous (WW) genotype. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_af7bf83f2f03a3ed0f16265796dd0d25d}{initial\+\_\+\+WF}} = 40000
+\begin{DoxyCompactList}\small\item\em Number of initial adult mated female mosquitoes with wild homozygous (WW) genotype. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_a6e73a95f47dcfa05263838b0b1f3ad27}{rec\+\_\+start}}
+\begin{DoxyCompactList}\small\item\em Start time for the data recording window (inclusive). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_a1223c275e31ee8b901b5d5a274d85c74}{rec\+\_\+end}}
+\begin{DoxyCompactList}\small\item\em End time for the data recording window (inclusive). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_a88ac9f864219bc930cda1f52aa0920b3}{rec\+\_\+interval\+\_\+global}}
+\begin{DoxyCompactList}\small\item\em Time interval for global data recording/output. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_ae1a85942abb2e6e81ee33bb395fee17d}{rec\+\_\+interval\+\_\+local}}
+\begin{DoxyCompactList}\small\item\em Time interval at which to collect/record local data (in days). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_a0aa285f32fbb33162549d1480f36e1f0}{rec\+\_\+sites\+\_\+freq}}
+\begin{DoxyCompactList}\small\item\em Fraction of sites to collect local data for (1 is all sites, 10 is 1 in 10 etc). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_input_params_a07f5774fe964faa2107831863f75ab1c}{set\+\_\+label}}
+\begin{DoxyCompactList}\small\item\em \textquotesingle{}Set of repetitions\textquotesingle{} index label for output files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Input parameters for the simulation. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_input_params_a2056a53757ab38ff189bca6870d2f7d5}\label{struct_input_params_a2056a53757ab38ff189bca6870d2f7d5} 
+\index{InputParams@{InputParams}!alpha0\_mean@{alpha0\_mean}}
+\index{alpha0\_mean@{alpha0\_mean}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{alpha0\_mean}{alpha0\_mean}}
+{\footnotesize\ttfamily double Input\+Params\+::alpha0\+\_\+mean}
+
+
+
+Mean of the baseline contribution to the carrying capacity. 
+
+\Hypertarget{struct_input_params_a4497eea80bab35f4d09bb8aa1fd71c3e}\label{struct_input_params_a4497eea80bab35f4d09bb8aa1fd71c3e} 
+\index{InputParams@{InputParams}!alpha0\_variance@{alpha0\_variance}}
+\index{alpha0\_variance@{alpha0\_variance}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{alpha0\_variance}{alpha0\_variance}}
+{\footnotesize\ttfamily double Input\+Params\+::alpha0\+\_\+variance}
+
+
+
+Variance of the baseline contribution to the carrying capacity. 
+
+\Hypertarget{struct_input_params_a811a584ea9d14cb5223d56efaa8f68c5}\label{struct_input_params_a811a584ea9d14cb5223d56efaa8f68c5} 
+\index{InputParams@{InputParams}!alpha1@{alpha1}}
+\index{alpha1@{alpha1}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{alpha1}{alpha1}}
+{\footnotesize\ttfamily double Input\+Params\+::alpha1}
+
+
+
+Rainfall contribution factor to carrying capacity. 
+
+\Hypertarget{struct_input_params_ab02eb338f46a10a8144e4219292c34c9}\label{struct_input_params_ab02eb338f46a10a8144e4219292c34c9} 
+\index{InputParams@{InputParams}!amp@{amp}}
+\index{amp@{amp}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{amp}{amp}}
+{\footnotesize\ttfamily double Input\+Params\+::amp}
+
+
+
+Amplitude of rainfall fluctuations. 
+
+\Hypertarget{struct_input_params_a4fb2cae8d6b3a9585e386b2bfeb03299}\label{struct_input_params_a4fb2cae8d6b3a9585e386b2bfeb03299} 
+\index{InputParams@{InputParams}!beta@{beta}}
+\index{beta@{beta}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{beta}{beta}}
+{\footnotesize\ttfamily double Input\+Params\+::beta}
+
+
+
+Parameter that controls mating rate. 
+
+\Hypertarget{struct_input_params_a99ec67370f4794427a09d93630b248e3}\label{struct_input_params_a99ec67370f4794427a09d93630b248e3} 
+\index{InputParams@{InputParams}!comp\_power@{comp\_power}}
+\index{comp\_power@{comp\_power}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{comp\_power}{comp\_power}}
+{\footnotesize\ttfamily double Input\+Params\+::comp\+\_\+power}
+
+
+
+Parameter that controls the juvenile survival probability. 
+
+\Hypertarget{struct_input_params_a52529a486affcbf464037cf78e1610ad}\label{struct_input_params_a52529a486affcbf464037cf78e1610ad} 
+\index{InputParams@{InputParams}!disp\_rate@{disp\_rate}}
+\index{disp\_rate@{disp\_rate}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{disp\_rate}{disp\_rate}}
+{\footnotesize\ttfamily double Input\+Params\+::disp\+\_\+rate}
+
+
+
+Adult dispersal rate. 
+
+\Hypertarget{struct_input_params_a0bd5fad3e6b9c0fe9a889aa42ae9abf6}\label{struct_input_params_a0bd5fad3e6b9c0fe9a889aa42ae9abf6} 
+\index{InputParams@{InputParams}!driver\_start@{driver\_start}}
+\index{driver\_start@{driver\_start}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{driver\_start}{driver\_start}}
+{\footnotesize\ttfamily int Input\+Params\+::driver\+\_\+start}
+
+
+
+Time to start releasing drive alleles into the mosquito population. 
+
+\Hypertarget{struct_input_params_a803f48bc190f6b07b317539429626ee3}\label{struct_input_params_a803f48bc190f6b07b317539429626ee3} 
+\index{InputParams@{InputParams}!e@{e}}
+\index{e@{e}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{e}{e}}
+{\footnotesize\ttfamily double Input\+Params\+::e}
+
+
+
+Homing rate in females. 
+
+\Hypertarget{struct_input_params_a746acff494ce4f310d92d67bfcbed018}\label{struct_input_params_a746acff494ce4f310d92d67bfcbed018} 
+\index{InputParams@{InputParams}!gamma@{gamma}}
+\index{gamma@{gamma}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{gamma}{gamma}}
+{\footnotesize\ttfamily double Input\+Params\+::gamma}
+
+
+
+Rate of r2 allele formation from W/D meiosis. 
+
+\Hypertarget{struct_input_params_af7bf83f2f03a3ed0f16265796dd0d25d}\label{struct_input_params_af7bf83f2f03a3ed0f16265796dd0d25d} 
+\index{InputParams@{InputParams}!initial\_WF@{initial\_WF}}
+\index{initial\_WF@{initial\_WF}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{initial\_WF}{initial\_WF}}
+{\footnotesize\ttfamily int Input\+Params\+::initial\+\_\+\+WF = 40000}
+
+
+
+Number of initial adult mated female mosquitoes with wild homozygous (WW) genotype. 
+
+\Hypertarget{struct_input_params_a4194d9346cbff529ae873c304699d2c5}\label{struct_input_params_a4194d9346cbff529ae873c304699d2c5} 
+\index{InputParams@{InputParams}!initial\_WJ@{initial\_WJ}}
+\index{initial\_WJ@{initial\_WJ}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{initial\_WJ}{initial\_WJ}}
+{\footnotesize\ttfamily int Input\+Params\+::initial\+\_\+\+WJ = 10000}
+
+
+
+Number of initial juvenile mosquitoes with wild homozygous (WW) genotype for each age group. 
+
+\Hypertarget{struct_input_params_aa8bdf3859ec5f900b12c23f01ba28504}\label{struct_input_params_aa8bdf3859ec5f900b12c23f01ba28504} 
+\index{InputParams@{InputParams}!initial\_WM@{initial\_WM}}
+\index{initial\_WM@{initial\_WM}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{initial\_WM}{initial\_WM}}
+{\footnotesize\ttfamily int Input\+Params\+::initial\+\_\+\+WM = 50000}
+
+
+
+Number of initial adult male mosquitoes with wild homozygous (WW) genotype. 
+
+\Hypertarget{struct_input_params_af73a502e495c5f5e8b5c6d5b0f92125e}\label{struct_input_params_af73a502e495c5f5e8b5c6d5b0f92125e} 
+\index{InputParams@{InputParams}!initial\_WV@{initial\_WV}}
+\index{initial\_WV@{initial\_WV}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{initial\_WV}{initial\_WV}}
+{\footnotesize\ttfamily int Input\+Params\+::initial\+\_\+\+WV = 10000}
+
+
+
+Number of initial adult unmated female (virgin) mosquitoes with wild homozygous (WW) genotype. 
+
+\Hypertarget{struct_input_params_a7c92eaa0ddaa679b439b0d9aa6a30086}\label{struct_input_params_a7c92eaa0ddaa679b439b0d9aa6a30086} 
+\index{InputParams@{InputParams}!max\_disp@{max\_disp}}
+\index{max\_disp@{max\_disp}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{max\_disp}{max\_disp}}
+{\footnotesize\ttfamily double Input\+Params\+::max\+\_\+disp}
+
+
+
+Maximum dispersal distance at which two sites are connected. 
+
+\Hypertarget{struct_input_params_a2ff1e7d5dd5c45bf804f0701072200f4}\label{struct_input_params_a2ff1e7d5dd5c45bf804f0701072200f4} 
+\index{InputParams@{InputParams}!max\_t@{max\_t}}
+\index{max\_t@{max\_t}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{max\_t}{max\_t}}
+{\footnotesize\ttfamily int Input\+Params\+::max\+\_\+t}
+
+
+
+Maximum simulated time (in days). 
+
+\Hypertarget{struct_input_params_a2593d199fff80f091dfd1cf576c5c54f}\label{struct_input_params_a2593d199fff80f091dfd1cf576c5c54f} 
+\index{InputParams@{InputParams}!min\_dev@{min\_dev}}
+\index{min\_dev@{min\_dev}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{min\_dev}{min\_dev}}
+{\footnotesize\ttfamily int Input\+Params\+::min\+\_\+dev}
+
+
+
+Minimum development time for a juvenile (in days). 
+
+\Hypertarget{struct_input_params_ad5675a09a39929aa98cd569cb4c4403f}\label{struct_input_params_ad5675a09a39929aa98cd569cb4c4403f} 
+\index{InputParams@{InputParams}!mu\_a@{mu\_a}}
+\index{mu\_a@{mu\_a}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{mu\_a}{mu\_a}}
+{\footnotesize\ttfamily double Input\+Params\+::mu\+\_\+a}
+
+
+
+Adult mortality rate per day. 
+
+\Hypertarget{struct_input_params_af4132ca26a4a4ce1e19c46c89d8aee38}\label{struct_input_params_af4132ca26a4a4ce1e19c46c89d8aee38} 
+\index{InputParams@{InputParams}!mu\_aes@{mu\_aes}}
+\index{mu\_aes@{mu\_aes}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{mu\_aes}{mu\_aes}}
+{\footnotesize\ttfamily double Input\+Params\+::mu\+\_\+aes}
+
+
+
+\doxylink{class_aestivation}{Aestivation} mortality rate. 
+
+\Hypertarget{struct_input_params_a746b1ef46c9498a5dd09b825ea4b7a24}\label{struct_input_params_a746b1ef46c9498a5dd09b825ea4b7a24} 
+\index{InputParams@{InputParams}!mu\_j@{mu\_j}}
+\index{mu\_j@{mu\_j}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{mu\_j}{mu\_j}}
+{\footnotesize\ttfamily double Input\+Params\+::mu\+\_\+j}
+
+
+
+Juvenile density independent mortality rate per day. 
+
+\Hypertarget{struct_input_params_a99737ba534111f33e3882576b93eb88a}\label{struct_input_params_a99737ba534111f33e3882576b93eb88a} 
+\index{InputParams@{InputParams}!num\_driver\_M@{num\_driver\_M}}
+\index{num\_driver\_M@{num\_driver\_M}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{num\_driver\_M}{num\_driver\_M}}
+{\footnotesize\ttfamily int Input\+Params\+::num\+\_\+driver\+\_\+M}
+
+
+
+Number of drive heterozygous (WD) male mosquitoes per release. 
+
+\Hypertarget{struct_input_params_ac071e4057a91d95a69871d8f07ad9bcb}\label{struct_input_params_ac071e4057a91d95a69871d8f07ad9bcb} 
+\index{InputParams@{InputParams}!num\_driver\_sites@{num\_driver\_sites}}
+\index{num\_driver\_sites@{num\_driver\_sites}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{num\_driver\_sites}{num\_driver\_sites}}
+{\footnotesize\ttfamily int Input\+Params\+::num\+\_\+driver\+\_\+sites}
+
+
+
+Number of gene drive release sites per year. 
+
+\Hypertarget{struct_input_params_a62f9db260cddf268056a39c133e971f7}\label{struct_input_params_a62f9db260cddf268056a39c133e971f7} 
+\index{InputParams@{InputParams}!num\_pat@{num\_pat}}
+\index{num\_pat@{num\_pat}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{num\_pat}{num\_pat}}
+{\footnotesize\ttfamily int Input\+Params\+::num\+\_\+pat}
+
+
+
+Number of population sites chosen for the simulation. 
+
+\Hypertarget{struct_input_params_ab541958fd9e07697d71f0ea16e618de2}\label{struct_input_params_ab541958fd9e07697d71f0ea16e618de2} 
+\index{InputParams@{InputParams}!num\_runs@{num\_runs}}
+\index{num\_runs@{num\_runs}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{num\_runs}{num\_runs}}
+{\footnotesize\ttfamily int Input\+Params\+::num\+\_\+runs}
+
+
+
+Number of simulation replicates to run. 
+
+\Hypertarget{struct_input_params_adc5b2a93829b4fa4eafa0e804446558a}\label{struct_input_params_adc5b2a93829b4fa4eafa0e804446558a} 
+\index{InputParams@{InputParams}!psi@{psi}}
+\index{psi@{psi}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{psi}{psi}}
+{\footnotesize\ttfamily double Input\+Params\+::psi}
+
+
+
+\doxylink{class_aestivation}{Aestivation} rate. 
+
+\Hypertarget{struct_input_params_a1223c275e31ee8b901b5d5a274d85c74}\label{struct_input_params_a1223c275e31ee8b901b5d5a274d85c74} 
+\index{InputParams@{InputParams}!rec\_end@{rec\_end}}
+\index{rec\_end@{rec\_end}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{rec\_end}{rec\_end}}
+{\footnotesize\ttfamily int Input\+Params\+::rec\+\_\+end}
+
+
+
+End time for the data recording window (inclusive). 
+
+\Hypertarget{struct_input_params_a88ac9f864219bc930cda1f52aa0920b3}\label{struct_input_params_a88ac9f864219bc930cda1f52aa0920b3} 
+\index{InputParams@{InputParams}!rec\_interval\_global@{rec\_interval\_global}}
+\index{rec\_interval\_global@{rec\_interval\_global}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{rec\_interval\_global}{rec\_interval\_global}}
+{\footnotesize\ttfamily int Input\+Params\+::rec\+\_\+interval\+\_\+global}
+
+
+
+Time interval for global data recording/output. 
+
+\Hypertarget{struct_input_params_ae1a85942abb2e6e81ee33bb395fee17d}\label{struct_input_params_ae1a85942abb2e6e81ee33bb395fee17d} 
+\index{InputParams@{InputParams}!rec\_interval\_local@{rec\_interval\_local}}
+\index{rec\_interval\_local@{rec\_interval\_local}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{rec\_interval\_local}{rec\_interval\_local}}
+{\footnotesize\ttfamily int Input\+Params\+::rec\+\_\+interval\+\_\+local}
+
+
+
+Time interval at which to collect/record local data (in days). 
+
+\Hypertarget{struct_input_params_a0aa285f32fbb33162549d1480f36e1f0}\label{struct_input_params_a0aa285f32fbb33162549d1480f36e1f0} 
+\index{InputParams@{InputParams}!rec\_sites\_freq@{rec\_sites\_freq}}
+\index{rec\_sites\_freq@{rec\_sites\_freq}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{rec\_sites\_freq}{rec\_sites\_freq}}
+{\footnotesize\ttfamily int Input\+Params\+::rec\+\_\+sites\+\_\+freq}
+
+
+
+Fraction of sites to collect local data for (1 is all sites, 10 is 1 in 10 etc). 
+
+\Hypertarget{struct_input_params_a6e73a95f47dcfa05263838b0b1f3ad27}\label{struct_input_params_a6e73a95f47dcfa05263838b0b1f3ad27} 
+\index{InputParams@{InputParams}!rec\_start@{rec\_start}}
+\index{rec\_start@{rec\_start}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{rec\_start}{rec\_start}}
+{\footnotesize\ttfamily int Input\+Params\+::rec\+\_\+start}
+
+
+
+Start time for the data recording window (inclusive). 
+
+\Hypertarget{struct_input_params_a113b8e6f08c2123150b03908be887817}\label{struct_input_params_a113b8e6f08c2123150b03908be887817} 
+\index{InputParams@{InputParams}!resp@{resp}}
+\index{resp@{resp}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{resp}{resp}}
+{\footnotesize\ttfamily double Input\+Params\+::resp}
+
+
+
+Carrying capacity\textquotesingle{}s responsiveness to rainfall contribution. 
+
+\Hypertarget{struct_input_params_a07f5774fe964faa2107831863f75ab1c}\label{struct_input_params_a07f5774fe964faa2107831863f75ab1c} 
+\index{InputParams@{InputParams}!set\_label@{set\_label}}
+\index{set\_label@{set\_label}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{set\_label}{set\_label}}
+{\footnotesize\ttfamily int Input\+Params\+::set\+\_\+label}
+
+
+
+\textquotesingle{}Set of repetitions\textquotesingle{} index label for output files. 
+
+\Hypertarget{struct_input_params_a1c3cdff052b3a5b67b56b6d9f24fd0c1}\label{struct_input_params_a1c3cdff052b3a5b67b56b6d9f24fd0c1} 
+\index{InputParams@{InputParams}!side@{side}}
+\index{side@{side}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{side}{side}}
+{\footnotesize\ttfamily double Input\+Params\+::side}
+
+
+
+Size of the square simulation area (side x side). 
+
+\Hypertarget{struct_input_params_a5d0c54631c85331b117bed861883fba5}\label{struct_input_params_a5d0c54631c85331b117bed861883fba5} 
+\index{InputParams@{InputParams}!t\_hide1@{t\_hide1}}
+\index{t\_hide1@{t\_hide1}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{t\_hide1}{t\_hide1}}
+{\footnotesize\ttfamily int Input\+Params\+::t\+\_\+hide1}
+
+
+
+Start day of aestivation-\/hiding period (exclusive). 
+
+\Hypertarget{struct_input_params_ae17cce0a7ef61941a6e97158ebf80f1c}\label{struct_input_params_ae17cce0a7ef61941a6e97158ebf80f1c} 
+\index{InputParams@{InputParams}!t\_hide2@{t\_hide2}}
+\index{t\_hide2@{t\_hide2}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{t\_hide2}{t\_hide2}}
+{\footnotesize\ttfamily int Input\+Params\+::t\+\_\+hide2}
+
+
+
+End day of aestivation-\/hiding period (inclusive). 
+
+\Hypertarget{struct_input_params_aa0b9fe354099482dfdead7877fd3409b}\label{struct_input_params_aa0b9fe354099482dfdead7877fd3409b} 
+\index{InputParams@{InputParams}!t\_wake1@{t\_wake1}}
+\index{t\_wake1@{t\_wake1}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{t\_wake1}{t\_wake1}}
+{\footnotesize\ttfamily int Input\+Params\+::t\+\_\+wake1}
+
+
+
+Start day of aestivation-\/waking period (exclusive). 
+
+\Hypertarget{struct_input_params_a4542cd7e2b6b2b386a9e63e08c2b527f}\label{struct_input_params_a4542cd7e2b6b2b386a9e63e08c2b527f} 
+\index{InputParams@{InputParams}!t\_wake2@{t\_wake2}}
+\index{t\_wake2@{t\_wake2}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{t\_wake2}{t\_wake2}}
+{\footnotesize\ttfamily int Input\+Params\+::t\+\_\+wake2}
+
+
+
+End day of aestivation-\/waking period (inclusive). 
+
+\Hypertarget{struct_input_params_a7183128711c0a119f7fc72e94ae6bdd4}\label{struct_input_params_a7183128711c0a119f7fc72e94ae6bdd4} 
+\index{InputParams@{InputParams}!theta@{theta}}
+\index{theta@{theta}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{theta}{theta}}
+{\footnotesize\ttfamily double Input\+Params\+::theta}
+
+
+
+Average egg laying rate of wildtype females (eggs per day). 
+
+\Hypertarget{struct_input_params_a2f34329974d0d04d9027f00955c4bc99}\label{struct_input_params_a2f34329974d0d04d9027f00955c4bc99} 
+\index{InputParams@{InputParams}!xi@{xi}}
+\index{xi@{xi}!InputParams@{InputParams}}
+\doxysubsubsection{\texorpdfstring{xi}{xi}}
+{\footnotesize\ttfamily double Input\+Params\+::xi}
+
+
+
+Somatic Cas9 expression fitness cost. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/includes/\mbox{\hyperlink{_input_params_8h}{Input\+Params.\+h}}\end{DoxyCompactItemize}

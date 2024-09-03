@@ -1,0 +1,11 @@
+<map id="Model::get_alpha" name="Model::get_alpha">
+<area shape="rect" id="Node000001" title="Returns the carrying capacity for the given alpha0 (the baseline contribution to it) and the current ..." alt="" coords="5,31,126,57"/>
+<area shape="rect" id="Node000002" href="$class_seasonality.html#a86bfbdfc639ab1a08e3643e05b55d6f1" title=" " alt="" coords="174,5,302,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,33,158,28,159,33,127,38"/>
+<area shape="rect" id="Node000003" href="$class_model.html#ad1efe8336546de49c99d0d8c8ec8e6e8" title="Returns a random value for the baseline contribution to the carrying capacity (alpha0)." alt="" coords="187,56,289,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="127,50,172,57,171,62,126,55"/>
+<area shape="rect" id="Node000004" href="$random_8cpp.html#ab1651a929e139f6da870eae2f0c641e0" title="Returns a random draw (non&#45;negative floating&#45;point number) from a lognormal distribution with desired..." alt="" coords="350,56,477,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="289,67,334,67,334,72,289,72"/>
+<area shape="rect" id="Node000005" href="$random_8cpp.html#af3edb3b1a762ddbe5539bc80ef5e023c" title=" " alt="" coords="525,56,585,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="478,67,510,67,510,72,478,72"/>
+</map>

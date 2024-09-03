@@ -1,0 +1,7 @@
+<map id="Simulation::set_release_times" name="Simulation::set_release_times">
+<area shape="rect" id="Node000001" title="Sets the release times for gene drive release from a file, unless any errors are thrown." alt="" coords="5,23,163,65"/>
+<area shape="rect" id="Node000002" href="$inputval_8h.html#a5a4e5a7ca0db8d44c2b3e84c6eb2f517" title="Checks if a value falls within bounds." alt="" coords="236,5,342,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,32,221,24,221,30,163,37"/>
+<area shape="rect" id="Node000003" href="$inputval_8h.html#adc1edb0039433704b7af2b7b850cabce" title="Reads the next value from a linestream and assigns it to the parameter variable if the types match." alt="" coords="211,56,367,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,51,195,55,195,60,163,56"/>
+</map>

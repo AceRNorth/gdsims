@@ -1,0 +1,23 @@
+<map id="Patch::populate" name="Patch::populate">
+<area shape="rect" id="Node000001" title="Populates the local site with a wild mosquito population." alt="" coords="5,107,118,133"/>
+<area shape="rect" id="Node000002" href="$class_patch.html#abfcba309e2ecc8eb224b89a5f11d6042" title="Updates the juvenile survival probability of the patch." alt="" coords="166,69,307,96"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,105,155,97,156,102,119,111"/>
+<area shape="rect" id="Node000010" href="$class_patch.html#a14846b95a2c4032ae4de370abc5ddb04" title="Updates the mating rate of the patch." alt="" coords="167,132,306,159"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="119,126,152,130,152,136,118,131"/>
+<area shape="rect" id="Node000003" href="$class_patch.html#a3071272790d2c5cde8675e94a306ac0a" title="Calculates the total number of juveniles in the patch." alt="" coords="358,5,508,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="279,66,374,35,376,40,281,71"/>
+<area shape="rect" id="Node000004" href="$class_model.html#a04c1c541fc6d4f4c12f854b971197ea5" title="Returns the carrying capacity for the given alpha0 (the baseline contribution to it) and the current ..." alt="" coords="373,56,493,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="307,75,357,72,357,77,308,81"/>
+<area shape="rect" id="Node000009" href="$class_model.html#a6499bfa0eeb48133e352ce72f79aee9d" title="Returns the current simulation day." alt="" coords="378,107,488,133"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="308,94,363,104,362,109,307,99"/>
+<area shape="rect" id="Node000005" href="$class_seasonality.html#a86bfbdfc639ab1a08e3643e05b55d6f1" title=" " alt="" coords="558,31,687,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="493,59,542,52,543,57,494,64"/>
+<area shape="rect" id="Node000006" href="$class_model.html#ad1efe8336546de49c99d0d8c8ec8e6e8" title="Returns a random value for the baseline contribution to the carrying capacity (alpha0)." alt="" coords="571,81,674,108"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="494,75,556,83,556,88,493,80"/>
+<area shape="rect" id="Node000007" href="$random_8cpp.html#ab1651a929e139f6da870eae2f0c641e0" title="Returns a random draw (non&#45;negative floating&#45;point number) from a lognormal distribution with desired..." alt="" coords="735,81,862,108"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="674,92,719,92,719,97,674,97"/>
+<area shape="rect" id="Node000008" href="$random_8cpp.html#af3edb3b1a762ddbe5539bc80ef5e023c" title=" " alt="" coords="910,81,969,108"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="863,92,895,92,895,97,863,97"/>
+<area shape="rect" id="Node000011" href="$class_patch.html#adf7fcfe3a5b2b00afe76c9dac3aea50c" title="Calculates the total number of males in the patch." alt="" coords="355,157,510,184"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="306,152,340,156,339,161,306,157"/>
+</map>

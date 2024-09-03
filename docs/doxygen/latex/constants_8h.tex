@@ -1,0 +1,82 @@
+\doxysection{C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/includes/constants.h File Reference}
+\hypertarget{constants_8h}{}\label{constants_8h}\index{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/constants.h@{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/constants.h}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceconstants}{constants}}
+\begin{DoxyCompactList}\small\item\em Namespace for constants used throughout the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} \{ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d}{Toroid}}
+, \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8a7f0bc3a17ff45e6a7c3fe52b35db1888}{Edge}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum for the allowed boundary type values in the model. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}} \{ \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf}{Distance\+Kernel}}
+, \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04aa3709dd357d0541fa8a1fc6b2238fa583}{Radial}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum for the allowed dispersal type values in the model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{namespaceconstants_ab5cd2d6cdf356d98576ea193f6a54476}{constants\+::max\+\_\+dev}} = 20
+\begin{DoxyCompactList}\small\item\em Juvenile development time (egg to adult) expressed as days left till eclosion (eclosion on day 0). \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} = 6
+\begin{DoxyCompactList}\small\item\em The number of different genotypes in the mosquito population. \end{DoxyCompactList}\item 
+const double \mbox{\hyperlink{namespaceconstants_a204a0248d18871c4d4d1b3e9a69ff495}{constants\+::pi}} = 3.\+14159265
+\begin{DoxyCompactList}\small\item\em Numerical constant PI (to 8 d.\+p.). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}\label{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8} 
+\index{constants.h@{constants.h}!BoundaryType@{BoundaryType}}
+\index{BoundaryType@{BoundaryType}!constants.h@{constants.h}}
+\doxysubsubsection{\texorpdfstring{BoundaryType}{BoundaryType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}}}
+
+
+
+An enum for the allowed boundary type values in the model. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Toroid@{Toroid}!constants.h@{constants.h}}\index{constants.h@{constants.h}!Toroid@{Toroid}}}\Hypertarget{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d}\label{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d} 
+Toroid&Toroidal (or periodic) boundary conditions. \begin{DoxySeeAlso}{See also}
+\doxylink{class_toroidal_boundary_strategy}{Toroidal\+Boundary\+Strategy} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Edge@{Edge}!constants.h@{constants.h}}\index{constants.h@{constants.h}!Edge@{Edge}}}\Hypertarget{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8a7f0bc3a17ff45e6a7c3fe52b35db1888}\label{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8a7f0bc3a17ff45e6a7c3fe52b35db1888} 
+Edge&Edge boundary conditions. \begin{DoxySeeAlso}{See also}
+\doxylink{class_edge_boundary_strategy}{Edge\+Boundary\+Strategy} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}\label{constants_8h_ac025f1e887ae43bed8cad7aff794c04a} 
+\index{constants.h@{constants.h}!DispersalType@{DispersalType}}
+\index{DispersalType@{DispersalType}!constants.h@{constants.h}}
+\doxysubsubsection{\texorpdfstring{DispersalType}{DispersalType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}}}
+
+
+
+An enum for the allowed dispersal type values in the model. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DistanceKernel@{DistanceKernel}!constants.h@{constants.h}}\index{constants.h@{constants.h}!DistanceKernel@{DistanceKernel}}}\Hypertarget{constants_8h_ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf}\label{constants_8h_ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf} 
+Distance\+Kernel&Distance kernel dispersal type. \begin{DoxySeeAlso}{See also}
+\doxylink{class_distance_kernel_dispersal}{Distance\+Kernel\+Dispersal} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Radial@{Radial}!constants.h@{constants.h}}\index{constants.h@{constants.h}!Radial@{Radial}}}\Hypertarget{constants_8h_ac025f1e887ae43bed8cad7aff794c04aa3709dd357d0541fa8a1fc6b2238fa583}\label{constants_8h_ac025f1e887ae43bed8cad7aff794c04aa3709dd357d0541fa8a1fc6b2238fa583} 
+Radial&Radial dispersal type. \begin{DoxySeeAlso}{See also}
+\doxylink{class_radial_dispersal}{Radial\+Dispersal} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\end{DoxyEnumFields}

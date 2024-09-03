@@ -1,0 +1,72 @@
+\doxysection{Random\+Model\+Factory Class Reference}
+\hypertarget{class_random_model_factory}{}\label{class_random_model_factory}\index{RandomModelFactory@{RandomModelFactory}}
+
+
+Inheritance diagram for Random\+Model\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{class_random_model_factory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Random\+Model\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{class_random_model_factory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dispersal}{Dispersal}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_random_model_factory_a843f07a03cf02b01f36a076926e0bc8e}{create\+\_\+dispersal}} (\mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}} disp\+\_\+type, double side) const override
+\item 
+\mbox{\hyperlink{class_g_d_release}{GDRelease}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_random_model_factory_a97c328ac7620a83f0390a1e2f4af8a63}{create\+\_\+gdrelease}} (\mbox{\hyperlink{struct_release_params}{Release\+Params}} rel) const override
+\item 
+\mbox{\hyperlink{class_seasonality}{Seasonality}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_random_model_factory_aa339d9934712959bf9b4333b6cc19684}{create\+\_\+seasonality}} (\mbox{\hyperlink{struct_sine_rainfall_params}{Sine\+Rainfall\+Params}} season) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_model_factory}{Model\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_model_factory_a426d446bda5d5894245f3c5a9f743805}{create\+\_\+patches}} (\mbox{\hyperlink{class_model}{Model}} \texorpdfstring{$\ast$}{*}model, \mbox{\hyperlink{struct_life_params}{Life\+Params}} life, std\+::vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ coords=\{\})
+\item 
+\mbox{\hyperlink{class_aestivation}{Aestivation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_model_factory_aacb94aaada7ccef7413a3b9d5cefa73a}{create\+\_\+aestivation}} (\mbox{\hyperlink{struct_aestivation_params}{Aestivation\+Params}} aes, int sites\+\_\+size)
+\item 
+virtual \mbox{\hyperlink{class_seasonality}{Seasonality}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_model_factory_ae89bf0a85ae8aaa901117d7ec574a91c}{create\+\_\+seasonality}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_random_model_factory_a843f07a03cf02b01f36a076926e0bc8e}\label{class_random_model_factory_a843f07a03cf02b01f36a076926e0bc8e} 
+\index{RandomModelFactory@{RandomModelFactory}!create\_dispersal@{create\_dispersal}}
+\index{create\_dispersal@{create\_dispersal}!RandomModelFactory@{RandomModelFactory}}
+\doxysubsubsection{\texorpdfstring{create\_dispersal()}{create\_dispersal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_dispersal}{Dispersal}} \texorpdfstring{$\ast$}{*} Random\+Model\+Factory\+::create\+\_\+dispersal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}}}]{disp\+\_\+type,  }\item[{double}]{side }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_model_factory_a4ffecc59cbbac1831342e1c575cde58c}{Model\+Factory}}.
+
+\Hypertarget{class_random_model_factory_a97c328ac7620a83f0390a1e2f4af8a63}\label{class_random_model_factory_a97c328ac7620a83f0390a1e2f4af8a63} 
+\index{RandomModelFactory@{RandomModelFactory}!create\_gdrelease@{create\_gdrelease}}
+\index{create\_gdrelease@{create\_gdrelease}!RandomModelFactory@{RandomModelFactory}}
+\doxysubsubsection{\texorpdfstring{create\_gdrelease()}{create\_gdrelease()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_d_release}{GDRelease}} \texorpdfstring{$\ast$}{*} Random\+Model\+Factory\+::create\+\_\+gdrelease (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_release_params}{Release\+Params}}}]{rel }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_model_factory_a75aa2ef2ce878d9ebd970987035b5f91}{Model\+Factory}}.
+
+\Hypertarget{class_random_model_factory_aa339d9934712959bf9b4333b6cc19684}\label{class_random_model_factory_aa339d9934712959bf9b4333b6cc19684} 
+\index{RandomModelFactory@{RandomModelFactory}!create\_seasonality@{create\_seasonality}}
+\index{create\_seasonality@{create\_seasonality}!RandomModelFactory@{RandomModelFactory}}
+\doxysubsubsection{\texorpdfstring{create\_seasonality()}{create\_seasonality()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_seasonality}{Seasonality}} \texorpdfstring{$\ast$}{*} Random\+Model\+Factory\+::create\+\_\+seasonality (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sine_rainfall_params}{Sine\+Rainfall\+Params}}}]{season }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_model_factory_8cpp}{Model\+Factory.\+cpp}}\end{DoxyCompactItemize}

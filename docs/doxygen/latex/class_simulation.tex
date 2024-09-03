@@ -1,0 +1,355 @@
+\doxysection{Simulation Class Reference}
+\hypertarget{class_simulation}{}\label{class_simulation}\index{Simulation@{Simulation}}
+
+
+Sets up and controls the flow of the simulation.  
+
+
+
+
+{\ttfamily \#include $<$Simulation.\+h$>$}
+
+
+
+Collaboration diagram for Simulation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_simulation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_simulation_a78403ca84dfef50ffa06c053648347a6}{Simulation}} (\mbox{\hyperlink{struct_input_params}{Input\+Params}} input)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_simulation}{Simulation} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_simulation_a80fad3f57dfaf195a36f7bc49bc88279}{\texorpdfstring{$\sim$}{\string~}\+Simulation}} ()
+\begin{DoxyCompactList}\small\item\em Simualtion destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_ab365e7a0000cae028998efae63b7d0c1}{set\+\_\+coords}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Sets the sites\textquotesingle{} coordinates and the release sites from a file, unless any errors are thrown. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_ac6575f63c78f7fffff4817665f5a0f05}{set\+\_\+boundary\+\_\+type}} (\mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} boundary)
+\begin{DoxyCompactList}\small\item\em Sets the boundary type for the model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_a451b81744f93c2470a28d75bece48783}{set\+\_\+dispersal\+\_\+type}} (\mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}} disp)
+\begin{DoxyCompactList}\small\item\em Sets the dispersal type for the model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_abc5c5d0891de7943820db3e6682cd125}{set\+\_\+rainfall}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Sets the daily rainfall values from a file, unless any errors are thrown. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_a7d774bb0496b0ea95c2c88afc0d24731}{set\+\_\+release\+\_\+times}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Sets the release times for gene drive release from a file, unless any errors are thrown. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_ac5440a772e9d7788c588a795a7821fb6}{set\+\_\+inheritance}} (\mbox{\hyperlink{struct_inheritance_params}{Inheritance\+Params}} inher\+\_\+params)
+\begin{DoxyCompactList}\small\item\em Sets the values of the f\+\_\+\{ijk\} inheritance fraction for the gene drive considering r2 resistant alleles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simulation_a46325953f7df60733d519b8b3cd1de61}{run\+\_\+reps}} ()
+\begin{DoxyCompactList}\small\item\em Runs the simulation num\+\_\+runs times, recording data in output files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_simulation_a8e1d4d667e07e3f7e453bbb936dd0c5a}{num\+\_\+runs}}
+\begin{DoxyCompactList}\small\item\em Number of simulation replicates to run. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_simulation_adc775015be74841e3f9f99550af987bd}{max\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Maximum simulated time (in days). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_model_params}{Model\+Params}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_simulation_a28f56093772a2f20dd286ac7b225c030}{model\+\_\+params}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_model}{Model} parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_record_params}{Record\+Params}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_simulation_a83058587f6835f69b4b249f1382a76ee}{rec\+\_\+params}}
+\begin{DoxyCompactList}\small\item\em Data-\/recording parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_sine_rainfall_params}{Sine\+Rainfall\+Params}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_simulation_ac42205211628f51d8f680b6522ca663e}{sine\+\_\+rainfall\+\_\+params}}
+\item 
+\mbox{\hyperlink{struct_input_rainfall_params}{Input\+Rainfall\+Params}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_simulation_a43023bf5f1ee507b61a8a07b61cbdf2f}{input\+\_\+rainfall\+\_\+params}}
+\begin{DoxyCompactList}\small\item\em Sinusoid rainfall seasonality parameters. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_simulation_a4067cd6f026a45b6fdef80682669ffd4}{alpha0\+\_\+mean}}
+\begin{DoxyCompactList}\small\item\em Input data rainfall seasonality parameters. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_simulation_ac74b6c9f7665a081c686f088f8db950c}{alpha0\+\_\+variance}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_seasonality}{Seasonality} parameter. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ \mbox{\hyperlink{class_simulation_a73b6b686f5dca876da14e5b79f8123a5}{sites\+\_\+coords}}
+\begin{DoxyCompactList}\small\item\em 2D coordinates for the sites on the simulated square. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_simulation_a3e12749f5e0c59d3343fb7ac68faabea}{release\+\_\+sites}}
+\begin{DoxyCompactList}\small\item\em Indices relative to coords vector for the gene drive release sites. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} \mbox{\hyperlink{class_simulation_ac1bea19f5a9917fbff711bc9f652cff5}{boundary\+\_\+type}}
+\item 
+\mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}} \mbox{\hyperlink{class_simulation_a978ed04ac5ec2c121cb0e9875a88195d}{disp\+\_\+type}}
+\item 
+std\+::array$<$ std\+::array$<$ std\+::array$<$ double, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ \mbox{\hyperlink{class_simulation_a5bf54d592f89fb121f5f8225d2761e30}{inher\+\_\+fraction}}
+\begin{DoxyCompactList}\small\item\em Inheritance fraction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sets up and controls the flow of the simulation. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_simulation_a8e1d4d667e07e3f7e453bbb936dd0c5a}{Simulation\+::num\+\_\+runs}, \doxylink{class_simulation_adc775015be74841e3f9f99550af987bd}{Simulation\+::max\+\_\+t} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_simulation_a78403ca84dfef50ffa06c053648347a6}\label{class_simulation_a78403ca84dfef50ffa06c053648347a6} 
+\index{Simulation@{Simulation}!Simulation@{Simulation}}
+\index{Simulation@{Simulation}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{Simulation()}{Simulation()}}
+{\footnotesize\ttfamily Simulation\+::\+Simulation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_input_params}{Input\+Params}}}]{input }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_simulation}{Simulation} constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input} & simulation parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{struct_input_params}{Input\+Params} 
+\end{DoxySeeAlso}
+\Hypertarget{class_simulation_a80fad3f57dfaf195a36f7bc49bc88279}\label{class_simulation_a80fad3f57dfaf195a36f7bc49bc88279} 
+\index{Simulation@{Simulation}!````~Simulation@{\texorpdfstring{$\sim$}{\string~}Simulation}}
+\index{````~Simulation@{\texorpdfstring{$\sim$}{\string~}Simulation}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Simulation()}{\string~Simulation()}}
+{\footnotesize\ttfamily Simulation\+::\texorpdfstring{$\sim$}{\string~}\+Simulation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Simualtion destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_simulation_a46325953f7df60733d519b8b3cd1de61}\label{class_simulation_a46325953f7df60733d519b8b3cd1de61} 
+\index{Simulation@{Simulation}!run\_reps@{run\_reps}}
+\index{run\_reps@{run\_reps}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{run\_reps()}{run\_reps()}}
+{\footnotesize\ttfamily void Simulation\+::run\+\_\+reps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Runs the simulation num\+\_\+runs times, recording data in output files. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_simulation_a8e1d4d667e07e3f7e453bbb936dd0c5a}{Simulation\+::num\+\_\+runs}, \doxylink{class_record}{Record} 
+\end{DoxySeeAlso}
+\Hypertarget{class_simulation_ac6575f63c78f7fffff4817665f5a0f05}\label{class_simulation_ac6575f63c78f7fffff4817665f5a0f05} 
+\index{Simulation@{Simulation}!set\_boundary\_type@{set\_boundary\_type}}
+\index{set\_boundary\_type@{set\_boundary\_type}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{set\_boundary\_type()}{set\_boundary\_type()}}
+{\footnotesize\ttfamily void Simulation\+::set\+\_\+boundary\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}}}]{boundary }\end{DoxyParamCaption})}
+
+
+
+Sets the boundary type for the model. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em boundary} & boundary type \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}, \doxylink{class_boundary_strategy}{Boundary\+Strategy} 
+\end{DoxySeeAlso}
+\Hypertarget{class_simulation_ab365e7a0000cae028998efae63b7d0c1}\label{class_simulation_ab365e7a0000cae028998efae63b7d0c1} 
+\index{Simulation@{Simulation}!set\_coords@{set\_coords}}
+\index{set\_coords@{set\_coords}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{set\_coords()}{set\_coords()}}
+{\footnotesize\ttfamily void Simulation\+::set\+\_\+coords (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Sets the sites\textquotesingle{} coordinates and the release sites from a file, unless any errors are thrown. 
+
+The file should be structured in three columns, with x and y coordinates and whether the site is a release site (y/n) respectively. Values should be delimited by white space, and site rows should be delimited by new lines. \begin{DoxyWarning}{Warning}
+The file should be in the program\textquotesingle{}s running directory to be recognised. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filename} & coordinates filename \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_simulation_a451b81744f93c2470a28d75bece48783}\label{class_simulation_a451b81744f93c2470a28d75bece48783} 
+\index{Simulation@{Simulation}!set\_dispersal\_type@{set\_dispersal\_type}}
+\index{set\_dispersal\_type@{set\_dispersal\_type}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{set\_dispersal\_type()}{set\_dispersal\_type()}}
+{\footnotesize\ttfamily void Simulation\+::set\+\_\+dispersal\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}}}]{disp }\end{DoxyParamCaption})}
+
+
+
+Sets the dispersal type for the model. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em disp} & dispersal type \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}, \doxylink{class_dispersal}{Dispersal} 
+\end{DoxySeeAlso}
+\Hypertarget{class_simulation_ac5440a772e9d7788c588a795a7821fb6}\label{class_simulation_ac5440a772e9d7788c588a795a7821fb6} 
+\index{Simulation@{Simulation}!set\_inheritance@{set\_inheritance}}
+\index{set\_inheritance@{set\_inheritance}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{set\_inheritance()}{set\_inheritance()}}
+{\footnotesize\ttfamily void Simulation\+::set\+\_\+inheritance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_inheritance_params}{Inheritance\+Params}}}]{inher\+\_\+params }\end{DoxyParamCaption})}
+
+
+
+Sets the values of the f\+\_\+\{ijk\} inheritance fraction for the gene drive considering r2 resistant alleles. 
+
+f\+\_\+\{ijk\} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em inher\+\_\+params} & inheritance parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{struct_inheritance_params}{Inheritance\+Params} 
+\end{DoxySeeAlso}
+\Hypertarget{class_simulation_abc5c5d0891de7943820db3e6682cd125}\label{class_simulation_abc5c5d0891de7943820db3e6682cd125} 
+\index{Simulation@{Simulation}!set\_rainfall@{set\_rainfall}}
+\index{set\_rainfall@{set\_rainfall}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{set\_rainfall()}{set\_rainfall()}}
+{\footnotesize\ttfamily void Simulation\+::set\+\_\+rainfall (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Sets the daily rainfall values from a file, unless any errors are thrown. 
+
+These can be daily values for a year cycle (365 days), or daily values for all the simulated days (max\+\_\+t). The values should be delimited by new lines. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filename} & rainfall filename \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_simulation_a7d774bb0496b0ea95c2c88afc0d24731}\label{class_simulation_a7d774bb0496b0ea95c2c88afc0d24731} 
+\index{Simulation@{Simulation}!set\_release\_times@{set\_release\_times}}
+\index{set\_release\_times@{set\_release\_times}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{set\_release\_times()}{set\_release\_times()}}
+{\footnotesize\ttfamily void Simulation\+::set\+\_\+release\+\_\+times (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Sets the release times for gene drive release from a file, unless any errors are thrown. 
+
+Release times should be simulation day numbers within the maximum time of simulation. Values should be delimited by new lines. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filename} & release times filename \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_simulation_a4067cd6f026a45b6fdef80682669ffd4}\label{class_simulation_a4067cd6f026a45b6fdef80682669ffd4} 
+\index{Simulation@{Simulation}!alpha0\_mean@{alpha0\_mean}}
+\index{alpha0\_mean@{alpha0\_mean}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{alpha0\_mean}{alpha0\_mean}}
+{\footnotesize\ttfamily double Simulation\+::alpha0\+\_\+mean\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Input data rainfall seasonality parameters. 
+
+\doxylink{class_seasonality}{Seasonality} parameter. \Hypertarget{class_simulation_ac74b6c9f7665a081c686f088f8db950c}\label{class_simulation_ac74b6c9f7665a081c686f088f8db950c} 
+\index{Simulation@{Simulation}!alpha0\_variance@{alpha0\_variance}}
+\index{alpha0\_variance@{alpha0\_variance}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{alpha0\_variance}{alpha0\_variance}}
+{\footnotesize\ttfamily double Simulation\+::alpha0\+\_\+variance\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_seasonality}{Seasonality} parameter. 
+
+\Hypertarget{class_simulation_ac1bea19f5a9917fbff711bc9f652cff5}\label{class_simulation_ac1bea19f5a9917fbff711bc9f652cff5} 
+\index{Simulation@{Simulation}!boundary\_type@{boundary\_type}}
+\index{boundary\_type@{boundary\_type}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{boundary\_type}{boundary\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} Simulation\+::boundary\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_simulation_a978ed04ac5ec2c121cb0e9875a88195d}\label{class_simulation_a978ed04ac5ec2c121cb0e9875a88195d} 
+\index{Simulation@{Simulation}!disp\_type@{disp\_type}}
+\index{disp\_type@{disp\_type}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{disp\_type}{disp\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}} Simulation\+::disp\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_simulation_a5bf54d592f89fb121f5f8225d2761e30}\label{class_simulation_a5bf54d592f89fb121f5f8225d2761e30} 
+\index{Simulation@{Simulation}!inher\_fraction@{inher\_fraction}}
+\index{inher\_fraction@{inher\_fraction}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{inher\_fraction}{inher\_fraction}}
+{\footnotesize\ttfamily std\+::array$<$std\+::array$<$std\+::array $<$double, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}}$>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}}$>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}}$>$ Simulation\+::inher\+\_\+fraction\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Inheritance fraction. 
+
+f\+\_\+ijk is the fraction of genotype k offspring from mother with genotype i mated to father with genotype j. \Hypertarget{class_simulation_a43023bf5f1ee507b61a8a07b61cbdf2f}\label{class_simulation_a43023bf5f1ee507b61a8a07b61cbdf2f} 
+\index{Simulation@{Simulation}!input\_rainfall\_params@{input\_rainfall\_params}}
+\index{input\_rainfall\_params@{input\_rainfall\_params}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{input\_rainfall\_params}{input\_rainfall\_params}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_input_rainfall_params}{Input\+Rainfall\+Params}}\texorpdfstring{$\ast$}{*} Simulation\+::input\+\_\+rainfall\+\_\+params\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sinusoid rainfall seasonality parameters. 
+
+~\newline
+ \Hypertarget{class_simulation_adc775015be74841e3f9f99550af987bd}\label{class_simulation_adc775015be74841e3f9f99550af987bd} 
+\index{Simulation@{Simulation}!max\_t@{max\_t}}
+\index{max\_t@{max\_t}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{max\_t}{max\_t}}
+{\footnotesize\ttfamily int Simulation\+::max\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maximum simulated time (in days). 
+
+\Hypertarget{class_simulation_a28f56093772a2f20dd286ac7b225c030}\label{class_simulation_a28f56093772a2f20dd286ac7b225c030} 
+\index{Simulation@{Simulation}!model\_params@{model\_params}}
+\index{model\_params@{model\_params}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{model\_params}{model\_params}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_model_params}{Model\+Params}}\texorpdfstring{$\ast$}{*} Simulation\+::model\+\_\+params\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_model}{Model} parameters. 
+
+\Hypertarget{class_simulation_a8e1d4d667e07e3f7e453bbb936dd0c5a}\label{class_simulation_a8e1d4d667e07e3f7e453bbb936dd0c5a} 
+\index{Simulation@{Simulation}!num\_runs@{num\_runs}}
+\index{num\_runs@{num\_runs}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{num\_runs}{num\_runs}}
+{\footnotesize\ttfamily int Simulation\+::num\+\_\+runs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of simulation replicates to run. 
+
+\Hypertarget{class_simulation_a83058587f6835f69b4b249f1382a76ee}\label{class_simulation_a83058587f6835f69b4b249f1382a76ee} 
+\index{Simulation@{Simulation}!rec\_params@{rec\_params}}
+\index{rec\_params@{rec\_params}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{rec\_params}{rec\_params}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_record_params}{Record\+Params}}\texorpdfstring{$\ast$}{*} Simulation\+::rec\+\_\+params\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Data-\/recording parameters. 
+
+\Hypertarget{class_simulation_a3e12749f5e0c59d3343fb7ac68faabea}\label{class_simulation_a3e12749f5e0c59d3343fb7ac68faabea} 
+\index{Simulation@{Simulation}!release\_sites@{release\_sites}}
+\index{release\_sites@{release\_sites}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{release\_sites}{release\_sites}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ Simulation\+::release\+\_\+sites\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Indices relative to coords vector for the gene drive release sites. 
+
+\Hypertarget{class_simulation_ac42205211628f51d8f680b6522ca663e}\label{class_simulation_ac42205211628f51d8f680b6522ca663e} 
+\index{Simulation@{Simulation}!sine\_rainfall\_params@{sine\_rainfall\_params}}
+\index{sine\_rainfall\_params@{sine\_rainfall\_params}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{sine\_rainfall\_params}{sine\_rainfall\_params}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sine_rainfall_params}{Sine\+Rainfall\+Params}}\texorpdfstring{$\ast$}{*} Simulation\+::sine\+\_\+rainfall\+\_\+params\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_simulation_a73b6b686f5dca876da14e5b79f8123a5}\label{class_simulation_a73b6b686f5dca876da14e5b79f8123a5} 
+\index{Simulation@{Simulation}!sites\_coords@{sites\_coords}}
+\index{sites\_coords@{sites\_coords}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{sites\_coords}{sites\_coords}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_point}{Point}}$>$ Simulation\+::sites\+\_\+coords\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+2D coordinates for the sites on the simulated square. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/includes/\mbox{\hyperlink{_simulation_8h}{Simulation.\+h}}\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/src/\mbox{\hyperlink{_simulation_8cpp}{Simulation.\+cpp}}\end{DoxyCompactItemize}

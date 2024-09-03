@@ -1,0 +1,149 @@
+\doxysection{C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/includes/inputval.h File Reference}
+\hypertarget{inputval_8h}{}\label{inputval_8h}\index{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/inputval.h@{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/inputval.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+Include dependency graph for inputval.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{inputval_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{inputval_8h_a5a4e5a7ca0db8d44c2b3e84c6eb2f517}{check\+\_\+bounds}} (const std\+::string \&par\+\_\+name, T value, T lower\+\_\+bound, bool inclusive\+\_\+lower=true, T upper\+\_\+bound=std\+::numeric\+\_\+limits$<$ T $>$\+::max(), bool inclusive\+\_\+upper=true)
+\begin{DoxyCompactList}\small\item\em Checks if a value falls within bounds. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{inputval_8h_a9ceaca1e9eb448fa975e5bb7bdbf01be}{check\+\_\+interval}} (const std\+::string \&start\+\_\+name, const std\+::string \&stop\+\_\+name, T start, T stop)
+\begin{DoxyCompactList}\small\item\em Checks if two values constitute a valid interval. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{inputval_8h_a38cf9054c93e1fced65fe33940dda566}{file\+\_\+read\+\_\+and\+\_\+validate\+\_\+type}} (std\+::ifstream \&file, T \&par, const std\+::string \&par\+\_\+name, const std\+::string \&par\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Reads the next value from a filestream and assigns it to the parameter variable if the types match. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{inputval_8h_adc1edb0039433704b7af2b7b850cabce}{read\+\_\+and\+\_\+validate\+\_\+type}} (std\+::stringstream \&linestream, T \&par, const std\+::string \&par\+\_\+name, const std\+::string \&par\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Reads the next value from a linestream and assigns it to the parameter variable if the types match. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{inputval_8h_a5a4e5a7ca0db8d44c2b3e84c6eb2f517}\label{inputval_8h_a5a4e5a7ca0db8d44c2b3e84c6eb2f517} 
+\index{inputval.h@{inputval.h}!check\_bounds@{check\_bounds}}
+\index{check\_bounds@{check\_bounds}!inputval.h@{inputval.h}}
+\doxysubsubsection{\texorpdfstring{check\_bounds()}{check\_bounds()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool check\+\_\+bounds (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{par\+\_\+name,  }\item[{T}]{value,  }\item[{T}]{lower\+\_\+bound,  }\item[{bool}]{inclusive\+\_\+lower = {\ttfamily true},  }\item[{T}]{upper\+\_\+bound = {\ttfamily std\+:\+:numeric\+\_\+limits$<$T$>$\+:\+:max()},  }\item[{bool}]{inclusive\+\_\+upper = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Checks if a value falls within bounds. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of the checked parameter \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em par\+\_\+name} & name of the parameter value \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & parameter value \\
+\hline
+\mbox{\texttt{ in}}  & {\em lower\+\_\+bound} & value of the lower bound \\
+\hline
+\mbox{\texttt{ in}}  & {\em inclusive\+\_\+lower} & whether the lower bound value is included in the bounds \\
+\hline
+\mbox{\texttt{ in}}  & {\em upper\+\_\+bound} & value of the upper bound \\
+\hline
+\mbox{\texttt{ in}}  & {\em inclusive\+\_\+upper} & whether the upper bound value is included in the bounds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the value falls within bounds or not. 
+\end{DoxyReturn}
+\Hypertarget{inputval_8h_a9ceaca1e9eb448fa975e5bb7bdbf01be}\label{inputval_8h_a9ceaca1e9eb448fa975e5bb7bdbf01be} 
+\index{inputval.h@{inputval.h}!check\_interval@{check\_interval}}
+\index{check\_interval@{check\_interval}!inputval.h@{inputval.h}}
+\doxysubsubsection{\texorpdfstring{check\_interval()}{check\_interval()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool check\+\_\+interval (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{start\+\_\+name,  }\item[{const std\+::string \&}]{stop\+\_\+name,  }\item[{T}]{start,  }\item[{T}]{stop }\end{DoxyParamCaption})}
+
+
+
+Checks if two values constitute a valid interval. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of the interval values \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em start\+\_\+name} & name of the interval start parameter \\
+\hline
+\mbox{\texttt{ in}}  & {\em stop\+\_\+name} & name of the interval stop parameter \\
+\hline
+\mbox{\texttt{ in}}  & {\em start} & start value of the interval \\
+\hline
+\mbox{\texttt{ in}}  & {\em stop} & stop value of the interval \\
+\hline
+\end{DoxyParams}
+\Hypertarget{inputval_8h_a38cf9054c93e1fced65fe33940dda566}\label{inputval_8h_a38cf9054c93e1fced65fe33940dda566} 
+\index{inputval.h@{inputval.h}!file\_read\_and\_validate\_type@{file\_read\_and\_validate\_type}}
+\index{file\_read\_and\_validate\_type@{file\_read\_and\_validate\_type}!inputval.h@{inputval.h}}
+\doxysubsubsection{\texorpdfstring{file\_read\_and\_validate\_type()}{file\_read\_and\_validate\_type()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool file\+\_\+read\+\_\+and\+\_\+validate\+\_\+type (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{file,  }\item[{T \&}]{par,  }\item[{const std\+::string \&}]{par\+\_\+name,  }\item[{const std\+::string \&}]{par\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Reads the next value from a filestream and assigns it to the parameter variable if the types match. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of the parameter value \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em file} & filestream \\
+\hline
+\mbox{\texttt{ out}}  & {\em par} & parameter variable \\
+\hline
+\mbox{\texttt{ in}}  & {\em par\+\_\+name} & parameter name (for error messages) \\
+\hline
+\mbox{\texttt{ in}}  & {\em par\+\_\+type} & parameter type (for error messages) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the assignment process has been successful. 
+\end{DoxyReturn}
+\Hypertarget{inputval_8h_adc1edb0039433704b7af2b7b850cabce}\label{inputval_8h_adc1edb0039433704b7af2b7b850cabce} 
+\index{inputval.h@{inputval.h}!read\_and\_validate\_type@{read\_and\_validate\_type}}
+\index{read\_and\_validate\_type@{read\_and\_validate\_type}!inputval.h@{inputval.h}}
+\doxysubsubsection{\texorpdfstring{read\_and\_validate\_type()}{read\_and\_validate\_type()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool read\+\_\+and\+\_\+validate\+\_\+type (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{linestream,  }\item[{T \&}]{par,  }\item[{const std\+::string \&}]{par\+\_\+name,  }\item[{const std\+::string \&}]{par\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Reads the next value from a linestream and assigns it to the parameter variable if the types match. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of the parameter value \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em linestream} & linestream \\
+\hline
+\mbox{\texttt{ out}}  & {\em par} & parameter variable \\
+\hline
+\mbox{\texttt{ in}}  & {\em par\+\_\+name} & parameter name (for error messages) \\
+\hline
+\mbox{\texttt{ in}}  & {\em par\+\_\+type} & parameter type (for error messages) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the assignment process has been successful. 
+\end{DoxyReturn}

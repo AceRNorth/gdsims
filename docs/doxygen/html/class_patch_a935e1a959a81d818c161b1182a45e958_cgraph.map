@@ -1,0 +1,29 @@
+<map id="Patch::juv_eclose" name="Patch::juv_eclose">
+<area shape="rect" id="Node000001" title="Turns the oldest juveniles into adults." alt="" coords="5,107,129,133"/>
+<area shape="rect" id="Node000002" href="$random_8cpp.html#a4e7a8d4c70cb879b071d51ddec9a8b1f" title="Returns a random draw (non&#45;negative integer) from the Binomial distribution B(N,p)." alt="" coords="574,5,693,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,103,227,72,366,41,466,28,558,20,559,25,467,33,366,47,228,77,114,109"/>
+<area shape="rect" id="Node000005" href="$class_patch.html#abfcba309e2ecc8eb224b89a5f11d6042" title="Updates the juvenile survival probability of the patch." alt="" coords="177,107,318,133"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="129,117,161,117,161,123,129,123"/>
+<area shape="rect" id="Node000012" href="$class_patch.html#a14846b95a2c4032ae4de370abc5ddb04" title="Updates the mating rate of the patch." alt="" coords="178,183,317,209"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="102,131,201,174,199,179,100,136"/>
+<area shape="rect" id="Node000003" href="$random_8cpp.html#a2b4b3dc20892808a0220d878773ba864" title="Returns a random draw (non&#45;negative integer) from the Poisson distribution with mean lambda (using no..." alt="" coords="751,5,868,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="693,16,736,16,736,21,693,21"/>
+<area shape="rect" id="Node000004" href="$random_8cpp.html#af3edb3b1a762ddbe5539bc80ef5e023c" title=" " alt="" coords="921,56,980,83"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="692,30,746,41,906,63,905,68,745,47,690,35"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="850,30,907,51,906,56,848,35"/>
+<area shape="rect" id="Node000006" href="$class_patch.html#a3071272790d2c5cde8675e94a306ac0a" title="Calculates the total number of juveniles in the patch." alt="" coords="369,56,519,83"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="301,103,374,85,375,90,303,109"/>
+<area shape="rect" id="Node000007" href="$class_model.html#a04c1c541fc6d4f4c12f854b971197ea5" title="Returns the carrying capacity for the given alpha0 (the baseline contribution to it) and the current ..." alt="" coords="384,107,504,133"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="319,117,368,117,368,123,319,123"/>
+<area shape="rect" id="Node000011" href="$class_model.html#a6499bfa0eeb48133e352ce72f79aee9d" title="Returns the current simulation day." alt="" coords="389,157,499,184"/>
+<area shape="poly" id="edge12_Node000005_Node000011" title=" " alt="" coords="303,131,375,150,374,155,301,137"/>
+<area shape="rect" id="Node000008" href="$class_seasonality.html#a86bfbdfc639ab1a08e3643e05b55d6f1" title=" " alt="" coords="569,56,698,83"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="496,103,565,85,567,90,497,109"/>
+<area shape="rect" id="Node000009" href="$class_model.html#ad1efe8336546de49c99d0d8c8ec8e6e8" title="Returns a random value for the baseline contribution to the carrying capacity (alpha0)." alt="" coords="582,107,685,133"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="504,117,567,117,567,123,504,123"/>
+<area shape="rect" id="Node000010" href="$random_8cpp.html#ab1651a929e139f6da870eae2f0c641e0" title="Returns a random draw (non&#45;negative floating&#45;point number) from a lognormal distribution with desired..." alt="" coords="746,107,873,133"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="685,117,730,117,730,123,685,123"/>
+<area shape="poly" id="edge11_Node000010_Node000004" title=" " alt="" coords="848,104,906,83,907,88,850,109"/>
+<area shape="rect" id="Node000013" href="$class_patch.html#adf7fcfe3a5b2b00afe76c9dac3aea50c" title="Calculates the total number of males in the patch." alt="" coords="366,208,521,235"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="317,202,351,207,350,212,317,208"/>
+</map>

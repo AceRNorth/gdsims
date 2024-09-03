@@ -297,30 +297,39 @@ std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> Radia
 			loc2 = sites[jj]->get_coords();
 			if (distances[i][jj] < max_disp) {
 				alpha = std::atan(radii[jj] / distances[i][jj]); 
-/*if(boundary == Edge)
-{
-if(2*(loc2.x-loc1.x)>side)loc2.x=loc2.x-side;
-if(2*(loc1.x-loc2.x)>side)loc2.x=loc2.x+side;
-if(2*(loc2.y-loc1.y)>side)loc2.y=loc2.y-side;
-if(2*(loc1.y-loc2.y)>side)loc2.y=loc2.y+side;
-};*/
+				loc2 = boundary_strategy->relative_pos(loc1, loc2);
 				if (loc2.y > loc1.y) 
 				{	
-					if(loc2.x > loc1.x){theta = std::atan((loc2.y - loc1.y) / (loc2.x - loc1.x));}
-					else if (loc2.x==loc1.x){theta=constants::pi/2;}
-					else theta=constants::pi/2 +std::atan((loc1.x-loc2.x) / (loc2.y-loc1.y)); 
+					if (loc2.x > loc1.x) {
+						theta = std::atan((loc2.y - loc1.y) / (loc2.x - loc1.x));
+					}
+					else if (loc2.x == loc1.x) {
+						theta = constants::pi/2;
+					}
+					else {
+						theta = constants::pi/2 + std::atan((loc1.x-loc2.x) / (loc2.y-loc1.y)); 
+					}
+				};
+				if (loc2.y == loc1.y) {
+					if (loc2.x >= loc1.x) {
+						theta = 0;
+					}
+					else {
+						theta = constants::pi;
+					} 
+				}
+				if (loc2.y < loc1.y) {
+					if (loc1.x > loc2.x) {
+						theta = constants::pi + std::atan((loc1.y - loc2.y) / (loc1.x - loc2.x));
+					}
+					else if (loc2.x==loc1.x) {
+						theta = 3 * constants::pi / 2;
+					}
+					else {
+ 						theta = 3 * constants::pi / 2 + std::atan((loc2.x - loc1.x) / (loc1.y - loc2.y)); 
+					}
+				}
 
-				};
-				if (loc2.y==loc1.y)
-				{
-					if(loc2.x>=loc1.x){theta=0;} else theta=constants::pi;
-				};
-				if (loc2.y < loc1.y)
-				{
-					if(loc1.x >loc2.x){theta = constants::pi + std::atan((loc1.y - loc2.y) / (loc1.x - loc2.x));}
-					else if (loc2.x==loc1.x){theta=3*constants::pi/2;}
-					else theta=3*constants::pi/2 +std::atan((loc2.x-loc1.x) / (loc1.y-loc2.y)); 
-				};
 				double t_min = wrap_around((theta - alpha) / (2*(constants::pi)), 1);
 				double t_plus = wrap_around((theta + alpha) / (2*(constants::pi)), 1);
 				if (t_min > t_plus) {
@@ -402,7 +411,7 @@ std::pair<std::vector<std::pair<double, double>>, double> RadialDispersal::compu
 	return {output, diff};
 }
 
-// Retuns the indices of the elements in the vector, sorted by numeric value in ascending order
+
 /**
  * Sorts the indices of the vector elements based on the numeric value of the corresponding element (in ascending order).
  * @param[in] numbers vector to sort
@@ -420,7 +429,7 @@ std::vector<int> RadialDispersal::get_sorted_positions(const std::vector<double>
 	return indices;
 }
 
-// 
+
 /**
  * Computes the inter-point distances for a list of points. ...
  * @param[in] sites vector of all Patch objects

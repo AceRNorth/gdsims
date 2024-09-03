@@ -1,0 +1,41 @@
+\doxysection{Seasonality.\+h}
+\hypertarget{_seasonality_8h_source}{}\label{_seasonality_8h_source}\index{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h@{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h}}
+\mbox{\hyperlink{_seasonality_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GENERALMETAPOP\_SEASONALITY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GENERALMETAPOP\_SEASONALITY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_params_8h}{Params.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_seasonality}{Seasonality}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_seasonality_a58daa86e6a5d8f1b1b8d4db8c9389870}{Seasonality}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_seasonality_ac69d88cb94f794d9e317b7d259eaff64}{alpha1}}):\ \mbox{\hyperlink{class_seasonality_ac69d88cb94f794d9e317b7d259eaff64}{alpha1}}(\mbox{\hyperlink{class_seasonality_ac69d88cb94f794d9e317b7d259eaff64}{alpha1}})\ \{\}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_seasonality_a86bfbdfc639ab1a08e3643e05b55d6f1}{alpha}}(\textcolor{keywordtype}{int}\ day,\ \textcolor{keywordtype}{double}\ alpha0)\ =\ 0;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_seasonality_ac69d88cb94f794d9e317b7d259eaff64}{alpha1}};\ }
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sine_rainfall}{SineRainfall}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_seasonality}{Seasonality}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_sine_rainfall_a5400eca90b6aae50317446023a020f6c}{SineRainfall}}(\mbox{\hyperlink{struct_sine_rainfall_params}{SineRainfallParams}}\ *params);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_sine_rainfall_a208a62a5176ae5db43120cf938a7f067}{alpha}}(\textcolor{keywordtype}{int}\ day,\ \textcolor{keywordtype}{double}\ alpha0)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_sine_rainfall_a83a33e17ca162e92beea4ba741807d63}{amp}};\ }
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_input_rainfall}{InputRainfall}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_seasonality}{Seasonality}}\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_input_rainfall_a20330f7ca100d2b1fb3e2432bded83f2}{InputRainfall}}(\mbox{\hyperlink{struct_input_rainfall_params}{InputRainfallParams}}\ *params);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_input_rainfall_a7599fc9d35cae87ac87f98d2ccb6b3fb}{alpha}}(\textcolor{keywordtype}{int}\ day,\ \textcolor{keywordtype}{double}\ alpha0)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_input_rainfall_adb68f5eb090485f2a362e227aeaf91c8}{resp}};\ }
+\DoxyCodeLine{00046\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_input_rainfall_a44c851f69b6dc275e65799c52c7e9cde}{rainfall}};\ }
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_SEASONALITY\_H}}
+
+\end{DoxyCode}

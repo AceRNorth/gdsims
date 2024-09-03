@@ -1,0 +1,75 @@
+<map id="Simulation::run_reps" name="Simulation::run_reps">
+<area shape="rect" id="Node000001" title="Runs the simulation num_runs times, recording data in output files." alt="" coords="5,351,146,377"/>
+<area shape="rect" id="Node000002" href="$class_model.html#a8be5555da392871558de820795938a04" title="Returns the total number of mated females across all female and male sperm genotypes and across all p..." alt="" coords="206,5,360,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,350,81,293,99,211,114,165,134,121,160,79,192,42,196,39,199,43,196,46,164,82,139,123,119,167,104,212,87,294,80,350"/>
+<area shape="rect" id="Node000003" href="$class_model.html#a8aaa1031c217f20626283a360d44b53f" title="Returns the total number of juveniles across all ages and genotypes and across all patches." alt="" coords="207,56,359,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="76,350,85,301,105,232,121,195,140,157,163,123,192,93,197,89,200,93,195,97,168,126,144,160,125,197,110,234,90,303,81,351"/>
+<area shape="rect" id="Node000004" href="$class_model.html#ab92b4e7f88b556e690391528330ba6af" title="Returns the total number of males across all genotypes and across all patches." alt="" coords="205,107,361,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="78,350,90,309,112,253,146,194,167,167,192,143,198,139,201,143,195,147,171,171,150,197,117,256,95,311,83,351"/>
+<area shape="rect" id="Node000005" href="$class_model.html#a6d5f4f68f41e76c3e966e312d2f6e9e3" title="Returns the total number of males of each genotype across all patches." alt="" coords="214,157,352,200"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="82,349,123,283,154,244,192,210,199,205,202,210,195,214,158,248,127,286,86,352"/>
+<area shape="rect" id="Node000006" href="$class_model.html#a0d762e0b53f2f1443b59d1425366cfc4" title="Returns the total number of virgin (unmated) females across all genotypes and across all patches." alt="" coords="206,224,360,251"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="87,348,131,305,160,281,192,260,205,254,207,259,195,265,163,285,134,309,91,352"/>
+<area shape="rect" id="Node000007" href="$class_model.html#a17b3a93529de4ef762254f9a1932b67e" title="Returns the sites vector." alt="" coords="224,275,342,301"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="105,348,193,311,214,304,215,309,195,316,107,352"/>
+<area shape="rect" id="Node000008" href="$class_model.html#a3d359ced00aacc31a7b50c53b8b1e340" title="Sets up the model architecture." alt="" coords="232,325,334,352"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="146,353,216,344,216,349,146,358"/>
+<area shape="rect" id="Node000012" href="$class_record.html#a97f3aed77c0f4b5979da3a9a11bce42c" title="Determines if it is time to record global data." alt="" coords="194,376,372,403"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="146,370,178,374,178,379,146,375"/>
+<area shape="rect" id="Node000013" href="$class_record.html#ae6b89328b0fcaa2bfa5eebe819782b50" title="Determines if it is time to record local data." alt="" coords="197,427,369,453"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="107,376,195,412,215,419,214,424,193,417,105,380"/>
+<area shape="rect" id="Node000014" href="$class_record.html#a27622a9c11aa4a86ca123456ef0ad236" title="Outputs the total numbers of juvenile (J), male (M), virgin female (V) and mated female (F) mosquitoe..." alt="" coords="210,477,356,504"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="91,376,134,419,163,443,195,463,207,469,205,474,192,468,160,447,131,423,87,380"/>
+<area shape="rect" id="Node000015" href="$class_record.html#a0c4d71ceed2e84f89273a73a304fcc4c" title="Records the coordinates of the population sites." alt="" coords="207,528,359,555"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="86,376,126,443,157,481,195,514,203,519,200,523,192,518,154,485,122,446,81,379"/>
+<area shape="rect" id="Node000016" href="$class_record.html#aa8ed3bd4fdee0c2dddbb5cec2f685577" title="Records the total numbers of male mosquitoes for the given day, divided by genotype." alt="" coords="209,579,357,605"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="83,377,96,414,119,465,152,519,172,543,195,565,202,569,198,573,192,569,168,547,148,522,114,468,91,416,78,379"/>
+<area shape="rect" id="Node000017" href="$class_record.html#a8e504c6253ef29fa5c86d216e3f28e1c" title="Records the number of males at each site for the given day." alt="" coords="213,629,353,656"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="82,377,92,423,113,488,146,556,169,588,195,615,201,619,197,624,192,619,165,591,142,559,108,490,87,425,76,379"/>
+<area shape="rect" id="Node000018" href="$class_model.html#a7e4eb741e72b3946a9166dceed6fc02d" title="Runs the daily step of the model." alt="" coords="242,680,324,707"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="81,378,88,431,106,509,121,552,141,593,165,632,195,666,210,676,228,683,226,688,208,681,192,670,161,635,136,596,116,554,101,511,83,432,75,378"/>
+<area shape="rect" id="Node000009" href="$class_model.html#add15fa39b2e8fda3fefc551de4d0e1bb" title="Populates all sites with a wild mosquito population of different types (age and sex)." alt="" coords="427,275,575,301"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="334,324,425,303,426,308,335,329"/>
+<area shape="rect" id="Node000010" href="$class_dispersal.html#aef84d06c465ccb461d1cfb39e82de838" title=" " alt="" coords="422,325,579,352"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="335,336,406,336,406,341,335,341"/>
+<area shape="rect" id="Node000011" href="$class_model.html#a1b78097ea008a3b4cc36b321c7d42289" title="Sets probabilities of juvenile eclosion for different age groups." alt="" coords="420,376,581,419"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="335,350,406,369,404,374,334,355"/>
+<area shape="rect" id="Node000019" href="$class_g_d_release.html#ac69ecb74bc31ac1d57764be524c68ca7" title="Releases the gene drive mosquitoes into the simulation area if it is time for release." alt="" coords="432,557,569,600"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="324,682,371,666,418,638,460,608,463,612,421,643,373,670,325,687"/>
+<area shape="rect" id="Node000023" href="$class_model.html#ae7c17f3d562ffc8baea8945ba4ffd3c3" title="Runs the daily mosquito life&#45;processes for all sites, including dispersal and aestivation." alt="" coords="444,860,558,887"/>
+<area shape="poly" id="edge22_Node000018_Node000023" title=" " alt="" coords="302,705,473,848,470,852,299,709"/>
+<area shape="rect" id="Node000020" href="$class_g_d_release.html#a69a14d4b9e59ee1e1375d76630da00e3" title="Determines if the day is a chosen release time." alt="" coords="629,473,816,500"/>
+<area shape="poly" id="edge19_Node000019_Node000020" title=" " alt="" coords="537,555,580,531,628,510,648,503,650,508,630,514,582,536,540,559"/>
+<area shape="rect" id="Node000021" href="$class_g_d_release.html#a46170fb6a9f1a248346206b99773b684" title="Adds drive heterozygous (WD) male mosquitoes to the release sites." alt="" coords="647,524,798,567"/>
+<area shape="poly" id="edge20_Node000019_Node000021" title=" " alt="" coords="569,566,632,556,632,562,570,571"/>
+<area shape="rect" id="Node000022" href="$class_g_d_release.html#a941e51bbc4999dacdb4f22277ffdebbf" title=" " alt="" coords="639,591,806,633"/>
+<area shape="poly" id="edge21_Node000019_Node000022" title=" " alt="" coords="570,586,624,594,623,600,569,592"/>
+<area shape="rect" id="Node000024" href="$class_model.html#ae2fa6af0cf426e1df144e4dcbee4069d" title="Carries out adult mortality across all patches." alt="" coords="661,657,784,684"/>
+<area shape="poly" id="edge23_Node000023_Node000024" title=" " alt="" coords="506,858,522,825,548,780,584,734,628,694,645,684,647,689,631,698,588,737,553,783,527,827,510,861"/>
+<area shape="rect" id="Node000025" href="$class_dispersal.html#a90638547dc5983463ee88d89a9167b5a" title=" " alt="" coords="635,708,810,735"/>
+<area shape="poly" id="edge24_Node000023_Node000025" title=" " alt="" coords="510,858,556,803,590,771,628,744,640,738,642,743,631,749,593,775,560,807,514,861"/>
+<area shape="rect" id="Node000026" href="$class_aestivation.html#a43390ce5cf1f9be08cf9b82d8cce00f3" title="Hides aestivating females from their patches." alt="" coords="664,759,781,785"/>
+<area shape="poly" id="edge25_Node000023_Node000026" title=" " alt="" coords="520,857,568,826,628,795,649,787,651,792,630,800,571,831,523,862"/>
+<area shape="rect" id="Node000030" href="$class_aestivation.html#ad52ef1d1e4febab22176ac1690f22d76" title="Determines if the time is within the aestivation hiding window." alt="" coords="640,809,805,836"/>
+<area shape="poly" id="edge30_Node000023_Node000030" title=" " alt="" coords="558,858,645,837,647,843,559,863"/>
+<area shape="rect" id="Node000031" href="$class_aestivation.html#a28d413fd0b0ab424b5071832de34e86c" title="Determines if the time is within the aestivation waking window." alt="" coords="637,860,808,887"/>
+<area shape="poly" id="edge31_Node000023_Node000031" title=" " alt="" coords="558,871,622,871,622,876,558,876"/>
+<area shape="rect" id="Node000032" href="$class_model.html#af30fafd15a6451c20c3dcef622aaf6d0" title="Carries out juvenile eclosion across all patches." alt="" coords="660,911,785,937"/>
+<area shape="poly" id="edge32_Node000023_Node000032" title=" " alt="" coords="559,884,647,904,645,909,558,889"/>
+<area shape="rect" id="Node000033" href="$class_model.html#a2a3151eb1bb6333c2ba103f0c7c6c475" title="Carries out juvenile aging across all patches." alt="" coords="653,961,792,988"/>
+<area shape="poly" id="edge33_Node000023_Node000033" title=" " alt="" coords="523,885,571,916,630,947,648,954,646,959,628,952,568,920,520,889"/>
+<area shape="rect" id="Node000034" href="$class_model.html#a85c48027be32159a36337531249a435a" title="Carries out egg&#45;laying across all patches." alt="" coords="664,1012,781,1039"/>
+<area shape="poly" id="edge34_Node000023_Node000034" title=" " alt="" coords="514,885,560,940,593,971,631,998,651,1007,648,1012,628,1002,590,975,556,944,510,889"/>
+<area shape="rect" id="Node000035" href="$class_model.html#a76f26441a5112d1f596d5b9317734be4" title="Carries out mating across all patches." alt="" coords="654,1063,791,1089"/>
+<area shape="poly" id="edge35_Node000023_Node000035" title=" " alt="" coords="510,886,527,920,553,964,588,1010,631,1049,641,1055,639,1059,628,1053,584,1013,548,967,522,922,506,889"/>
+<area shape="rect" id="Node000036" href="$class_aestivation.html#ade758967c3a5d774e15ffd2836b6e21d" title="Wakes a fraction of the aestivating females." alt="" coords="661,1113,784,1140"/>
+<area shape="poly" id="edge36_Node000023_Node000036" title=" " alt="" coords="508,886,522,928,546,986,582,1047,605,1075,631,1099,648,1110,646,1114,628,1103,601,1079,578,1050,541,988,517,930,503,888"/>
+<area shape="rect" id="Node000027" href="$random_8cpp.html#a4e7a8d4c70cb879b071d51ddec9a8b1f" title="Returns a random draw (non&#45;negative integer) from the Binomial distribution B(N,p)." alt="" coords="864,936,983,963"/>
+<area shape="poly" id="edge26_Node000026_Node000027" title=" " alt="" coords="782,779,817,795,849,824,876,857,912,920,908,923,871,860,845,827,814,800,780,784"/>
+<area shape="rect" id="Node000028" href="$random_8cpp.html#a2b4b3dc20892808a0220d878773ba864" title="Returns a random draw (non&#45;negative integer) from the Poisson distribution with mean lambda (using no..." alt="" coords="1031,911,1147,937"/>
+<area shape="poly" id="edge27_Node000027_Node000028" title=" " alt="" coords="983,938,1015,933,1016,938,984,943"/>
+<area shape="rect" id="Node000029" href="$random_8cpp.html#af3edb3b1a762ddbe5539bc80ef5e023c" title=" " alt="" coords="1195,936,1255,963"/>
+<area shape="poly" id="edge29_Node000027_Node000029" title=" " alt="" coords="983,947,1180,947,1180,952,983,952"/>
+<area shape="poly" id="edge28_Node000028_Node000029" title=" " alt="" coords="1148,932,1180,938,1179,944,1147,938"/>
+<area shape="poly" id="edge37_Node000036_Node000027" title=" " alt="" coords="783,1114,814,1099,845,1071,871,1039,908,976,912,978,876,1042,849,1075,817,1104,785,1119"/>
+</map>

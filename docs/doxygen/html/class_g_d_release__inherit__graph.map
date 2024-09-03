@@ -1,0 +1,7 @@
+<map id="GDRelease" name="GDRelease">
+<area shape="rect" id="Node000001" title="Gene drive release base class." alt="" coords="90,5,231,181"/>
+<area shape="rect" id="Node000002" href="$class_random_g_d_release.html" title="Implements gene drive release for randomised release sites." alt="" coords="5,229,151,320"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,196,101,231,96,229,112,194"/>
+<area shape="rect" id="Node000003" href="$class_sched_g_d_release.html" title="Implements gene drive release for pre&#45;selected release sites." alt="" coords="175,229,314,320"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,194,227,229,222,231,205,196"/>
+</map>
