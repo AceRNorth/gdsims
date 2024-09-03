@@ -54,7 +54,7 @@ jobs:
           name: sphinx-error-logs
           path: /tmp/sphinx-err*.log
       - name: Upload Doxygen XML artifact
-        uses: actions/upload-artifact@v3.1.5
+        uses: actions/upload-artifact@v3.2.1
         with:
           name: doxygen-xml
           path: docs/doxygen/xml/index.xml
