@@ -47,17 +47,17 @@ jobs:
           source /usr/share/miniconda/etc/profile.d/conda.sh
           conda activate docs-env
           sphinx-build -b html docs docs/sphinx || (cat /tmp/sphinx-err*.log && exit 1)
+      - name: Upload Doxygen XML artifact
+        uses: actions/upload-artifact@v3.2.1
+        with:
+          name: doxygen-xml
+          path: docs/doxygen/xml/index.xml
       - name: Upload Sphinx Error Logs
         if: failure()
         uses: actions/upload-artifact@v3
         with:
           name: sphinx-error-logs
           path: /tmp/sphinx-err*.log
-      - name: Upload Doxygen XML artifact
-        uses: actions/upload-artifact@v3.2.1
-        with:
-          name: doxygen-xml
-          path: docs/doxygen/xml/index.xml
       - name: Deploy to Github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
