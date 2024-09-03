@@ -46,7 +46,13 @@ jobs:
         run: |
           source /usr/share/miniconda/etc/profile.d/conda.sh
           conda activate docs-env
-          sphinx-build -b html docs docs/sphinx
+          sphinx-build -b html docs docs/sphinx || (cat /tmp/sphinx-err*.log && exit 1)
+      - name: Upload Sphinx Error Logs
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: sphinx-error-logs
+          path: /tmp/sphinx-err*.log
       - name: Deploy to Github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
