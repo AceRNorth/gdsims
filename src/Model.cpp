@@ -259,7 +259,7 @@ long long int Model::calculate_tot_J()
 /**
  * Returns the total number of males across all genotypes and across all patches.
  * @return The total number of males in the model run.
- * @see Patch::M
+ * @see Patch::get_M()
  */
 long long int Model::calculate_tot_M()
 {
@@ -287,7 +287,7 @@ long long int Model::calculate_tot_V()
 /**
  * Returns the total number of mated females across all female and male sperm genotypes and across all patches.
  * @return The total number of mated females in the model run.
- * @see Patch::F
+ * @see Patch::get_F()
  */
 long long int Model::calculate_tot_F()
 {
