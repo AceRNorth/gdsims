@@ -3,7 +3,7 @@
 Function random_binomial(long long int, double)
 ===============================================
 
-- Defined in :ref:`file_includes_random.h`
+- Defined in :ref:`file__github_workspace_includes_random.h`
 
 
 Function Documentation

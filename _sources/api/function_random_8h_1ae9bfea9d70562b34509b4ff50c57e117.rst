@@ -3,7 +3,7 @@
 Function random_multinomial(long long int, const std::array<long long int, constants::num_gen>&)
 ================================================================================================
 
-- Defined in :ref:`file_includes_random.h`
+- Defined in :ref:`file__github_workspace_includes_random.h`
 
 
 Function Documentation

@@ -3,7 +3,7 @@
 Enum BoundaryType
 =================
 
-- Defined in :ref:`file_includes_constants.h`
+- Defined in :ref:`file__github_workspace_includes_constants.h`
 
 
 Enum Documentation

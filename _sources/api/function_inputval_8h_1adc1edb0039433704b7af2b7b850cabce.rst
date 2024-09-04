@@ -3,7 +3,7 @@
 Template Function read_and_validate_type
 ========================================
 
-- Defined in :ref:`file_includes_inputval.h`
+- Defined in :ref:`file__github_workspace_includes_inputval.h`
 
 
 Function Documentation

@@ -3,7 +3,7 @@
 Function twister
 ================
 
-- Defined in :ref:`file_src_random.cpp`
+- Defined in :ref:`file__github_workspace_src_random.cpp`
 
 
 Function Documentation

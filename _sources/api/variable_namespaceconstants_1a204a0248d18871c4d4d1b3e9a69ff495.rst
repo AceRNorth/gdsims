@@ -1,14 +1,14 @@
 .. _exhale_variable_namespaceconstants_1a204a0248d18871c4d4d1b3e9a69ff495:
 
-Variable constants::pi
-======================
+Variable pi
+===========
 
-- Defined in :ref:`file_includes_constants.h`
+- Defined in :ref:`file__github_workspace_includes_constants.h`
 
 
 Variable Documentation
 ----------------------
 
 
-.. doxygenvariable:: constants::pi
+.. doxygenvariable:: pi
    :project: GDSiMS
