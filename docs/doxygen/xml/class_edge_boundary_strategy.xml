@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/BoundaryStrategy.h" line="38" column="5" bodyfile="includes/BoundaryStrategy.h" bodystart="38" bodyend="38"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="40" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="40" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="class_edge_boundary_strategy_1a58bed301f6c5f63a491bad0ebe982752" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -39,9 +39,10 @@
           <declname>p2</declname>
         </param>
         <briefdescription>
+<para>Calculates the distance between two points. </para>
         </briefdescription>
         <detaileddescription>
-<para>Calculates the distance between two points. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">p1</parametername>
 </parameternamelist>
@@ -66,13 +67,57 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/BoundaryStrategy.h" line="39" column="12" bodyfile="src/BoundaryStrategy.cpp" bodystart="41" bodyend="44"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="41" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/BoundaryStrategy.cpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_edge_boundary_strategy_1afa01b99a109ff593117736e8722da894" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="struct_point" kindref="compound">Point</ref></type>
+        <definition>Point EdgeBoundaryStrategy::relative_pos</definition>
+        <argsstring>(const Point &amp;p1, const Point &amp;p2) override</argsstring>
+        <name>relative_pos</name>
+        <qualifiedname>EdgeBoundaryStrategy::relative_pos</qualifiedname>
+        <reimplements refid="class_boundary_strategy_1a37b4146de796d583d01fc15ad3381ea8">relative_pos</reimplements>
+        <param>
+          <type>const <ref refid="struct_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+<para>Returns the relative position of the second point to the first. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">loc1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point 1 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">loc2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point 2 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The relative coordinates of the second point. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="42" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/BoundaryStrategy.cpp" bodystart="76" bodyend="79"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Implements the distance method for edge boundary conditions. </para>
     </briefdescription>
     <detaileddescription>
-<para>Implements the distance method for edge boundary conditions.</para>
 <para>The simulation area is assumed to have edge boundary conditions at x = side, y = side, and have ranges [0, side] in all directions. </para>
     </detaileddescription>
     <inheritancegraph>
@@ -99,11 +144,12 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/BoundaryStrategy.h" line="36" column="1" bodyfile="includes/BoundaryStrategy.h" bodystart="36" bodyend="40"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="38" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="38" bodyend="43"/>
     <listofallmembers>
       <member refid="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" prot="public" virt="non-virtual"><scope>EdgeBoundaryStrategy</scope><name>BoundaryStrategy</name></member>
       <member refid="class_edge_boundary_strategy_1a58bed301f6c5f63a491bad0ebe982752" prot="public" virt="virtual"><scope>EdgeBoundaryStrategy</scope><name>distance</name></member>
       <member refid="class_edge_boundary_strategy_1a1746c13f06d1b1514c32a41ef6804389" prot="public" virt="non-virtual"><scope>EdgeBoundaryStrategy</scope><name>EdgeBoundaryStrategy</name></member>
+      <member refid="class_edge_boundary_strategy_1afa01b99a109ff593117736e8722da894" prot="public" virt="virtual"><scope>EdgeBoundaryStrategy</scope><name>relative_pos</name></member>
       <member refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" prot="protected" virt="non-virtual"><scope>EdgeBoundaryStrategy</scope><name>side</name></member>
     </listofallmembers>
   </compounddef>

@@ -229,9 +229,12 @@
 <li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1a108ff3fb960f77177389a96a01ed1c74.html">Function random_real()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1adc1edb0039433704b7af2b7b850cabce.html">Template Function read_and_validate_type</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1af3edb3b1a762ddbe5539bc80ef5e023c.html">Function twister</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1ab5cd2d6cdf356d98576ea193f6a54476.html">Variable constants::max_dev</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5.html">Variable constants::num_gen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1a204a0248d18871c4d4d1b3e9a69ff495.html">Variable constants::pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1ab5cd2d6cdf356d98576ea193f6a54476.html">Variable max_dev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5.html">Variable num_gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1a204a0248d18871c4d4d1b3e9a69ff495.html">Variable pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1ab5cd2d6cdf356d98576ea193f6a54476.html">Variable max_dev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5.html">Variable num_gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1a204a0248d18871c4d4d1b3e9a69ff495.html">Variable pi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variable_random_8cpp_1a7071b0092ad8c5b57d6cc40c5f803df5.html">Variable rd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1abc6aedbb3f573c686c86355a0152cb0f.html">Variable set1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1aa09c4cdefed9eaa61256d2b5cb0b732c.html">Variable set10</a></li>
@@ -452,7 +455,8 @@ document.write(`
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv416BoundaryStrategy">
 <span id="_CPPv316BoundaryStrategy"></span><span id="_CPPv216BoundaryStrategy"></span><span id="BoundaryStrategy"></span><span class="target" id="class_boundary_strategy"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BoundaryStrategy</span></span></span><a class="headerlink" href="#_CPPv416BoundaryStrategy" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Boundary strategy base class. Defines the interface for boundary-type classes. </p>
+<dd><p>Boundary strategy base class. </p>
+<p>Defines the interface for boundary-type classes. </p>
 <p>Subclassed by <a class="reference internal" href="class_edge_boundary_strategy.html#class_edge_boundary_strategy"><span class="std std-ref">EdgeBoundaryStrategy</span></a>, <a class="reference internal" href="class_toroidal_boundary_strategy.html#class_toroidal_boundary_strategy"><span class="std std-ref">ToroidalBoundaryStrategy</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
@@ -470,6 +474,11 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N16BoundaryStrategy8distanceERK5PointRK5Point">
 <span id="_CPPv3N16BoundaryStrategy8distanceERK5PointRK5Point"></span><span id="_CPPv2N16BoundaryStrategy8distanceERK5PointRK5Point"></span><span id="BoundaryStrategy::distance__PointCR.PointCR"></span><span class="target" id="class_boundary_strategy_1ab845b40ed83aeb78018c23f45565cd0e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">distance</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="struct_point.html#_CPPv45Point" title="Point"><span class="n"><span class="pre">Point</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="struct_point.html#_CPPv45Point" title="Point"><span class="n"><span class="pre">Point</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p2</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N16BoundaryStrategy8distanceERK5PointRK5Point" title="Permalink to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16BoundaryStrategy12relative_posERK5PointRK5Point">
+<span id="_CPPv3N16BoundaryStrategy12relative_posERK5PointRK5Point"></span><span id="_CPPv2N16BoundaryStrategy12relative_posERK5PointRK5Point"></span><span id="BoundaryStrategy::relative_pos__PointCR.PointCR"></span><span class="target" id="class_boundary_strategy_1a37b4146de796d583d01fc15ad3381ea8"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="struct_point.html#_CPPv45Point" title="Point"><span class="n"><span class="pre">Point</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">relative_pos</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="struct_point.html#_CPPv45Point" title="Point"><span class="n"><span class="pre">Point</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="struct_point.html#_CPPv45Point" title="Point"><span class="n"><span class="pre">Point</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p2</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N16BoundaryStrategy12relative_posERK5PointRK5Point" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 </div>

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
   <compounddef id="dir_09e761304027c904456130627fd4dcf5" kind="dir">
-    <compoundname>includes</compoundname>
+    <compoundname>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes</compoundname>
     <innerfile refid="_aestivation_8h">Aestivation.h</innerfile>
     <innerfile refid="_boundary_strategy_8h">BoundaryStrategy.h</innerfile>
     <innerfile refid="constants_8h">constants.h</innerfile>
@@ -22,6 +22,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="includes/"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/"/>
   </compounddef>
 </doxygen>

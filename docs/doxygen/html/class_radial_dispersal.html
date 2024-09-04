@@ -99,11 +99,11 @@ Collaboration diagram for RadialDispersal:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_radial_dispersal__coll__graph.png" border="0" usemap="#a_radial_dispersal_coll__map" alt="Collaboration graph"/></div>
 <map name="a_radial_dispersal_coll__map" id="a_radial_dispersal_coll__map">
-<area shape="rect" title="Implements dispersive behaviour for radial dispersal, where connection weights between patches are de..." alt="" coords="5,449,172,668"/>
-<area shape="rect" href="class_dispersal.html" title="Dispersal base class." alt="" coords="22,160,155,400"/>
-<area shape="poly" title=" " alt="" coords="91,415,91,450,86,450,86,415"/>
-<area shape="rect" href="class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="21,5,157,96"/>
-<area shape="poly" title=" " alt="" coords="91,96,91,143,86,143,86,96"/>
+<area shape="rect" title="Implements dispersive behaviour for radial dispersal, where connection weights between patches are de..." alt="" coords="5,471,172,689"/>
+<area shape="rect" href="class_dispersal.html" title="Dispersal base class." alt="" coords="22,181,155,421"/>
+<area shape="poly" title=" " alt="" coords="91,436,91,471,86,471,86,436"/>
+<area shape="rect" href="class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="21,5,157,117"/>
+<area shape="poly" title=" " alt="" coords="91,117,91,164,86,164,86,117"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -132,10 +132,10 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:ad09b4df09539d8b421c8d7ed3199d0c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the set of connection indices and weights for a group of patches.  <br /></td></tr>
 <tr class="separator:ad09b4df09539d8b421c8d7ed3199d0c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae456b5d871312e16812fb6c4024288f6" id="r_ae456b5d871312e16812fb6c4024288f6"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt;, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae456b5d871312e16812fb6c4024288f6">compute_interval_union</a> (const std::pair&lt; double, double &gt; &amp;qq, const std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;input)</td></tr>
-<tr class="memdesc:ae456b5d871312e16812fb6c4024288f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">...  <br /></td></tr>
+<tr class="memdesc:ae456b5d871312e16812fb6c4024288f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the union of overlapping intervals and calculates the difference in the sum of lengths between the merged intervals and the original intervals.  <br /></td></tr>
 <tr class="separator:ae456b5d871312e16812fb6c4024288f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55a26db2720e9bf5811aa51cf3a8d873" id="r_a55a26db2720e9bf5811aa51cf3a8d873"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55a26db2720e9bf5811aa51cf3a8d873">wrap_around</a> (double value, double range)</td></tr>
-<tr class="memdesc:a55a26db2720e9bf5811aa51cf3a8d873"><td class="mdescLeft">&#160;</td><td class="mdescRight">...  <br /></td></tr>
+<tr class="memdesc:a55a26db2720e9bf5811aa51cf3a8d873"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to 'wrap' a real-valued number into the interval from zero to a maximum specified by the parameter 'range': if the input value is outside the interval it is wrapped around so that the output is within the interval.  <br /></td></tr>
 <tr class="separator:a55a26db2720e9bf5811aa51cf3a8d873"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4df7ea1ccbcc88991b3e63a46f0e0bb1" id="r_a4df7ea1ccbcc88991b3e63a46f0e0bb1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4df7ea1ccbcc88991b3e63a46f0e0bb1">get_sorted_positions</a> (const std::vector&lt; double &gt; &amp;numbers)</td></tr>
 <tr class="memdesc:a4df7ea1ccbcc88991b3e63a46f0e0bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the indices of the vector elements based on the numeric value of the corresponding element (in ascending order).  <br /></td></tr>
@@ -241,7 +241,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements dispersal by adults from and to each patch, depending on the patch connectivities. </p>
 <dl class="section note"><dt>Note</dt><dd>Only males and mated females are assumed to disperse from the patches. There is also dispersal mortality associated with this dispersal type.</dd></dl>
-<p>Only those individuals that disperse out of a patch in a connected direction will survive. The number of males (of a given genotype) that survive dispersal out of their patch is determined by a random draw from a binomial distribution with probability of the total connection weight for all its connected patches. Of those, the number dispersing to each of the connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Only those individuals that disperse out of a patch in a connected direction will survive. The number of dispersing males (of a given genotype) that survive dispersal out of their patch is determined by a random draw from a binomial distribution with probability of the total connection weight for all its connected patches. Of those, the number dispersing to each of the connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">sites</td><td>vector of all <a class="el" href="class_patch.html" title="Contains the information of a local mosquito population.">Patch</a> objects </td></tr>
   </table>
@@ -277,7 +277,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the set of connection indices and weights for a group of patches. </p>
-<p>If the distance between two patches is less than the the maximum dispersal distance, they are deemed to be connected. The connection weight is determined by ... </p><dl class="section note"><dt>Note</dt><dd>Under this dispersal type, patches are NOT connected to themselves. </dd></dl>
+<p>If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by angle of bisecting lines from the centre of the focal patch to the catchment of the recieving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum disperdal distance are not connected. </p><dl class="section note"><dt>Note</dt><dd>Under this dispersal type, patches are NOT connected to themselves. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">sites</td><td>vector of all Patches objects </td></tr>
@@ -312,7 +312,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the inter-point distances for a list of points. </p>
-<p>... </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">sites</td><td>vector of all <a class="el" href="class_patch.html" title="Contains the information of a local mosquito population.">Patch</a> objects </td></tr>
   </table>
@@ -349,15 +349,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>... </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Computes the union of overlapping intervals and calculates the difference in the sum of lengths between the merged intervals and the original intervals. </p>
+<p>This function takes a single interval <code>qq</code> and a vector of intervals <code>input</code>. It merges any overlapping intervals, includes the non-overlapping intervals as they are, and calculates the total sum of lengths of the resulting intervals. It also computes the difference between the total sum of lengths of the merged intervals and the original interval. This is required to compute the extent of flight path between a focal patch and a recieving patch, while accounting for the shadowing effect of nearer patches </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">qq</td><td>... </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>... </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">qq</td><td>A pair of doubles representing the interval to be merged with the input intervals. The first value is the start of the interval, and the second value is the end of the interval. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>A vector of pairs of doubles, where each pair represents an interval. Each interval has a start value (first) and an end value (second). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>... </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair consisting of:<ul>
+<li>A vector of pairs of doubles representing the union of the merged and non-overlapping intervals, sorted by the start of each interval.</li>
+<li>A double representing the difference between the sum of lengths of the merged intervals and the original intervals. </li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The function assumes that each interval in the input is well-formed, meaning that for each interval <code>std::pair&lt;double, double&gt;</code>, the first value (start) is less than or equal to the second value (end). </dd></dl>
 
 </div>
 </div>
@@ -457,15 +462,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>... </p>
+<p>Function to 'wrap' a real-valued number into the interval from zero to a maximum specified by the parameter 'range': if the input value is outside the interval it is wrapped around so that the output is within the interval. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>... </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">range</td><td>... </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>the real-valued number to be wrapped around </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">range</td><td>the maximum value of the interval to be wrapped into </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>... </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the wrapped number within the interval </dd></dl>
 
 </div>
 </div>

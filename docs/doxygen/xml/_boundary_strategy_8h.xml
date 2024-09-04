@@ -3,70 +3,130 @@
   <compounddef id="_boundary_strategy_8h" kind="file" language="C++">
     <compoundname>BoundaryStrategy.h</compoundname>
     <includes refid="_point_8h" local="yes">Point.h</includes>
-    <includedby refid="_dispersal_8h" local="yes">includes/Dispersal.h</includedby>
-    <includedby refid="_boundary_strategy_8cpp" local="yes">src/BoundaryStrategy.cpp</includedby>
+    <includedby refid="_dispersal_8h" local="yes">C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h</includedby>
+    <includedby refid="_boundary_strategy_8cpp" local="yes">C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/BoundaryStrategy.cpp</includedby>
     <incdepgraph>
       <node id="1">
-        <label>includes/BoundaryStrategy.h</label>
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h</label>
         <link refid="_boundary_strategy_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
       <node id="2">
         <label>Point.h</label>
-        <link refid="_point_8h_source"/>
+        <link refid="_point_8h"/>
       </node>
     </incdepgraph>
     <invincdepgraph>
       <node id="5">
-        <label>includes/Aestivation.h</label>
-        <link refid="_aestivation_8h_source"/>
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h</label>
+        <link refid="_aestivation_8h"/>
         <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>includes/BoundaryStrategy.h</label>
-        <link refid="_boundary_strategy_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>includes/Dispersal.h</label>
-        <link refid="_dispersal_8h_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>includes/GDRelease.h</label>
-        <link refid="_g_d_release_8h_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>includes/Model.h</label>
-        <link refid="_model_8h_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>includes/Patch.h</label>
-        <link refid="_patch_8h_source"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
       </node>
+      <node id="1">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h</label>
+        <link refid="_boundary_strategy_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h</label>
+        <link refid="_dispersal_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h</label>
+        <link refid="_g_d_release_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h</label>
+        <link refid="_model_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h</label>
+        <link refid="_patch_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h</label>
+        <link refid="_record_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp</label>
+        <link refid="_aestivation_8cpp"/>
+      </node>
+      <node id="15">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/BoundaryStrategy.cpp</label>
+        <link refid="_boundary_strategy_8cpp"/>
+      </node>
+      <node id="14">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp</label>
+        <link refid="_dispersal_8cpp"/>
+      </node>
+      <node id="9">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/GDRelease.cpp</label>
+        <link refid="_g_d_release_8cpp"/>
+      </node>
       <node id="7">
-        <label>includes/Record.h</label>
-        <link refid="_record_8h_source"/>
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp</label>
+        <link refid="_model_8cpp"/>
+      </node>
+      <node id="13">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp</label>
+        <link refid="_patch_8cpp"/>
+      </node>
+      <node id="11">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp</label>
+        <link refid="_record_8cpp"/>
+      </node>
+      <node id="12">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Simulation.cpp</label>
+        <link refid="_simulation_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="class_boundary_strategy" prot="public">BoundaryStrategy</innerclass>
@@ -80,31 +140,34 @@
 <codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>GENERALMETAPOP_BOUNDARYSTRATEGY_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GENERALMETAPOP_BOUNDARYSTRATEGY_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Point.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_point_8h" kindref="compound">Point.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
 <codeline lineno="9" refid="class_boundary_strategy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref><sp/>{</highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="15" refid="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" kindref="member">BoundaryStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kindref="member">side</ref>):<sp/><ref refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kindref="member">side</ref>(<ref refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kindref="member">side</ref>)<sp/>{};</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>distance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>p1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>p2)<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="19" refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kindref="member">side</ref>;<sp/></highlight></codeline>
-<codeline lineno="20"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="class_toroidal_boundary_strategy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_toroidal_boundary_strategy" kindref="compound">ToroidalBoundaryStrategy</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref><sp/>{</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_toroidal_boundary_strategy" kindref="compound">ToroidalBoundaryStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kindref="member">side</ref>):<sp/><ref refid="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" kindref="member">BoundaryStrategy</ref>(<ref refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kindref="member">side</ref>)<sp/>{};</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_toroidal_boundary_strategy_1a262f8bca65f10efa4e88c1aa67ac41ee" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/>&amp;p1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/>&amp;p2)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36" refid="class_edge_boundary_strategy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_edge_boundary_strategy" kindref="compound">EdgeBoundaryStrategy</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref><sp/>{</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_edge_boundary_strategy" kindref="compound">EdgeBoundaryStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kindref="member">side</ref>):<sp/><ref refid="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" kindref="member">BoundaryStrategy</ref>(<ref refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kindref="member">side</ref>)<sp/>{};</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_edge_boundary_strategy_1a58bed301f6c5f63a491bad0ebe982752" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>p1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>p2)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//GENERALMETAPOP_BOUNDARYSTRATEGY_H</highlight></codeline>
+<codeline lineno="16" refid="class_boundary_strategy_1ab845b40ed83aeb78018c23f45565cd0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_boundary_strategy_1ab845b40ed83aeb78018c23f45565cd0e" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>p1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>p2)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="17" refid="class_boundary_strategy_1a37b4146de796d583d01fc15ad3381ea8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/><ref refid="class_boundary_strategy_1a37b4146de796d583d01fc15ad3381ea8" kindref="member">relative_pos</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/>&amp;p1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/>&amp;p2)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20" refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kindref="member">side</ref>;<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_toroidal_boundary_strategy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_toroidal_boundary_strategy" kindref="compound">ToroidalBoundaryStrategy</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29" refid="class_toroidal_boundary_strategy_1a5ea5b1bb1027b4722d19ece1d1209509" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_toroidal_boundary_strategy_1a5ea5b1bb1027b4722d19ece1d1209509" kindref="member">ToroidalBoundaryStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kindref="member">side</ref>):<sp/><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref>(<ref refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kindref="member">side</ref>)<sp/>{};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_toroidal_boundary_strategy_1a262f8bca65f10efa4e88c1aa67ac41ee" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/>&amp;p1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/>&amp;p2)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/><ref refid="class_toroidal_boundary_strategy_1a47769682a09b91733ea8295517afe245" kindref="member">relative_pos</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/>&amp;p1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/>&amp;p2)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="class_edge_boundary_strategy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_edge_boundary_strategy" kindref="compound">EdgeBoundaryStrategy</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40" refid="class_edge_boundary_strategy_1a1746c13f06d1b1514c32a41ef6804389" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_edge_boundary_strategy_1a1746c13f06d1b1514c32a41ef6804389" kindref="member">EdgeBoundaryStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kindref="member">side</ref>):<sp/><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref>(<ref refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kindref="member">side</ref>)<sp/>{};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_edge_boundary_strategy_1a58bed301f6c5f63a491bad0ebe982752" kindref="member">distance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>p1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>p2)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/><ref refid="class_edge_boundary_strategy_1afa01b99a109ff593117736e8722da894" kindref="member">relative_pos</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/>&amp;p1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref><sp/>&amp;p2)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//GENERALMETAPOP_BOUNDARYSTRATEGY_H</highlight></codeline>
     </programlisting>
-    <location file="includes/BoundaryStrategy.h"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h"/>
   </compounddef>
 </doxygen>

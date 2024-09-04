@@ -12,13 +12,13 @@
         <name>release_sites</name>
         <qualifiedname>SchedGDRelease::release_sites</qualifiedname>
         <briefdescription>
+<para>Gene drive release sites. </para>
         </briefdescription>
         <detaileddescription>
-<para>Gene drive release sites. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/GDRelease.h" line="50" column="13" bodyfile="includes/GDRelease.h" bodystart="50" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="50" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" bodystart="50" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -41,9 +41,10 @@
           <declname>sites</declname>
         </param>
         <briefdescription>
+<para><ref refid="class_sched_g_d_release" kindref="compound">SchedGDRelease</ref> constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para><ref refid="class_sched_g_d_release" kindref="compound">SchedGDRelease</ref> constructor. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">params</parametername>
 </parameternamelist>
@@ -56,7 +57,7 @@
 <parametername direction="in">rel_sites</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>chosen release sites, indices relative to Model::sites </para>
+<para>chosen release sites, indices relative to <ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">Model::sites</ref> </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -72,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/GDRelease.h" line="48" column="1" bodyfile="src/GDRelease.cpp" bodystart="84" bodyend="89"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="48" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/GDRelease.cpp" bodystart="84" bodyend="89"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -92,9 +93,10 @@
           <declname>sites</declname>
         </param>
         <briefdescription>
+<para>Selects the release sites corresponding to the selected release time. </para>
         </briefdescription>
         <detaileddescription>
-<para>Selects the release sites corresponding to the selected release time. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">day</parametername>
 </parameternamelist>
@@ -117,13 +119,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/GDRelease.h" line="51" column="17" bodyfile="src/GDRelease.cpp" bodystart="98" bodyend="101"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="51" column="17" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/GDRelease.cpp" bodystart="98" bodyend="101"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Implements gene drive release for pre-selected release sites. </para>
     </briefdescription>
     <detaileddescription>
-<para>Implements gene drive release for pre-selected release sites.</para>
 <para>Release sites are kept the same for each release, using the same pre-selected sites. </para>
     </detaileddescription>
     <inheritancegraph>
@@ -150,7 +152,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/GDRelease.h" line="46" column="1" bodyfile="includes/GDRelease.h" bodystart="46" bodyend="52"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="46" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" bodystart="46" bodyend="52"/>
     <listofallmembers>
       <member refid="class_g_d_release_1a7d3d5cfa8f9d71e08383edf435fcfdbb" prot="public" virt="non-virtual"><scope>SchedGDRelease</scope><name>GDRelease</name></member>
       <member refid="class_g_d_release_1a69a14d4b9e59ee1e1375d76630da00e3" prot="protected" virt="non-virtual"><scope>SchedGDRelease</scope><name>is_release_time</name></member>

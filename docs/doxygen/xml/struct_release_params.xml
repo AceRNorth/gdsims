@@ -11,13 +11,13 @@
         <name>num_driver_M</name>
         <qualifiedname>ReleaseParams::num_driver_M</qualifiedname>
         <briefdescription>
+<para>Number of drive heterozygous (WD) male mosquitoes per release. </para>
         </briefdescription>
         <detaileddescription>
-<para>Number of drive heterozygous (WD) male mosquitoes per release. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Params.h" line="49" column="5" bodyfile="includes/Params.h" bodystart="49" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" line="49" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_release_params_1a58423db2e16b0553d09ebec4d0d8a625" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -26,13 +26,13 @@
         <name>num_driver_sites</name>
         <qualifiedname>ReleaseParams::num_driver_sites</qualifiedname>
         <briefdescription>
+<para>Number of gene drive release sites per year. </para>
         </briefdescription>
         <detaileddescription>
-<para>Number of gene drive release sites per year. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Params.h" line="50" column="5" bodyfile="includes/Params.h" bodystart="50" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" line="50" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_release_params_1a1c79ed7605dac900e139a7e805ba2c97" prot="public" static="no" mutable="no">
         <type>std::vector&lt; int &gt;</type>
@@ -41,21 +41,27 @@
         <name>release_times</name>
         <qualifiedname>ReleaseParams::release_times</qualifiedname>
         <briefdescription>
+<para>Days on which the gene drive mosquitoes will be released. </para>
         </briefdescription>
         <detaileddescription>
-<para>Days on which the gene drive mosquitoes will be released. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Params.h" line="51" column="13" bodyfile="includes/Params.h" bodystart="51" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" line="51" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" bodystart="51" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Gene drive release model parameters. </para>
     </briefdescription>
     <detaileddescription>
-<para>Gene drive release model parameters. </para>
     </detaileddescription>
-    <location file="includes/Params.h" line="48" column="1" bodyfile="includes/Params.h" bodystart="48" bodyend="52"/>
+    <collaborationgraph>
+      <node id="1">
+        <label>ReleaseParams</label>
+        <link refid="struct_release_params"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" line="48" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" bodystart="48" bodyend="52"/>
     <listofallmembers>
       <member refid="struct_release_params_1ad8eab6bc3fe0bed5e774c63d7f43f350" prot="public" virt="non-virtual"><scope>ReleaseParams</scope><name>num_driver_M</name></member>
       <member refid="struct_release_params_1a58423db2e16b0553d09ebec4d0d8a625" prot="public" virt="non-virtual"><scope>ReleaseParams</scope><name>num_driver_sites</name></member>

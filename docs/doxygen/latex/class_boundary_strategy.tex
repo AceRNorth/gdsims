@@ -33,6 +33,8 @@ Collaboration diagram for Boundary\+Strategy\+:\nopagebreak
 \mbox{\hyperlink{class_boundary_strategy_a8fbbc051751dbb883c0f00673d9027c4}{Boundary\+Strategy}} (double \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}})
 \begin{DoxyCompactList}\small\item\em \doxylink{class_boundary_strategy}{Boundary\+Strategy} constructor. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_boundary_strategy_ab845b40ed83aeb78018c23f45565cd0e}{distance}} (const \mbox{\hyperlink{struct_point}{Point}} \&p1, const \mbox{\hyperlink{struct_point}{Point}} \&p2)=0
+\item 
+virtual \mbox{\hyperlink{struct_point}{Point}} \mbox{\hyperlink{class_boundary_strategy_a37b4146de796d583d01fc15ad3381ea8}{relative\+\_\+pos}} (const \mbox{\hyperlink{struct_point}{Point}} \&p1, const \mbox{\hyperlink{struct_point}{Point}} \&p2)=0
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -74,6 +76,16 @@ Defines the interface for boundary-\/type classes.
 
 
 Implemented in \mbox{\hyperlink{class_toroidal_boundary_strategy_a262f8bca65f10efa4e88c1aa67ac41ee}{Toroidal\+Boundary\+Strategy}}, and \mbox{\hyperlink{class_edge_boundary_strategy_a58bed301f6c5f63a491bad0ebe982752}{Edge\+Boundary\+Strategy}}.
+
+\Hypertarget{class_boundary_strategy_a37b4146de796d583d01fc15ad3381ea8}\label{class_boundary_strategy_a37b4146de796d583d01fc15ad3381ea8} 
+\index{BoundaryStrategy@{BoundaryStrategy}!relative\_pos@{relative\_pos}}
+\index{relative\_pos@{relative\_pos}!BoundaryStrategy@{BoundaryStrategy}}
+\doxysubsubsection{\texorpdfstring{relative\_pos()}{relative\_pos()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{struct_point}{Point}} Boundary\+Strategy\+::relative\+\_\+pos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_point}{Point}} \&}]{p1,  }\item[{const \mbox{\hyperlink{struct_point}{Point}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_toroidal_boundary_strategy_a47769682a09b91733ea8295517afe245}{Toroidal\+Boundary\+Strategy}}, and \mbox{\hyperlink{class_edge_boundary_strategy_afa01b99a109ff593117736e8722da894}{Edge\+Boundary\+Strategy}}.
 
 
 

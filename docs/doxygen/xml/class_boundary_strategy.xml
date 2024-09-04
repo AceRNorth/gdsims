@@ -13,13 +13,13 @@
         <name>side</name>
         <qualifiedname>BoundaryStrategy::side</qualifiedname>
         <briefdescription>
+<para>Size of one side of the simulation square. </para>
         </briefdescription>
         <detaileddescription>
-<para>Size of one side of the simulation square. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/BoundaryStrategy.h" line="19" column="12" bodyfile="includes/BoundaryStrategy.h" bodystart="19" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="20" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="20" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -34,9 +34,10 @@
           <declname>side</declname>
         </param>
         <briefdescription>
+<para><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref> constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref> constructor. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">side</parametername>
 </parameternamelist>
@@ -49,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/BoundaryStrategy.h" line="15" column="5" bodyfile="includes/BoundaryStrategy.h" bodystart="15" bodyend="15"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="15" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="15" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="class_boundary_strategy_1ab845b40ed83aeb78018c23f45565cd0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>double</type>
@@ -73,13 +74,38 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/BoundaryStrategy.h" line="16" column="20"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="16" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_boundary_strategy_1a37b4146de796d583d01fc15ad3381ea8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="struct_point" kindref="compound">Point</ref></type>
+        <definition>virtual Point BoundaryStrategy::relative_pos</definition>
+        <argsstring>(const Point &amp;p1, const Point &amp;p2)=0</argsstring>
+        <name>relative_pos</name>
+        <qualifiedname>BoundaryStrategy::relative_pos</qualifiedname>
+        <reimplementedby refid="class_toroidal_boundary_strategy_1a47769682a09b91733ea8295517afe245">relative_pos</reimplementedby>
+        <reimplementedby refid="class_edge_boundary_strategy_1afa01b99a109ff593117736e8722da894">relative_pos</reimplementedby>
+        <param>
+          <type>const <ref refid="struct_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="17" column="19"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Boundary strategy base class. </para>
     </briefdescription>
     <detaileddescription>
-<para>Boundary strategy base class. Defines the interface for boundary-type classes. </para>
+<para>Defines the interface for boundary-type classes. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -99,10 +125,17 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="includes/BoundaryStrategy.h" line="9" column="1" bodyfile="includes/BoundaryStrategy.h" bodystart="9" bodyend="20"/>
+    <collaborationgraph>
+      <node id="1">
+        <label>BoundaryStrategy</label>
+        <link refid="class_boundary_strategy"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="9" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="9" bodyend="21"/>
     <listofallmembers>
       <member refid="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" prot="public" virt="non-virtual"><scope>BoundaryStrategy</scope><name>BoundaryStrategy</name></member>
       <member refid="class_boundary_strategy_1ab845b40ed83aeb78018c23f45565cd0e" prot="public" virt="pure-virtual"><scope>BoundaryStrategy</scope><name>distance</name></member>
+      <member refid="class_boundary_strategy_1a37b4146de796d583d01fc15ad3381ea8" prot="public" virt="pure-virtual"><scope>BoundaryStrategy</scope><name>relative_pos</name></member>
       <member refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" prot="protected" virt="non-virtual"><scope>BoundaryStrategy</scope><name>side</name></member>
     </listofallmembers>
   </compounddef>

@@ -12,13 +12,13 @@
     <includes refid="_g_d_release_8h" local="yes">GDRelease.h</includes>
     <includes refid="_seasonality_8h" local="yes">Seasonality.h</includes>
     <includes refid="_point_8h" local="yes">Point.h</includes>
-    <includedby refid="_patch_8h" local="yes">includes/Patch.h</includedby>
-    <includedby refid="_model_8cpp" local="yes">src/Model.cpp</includedby>
-    <includedby refid="_simulation_8cpp" local="yes">src/Simulation.cpp</includedby>
+    <includedby refid="_patch_8h" local="yes">C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h</includedby>
+    <includedby refid="_model_8cpp" local="yes">C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp</includedby>
+    <includedby refid="_simulation_8cpp" local="yes">C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Simulation.cpp</includedby>
     <incdepgraph>
       <node id="11">
         <label>Aestivation.h</label>
-        <link refid="_aestivation_8h_source"/>
+        <link refid="_aestivation_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
@@ -32,13 +32,13 @@
       </node>
       <node id="10">
         <label>BoundaryStrategy.h</label>
-        <link refid="_boundary_strategy_8h_source"/>
+        <link refid="_boundary_strategy_8h"/>
         <childnode refid="7" relation="include">
         </childnode>
       </node>
       <node id="8">
         <label>Dispersal.h</label>
-        <link refid="_dispersal_8h_source"/>
+        <link refid="_dispersal_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
@@ -58,7 +58,7 @@
       </node>
       <node id="12">
         <label>GDRelease.h</label>
-        <link refid="_g_d_release_8h_source"/>
+        <link refid="_g_d_release_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
@@ -67,7 +67,7 @@
         </childnode>
       </node>
       <node id="1">
-        <label>includes/Model.h</label>
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h</label>
         <link refid="_model_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -92,13 +92,13 @@
       </node>
       <node id="5">
         <label>Params.h</label>
-        <link refid="_params_8h_source"/>
+        <link refid="_params_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
       <node id="6">
         <label>Patch.h</label>
-        <link refid="_patch_8h_source"/>
+        <link refid="_patch_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -114,11 +114,11 @@
       </node>
       <node id="7">
         <label>Point.h</label>
-        <link refid="_point_8h_source"/>
+        <link refid="_point_8h"/>
       </node>
       <node id="13">
         <label>Seasonality.h</label>
-        <link refid="_seasonality_8h_source"/>
+        <link refid="_seasonality_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
@@ -126,7 +126,7 @@
       </node>
       <node id="4">
         <label>constants.h</label>
-        <link refid="constants_8h_source"/>
+        <link refid="constants_8h"/>
       </node>
       <node id="3">
         <label>array</label>
@@ -140,48 +140,102 @@
     </incdepgraph>
     <invincdepgraph>
       <node id="3">
-        <label>includes/Aestivation.h</label>
-        <link refid="_aestivation_8h_source"/>
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h</label>
+        <link refid="_aestivation_8h"/>
         <childnode refid="1" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>includes/Dispersal.h</label>
-        <link refid="_dispersal_8h_source"/>
-        <childnode refid="1" relation="include">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>includes/GDRelease.h</label>
-        <link refid="_g_d_release_8h_source"/>
-        <childnode refid="1" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>includes/Model.h</label>
-        <link refid="_model_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>includes/Patch.h</label>
-        <link refid="_patch_8h_source"/>
-        <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
+      </node>
+      <node id="6">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h</label>
+        <link refid="_dispersal_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h</label>
+        <link refid="_g_d_release_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h</label>
+        <link refid="_model_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h</label>
+        <link refid="_patch_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
         <childnode refid="1" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="6">
-        <label>includes/Record.h</label>
-        <link refid="_record_8h_source"/>
+      <node id="10">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h</label>
+        <link refid="_record_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp</label>
+        <link refid="_aestivation_8cpp"/>
+      </node>
+      <node id="7">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp</label>
+        <link refid="_dispersal_8cpp"/>
+      </node>
+      <node id="9">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/GDRelease.cpp</label>
+        <link refid="_g_d_release_8cpp"/>
+      </node>
+      <node id="5">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp</label>
+        <link refid="_model_8cpp"/>
+      </node>
+      <node id="13">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp</label>
+        <link refid="_patch_8cpp"/>
+      </node>
+      <node id="11">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp</label>
+        <link refid="_record_8cpp"/>
+      </node>
+      <node id="12">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Simulation.cpp</label>
+        <link refid="_simulation_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="class_model" prot="public">Model</innerclass>
@@ -195,14 +249,14 @@
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;array&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;constants.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Params.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Patch.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Dispersal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Aestivation.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GDRelease.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Seasonality.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Point.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="constants_8h" kindref="compound">constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_params_8h" kindref="compound">Params.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_patch_8h" kindref="compound">Patch.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_dispersal_8h" kindref="compound">Dispersal.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_aestivation_8h" kindref="compound">Aestivation.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_g_d_release_8h" kindref="compound">GDRelease.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_seasonality_8h" kindref="compound">Seasonality.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_point_8h" kindref="compound">Point.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_patch" kindref="compound">Patch</ref>;</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_aestivation" kindref="compound">Aestivation</ref>;</highlight></codeline>
@@ -212,8 +266,8 @@
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25" refid="class_model" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_model" kindref="compound">Model</ref><sp/>{</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a46b88e44d343b0bc26544e1e77538e5b" kindref="member">Model</ref>(<ref refid="struct_model_params" kindref="compound">ModelParams</ref><sp/>*params,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;std::array&lt;std::array<sp/>&lt;double,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>&amp;inher_frac,<sp/><ref refid="struct_sine_rainfall_params" kindref="compound">SineRainfallParams</ref><sp/>*season,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_mean,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_var,<sp/>std::vector&lt;int&gt;<sp/>rel_sites<sp/>=<sp/>{},<sp/>BoundaryType<sp/>boundary<sp/>=<sp/>BoundaryType::Toroid,<sp/>DispersalType<sp/>disp_type<sp/>=<sp/>DispersalType::DistanceKernel,<sp/>std::vector&lt;Point&gt;<sp/>coords<sp/>=<sp/>{});</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a46b88e44d343b0bc26544e1e77538e5b" kindref="member">Model</ref>(<ref refid="struct_model_params" kindref="compound">ModelParams</ref><sp/>*params,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;std::array&lt;std::array<sp/>&lt;double,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>&amp;inher_frac,<sp/><ref refid="struct_input_rainfall_params" kindref="compound">InputRainfallParams</ref><sp/>*season,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_mean,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_var,<sp/>std::vector&lt;int&gt;<sp/>rel_sites<sp/>=<sp/>{},<sp/>BoundaryType<sp/>boundary<sp/>=<sp/>BoundaryType::Toroid,<sp/>DispersalType<sp/>disp_type<sp/>=<sp/>DispersalType::DistanceKernel,<sp/>std::vector&lt;Point&gt;<sp/>coords<sp/>=<sp/>{});</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a46b88e44d343b0bc26544e1e77538e5b" kindref="member">Model</ref>(<ref refid="struct_model_params" kindref="compound">ModelParams</ref><sp/>*params,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;std::array&lt;std::array<sp/>&lt;double,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>&amp;inher_frac,<sp/><ref refid="struct_sine_rainfall_params" kindref="compound">SineRainfallParams</ref><sp/>*season,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_mean,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_var,<sp/>std::vector&lt;int&gt;<sp/>rel_sites<sp/>=<sp/>{},<sp/><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8" kindref="member">BoundaryType</ref><sp/>boundary<sp/>=<sp/><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d" kindref="member">BoundaryType::Toroid</ref>,<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04a" kindref="member">DispersalType</ref><sp/>disp_type<sp/>=<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf" kindref="member">DispersalType::DistanceKernel</ref>,<sp/>std::vector&lt;Point&gt;<sp/>coords<sp/>=<sp/>{});</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a46b88e44d343b0bc26544e1e77538e5b" kindref="member">Model</ref>(<ref refid="struct_model_params" kindref="compound">ModelParams</ref><sp/>*params,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;std::array&lt;std::array<sp/>&lt;double,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>&amp;inher_frac,<sp/><ref refid="struct_input_rainfall_params" kindref="compound">InputRainfallParams</ref><sp/>*season,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_mean,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_var,<sp/>std::vector&lt;int&gt;<sp/>rel_sites<sp/>=<sp/>{},<sp/><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8" kindref="member">BoundaryType</ref><sp/>boundary<sp/>=<sp/><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d" kindref="member">BoundaryType::Toroid</ref>,<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04a" kindref="member">DispersalType</ref><sp/>disp_type<sp/>=<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf" kindref="member">DispersalType::DistanceKernel</ref>,<sp/>std::vector&lt;Point&gt;<sp/>coords<sp/>=<sp/>{});</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1ad6ebd2062a0b823db841a0b88baac4c0" kindref="member">~Model</ref>();</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a3d359ced00aacc31a7b50c53b8b1e340" kindref="member">initiate</ref>();</highlight></codeline>
@@ -226,45 +280,45 @@
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;<sp/><ref refid="class_model_1a6d5f4f68f41e76c3e966e312d2f6e9e3" kindref="member">calculate_tot_M_gen</ref>();</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Patch*&gt;<sp/><ref refid="class_model_1a17b3a93529de4ef762254f9a1932b67e" kindref="member">get_sites</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_model_1a6499bfa0eeb48133e352ce72f79aee9d" kindref="member">get_day</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_model_1a04c1c541fc6d4f4c12f854b971197ea5" kindref="member">get_alpha</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alpha0);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_model_1a04c1c541fc6d4f4c12f854b971197ea5" kindref="member">get_alpha</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_model_1ad1efe8336546de49c99d0d8c8ec8e6e8" kindref="member">alpha0</ref>);</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Patch*&gt;<sp/>sites;<sp/></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_dispersal" kindref="compound">Dispersal</ref>*<sp/>dispersal;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_aestivation" kindref="compound">Aestivation</ref>*<sp/>aestivation;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_g_d_release" kindref="compound">GDRelease</ref>*<sp/>gd_release;</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_seasonality" kindref="compound">Seasonality</ref>*<sp/>seasonality;</highlight></codeline>
+<codeline lineno="44" refid="class_model_1a9aadb122b13c0e8be4f2437117264879" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Patch*&gt;<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>;<sp/></highlight></codeline>
+<codeline lineno="45" refid="class_model_1a76d71b89f763d239c57657156b143231" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_dispersal" kindref="compound">Dispersal</ref>*<sp/><ref refid="class_model_1a76d71b89f763d239c57657156b143231" kindref="member">dispersal</ref>;</highlight></codeline>
+<codeline lineno="46" refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_aestivation" kindref="compound">Aestivation</ref>*<sp/><ref refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kindref="member">aestivation</ref>;</highlight></codeline>
+<codeline lineno="47" refid="class_model_1a9d0be7ddf0f62f9e9444ab5be8be8da6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_g_d_release" kindref="compound">GDRelease</ref>*<sp/><ref refid="class_model_1a9d0be7ddf0f62f9e9444ab5be8be8da6" kindref="member">gd_release</ref>;</highlight></codeline>
+<codeline lineno="48" refid="class_model_1a9d3cb8400740de092adeaa6fdea121a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_seasonality" kindref="compound">Seasonality</ref>*<sp/><ref refid="class_model_1a9d3cb8400740de092adeaa6fdea121a8" kindref="member">seasonality</ref>;</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day_sim;<sp/></highlight></codeline>
+<codeline lineno="50" refid="class_model_1a864dafb787704b50f6b3ca2b416533df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_model_1a864dafb787704b50f6b3ca2b416533df" kindref="member">day_sim</ref>;<sp/></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>simulation<sp/>area<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_pat;<sp/></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>side;<sp/></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_initial_pops_params" kindref="compound">InitialPopsParams</ref><sp/>*initial_pops;<sp/></highlight></codeline>
+<codeline lineno="53" refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref>;<sp/></highlight></codeline>
+<codeline lineno="54" refid="class_model_1ad456b9a7464879d80abb19f1d14971cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_model_1ad456b9a7464879d80abb19f1d14971cf" kindref="member">side</ref>;<sp/></highlight></codeline>
+<codeline lineno="56" refid="class_model_1a9f55ce896e1332f492570af65cfe76d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_initial_pops_params" kindref="compound">InitialPopsParams</ref><sp/>*<ref refid="class_model_1a9f55ce896e1332f492570af65cfe76d4" kindref="member">initial_pops</ref>;<sp/></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>juvenile<sp/>development<sp/>parameters<sp/>-<sp/>common<sp/>for<sp/>all<sp/>Patches</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>min_dev;<sp/></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;double,<sp/>constants::max_dev+1&gt;<sp/>dev_duration_probs;<sp/></highlight></codeline>
+<codeline lineno="59" refid="class_model_1af1ba01eda7176a872d16eff80fa8cde9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_model_1af1ba01eda7176a872d16eff80fa8cde9" kindref="member">min_dev</ref>;<sp/></highlight></codeline>
+<codeline lineno="60" refid="class_model_1a1d8427bbcb5f7e9db04d213111e208ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;double,<sp/>constants::max_dev+1&gt;<sp/><ref refid="class_model_1a1d8427bbcb5f7e9db04d213111e208ba" kindref="member">dev_duration_probs</ref>;<sp/></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>inheritance</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;std::array&lt;std::array<sp/>&lt;double,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>inher_fraction;<sp/></highlight></codeline>
+<codeline lineno="63" refid="class_model_1a0fb3ac96dac77d8c0f67142ab70ad899" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;std::array&lt;std::array<sp/>&lt;double,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/><ref refid="class_model_1a0fb3ac96dac77d8c0f67142ab70ad899" kindref="member">inher_fraction</ref>;<sp/></highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Patch<sp/>construction<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alpha0_mean;<sp/></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alpha0_variance;<sp/></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alpha0();</highlight></codeline>
+<codeline lineno="66" refid="class_model_1a106416d6d9dc6510bda17ea0b6b1b588" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_model_1a106416d6d9dc6510bda17ea0b6b1b588" kindref="member">alpha0_mean</ref>;<sp/></highlight></codeline>
+<codeline lineno="67" refid="class_model_1ad10cafc06c6b49b020c22efb034f8362" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_model_1ad10cafc06c6b49b020c22efb034f8362" kindref="member">alpha0_variance</ref>;<sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_model_1ad1efe8336546de49c99d0d8c8ec8e6e8" kindref="member">alpha0</ref>();</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>initiation<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>populate_sites();</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_dev_duration_probs(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>min_time,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_time);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1add15fa39b2e8fda3fefc551de4d0e1bb" kindref="member">populate_sites</ref>();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a1b78097ea008a3b4cc36b321c7d42289" kindref="member">set_dev_duration_probs</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>min_time,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_time);</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"></highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>life-processes<sp/>-<sp/>interface<sp/>with<sp/>Patch</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>run_step(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day);</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>juv_get_older();</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>adults_die();</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>virgins_mate();</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>lay_eggs();</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>juv_eclose();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1ae7c17f3d562ffc8baea8945ba4ffd3c3" kindref="member">run_step</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a2a3151eb1bb6333c2ba103f0c7c6c475" kindref="member">juv_get_older</ref>();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1ae2fa6af0cf426e1df144e4dcbee4069d" kindref="member">adults_die</ref>();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a76f26441a5112d1f596d5b9317734be4" kindref="member">virgins_mate</ref>();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a85c48027be32159a36337531249a435a" kindref="member">lay_eggs</ref>();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1af30fafd15a6451c20c3dcef622aaf6d0" kindref="member">juv_eclose</ref>();</highlight></codeline>
 <codeline lineno="81"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//GENERALMETAPOP_MODEL_H</highlight></codeline>
     </programlisting>
-    <location file="includes/Model.h"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h"/>
   </compounddef>
 </doxygen>

@@ -5,19 +5,19 @@
     <includes local="no">vector</includes>
     <includes local="no">array</includes>
     <includes refid="constants_8h" local="yes">constants.h</includes>
-    <includedby refid="_aestivation_8cpp" local="yes">src/Aestivation.cpp</includedby>
-    <includedby refid="_dispersal_8cpp" local="yes">src/Dispersal.cpp</includedby>
-    <includedby refid="_g_d_release_8cpp" local="yes">src/GDRelease.cpp</includedby>
-    <includedby refid="_model_8cpp" local="yes">src/Model.cpp</includedby>
-    <includedby refid="_patch_8cpp" local="yes">src/Patch.cpp</includedby>
-    <includedby refid="random_8cpp" local="yes">src/random.cpp</includedby>
+    <includedby refid="_aestivation_8cpp" local="yes">C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp</includedby>
+    <includedby refid="_dispersal_8cpp" local="yes">C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp</includedby>
+    <includedby refid="_g_d_release_8cpp" local="yes">C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/GDRelease.cpp</includedby>
+    <includedby refid="_model_8cpp" local="yes">C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp</includedby>
+    <includedby refid="_patch_8cpp" local="yes">C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp</includedby>
+    <includedby refid="random_8cpp" local="yes">C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/random.cpp</includedby>
     <incdepgraph>
       <node id="4">
         <label>constants.h</label>
-        <link refid="constants_8h_source"/>
+        <link refid="constants_8h"/>
       </node>
       <node id="1">
-        <label>includes/random.h</label>
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h</label>
         <link refid="random_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -33,6 +33,48 @@
         <label>vector</label>
       </node>
     </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h</label>
+        <link refid="random_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp</label>
+        <link refid="_aestivation_8cpp"/>
+      </node>
+      <node id="3">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp</label>
+        <link refid="_dispersal_8cpp"/>
+      </node>
+      <node id="4">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/GDRelease.cpp</label>
+        <link refid="_g_d_release_8cpp"/>
+      </node>
+      <node id="5">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp</label>
+        <link refid="_model_8cpp"/>
+      </node>
+      <node id="6">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp</label>
+        <link refid="_patch_8cpp"/>
+      </node>
+      <node id="7">
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/random.cpp</label>
+        <link refid="random_8cpp"/>
+      </node>
+    </invincdepgraph>
     <sectiondef kind="func">
       <memberdef kind="function" id="random_8h_1a108ff3fb960f77177389a96a01ed1c74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -40,15 +82,16 @@
         <argsstring>()</argsstring>
         <name>random_real</name>
         <briefdescription>
+<para>Returns a random floating-point number from a uniform real distribution of 0.0 to 1.0. </para>
         </briefdescription>
         <detaileddescription>
-<para>Returns a random floating-point number from a uniform real distribution of 0.0 to 1.0. <simplesect kind="return"><para>The random number. </para>
+<para><simplesect kind="return"><para>The random number. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/random.h" line="10" column="8" bodyfile="src/random.cpp" bodystart="18" bodyend="22" declfile="includes/random.h" declline="10" declcolumn="8"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" line="10" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/random.cpp" bodystart="18" bodyend="22" declfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" declline="10" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="random_8h_1af03c0e74140efa3114c4cd1361da5548" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -64,9 +107,10 @@
           <declname>b</declname>
         </param>
         <briefdescription>
+<para>Returns a random integer number from a uniform discrete distribution of a to b. </para>
         </briefdescription>
         <detaileddescription>
-<para>Returns a random integer number from a uniform discrete distribution of a to b. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">a</parametername>
 </parameternamelist>
@@ -89,7 +133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/random.h" line="11" column="5" bodyfile="src/random.cpp" bodystart="30" bodyend="34" declfile="includes/random.h" declline="11" declcolumn="5"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" line="11" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/random.cpp" bodystart="30" bodyend="34" declfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" declline="11" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="random_8h_1a2b4b3dc20892808a0220d878773ba864" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>long long int</type>
@@ -101,9 +145,10 @@
           <declname>lambda</declname>
         </param>
         <briefdescription>
+<para>Returns a random draw (non-negative integer) from the Poisson distribution with mean lambda (using normal distribution approximation when lambda &gt; 30) </para>
         </briefdescription>
         <detaileddescription>
-<para>Returns a random draw (non-negative integer) from the Poisson distribution with mean lambda (using normal distribution approximation when lambda &gt; 30) <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">lambda</parametername>
 </parameternamelist>
@@ -118,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/random.h" line="12" column="15" bodyfile="src/random.cpp" bodystart="41" bodyend="60" declfile="includes/random.h" declline="12" declcolumn="15"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" line="12" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/random.cpp" bodystart="41" bodyend="60" declfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" declline="12" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>long long int</type>
@@ -134,9 +179,10 @@
           <declname>p</declname>
         </param>
         <briefdescription>
+<para>Returns a random draw (non-negative integer) from the Binomial distribution B(N,p). </para>
         </briefdescription>
         <detaileddescription>
-<para>Returns a random draw (non-negative integer) from the Binomial distribution B(N,p). Uses Normal and Poisson distribution approximations for large N. <parameterlist kind="param"><parameteritem>
+<para>Uses Normal and Poisson distribution approximations for large N. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">n</parametername>
 </parameternamelist>
@@ -159,7 +205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/random.h" line="13" column="15" bodyfile="src/random.cpp" bodystart="69" bodyend="95" declfile="includes/random.h" declline="13" declcolumn="15"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" line="13" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/random.cpp" bodystart="69" bodyend="95" declfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" declline="13" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="random_8h_1a180e4f01c99b4c4fae00714c08fa647b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; long long int &gt;</type>
@@ -175,9 +221,10 @@
           <declname>probs</declname>
         </param>
         <briefdescription>
+<para>Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs. </para>
         </briefdescription>
         <detaileddescription>
-<para>Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">n</parametername>
 </parameternamelist>
@@ -200,7 +247,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/random.h" line="14" column="13" bodyfile="src/random.cpp" bodystart="103" bodyend="125" declfile="includes/random.h" declline="14" declcolumn="13"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" line="14" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/random.cpp" bodystart="103" bodyend="125" declfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" declline="14" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="random_8h_1ae9bfea9d70562b34509b4ff50c57e117" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; long long int &gt;</type>
@@ -216,9 +263,10 @@
           <declname>probs</declname>
         </param>
         <briefdescription>
+<para>Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs. </para>
         </briefdescription>
         <detaileddescription>
-<para>Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs. <linebreak/>
+<para><linebreak/>
  <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">n</parametername>
@@ -242,7 +290,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/random.h" line="15" column="13" bodyfile="src/random.cpp" bodystart="133" bodyend="155" declfile="includes/random.h" declline="15" declcolumn="13"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" line="15" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/random.cpp" bodystart="133" bodyend="155" declfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" declline="15" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="random_8h_1ab522b309a12c730ad270008709c19d09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; long long int &gt;</type>
@@ -258,9 +306,10 @@
           <declname>probs</declname>
         </param>
         <briefdescription>
+<para>Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs. </para>
         </briefdescription>
         <detaileddescription>
-<para>Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">n</parametername>
 </parameternamelist>
@@ -283,7 +332,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/random.h" line="16" column="13" bodyfile="src/random.cpp" bodystart="163" bodyend="185" declfile="includes/random.h" declline="16" declcolumn="13"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" line="16" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/random.cpp" bodystart="163" bodyend="185" declfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" declline="16" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="random_8h_1ab1651a929e139f6da870eae2f0c641e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -299,9 +348,10 @@
           <declname>des_var</declname>
         </param>
         <briefdescription>
+<para>Returns a random draw (non-negative floating-point number) from a lognormal distribution with desired mean des_mean and desired variance des_var. </para>
         </briefdescription>
         <detaileddescription>
-<para>Returns a random draw (non-negative floating-point number) from a lognormal distribution with desired mean des_mean and desired variance des_var. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">des_mean</parametername>
 </parameternamelist>
@@ -324,7 +374,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/random.h" line="17" column="8" bodyfile="src/random.cpp" bodystart="193" bodyend="199" declfile="includes/random.h" declline="17" declcolumn="8"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" line="17" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/random.cpp" bodystart="193" bodyend="199" declfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h" declline="17" declcolumn="8"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -337,21 +387,21 @@
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;array&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;constants.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="constants_8h" kindref="compound">constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Random<sp/>number<sp/>generator<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>random_real();</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>random_discrete(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>random_poisson(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lambda);</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>random_binomial(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>p);</highlight></codeline>
-<codeline lineno="14"><highlight class="normal">std::vector&lt;long<sp/>long<sp/>int&gt;<sp/>random_multinomial(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;double&gt;&amp;<sp/>probs);</highlight></codeline>
-<codeline lineno="15"><highlight class="normal">std::vector&lt;long<sp/>long<sp/>int&gt;<sp/>random_multinomial(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;&amp;<sp/>probs);</highlight></codeline>
-<codeline lineno="16"><highlight class="normal">std::vector&lt;long<sp/>long<sp/>int&gt;<sp/>random_multinomial(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;double,<sp/>constants::max_dev+1&gt;&amp;<sp/>probs);</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>random_lognormal(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>des_mean,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>des_var);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="random_8h_1a108ff3fb960f77177389a96a01ed1c74" kindref="member">random_real</ref>();</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="random_8h_1af03c0e74140efa3114c4cd1361da5548" kindref="member">random_discrete</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="random_8h_1a2b4b3dc20892808a0220d878773ba864" kindref="member">random_poisson</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lambda);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f" kindref="member">random_binomial</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>p);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">std::vector&lt;long<sp/>long<sp/>int&gt;<sp/><ref refid="random_8h_1a180e4f01c99b4c4fae00714c08fa647b" kindref="member">random_multinomial</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;double&gt;&amp;<sp/>probs);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">std::vector&lt;long<sp/>long<sp/>int&gt;<sp/><ref refid="random_8h_1a180e4f01c99b4c4fae00714c08fa647b" kindref="member">random_multinomial</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;&amp;<sp/>probs);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">std::vector&lt;long<sp/>long<sp/>int&gt;<sp/><ref refid="random_8h_1a180e4f01c99b4c4fae00714c08fa647b" kindref="member">random_multinomial</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;double,<sp/>constants::max_dev+1&gt;&amp;<sp/>probs);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="random_8h_1ab1651a929e139f6da870eae2f0c641e0" kindref="member">random_lognormal</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>des_mean,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>des_var);</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//GENERALMETAPOP_RANDOM_H</highlight></codeline>
     </programlisting>
-    <location file="includes/random.h"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h"/>
   </compounddef>
 </doxygen>

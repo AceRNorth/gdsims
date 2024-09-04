@@ -13,13 +13,13 @@
         <name>alpha1</name>
         <qualifiedname>Seasonality::alpha1</qualifiedname>
         <briefdescription>
+<para>Carrying capacity factor accounting for rainfall contribution. </para>
         </briefdescription>
         <detaileddescription>
-<para>Carrying capacity factor accounting for rainfall contribution. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Seasonality.h" line="19" column="12" bodyfile="includes/Seasonality.h" bodystart="19" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="19" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" bodystart="19" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -34,9 +34,10 @@
           <declname>alpha1</declname>
         </param>
         <briefdescription>
+<para><ref refid="class_seasonality" kindref="compound">Seasonality</ref> constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para><ref refid="class_seasonality" kindref="compound">Seasonality</ref> constructor. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">alpha1</parametername>
 </parameternamelist>
@@ -49,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Seasonality.h" line="15" column="5" bodyfile="includes/Seasonality.h" bodystart="15" bodyend="15"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="15" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" bodystart="15" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="class_seasonality_1a86bfbdfc639ab1a08e3643e05b55d6f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>double</type>
@@ -73,13 +74,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Seasonality.h" line="16" column="20"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="16" column="20"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para><ref refid="class_seasonality" kindref="compound">Seasonality</ref> base class. </para>
     </briefdescription>
     <detaileddescription>
-<para><ref refid="class_seasonality" kindref="compound">Seasonality</ref> base class. Defines the interface for seasonality classes. </para>
+<para>Defines the interface for seasonality classes. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -99,7 +101,13 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="includes/Seasonality.h" line="10" column="1" bodyfile="includes/Seasonality.h" bodystart="10" bodyend="20"/>
+    <collaborationgraph>
+      <node id="1">
+        <label>Seasonality</label>
+        <link refid="class_seasonality"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="10" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" bodystart="10" bodyend="20"/>
     <listofallmembers>
       <member refid="class_seasonality_1a86bfbdfc639ab1a08e3643e05b55d6f1" prot="public" virt="pure-virtual"><scope>Seasonality</scope><name>alpha</name></member>
       <member refid="class_seasonality_1ac69d88cb94f794d9e317b7d259eaff64" prot="protected" virt="non-virtual"><scope>Seasonality</scope><name>alpha1</name></member>

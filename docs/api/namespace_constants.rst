@@ -5,17 +5,14 @@ Namespace constants
 ===================
 
 
+Namespace for constants used throughout the program. 
+
+
+
+
 .. contents:: Contents
    :local:
    :backlinks: none
-
-
-
-
-Detailed Description
---------------------
-
-Namespace for constants used throughout the program. 
 
 
 

@@ -30,6 +30,7 @@
     <member refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kind="variable"><name>side</name></member>
     <member refid="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" kind="function"><name>BoundaryStrategy</name></member>
     <member refid="class_boundary_strategy_1ab845b40ed83aeb78018c23f45565cd0e" kind="function"><name>distance</name></member>
+    <member refid="class_boundary_strategy_1a37b4146de796d583d01fc15ad3381ea8" kind="function"><name>relative_pos</name></member>
   </compound>
   <compound refid="class_dispersal" kind="class"><name>Dispersal</name>
     <member refid="class_dispersal_1ac4a92820d2e1967895862466abd1c701" kind="variable"><name>disp_rate</name></member>
@@ -57,6 +58,7 @@
   <compound refid="class_edge_boundary_strategy" kind="class"><name>EdgeBoundaryStrategy</name>
     <member refid="class_edge_boundary_strategy_1a1746c13f06d1b1514c32a41ef6804389" kind="function"><name>EdgeBoundaryStrategy</name></member>
     <member refid="class_edge_boundary_strategy_1a58bed301f6c5f63a491bad0ebe982752" kind="function"><name>distance</name></member>
+    <member refid="class_edge_boundary_strategy_1afa01b99a109ff593117736e8722da894" kind="function"><name>relative_pos</name></member>
   </compound>
   <compound refid="class_g_d_release" kind="class"><name>GDRelease</name>
     <member refid="class_g_d_release_1a7ac47883a59de0732047fccf0a1cf6e0" kind="variable"><name>num_driver_M</name></member>
@@ -326,6 +328,7 @@
   <compound refid="class_toroidal_boundary_strategy" kind="class"><name>ToroidalBoundaryStrategy</name>
     <member refid="class_toroidal_boundary_strategy_1a5ea5b1bb1027b4722d19ece1d1209509" kind="function"><name>ToroidalBoundaryStrategy</name></member>
     <member refid="class_toroidal_boundary_strategy_1a262f8bca65f10efa4e88c1aa67ac41ee" kind="function"><name>distance</name></member>
+    <member refid="class_toroidal_boundary_strategy_1a47769682a09b91733ea8295517afe245" kind="function"><name>relative_pos</name></member>
   </compound>
   <compound refid="namespaceconstants" kind="namespace"><name>constants</name>
     <member refid="namespaceconstants_1ab5cd2d6cdf356d98576ea193f6a54476" kind="variable"><name>max_dev</name></member>
@@ -343,6 +346,9 @@
     <member refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04a" kind="enum"><name>DispersalType</name></member>
     <member refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf" kind="enumvalue"><name>DistanceKernel</name></member>
     <member refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3709dd357d0541fa8a1fc6b2238fa583" kind="enumvalue"><name>Radial</name></member>
+    <member refid="namespaceconstants_1ab5cd2d6cdf356d98576ea193f6a54476" kind="variable"><name>max_dev</name></member>
+    <member refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kind="variable"><name>num_gen</name></member>
+    <member refid="namespaceconstants_1a204a0248d18871c4d4d1b3e9a69ff495" kind="variable"><name>pi</name></member>
   </compound>
   <compound refid="_dispersal_8h" kind="file"><name>Dispersal.h</name>
   </compound>
@@ -436,8 +442,8 @@
   </compound>
   <compound refid="_simulation_8cpp" kind="file"><name>Simulation.cpp</name>
   </compound>
-  <compound refid="dir_09e761304027c904456130627fd4dcf5" kind="dir"><name>includes</name>
+  <compound refid="dir_09e761304027c904456130627fd4dcf5" kind="dir"><name>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes</name>
   </compound>
-  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src</name>
   </compound>
 </doxygenindex>

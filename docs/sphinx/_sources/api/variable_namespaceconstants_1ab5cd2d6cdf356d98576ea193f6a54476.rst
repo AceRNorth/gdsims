@@ -1,7 +1,7 @@
 .. _exhale_variable_namespaceconstants_1ab5cd2d6cdf356d98576ea193f6a54476:
 
-Variable constants::max_dev
-===========================
+Variable max_dev
+================
 
 - Defined in :ref:`file_includes_constants.h`
 
@@ -10,5 +10,5 @@ Variable Documentation
 ----------------------
 
 
-.. doxygenvariable:: constants::max_dev
+.. doxygenvariable:: max_dev
    :project: GDSiMS

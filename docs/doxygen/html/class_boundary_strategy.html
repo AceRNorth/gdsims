@@ -88,11 +88,11 @@ Inheritance diagram for BoundaryStrategy:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_boundary_strategy__inherit__graph.png" border="0" usemap="#a_boundary_strategy_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_boundary_strategy_inherit__map" id="a_boundary_strategy_inherit__map">
-<area shape="rect" title="Boundary strategy base class." alt="" coords="119,5,255,96"/>
-<area shape="rect" href="class_edge_boundary_strategy.html" title="Implements the distance method for edge boundary conditions." alt="" coords="5,144,171,235"/>
-<area shape="poly" title=" " alt="" coords="148,110,122,146,118,143,144,107"/>
-<area shape="rect" href="class_toroidal_boundary_strategy.html" title="Implements the distance method for toroidal boundary conditions." alt="" coords="195,144,375,235"/>
-<area shape="poly" title=" " alt="" coords="230,107,256,143,251,146,225,110"/>
+<area shape="rect" title="Boundary strategy base class." alt="" coords="119,5,255,117"/>
+<area shape="rect" href="class_edge_boundary_strategy.html" title="Implements the distance method for edge boundary conditions." alt="" coords="5,165,171,277"/>
+<area shape="poly" title=" " alt="" coords="147,131,124,167,120,164,142,129"/>
+<area shape="rect" href="class_toroidal_boundary_strategy.html" title="Implements the distance method for toroidal boundary conditions." alt="" coords="195,165,375,277"/>
+<area shape="poly" title=" " alt="" coords="231,129,253,164,249,167,227,131"/>
 </map>
 </div>
 <div class="dynheader">
@@ -100,7 +100,7 @@ Collaboration diagram for BoundaryStrategy:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_boundary_strategy__coll__graph.png" border="0" usemap="#a_boundary_strategy_coll__map" alt="Collaboration graph"/></div>
 <map name="a_boundary_strategy_coll__map" id="a_boundary_strategy_coll__map">
-<area shape="rect" title="Boundary strategy base class." alt="" coords="5,5,141,96"/>
+<area shape="rect" title="Boundary strategy base class." alt="" coords="5,5,141,117"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -111,6 +111,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8fbbc051751dbb883c0f00673d9027c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab845b40ed83aeb78018c23f45565cd0e" id="r_ab845b40ed83aeb78018c23f45565cd0e"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab845b40ed83aeb78018c23f45565cd0e">distance</a> (const <a class="el" href="struct_point.html">Point</a> &amp;p1, const <a class="el" href="struct_point.html">Point</a> &amp;p2)=0</td></tr>
 <tr class="separator:ab845b40ed83aeb78018c23f45565cd0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37b4146de796d583d01fc15ad3381ea8" id="r_a37b4146de796d583d01fc15ad3381ea8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37b4146de796d583d01fc15ad3381ea8">relative_pos</a> (const <a class="el" href="struct_point.html">Point</a> &amp;p1, const <a class="el" href="struct_point.html">Point</a> &amp;p2)=0</td></tr>
+<tr class="separator:a37b4146de796d583d01fc15ad3381ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -184,6 +186,37 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implemented in <a class="el" href="class_toroidal_boundary_strategy.html#a262f8bca65f10efa4e88c1aa67ac41ee">ToroidalBoundaryStrategy</a>, and <a class="el" href="class_edge_boundary_strategy.html#a58bed301f6c5f63a491bad0ebe982752">EdgeBoundaryStrategy</a>.</p>
+
+</div>
+</div>
+<a id="a37b4146de796d583d01fc15ad3381ea8" name="a37b4146de796d583d01fc15ad3381ea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37b4146de796d583d01fc15ad3381ea8">&#9670;&#160;</a></span>relative_pos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="struct_point.html">Point</a> BoundaryStrategy::relative_pos </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p1</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_point.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_toroidal_boundary_strategy.html#a47769682a09b91733ea8295517afe245">ToroidalBoundaryStrategy</a>, and <a class="el" href="class_edge_boundary_strategy.html#afa01b99a109ff593117736e8722da894">EdgeBoundaryStrategy</a>.</p>
 
 </div>
 </div>

@@ -13,13 +13,13 @@
         <name>num_driver_M</name>
         <qualifiedname>GDRelease::num_driver_M</qualifiedname>
         <briefdescription>
+<para>Number of drive heterozygous (WD) male mosquitoes per release. </para>
         </briefdescription>
         <detaileddescription>
-<para>Number of drive heterozygous (WD) male mosquitoes per release. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/GDRelease.h" line="23" column="5" bodyfile="includes/GDRelease.h" bodystart="23" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="23" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_g_d_release_1af257d77564ffbd7c694f57533dde7282" prot="protected" static="no" mutable="no">
         <type>std::vector&lt; int &gt;</type>
@@ -28,13 +28,13 @@
         <name>release_times</name>
         <qualifiedname>GDRelease::release_times</qualifiedname>
         <briefdescription>
+<para>Days on which the gene drive mosquitoes will be released. </para>
         </briefdescription>
         <detaileddescription>
-<para>Days on which the gene drive mosquitoes will be released. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/GDRelease.h" line="24" column="13" bodyfile="includes/GDRelease.h" bodystart="24" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="24" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" bodystart="24" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -53,9 +53,10 @@
           <declname>rel_times</declname>
         </param>
         <briefdescription>
+<para><ref refid="class_g_d_release" kindref="compound">GDRelease</ref> constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para><ref refid="class_g_d_release" kindref="compound">GDRelease</ref> constructor. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">num_driver_M</parametername>
 </parameternamelist>
@@ -76,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/GDRelease.h" line="20" column="1" bodyfile="includes/GDRelease.h" bodystart="20" bodyend="20"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="20" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" bodystart="20" bodyend="20"/>
       </memberdef>
       <memberdef kind="function" id="class_g_d_release_1ac69ecb74bc31ac1d57764be524c68ca7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -93,9 +94,10 @@
           <declname>sites</declname>
         </param>
         <briefdescription>
+<para>Releases the gene drive mosquitoes into the simulation area if it is time for release. </para>
         </briefdescription>
         <detaileddescription>
-<para>Releases the gene drive mosquitoes into the simulation area if it is time for release. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">day</parametername>
 </parameternamelist>
@@ -116,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/GDRelease.h" line="21" column="6" bodyfile="src/GDRelease.cpp" bodystart="13" bodyend="19"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="21" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/GDRelease.cpp" bodystart="13" bodyend="19"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
@@ -131,9 +133,10 @@
           <declname>day</declname>
         </param>
         <briefdescription>
+<para>Determines if the day is a chosen release time. </para>
         </briefdescription>
         <detaileddescription>
-<para>Determines if the day is a chosen release time. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">day</parametername>
 </parameternamelist>
@@ -150,7 +153,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/GDRelease.h" line="25" column="6" bodyfile="src/GDRelease.cpp" bodystart="27" bodyend="30"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="25" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/GDRelease.cpp" bodystart="27" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="class_g_d_release_1a941e51bbc4999dacdb4f22277ffdebbf" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt;</type>
@@ -174,7 +177,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/GDRelease.h" line="26" column="25"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="26" column="25"/>
       </memberdef>
       <memberdef kind="function" id="class_g_d_release_1a46170fb6a9f1a248346206b99773b684" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -187,9 +190,9 @@
           <declname>rel_sites</declname>
         </param>
         <briefdescription>
+<para>Adds drive heterozygous (WD) male mosquitoes to the release sites. </para>
         </briefdescription>
         <detaileddescription>
-<para>Adds drive heterozygous (WD) male mosquitoes to the release sites.</para>
 <para>Relevant parameters include the number of male driver mosquitoes to be released at each site. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="inout">rel_sites</parametername>
@@ -205,13 +208,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/GDRelease.h" line="27" column="6" bodyfile="src/GDRelease.cpp" bodystart="38" bodyend="43"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="27" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/GDRelease.cpp" bodystart="38" bodyend="43"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Gene drive release base class. </para>
     </briefdescription>
     <detaileddescription>
-<para>Gene drive release base class. Defines the basic implementation of gene drive release in the model. </para>
+<para>Defines the basic implementation of gene drive release in the model. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -231,7 +235,13 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="includes/GDRelease.h" line="13" column="1" bodyfile="includes/GDRelease.h" bodystart="13" bodyend="28"/>
+    <collaborationgraph>
+      <node id="1">
+        <label>GDRelease</label>
+        <link refid="class_g_d_release"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="13" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" bodystart="13" bodyend="28"/>
     <listofallmembers>
       <member refid="class_g_d_release_1a7d3d5cfa8f9d71e08383edf435fcfdbb" prot="public" virt="non-virtual"><scope>GDRelease</scope><name>GDRelease</name></member>
       <member refid="class_g_d_release_1a69a14d4b9e59ee1e1375d76630da00e3" prot="protected" virt="non-virtual"><scope>GDRelease</scope><name>is_release_time</name></member>

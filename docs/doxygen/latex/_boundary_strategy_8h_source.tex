@@ -11,23 +11,26 @@
 \DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_boundary_strategy_a8fbbc051751dbb883c0f00673d9027c4}{BoundaryStrategy}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}}):\ \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}}(\mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}})\ \{\};}
 \DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_boundary_strategy_ab845b40ed83aeb78018c23f45565cd0e}{distance}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\&\ p1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\&\ p2)\ =\ 0;}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}};\ }
-\DoxyCodeLine{00020\ \};}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_toroidal_boundary_strategy}{ToroidalBoundaryStrategy}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_boundary_strategy}{BoundaryStrategy}}\ \{}
-\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_toroidal_boundary_strategy_a5ea5b1bb1027b4722d19ece1d1209509}{ToroidalBoundaryStrategy}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}}):\ \mbox{\hyperlink{class_boundary_strategy}{BoundaryStrategy}}(\mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}})\ \{\};}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_toroidal_boundary_strategy_a262f8bca65f10efa4e88c1aa67ac41ee}{distance}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\ \&p1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\ \&p2)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00030\ \};}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_edge_boundary_strategy}{EdgeBoundaryStrategy}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_boundary_strategy}{BoundaryStrategy}}\ \{}
-\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_edge_boundary_strategy_a1746c13f06d1b1514c32a41ef6804389}{EdgeBoundaryStrategy}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}}):\ \mbox{\hyperlink{class_boundary_strategy}{BoundaryStrategy}}(\mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}})\ \{\};}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_edge_boundary_strategy_a58bed301f6c5f63a491bad0ebe982752}{distance}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\&\ p1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\&\ p2)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00040\ \};}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_BOUNDARYSTRATEGY\_H}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_point}{Point}}\ \mbox{\hyperlink{class_boundary_strategy_a37b4146de796d583d01fc15ad3381ea8}{relative\_pos}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\ \&p1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\ \&p2)\ =\ 0;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}};\ }
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_toroidal_boundary_strategy}{ToroidalBoundaryStrategy}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_boundary_strategy}{BoundaryStrategy}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_toroidal_boundary_strategy_a5ea5b1bb1027b4722d19ece1d1209509}{ToroidalBoundaryStrategy}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}}):\ \mbox{\hyperlink{class_boundary_strategy}{BoundaryStrategy}}(\mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}})\ \{\};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_toroidal_boundary_strategy_a262f8bca65f10efa4e88c1aa67ac41ee}{distance}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\ \&p1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\ \&p2)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{struct_point}{Point}}\ \mbox{\hyperlink{class_toroidal_boundary_strategy_a47769682a09b91733ea8295517afe245}{relative\_pos}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\ \&p1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\ \&p2)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_edge_boundary_strategy}{EdgeBoundaryStrategy}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_boundary_strategy}{BoundaryStrategy}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_edge_boundary_strategy_a1746c13f06d1b1514c32a41ef6804389}{EdgeBoundaryStrategy}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}}):\ \mbox{\hyperlink{class_boundary_strategy}{BoundaryStrategy}}(\mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}})\ \{\};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_edge_boundary_strategy_a58bed301f6c5f63a491bad0ebe982752}{distance}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\&\ p1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\&\ p2)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{struct_point}{Point}}\ \mbox{\hyperlink{class_edge_boundary_strategy_afa01b99a109ff593117736e8722da894}{relative\_pos}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\ \&p1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\ \&p2)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_BOUNDARYSTRATEGY\_H}}
 
 \end{DoxyCode}

@@ -10,7 +10,7 @@
     <incdepgraph>
       <node id="4">
         <label>Aestivation.h</label>
-        <link refid="_aestivation_8h_source"/>
+        <link refid="_aestivation_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
@@ -24,13 +24,13 @@
       </node>
       <node id="12">
         <label>BoundaryStrategy.h</label>
-        <link refid="_boundary_strategy_8h_source"/>
+        <link refid="_boundary_strategy_8h"/>
         <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="9">
         <label>Dispersal.h</label>
-        <link refid="_dispersal_8h_source"/>
+        <link refid="_dispersal_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
@@ -50,7 +50,7 @@
       </node>
       <node id="13">
         <label>GDRelease.h</label>
-        <link refid="_g_d_release_8h_source"/>
+        <link refid="_g_d_release_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
@@ -60,7 +60,7 @@
       </node>
       <node id="8">
         <label>Model.h</label>
-        <link refid="_model_8h_source"/>
+        <link refid="_model_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
@@ -84,13 +84,13 @@
       </node>
       <node id="5">
         <label>Params.h</label>
-        <link refid="_params_8h_source"/>
+        <link refid="_params_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="6">
         <label>Patch.h</label>
-        <link refid="_patch_8h_source"/>
+        <link refid="_patch_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
@@ -106,11 +106,11 @@
       </node>
       <node id="11">
         <label>Point.h</label>
-        <link refid="_point_8h_source"/>
+        <link refid="_point_8h"/>
       </node>
       <node id="14">
         <label>Seasonality.h</label>
-        <link refid="_seasonality_8h_source"/>
+        <link refid="_seasonality_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
@@ -118,11 +118,11 @@
       </node>
       <node id="7">
         <label>constants.h</label>
-        <link refid="constants_8h_source"/>
+        <link refid="constants_8h"/>
       </node>
       <node id="15">
         <label>random.h</label>
-        <link refid="random_8h_source"/>
+        <link refid="random_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
@@ -131,7 +131,7 @@
         </childnode>
       </node>
       <node id="1">
-        <label>src/Aestivation.cpp</label>
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp</label>
         <link refid="_aestivation_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -161,20 +161,20 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;array&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Aestivation.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;random.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;constants.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_aestivation_8h" kindref="compound">Aestivation.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="random_8h" kindref="compound">random.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="constants_8h" kindref="compound">constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><ref refid="class_aestivation_1a51e62f2785f14f40c74698c76da16f41" kindref="member">Aestivation::Aestivation</ref>(<ref refid="struct_aestivation_params" kindref="compound">AestivationParams</ref>*<sp/>params,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sites_size)<sp/></highlight></codeline>
 <codeline lineno="14"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>psi<sp/>=<sp/>params-&gt;<ref refid="struct_aestivation_params_1aa75b996e48bd9a575f2d779b457e9676" kindref="member">psi</ref>;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>mu_aes<sp/>=<sp/>params-&gt;<ref refid="struct_aestivation_params_1ace83fbaf99df64c684945c11657e0e2d" kindref="member">mu_aes</ref>;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>t_hide1<sp/>=<sp/>params-&gt;<ref refid="struct_aestivation_params_1a5c9103b6a2967fd10ceac34d74e873c5" kindref="member">t_hide1</ref>;</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>t_hide2<sp/>=<sp/>params-&gt;<ref refid="struct_aestivation_params_1aa2e60eba548455a01bd70fcf7801b204" kindref="member">t_hide2</ref>;</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>t_wake1<sp/>=<sp/>params-&gt;<ref refid="struct_aestivation_params_1a09830242cd97a95bd90f6107f5d65be1" kindref="member">t_wake1</ref>;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>t_wake2<sp/>=<sp/>params-&gt;<ref refid="struct_aestivation_params_1a523922bc6514f3d1623385060367cec0" kindref="member">t_wake2</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_aestivation_1a8549d806f88e898cdd61219d75d517e1" kindref="member">psi</ref><sp/>=<sp/>params-&gt;<ref refid="struct_aestivation_params_1aa75b996e48bd9a575f2d779b457e9676" kindref="member">psi</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_aestivation_1a8ba05278f1dce1144e82c32abd540dc0" kindref="member">mu_aes</ref><sp/>=<sp/>params-&gt;<ref refid="struct_aestivation_params_1ace83fbaf99df64c684945c11657e0e2d" kindref="member">mu_aes</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_aestivation_1af08e1211410a782de9d592829c6619e6" kindref="member">t_hide1</ref><sp/>=<sp/>params-&gt;<ref refid="struct_aestivation_params_1a5c9103b6a2967fd10ceac34d74e873c5" kindref="member">t_hide1</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_aestivation_1a22078820c3b6d2c0b410379fb85ba495" kindref="member">t_hide2</ref><sp/>=<sp/>params-&gt;<ref refid="struct_aestivation_params_1aa2e60eba548455a01bd70fcf7801b204" kindref="member">t_hide2</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_aestivation_1a786f12e5e6b5be06c83fa21fc3b070f0" kindref="member">t_wake1</ref><sp/>=<sp/>params-&gt;<ref refid="struct_aestivation_params_1a09830242cd97a95bd90f6107f5d65be1" kindref="member">t_wake1</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_aestivation_1a63e9e51ce52b0df684c04584e30d89bd" kindref="member">t_wake2</ref><sp/>=<sp/>params-&gt;<ref refid="struct_aestivation_params_1a523922bc6514f3d1623385060367cec0" kindref="member">t_wake2</ref>;</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>aes_F.clear();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_aestivation_1af713622c387e052969ec6d2ceef88213" kindref="member">aes_F</ref>.clear();</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>f;</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i<sp/>&lt;<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>;<sp/>++i)<sp/>{</highlight></codeline>
@@ -184,7 +184,7 @@
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pat=0;<sp/>pat<sp/>&lt;<sp/>sites_size;<sp/>++pat)<sp/>{</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aes_F.push_back(f);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_aestivation_1af713622c387e052969ec6d2ceef88213" kindref="member">aes_F</ref>.push_back(f);</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="34"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
@@ -197,9 +197,9 @@
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/>sites[pat]-&gt;get_F();</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i<sp/>&lt;<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j=0;<sp/>j<sp/>&lt;<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>;<sp/>++j)<sp/>{</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f_try[i][j]<sp/>=<sp/>random_binomial(f[i][j],<sp/>psi);<sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>females<sp/>that<sp/>attempt<sp/>to<sp/>go<sp/>into<sp/>aestivation</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f_aes[i][j]<sp/>=<sp/>random_binomial(f_try[i][j],<sp/>1<sp/>-<sp/>mu_aes);<sp/></highlight><highlight class="comment">//<sp/>number<sp/>that<sp/>survive<sp/>going<sp/>into<sp/>aestivation</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aes_F[pat][i][j]<sp/>+=<sp/>f_aes[i][j];<sp/></highlight><highlight class="comment">//<sp/>move<sp/>aestivating<sp/>females<sp/>into<sp/>a<sp/>separate<sp/>box<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f_try[i][j]<sp/>=<sp/><ref refid="random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f" kindref="member">random_binomial</ref>(f[i][j],<sp/><ref refid="class_aestivation_1a8549d806f88e898cdd61219d75d517e1" kindref="member">psi</ref>);<sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>females<sp/>that<sp/>attempt<sp/>to<sp/>go<sp/>into<sp/>aestivation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f_aes[i][j]<sp/>=<sp/><ref refid="random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f" kindref="member">random_binomial</ref>(f_try[i][j],<sp/>1<sp/>-<sp/><ref refid="class_aestivation_1a8ba05278f1dce1144e82c32abd540dc0" kindref="member">mu_aes</ref>);<sp/></highlight><highlight class="comment">//<sp/>number<sp/>that<sp/>survive<sp/>going<sp/>into<sp/>aestivation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_aestivation_1af713622c387e052969ec6d2ceef88213" kindref="member">aes_F</ref>[pat][i][j]<sp/>+=<sp/>f_aes[i][j];<sp/></highlight><highlight class="comment">//<sp/>move<sp/>aestivating<sp/>females<sp/>into<sp/>a<sp/>separate<sp/>box<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sites[pat]-&gt;F_hide(f_try);<sp/></highlight><highlight class="comment">//<sp/>update<sp/>population<sp/>numbers</highlight><highlight class="normal"></highlight></codeline>
@@ -208,15 +208,15 @@
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_aestivation_1ade758967c3a5d774e15ffd2836b6e21d" kindref="member">Aestivation::wake</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day,<sp/>std::vector&lt;Patch*&gt;<sp/>&amp;sites)<sp/></highlight></codeline>
 <codeline lineno="69"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>prob<sp/>=<sp/>1.0<sp/>/<sp/>(1.0<sp/>+<sp/>t_wake2<sp/>-<sp/>(day%365));<sp/></highlight><highlight class="comment">//<sp/>probability<sp/>of<sp/>a<sp/>female<sp/>waking<sp/>on<sp/>a<sp/>given<sp/>day</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>prob<sp/>=<sp/>1.0<sp/>/<sp/>(1.0<sp/>+<sp/><ref refid="class_aestivation_1a63e9e51ce52b0df684c04584e30d89bd" kindref="member">t_wake2</ref><sp/>-<sp/>(day%365));<sp/></highlight><highlight class="comment">//<sp/>probability<sp/>of<sp/>a<sp/>female<sp/>waking<sp/>on<sp/>a<sp/>given<sp/>day</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>f_w;</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pat=0;<sp/>pat<sp/>&lt;<sp/>sites.size();<sp/>++pat)<sp/>{</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i<sp/>&lt;<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j=0;<sp/>j<sp/>&lt;<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>;<sp/>++j)<sp/>{</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>females<sp/>that<sp/>wake<sp/>up<sp/>from<sp/>aestivation<sp/>on<sp/>the<sp/>given<sp/>day</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f_w[i][j]<sp/>=<sp/>random_binomial(aes_F[pat][i][j],<sp/>prob);</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aes_F[pat][i][j]<sp/>-=<sp/>f_w[i][j];</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f_w[i][j]<sp/>=<sp/><ref refid="random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f" kindref="member">random_binomial</ref>(<ref refid="class_aestivation_1af713622c387e052969ec6d2ceef88213" kindref="member">aes_F</ref>[pat][i][j],<sp/>prob);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_aestivation_1af713622c387e052969ec6d2ceef88213" kindref="member">aes_F</ref>[pat][i][j]<sp/>-=<sp/>f_w[i][j];</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sites[pat]-&gt;F_wake(f_w);</highlight></codeline>
@@ -225,14 +225,14 @@
 <codeline lineno="84"><highlight class="normal"></highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_aestivation_1ad52ef1d1e4febab22176ac1690f22d76" kindref="member">Aestivation::is_hide_time</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day)<sp/></highlight></codeline>
 <codeline lineno="93"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>day%365<sp/>&gt;<sp/>t_hide1<sp/>&amp;&amp;<sp/>day%365<sp/>&lt;=<sp/>t_hide2<sp/>&amp;&amp;<sp/>psi<sp/>&gt;<sp/>0.00001;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>day%365<sp/>&gt;<sp/><ref refid="class_aestivation_1af08e1211410a782de9d592829c6619e6" kindref="member">t_hide1</ref><sp/>&amp;&amp;<sp/>day%365<sp/>&lt;=<sp/><ref refid="class_aestivation_1a22078820c3b6d2c0b410379fb85ba495" kindref="member">t_hide2</ref><sp/>&amp;&amp;<sp/><ref refid="class_aestivation_1a8549d806f88e898cdd61219d75d517e1" kindref="member">psi</ref><sp/>&gt;<sp/>0.00001;</highlight></codeline>
 <codeline lineno="95"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"></highlight></codeline>
 <codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_aestivation_1a28d413fd0b0ab424b5071832de34e86c" kindref="member">Aestivation::is_wake_time</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day)<sp/></highlight></codeline>
 <codeline lineno="105"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>day%365<sp/>&gt;<sp/>t_wake1<sp/>&amp;&amp;<sp/>day%365<sp/>&lt;=<sp/>t_wake2<sp/>&amp;&amp;<sp/>psi<sp/>&gt;<sp/>0.00001;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>day%365<sp/>&gt;<sp/><ref refid="class_aestivation_1a786f12e5e6b5be06c83fa21fc3b070f0" kindref="member">t_wake1</ref><sp/>&amp;&amp;<sp/>day%365<sp/>&lt;=<sp/><ref refid="class_aestivation_1a63e9e51ce52b0df684c04584e30d89bd" kindref="member">t_wake2</ref><sp/>&amp;&amp;<sp/><ref refid="class_aestivation_1a8549d806f88e898cdd61219d75d517e1" kindref="member">psi</ref><sp/>&gt;<sp/>0.00001;</highlight></codeline>
 <codeline lineno="107"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="src/Aestivation.cpp"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp"/>
   </compounddef>
 </doxygen>

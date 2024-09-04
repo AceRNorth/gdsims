@@ -49,9 +49,9 @@ void \mbox{\hyperlink{class_radial_dispersal_aa3bca3cc8b2d80af4bd11d91cacf09bb}{
 std\+::pair$<$ std\+::vector$<$ std\+::vector$<$ int $>$ $>$, std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \mbox{\hyperlink{class_radial_dispersal_ad09b4df09539d8b421c8d7ed3199d0c4}{compute\+\_\+connecs}} (std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
 \begin{DoxyCompactList}\small\item\em Computes the set of connection indices and weights for a group of patches. \end{DoxyCompactList}\item 
 std\+::pair$<$ std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$, double $>$ \mbox{\hyperlink{class_radial_dispersal_ae456b5d871312e16812fb6c4024288f6}{compute\+\_\+interval\+\_\+union}} (const std\+::pair$<$ double, double $>$ \&qq, const std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \&input)
-\begin{DoxyCompactList}\small\item\em ... \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Computes the union of overlapping intervals and calculates the difference in the sum of lengths between the merged intervals and the original intervals. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_radial_dispersal_a55a26db2720e9bf5811aa51cf3a8d873}{wrap\+\_\+around}} (double value, double range)
-\begin{DoxyCompactList}\small\item\em ... \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Function to \textquotesingle{}wrap\textquotesingle{} a real-\/valued number into the interval from zero to a maximum specified by the parameter \textquotesingle{}range\textquotesingle{}\+: if the input value is outside the interval it is wrapped around so that the output is within the interval. \end{DoxyCompactList}\item 
 std\+::vector$<$ int $>$ \mbox{\hyperlink{class_radial_dispersal_a4df7ea1ccbcc88991b3e63a46f0e0bb1}{get\+\_\+sorted\+\_\+positions}} (const std\+::vector$<$ double $>$ \&numbers)
 \begin{DoxyCompactList}\small\item\em Sorts the indices of the vector elements based on the numeric value of the corresponding element (in ascending order). \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{class_radial_dispersal_a28a558e2dcb75b8db11fd424aa66243e}{compute\+\_\+distances}} (const std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
@@ -125,7 +125,7 @@ Implements dispersal by adults from and to each patch, depending on the patch co
 \begin{DoxyNote}{Note}
 Only males and mated females are assumed to disperse from the patches. There is also dispersal mortality associated with this dispersal type.
 \end{DoxyNote}
-Only those individuals that disperse out of a patch in a connected direction will survive. The number of males (of a given genotype) that survive dispersal out of their patch is determined by a random draw from a binomial distribution with probability of the total connection weight for all its connected patches. Of those, the number dispersing to each of the connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females. 
+Only those individuals that disperse out of a patch in a connected direction will survive. The number of dispersing males (of a given genotype) that survive dispersal out of their patch is determined by a random draw from a binomial distribution with probability of the total connection weight for all its connected patches. Of those, the number dispersing to each of the connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in,out}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
 \hline
@@ -147,7 +147,7 @@ Implements \mbox{\hyperlink{class_dispersal_a90638547dc5983463ee88d89a9167b5a}{D
 
 Computes the set of connection indices and weights for a group of patches. 
 
-If the distance between two patches is less than the the maximum dispersal distance, they are deemed to be connected. The connection weight is determined by ... \begin{DoxyNote}{Note}
+If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by angle of bisecting lines from the centre of the focal patch to the catchment of the recieving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum disperdal distance are not connected. \begin{DoxyNote}{Note}
 Under this dispersal type, patches are NOT connected to themselves. 
 \end{DoxyNote}
 
@@ -168,7 +168,7 @@ The connections between all patches, divided into connection indices and connect
 
 Computes the inter-\/point distances for a list of points. 
 
-... 
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
 \hline
@@ -184,18 +184,25 @@ The inter-\/point distances as a 2D vector, both axes in the order of the sites 
 
 
 
-... 
+Computes the union of overlapping intervals and calculates the difference in the sum of lengths between the merged intervals and the original intervals. 
 
-
+This function takes a single interval {\ttfamily qq} and a vector of intervals {\ttfamily input}. It merges any overlapping intervals, includes the non-\/overlapping intervals as they are, and calculates the total sum of lengths of the resulting intervals. It also computes the difference between the total sum of lengths of the merged intervals and the original interval. This is required to compute the extent of flight path between a focal patch and a recieving patch, while accounting for the shadowing effect of nearer patches 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em qq} & ... \\
+\mbox{\texttt{ in}}  & {\em qq} & A pair of doubles representing the interval to be merged with the input intervals. The first value is the start of the interval, and the second value is the end of the interval. \\
 \hline
-\mbox{\texttt{ in}}  & {\em input} & ... \\
+\mbox{\texttt{ in}}  & {\em input} & A vector of pairs of doubles, where each pair represents an interval. Each interval has a start value (first) and an end value (second). \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-... 
+A pair consisting of\+:
+\begin{DoxyItemize}
+\item A vector of pairs of doubles representing the union of the merged and non-\/overlapping intervals, sorted by the start of each interval.
+\item A double representing the difference between the sum of lengths of the merged intervals and the original intervals. 
+\end{DoxyItemize}
 \end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The function assumes that each interval in the input is well-\/formed, meaning that for each interval {\ttfamily std\+::pair\texorpdfstring{$<$}{<}double, double\texorpdfstring{$>$}{>}}, the first value (start) is less than or equal to the second value (end). 
+\end{DoxyNote}
 \Hypertarget{class_radial_dispersal_a4df7ea1ccbcc88991b3e63a46f0e0bb1}\label{class_radial_dispersal_a4df7ea1ccbcc88991b3e63a46f0e0bb1} 
 \index{RadialDispersal@{RadialDispersal}!get\_sorted\_positions@{get\_sorted\_positions}}
 \index{get\_sorted\_positions@{get\_sorted\_positions}!RadialDispersal@{RadialDispersal}}
@@ -241,17 +248,17 @@ Implements \mbox{\hyperlink{class_dispersal_aef84d06c465ccb461d1cfb39e82de838}{D
 
 
 
-... 
+Function to \textquotesingle{}wrap\textquotesingle{} a real-\/valued number into the interval from zero to a maximum specified by the parameter \textquotesingle{}range\textquotesingle{}\+: if the input value is outside the interval it is wrapped around so that the output is within the interval. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em value} & ... \\
+\mbox{\texttt{ in}}  & {\em value} & the real-\/valued number to be wrapped around \\
 \hline
-\mbox{\texttt{ in}}  & {\em range} & ... \\
+\mbox{\texttt{ in}}  & {\em range} & the maximum value of the interval to be wrapped into \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-... 
+the wrapped number within the interval 
 \end{DoxyReturn}
 
 

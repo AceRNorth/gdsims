@@ -9,13 +9,13 @@
     <incdepgraph>
       <node id="5">
         <label>Params.h</label>
-        <link refid="_params_8h_source"/>
+        <link refid="_params_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="4">
         <label>Seasonality.h</label>
-        <link refid="_seasonality_8h_source"/>
+        <link refid="_seasonality_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
@@ -23,10 +23,10 @@
       </node>
       <node id="6">
         <label>constants.h</label>
-        <link refid="constants_8h_source"/>
+        <link refid="constants_8h"/>
       </node>
       <node id="1">
-        <label>src/Seasonality.cpp</label>
+        <label>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Seasonality.cpp</label>
         <link refid="_seasonality_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -51,8 +51,8 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Seasonality.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;constants.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_seasonality_8h" kindref="compound">Seasonality.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="constants_8h" kindref="compound">constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><ref refid="class_sine_rainfall_1a5400eca90b6aae50317446023a020f6c" kindref="member">SineRainfall::SineRainfall</ref>(<ref refid="struct_sine_rainfall_params" kindref="compound">SineRainfallParams</ref><sp/>*params):<sp/><ref refid="class_seasonality" kindref="compound">Seasonality</ref>(params-&gt;alpha1)<sp/></highlight></codeline>
@@ -63,7 +63,7 @@
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/></highlight></codeline>
 <codeline lineno="24"><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_sine_rainfall_1a208a62a5176ae5db43120cf938a7f067" kindref="member">SineRainfall::alpha</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alpha0)</highlight></codeline>
 <codeline lineno="25"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_sine_rainfall_1a208a62a5176ae5db43120cf938a7f067" kindref="member">alpha</ref><sp/>=<sp/>alpha0<sp/>+<sp/><ref refid="class_seasonality_1ac69d88cb94f794d9e317b7d259eaff64" kindref="member">alpha1</ref>*(1<sp/>+<sp/>amp*std::sin(2<sp/>*<sp/><ref refid="namespaceconstants_1a204a0248d18871c4d4d1b3e9a69ff495" kindref="member">constants::pi</ref><sp/>*<sp/>day/365));</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_sine_rainfall_1a208a62a5176ae5db43120cf938a7f067" kindref="member">alpha</ref><sp/>=<sp/>alpha0<sp/>+<sp/><ref refid="class_seasonality_1ac69d88cb94f794d9e317b7d259eaff64" kindref="member">alpha1</ref>*(1<sp/>+<sp/><ref refid="class_sine_rainfall_1a83a33e17ca162e92beea4ba741807d63" kindref="member">amp</ref>*std::sin(2<sp/>*<sp/><ref refid="namespaceconstants_1a204a0248d18871c4d4d1b3e9a69ff495" kindref="member">constants::pi</ref><sp/>*<sp/>day/365));</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_sine_rainfall_1a208a62a5176ae5db43120cf938a7f067" kindref="member">alpha</ref>;</highlight></codeline>
 <codeline lineno="28"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
@@ -84,19 +84,19 @@
 <codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_input_rainfall_1a7599fc9d35cae87ac87f98d2ccb6b3fb" kindref="member">InputRainfall::alpha</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alpha0)</highlight></codeline>
 <codeline lineno="56"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r_d;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(day<sp/>==<sp/>0)<sp/>{r_d<sp/>=<sp/>rainfall.at(0);}<sp/></highlight><highlight class="comment">//<sp/>use<sp/>day1<sp/>rainfall<sp/>value<sp/>for<sp/>day0<sp/>as<sp/>well,<sp/>to<sp/>set<sp/>up<sp/>the<sp/>environmental<sp/>conditions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(day<sp/>==<sp/>0)<sp/>{r_d<sp/>=<sp/><ref refid="class_input_rainfall_1a44c851f69b6dc275e65799c52c7e9cde" kindref="member">rainfall</ref>.at(0);}<sp/></highlight><highlight class="comment">//<sp/>use<sp/>day1<sp/>rainfall<sp/>value<sp/>for<sp/>day0<sp/>as<sp/>well,<sp/>to<sp/>set<sp/>up<sp/>the<sp/>environmental<sp/>conditions</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rainfall.size()<sp/>==<sp/>365)<sp/>{</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r_d<sp/>=<sp/>day<sp/>&lt;=<sp/>365<sp/>?<sp/>rainfall.at(day<sp/>-<sp/>1)<sp/>:<sp/>rainfall.at(((day<sp/>-<sp/>1)%365));<sp/></highlight><highlight class="comment">//<sp/>simulation<sp/>days<sp/>start<sp/>from<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_input_rainfall_1a44c851f69b6dc275e65799c52c7e9cde" kindref="member">rainfall</ref>.size()<sp/>==<sp/>365)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r_d<sp/>=<sp/>day<sp/>&lt;=<sp/>365<sp/>?<sp/><ref refid="class_input_rainfall_1a44c851f69b6dc275e65799c52c7e9cde" kindref="member">rainfall</ref>.at(day<sp/>-<sp/>1)<sp/>:<sp/><ref refid="class_input_rainfall_1a44c851f69b6dc275e65799c52c7e9cde" kindref="member">rainfall</ref>.at(((day<sp/>-<sp/>1)%365));<sp/></highlight><highlight class="comment">//<sp/>simulation<sp/>days<sp/>start<sp/>from<sp/>1</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r_d<sp/>=<sp/>rainfall.at(day<sp/>-<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>simulation<sp/>days<sp/>start<sp/>from<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r_d<sp/>=<sp/><ref refid="class_input_rainfall_1a44c851f69b6dc275e65799c52c7e9cde" kindref="member">rainfall</ref>.at(day<sp/>-<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>simulation<sp/>days<sp/>start<sp/>from<sp/>1</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_input_rainfall_1a7599fc9d35cae87ac87f98d2ccb6b3fb" kindref="member">alpha</ref><sp/>=<sp/>alpha0<sp/>+<sp/><ref refid="class_seasonality_1ac69d88cb94f794d9e317b7d259eaff64" kindref="member">alpha1</ref>*(1<sp/>-<sp/>std::exp(-resp<sp/>*<sp/>r_d));</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_input_rainfall_1a7599fc9d35cae87ac87f98d2ccb6b3fb" kindref="member">alpha</ref><sp/>=<sp/>alpha0<sp/>+<sp/><ref refid="class_seasonality_1ac69d88cb94f794d9e317b7d259eaff64" kindref="member">alpha1</ref>*(1<sp/>-<sp/>std::exp(-<ref refid="class_input_rainfall_1adb68f5eb090485f2a362e227aeaf91c8" kindref="member">resp</ref><sp/>*<sp/>r_d));</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_input_rainfall_1a7599fc9d35cae87ac87f98d2ccb6b3fb" kindref="member">alpha</ref>;</highlight></codeline>
 <codeline lineno="69"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="src/Seasonality.cpp"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Seasonality.cpp"/>
   </compounddef>
 </doxygen>

@@ -229,9 +229,12 @@
 <li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1a108ff3fb960f77177389a96a01ed1c74.html">Function random_real()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1adc1edb0039433704b7af2b7b850cabce.html">Template Function read_and_validate_type</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1af3edb3b1a762ddbe5539bc80ef5e023c.html">Function twister</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1ab5cd2d6cdf356d98576ea193f6a54476.html">Variable constants::max_dev</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5.html">Variable constants::num_gen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1a204a0248d18871c4d4d1b3e9a69ff495.html">Variable constants::pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1ab5cd2d6cdf356d98576ea193f6a54476.html">Variable max_dev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5.html">Variable num_gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1a204a0248d18871c4d4d1b3e9a69ff495.html">Variable pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1ab5cd2d6cdf356d98576ea193f6a54476.html">Variable max_dev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5.html">Variable num_gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1a204a0248d18871c4d4d1b3e9a69ff495.html">Variable pi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variable_random_8cpp_1a7071b0092ad8c5b57d6cc40c5f803df5.html">Variable rd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1abc6aedbb3f573c686c86355a0152cb0f.html">Variable set1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1aa09c4cdefed9eaa61256d2b5cb0b732c.html">Variable set10</a></li>
@@ -451,7 +454,7 @@ document.write(`
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv415RadialDispersal">
 <span id="_CPPv315RadialDispersal"></span><span id="_CPPv215RadialDispersal"></span><span id="RadialDispersal"></span><span class="target" id="class_radial_dispersal"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RadialDispersal</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="class_dispersal.html#_CPPv49Dispersal" title="Dispersal"><span class="n"><span class="pre">Dispersal</span></span></a><a class="headerlink" href="#_CPPv415RadialDispersal" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Implements dispersive behaviour for radial dispersal, where connection weights between patches are determined by the direction the patches are in relative to each other and other patches.</p>
+<dd><p>Implements dispersive behaviour for radial dispersal, where connection weights between patches are determined by the direction the patches are in relative to each other and other patches. </p>
 <p>Particularly, connection weights will be determined by the arc of the first patch’s catchment radius covered by the second patch. Closer patches will reduce dispersal to further patches which are in the same interval. Those individuals that disperse in a direction with no patches will die. … </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
@@ -484,11 +487,11 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N15RadialDispersal15adults_disperseERNSt6vectorIP5PatchEE">
 <span id="_CPPv3N15RadialDispersal15adults_disperseERNSt6vectorIP5PatchEE"></span><span id="_CPPv2N15RadialDispersal15adults_disperseERNSt6vectorIP5PatchEE"></span><span id="RadialDispersal::adults_disperse__std::vector:PatchP:R"></span><span class="target" id="class_radial_dispersal_1aa3bca3cc8b2d80af4bd11d91cacf09bb"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adults_disperse</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="class_patch.html#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N15RadialDispersal15adults_disperseERNSt6vectorIP5PatchEE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p><p>Implements dispersal by adults from and to each patch, depending on the patch connectivities.</p>
-<p>Only those individuals that disperse out of a patch in a connected direction will survive. The number of males (of a given genotype) that survive dispersal out of their patch is determined by a random draw from a binomial distribution with probability of the total connection weight for all its connected patches. Of those, the number dispersing to each of the connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females.</p>
-<div class="admonition seealso">
+<dd><p>Implements dispersal by adults from and to each patch, depending on the patch connectivities. </p>
+<p>
+Only those individuals that disperse out of a patch in a connected direction will survive. The number of dispersing males (of a given genotype) that survive dispersal out of their patch is determined by a random draw from a binomial distribution with probability of the total connection weight for all its connected patches. Of those, the number dispersing to each of the connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>Model::sites, RadialDispersal::compute_connecs() </p>
+<p>Model::sites, RadialDispersal::compute_connecs()</p>
 </div>
 </p>
 <div class="admonition note">

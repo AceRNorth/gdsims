@@ -11,13 +11,13 @@
         <name>num_runs</name>
         <qualifiedname>ProgressionParams::num_runs</qualifiedname>
         <briefdescription>
+<para>Number of simulation replicates to run. </para>
         </briefdescription>
         <detaileddescription>
-<para>Number of simulation replicates to run. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Params.h" line="12" column="5" bodyfile="includes/Params.h" bodystart="12" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" line="12" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" bodystart="12" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_progression_params_1ac46e203808a1cde29efe72b01dfcef4e" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -26,21 +26,27 @@
         <name>max_t</name>
         <qualifiedname>ProgressionParams::max_t</qualifiedname>
         <briefdescription>
+<para>Maximum simulated time (in days). </para>
         </briefdescription>
         <detaileddescription>
-<para>Maximum simulated time (in days). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Params.h" line="13" column="5" bodyfile="includes/Params.h" bodystart="13" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" line="13" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" bodystart="13" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para><ref refid="class_simulation" kindref="compound">Simulation</ref> progression parameters. </para>
     </briefdescription>
     <detaileddescription>
-<para><ref refid="class_simulation" kindref="compound">Simulation</ref> progression parameters. </para>
     </detaileddescription>
-    <location file="includes/Params.h" line="11" column="1" bodyfile="includes/Params.h" bodystart="11" bodyend="14"/>
+    <collaborationgraph>
+      <node id="1">
+        <label>ProgressionParams</label>
+        <link refid="struct_progression_params"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" line="11" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" bodystart="11" bodyend="14"/>
     <listofallmembers>
       <member refid="struct_progression_params_1ac46e203808a1cde29efe72b01dfcef4e" prot="public" virt="non-virtual"><scope>ProgressionParams</scope><name>max_t</name></member>
       <member refid="struct_progression_params_1a431c275eade9e61300a16411d077d175" prot="public" virt="non-virtual"><scope>ProgressionParams</scope><name>num_runs</name></member>

@@ -13,8 +13,9 @@ var searchData=
   ['record_5fcoords_10',['record_coords',['../class_record.html#a0c4d71ceed2e84f89273a73a304fcc4c',1,'Record']]],
   ['record_5fglobal_11',['record_global',['../class_record.html#aa8ed3bd4fdee0c2dddbb5cec2f685577',1,'Record']]],
   ['record_5flocal_12',['record_local',['../class_record.html#a8e504c6253ef29fa5c86d216e3f28e1c',1,'Record']]],
-  ['release_5fgene_5fdrive_13',['release_gene_drive',['../class_g_d_release.html#ac69ecb74bc31ac1d57764be524c68ca7',1,'GDRelease']]],
-  ['run_14',['run',['../class_model.html#a7e4eb741e72b3946a9166dceed6fc02d',1,'Model']]],
-  ['run_5freps_15',['run_reps',['../class_simulation.html#a46325953f7df60733d519b8b3cd1de61',1,'Simulation']]],
-  ['run_5fstep_16',['run_step',['../class_model.html#ae7c17f3d562ffc8baea8945ba4ffd3c3',1,'Model']]]
+  ['relative_5fpos_13',['relative_pos',['../class_boundary_strategy.html#a37b4146de796d583d01fc15ad3381ea8',1,'BoundaryStrategy::relative_pos()'],['../class_toroidal_boundary_strategy.html#a47769682a09b91733ea8295517afe245',1,'ToroidalBoundaryStrategy::relative_pos()'],['../class_edge_boundary_strategy.html#afa01b99a109ff593117736e8722da894',1,'EdgeBoundaryStrategy::relative_pos()']]],
+  ['release_5fgene_5fdrive_14',['release_gene_drive',['../class_g_d_release.html#ac69ecb74bc31ac1d57764be524c68ca7',1,'GDRelease']]],
+  ['run_15',['run',['../class_model.html#a7e4eb741e72b3946a9166dceed6fc02d',1,'Model']]],
+  ['run_5freps_16',['run_reps',['../class_simulation.html#a46325953f7df60733d519b8b3cd1de61',1,'Simulation']]],
+  ['run_5fstep_17',['run_step',['../class_model.html#ae7c17f3d562ffc8baea8945ba4ffd3c3',1,'Model']]]
 ];

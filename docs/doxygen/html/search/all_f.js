@@ -28,13 +28,14 @@ var searchData=
   ['record_5flocal_25',['record_local',['../class_record.html#a8e504c6253ef29fa5c86d216e3f28e1c',1,'Record']]],
   ['recordparams_26',['RecordParams',['../struct_record_params.html',1,'']]],
   ['rel_27',['rel',['../struct_model_params.html#a77b9b6eab4e2185ef28937f8a438f08d',1,'ModelParams']]],
-  ['release_5fgene_5fdrive_28',['release_gene_drive',['../class_g_d_release.html#ac69ecb74bc31ac1d57764be524c68ca7',1,'GDRelease']]],
-  ['release_5fsites_29',['release_sites',['../class_sched_g_d_release.html#a84d5e62bd160c6ff007b31db117b24e7',1,'SchedGDRelease::release_sites'],['../class_simulation.html#a3e12749f5e0c59d3343fb7ac68faabea',1,'Simulation::release_sites']]],
-  ['release_5ftimes_30',['release_times',['../class_g_d_release.html#af257d77564ffbd7c694f57533dde7282',1,'GDRelease::release_times'],['../struct_release_params.html#a1c79ed7605dac900e139a7e805ba2c97',1,'ReleaseParams::release_times']]],
-  ['releaseparams_31',['ReleaseParams',['../struct_release_params.html',1,'']]],
-  ['rep_5flabel_32',['rep_label',['../class_record.html#ae9d8484927a4355098e0838c4d9a9314',1,'Record']]],
-  ['resp_33',['resp',['../struct_input_params.html#a113b8e6f08c2123150b03908be887817',1,'InputParams::resp'],['../struct_input_rainfall_params.html#ac84460995670184a4eee972e9e25b2a6',1,'InputRainfallParams::resp'],['../class_input_rainfall.html#adb68f5eb090485f2a362e227aeaf91c8',1,'InputRainfall::resp']]],
-  ['run_34',['run',['../class_model.html#a7e4eb741e72b3946a9166dceed6fc02d',1,'Model']]],
-  ['run_5freps_35',['run_reps',['../class_simulation.html#a46325953f7df60733d519b8b3cd1de61',1,'Simulation']]],
-  ['run_5fstep_36',['run_step',['../class_model.html#ae7c17f3d562ffc8baea8945ba4ffd3c3',1,'Model']]]
+  ['relative_5fpos_28',['relative_pos',['../class_boundary_strategy.html#a37b4146de796d583d01fc15ad3381ea8',1,'BoundaryStrategy::relative_pos()'],['../class_toroidal_boundary_strategy.html#a47769682a09b91733ea8295517afe245',1,'ToroidalBoundaryStrategy::relative_pos()'],['../class_edge_boundary_strategy.html#afa01b99a109ff593117736e8722da894',1,'EdgeBoundaryStrategy::relative_pos()']]],
+  ['release_5fgene_5fdrive_29',['release_gene_drive',['../class_g_d_release.html#ac69ecb74bc31ac1d57764be524c68ca7',1,'GDRelease']]],
+  ['release_5fsites_30',['release_sites',['../class_sched_g_d_release.html#a84d5e62bd160c6ff007b31db117b24e7',1,'SchedGDRelease::release_sites'],['../class_simulation.html#a3e12749f5e0c59d3343fb7ac68faabea',1,'Simulation::release_sites']]],
+  ['release_5ftimes_31',['release_times',['../class_g_d_release.html#af257d77564ffbd7c694f57533dde7282',1,'GDRelease::release_times'],['../struct_release_params.html#a1c79ed7605dac900e139a7e805ba2c97',1,'ReleaseParams::release_times']]],
+  ['releaseparams_32',['ReleaseParams',['../struct_release_params.html',1,'']]],
+  ['rep_5flabel_33',['rep_label',['../class_record.html#ae9d8484927a4355098e0838c4d9a9314',1,'Record']]],
+  ['resp_34',['resp',['../struct_input_params.html#a113b8e6f08c2123150b03908be887817',1,'InputParams::resp'],['../struct_input_rainfall_params.html#ac84460995670184a4eee972e9e25b2a6',1,'InputRainfallParams::resp'],['../class_input_rainfall.html#adb68f5eb090485f2a362e227aeaf91c8',1,'InputRainfall::resp']]],
+  ['run_35',['run',['../class_model.html#a7e4eb741e72b3946a9166dceed6fc02d',1,'Model']]],
+  ['run_5freps_36',['run_reps',['../class_simulation.html#a46325953f7df60733d519b8b3cd1de61',1,'Simulation']]],
+  ['run_5fstep_37',['run_step',['../class_model.html#ae7c17f3d562ffc8baea8945ba4ffd3c3',1,'Model']]]
 ];

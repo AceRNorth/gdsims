@@ -11,13 +11,13 @@
         <name>num_runs</name>
         <qualifiedname>Simulation::num_runs</qualifiedname>
         <briefdescription>
+<para>Number of simulation replicates to run. </para>
         </briefdescription>
         <detaileddescription>
-<para>Number of simulation replicates to run. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="29" column="5" bodyfile="includes/Simulation.h" bodystart="29" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="29" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_simulation_1adc775015be74841e3f9f99550af987bd" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -26,13 +26,13 @@
         <name>max_t</name>
         <qualifiedname>Simulation::max_t</qualifiedname>
         <briefdescription>
+<para>Maximum simulated time (in days). </para>
         </briefdescription>
         <detaileddescription>
-<para>Maximum simulated time (in days). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="30" column="5" bodyfile="includes/Simulation.h" bodystart="30" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="30" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_simulation_1a28f56093772a2f20dd286ac7b225c030" prot="private" static="no" mutable="no">
         <type><ref refid="struct_model_params" kindref="compound">ModelParams</ref> *</type>
@@ -41,13 +41,13 @@
         <name>model_params</name>
         <qualifiedname>Simulation::model_params</qualifiedname>
         <briefdescription>
+<para><ref refid="class_model" kindref="compound">Model</ref> parameters. </para>
         </briefdescription>
         <detaileddescription>
-<para><ref refid="class_model" kindref="compound">Model</ref> parameters. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="32" column="13" bodyfile="includes/Simulation.h" bodystart="32" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="32" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_simulation_1a83058587f6835f69b4b249f1382a76ee" prot="private" static="no" mutable="no">
         <type><ref refid="struct_record_params" kindref="compound">RecordParams</ref> *</type>
@@ -56,13 +56,13 @@
         <name>rec_params</name>
         <qualifiedname>Simulation::rec_params</qualifiedname>
         <briefdescription>
+<para>Data-recording parameters. </para>
         </briefdescription>
         <detaileddescription>
-<para>Data-recording parameters. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="33" column="14" bodyfile="includes/Simulation.h" bodystart="33" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="33" column="14" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_simulation_1ac42205211628f51d8f680b6522ca663e" prot="private" static="no" mutable="no">
         <type><ref refid="struct_sine_rainfall_params" kindref="compound">SineRainfallParams</ref> *</type>
@@ -76,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="35" column="20" bodyfile="includes/Simulation.h" bodystart="35" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="35" column="20" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_simulation_1a43023bf5f1ee507b61a8a07b61cbdf2f" prot="private" static="no" mutable="no">
         <type><ref refid="struct_input_rainfall_params" kindref="compound">InputRainfallParams</ref> *</type>
@@ -85,14 +85,15 @@
         <name>input_rainfall_params</name>
         <qualifiedname>Simulation::input_rainfall_params</qualifiedname>
         <briefdescription>
+<para>Sinusoid rainfall seasonality parameters. </para>
         </briefdescription>
         <detaileddescription>
-<para>Sinusoid rainfall seasonality parameters. <linebreak/>
+<para><linebreak/>
  </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="36" column="21" bodyfile="includes/Simulation.h" bodystart="36" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="36" column="21" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_simulation_1a4067cd6f026a45b6fdef80682669ffd4" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -101,13 +102,14 @@
         <name>alpha0_mean</name>
         <qualifiedname>Simulation::alpha0_mean</qualifiedname>
         <briefdescription>
+<para>Input data rainfall seasonality parameters. </para>
         </briefdescription>
         <detaileddescription>
-<para>Input data rainfall seasonality parameters. <ref refid="class_seasonality" kindref="compound">Seasonality</ref> parameter. </para>
+<para><ref refid="class_seasonality" kindref="compound">Seasonality</ref> parameter. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="37" column="8" bodyfile="includes/Simulation.h" bodystart="37" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="37" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_simulation_1ac74b6c9f7665a081c686f088f8db950c" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -116,13 +118,13 @@
         <name>alpha0_variance</name>
         <qualifiedname>Simulation::alpha0_variance</qualifiedname>
         <briefdescription>
+<para><ref refid="class_seasonality" kindref="compound">Seasonality</ref> parameter. </para>
         </briefdescription>
         <detaileddescription>
-<para><ref refid="class_seasonality" kindref="compound">Seasonality</ref> parameter. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="38" column="8" bodyfile="includes/Simulation.h" bodystart="38" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="38" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_simulation_1a73b6b686f5dca876da14e5b79f8123a5" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="struct_point" kindref="compound">Point</ref> &gt;</type>
@@ -131,13 +133,13 @@
         <name>sites_coords</name>
         <qualifiedname>Simulation::sites_coords</qualifiedname>
         <briefdescription>
+<para>2D coordinates for the sites on the simulated square. </para>
         </briefdescription>
         <detaileddescription>
-<para>2D coordinates for the sites on the simulated square. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="41" column="13" bodyfile="includes/Simulation.h" bodystart="41" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="41" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_simulation_1a3e12749f5e0c59d3343fb7ac68faabea" prot="private" static="no" mutable="no">
         <type>std::vector&lt; int &gt;</type>
@@ -146,16 +148,16 @@
         <name>release_sites</name>
         <qualifiedname>Simulation::release_sites</qualifiedname>
         <briefdescription>
+<para>Indices relative to coords vector for the gene drive release sites. </para>
         </briefdescription>
         <detaileddescription>
-<para>Indices relative to coords vector for the gene drive release sites. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="42" column="13" bodyfile="includes/Simulation.h" bodystart="42" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="42" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" bodystart="42" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_simulation_1ac1bea19f5a9917fbff711bc9f652cff5" prot="private" static="no" mutable="no">
-        <type>BoundaryType</type>
+        <type><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8" kindref="member">BoundaryType</ref></type>
         <definition>BoundaryType Simulation::boundary_type</definition>
         <argsstring></argsstring>
         <name>boundary_type</name>
@@ -166,10 +168,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="43" column="14" bodyfile="includes/Simulation.h" bodystart="43" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="43" column="14" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_simulation_1a978ed04ac5ec2c121cb0e9875a88195d" prot="private" static="no" mutable="no">
-        <type>DispersalType</type>
+        <type><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04a" kindref="member">DispersalType</ref></type>
         <definition>DispersalType Simulation::disp_type</definition>
         <argsstring></argsstring>
         <name>disp_type</name>
@@ -180,7 +182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="44" column="15" bodyfile="includes/Simulation.h" bodystart="44" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="44" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_simulation_1a5bf54d592f89fb121f5f8225d2761e30" prot="private" static="no" mutable="no">
         <type>std::array&lt; std::array&lt; std::array&lt; double, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt;, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt;, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt;</type>
@@ -189,13 +191,14 @@
         <name>inher_fraction</name>
         <qualifiedname>Simulation::inher_fraction</qualifiedname>
         <briefdescription>
+<para>Inheritance fraction. </para>
         </briefdescription>
         <detaileddescription>
-<para>Inheritance fraction. f_ijk is the fraction of genotype k offspring from mother with genotype i mated to father with genotype j. </para>
+<para>f_ijk is the fraction of genotype k offspring from mother with genotype i mated to father with genotype j. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="47" column="12" bodyfile="includes/Simulation.h" bodystart="47" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="47" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" bodystart="47" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -210,9 +213,10 @@
           <declname>input</declname>
         </param>
         <briefdescription>
+<para><ref refid="class_simulation" kindref="compound">Simulation</ref> constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para><ref refid="class_simulation" kindref="compound">Simulation</ref> constructor. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">input</parametername>
 </parameternamelist>
@@ -227,7 +231,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="18" column="1" bodyfile="src/Simulation.cpp" bodystart="19" bodyend="87"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="18" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Simulation.cpp" bodystart="19" bodyend="87"/>
       </memberdef>
       <memberdef kind="function" id="class_simulation_1a80fad3f57dfaf195a36f7bc49bc88279" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -236,13 +240,13 @@
         <name>~Simulation</name>
         <qualifiedname>Simulation::~Simulation</qualifiedname>
         <briefdescription>
+<para>Simualtion destructor. </para>
         </briefdescription>
         <detaileddescription>
-<para>Simualtion destructor. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="19" column="1" bodyfile="src/Simulation.cpp" bodystart="92" bodyend="104"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="19" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Simulation.cpp" bodystart="92" bodyend="104"/>
       </memberdef>
       <memberdef kind="function" id="class_simulation_1ab365e7a0000cae028998efae63b7d0c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -255,9 +259,10 @@
           <declname>filename</declname>
         </param>
         <briefdescription>
+<para>Sets the sites&apos; coordinates and the release sites from a file, unless any errors are thrown. </para>
         </briefdescription>
         <detaileddescription>
-<para>Sets the sites&apos; coordinates and the release sites from a file, unless any errors are thrown. The file should be structured in three columns, with x and y coordinates and whether the site is a release site (y/n) respectively. Values should be delimited by white space, and site rows should be delimited by new lines. <simplesect kind="warning"><para>The file should be in the program&apos;s running directory to be recognised. </para>
+<para>The file should be structured in three columns, with x and y coordinates and whether the site is a release site (y/n) respectively. Values should be delimited by white space, and site rows should be delimited by new lines. <simplesect kind="warning"><para>The file should be in the program&apos;s running directory to be recognised. </para>
 </simplesect>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -272,7 +277,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="20" column="6" bodyfile="src/Simulation.cpp" bodystart="112" bodyend="165"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="20" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Simulation.cpp" bodystart="112" bodyend="165"/>
       </memberdef>
       <memberdef kind="function" id="class_simulation_1ac6575f63c78f7fffff4817665f5a0f05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -281,13 +286,14 @@
         <name>set_boundary_type</name>
         <qualifiedname>Simulation::set_boundary_type</qualifiedname>
         <param>
-          <type>BoundaryType</type>
+          <type><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8" kindref="member">BoundaryType</ref></type>
           <declname>boundary</declname>
         </param>
         <briefdescription>
+<para>Sets the boundary type for the model. </para>
         </briefdescription>
         <detaileddescription>
-<para>Sets the boundary type for the model. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">boundary</parametername>
 </parameternamelist>
@@ -296,13 +302,13 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para>BoundaryType, <ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref> </para>
+<simplesect kind="see"><para><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8" kindref="member">BoundaryType</ref>, <ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="21" column="6" bodyfile="src/Simulation.cpp" bodystart="172" bodyend="175"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="21" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Simulation.cpp" bodystart="172" bodyend="175"/>
       </memberdef>
       <memberdef kind="function" id="class_simulation_1a451b81744f93c2470a28d75bece48783" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -311,13 +317,14 @@
         <name>set_dispersal_type</name>
         <qualifiedname>Simulation::set_dispersal_type</qualifiedname>
         <param>
-          <type>DispersalType</type>
+          <type><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04a" kindref="member">DispersalType</ref></type>
           <declname>disp</declname>
         </param>
         <briefdescription>
+<para>Sets the dispersal type for the model. </para>
         </briefdescription>
         <detaileddescription>
-<para>Sets the dispersal type for the model. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">disp</parametername>
 </parameternamelist>
@@ -326,13 +333,13 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para>DispersalType, <ref refid="class_dispersal" kindref="compound">Dispersal</ref> </para>
+<simplesect kind="see"><para><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04a" kindref="member">DispersalType</ref>, <ref refid="class_dispersal" kindref="compound">Dispersal</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="22" column="6" bodyfile="src/Simulation.cpp" bodystart="182" bodyend="185"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="22" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Simulation.cpp" bodystart="182" bodyend="185"/>
       </memberdef>
       <memberdef kind="function" id="class_simulation_1abc5c5d0891de7943820db3e6682cd125" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -345,9 +352,10 @@
           <declname>filename</declname>
         </param>
         <briefdescription>
+<para>Sets the daily rainfall values from a file, unless any errors are thrown. </para>
         </briefdescription>
         <detaileddescription>
-<para>Sets the daily rainfall values from a file, unless any errors are thrown. These can be daily values for a year cycle (365 days), or daily values for all the simulated days (max_t). The values should be delimited by new lines. <parameterlist kind="param"><parameteritem>
+<para>These can be daily values for a year cycle (365 days), or daily values for all the simulated days (max_t). The values should be delimited by new lines. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">filename</parametername>
 </parameternamelist>
@@ -360,7 +368,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="23" column="6" bodyfile="src/Simulation.cpp" bodystart="193" bodyend="229"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="23" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Simulation.cpp" bodystart="193" bodyend="229"/>
       </memberdef>
       <memberdef kind="function" id="class_simulation_1a7d774bb0496b0ea95c2c88afc0d24731" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -373,9 +381,10 @@
           <declname>filename</declname>
         </param>
         <briefdescription>
+<para>Sets the release times for gene drive release from a file, unless any errors are thrown. </para>
         </briefdescription>
         <detaileddescription>
-<para>Sets the release times for gene drive release from a file, unless any errors are thrown. Release times should be simulation day numbers within the maximum time of simulation. Values should be delimited by new lines. <parameterlist kind="param"><parameteritem>
+<para>Release times should be simulation day numbers within the maximum time of simulation. Values should be delimited by new lines. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">filename</parametername>
 </parameternamelist>
@@ -388,7 +397,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="24" column="6" bodyfile="src/Simulation.cpp" bodystart="237" bodyend="273"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="24" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Simulation.cpp" bodystart="237" bodyend="273"/>
       </memberdef>
       <memberdef kind="function" id="class_simulation_1ac5440a772e9d7788c588a795a7821fb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -401,9 +410,10 @@
           <declname>inher_params</declname>
         </param>
         <briefdescription>
+<para>Sets the values of the f_{ijk} inheritance fraction for the gene drive considering r2 resistant alleles. </para>
         </briefdescription>
         <detaileddescription>
-<para>Sets the values of the f_{ijk} inheritance fraction for the gene drive considering r2 resistant alleles. f_{ijk} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j. <parameterlist kind="param"><parameteritem>
+<para>f_{ijk} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">inher_params</parametername>
 </parameternamelist>
@@ -418,7 +428,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="25" column="6" bodyfile="src/Simulation.cpp" bodystart="280" bodyend="383"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="25" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Simulation.cpp" bodystart="280" bodyend="383"/>
       </memberdef>
       <memberdef kind="function" id="class_simulation_1a46325953f7df60733d519b8b3cd1de61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -427,25 +437,103 @@
         <name>run_reps</name>
         <qualifiedname>Simulation::run_reps</qualifiedname>
         <briefdescription>
+<para>Runs the simulation num_runs times, recording data in output files. </para>
         </briefdescription>
         <detaileddescription>
-<para>Runs the simulation num_runs times, recording data in output files. <simplesect kind="see"><para>Simulation::num_runs, <ref refid="class_record" kindref="compound">Record</ref> </para>
+<para><simplesect kind="see"><para><ref refid="class_simulation_1a8e1d4d667e07e3f7e453bbb936dd0c5a" kindref="member">Simulation::num_runs</ref>, <ref refid="class_record" kindref="compound">Record</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Simulation.h" line="26" column="6" bodyfile="src/Simulation.cpp" bodystart="389" bodyend="418"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="26" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Simulation.cpp" bodystart="389" bodyend="418"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Sets up and controls the flow of the simulation. </para>
     </briefdescription>
     <detaileddescription>
-<para>Sets up and controls the flow of the simulation. <simplesect kind="see"><para>Simulation::num_runs, Simulation::max_t </para>
+<para><simplesect kind="see"><para><ref refid="class_simulation_1a8e1d4d667e07e3f7e453bbb936dd0c5a" kindref="member">Simulation::num_runs</ref>, <ref refid="class_simulation_1adc775015be74841e3f9f99550af987bd" kindref="member">Simulation::max_t</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="includes/Simulation.h" line="16" column="1" bodyfile="includes/Simulation.h" bodystart="16" bodyend="48"/>
+    <collaborationgraph>
+      <node id="6">
+        <label>AestivationParams</label>
+        <link refid="struct_aestivation_params"/>
+      </node>
+      <node id="3">
+        <label>AreaParams</label>
+        <link refid="struct_area_params"/>
+      </node>
+      <node id="7">
+        <label>DispersalParams</label>
+        <link refid="struct_dispersal_params"/>
+      </node>
+      <node id="4">
+        <label>InitialPopsParams</label>
+        <link refid="struct_initial_pops_params"/>
+      </node>
+      <node id="11">
+        <label>InputRainfallParams</label>
+        <link refid="struct_input_rainfall_params"/>
+      </node>
+      <node id="5">
+        <label>LifeParams</label>
+        <link refid="struct_life_params"/>
+      </node>
+      <node id="2">
+        <label>ModelParams</label>
+        <link refid="struct_model_params"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+area</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+initial</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+life</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+aes</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>+disp</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>+rel</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>RecordParams</label>
+        <link refid="struct_record_params"/>
+      </node>
+      <node id="8">
+        <label>ReleaseParams</label>
+        <link refid="struct_release_params"/>
+      </node>
+      <node id="1">
+        <label>Simulation</label>
+        <link refid="class_simulation"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>-model_params</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>-rec_params</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>-sine_rainfall_params</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>-input_rainfall_params</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>SineRainfallParams</label>
+        <link refid="struct_sine_rainfall_params"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" line="16" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h" bodystart="16" bodyend="48"/>
     <listofallmembers>
       <member refid="class_simulation_1a4067cd6f026a45b6fdef80682669ffd4" prot="private" virt="non-virtual"><scope>Simulation</scope><name>alpha0_mean</name></member>
       <member refid="class_simulation_1ac74b6c9f7665a081c686f088f8db950c" prot="private" virt="non-virtual"><scope>Simulation</scope><name>alpha0_variance</name></member>

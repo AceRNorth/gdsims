@@ -11,13 +11,13 @@
         <name>initial_WJ</name>
         <qualifiedname>InitialPopsParams::initial_WJ</qualifiedname>
         <briefdescription>
+<para>Number of initial juvenile mosquitoes with wild homozygous (WW) genotype for each age group. </para>
         </briefdescription>
         <detaileddescription>
-<para>Number of initial juvenile mosquitoes with wild homozygous (WW) genotype for each age group. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Params.h" line="95" column="5" bodyfile="includes/Params.h" bodystart="95" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" line="95" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" bodystart="95" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_initial_pops_params_1affa8fc67eb8a0fc91227b5034b38bdc3" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -26,13 +26,13 @@
         <name>initial_WM</name>
         <qualifiedname>InitialPopsParams::initial_WM</qualifiedname>
         <briefdescription>
+<para>Number of initial adult male mosquitoes with wild homozygous (WW) genotype. </para>
         </briefdescription>
         <detaileddescription>
-<para>Number of initial adult male mosquitoes with wild homozygous (WW) genotype. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Params.h" line="96" column="5" bodyfile="includes/Params.h" bodystart="96" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" line="96" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" bodystart="96" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_initial_pops_params_1a13e0588763c9fcaf905384cd34866aaf" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -41,13 +41,13 @@
         <name>initial_WV</name>
         <qualifiedname>InitialPopsParams::initial_WV</qualifiedname>
         <briefdescription>
+<para>Number of initial adult unmated female (virgin) mosquitoes with wild homozygous (WW) genotype. </para>
         </briefdescription>
         <detaileddescription>
-<para>Number of initial adult unmated female (virgin) mosquitoes with wild homozygous (WW) genotype. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Params.h" line="97" column="5" bodyfile="includes/Params.h" bodystart="97" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" line="97" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" bodystart="97" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_initial_pops_params_1ac125c56f73e260d96236434d57dd1599" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -56,21 +56,27 @@
         <name>initial_WF</name>
         <qualifiedname>InitialPopsParams::initial_WF</qualifiedname>
         <briefdescription>
+<para>Number of initial adult mated female mosquitoes with wild homozygous (WW) genotype. </para>
         </briefdescription>
         <detaileddescription>
-<para>Number of initial adult mated female mosquitoes with wild homozygous (WW) genotype. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Params.h" line="98" column="5" bodyfile="includes/Params.h" bodystart="98" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" line="98" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" bodystart="98" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Initial population values for the model. </para>
     </briefdescription>
     <detaileddescription>
-<para>Initial population values for the model. </para>
     </detaileddescription>
-    <location file="includes/Params.h" line="94" column="1" bodyfile="includes/Params.h" bodystart="94" bodyend="99"/>
+    <collaborationgraph>
+      <node id="1">
+        <label>InitialPopsParams</label>
+        <link refid="struct_initial_pops_params"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" line="94" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" bodystart="94" bodyend="99"/>
     <listofallmembers>
       <member refid="struct_initial_pops_params_1ac125c56f73e260d96236434d57dd1599" prot="public" virt="non-virtual"><scope>InitialPopsParams</scope><name>initial_WF</name></member>
       <member refid="struct_initial_pops_params_1a223e4fba21b1219765b0aaffb794cb7c" prot="public" virt="non-virtual"><scope>InitialPopsParams</scope><name>initial_WJ</name></member>

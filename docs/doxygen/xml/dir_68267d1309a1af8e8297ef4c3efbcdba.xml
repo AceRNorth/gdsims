@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
   <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
-    <compoundname>src</compoundname>
+    <compoundname>C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src</compoundname>
     <innerfile refid="_aestivation_8cpp">Aestivation.cpp</innerfile>
     <innerfile refid="_boundary_strategy_8cpp">BoundaryStrategy.cpp</innerfile>
     <innerfile refid="_dispersal_8cpp">Dispersal.cpp</innerfile>
@@ -18,6 +18,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/"/>
   </compounddef>
 </doxygen>

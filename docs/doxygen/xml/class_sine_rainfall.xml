@@ -12,13 +12,13 @@
         <name>amp</name>
         <qualifiedname>SineRainfall::amp</qualifiedname>
         <briefdescription>
+<para>Amplitude of rainfall fluctuations. </para>
         </briefdescription>
         <detaileddescription>
-<para>Amplitude of rainfall fluctuations. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Seasonality.h" line="32" column="12" bodyfile="includes/Seasonality.h" bodystart="32" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="32" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" bodystart="32" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -33,9 +33,10 @@
           <declname>params</declname>
         </param>
         <briefdescription>
+<para><ref refid="class_sine_rainfall" kindref="compound">SineRainfall</ref> constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para><ref refid="class_sine_rainfall" kindref="compound">SineRainfall</ref> constructor. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">params</parametername>
 </parameternamelist>
@@ -48,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Seasonality.h" line="28" column="5" bodyfile="src/Seasonality.cpp" bodystart="11" bodyend="14"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="28" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Seasonality.cpp" bodystart="11" bodyend="14"/>
       </memberdef>
       <memberdef kind="function" id="class_sine_rainfall_1a208a62a5176ae5db43120cf938a7f067" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -66,9 +67,10 @@
           <declname>alpha0</declname>
         </param>
         <briefdescription>
+<para>Computes the carrying-capacity alpha value for the given day and alpha0. </para>
         </briefdescription>
         <detaileddescription>
-<para>Computes the carrying-capacity alpha value for the given day and alpha0. Models rainfall contribution as a sine wave. <parameterlist kind="param"><parameteritem>
+<para>Models rainfall contribution as a sine wave. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">day</parametername>
 </parameternamelist>
@@ -87,19 +89,19 @@
 </parameterlist>
 <simplesect kind="return"><para>The carrying-capacity. </para>
 </simplesect>
-<simplesect kind="see"><para>Patch::alpha0 </para>
+<simplesect kind="see"><para><ref refid="class_patch_1a5b781b751c5a39bb3a94640e3542a517" kindref="member">Patch::alpha0</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Seasonality.h" line="29" column="12" bodyfile="src/Seasonality.cpp" bodystart="24" bodyend="28"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="29" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Seasonality.cpp" bodystart="24" bodyend="28"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Implements seasonality by modelling the rainfall contribution to carrying capacity as a sinusoid wave. </para>
     </briefdescription>
     <detaileddescription>
-<para>Implements seasonality by modelling the rainfall contribution to carrying capacity as a sinusoid wave.</para>
 <para>Most useful for theoretical applications. </para>
     </detaileddescription>
     <inheritancegraph>
@@ -126,7 +128,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/Seasonality.h" line="26" column="1" bodyfile="includes/Seasonality.h" bodystart="26" bodyend="33"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="26" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" bodystart="26" bodyend="33"/>
     <listofallmembers>
       <member refid="class_sine_rainfall_1a208a62a5176ae5db43120cf938a7f067" prot="public" virt="virtual"><scope>SineRainfall</scope><name>alpha</name></member>
       <member refid="class_seasonality_1ac69d88cb94f794d9e317b7d259eaff64" prot="protected" virt="non-virtual"><scope>SineRainfall</scope><name>alpha1</name></member>

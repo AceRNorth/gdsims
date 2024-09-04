@@ -11,13 +11,13 @@
         <name>num_pat</name>
         <qualifiedname>AreaParams::num_pat</qualifiedname>
         <briefdescription>
+<para>Number of population sites chosen for the simulation. </para>
         </briefdescription>
         <detaileddescription>
-<para>Number of population sites chosen for the simulation. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Params.h" line="20" column="5" bodyfile="includes/Params.h" bodystart="20" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" line="20" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_area_params_1a25bc9f9baa5f3b4f9352101dfec36a99" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -26,21 +26,27 @@
         <name>side</name>
         <qualifiedname>AreaParams::side</qualifiedname>
         <briefdescription>
+<para>Size of the square simulation area (side x side). </para>
         </briefdescription>
         <detaileddescription>
-<para>Size of the square simulation area (side x side). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/Params.h" line="21" column="8" bodyfile="includes/Params.h" bodystart="21" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" line="21" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" bodystart="21" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para><ref refid="class_model" kindref="compound">Model</ref> area parameters. </para>
     </briefdescription>
     <detaileddescription>
-<para><ref refid="class_model" kindref="compound">Model</ref> area parameters. </para>
     </detaileddescription>
-    <location file="includes/Params.h" line="19" column="1" bodyfile="includes/Params.h" bodystart="19" bodyend="22"/>
+    <collaborationgraph>
+      <node id="1">
+        <label>AreaParams</label>
+        <link refid="struct_area_params"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" line="19" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h" bodystart="19" bodyend="22"/>
     <listofallmembers>
       <member refid="struct_area_params_1ae2dcd6b60485cc3a2f54b70355987385" prot="public" virt="non-virtual"><scope>AreaParams</scope><name>num_pat</name></member>
       <member refid="struct_area_params_1a25bc9f9baa5f3b4f9352101dfec36a99" prot="public" virt="non-virtual"><scope>AreaParams</scope><name>side</name></member>
