@@ -40,8 +40,7 @@ exhale_args = {
     "rootFileName": "library_root.rst",
     "rootFileTitle": "Library API",
     "createTreeView":        True,
-    "exhaleExecutesDoxygen": False,
-    "exhaleDoxygenStdin":    "INPUT = ../includes ../src"
+    "exhaleExecutesDoxygen": False
 }
 
 # Tell sphinx what the primary language being documented is.
