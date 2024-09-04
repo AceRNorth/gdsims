@@ -16,17 +16,21 @@ jobs:
         with:
           working-directory: 'docs/doxygen'
           doxyfile-path: './Doxyfile'
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+             cd docs
+             python -m pip install --upgrade pip
+             pip install -r requirements.txt
+             cd ..
       - name: Process the Doxygen output using Sphinx
-        uses: ammaraskar/sphinx-action@master
-        with:
-          build-command: "sphinx-build -b html . sphinx -v -T"
-          docs-folder: 'docs/'
-      - name: Upload Sphinx Error Logs
-        if: failure()
-        uses: actions/upload-artifact@v3
-        with:
-          name: sphinx-error-logs
-          path: /tmp/sphinx-log
+        run: |
+             cd docs 
+             sphinx-build -b html . sphinx -v 
+             cd ..
       - name: Deploy to Github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
