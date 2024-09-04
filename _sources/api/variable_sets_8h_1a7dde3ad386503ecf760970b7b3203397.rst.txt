@@ -1,0 +1,14 @@
+.. _exhale_variable_sets_8h_1a7dde3ad386503ecf760970b7b3203397:
+
+Variable set3
+=============
+
+- Defined in :ref:`file_includes_sets.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: set3
+   :project: GDSiMS

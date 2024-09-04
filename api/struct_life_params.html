@@ -1,0 +1,586 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Struct LifeParams &#8212; GDSiMS  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists\css\tree_view.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
+    <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/struct_life_params';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Struct ModelParams" href="struct_model_params.html" />
+    <link rel="prev" title="Struct InputRainfallParams" href="struct_input_rainfall_params.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">GDSiMS  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/tutorials_root.html">Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial1.html">1. Running a pre-defined set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial2.html">2. Running a custom set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial3.html">3. Setting coordinates and release sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial4.html">4. Setting the boundary type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial5.html">5. Customising the gene drive release schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial6.html">6. Setting the dispersal type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial7.html">7. Customising seasonality</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="library_root.html">Library API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="namespace_constants.html">Namespace constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct_aestivation_params.html">Struct AestivationParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct_area_params.html">Struct AreaParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct_dispersal_params.html">Struct DispersalParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct_inheritance_params.html">Struct InheritanceParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct_initial_pops_params.html">Struct InitialPopsParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct_input_params.html">Struct InputParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct_input_rainfall_params.html">Struct InputRainfallParams</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Struct LifeParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct_model_params.html">Struct ModelParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct_point.html">Struct Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct_progression_params.html">Struct ProgressionParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct_record_params.html">Struct RecordParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct_release_params.html">Struct ReleaseParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct_sine_rainfall_params.html">Struct SineRainfallParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_aestivation.html">Class Aestivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_boundary_strategy.html">Class BoundaryStrategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_dispersal.html">Class Dispersal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_distance_kernel_dispersal.html">Class DistanceKernelDispersal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_edge_boundary_strategy.html">Class EdgeBoundaryStrategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_g_d_release.html">Class GDRelease</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_input_rainfall.html">Class InputRainfall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_model.html">Class Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_patch.html">Class Patch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_radial_dispersal.html">Class RadialDispersal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_random_g_d_release.html">Class RandomGDRelease</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_record.html">Class Record</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_sched_g_d_release.html">Class SchedGDRelease</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_seasonality.html">Class Seasonality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_simulation.html">Class Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_sine_rainfall.html">Class SineRainfall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_toroidal_boundary_strategy.html">Class ToroidalBoundaryStrategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enum_constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8.html">Enum BoundaryType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enum_constants_8h_1ac025f1e887ae43bed8cad7aff794c04a.html">Enum DispersalType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517.html">Template Function check_bounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be.html">Template Function check_interval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a38cf9054c93e1fced65fe33940dda566.html">Template Function file_read_and_validate_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8h_1af03c0e74140efa3114c4cd1361da5548.html">Function random_discrete(int, int)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1af03c0e74140efa3114c4cd1361da5548.html">Function random_discrete(int, int)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8h_1ab1651a929e139f6da870eae2f0c641e0.html">Function random_lognormal(double, double)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1ab1651a929e139f6da870eae2f0c641e0.html">Function random_lognormal(double, double)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8h_1a180e4f01c99b4c4fae00714c08fa647b.html">Function random_multinomial(long long int, const std::vector&lt;double&gt;&amp;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8h_1ae9bfea9d70562b34509b4ff50c57e117.html">Function random_multinomial(long long int, const std::array&lt;long long int, constants::num_gen&gt;&amp;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8h_1ab522b309a12c730ad270008709c19d09.html">Function random_multinomial(long long int, const std::array&lt;double, constants::max_dev+1&gt;&amp;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1a180e4f01c99b4c4fae00714c08fa647b.html">Function random_multinomial(long long int, const std::vector&lt;double&gt;&amp;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1ae9bfea9d70562b34509b4ff50c57e117.html">Function random_multinomial(long long int, const std::array&lt;long long int, constants::num_gen&gt;&amp;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1ab522b309a12c730ad270008709c19d09.html">Function random_multinomial(long long int, const std::array&lt;double, constants::max_dev+1&gt;&amp;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8h_1a2b4b3dc20892808a0220d878773ba864.html">Function random_poisson(double)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1a2b4b3dc20892808a0220d878773ba864.html">Function random_poisson(double)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8h_1a108ff3fb960f77177389a96a01ed1c74.html">Function random_real()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1a108ff3fb960f77177389a96a01ed1c74.html">Function random_real()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1adc1edb0039433704b7af2b7b850cabce.html">Template Function read_and_validate_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1af3edb3b1a762ddbe5539bc80ef5e023c.html">Function twister</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1ab5cd2d6cdf356d98576ea193f6a54476.html">Variable constants::max_dev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5.html">Variable constants::num_gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1a204a0248d18871c4d4d1b3e9a69ff495.html">Variable constants::pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_random_8cpp_1a7071b0092ad8c5b57d6cc40c5f803df5.html">Variable rd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1abc6aedbb3f573c686c86355a0152cb0f.html">Variable set1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1aa09c4cdefed9eaa61256d2b5cb0b732c.html">Variable set10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1a88a9f4a43efbcf5c6d749b6643f70aed.html">Variable set11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1a21e55cd74dab5142a5091558da28c10f.html">Variable set12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1a7ad564261f554031dc1519c0edd236e7.html">Variable set13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1a73303c2526731d145b8664cad21a9e8e.html">Variable set14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1ad7b1c08d333973eac0968643b7181b7a.html">Variable set15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1ac0b911529cfb4370afe22fc09b1d5cc5.html">Variable set16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1a05ad2773b128b34c212e8c7443a498a2.html">Variable set17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1a5eb719a1d018c42f11afb028705799f7.html">Variable set18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1ae1b091107fc020012eef20a253c146d9.html">Variable set2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1a7dde3ad386503ecf760970b7b3203397.html">Variable set3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1ad10456498cc73264e039a11d139830f5.html">Variable set4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1a36aaa5887733856580f46f165708b38e.html">Variable set5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1ab4c69bd62d6eba4ce0cfefaeb3077289.html">Variable set6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1a87baba5fedd8c30dcf53b37e14dafc94.html">Variable set7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1a03a6f5d6f4b4551c0ae561e305c43025.html">Variable set8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_sets_8h_1ab5de9597265e321d12d3e5a066f0eaa8.html">Variable set9</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/AceRNorth/GeneralMetapop" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/api/struct_life_params.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Struct LifeParams</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="struct-lifeparams">
+<span id="exhale-struct-struct-life-params"></span><h1>Struct LifeParams<a class="headerlink" href="#struct-lifeparams" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_includes_Params.h.html#file-includes-params-h"><span class="std std-ref">File Params.h</span></a></p></li>
+</ul>
+<section id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this heading">#</a></h2>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv410LifeParams">
+<span id="_CPPv310LifeParams"></span><span id="_CPPv210LifeParams"></span><span id="LifeParams"></span><span class="target" id="struct_life_params"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LifeParams</span></span></span><a class="headerlink" href="#_CPPv410LifeParams" title="Permalink to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="class_model.html#class_model"><span class="std std-ref">Model</span></a> life-process parameters. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10LifeParams4mu_jE">
+<span id="_CPPv3N10LifeParams4mu_jE"></span><span id="_CPPv2N10LifeParams4mu_jE"></span><span id="LifeParams::mu_j__double"></span><span class="target" id="struct_life_params_1a02c6d31cc4adf7efc95abf6707c9f75b"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mu_j</span></span></span><a class="headerlink" href="#_CPPv4N10LifeParams4mu_jE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Juvenile density independent mortality rate per day. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10LifeParams4mu_aE">
+<span id="_CPPv3N10LifeParams4mu_aE"></span><span id="_CPPv2N10LifeParams4mu_aE"></span><span id="LifeParams::mu_a__double"></span><span class="target" id="struct_life_params_1a528e234b9f36c9ee20e1e65ccb6f18ac"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mu_a</span></span></span><a class="headerlink" href="#_CPPv4N10LifeParams4mu_aE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Adult mortality rate per day. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10LifeParams4betaE">
+<span id="_CPPv3N10LifeParams4betaE"></span><span id="_CPPv2N10LifeParams4betaE"></span><span id="LifeParams::beta__double"></span><span class="target" id="struct_life_params_1a2cf17ed50803c966c18b4d1ca30b442c"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">beta</span></span></span><a class="headerlink" href="#_CPPv4N10LifeParams4betaE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Parameter that controls mating rate. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10LifeParams5thetaE">
+<span id="_CPPv3N10LifeParams5thetaE"></span><span id="_CPPv2N10LifeParams5thetaE"></span><span id="LifeParams::theta__double"></span><span class="target" id="struct_life_params_1aea4fb1949f3ae9889fbd022ce728c1e2"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">theta</span></span></span><a class="headerlink" href="#_CPPv4N10LifeParams5thetaE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Average egg laying rate of wildtype females (eggs per day). </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10LifeParams10comp_powerE">
+<span id="_CPPv3N10LifeParams10comp_powerE"></span><span id="_CPPv2N10LifeParams10comp_powerE"></span><span id="LifeParams::comp_power__double"></span><span class="target" id="struct_life_params_1a113c7b28bb3132aa7e9e34f5380f0837"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">comp_power</span></span></span><a class="headerlink" href="#_CPPv4N10LifeParams10comp_powerE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Parameter that controls the juvenile survival probability. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10LifeParams7min_devE">
+<span id="_CPPv3N10LifeParams7min_devE"></span><span id="_CPPv2N10LifeParams7min_devE"></span><span id="LifeParams::min_dev__i"></span><span class="target" id="struct_life_params_1a68805af09da4a9755cdd659dfd6fddd9"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min_dev</span></span></span><a class="headerlink" href="#_CPPv4N10LifeParams7min_devE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Minimum development time for a juvenile (in days). </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="struct_input_rainfall_params.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Struct InputRainfallParams</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="struct_model_params.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Struct ModelParams</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struct-documentation">Struct Documentation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sara Perez Vizan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Sara Perez Vizan.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
