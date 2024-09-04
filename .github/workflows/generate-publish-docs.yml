@@ -26,7 +26,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: sphinx-error-logs
-          path: /tmp/sphinx-err*.log
+          path: /tmp/sphinx-log
       - name: Deploy to Github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
