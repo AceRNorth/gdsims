@@ -11,42 +11,6 @@ jobs:
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v3
-      - name: Generate Doxygen documentation
-        uses: mattnotmitt/doxygen-action@v1.9.5
-        with:
-          working-directory: 'docs/doxygen'
-      - name: Install Doxygen (for exhale)
-        run: sudo apt-get update && sudo apt-get install -y doxygen
-      - name: Add Doxygen to PATH
-        run: echo "/usr/bin" >> $GITHUB_PATH
-      - name: Check Doxygen Installation
-        run: doxygen --version
-      - name: Set up Miniconda
-        uses: conda-incubator/setup-miniconda@v2
-        with:
-         auto-update-conda: true
-         python-version: 3.11
-      - name: Create and activate conda environment
-        run: |
-          source /usr/share/miniconda/etc/profile.d/conda.sh
-          conda create -n docs-env -y python=3.11
-          conda activate docs-env
-          conda info --envs
-      - name: Install Python dependecnies with conda
-        run: |
-          source /usr/share/miniconda/etc/profile.d/conda.sh
-          conda activate docs-env
-          conda install sphinx
-          conda install conda-forge::breathe
-          pip install exhale
-          conda install conda-forge::sphinx-book-theme
-          conda install conda-forge::sphinx-copybutton 
-          conda install conda-forge::sphinx-toolbox
-      - name: Process the Doxygen output using Sphinx
-        run: |
-          source /usr/share/miniconda/etc/profile.d/conda.sh
-          conda activate docs-env
-          sphinx-build -b html docs docs/sphinx
       - name: Deploy to Github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
