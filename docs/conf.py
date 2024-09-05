@@ -40,6 +40,7 @@ exhale_args = {
     "rootFileName": "library_root.rst",
     "rootFileTitle": "Library API",
     "createTreeView":        True,
+    "treeViewIsBootstrap":   True,
     "exhaleExecutesDoxygen": False
 }
 
