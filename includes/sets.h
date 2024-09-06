@@ -2,6 +2,9 @@
 #define GENERALMETAPOP_SETS_H
 #include "InputParams.h"
 
+/** Parameter set 1 - default.
+ * @details Includes gene drive and dispersal but no aestivation or seasonality.
+ */
 InputParams set1 = {
     .num_runs = 2, 
     .max_t = 1000,
@@ -40,6 +43,9 @@ InputParams set1 = {
     .set_label = 1
 };
 
+/** Parameter set 2 - 1 population.
+ * @details Includes gene drive and dispersal but no aestivation or seasonality.
+ */
 InputParams set2 = {
     .num_runs = 2, 
     .max_t = 1000,
@@ -78,6 +84,9 @@ InputParams set2 = {
     .set_label = 2
 };
 
+/** Parameter set 3 - no dispersal.
+ * @details No dispersal via @ref disp_rate = 0. Includes gene drive but no aestivation or seasonality.
+ */
 InputParams set3 = {
     .num_runs = 2, 
     .max_t = 1000,
@@ -116,6 +125,9 @@ InputParams set3 = {
     .set_label = 3
 };
 
+/** Parameter set 4 - full mixing.
+ * @details Full dispersal mixing via @ref disp_rate = 1. Includes gene drive too but no aestivation or seasonality.
+ */
 InputParams set4 = {
     .num_runs = 2, 
     .max_t = 1000,
@@ -154,6 +166,9 @@ InputParams set4 = {
     .set_label = 4
 };
 
+/** Parameter set 5 - 1 day.
+ * @details Includes gene drive and dispersal but no aestivation or seasonality.
+ */
 InputParams set5 = {
    .num_runs = 2, 
     .max_t = 1,
@@ -192,6 +207,9 @@ InputParams set5 = {
     .set_label = 5
 };
 
+/** Parameter set 6 - small area.
+ * @details Includes gene drive and dispersal but no aestivation or seasonality.
+ */
 InputParams set6 = {
    .num_runs = 2, 
     .max_t = 1000,
@@ -230,6 +248,9 @@ InputParams set6 = {
     .set_label = 6
 };
 
+/** Parameter set 7 - low aestivation.
+ * @details Includes gene drive and dispersal too but no seasonality.
+ */
 InputParams set7 = {
     .num_runs = 2, 
     .max_t = 1000,
@@ -268,6 +289,9 @@ InputParams set7 = {
     .set_label = 7
 };
 
+/** Parameter set 8 - high aestivation.
+ * @details Includes gene drive and dispersal too but no seasonality.
+ */
 InputParams set8 = {
     .num_runs = 2, 
     .max_t = 1000,
@@ -306,6 +330,9 @@ InputParams set8 = {
     .set_label = 8
 };
 
+/** Parameter set 9 - no gene drive.
+ * @details No gene drive via @ref num_driver_M = @ref num_driver_sites = 0. Includes dispersal but no aestivation or seasonality.
+ */
 InputParams set9 = {
     .num_runs = 2, 
     .max_t = 1000,
@@ -344,6 +371,9 @@ InputParams set9 = {
     .set_label = 9
 };
 
+/** Parameter set 10 - high gene drive.
+ * @details High gene drive via high @ref num_driver_sites, @ref num_driver_sites = @ref num_pat. Includes dispersal too but no aestivation or seasonality.
+ */
 InputParams set10 = {
     .num_runs = 2, 
     .max_t = 1000,
@@ -382,6 +412,9 @@ InputParams set10 = {
     .set_label = 10
 };
 
+/** Parameter set 11 - 1 population, full dispersal.
+ * @details Full dispersal via @ref disp_rate = 1. Includes gene drive too but no aestivation or seasonality.
+ */
 InputParams set11 = {
     .num_runs = 2, 
     .max_t = 1000,
@@ -420,6 +453,9 @@ InputParams set11 = {
     .set_label = 11
 };
 
+/** Parameter set 12 - low seasonality, default rainfall.
+ * @details Default rainfall contribution to seasonality modelled as a sinusoid wave - see @ref SineRainfall. Low seasonality determined by low @ref amp parameter. Includes gene drive and dispersal too but no aestivation.
+ */
 InputParams set12 = {
     .num_runs = 2, 
     .max_t = 1000,
@@ -458,6 +494,9 @@ InputParams set12 = {
     .set_label = 12
 };
 
+/** Parameter set 13 - high seasonality, default rainfall.
+ * @details Default rainfall contribution to seasonality modelled as a sinusoid wave - see @ref SineRainfall. High seasonality determined by high @ref amp parameter. Includes gene drive and dispersal too but no aestivation.
+ */
 InputParams set13 = {
     .num_runs = 2, 
     .max_t = 1000,
@@ -496,6 +535,9 @@ InputParams set13 = {
     .set_label = 13
 };
 
+/** Parameter set 14 - low seasonality, pre-defined rainfall.
+ * @details Pre-defined rainfall contribution to seasonality modelled from rainfall data file - see @ref InputRainfall. Low seasonality determined by a low @ref alpha0_mean : @ref alpha1 ratio. Includes gene drive and dispersal too but no aestivation.
+ */
 InputParams set14 = {
     .num_runs = 2, 
     .max_t = 1000,
@@ -534,6 +576,9 @@ InputParams set14 = {
     .set_label = 14
 };
 
+/** Parameter set 15 - high seasonality, pre-defined rainfall.
+ * @details Pre-defined rainfall contribution to seasonality modelled from rainfall data file - see @ref InputRainfall. Low seasonality determined by a high @ref alpha0_mean : @ref alpha1 ratio. Includes gene drive and dispersal too but no aestivation.
+ */
 InputParams set15 = {
     .num_runs = 2, 
     .max_t = 1000,
@@ -572,6 +617,10 @@ InputParams set15 = {
     .set_label = 15
 };
 
+/** Parameter set 16 - alpha0 variance.
+ * Includes a non-zero @ref alpha0_variance to vary alpha0, the carrying capacity baseline, across patches. Includes gene drive and dispersal but no aestivation or seasonality.
+ * @see Model::alpha0()
+*/
 InputParams set16 = {
     .num_runs = 2, 
     .max_t = 1000,
@@ -610,6 +659,10 @@ InputParams set16 = {
     .set_label = 16
 };
 
+/** Parameter set 17 - multiple release times.
+ *  @details Includes gene drive and dispersal but no aestivation or seasonality.
+ *  @warning Same as set 1, made to be used with a multiple gene drive release times file. 
+ */
 InputParams set17 = {
     .num_runs = 2, 
     .max_t = 1000,
@@ -648,6 +701,9 @@ InputParams set17 = {
     .set_label = 17
 };
 
+/** Parameter set 18 - high juvenile survival probability.
+ * @details High juvenile survival probability via high @ref comp_power. Includes gene drive and dispersal but no aestivation or seasonality.
+ */
 InputParams set18 = {
     .num_runs = 2, 
     .max_t = 1000,
