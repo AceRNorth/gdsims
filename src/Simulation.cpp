@@ -114,12 +114,13 @@ void Simulation::set_coords(const std::string& filename)
 	sites_coords.clear();
 	release_sites.clear();
 
-	auto filepath = std::filesystem::path(std::string("./")+filename);
+	auto filepath = std::filesystem::path(filename);
 	if (!std::filesystem::exists(filepath) || !std::filesystem::is_regular_file(filepath)) {
-		std::cerr << "Invalid filename. Make sure the file is in the program directory." << std::endl;
+		std::cerr << "Invalid filename. To enter a filename, the file should be in the build directory. Otherwise, the filepath should be provided (either relative to 'build' or absolute)." << std::endl;
 	}
+	
 	else {
-		std::ifstream file(filename);
+		std::ifstream file(filepath);
 		std::string line;
 		std::vector<Point> temp_coords;
 		std::vector<int> temp_rel_sites;
@@ -160,8 +161,8 @@ void Simulation::set_coords(const std::string& filename)
 		else {
 			sites_coords = temp_coords;
 			release_sites = temp_rel_sites;
-		}
-	}		
+		}	
+	}
 }
 
 /** 
@@ -194,12 +195,13 @@ void Simulation::set_rainfall(const std::string& filename)
 {
 	input_rainfall_params->rainfall.clear();
 
-	auto filepath = std::filesystem::path(std::string("./")+filename);
+	auto filepath = std::filesystem::path(filename);
 	if (!std::filesystem::exists(filepath) || !std::filesystem::is_regular_file(filepath)) {
-		std::cerr << "Invalid filename. Make sure the file is in the program directory." << std::endl;
+		std::cerr << "Invalid filename. To enter a filename, the file should be in the build directory. Otherwise, the filepath should be provided (either relative to 'build' or absolute)." << std::endl;
 	}
+	
 	else {
-		std::ifstream file(filename);
+		std::ifstream file(filepath);
 		std::string line;
 		std::vector<double> temp;
 		if (file.is_open()) {
@@ -224,8 +226,8 @@ void Simulation::set_rainfall(const std::string& filename)
 		}
 		else {
 			std::cerr << "Error: the number of valid daily rainfall values in the file is not 365 or max_t." << std::endl;
-		}
-	}		
+		}	
+	}
 }
 
 /**
@@ -236,12 +238,13 @@ void Simulation::set_rainfall(const std::string& filename)
  */
 void Simulation::set_release_times(const std::string& filename) 
 {
-	auto filepath = std::filesystem::path(std::string("./")+filename);
+	auto filepath = std::filesystem::path(filename);
 	if (!std::filesystem::exists(filepath) || !std::filesystem::is_regular_file(filepath)) {
-		std::cerr << "Invalid filename. Make sure the file is in the program directory." << std::endl;
+		std::cerr << "Invalid filename. To enter a filename, the file should be in the build directory. Otherwise, the filepath should be provided (either relative to 'build' or absolute)." << std::endl;
 	}
+
 	else {
-		std::ifstream file(filename);
+		std::ifstream file(filepath);
 		std::string line;
 		std::vector<int> temp;
 		int tot_err = 0;
@@ -268,8 +271,8 @@ void Simulation::set_release_times(const std::string& filename)
 		}
 		else {
 			std::cerr << "There were errors in the file. The simulation will run with rel_times = driver_start" << std::endl;
-		}
-	}		
+		}	
+	}
 }
 
 /**
