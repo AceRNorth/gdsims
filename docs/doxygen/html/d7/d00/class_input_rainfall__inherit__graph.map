@@ -1,0 +1,5 @@
+<map id="InputRainfall" name="InputRainfall">
+<area shape="rect" id="Node000001" title="Implements seasonality by modelling the rainfall contribution to carrying capacity from daily rainfal..." alt="" coords="5,144,107,256"/>
+<area shape="rect" id="Node000002" href="$d5/d00/class_seasonality.html" title="Seasonality base class." alt="" coords="6,5,106,96"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,111,59,144,53,144,53,111"/>
+</map>

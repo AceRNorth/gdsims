@@ -1,0 +1,7 @@
+<map id="BoundaryStrategy" name="BoundaryStrategy">
+<area shape="rect" id="Node000001" title="Boundary strategy base class." alt="" coords="119,5,255,117"/>
+<area shape="rect" id="Node000002" href="$d2/d00/class_edge_boundary_strategy.html" title="Implements the distance method for edge boundary conditions." alt="" coords="5,165,171,277"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,131,124,167,120,164,142,129"/>
+<area shape="rect" id="Node000003" href="$db/d00/class_toroidal_boundary_strategy.html" title="Implements the distance method for toroidal boundary conditions." alt="" coords="195,165,375,277"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="231,129,253,164,249,167,227,131"/>
+</map>

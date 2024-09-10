@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists\css\tree_view.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-treeview\bootstrap-treeview.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -47,8 +47,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
-    <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
-    <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+    <script src="../_static/bootstrap-treeview\bootstrap-treeview.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/tutorial5';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -436,7 +435,7 @@ document.write(`
 <section id="setting-multiple-release-times">
 <span id="tutorial-5-1"></span><h2>5.1 Setting multiple release times<a class="headerlink" href="#setting-multiple-release-times" title="Permalink to this heading">#</a></h2>
 <p>By default, the program uses a single gene drive release time at <code class="docutils literal notranslate"><span class="pre">driver_start</span></code> (we can see this in the previous runs). We can also choose to use multiple release times through the advanced options menu. This can be useful when we have a specific release schedule we want to test.</p>
-<p>Let’s create a text file named <code class="docutils literal notranslate"><span class="pre">params_set17</span></code>, where we will copy the set 1 parameters we used in Tutorial <a class="reference internal" href="tutorial1.html#tutorial-1"><span class="std std-ref">1. Running a pre-defined set</span></a>. Change the last parameter in the file, <code class="docutils literal notranslate"><span class="pre">set_label</span></code>, to 17. Remember all exercise files can also be found under the <code class="docutils literal notranslate"><span class="pre">docs/exercises</span></code> directory.</p>
+<p>We can create a text file named <code class="docutils literal notranslate"><span class="pre">params_set17</span></code>, which contains the same parameters as set 1, which we used in Tutorial <a class="reference internal" href="tutorial1.html#tutorial-1"><span class="std std-ref">1. Running a pre-defined set</span></a>, except we change the last parameter in the file, <code class="docutils literal notranslate"><span class="pre">set_label</span></code>, to 17. To speed this up, we can use the one in the <code class="docutils literal notranslate"><span class="pre">docs/exercises</span></code> directory directly.</p>
 <details class="summary-parameters">
 <summary>Parameters</summary><div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">docs/exercises/params_set17.txt</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
@@ -478,11 +477,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</details><p>Again, input files should be in the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory.</p>
-<p>Run the program with a custom run, entering this file, and open the advanced options menu.
+</details><p>Run the program with a custom run, entering this filepath, and open the advanced options menu.
 Now, we can choose option <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">-</span> <span class="pre">Multiple</span> <span class="pre">gene</span> <span class="pre">drive</span> <span class="pre">release</span> <span class="pre">times</span></code>.</p>
 <img alt="../_images/tut5_adv_options.png" src="../_images/tut5_adv_options.png" />
-<p>This will prompt us to enter another filename for the release times. This text file should contain all chosen release times (as days relative to the simulation) as below:</p>
+<p>This will prompt us to enter another filename or filepath for the release times. This text file should contain all chosen release times (as days relative to the simulation) as below:</p>
 <details class="summary-release-times">
 <summary>Release times</summary><div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">docs/exercises/rel_times.txt</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
@@ -497,7 +495,7 @@ Now, we can choose option <code class="docutils literal notranslate"><span class
 <p class="admonition-title">Caution</p>
 <p>As before, successfully setting a custom option means overwriting the default parameter - in this case the single release time at <code class="docutils literal notranslate"><span class="pre">driver_start</span></code>.</p>
 </div>
-<p>Once we create this file and enter the filename, all that’s left to do is run the program!</p>
+<p>Once we create this file and enter the filepath, all that’s left to do is run the program!</p>
 <img alt="../_images/tut5_confirm.png" src="../_images/tut5_confirm.png" />
 <p>And with this, we have effectively run the pre-defined set 17!
 We can look at the totals plot and see for ourselves the spikes at each release time:</p>

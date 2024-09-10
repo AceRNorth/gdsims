@@ -1,0 +1,596 @@
+\doxysection{Model Class Reference}
+\hypertarget{class_model}{}\label{class_model}\index{Model@{Model}}
+
+
+Runs the model.  
+
+
+
+
+{\ttfamily \#include $<$Model.\+h$>$}
+
+
+
+Collaboration diagram for Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d0/d00/class_model__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_a46b88e44d343b0bc26544e1e77538e5b}{Model}} (\mbox{\hyperlink{struct_model_params}{Model\+Params}} \texorpdfstring{$\ast$}{*}params, const std\+::array$<$ std\+::array$<$ std\+::array$<$ double, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ \&inher\+\_\+frac, \mbox{\hyperlink{struct_sine_rainfall_params}{Sine\+Rainfall\+Params}} \texorpdfstring{$\ast$}{*}season, double a0\+\_\+mean, double a0\+\_\+var, std\+::vector$<$ int $>$ rel\+\_\+sites=\{\}, \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} boundary=\mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d}{Boundary\+Type\+::\+Toroid}}, \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}} disp\+\_\+type=\mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf}{Dispersal\+Type\+::\+Distance\+Kernel}}, std\+::vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ coords=\{\})
+\begin{DoxyCompactList}\small\item\em \doxylink{class_model}{Model} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_a9665e30ee5c6339b78966f628dcdf468}{Model}} (\mbox{\hyperlink{struct_model_params}{Model\+Params}} \texorpdfstring{$\ast$}{*}params, const std\+::array$<$ std\+::array$<$ std\+::array$<$ double, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ \&inher\+\_\+frac, \mbox{\hyperlink{struct_input_rainfall_params}{Input\+Rainfall\+Params}} \texorpdfstring{$\ast$}{*}season, double a0\+\_\+mean, double a0\+\_\+var, std\+::vector$<$ int $>$ rel\+\_\+sites=\{\}, \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} boundary=\mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d}{Boundary\+Type\+::\+Toroid}}, \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}} disp\+\_\+type=\mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf}{Dispersal\+Type\+::\+Distance\+Kernel}}, std\+::vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$ coords=\{\})
+\begin{DoxyCompactList}\small\item\em \doxylink{class_model}{Model} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_ad6ebd2062a0b823db841a0b88baac4c0}{\texorpdfstring{$\sim$}{\string~}\+Model}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_model}{Model} destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_a3d359ced00aacc31a7b50c53b8b1e340}{initiate}} ()
+\begin{DoxyCompactList}\small\item\em Sets up the model architecture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_a7e4eb741e72b3946a9166dceed6fc02d}{run}} (int day)
+\begin{DoxyCompactList}\small\item\em Runs the daily step of the model. \end{DoxyCompactList}\item 
+long long int \mbox{\hyperlink{class_model_a8aaa1031c217f20626283a360d44b53f}{calculate\+\_\+tot\+\_\+J}} ()
+\begin{DoxyCompactList}\small\item\em Returns the total number of juveniles across all ages and genotypes and across all patches. \end{DoxyCompactList}\item 
+long long int \mbox{\hyperlink{class_model_ab92b4e7f88b556e690391528330ba6af}{calculate\+\_\+tot\+\_\+M}} ()
+\begin{DoxyCompactList}\small\item\em Returns the total number of males across all genotypes and across all patches. \end{DoxyCompactList}\item 
+long long int \mbox{\hyperlink{class_model_a0d762e0b53f2f1443b59d1425366cfc4}{calculate\+\_\+tot\+\_\+V}} ()
+\begin{DoxyCompactList}\small\item\em Returns the total number of virgin (unmated) females across all genotypes and across all patches. \end{DoxyCompactList}\item 
+long long int \mbox{\hyperlink{class_model_a8be5555da392871558de820795938a04}{calculate\+\_\+tot\+\_\+F}} ()
+\begin{DoxyCompactList}\small\item\em Returns the total number of mated females across all female and male sperm genotypes and across all patches. \end{DoxyCompactList}\item 
+std\+::array$<$ long long int, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ \mbox{\hyperlink{class_model_a6d5f4f68f41e76c3e966e312d2f6e9e3}{calculate\+\_\+tot\+\_\+\+M\+\_\+gen}} ()
+\begin{DoxyCompactList}\small\item\em Returns the total number of males of each genotype across all patches. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_model_a17b3a93529de4ef762254f9a1932b67e}{get\+\_\+sites}} () const
+\begin{DoxyCompactList}\small\item\em Returns the sites vector. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_model_a6499bfa0eeb48133e352ce72f79aee9d}{get\+\_\+day}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current simulation day. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_a04c1c541fc6d4f4c12f854b971197ea5}{get\+\_\+alpha}} (double \mbox{\hyperlink{class_model_ad1efe8336546de49c99d0d8c8ec8e6e8}{alpha0}})
+\begin{DoxyCompactList}\small\item\em Returns the carrying capacity for the given alpha0 (the baseline contribution to it) and the current day. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_model_ad1efe8336546de49c99d0d8c8ec8e6e8}{alpha0}} ()
+\begin{DoxyCompactList}\small\item\em Returns a random value for the baseline contribution to the carrying capacity (alpha0). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_add15fa39b2e8fda3fefc551de4d0e1bb}{populate\+\_\+sites}} ()
+\begin{DoxyCompactList}\small\item\em Populates all sites with a wild mosquito population of different types (age and sex). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_a1b78097ea008a3b4cc36b321c7d42289}{set\+\_\+dev\+\_\+duration\+\_\+probs}} (int min\+\_\+time, int max\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Sets probabilities of juvenile eclosion for different age groups. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_ae7c17f3d562ffc8baea8945ba4ffd3c3}{run\+\_\+step}} (int day)
+\begin{DoxyCompactList}\small\item\em Runs the daily mosquito life-\/processes for all sites, including dispersal and aestivation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_a2a3151eb1bb6333c2ba103f0c7c6c475}{juv\+\_\+get\+\_\+older}} ()
+\begin{DoxyCompactList}\small\item\em Carries out juvenile aging across all patches. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_ae2fa6af0cf426e1df144e4dcbee4069d}{adults\+\_\+die}} ()
+\begin{DoxyCompactList}\small\item\em Carries out adult mortality across all patches. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_a76f26441a5112d1f596d5b9317734be4}{virgins\+\_\+mate}} ()
+\begin{DoxyCompactList}\small\item\em Carries out mating across all patches. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_a85c48027be32159a36337531249a435a}{lay\+\_\+eggs}} ()
+\begin{DoxyCompactList}\small\item\em Carries out egg-\/laying across all patches. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_af30fafd15a6451c20c3dcef622aaf6d0}{juv\+\_\+eclose}} ()
+\begin{DoxyCompactList}\small\item\em Carries out juvenile eclosion across all patches. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_model_a9aadb122b13c0e8be4f2437117264879}{sites}}
+\begin{DoxyCompactList}\small\item\em Vector of all \doxylink{class_patch}{Patch} objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dispersal}{Dispersal}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_model_a76d71b89f763d239c57657156b143231}{dispersal}}
+\item 
+\mbox{\hyperlink{class_aestivation}{Aestivation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_model_a9671f0b8d7b750684254ced32a7b1bc9}{aestivation}}
+\item 
+\mbox{\hyperlink{class_g_d_release}{GDRelease}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_model_a9d0be7ddf0f62f9e9444ab5be8be8da6}{gd\+\_\+release}}
+\item 
+\mbox{\hyperlink{class_seasonality}{Seasonality}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_model_a9d3cb8400740de092adeaa6fdea121a8}{seasonality}}
+\item 
+int \mbox{\hyperlink{class_model_a864dafb787704b50f6b3ca2b416533df}{day\+\_\+sim}}
+\begin{DoxyCompactList}\small\item\em Current day of the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_model_a73f36f72009040a8bcf8b15a94961b55}{num\+\_\+pat}}
+\begin{DoxyCompactList}\small\item\em Number of population sites (patches) chosen for the simulation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_ad456b9a7464879d80abb19f1d14971cf}{side}}
+\begin{DoxyCompactList}\small\item\em Size of the square simulation area (side x side). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_initial_pops_params}{Initial\+Pops\+Params}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_model_a9f55ce896e1332f492570af65cfe76d4}{initial\+\_\+pops}}
+\begin{DoxyCompactList}\small\item\em Initial population values -\/ common for all Patches. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_model_af1ba01eda7176a872d16eff80fa8cde9}{min\+\_\+dev}}
+\begin{DoxyCompactList}\small\item\em Minimum development time for a juvenile (in days). \end{DoxyCompactList}\item 
+std\+::array$<$ double, \mbox{\hyperlink{namespaceconstants_ab5cd2d6cdf356d98576ea193f6a54476}{constants\+::max\+\_\+dev}}+1 $>$ \mbox{\hyperlink{class_model_a1d8427bbcb5f7e9db04d213111e208ba}{dev\+\_\+duration\+\_\+probs}}
+\begin{DoxyCompactList}\small\item\em Array of probabilities of juvenile development duration for a new juvenile (index indicates the number of days to develop or, equivalently, the age class the new juvenile starts at). \end{DoxyCompactList}\item 
+std\+::array$<$ std\+::array$<$ std\+::array$<$ double, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ \mbox{\hyperlink{class_model_a0fb3ac96dac77d8c0f67142ab70ad899}{inher\+\_\+fraction}}
+\begin{DoxyCompactList}\small\item\em Inheritance fraction. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_a106416d6d9dc6510bda17ea0b6b1b588}{alpha0\+\_\+mean}}
+\begin{DoxyCompactList}\small\item\em Mean of the baseline contribution to the carrying capacity. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_ad10cafc06c6b49b020c22efb034f8362}{alpha0\+\_\+variance}}
+\begin{DoxyCompactList}\small\item\em Variance of the baseline contribution to the carrying capacity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Runs the model. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{struct_area_params}{Area\+Params}, \doxylink{struct_model_params}{Model\+Params} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_model_a46b88e44d343b0bc26544e1e77538e5b}\label{class_model_a46b88e44d343b0bc26544e1e77538e5b} 
+\index{Model@{Model}!Model@{Model}}
+\index{Model@{Model}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{Model()}{Model()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Model\+::\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_model_params}{Model\+Params}} \texorpdfstring{$\ast$}{*}}]{params,  }\item[{const std\+::array$<$ std\+::array$<$ std\+::array$<$ double, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ \&}]{inher\+\_\+frac,  }\item[{\mbox{\hyperlink{struct_sine_rainfall_params}{Sine\+Rainfall\+Params}} \texorpdfstring{$\ast$}{*}}]{season,  }\item[{double}]{a0\+\_\+mean,  }\item[{double}]{a0\+\_\+var,  }\item[{std\+::vector$<$ int $>$}]{rel\+\_\+sites = {\ttfamily \{\}},  }\item[{\mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}}}]{boundary = {\ttfamily \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d}{Boundary\+Type\+::\+Toroid}}},  }\item[{\mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}}}]{disp\+\_\+type = {\ttfamily \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf}{Dispersal\+Type\+::\+Distance\+Kernel}}},  }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$}]{coords = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_model}{Model} constructor. 
+
+Builds the components of the model. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em params} & model parameters \\
+\hline
+\mbox{\texttt{ in}}  & {\em inher\+\_\+frac} & inheritance fraction \\
+\hline
+\mbox{\texttt{ in}}  & {\em season} & seasonality parameters for sinusoid rainfall \\
+\hline
+\mbox{\texttt{ in}}  & {\em a0\+\_\+mean} & alpha0 mean (mean of the baseline contribution to the carrying capacity) \\
+\hline
+\mbox{\texttt{ in}}  & {\em a0\+\_\+var} & alpha0 variance (variance of the baseline contribution to the carrying capacity) \\
+\hline
+\mbox{\texttt{ in}}  & {\em rel\+\_\+sites} & release sites (indices relative to the coords vector) \\
+\hline
+\mbox{\texttt{ in}}  & {\em boundary} & boundary type \\
+\hline
+\mbox{\texttt{ in}}  & {\em disp\+\_\+type} & dispersal type \\
+\hline
+\mbox{\texttt{ in}}  & {\em coords} & site coordinates vector \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_model_a9665e30ee5c6339b78966f628dcdf468}\label{class_model_a9665e30ee5c6339b78966f628dcdf468} 
+\index{Model@{Model}!Model@{Model}}
+\index{Model@{Model}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{Model()}{Model()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Model\+::\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_model_params}{Model\+Params}} \texorpdfstring{$\ast$}{*}}]{params,  }\item[{const std\+::array$<$ std\+::array$<$ std\+::array$<$ double, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ \&}]{inher\+\_\+frac,  }\item[{\mbox{\hyperlink{struct_input_rainfall_params}{Input\+Rainfall\+Params}} \texorpdfstring{$\ast$}{*}}]{season,  }\item[{double}]{a0\+\_\+mean,  }\item[{double}]{a0\+\_\+var,  }\item[{std\+::vector$<$ int $>$}]{rel\+\_\+sites = {\ttfamily \{\}},  }\item[{\mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}}}]{boundary = {\ttfamily \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d}{Boundary\+Type\+::\+Toroid}}},  }\item[{\mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}}}]{disp\+\_\+type = {\ttfamily \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf}{Dispersal\+Type\+::\+Distance\+Kernel}}},  }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_point}{Point}} $>$}]{coords = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_model}{Model} constructor. 
+
+Builds the components of the model. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em params} & model parameters \\
+\hline
+\mbox{\texttt{ in}}  & {\em inher\+\_\+frac} & inheritance fraction \\
+\hline
+\mbox{\texttt{ in}}  & {\em season} & seasonality parameters for input rainfall data \\
+\hline
+\mbox{\texttt{ in}}  & {\em a0\+\_\+mean} & alpha0 mean (mean of the baseline contribution to the carrying capacity) \\
+\hline
+\mbox{\texttt{ in}}  & {\em a0\+\_\+var} & alpha0 variance (variance of the baseline contribution to the carrying capacity) \\
+\hline
+\mbox{\texttt{ in}}  & {\em rel\+\_\+sites} & release sites (indices relative to the coords vector) \\
+\hline
+\mbox{\texttt{ in}}  & {\em boundary} & boundary type \\
+\hline
+\mbox{\texttt{ in}}  & {\em disp\+\_\+type} & dispersal type \\
+\hline
+\mbox{\texttt{ in}}  & {\em coords} & site coordinates vector \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_model_ad6ebd2062a0b823db841a0b88baac4c0}\label{class_model_ad6ebd2062a0b823db841a0b88baac4c0} 
+\index{Model@{Model}!````~Model@{\texorpdfstring{$\sim$}{\string~}Model}}
+\index{````~Model@{\texorpdfstring{$\sim$}{\string~}Model}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Model()}{\string~Model()}}
+{\footnotesize\ttfamily Model\+::\texorpdfstring{$\sim$}{\string~}\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_model}{Model} destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_model_ae2fa6af0cf426e1df144e4dcbee4069d}\label{class_model_ae2fa6af0cf426e1df144e4dcbee4069d} 
+\index{Model@{Model}!adults\_die@{adults\_die}}
+\index{adults\_die@{adults\_die}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{adults\_die()}{adults\_die()}}
+{\footnotesize\ttfamily void Model\+::adults\+\_\+die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Carries out adult mortality across all patches. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_patch_a57e9e06fbf179f6d3c808dee1522f6a9}{Patch\+::adults\+\_\+die()} 
+\end{DoxySeeAlso}
+\Hypertarget{class_model_ad1efe8336546de49c99d0d8c8ec8e6e8}\label{class_model_ad1efe8336546de49c99d0d8c8ec8e6e8} 
+\index{Model@{Model}!alpha0@{alpha0}}
+\index{alpha0@{alpha0}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{alpha0()}{alpha0()}}
+{\footnotesize\ttfamily double Model\+::alpha0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns a random value for the baseline contribution to the carrying capacity (alpha0). 
+
+The random value is obtained as a random draw from a lognormal distribution with desired mean alpha0\+\_\+mean and desired variance alpha0\+\_\+variance. \begin{DoxyReturn}{Returns}
+A random draw of alpha0. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_model_a106416d6d9dc6510bda17ea0b6b1b588}{Model\+::alpha0\+\_\+mean}, \doxylink{class_model_ad10cafc06c6b49b020c22efb034f8362}{Model\+::alpha0\+\_\+variance} 
+\end{DoxySeeAlso}
+\Hypertarget{class_model_a8be5555da392871558de820795938a04}\label{class_model_a8be5555da392871558de820795938a04} 
+\index{Model@{Model}!calculate\_tot\_F@{calculate\_tot\_F}}
+\index{calculate\_tot\_F@{calculate\_tot\_F}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{calculate\_tot\_F()}{calculate\_tot\_F()}}
+{\footnotesize\ttfamily long long int Model\+::calculate\+\_\+tot\+\_\+F (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the total number of mated females across all female and male sperm genotypes and across all patches. 
+
+\begin{DoxyReturn}{Returns}
+The total number of mated females in the model run. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_patch_a7754f3fd7fb22af2c3661d4d5229ab2d}{Patch\+::get\+\_\+\+F()} 
+\end{DoxySeeAlso}
+\Hypertarget{class_model_a8aaa1031c217f20626283a360d44b53f}\label{class_model_a8aaa1031c217f20626283a360d44b53f} 
+\index{Model@{Model}!calculate\_tot\_J@{calculate\_tot\_J}}
+\index{calculate\_tot\_J@{calculate\_tot\_J}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{calculate\_tot\_J()}{calculate\_tot\_J()}}
+{\footnotesize\ttfamily long long int Model\+::calculate\+\_\+tot\+\_\+J (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the total number of juveniles across all ages and genotypes and across all patches. 
+
+\begin{DoxyReturn}{Returns}
+The total number of juveniles in the model run. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_patch_a9ec8ec87984a6e18efa7afd83e6df081}{Patch\+::J} 
+\end{DoxySeeAlso}
+\Hypertarget{class_model_ab92b4e7f88b556e690391528330ba6af}\label{class_model_ab92b4e7f88b556e690391528330ba6af} 
+\index{Model@{Model}!calculate\_tot\_M@{calculate\_tot\_M}}
+\index{calculate\_tot\_M@{calculate\_tot\_M}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{calculate\_tot\_M()}{calculate\_tot\_M()}}
+{\footnotesize\ttfamily long long int Model\+::calculate\+\_\+tot\+\_\+M (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the total number of males across all genotypes and across all patches. 
+
+\begin{DoxyReturn}{Returns}
+The total number of males in the model run. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_patch_a18366a21df794d2cebbbdfe3195734a5}{Patch\+::get\+\_\+\+M()} 
+\end{DoxySeeAlso}
+\Hypertarget{class_model_a6d5f4f68f41e76c3e966e312d2f6e9e3}\label{class_model_a6d5f4f68f41e76c3e966e312d2f6e9e3} 
+\index{Model@{Model}!calculate\_tot\_M\_gen@{calculate\_tot\_M\_gen}}
+\index{calculate\_tot\_M\_gen@{calculate\_tot\_M\_gen}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{calculate\_tot\_M\_gen()}{calculate\_tot\_M\_gen()}}
+{\footnotesize\ttfamily std\+::array$<$ long long int, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ Model\+::calculate\+\_\+tot\+\_\+\+M\+\_\+gen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the total number of males of each genotype across all patches. 
+
+\begin{DoxyReturn}{Returns}
+The total number of males in the model run, divided by genotype. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_patch_a6e9cda8c3620873eaadf23db0f5a7b27}{Patch\+::M} 
+\end{DoxySeeAlso}
+\Hypertarget{class_model_a0d762e0b53f2f1443b59d1425366cfc4}\label{class_model_a0d762e0b53f2f1443b59d1425366cfc4} 
+\index{Model@{Model}!calculate\_tot\_V@{calculate\_tot\_V}}
+\index{calculate\_tot\_V@{calculate\_tot\_V}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{calculate\_tot\_V()}{calculate\_tot\_V()}}
+{\footnotesize\ttfamily long long int Model\+::calculate\+\_\+tot\+\_\+V (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the total number of virgin (unmated) females across all genotypes and across all patches. 
+
+\begin{DoxyReturn}{Returns}
+The total number of virgin (unmated) females in the model run. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_patch_ae4195468f66138a8bf7f0c37701098da}{Patch\+::V} 
+\end{DoxySeeAlso}
+\Hypertarget{class_model_a04c1c541fc6d4f4c12f854b971197ea5}\label{class_model_a04c1c541fc6d4f4c12f854b971197ea5} 
+\index{Model@{Model}!get\_alpha@{get\_alpha}}
+\index{get\_alpha@{get\_alpha}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{get\_alpha()}{get\_alpha()}}
+{\footnotesize\ttfamily double Model\+::get\+\_\+alpha (\begin{DoxyParamCaption}\item[{double}]{alpha0 }\end{DoxyParamCaption})}
+
+
+
+Returns the carrying capacity for the given alpha0 (the baseline contribution to it) and the current day. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em alpha0} & baseline contribution to the carrying capacity \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_seasonality_a86bfbdfc639ab1a08e3643e05b55d6f1}{Seasonality\+::alpha()} 
+\end{DoxySeeAlso}
+\Hypertarget{class_model_a6499bfa0eeb48133e352ce72f79aee9d}\label{class_model_a6499bfa0eeb48133e352ce72f79aee9d} 
+\index{Model@{Model}!get\_day@{get\_day}}
+\index{get\_day@{get\_day}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{get\_day()}{get\_day()}}
+{\footnotesize\ttfamily int Model\+::get\+\_\+day (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the current simulation day. 
+
+\begin{DoxyReturn}{Returns}
+The simulation day. 
+\end{DoxyReturn}
+\Hypertarget{class_model_a17b3a93529de4ef762254f9a1932b67e}\label{class_model_a17b3a93529de4ef762254f9a1932b67e} 
+\index{Model@{Model}!get\_sites@{get\_sites}}
+\index{get\_sites@{get\_sites}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{get\_sites()}{get\_sites()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ Model\+::get\+\_\+sites (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the sites vector. 
+
+\begin{DoxyReturn}{Returns}
+The sites vector, containing all \doxylink{class_patch}{Patch} objects. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}, \doxylink{class_patch}{Patch} 
+\end{DoxySeeAlso}
+\Hypertarget{class_model_a3d359ced00aacc31a7b50c53b8b1e340}\label{class_model_a3d359ced00aacc31a7b50c53b8b1e340} 
+\index{Model@{Model}!initiate@{initiate}}
+\index{initiate@{initiate}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{initiate()}{initiate()}}
+{\footnotesize\ttfamily void Model\+::initiate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets up the model architecture. 
+
+\Hypertarget{class_model_af30fafd15a6451c20c3dcef622aaf6d0}\label{class_model_af30fafd15a6451c20c3dcef622aaf6d0} 
+\index{Model@{Model}!juv\_eclose@{juv\_eclose}}
+\index{juv\_eclose@{juv\_eclose}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{juv\_eclose()}{juv\_eclose()}}
+{\footnotesize\ttfamily void Model\+::juv\+\_\+eclose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Carries out juvenile eclosion across all patches. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_patch_a935e1a959a81d818c161b1182a45e958}{Patch\+::juv\+\_\+eclose()} 
+\end{DoxySeeAlso}
+\Hypertarget{class_model_a2a3151eb1bb6333c2ba103f0c7c6c475}\label{class_model_a2a3151eb1bb6333c2ba103f0c7c6c475} 
+\index{Model@{Model}!juv\_get\_older@{juv\_get\_older}}
+\index{juv\_get\_older@{juv\_get\_older}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{juv\_get\_older()}{juv\_get\_older()}}
+{\footnotesize\ttfamily void Model\+::juv\+\_\+get\+\_\+older (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Carries out juvenile aging across all patches. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_patch_a1ac1a35f87b779415c9c0f91f0235add}{Patch\+::juv\+\_\+get\+\_\+older()} 
+\end{DoxySeeAlso}
+\Hypertarget{class_model_a85c48027be32159a36337531249a435a}\label{class_model_a85c48027be32159a36337531249a435a} 
+\index{Model@{Model}!lay\_eggs@{lay\_eggs}}
+\index{lay\_eggs@{lay\_eggs}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{lay\_eggs()}{lay\_eggs()}}
+{\footnotesize\ttfamily void Model\+::lay\+\_\+eggs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Carries out egg-\/laying across all patches. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_patch_acbbe56b0cc3e9e65720191eb92bd33f3}{Patch\+::lay\+\_\+eggs()} 
+\end{DoxySeeAlso}
+\Hypertarget{class_model_add15fa39b2e8fda3fefc551de4d0e1bb}\label{class_model_add15fa39b2e8fda3fefc551de4d0e1bb} 
+\index{Model@{Model}!populate\_sites@{populate\_sites}}
+\index{populate\_sites@{populate\_sites}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{populate\_sites()}{populate\_sites()}}
+{\footnotesize\ttfamily void Model\+::populate\+\_\+sites (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Populates all sites with a wild mosquito population of different types (age and sex). 
+
+\Hypertarget{class_model_a7e4eb741e72b3946a9166dceed6fc02d}\label{class_model_a7e4eb741e72b3946a9166dceed6fc02d} 
+\index{Model@{Model}!run@{run}}
+\index{run@{run}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Model\+::run (\begin{DoxyParamCaption}\item[{int}]{day }\end{DoxyParamCaption})}
+
+
+
+Runs the daily step of the model. 
+
+The life processes do not run during the initialisation day (day 0). 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em day} & simulation day \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_model_ae7c17f3d562ffc8baea8945ba4ffd3c3}\label{class_model_ae7c17f3d562ffc8baea8945ba4ffd3c3} 
+\index{Model@{Model}!run\_step@{run\_step}}
+\index{run\_step@{run\_step}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{run\_step()}{run\_step()}}
+{\footnotesize\ttfamily void Model\+::run\+\_\+step (\begin{DoxyParamCaption}\item[{int}]{day }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Runs the daily mosquito life-\/processes for all sites, including dispersal and aestivation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em day} & simulation day \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_model_a1b78097ea008a3b4cc36b321c7d42289}\label{class_model_a1b78097ea008a3b4cc36b321c7d42289} 
+\index{Model@{Model}!set\_dev\_duration\_probs@{set\_dev\_duration\_probs}}
+\index{set\_dev\_duration\_probs@{set\_dev\_duration\_probs}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{set\_dev\_duration\_probs()}{set\_dev\_duration\_probs()}}
+{\footnotesize\ttfamily void Model\+::set\+\_\+dev\+\_\+duration\+\_\+probs (\begin{DoxyParamCaption}\item[{int}]{min\+\_\+time,  }\item[{int}]{max\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets probabilities of juvenile eclosion for different age groups. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em min\+\_\+time} & minimum development time (in days) \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+time} & maximum development time (in days) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_model_a76f26441a5112d1f596d5b9317734be4}\label{class_model_a76f26441a5112d1f596d5b9317734be4} 
+\index{Model@{Model}!virgins\_mate@{virgins\_mate}}
+\index{virgins\_mate@{virgins\_mate}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{virgins\_mate()}{virgins\_mate()}}
+{\footnotesize\ttfamily void Model\+::virgins\+\_\+mate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Carries out mating across all patches. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_patch_a831b026c31ae2bbb56b04e8cc8fa2277}{Patch\+::virgins\+\_\+mate()} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_model_a9671f0b8d7b750684254ced32a7b1bc9}\label{class_model_a9671f0b8d7b750684254ced32a7b1bc9} 
+\index{Model@{Model}!aestivation@{aestivation}}
+\index{aestivation@{aestivation}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{aestivation}{aestivation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_aestivation}{Aestivation}}\texorpdfstring{$\ast$}{*} Model\+::aestivation\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_model_a106416d6d9dc6510bda17ea0b6b1b588}\label{class_model_a106416d6d9dc6510bda17ea0b6b1b588} 
+\index{Model@{Model}!alpha0\_mean@{alpha0\_mean}}
+\index{alpha0\_mean@{alpha0\_mean}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{alpha0\_mean}{alpha0\_mean}}
+{\footnotesize\ttfamily double Model\+::alpha0\+\_\+mean\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mean of the baseline contribution to the carrying capacity. 
+
+\Hypertarget{class_model_ad10cafc06c6b49b020c22efb034f8362}\label{class_model_ad10cafc06c6b49b020c22efb034f8362} 
+\index{Model@{Model}!alpha0\_variance@{alpha0\_variance}}
+\index{alpha0\_variance@{alpha0\_variance}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{alpha0\_variance}{alpha0\_variance}}
+{\footnotesize\ttfamily double Model\+::alpha0\+\_\+variance\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Variance of the baseline contribution to the carrying capacity. 
+
+\Hypertarget{class_model_a864dafb787704b50f6b3ca2b416533df}\label{class_model_a864dafb787704b50f6b3ca2b416533df} 
+\index{Model@{Model}!day\_sim@{day\_sim}}
+\index{day\_sim@{day\_sim}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{day\_sim}{day\_sim}}
+{\footnotesize\ttfamily int Model\+::day\+\_\+sim\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current day of the simulation. 
+
+\Hypertarget{class_model_a1d8427bbcb5f7e9db04d213111e208ba}\label{class_model_a1d8427bbcb5f7e9db04d213111e208ba} 
+\index{Model@{Model}!dev\_duration\_probs@{dev\_duration\_probs}}
+\index{dev\_duration\_probs@{dev\_duration\_probs}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{dev\_duration\_probs}{dev\_duration\_probs}}
+{\footnotesize\ttfamily std\+::array$<$double, \mbox{\hyperlink{namespaceconstants_ab5cd2d6cdf356d98576ea193f6a54476}{constants\+::max\+\_\+dev}}+1$>$ Model\+::dev\+\_\+duration\+\_\+probs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Array of probabilities of juvenile development duration for a new juvenile (index indicates the number of days to develop or, equivalently, the age class the new juvenile starts at). 
+
+\Hypertarget{class_model_a76d71b89f763d239c57657156b143231}\label{class_model_a76d71b89f763d239c57657156b143231} 
+\index{Model@{Model}!dispersal@{dispersal}}
+\index{dispersal@{dispersal}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{dispersal}{dispersal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_dispersal}{Dispersal}}\texorpdfstring{$\ast$}{*} Model\+::dispersal\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_model_a9d0be7ddf0f62f9e9444ab5be8be8da6}\label{class_model_a9d0be7ddf0f62f9e9444ab5be8be8da6} 
+\index{Model@{Model}!gd\_release@{gd\_release}}
+\index{gd\_release@{gd\_release}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{gd\_release}{gd\_release}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_d_release}{GDRelease}}\texorpdfstring{$\ast$}{*} Model\+::gd\+\_\+release\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_model_a0fb3ac96dac77d8c0f67142ab70ad899}\label{class_model_a0fb3ac96dac77d8c0f67142ab70ad899} 
+\index{Model@{Model}!inher\_fraction@{inher\_fraction}}
+\index{inher\_fraction@{inher\_fraction}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{inher\_fraction}{inher\_fraction}}
+{\footnotesize\ttfamily std\+::array$<$std\+::array$<$std\+::array $<$double, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}}$>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}}$>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}}$>$ Model\+::inher\+\_\+fraction\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Inheritance fraction. 
+
+f\+\_\+ijk is the fraction of genotype k offspring from mother with genotype i mated to father with genotype j. \Hypertarget{class_model_a9f55ce896e1332f492570af65cfe76d4}\label{class_model_a9f55ce896e1332f492570af65cfe76d4} 
+\index{Model@{Model}!initial\_pops@{initial\_pops}}
+\index{initial\_pops@{initial\_pops}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{initial\_pops}{initial\_pops}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_initial_pops_params}{Initial\+Pops\+Params}}\texorpdfstring{$\ast$}{*} Model\+::initial\+\_\+pops\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initial population values -\/ common for all Patches. 
+
+\Hypertarget{class_model_af1ba01eda7176a872d16eff80fa8cde9}\label{class_model_af1ba01eda7176a872d16eff80fa8cde9} 
+\index{Model@{Model}!min\_dev@{min\_dev}}
+\index{min\_dev@{min\_dev}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{min\_dev}{min\_dev}}
+{\footnotesize\ttfamily int Model\+::min\+\_\+dev\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Minimum development time for a juvenile (in days). 
+
+\Hypertarget{class_model_a73f36f72009040a8bcf8b15a94961b55}\label{class_model_a73f36f72009040a8bcf8b15a94961b55} 
+\index{Model@{Model}!num\_pat@{num\_pat}}
+\index{num\_pat@{num\_pat}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{num\_pat}{num\_pat}}
+{\footnotesize\ttfamily int Model\+::num\+\_\+pat\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of population sites (patches) chosen for the simulation. 
+
+\Hypertarget{class_model_a9d3cb8400740de092adeaa6fdea121a8}\label{class_model_a9d3cb8400740de092adeaa6fdea121a8} 
+\index{Model@{Model}!seasonality@{seasonality}}
+\index{seasonality@{seasonality}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{seasonality}{seasonality}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_seasonality}{Seasonality}}\texorpdfstring{$\ast$}{*} Model\+::seasonality\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_model_ad456b9a7464879d80abb19f1d14971cf}\label{class_model_ad456b9a7464879d80abb19f1d14971cf} 
+\index{Model@{Model}!side@{side}}
+\index{side@{side}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{side}{side}}
+{\footnotesize\ttfamily double Model\+::side\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Size of the square simulation area (side x side). 
+
+\Hypertarget{class_model_a9aadb122b13c0e8be4f2437117264879}\label{class_model_a9aadb122b13c0e8be4f2437117264879} 
+\index{Model@{Model}!sites@{sites}}
+\index{sites@{sites}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{sites}{sites}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_patch}{Patch}}\texorpdfstring{$\ast$}{*}$>$ Model\+::sites\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector of all \doxylink{class_patch}{Patch} objects. 
+
+Contains the population sites over the whole simulation area. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/includes/\mbox{\hyperlink{_model_8h}{Model.\+h}}\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/src/\mbox{\hyperlink{_model_8cpp}{Model.\+cpp}}\end{DoxyCompactItemize}

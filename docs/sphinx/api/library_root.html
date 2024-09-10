@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists\css\tree_view.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-treeview\bootstrap-treeview.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -47,8 +47,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
-    <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
-    <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+    <script src="../_static/bootstrap-treeview\bootstrap-treeview.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/library_root';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -452,22 +451,24 @@ document.write(`
 <h1>Library API<a class="headerlink" href="#library-api" title="Permalink to this heading">#</a></h1>
 <section id="class-hierarchy">
 <h2>Class Hierarchy<a class="headerlink" href="#class-hierarchy" title="Permalink to this heading">#</a></h2>
-<ul class="treeView" id="class-treeView">
-  <li>
-    <ul class="collapsibleList">
-      <li>Struct <a href="struct_aestivation_params.html#exhale-struct-struct-aestivation-params">AestivationParams</a></li><li>Struct <a href="struct_area_params.html#exhale-struct-struct-area-params">AreaParams</a></li><li>Struct <a href="struct_dispersal_params.html#exhale-struct-struct-dispersal-params">DispersalParams</a></li><li>Struct <a href="struct_inheritance_params.html#exhale-struct-struct-inheritance-params">InheritanceParams</a></li><li>Struct <a href="struct_initial_pops_params.html#exhale-struct-struct-initial-pops-params">InitialPopsParams</a></li><li>Struct <a href="struct_input_params.html#exhale-struct-struct-input-params">InputParams</a></li><li>Struct <a href="struct_input_rainfall_params.html#exhale-struct-struct-input-rainfall-params">InputRainfallParams</a></li><li>Struct <a href="struct_life_params.html#exhale-struct-struct-life-params">LifeParams</a></li><li>Struct <a href="struct_model_params.html#exhale-struct-struct-model-params">ModelParams</a></li><li>Struct <a href="struct_point.html#exhale-struct-struct-point">Point</a></li><li>Struct <a href="struct_progression_params.html#exhale-struct-struct-progression-params">ProgressionParams</a></li><li>Struct <a href="struct_record_params.html#exhale-struct-struct-record-params">RecordParams</a></li><li>Struct <a href="struct_release_params.html#exhale-struct-struct-release-params">ReleaseParams</a></li><li>Struct <a href="struct_sine_rainfall_params.html#exhale-struct-struct-sine-rainfall-params">SineRainfallParams</a></li><li>Class <a href="class_aestivation.html#exhale-class-class-aestivation">Aestivation</a></li><li>Class <a href="class_boundary_strategy.html#exhale-class-class-boundary-strategy">BoundaryStrategy</a></li><li>Class <a href="class_dispersal.html#exhale-class-class-dispersal">Dispersal</a></li><li>Class <a href="class_distance_kernel_dispersal.html#exhale-class-class-distance-kernel-dispersal">DistanceKernelDispersal</a></li><li>Class <a href="class_edge_boundary_strategy.html#exhale-class-class-edge-boundary-strategy">EdgeBoundaryStrategy</a></li><li>Class <a href="class_g_d_release.html#exhale-class-class-g-d-release">GDRelease</a></li><li>Class <a href="class_input_rainfall.html#exhale-class-class-input-rainfall">InputRainfall</a></li><li>Class <a href="class_model.html#exhale-class-class-model">Model</a></li><li>Class <a href="class_patch.html#exhale-class-class-patch">Patch</a></li><li>Class <a href="class_radial_dispersal.html#exhale-class-class-radial-dispersal">RadialDispersal</a></li><li>Class <a href="class_random_g_d_release.html#exhale-class-class-random-g-d-release">RandomGDRelease</a></li><li>Class <a href="class_record.html#exhale-class-class-record">Record</a></li><li>Class <a href="class_sched_g_d_release.html#exhale-class-class-sched-g-d-release">SchedGDRelease</a></li><li>Class <a href="class_seasonality.html#exhale-class-class-seasonality">Seasonality</a></li><li>Class <a href="class_simulation.html#exhale-class-class-simulation">Simulation</a></li><li>Class <a href="class_sine_rainfall.html#exhale-class-class-sine-rainfall">SineRainfall</a></li><li>Class <a href="class_toroidal_boundary_strategy.html#exhale-class-class-toroidal-boundary-strategy">ToroidalBoundaryStrategy</a></li><li>Enum <a href="enum_constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8.html#exhale-enum-constants-8h-1af75d5dd7322fa39ed0af4e7839e600f8">BoundaryType</a></li><li class="lastChild">Enum <a href="enum_constants_8h_1ac025f1e887ae43bed8cad7aff794c04a.html#exhale-enum-constants-8h-1ac025f1e887ae43bed8cad7aff794c04a">DispersalType</a></li>
-    </ul>
-  </li><!-- only tree view element -->
-</ul><!-- /treeView class-treeView --></section>
+<div id="class-treeView"></div>
+<script type="text/javascript">
+  function getClassHierarchyTree() {
+     return [
+      {text:"<span class=\"text-muted\">Struct</span> AestivationParams",href:"struct_aestivation_params.html#exhale-struct-struct-aestivation-params",selectable:false},{text:"<span class=\"text-muted\">Struct</span> AreaParams",href:"struct_area_params.html#exhale-struct-struct-area-params",selectable:false},{text:"<span class=\"text-muted\">Struct</span> DispersalParams",href:"struct_dispersal_params.html#exhale-struct-struct-dispersal-params",selectable:false},{text:"<span class=\"text-muted\">Struct</span> InheritanceParams",href:"struct_inheritance_params.html#exhale-struct-struct-inheritance-params",selectable:false},{text:"<span class=\"text-muted\">Struct</span> InitialPopsParams",href:"struct_initial_pops_params.html#exhale-struct-struct-initial-pops-params",selectable:false},{text:"<span class=\"text-muted\">Struct</span> InputParams",href:"struct_input_params.html#exhale-struct-struct-input-params",selectable:false},{text:"<span class=\"text-muted\">Struct</span> InputRainfallParams",href:"struct_input_rainfall_params.html#exhale-struct-struct-input-rainfall-params",selectable:false},{text:"<span class=\"text-muted\">Struct</span> LifeParams",href:"struct_life_params.html#exhale-struct-struct-life-params",selectable:false},{text:"<span class=\"text-muted\">Struct</span> ModelParams",href:"struct_model_params.html#exhale-struct-struct-model-params",selectable:false},{text:"<span class=\"text-muted\">Struct</span> Point",href:"struct_point.html#exhale-struct-struct-point",selectable:false},{text:"<span class=\"text-muted\">Struct</span> ProgressionParams",href:"struct_progression_params.html#exhale-struct-struct-progression-params",selectable:false},{text:"<span class=\"text-muted\">Struct</span> RecordParams",href:"struct_record_params.html#exhale-struct-struct-record-params",selectable:false},{text:"<span class=\"text-muted\">Struct</span> ReleaseParams",href:"struct_release_params.html#exhale-struct-struct-release-params",selectable:false},{text:"<span class=\"text-muted\">Struct</span> SineRainfallParams",href:"struct_sine_rainfall_params.html#exhale-struct-struct-sine-rainfall-params",selectable:false},{text:"<span class=\"text-muted\">Class</span> Aestivation",href:"class_aestivation.html#exhale-class-class-aestivation",selectable:false},{text:"<span class=\"text-muted\">Class</span> BoundaryStrategy",href:"class_boundary_strategy.html#exhale-class-class-boundary-strategy",selectable:false},{text:"<span class=\"text-muted\">Class</span> Dispersal",href:"class_dispersal.html#exhale-class-class-dispersal",selectable:false},{text:"<span class=\"text-muted\">Class</span> DistanceKernelDispersal",href:"class_distance_kernel_dispersal.html#exhale-class-class-distance-kernel-dispersal",selectable:false},{text:"<span class=\"text-muted\">Class</span> EdgeBoundaryStrategy",href:"class_edge_boundary_strategy.html#exhale-class-class-edge-boundary-strategy",selectable:false},{text:"<span class=\"text-muted\">Class</span> GDRelease",href:"class_g_d_release.html#exhale-class-class-g-d-release",selectable:false},{text:"<span class=\"text-muted\">Class</span> InputRainfall",href:"class_input_rainfall.html#exhale-class-class-input-rainfall",selectable:false},{text:"<span class=\"text-muted\">Class</span> Model",href:"class_model.html#exhale-class-class-model",selectable:false},{text:"<span class=\"text-muted\">Class</span> Patch",href:"class_patch.html#exhale-class-class-patch",selectable:false},{text:"<span class=\"text-muted\">Class</span> RadialDispersal",href:"class_radial_dispersal.html#exhale-class-class-radial-dispersal",selectable:false},{text:"<span class=\"text-muted\">Class</span> RandomGDRelease",href:"class_random_g_d_release.html#exhale-class-class-random-g-d-release",selectable:false},{text:"<span class=\"text-muted\">Class</span> Record",href:"class_record.html#exhale-class-class-record",selectable:false},{text:"<span class=\"text-muted\">Class</span> SchedGDRelease",href:"class_sched_g_d_release.html#exhale-class-class-sched-g-d-release",selectable:false},{text:"<span class=\"text-muted\">Class</span> Seasonality",href:"class_seasonality.html#exhale-class-class-seasonality",selectable:false},{text:"<span class=\"text-muted\">Class</span> Simulation",href:"class_simulation.html#exhale-class-class-simulation",selectable:false},{text:"<span class=\"text-muted\">Class</span> SineRainfall",href:"class_sine_rainfall.html#exhale-class-class-sine-rainfall",selectable:false},{text:"<span class=\"text-muted\">Class</span> ToroidalBoundaryStrategy",href:"class_toroidal_boundary_strategy.html#exhale-class-class-toroidal-boundary-strategy",selectable:false},{text:"<span class=\"text-muted\">Enum</span> BoundaryType",href:"enum_constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8.html#exhale-enum-constants-8h-1af75d5dd7322fa39ed0af4e7839e600f8",selectable:false},{text:"<span class=\"text-muted\">Enum</span> DispersalType",href:"enum_constants_8h_1ac025f1e887ae43bed8cad7aff794c04a.html#exhale-enum-constants-8h-1ac025f1e887ae43bed8cad7aff794c04a",selectable:false},
+     ]
+  }
+</script><!-- end getClassHierarchyTree() function --></section>
 <section id="file-hierarchy">
 <h2>File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this heading">#</a></h2>
-<ul class="treeView" id="file-treeView">
-  <li>
-    <ul class="collapsibleList">
-      <li>Directory <a href="dir_includes.html#dir-includes">includes</a><ul><li>File <a href="file_includes_Aestivation.h.html#file-includes-Aestivation.h">Aestivation.h</a></li><li>File <a href="file_includes_BoundaryStrategy.h.html#file-includes-BoundaryStrategy.h">BoundaryStrategy.h</a></li><li>File <a href="file_includes_constants.h.html#file-includes-constants.h">constants.h</a></li><li>File <a href="file_includes_Dispersal.h.html#file-includes-Dispersal.h">Dispersal.h</a></li><li>File <a href="file_includes_GDRelease.h.html#file-includes-GDRelease.h">GDRelease.h</a></li><li>File <a href="file_includes_InputParams.h.html#file-includes-InputParams.h">InputParams.h</a></li><li>File <a href="file_includes_inputval.h.html#file-includes-inputval.h">inputval.h</a></li><li>File <a href="file_includes_Model.h.html#file-includes-Model.h">Model.h</a></li><li>File <a href="file_includes_Params.h.html#file-includes-Params.h">Params.h</a></li><li>File <a href="file_includes_Patch.h.html#file-includes-Patch.h">Patch.h</a></li><li>File <a href="file_includes_Point.h.html#file-includes-Point.h">Point.h</a></li><li>File <a href="file_includes_random.h.html#file-includes-random.h">random.h</a></li><li>File <a href="file_includes_Record.h.html#file-includes-Record.h">Record.h</a></li><li>File <a href="file_includes_Seasonality.h.html#file-includes-Seasonality.h">Seasonality.h</a></li><li>File <a href="file_includes_sets.h.html#file-includes-sets.h">sets.h</a></li><li class="lastChild">File <a href="file_includes_Simulation.h.html#file-includes-Simulation.h">Simulation.h</a></li></ul></li><li class="lastChild">Directory <a href="dir_src.html#dir-src">src</a><ul><li>File <a href="file_src_Aestivation.cpp.html#file-src-Aestivation.cpp">Aestivation.cpp</a></li><li>File <a href="file_src_BoundaryStrategy.cpp.html#file-src-BoundaryStrategy.cpp">BoundaryStrategy.cpp</a></li><li>File <a href="file_src_Dispersal.cpp.html#file-src-Dispersal.cpp">Dispersal.cpp</a></li><li>File <a href="file_src_GDRelease.cpp.html#file-src-GDRelease.cpp">GDRelease.cpp</a></li><li>File <a href="file_src_main.cpp.html#file-src-main.cpp">main.cpp</a></li><li>File <a href="file_src_main2.cpp.html#file-src-main2.cpp">main2.cpp</a></li><li>File <a href="file_src_Model.cpp.html#file-src-Model.cpp">Model.cpp</a></li><li>File <a href="file_src_Patch.cpp.html#file-src-Patch.cpp">Patch.cpp</a></li><li>File <a href="file_src_random.cpp.html#file-src-random.cpp">random.cpp</a></li><li>File <a href="file_src_Record.cpp.html#file-src-Record.cpp">Record.cpp</a></li><li>File <a href="file_src_Seasonality.cpp.html#file-src-Seasonality.cpp">Seasonality.cpp</a></li><li class="lastChild">File <a href="file_src_Simulation.cpp.html#file-src-Simulation.cpp">Simulation.cpp</a></li></ul></li>
-    </ul>
-  </li><!-- only tree view element -->
-</ul><!-- /treeView file-treeView --></section>
+<div id="file-treeView"></div>
+<script type="text/javascript">
+  function getFileHierarchyTree() {
+     return [
+      {text:"<span class=\"text-muted\">Directory</span> includes",href:"dir_includes.html#dir-includes",selectable:false,tags:['16'],nodes:[{text:"<span class=\"text-muted\">File</span> Aestivation.h",href:"file_includes_Aestivation.h.html#file-includes-Aestivation.h",selectable:false},{text:"<span class=\"text-muted\">File</span> BoundaryStrategy.h",href:"file_includes_BoundaryStrategy.h.html#file-includes-BoundaryStrategy.h",selectable:false},{text:"<span class=\"text-muted\">File</span> constants.h",href:"file_includes_constants.h.html#file-includes-constants.h",selectable:false},{text:"<span class=\"text-muted\">File</span> Dispersal.h",href:"file_includes_Dispersal.h.html#file-includes-Dispersal.h",selectable:false},{text:"<span class=\"text-muted\">File</span> GDRelease.h",href:"file_includes_GDRelease.h.html#file-includes-GDRelease.h",selectable:false},{text:"<span class=\"text-muted\">File</span> InputParams.h",href:"file_includes_InputParams.h.html#file-includes-InputParams.h",selectable:false},{text:"<span class=\"text-muted\">File</span> inputval.h",href:"file_includes_inputval.h.html#file-includes-inputval.h",selectable:false},{text:"<span class=\"text-muted\">File</span> Model.h",href:"file_includes_Model.h.html#file-includes-Model.h",selectable:false},{text:"<span class=\"text-muted\">File</span> Params.h",href:"file_includes_Params.h.html#file-includes-Params.h",selectable:false},{text:"<span class=\"text-muted\">File</span> Patch.h",href:"file_includes_Patch.h.html#file-includes-Patch.h",selectable:false},{text:"<span class=\"text-muted\">File</span> Point.h",href:"file_includes_Point.h.html#file-includes-Point.h",selectable:false},{text:"<span class=\"text-muted\">File</span> random.h",href:"file_includes_random.h.html#file-includes-random.h",selectable:false},{text:"<span class=\"text-muted\">File</span> Record.h",href:"file_includes_Record.h.html#file-includes-Record.h",selectable:false},{text:"<span class=\"text-muted\">File</span> Seasonality.h",href:"file_includes_Seasonality.h.html#file-includes-Seasonality.h",selectable:false},{text:"<span class=\"text-muted\">File</span> sets.h",href:"file_includes_sets.h.html#file-includes-sets.h",selectable:false},{text:"<span class=\"text-muted\">File</span> Simulation.h",href:"file_includes_Simulation.h.html#file-includes-Simulation.h",selectable:false}]},{text:"<span class=\"text-muted\">Directory</span> src",href:"dir_src.html#dir-src",selectable:false,tags:['12'],nodes:[{text:"<span class=\"text-muted\">File</span> Aestivation.cpp",href:"file_src_Aestivation.cpp.html#file-src-Aestivation.cpp",selectable:false},{text:"<span class=\"text-muted\">File</span> BoundaryStrategy.cpp",href:"file_src_BoundaryStrategy.cpp.html#file-src-BoundaryStrategy.cpp",selectable:false},{text:"<span class=\"text-muted\">File</span> Dispersal.cpp",href:"file_src_Dispersal.cpp.html#file-src-Dispersal.cpp",selectable:false},{text:"<span class=\"text-muted\">File</span> GDRelease.cpp",href:"file_src_GDRelease.cpp.html#file-src-GDRelease.cpp",selectable:false},{text:"<span class=\"text-muted\">File</span> main.cpp",href:"file_src_main.cpp.html#file-src-main.cpp",selectable:false},{text:"<span class=\"text-muted\">File</span> main2.cpp",href:"file_src_main2.cpp.html#file-src-main2.cpp",selectable:false},{text:"<span class=\"text-muted\">File</span> Model.cpp",href:"file_src_Model.cpp.html#file-src-Model.cpp",selectable:false},{text:"<span class=\"text-muted\">File</span> Patch.cpp",href:"file_src_Patch.cpp.html#file-src-Patch.cpp",selectable:false},{text:"<span class=\"text-muted\">File</span> random.cpp",href:"file_src_random.cpp.html#file-src-random.cpp",selectable:false},{text:"<span class=\"text-muted\">File</span> Record.cpp",href:"file_src_Record.cpp.html#file-src-Record.cpp",selectable:false},{text:"<span class=\"text-muted\">File</span> Seasonality.cpp",href:"file_src_Seasonality.cpp.html#file-src-Seasonality.cpp",selectable:false},{text:"<span class=\"text-muted\">File</span> Simulation.cpp",href:"file_src_Simulation.cpp.html#file-src-Simulation.cpp",selectable:false}]},
+     ]
+  }
+</script><!-- end getFileHierarchyTree() function --></section>
 <section id="full-api">
 <h2>Full API<a class="headerlink" href="#full-api" title="Permalink to this heading">#</a></h2>
 <section id="namespaces">
@@ -1188,7 +1189,87 @@ document.write(`
 </li>
 </ul>
 </div>
-</section>
+<script type="text/javascript">
+    /* NOTE: if you are reading this, Exhale generated this directly. */
+    $(document).ready(function() {
+        /* Inspired by very informative answer to get color of links:
+           https://stackoverflow.com/a/2707837/3814202 */
+        var $fake_link = $('<a href="#"></a>').hide().appendTo("body");
+        var linkColor = $fake_link.css("color");
+        $fake_link.remove();
+
+        var $fake_p = $('<p class="text-muted"></p>').hide().appendTo("body");
+        var iconColor = $fake_p.css("color");
+        $fake_p.remove();
+
+        /* After much deliberation, using JavaScript directly to enforce that the
+         * link and glyphicon receive different colors is fruitless, because the
+         * bootstrap treeview library will overwrite the style every time.  Instead,
+         * leaning on the library code itself to append some styling to the head,
+         * I choose to mix a couple of things:
+         *
+         * 1. Set the `color` property of bootstrap treeview globally, this would
+         *    normally affect the color of both the link text and the icon.
+         * 2. Apply custom forced styling of the glyphicon itself in order to make
+         *    it a little more clear to the user (via different colors) that the
+         *    act of clicking the icon and the act of clicking the link text perform
+         *    different actions.  The icon expands, the text navigates to the page.
+         */
+         // Part 1: use linkColor as a parameter to bootstrap treeview
+
+         // apply the page view hierarchy if it exists
+         var page_h = $("#page-treeView");
+         if (page_h.length) {
+             page_h.treeview({
+                 data: getPageHierarchyTree(),
+                 enableLinks: true,
+                 color: linkColor,
+                 showTags: true,
+                 collapseIcon: "glyphicon glyphicon-minus",
+                 expandIcon: "glyphicon glyphicon-plus",
+                 levels: 1,
+                 onhoverColor: "#F5F5F5"
+             });
+         }
+
+         // apply the class view hierarchy if it exists
+         var class_h = $("#class-treeView");
+         if (class_h.length) {
+             class_h.treeview({
+                 data: getClassHierarchyTree(),
+                 enableLinks: true,
+                 color: linkColor,
+                 showTags: true,
+                 collapseIcon: "glyphicon glyphicon-minus",
+                 expandIcon: "glyphicon glyphicon-plus",
+                 levels: 1,
+                 onhoverColor: "#F5F5F5"
+             });
+         }
+
+         // apply the file view hierarchy if it exists
+         var file_h = $("#file-treeView");
+         if (file_h.length) {
+             file_h.treeview({
+                 data: getFileHierarchyTree(),
+                 enableLinks: true,
+                 color: linkColor,
+                 showTags: true,
+                 collapseIcon: "glyphicon glyphicon-minus",
+                 expandIcon: "glyphicon glyphicon-plus",
+                 levels: 1,
+                 onhoverColor: "#F5F5F5"
+             });
+         }
+
+         // Part 2: override the style of the glyphicons by injecting some CSS
+         $('<style type="text/css" id="exhaleTreeviewOverride">' +
+           '    .treeview span[class~=icon] { '                 +
+           '        color: ' + iconColor + ' ! important;'       +
+           '    }'                                              +
+           '</style>').appendTo('head');
+    });
+</script></section>
 </section>
 </section>
 

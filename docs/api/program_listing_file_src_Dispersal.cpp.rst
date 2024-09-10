@@ -19,6 +19,7 @@ Program Listing for File Dispersal.cpp
    #include "Dispersal.h"
    #include "random.h"
    #include "constants.h"
+   #include <iostream>
    
    Dispersal::Dispersal(DispersalParams* params, BoundaryType boundary, double side) 
    {
@@ -300,6 +301,12 @@ Program Listing for File Dispersal.cpp
                    }
                }
            }
+   
+       /*  std::cout<<i<<"     ";
+           for(int jj=0;jj<connec_weights[i].size();++jj)std::cout<<connec_indices[i][jj]<<"     "<<connec_weights[i][jj]<<"    ";
+           std::cout<<std::endl;
+       */
+   
        }
        return {connec_indices, connec_weights};
    }

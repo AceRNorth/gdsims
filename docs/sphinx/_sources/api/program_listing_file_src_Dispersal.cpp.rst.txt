@@ -19,6 +19,7 @@ Program Listing for File Dispersal.cpp
    #include "Dispersal.h"
    #include "random.h"
    #include "constants.h"
+   #include <iostream>
    
    Dispersal::Dispersal(DispersalParams* params, BoundaryType boundary, double side) 
    {
@@ -243,18 +244,39 @@ Program Listing for File Dispersal.cpp
                loc2 = sites[jj]->get_coords();
                if (distances[i][jj] < max_disp) {
                    alpha = std::atan(radii[jj] / distances[i][jj]); 
-                   if (loc2.y - loc1.y >= 0 && loc2.x - loc1.x >= 0) {
-                       theta = std::atan((loc2.y - loc1.y) / (loc2.x - loc1.x)); 
+                   loc2 = boundary_strategy->relative_pos(loc1, loc2);
+                   if (loc2.y > loc1.y) 
+                   {   
+                       if (loc2.x > loc1.x) {
+                           theta = std::atan((loc2.y - loc1.y) / (loc2.x - loc1.x));
+                       }
+                       else if (loc2.x == loc1.x) {
+                           theta = constants::pi/2;
+                       }
+                       else {
+                           theta = constants::pi/2 + std::atan((loc1.x-loc2.x) / (loc2.y-loc1.y)); 
+                       }
+                   };
+                   if (loc2.y == loc1.y) {
+                       if (loc2.x >= loc1.x) {
+                           theta = 0;
+                       }
+                       else {
+                           theta = constants::pi;
+                       } 
                    }
-                   if (loc2.y - loc1.y >= 0 && loc2.x - loc1.x <= 0) { 
-                       theta = constants::pi + std::atan((loc2.y - loc1.y) / (loc2.x - loc1.x)); 
+                   if (loc2.y < loc1.y) {
+                       if (loc1.x > loc2.x) {
+                           theta = constants::pi + std::atan((loc1.y - loc2.y) / (loc1.x - loc2.x));
+                       }
+                       else if (loc2.x==loc1.x) {
+                           theta = 3 * constants::pi / 2;
+                       }
+                       else {
+                           theta = 3 * constants::pi / 2 + std::atan((loc2.x - loc1.x) / (loc1.y - loc2.y)); 
+                       }
                    }
-                   if (loc2.y - loc1.y <= 0 && loc2.x - loc1.x <= 0) {
-                       theta = constants::pi + std::atan((loc2.y - loc1.y) / (loc2.x - loc1.x)); 
-                   }
-                   if (loc2.y - loc1.y <= 0 && loc2.x - loc1.x >= 0) {
-                       theta = 2*(constants::pi) + std::atan((loc2.y - loc1.y) / (loc2.x - loc1.x)); 
-                   }
+   
                    double t_min = wrap_around((theta - alpha) / (2*(constants::pi)), 1);
                    double t_plus = wrap_around((theta + alpha) / (2*(constants::pi)), 1);
                    if (t_min > t_plus) {
@@ -279,6 +301,12 @@ Program Listing for File Dispersal.cpp
                    }
                }
            }
+   
+       /*  std::cout<<i<<"     ";
+           for(int jj=0;jj<connec_weights[i].size();++jj)std::cout<<connec_indices[i][jj]<<"     "<<connec_weights[i][jj]<<"    ";
+           std::cout<<std::endl;
+       */
+   
        }
        return {connec_indices, connec_weights};
    }
@@ -324,7 +352,7 @@ Program Listing for File Dispersal.cpp
        return {output, diff};
    }
    
-   // Retuns the indices of the elements in the vector, sorted by numeric value in ascending order
+   
    std::vector<int> RadialDispersal::get_sorted_positions(const std::vector<double>& numbers) 
    {
        // Create a vector of indices (0 to N-1)
@@ -337,7 +365,7 @@ Program Listing for File Dispersal.cpp
        return indices;
    }
    
-   // 
+   
    std::vector<std::vector<double>> RadialDispersal::compute_distances(const std::vector<Patch*>& sites) 
    {
        std::vector<std::vector<double>> distances;

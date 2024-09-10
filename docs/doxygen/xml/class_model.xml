@@ -563,7 +563,7 @@
         <detaileddescription>
 <para><simplesect kind="return"><para>The total number of males in the model run. </para>
 </simplesect>
-<simplesect kind="see"><para><ref refid="class_patch_1a6e9cda8c3620873eaadf23db0f5a7b27" kindref="member">Patch::M</ref> </para>
+<simplesect kind="see"><para><ref refid="class_patch_1a18366a21df794d2cebbbdfe3195734a5" kindref="member">Patch::get_M()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -603,7 +603,7 @@
         <detaileddescription>
 <para><simplesect kind="return"><para>The total number of mated females in the model run. </para>
 </simplesect>
-<simplesect kind="see"><para><ref refid="class_patch_1a9e6066355010ba73abb33d8d41714677" kindref="member">Patch::F</ref> </para>
+<simplesect kind="see"><para><ref refid="class_patch_1a7754f3fd7fb22af2c3661d4d5229ab2d" kindref="member">Patch::get_F()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>

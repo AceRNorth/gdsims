@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists\css\tree_view.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-treeview\bootstrap-treeview.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -47,8 +47,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
-    <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
-    <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+    <script src="../_static/bootstrap-treeview\bootstrap-treeview.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/class_sched_g_d_release';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -453,20 +452,20 @@ document.write(`
 <h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this heading">#</a></h2>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv414SchedGDRelease">
-<span id="_CPPv314SchedGDRelease"></span><span id="_CPPv214SchedGDRelease"></span><span id="SchedGDRelease"></span><span class="target" id="class_sched_g_d_release"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SchedGDRelease</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="class_g_d_release.html#_CPPv49GDRelease" title="GDRelease"><span class="n"><span class="pre">GDRelease</span></span></a><a class="headerlink" href="#_CPPv414SchedGDRelease" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv314SchedGDRelease"></span><span id="_CPPv214SchedGDRelease"></span><span id="SchedGDRelease"></span><span class="target" id="class_sched_g_d_release"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SchedGDRelease</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49GDRelease" title="GDRelease"><span class="n"><span class="pre">GDRelease</span></span></a><br /></dt>
 <dd><p>Implements gene drive release for pre-selected release sites. </p>
 <p>Release sites are kept the same for each release, using the same pre-selected sites. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N14SchedGDRelease14SchedGDReleaseEP13ReleaseParamsNSt6vectorIiEERNSt6vectorIP5PatchEE">
-<span id="_CPPv3N14SchedGDRelease14SchedGDReleaseEP13ReleaseParamsNSt6vectorIiEERNSt6vectorIP5PatchEE"></span><span id="_CPPv2N14SchedGDRelease14SchedGDReleaseEP13ReleaseParamsNSt6vectorIiEERNSt6vectorIP5PatchEE"></span><span id="SchedGDRelease::SchedGDRelease__ReleaseParamsP.std::vector:i:.std::vector:PatchP:R"></span><span class="target" id="class_sched_g_d_release_1a5bfb7430747b3f7764b085eec40173be"></span><span class="sig-name descname"><span class="n"><span class="pre">SchedGDRelease</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="struct_release_params.html#_CPPv413ReleaseParams" title="ReleaseParams"><span class="n"><span class="pre">ReleaseParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rel_sites</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="class_patch.html#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14SchedGDRelease14SchedGDReleaseEP13ReleaseParamsNSt6vectorIiEERNSt6vectorIP5PatchEE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N14SchedGDRelease14SchedGDReleaseEP13ReleaseParamsNSt6vectorIiEERNSt6vectorIP5PatchEE"></span><span id="_CPPv2N14SchedGDRelease14SchedGDReleaseEP13ReleaseParamsNSt6vectorIiEERNSt6vectorIP5PatchEE"></span><span id="SchedGDRelease::SchedGDRelease__ReleaseParamsP.std::vector:i:.std::vector:PatchP:R"></span><span class="target" id="class_sched_g_d_release_1a5bfb7430747b3f7764b085eec40173be"></span><span class="sig-name descname"><span class="n"><span class="pre">SchedGDRelease</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../api.html#_CPPv413ReleaseParams" title="ReleaseParams"><span class="n"><span class="pre">ReleaseParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rel_sites</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../api.html#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p><a class="reference internal" href="#class_sched_g_d_release"><span class="std std-ref">SchedGDRelease</span></a> constructor. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> – <strong>[in]</strong> gene drive release parameters </p></li>
-<li><p><strong>rel_sites</strong> – <strong>[in]</strong> chosen release sites, indices relative to Model::sites</p></li>
+<li><p><strong>rel_sites</strong> – <strong>[in]</strong> chosen release sites, indices relative to <a class="reference internal" href="../api.html#class_model_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a></p></li>
 <li><p><strong>sites</strong> – <strong>[in]</strong> vector of all <a class="reference internal" href="class_patch.html#class_patch"><span class="std std-ref">Patch</span></a> objects </p></li>
 </ul>
 </dd>

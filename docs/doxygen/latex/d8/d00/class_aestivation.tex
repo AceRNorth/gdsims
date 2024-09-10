@@ -1,0 +1,251 @@
+\doxysection{Aestivation Class Reference}
+\hypertarget{class_aestivation}{}\label{class_aestivation}\index{Aestivation@{Aestivation}}
+
+
+Implements aestivative behaviour for the model.  
+
+
+
+
+{\ttfamily \#include $<$Aestivation.\+h$>$}
+
+
+
+Collaboration diagram for Aestivation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{d5/d00/class_aestivation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_aestivation_a51e62f2785f14f40c74698c76da16f41}{Aestivation}} (\mbox{\hyperlink{struct_aestivation_params}{Aestivation\+Params}} \texorpdfstring{$\ast$}{*}params, int sites\+\_\+size)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_aestivation}{Aestivation} constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_aestivation_a43390ce5cf1f9be08cf9b82d8cce00f3}{hide}} (std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
+\begin{DoxyCompactList}\small\item\em Hides aestivating females from their patches. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_aestivation_ade758967c3a5d774e15ffd2836b6e21d}{wake}} (int day, std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
+\begin{DoxyCompactList}\small\item\em Wakes a fraction of the aestivating females. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_aestivation_ad52ef1d1e4febab22176ac1690f22d76}{is\+\_\+hide\+\_\+time}} (int day)
+\begin{DoxyCompactList}\small\item\em Determines if the time is within the aestivation hiding window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_aestivation_a28d413fd0b0ab424b5071832de34e86c}{is\+\_\+wake\+\_\+time}} (int day)
+\begin{DoxyCompactList}\small\item\em Determines if the time is within the aestivation waking window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_aestivation_a8549d806f88e898cdd61219d75d517e1}{psi}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_aestivation}{Aestivation} rate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_aestivation_a8ba05278f1dce1144e82c32abd540dc0}{mu\+\_\+aes}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_aestivation}{Aestivation} mortality. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_aestivation_af08e1211410a782de9d592829c6619e6}{t\+\_\+hide1}}
+\begin{DoxyCompactList}\small\item\em Start day of aestivation-\/hiding period (exclusive). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_aestivation_a22078820c3b6d2c0b410379fb85ba495}{t\+\_\+hide2}}
+\begin{DoxyCompactList}\small\item\em End day of aestivation-\/hiding period (inclusive). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_aestivation_a786f12e5e6b5be06c83fa21fc3b070f0}{t\+\_\+wake1}}
+\begin{DoxyCompactList}\small\item\em Start day of aestivation-\/waking period (exclusive). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_aestivation_a63e9e51ce52b0df684c04584e30d89bd}{t\+\_\+wake2}}
+\begin{DoxyCompactList}\small\item\em End day of aestivation-\/waking period (inclusive). \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::array$<$ std\+::array$<$ long long int, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ $>$ \mbox{\hyperlink{class_aestivation_af713622c387e052969ec6d2ceef88213}{aes\+\_\+F}}
+\begin{DoxyCompactList}\small\item\em Number of mated female mosquitoes that have gone into aestivation from each patch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements aestivative behaviour for the model. 
+
+~\newline
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_aestivation_a51e62f2785f14f40c74698c76da16f41}\label{class_aestivation_a51e62f2785f14f40c74698c76da16f41} 
+\index{Aestivation@{Aestivation}!Aestivation@{Aestivation}}
+\index{Aestivation@{Aestivation}!Aestivation@{Aestivation}}
+\doxysubsubsection{\texorpdfstring{Aestivation()}{Aestivation()}}
+{\footnotesize\ttfamily Aestivation\+::\+Aestivation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_aestivation_params}{Aestivation\+Params}} \texorpdfstring{$\ast$}{*}}]{params,  }\item[{int}]{sites\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_aestivation}{Aestivation} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & aestivation parameters \\
+\hline
+{\em sites\+\_\+size} & number of sites in the model, size of \doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_aestivation_a43390ce5cf1f9be08cf9b82d8cce00f3}\label{class_aestivation_a43390ce5cf1f9be08cf9b82d8cce00f3} 
+\index{Aestivation@{Aestivation}!hide@{hide}}
+\index{hide@{hide}!Aestivation@{Aestivation}}
+\doxysubsubsection{\texorpdfstring{hide()}{hide()}}
+{\footnotesize\ttfamily void Aestivation\+::hide (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&}]{sites }\end{DoxyParamCaption})}
+
+
+
+Hides aestivating females from their patches. 
+
+\begin{DoxyNote}{Note}
+Not all females survive aestivation. Only mated females aestivate.
+\end{DoxyNote}
+The number of females that attempt to go into aestivation (of the given genotype combination) is determined by a binomial distribution of the aestivation rate. Of those, the number that survive is determined by a binomial distribution of 1 -\/ mu\+\_\+aes (the aestivation mortality). Aestivating females are temporarily separated from the rest of the female patch population. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_aestivation_a8549d806f88e898cdd61219d75d517e1}{Aestivation\+::psi}, \doxylink{class_aestivation_a8ba05278f1dce1144e82c32abd540dc0}{Aestivation\+::mu\+\_\+aes} 
+\end{DoxySeeAlso}
+\Hypertarget{class_aestivation_ad52ef1d1e4febab22176ac1690f22d76}\label{class_aestivation_ad52ef1d1e4febab22176ac1690f22d76} 
+\index{Aestivation@{Aestivation}!is\_hide\_time@{is\_hide\_time}}
+\index{is\_hide\_time@{is\_hide\_time}!Aestivation@{Aestivation}}
+\doxysubsubsection{\texorpdfstring{is\_hide\_time()}{is\_hide\_time()}}
+{\footnotesize\ttfamily bool Aestivation\+::is\+\_\+hide\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{day }\end{DoxyParamCaption})}
+
+
+
+Determines if the time is within the aestivation hiding window. 
+
+\begin{DoxyNote}{Note}
+The hiding window is exclusive of the start time but inclusive of the end time. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em day} & simulation day \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+As you would expect. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_aestivation_af08e1211410a782de9d592829c6619e6}{Aestivation\+::t\+\_\+hide1}, \doxylink{class_aestivation_a22078820c3b6d2c0b410379fb85ba495}{Aestivation\+::t\+\_\+hide2}, \doxylink{class_aestivation_a8549d806f88e898cdd61219d75d517e1}{Aestivation\+::psi} 
+\end{DoxySeeAlso}
+\Hypertarget{class_aestivation_a28d413fd0b0ab424b5071832de34e86c}\label{class_aestivation_a28d413fd0b0ab424b5071832de34e86c} 
+\index{Aestivation@{Aestivation}!is\_wake\_time@{is\_wake\_time}}
+\index{is\_wake\_time@{is\_wake\_time}!Aestivation@{Aestivation}}
+\doxysubsubsection{\texorpdfstring{is\_wake\_time()}{is\_wake\_time()}}
+{\footnotesize\ttfamily bool Aestivation\+::is\+\_\+wake\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{day }\end{DoxyParamCaption})}
+
+
+
+Determines if the time is within the aestivation waking window. 
+
+\begin{DoxyNote}{Note}
+The wakinf window is exclusive of the start time but inclusive of the end time. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em day} & simulation day \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+As you would expect. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_aestivation_a786f12e5e6b5be06c83fa21fc3b070f0}{Aestivation\+::t\+\_\+wake1}, \doxylink{class_aestivation_a63e9e51ce52b0df684c04584e30d89bd}{Aestivation\+::t\+\_\+wake2}, \doxylink{class_aestivation_a8549d806f88e898cdd61219d75d517e1}{Aestivation\+::psi} 
+\end{DoxySeeAlso}
+\Hypertarget{class_aestivation_ade758967c3a5d774e15ffd2836b6e21d}\label{class_aestivation_ade758967c3a5d774e15ffd2836b6e21d} 
+\index{Aestivation@{Aestivation}!wake@{wake}}
+\index{wake@{wake}!Aestivation@{Aestivation}}
+\doxysubsubsection{\texorpdfstring{wake()}{wake()}}
+{\footnotesize\ttfamily void Aestivation\+::wake (\begin{DoxyParamCaption}\item[{int}]{day,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&}]{sites }\end{DoxyParamCaption})}
+
+
+
+Wakes a fraction of the aestivating females. 
+
+The number of females that wake up on the given day (for the given genotype combination and patch) is determined by a binomial distribution with probability 1.\+0 / (1.\+0 + t\+\_\+wake2 -\/ (day\%365). Those that wake are returned to their patch\textquotesingle{}s female population. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em day} & simulation day \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_aestivation_a63e9e51ce52b0df684c04584e30d89bd}{Aestivation\+::t\+\_\+wake2} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_aestivation_af713622c387e052969ec6d2ceef88213}\label{class_aestivation_af713622c387e052969ec6d2ceef88213} 
+\index{Aestivation@{Aestivation}!aes\_F@{aes\_F}}
+\index{aes\_F@{aes\_F}!Aestivation@{Aestivation}}
+\doxysubsubsection{\texorpdfstring{aes\_F}{aes\_F}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::array$<$std\+::array$<$long long int, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}}$>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}}$>$ $>$ Aestivation\+::aes\+\_\+F\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of mated female mosquitoes that have gone into aestivation from each patch. 
+
+They follow the same genotypic structure as the mated females in \doxylink{class_patch}{Patch}. \Hypertarget{class_aestivation_a8ba05278f1dce1144e82c32abd540dc0}\label{class_aestivation_a8ba05278f1dce1144e82c32abd540dc0} 
+\index{Aestivation@{Aestivation}!mu\_aes@{mu\_aes}}
+\index{mu\_aes@{mu\_aes}!Aestivation@{Aestivation}}
+\doxysubsubsection{\texorpdfstring{mu\_aes}{mu\_aes}}
+{\footnotesize\ttfamily double Aestivation\+::mu\+\_\+aes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_aestivation}{Aestivation} mortality. 
+
+\Hypertarget{class_aestivation_a8549d806f88e898cdd61219d75d517e1}\label{class_aestivation_a8549d806f88e898cdd61219d75d517e1} 
+\index{Aestivation@{Aestivation}!psi@{psi}}
+\index{psi@{psi}!Aestivation@{Aestivation}}
+\doxysubsubsection{\texorpdfstring{psi}{psi}}
+{\footnotesize\ttfamily double Aestivation\+::psi\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_aestivation}{Aestivation} rate. 
+
+\Hypertarget{class_aestivation_af08e1211410a782de9d592829c6619e6}\label{class_aestivation_af08e1211410a782de9d592829c6619e6} 
+\index{Aestivation@{Aestivation}!t\_hide1@{t\_hide1}}
+\index{t\_hide1@{t\_hide1}!Aestivation@{Aestivation}}
+\doxysubsubsection{\texorpdfstring{t\_hide1}{t\_hide1}}
+{\footnotesize\ttfamily int Aestivation\+::t\+\_\+hide1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Start day of aestivation-\/hiding period (exclusive). 
+
+\Hypertarget{class_aestivation_a22078820c3b6d2c0b410379fb85ba495}\label{class_aestivation_a22078820c3b6d2c0b410379fb85ba495} 
+\index{Aestivation@{Aestivation}!t\_hide2@{t\_hide2}}
+\index{t\_hide2@{t\_hide2}!Aestivation@{Aestivation}}
+\doxysubsubsection{\texorpdfstring{t\_hide2}{t\_hide2}}
+{\footnotesize\ttfamily int Aestivation\+::t\+\_\+hide2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+End day of aestivation-\/hiding period (inclusive). 
+
+\Hypertarget{class_aestivation_a786f12e5e6b5be06c83fa21fc3b070f0}\label{class_aestivation_a786f12e5e6b5be06c83fa21fc3b070f0} 
+\index{Aestivation@{Aestivation}!t\_wake1@{t\_wake1}}
+\index{t\_wake1@{t\_wake1}!Aestivation@{Aestivation}}
+\doxysubsubsection{\texorpdfstring{t\_wake1}{t\_wake1}}
+{\footnotesize\ttfamily int Aestivation\+::t\+\_\+wake1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Start day of aestivation-\/waking period (exclusive). 
+
+\Hypertarget{class_aestivation_a63e9e51ce52b0df684c04584e30d89bd}\label{class_aestivation_a63e9e51ce52b0df684c04584e30d89bd} 
+\index{Aestivation@{Aestivation}!t\_wake2@{t\_wake2}}
+\index{t\_wake2@{t\_wake2}!Aestivation@{Aestivation}}
+\doxysubsubsection{\texorpdfstring{t\_wake2}{t\_wake2}}
+{\footnotesize\ttfamily int Aestivation\+::t\+\_\+wake2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+End day of aestivation-\/waking period (inclusive). 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/includes/\mbox{\hyperlink{_aestivation_8h}{Aestivation.\+h}}\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/src/\mbox{\hyperlink{_aestivation_8cpp}{Aestivation.\+cpp}}\end{DoxyCompactItemize}

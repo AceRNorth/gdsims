@@ -53,6 +53,20 @@ Windows
       mkdir build
       cd build
 
+   .. note:: 
+      The location of this ``build`` directory relative to the project will be important when entering relative filepaths for additional input files. The :ref:`tutorials-root` will assume the following directory structure: 
+
+      ::
+
+         GeneralMetapop
+         ├── build
+         ├── docs 
+         │   └── exercises
+         ├── includes
+         ├── src 
+         └── test
+
+
 #. Run CMake to configure the CMake project.
 
    .. code-block:: bash

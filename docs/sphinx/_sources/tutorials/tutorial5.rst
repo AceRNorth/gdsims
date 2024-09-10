@@ -9,7 +9,7 @@
 
 By default, the program uses a single gene drive release time at ``driver_start`` (we can see this in the previous runs). We can also choose to use multiple release times through the advanced options menu. This can be useful when we have a specific release schedule we want to test. 
 
-Let's create a text file named ``params_set17``, where we will copy the set 1 parameters we used in Tutorial :ref:`tutorial-1`. Change the last parameter in the file, ``set_label``, to 17. Remember all exercise files can also be found under the ``docs/exercises`` directory.
+We can create a text file named ``params_set17``, which contains the same parameters as set 1, which we used in Tutorial :ref:`tutorial-1`, except we change the last parameter in the file, ``set_label``, to 17. To speed this up, we can use the one in the ``docs/exercises`` directory directly.
 
 .. collapse:: Parameters
 
@@ -52,14 +52,12 @@ Let's create a text file named ``params_set17``, where we will copy the set 1 pa
         1
         17
 
-Again, input files should be in the ``build`` directory.
-
-Run the program with a custom run, entering this file, and open the advanced options menu.
+Run the program with a custom run, entering this filepath, and open the advanced options menu.
 Now, we can choose option ``5 - Multiple gene drive release times``.
 
 .. image:: ../images/tut5_adv_options.png
 
-This will prompt us to enter another filename for the release times. This text file should contain all chosen release times (as days relative to the simulation) as below:
+This will prompt us to enter another filename or filepath for the release times. This text file should contain all chosen release times (as days relative to the simulation) as below:
 
 .. collapse:: Release times
 
@@ -76,7 +74,7 @@ The drive mosquitoes will be released at all selected release sites at each rele
 
     As before, successfully setting a custom option means overwriting the default parameter - in this case the single release time at ``driver_start``.
 
-Once we create this file and enter the filename, all that's left to do is run the program!
+Once we create this file and enter the filepath, all that's left to do is run the program!
 
 .. image:: ../images/tut5_confirm.png
 

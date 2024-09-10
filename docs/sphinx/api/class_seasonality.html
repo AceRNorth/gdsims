@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists\css\tree_view.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-treeview\bootstrap-treeview.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -47,8 +47,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
-    <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
-    <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+    <script src="../_static/bootstrap-treeview\bootstrap-treeview.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/class_seasonality';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -454,7 +453,7 @@ document.write(`
 <h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this heading">#</a></h2>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv411Seasonality">
-<span id="_CPPv311Seasonality"></span><span id="_CPPv211Seasonality"></span><span id="Seasonality"></span><span class="target" id="class_seasonality"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Seasonality</span></span></span><a class="headerlink" href="#_CPPv411Seasonality" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv311Seasonality"></span><span id="_CPPv211Seasonality"></span><span id="Seasonality"></span><span class="target" id="class_seasonality"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Seasonality</span></span></span><br /></dt>
 <dd><p><a class="reference internal" href="#class_seasonality"><span class="std std-ref">Seasonality</span></a> base class. </p>
 <p>Defines the interface for seasonality classes. </p>
 <p>Subclassed by <a class="reference internal" href="class_input_rainfall.html#class_input_rainfall"><span class="std std-ref">InputRainfall</span></a>, <a class="reference internal" href="class_sine_rainfall.html#class_sine_rainfall"><span class="std std-ref">SineRainfall</span></a></p>
@@ -462,7 +461,7 @@ document.write(`
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N11Seasonality11SeasonalityEd">
-<span id="_CPPv3N11Seasonality11SeasonalityEd"></span><span id="_CPPv2N11Seasonality11SeasonalityEd"></span><span id="Seasonality::Seasonality__double"></span><span class="target" id="class_seasonality_1a58daa86e6a5d8f1b1b8d4db8c9389870"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Seasonality</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">alpha1</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11Seasonality11SeasonalityEd" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N11Seasonality11SeasonalityEd"></span><span id="_CPPv2N11Seasonality11SeasonalityEd"></span><span id="Seasonality::Seasonality__double"></span><span class="target" id="class_seasonality_1a58daa86e6a5d8f1b1b8d4db8c9389870"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Seasonality</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">alpha1</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p><a class="reference internal" href="#class_seasonality"><span class="std std-ref">Seasonality</span></a> constructor. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -473,7 +472,7 @@ document.write(`
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N11Seasonality5alphaEid">
-<span id="_CPPv3N11Seasonality5alphaEid"></span><span id="_CPPv2N11Seasonality5alphaEid"></span><span id="Seasonality::alpha__i.double"></span><span class="target" id="class_seasonality_1a86bfbdfc639ab1a08e3643e05b55d6f1"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alpha</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">alpha0</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N11Seasonality5alphaEid" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N11Seasonality5alphaEid"></span><span id="_CPPv2N11Seasonality5alphaEid"></span><span id="Seasonality::alpha__i.double"></span><span class="target" id="class_seasonality_1a86bfbdfc639ab1a08e3643e05b55d6f1"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alpha</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">alpha0</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -481,7 +480,7 @@ document.write(`
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N11Seasonality6alpha1E">
-<span id="_CPPv3N11Seasonality6alpha1E"></span><span id="_CPPv2N11Seasonality6alpha1E"></span><span id="Seasonality::alpha1__double"></span><span class="target" id="class_seasonality_1ac69d88cb94f794d9e317b7d259eaff64"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alpha1</span></span></span><a class="headerlink" href="#_CPPv4N11Seasonality6alpha1E" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N11Seasonality6alpha1E"></span><span id="_CPPv2N11Seasonality6alpha1E"></span><span id="Seasonality::alpha1__double"></span><span class="target" id="class_seasonality_1ac69d88cb94f794d9e317b7d259eaff64"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alpha1</span></span></span><br /></dt>
 <dd><p>Carrying capacity factor accounting for rainfall contribution. </p>
 </dd></dl>
 

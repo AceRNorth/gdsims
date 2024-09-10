@@ -81,7 +81,7 @@ Create a file that contains these parameters:
         101
 
  
-And enter the filename ``params_set101.txt`` into the program. Remember files need to be in the ``build`` directory to be recognised.
+And, as before, enter the filepath for the parameters file (this time ``params_set101.txt``) into the program. Remember these exercises files can be found in the ``docs/exercises`` directory and the filepath we use is relative to the ``build`` directory, so we would enter ``../docs/exercises/params_set101.txt`` for this tutorial. 
 
 Now we can say yes to the advanced options and we'll be given a submenu of options. Let's choose ``4`` - the custom patch coordinates option. 
 
@@ -133,7 +133,7 @@ Let's use the coordinates file below to create a square grid of patches.
         0.6    0.8    n
         0.8    0.8    n
 
-Now we can enter the filename into the prompt. If there are no error messages, this will set the coordinates (more information on errors in the User Guide).
+Now we can enter the filepath into the prompt. Like with the parameters file, we can use the relative filepath to the ``docs/exercises`` directory. If there are no error messages, this will set the coordinates (more information on errors in the User Guide).
 
 We can exit the advanced options and run the program by entering ``0``, which should start outputting day data as in previous runs. 
 

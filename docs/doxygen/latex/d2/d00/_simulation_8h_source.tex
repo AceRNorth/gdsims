@@ -1,0 +1,49 @@
+\doxysection{Simulation.\+h}
+\hypertarget{_simulation_8h_source}{}\label{_simulation_8h_source}\index{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h@{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Simulation.h}}
+\mbox{\hyperlink{_simulation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GENERALMETAPOP\_SIMULATION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GENERALMETAPOP\_SIMULATION\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{constants_8h}{constants.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_params_8h}{Params.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_input_params_8h}{InputParams.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_point_8h}{Point.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_simulation}{Simulation}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_simulation_a78403ca84dfef50ffa06c053648347a6}{Simulation}}(\mbox{\hyperlink{struct_input_params}{InputParams}}\ input);}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_simulation_a80fad3f57dfaf195a36f7bc49bc88279}{\string~Simulation}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_ab365e7a0000cae028998efae63b7d0c1}{set\_coords}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_ac6575f63c78f7fffff4817665f5a0f05}{set\_boundary\_type}}(\mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{BoundaryType}}\ boundary);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_a451b81744f93c2470a28d75bece48783}{set\_dispersal\_type}}(\mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{DispersalType}}\ disp);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_abc5c5d0891de7943820db3e6682cd125}{set\_rainfall}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_a7d774bb0496b0ea95c2c88afc0d24731}{set\_release\_times}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_ac5440a772e9d7788c588a795a7821fb6}{set\_inheritance}}(\mbox{\hyperlink{struct_inheritance_params}{InheritanceParams}}\ inher\_params);\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_simulation_a46325953f7df60733d519b8b3cd1de61}{run\_reps}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_simulation_a8e1d4d667e07e3f7e453bbb936dd0c5a}{num\_runs}};\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_simulation_adc775015be74841e3f9f99550af987bd}{max\_t}};\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{struct_model_params}{ModelParams}}\ *\mbox{\hyperlink{class_simulation_a28f56093772a2f20dd286ac7b225c030}{model\_params}};\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{struct_record_params}{RecordParams}}\ *\mbox{\hyperlink{class_simulation_a83058587f6835f69b4b249f1382a76ee}{rec\_params}};\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{struct_sine_rainfall_params}{SineRainfallParams}}\ *\mbox{\hyperlink{class_simulation_ac42205211628f51d8f680b6522ca663e}{sine\_rainfall\_params}};\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{struct_input_rainfall_params}{InputRainfallParams}}\ *\mbox{\hyperlink{class_simulation_a43023bf5f1ee507b61a8a07b61cbdf2f}{input\_rainfall\_params}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_simulation_a4067cd6f026a45b6fdef80682669ffd4}{alpha0\_mean}};\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_simulation_ac74b6c9f7665a081c686f088f8db950c}{alpha0\_variance}};\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ additional\ parameter\ options}}
+\DoxyCodeLine{00041\ \ \ \ \ std::vector<Point>\ \mbox{\hyperlink{class_simulation_a73b6b686f5dca876da14e5b79f8123a5}{sites\_coords}};\ }
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_simulation_a3e12749f5e0c59d3343fb7ac68faabea}{release\_sites}};\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{BoundaryType}}\ \mbox{\hyperlink{class_simulation_ac1bea19f5a9917fbff711bc9f652cff5}{boundary\_type}};}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{DispersalType}}\ \mbox{\hyperlink{class_simulation_a978ed04ac5ec2c121cb0e9875a88195d}{disp\_type}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ inheritance}}
+\DoxyCodeLine{00047\ \ \ \ \ std::array<std::array<std::array\ <double,\ constants::num\_gen>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>\ \mbox{\hyperlink{class_simulation_a5bf54d592f89fb121f5f8225d2761e30}{inher\_fraction}};\ }
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_SIMULATION\_H}}
+
+\end{DoxyCode}

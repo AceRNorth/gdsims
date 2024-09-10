@@ -1,0 +1,109 @@
+\doxysection{Boundary\+Strategy Class Reference}
+\hypertarget{class_boundary_strategy}{}\label{class_boundary_strategy}\index{BoundaryStrategy@{BoundaryStrategy}}
+
+
+Boundary strategy base class.  
+
+
+
+
+{\ttfamily \#include $<$Boundary\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for Boundary\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d00/class_boundary_strategy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Boundary\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{da/d00/class_boundary_strategy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_boundary_strategy_a8fbbc051751dbb883c0f00673d9027c4}{Boundary\+Strategy}} (double \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}})
+\begin{DoxyCompactList}\small\item\em \doxylink{class_boundary_strategy}{Boundary\+Strategy} constructor. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_boundary_strategy_ab845b40ed83aeb78018c23f45565cd0e}{distance}} (const \mbox{\hyperlink{struct_point}{Point}} \&p1, const \mbox{\hyperlink{struct_point}{Point}} \&p2)=0
+\item 
+virtual \mbox{\hyperlink{struct_point}{Point}} \mbox{\hyperlink{class_boundary_strategy_a37b4146de796d583d01fc15ad3381ea8}{relative\+\_\+pos}} (const \mbox{\hyperlink{struct_point}{Point}} \&p1, const \mbox{\hyperlink{struct_point}{Point}} \&p2)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}}
+\begin{DoxyCompactList}\small\item\em Size of one side of the simulation square. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Boundary strategy base class. 
+
+Defines the interface for boundary-\/type classes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_boundary_strategy_a8fbbc051751dbb883c0f00673d9027c4}\label{class_boundary_strategy_a8fbbc051751dbb883c0f00673d9027c4} 
+\index{BoundaryStrategy@{BoundaryStrategy}!BoundaryStrategy@{BoundaryStrategy}}
+\index{BoundaryStrategy@{BoundaryStrategy}!BoundaryStrategy@{BoundaryStrategy}}
+\doxysubsubsection{\texorpdfstring{BoundaryStrategy()}{BoundaryStrategy()}}
+{\footnotesize\ttfamily Boundary\+Strategy\+::\+Boundary\+Strategy (\begin{DoxyParamCaption}\item[{double}]{side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxylink{class_boundary_strategy}{Boundary\+Strategy} constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em side} & size of one side of the simulation square \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_boundary_strategy_ab845b40ed83aeb78018c23f45565cd0e}\label{class_boundary_strategy_ab845b40ed83aeb78018c23f45565cd0e} 
+\index{BoundaryStrategy@{BoundaryStrategy}!distance@{distance}}
+\index{distance@{distance}!BoundaryStrategy@{BoundaryStrategy}}
+\doxysubsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily virtual double Boundary\+Strategy\+::distance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_point}{Point}} \&}]{p1,  }\item[{const \mbox{\hyperlink{struct_point}{Point}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_toroidal_boundary_strategy_a262f8bca65f10efa4e88c1aa67ac41ee}{Toroidal\+Boundary\+Strategy}}, and \mbox{\hyperlink{class_edge_boundary_strategy_a58bed301f6c5f63a491bad0ebe982752}{Edge\+Boundary\+Strategy}}.
+
+\Hypertarget{class_boundary_strategy_a37b4146de796d583d01fc15ad3381ea8}\label{class_boundary_strategy_a37b4146de796d583d01fc15ad3381ea8} 
+\index{BoundaryStrategy@{BoundaryStrategy}!relative\_pos@{relative\_pos}}
+\index{relative\_pos@{relative\_pos}!BoundaryStrategy@{BoundaryStrategy}}
+\doxysubsubsection{\texorpdfstring{relative\_pos()}{relative\_pos()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{struct_point}{Point}} Boundary\+Strategy\+::relative\+\_\+pos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_point}{Point}} \&}]{p1,  }\item[{const \mbox{\hyperlink{struct_point}{Point}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_toroidal_boundary_strategy_a47769682a09b91733ea8295517afe245}{Toroidal\+Boundary\+Strategy}}, and \mbox{\hyperlink{class_edge_boundary_strategy_afa01b99a109ff593117736e8722da894}{Edge\+Boundary\+Strategy}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}\label{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1} 
+\index{BoundaryStrategy@{BoundaryStrategy}!side@{side}}
+\index{side@{side}!BoundaryStrategy@{BoundaryStrategy}}
+\doxysubsubsection{\texorpdfstring{side}{side}}
+{\footnotesize\ttfamily double Boundary\+Strategy\+::side\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Size of one side of the simulation square. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/includes/\mbox{\hyperlink{_boundary_strategy_8h}{Boundary\+Strategy.\+h}}\end{DoxyCompactItemize}

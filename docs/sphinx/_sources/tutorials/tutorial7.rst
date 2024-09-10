@@ -156,7 +156,7 @@ The file should contain a daily rainfall value for every day of a year. The exam
 
 With this number of values, the program will infer that we want to cycle them yearly. We also have the option to include daily values for every day we're simulating instead, i.e. for a ``max_t`` number of days.
 
-Finally, enter the filename and proceed to run the program. Remember again that input files must be in the ``build`` directory to be recognised. 
+Finally, enter the filepath and proceed to run the program. Remember again that input file filepaths must be relative to the ``build`` directory.
 
 .. image:: ../images/tut7_confirm.png
 

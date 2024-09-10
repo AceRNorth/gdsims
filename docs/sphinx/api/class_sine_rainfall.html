@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists\css\tree_view.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-treeview\bootstrap-treeview.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -47,8 +47,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
-    <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
-    <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+    <script src="../_static/bootstrap-treeview\bootstrap-treeview.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/class_sine_rainfall';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -453,14 +452,14 @@ document.write(`
 <h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this heading">#</a></h2>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv412SineRainfall">
-<span id="_CPPv312SineRainfall"></span><span id="_CPPv212SineRainfall"></span><span id="SineRainfall"></span><span class="target" id="class_sine_rainfall"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SineRainfall</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="class_seasonality.html#_CPPv411Seasonality" title="Seasonality"><span class="n"><span class="pre">Seasonality</span></span></a><a class="headerlink" href="#_CPPv412SineRainfall" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv312SineRainfall"></span><span id="_CPPv212SineRainfall"></span><span id="SineRainfall"></span><span class="target" id="class_sine_rainfall"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SineRainfall</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv411Seasonality" title="Seasonality"><span class="n"><span class="pre">Seasonality</span></span></a><br /></dt>
 <dd><p>Implements seasonality by modelling the rainfall contribution to carrying capacity as a sinusoid wave. </p>
 <p>Most useful for theoretical applications. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N12SineRainfall12SineRainfallEP18SineRainfallParams">
-<span id="_CPPv3N12SineRainfall12SineRainfallEP18SineRainfallParams"></span><span id="_CPPv2N12SineRainfall12SineRainfallEP18SineRainfallParams"></span><span id="SineRainfall::SineRainfall__SineRainfallParamsP"></span><span class="target" id="class_sine_rainfall_1a5400eca90b6aae50317446023a020f6c"></span><span class="sig-name descname"><span class="n"><span class="pre">SineRainfall</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="struct_sine_rainfall_params.html#_CPPv418SineRainfallParams" title="SineRainfallParams"><span class="n"><span class="pre">SineRainfallParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12SineRainfall12SineRainfallEP18SineRainfallParams" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N12SineRainfall12SineRainfallEP18SineRainfallParams"></span><span id="_CPPv2N12SineRainfall12SineRainfallEP18SineRainfallParams"></span><span id="SineRainfall::SineRainfall__SineRainfallParamsP"></span><span class="target" id="class_sine_rainfall_1a5400eca90b6aae50317446023a020f6c"></span><span class="sig-name descname"><span class="n"><span class="pre">SineRainfall</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../api.html#_CPPv418SineRainfallParams" title="SineRainfallParams"><span class="n"><span class="pre">SineRainfallParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p><a class="reference internal" href="#class_sine_rainfall"><span class="std std-ref">SineRainfall</span></a> constructor. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -471,11 +470,11 @@ document.write(`
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N12SineRainfall5alphaEid">
-<span id="_CPPv3N12SineRainfall5alphaEid"></span><span id="_CPPv2N12SineRainfall5alphaEid"></span><span id="SineRainfall::alpha__i.double"></span><span class="target" id="class_sine_rainfall_1a208a62a5176ae5db43120cf938a7f067"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alpha</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">alpha0</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N12SineRainfall5alphaEid" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N12SineRainfall5alphaEid"></span><span id="_CPPv2N12SineRainfall5alphaEid"></span><span id="SineRainfall::alpha__i.double"></span><span class="target" id="class_sine_rainfall_1a208a62a5176ae5db43120cf938a7f067"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alpha</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">alpha0</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><br /></dt>
 <dd><p>Computes the carrying-capacity alpha value for the given day and alpha0. </p>
 <p>Models rainfall contribution as a sine wave. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>Patch::alpha0</p>
+<p><a class="reference internal" href="../api.html#class_patch_1a5b781b751c5a39bb3a94640e3542a517"><span class="std std-ref">Patch::alpha0</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">

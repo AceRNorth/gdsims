@@ -1,0 +1,97 @@
+\doxysection{Params.\+h}
+\hypertarget{_params_8h_source}{}\label{_params_8h_source}\index{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h@{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Params.h}}
+\mbox{\hyperlink{_params_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GENERALMETAPOP\_PARAMS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GENERALMETAPOP\_PARAMS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ **\ These\ parameters\ should\ not\ be\ modified\ after\ being\ passed\ to\ the\ Simulation\ or\ Model\ **}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_progression_params}{ProgressionParams}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_progression_params_a431c275eade9e61300a16411d077d175}{num\_runs}};\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_progression_params_ac46e203808a1cde29efe72b01dfcef4e}{max\_t}};\ }
+\DoxyCodeLine{00014\ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_area_params}{AreaParams}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_area_params_ae2dcd6b60485cc3a2f54b70355987385}{num\_pat}};\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_area_params_a25bc9f9baa5f3b4f9352101dfec36a99}{side}};\ }
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_life_params}{LifeParams}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_life_params_a02c6d31cc4adf7efc95abf6707c9f75b}{mu\_j}};\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_life_params_a528e234b9f36c9ee20e1e65ccb6f18ac}{mu\_a}};\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_life_params_a2cf17ed50803c966c18b4d1ca30b442c}{beta}};\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_life_params_aea4fb1949f3ae9889fbd022ce728c1e2}{theta}};\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_life_params_a113c7b28bb3132aa7e9e34f5380f0837}{comp\_power}};\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_life_params_a68805af09da4a9755cdd659dfd6fddd9}{min\_dev}};\ }
+\DoxyCodeLine{00034\ \};\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_inheritance_params}{InheritanceParams}}\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_inheritance_params_af0f03901f9ab61ad32d860a629319933}{gamma}};\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_inheritance_params_ad465251fe02c73cfdf5a183f66a38c3a}{xi}};\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_inheritance_params_a21c21bbae006decbedd489a7f8dbf631}{e}};\ }
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_release_params}{ReleaseParams}}\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_release_params_ad8eab6bc3fe0bed5e774c63d7f43f350}{num\_driver\_M}};\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_release_params_a58423db2e16b0553d09ebec4d0d8a625}{num\_driver\_sites}};\ }
+\DoxyCodeLine{00051\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{struct_release_params_a1c79ed7605dac900e139a7e805ba2c97}{release\_times}};\ }
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_dispersal_params}{DispersalParams}}\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_dispersal_params_a9a6b644b1897710b43f94688b73b42b4}{disp\_rate}};\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_dispersal_params_a9f7d0b061d1024b76f726c795a4df4cd}{max\_disp}};\ }
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_aestivation_params}{AestivationParams}}\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_aestivation_params_aa75b996e48bd9a575f2d779b457e9676}{psi}};\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_aestivation_params_ace83fbaf99df64c684945c11657e0e2d}{mu\_aes}};\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_aestivation_params_a5c9103b6a2967fd10ceac34d74e873c5}{t\_hide1}};\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_aestivation_params_aa2e60eba548455a01bd70fcf7801b204}{t\_hide2}};\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_aestivation_params_a09830242cd97a95bd90f6107f5d65be1}{t\_wake1}};\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_aestivation_params_a523922bc6514f3d1623385060367cec0}{t\_wake2}};\ }
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_sine_rainfall_params}{SineRainfallParams}}\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_sine_rainfall_params_aec270841a6b4ef8d30f963378a924d6e}{alpha1}};\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_sine_rainfall_params_a08519d3070e7acb0e281d4513c4fc78c}{amp}};\ }
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_input_rainfall_params}{InputRainfallParams}}\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_input_rainfall_params_ac48f83260dd19b3a6164cb98a03bd6ee}{alpha1}};\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_input_rainfall_params_ac84460995670184a4eee972e9e25b2a6}{resp}};\ }
+\DoxyCodeLine{00088\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{struct_input_rainfall_params_a368dfef89d1edb458ad34e8f4bebbe87}{rainfall}};\ }
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_initial_pops_params}{InitialPopsParams}}\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_initial_pops_params_a223e4fba21b1219765b0aaffb794cb7c}{initial\_WJ}};\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_initial_pops_params_affa8fc67eb8a0fc91227b5034b38bdc3}{initial\_WM}};\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_initial_pops_params_a13e0588763c9fcaf905384cd34866aaf}{initial\_WV}};\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_initial_pops_params_ac125c56f73e260d96236434d57dd1599}{initial\_WF}};\ }
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_model_params}{ModelParams}}\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{struct_area_params}{AreaParams}}\ *\mbox{\hyperlink{struct_model_params_a53c7cd827ceb1f96a1e4ffd850efc096}{area}};}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{struct_initial_pops_params}{InitialPopsParams}}\ *\mbox{\hyperlink{struct_model_params_a6cb4a8401e0037d73a4cb8bf82705dbf}{initial}};}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{struct_life_params}{LifeParams}}\ *\mbox{\hyperlink{struct_model_params_ae0c846a42a36f1e6bc6eccb35bf55763}{life}};}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{struct_aestivation_params}{AestivationParams}}\ *\mbox{\hyperlink{struct_model_params_a87446d8f4e014fdfd555bd74b8b7fd70}{aes}};}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{struct_dispersal_params}{DispersalParams}}\ *\mbox{\hyperlink{struct_model_params_a3bdf0759e5b47d434f45982452a39b81}{disp}};\ }
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{struct_release_params}{ReleaseParams}}\ *\mbox{\hyperlink{struct_model_params_a77b9b6eab4e2185ef28937f8a438f08d}{rel}};}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00116\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_record_params}{RecordParams}}\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{comment}{//\ recording\ window\ and\ intervals}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_record_params_a89c527d5630d1aec0fc05ed61ee8b715}{rec\_start}};\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_record_params_aca901320e2ed318d7d65698175dae21f}{rec\_end}};\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_record_params_a37fe54bf39f62735f32270d20d820bcc}{rec\_interval\_global}};\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_record_params_a4d6ee2751b9b53199d38f79970031733}{rec\_interval\_local}};\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_record_params_a16d83a9c06faa37230c3b34eb9f0d081}{rec\_sites\_freq}};\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ output\ filename\ labels}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_record_params_a9df186c8b9f5788c29d023a41ba8088e}{set\_label}};\ }
+\DoxyCodeLine{00126\ \};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_PARAMS\_H}}
+
+\end{DoxyCode}

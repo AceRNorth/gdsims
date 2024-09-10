@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists\css\tree_view.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-treeview\bootstrap-treeview.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -47,8 +47,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
-    <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
-    <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+    <script src="../_static/bootstrap-treeview\bootstrap-treeview.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/tutorial2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -440,7 +439,7 @@ document.write(`
 <p>We will now run the program with a set of custom parameters carefully selected to make an interesting animation.</p>
 <p>Run the executable and enter the custom option number <code class="docutils literal notranslate"><span class="pre">100</span></code>. This will display the list of parameters needed.</p>
 <p>You will need to create a text file with the parameters, listed in the same order as above.
-For this example, you can include the following parameters. You can copy these or move the <code class="docutils literal notranslate"><span class="pre">params_set100.txt</span></code> file from the GitHub <code class="docutils literal notranslate"><span class="pre">docs/exercises</span></code> directory into your <code class="docutils literal notranslate"><span class="pre">build</span></code> directory.</p>
+For this example, you can include the following parameters. You can copy these into a file in the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory or we can use the relative filepath to the <code class="docutils literal notranslate"><span class="pre">params_set100.txt</span></code> file in the GitHub <code class="docutils literal notranslate"><span class="pre">docs/exercises</span></code> directory. Let’s try the latter - we can directly use the files we cloned from the repository.</p>
 <figure class="align-left" id="id1">
 <a class="reference internal image-reference" href="../_images/tut2_params_set100.png"><img alt="../_images/tut2_params_set100.png" src="../_images/tut2_params_set100.png" style="width: 346.5px; height: 609.6999999999999px;" /></a>
 <figcaption>
@@ -503,11 +502,7 @@ The values should be delimited by new lines.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">set_label</span></code> : the number given to the output filenames, in the format <code class="docutils literal notranslate"><span class="pre">Totals{set_label}run1.txt</span></code>. Our filenames will now end in “100” to distinguish them from our Tutorial 1 run.</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">rec_end</span></code> and <code class="docutils literal notranslate"><span class="pre">rec_interval_local</span></code> will be particularly useful in making the following animation. Notice how the <code class="docutils literal notranslate"><span class="pre">rec_end</span></code> we have chosen matches <code class="docutils literal notranslate"><span class="pre">max_t</span></code> so we can later display the full run.</p>
-<p>We can now proceed with the program and enter the parameter filename.</p>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>The file should be in the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory for the filename to be recognised. This will apply to all filenames we enter in the program.</p>
-</div>
+<p>We can now proceed with the program and enter the parameter filepath. We will use the relative filepath <code class="docutils literal notranslate"><span class="pre">../docs/exercises/params_set100.txt</span></code>, which will be relative to the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory. The first <code class="docutils literal notranslate"><span class="pre">../</span></code> means we are going up a directory from our current directory <code class="docutils literal notranslate"><span class="pre">build</span></code>.</p>
 <p>The interface will then confirm that we are happy with the parameters read in and finally, we will be asked if we want to choose advanced options - we will look at these later, so we can say no for this run.</p>
 <img alt="../_images/tut2_confirm_params.png" src="../_images/tut2_confirm_params.png" />
 <p>The program should now start running in the same way as the pre-defined set run.</p>

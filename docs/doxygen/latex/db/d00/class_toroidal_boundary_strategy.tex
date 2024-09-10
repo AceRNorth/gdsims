@@ -1,0 +1,125 @@
+\doxysection{Toroidal\+Boundary\+Strategy Class Reference}
+\hypertarget{class_toroidal_boundary_strategy}{}\label{class_toroidal_boundary_strategy}\index{ToroidalBoundaryStrategy@{ToroidalBoundaryStrategy}}
+
+
+Implements the distance method for toroidal boundary conditions.  
+
+
+
+
+{\ttfamily \#include $<$Boundary\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for Toroidal\+Boundary\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{d1/d00/class_toroidal_boundary_strategy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Toroidal\+Boundary\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{de/d00/class_toroidal_boundary_strategy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_toroidal_boundary_strategy_a5ea5b1bb1027b4722d19ece1d1209509}{Toroidal\+Boundary\+Strategy}} (double \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}})
+\item 
+double \mbox{\hyperlink{class_toroidal_boundary_strategy_a262f8bca65f10efa4e88c1aa67ac41ee}{distance}} (const \mbox{\hyperlink{struct_point}{Point}} \&p1, const \mbox{\hyperlink{struct_point}{Point}} \&p2) override
+\begin{DoxyCompactList}\small\item\em Calculates the shortest periodic distance between two points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_point}{Point}} \mbox{\hyperlink{class_toroidal_boundary_strategy_a47769682a09b91733ea8295517afe245}{relative\+\_\+pos}} (const \mbox{\hyperlink{struct_point}{Point}} \&p1, const \mbox{\hyperlink{struct_point}{Point}} \&p2) override
+\begin{DoxyCompactList}\small\item\em Returns the relative position of the second point to the first. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_boundary_strategy}{Boundary\+Strategy}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_boundary_strategy_a8fbbc051751dbb883c0f00673d9027c4}{Boundary\+Strategy}} (double \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}})
+\begin{DoxyCompactList}\small\item\em \doxylink{class_boundary_strategy}{Boundary\+Strategy} constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_boundary_strategy}{Boundary\+Strategy}}}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}}
+\begin{DoxyCompactList}\small\item\em Size of one side of the simulation square. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the distance method for toroidal boundary conditions. 
+
+The simulation area is assumed to have periodic boundary conditions at x = side, y = side, and have ranges \mbox{[}0, side\mbox{]} in all directions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_toroidal_boundary_strategy_a5ea5b1bb1027b4722d19ece1d1209509}\label{class_toroidal_boundary_strategy_a5ea5b1bb1027b4722d19ece1d1209509} 
+\index{ToroidalBoundaryStrategy@{ToroidalBoundaryStrategy}!ToroidalBoundaryStrategy@{ToroidalBoundaryStrategy}}
+\index{ToroidalBoundaryStrategy@{ToroidalBoundaryStrategy}!ToroidalBoundaryStrategy@{ToroidalBoundaryStrategy}}
+\doxysubsubsection{\texorpdfstring{ToroidalBoundaryStrategy()}{ToroidalBoundaryStrategy()}}
+{\footnotesize\ttfamily Toroidal\+Boundary\+Strategy\+::\+Toroidal\+Boundary\+Strategy (\begin{DoxyParamCaption}\item[{double}]{side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_toroidal_boundary_strategy_a262f8bca65f10efa4e88c1aa67ac41ee}\label{class_toroidal_boundary_strategy_a262f8bca65f10efa4e88c1aa67ac41ee} 
+\index{ToroidalBoundaryStrategy@{ToroidalBoundaryStrategy}!distance@{distance}}
+\index{distance@{distance}!ToroidalBoundaryStrategy@{ToroidalBoundaryStrategy}}
+\doxysubsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily double Toroidal\+Boundary\+Strategy\+::distance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_point}{Point}} \&}]{p1,  }\item[{const \mbox{\hyperlink{struct_point}{Point}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the shortest periodic distance between two points. 
+
+The simulation area is assumed to have toroidal (or periodic) boundaries at x = side, y = side, and x and y to be in the range \mbox{[}0, side\mbox{]}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p1} & first point \\
+\hline
+\mbox{\texttt{ in}}  & {\em p2} & second point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The shortest distance between the points. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{struct_point}{Point}, \doxylink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{Boundary\+Strategy\+::side} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_boundary_strategy_ab845b40ed83aeb78018c23f45565cd0e}{Boundary\+Strategy}}.
+
+\Hypertarget{class_toroidal_boundary_strategy_a47769682a09b91733ea8295517afe245}\label{class_toroidal_boundary_strategy_a47769682a09b91733ea8295517afe245} 
+\index{ToroidalBoundaryStrategy@{ToroidalBoundaryStrategy}!relative\_pos@{relative\_pos}}
+\index{relative\_pos@{relative\_pos}!ToroidalBoundaryStrategy@{ToroidalBoundaryStrategy}}
+\doxysubsubsection{\texorpdfstring{relative\_pos()}{relative\_pos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_point}{Point}} Toroidal\+Boundary\+Strategy\+::relative\+\_\+pos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_point}{Point}} \&}]{p1,  }\item[{const \mbox{\hyperlink{struct_point}{Point}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the relative position of the second point to the first. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em loc1} & point 1 \\
+\hline
+\mbox{\texttt{ in}}  & {\em loc2} & point 2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The relative coordinates of the second point. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_boundary_strategy_a37b4146de796d583d01fc15ad3381ea8}{Boundary\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/includes/\mbox{\hyperlink{_boundary_strategy_8h}{Boundary\+Strategy.\+h}}\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/src/\mbox{\hyperlink{_boundary_strategy_8cpp}{Boundary\+Strategy.\+cpp}}\end{DoxyCompactItemize}

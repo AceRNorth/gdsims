@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists\css\tree_view.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-treeview\bootstrap-treeview.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -47,8 +47,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
-    <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
-    <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+    <script src="../_static/bootstrap-treeview\bootstrap-treeview.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/program_listing_file_src_Dispersal.cpp';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -431,6 +430,7 @@ document.write(`
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Dispersal.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;random.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;constants.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="n">Dispersal</span><span class="o">::</span><span class="n">Dispersal</span><span class="p">(</span><span class="n">DispersalParams</span><span class="o">*</span><span class="w"> </span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">BoundaryType</span><span class="w"> </span><span class="n">boundary</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">side</span><span class="p">)</span>
 <span class="p">{</span>
@@ -712,6 +712,12 @@ document.write(`
 <span class="w">                </span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/*  std::cout&lt;&lt;i&lt;&lt;&quot;     &quot;;</span>
+<span class="cm">        for(int jj=0;jj&lt;connec_weights[i].size();++jj)std::cout&lt;&lt;connec_indices[i][jj]&lt;&lt;&quot;     &quot;&lt;&lt;connec_weights[i][jj]&lt;&lt;&quot;    &quot;;</span>
+<span class="cm">        std::cout&lt;&lt;std::endl;</span>
+<span class="cm">    */</span>
+
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">connec_indices</span><span class="p">,</span><span class="w"> </span><span class="n">connec_weights</span><span class="p">};</span>
 <span class="p">}</span>

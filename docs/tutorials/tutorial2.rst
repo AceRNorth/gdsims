@@ -12,7 +12,7 @@ We will now run the program with a set of custom parameters carefully selected t
 Run the executable and enter the custom option number ``100``. This will display the list of parameters needed.
 
 You will need to create a text file with the parameters, listed in the same order as above. 
-For this example, you can include the following parameters. You can copy these or move the ``params_set100.txt`` file from the GitHub ``docs/exercises`` directory into your ``build`` directory. 
+For this example, you can include the following parameters. You can copy these into a file in the ``build`` directory or we can use the relative filepath to the ``params_set100.txt`` file in the GitHub ``docs/exercises`` directory. Let's try the latter - we can directly use the files we cloned from the repository. 
 
 .. figure:: ../images/tut2_params_set100.png
     :scale: 70 %
@@ -76,10 +76,7 @@ Let's have a look at the recording parameters at the end:
 
 ``rec_end`` and ``rec_interval_local`` will be particularly useful in making the following animation. Notice how the ``rec_end`` we have chosen matches ``max_t`` so we can later display the full run.
 
-We can now proceed with the program and enter the parameter filename. 
-
-.. attention::
-    The file should be in the ``build`` directory for the filename to be recognised. This will apply to all filenames we enter in the program. 
+We can now proceed with the program and enter the parameter filepath. We will use the relative filepath ``../docs/exercises/params_set100.txt``, which will be relative to the ``build`` directory. The first ``../`` means we are going up a directory from our current directory ``build``. 
 
 The interface will then confirm that we are happy with the parameters read in and finally, we will be asked if we want to choose advanced options - we will look at these later, so we can say no for this run. 
 
@@ -91,6 +88,10 @@ The program should now start running in the same way as the pre-defined set run.
 
 2.2 Creating a local data animation: population size (optional - python)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: 
+
+   This tutorial will require the same installations as Tutorial :ref:`tutorial-1.2`.
 
 Now that we have our output files for the custom run, we can do something even more exciting. We can combine the local data and the coordinates files to create an animation showing how the population sizes evolve over time and space. We can use the following script:
 
