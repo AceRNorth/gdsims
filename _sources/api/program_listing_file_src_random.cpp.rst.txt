@@ -163,3 +163,5 @@ Program Listing for File random.cpp
        std::lognormal_distribution<> dist(mean, std::sqrt(var));
        return dist(twister);
    }
+   
+   

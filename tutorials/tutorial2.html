@@ -438,7 +438,7 @@ document.write(`
 <p>We will now run the program with a set of custom parameters carefully selected to make an interesting animation.</p>
 <p>Run the executable and enter the custom option number <code class="docutils literal notranslate"><span class="pre">100</span></code>. This will display the list of parameters needed.</p>
 <p>You will need to create a text file with the parameters, listed in the same order as above.
-For this example, you can include the following parameters. You can copy these or move the <code class="docutils literal notranslate"><span class="pre">params_set100.txt</span></code> file from the GitHub <code class="docutils literal notranslate"><span class="pre">docs/exercises</span></code> directory into your <code class="docutils literal notranslate"><span class="pre">build</span></code> directory.</p>
+For this example, you can include the following parameters. You can copy these into a file in the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory or we can use the relative filepath to the <code class="docutils literal notranslate"><span class="pre">params_set100.txt</span></code> file in the GitHub <code class="docutils literal notranslate"><span class="pre">docs/exercises</span></code> directory. Let’s try the latter - we can directly use the files we cloned from the repository.</p>
 <figure class="align-left" id="id1">
 <a class="reference internal image-reference" href="../_images/tut2_params_set100.png"><img alt="../_images/tut2_params_set100.png" src="../_images/tut2_params_set100.png" style="width: 346.5px; height: 609.6999999999999px;" /></a>
 <figcaption>
@@ -501,17 +501,17 @@ The values should be delimited by new lines.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">set_label</span></code> : the number given to the output filenames, in the format <code class="docutils literal notranslate"><span class="pre">Totals{set_label}run1.txt</span></code>. Our filenames will now end in “100” to distinguish them from our Tutorial 1 run.</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">rec_end</span></code> and <code class="docutils literal notranslate"><span class="pre">rec_interval_local</span></code> will be particularly useful in making the following animation. Notice how the <code class="docutils literal notranslate"><span class="pre">rec_end</span></code> we have chosen matches <code class="docutils literal notranslate"><span class="pre">max_t</span></code> so we can later display the full run.</p>
-<p>We can now proceed with the program and enter the parameter filename.</p>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>The file should be in the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory for the filename to be recognised. This will apply to all filenames we enter in the program.</p>
-</div>
+<p>We can now proceed with the program and enter the parameter filepath. We will use the relative filepath <code class="docutils literal notranslate"><span class="pre">../docs/exercises/params_set100.txt</span></code>, which will be relative to the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory. The first <code class="docutils literal notranslate"><span class="pre">../</span></code> means we are going up a directory from our current directory <code class="docutils literal notranslate"><span class="pre">build</span></code>.</p>
 <p>The interface will then confirm that we are happy with the parameters read in and finally, we will be asked if we want to choose advanced options - we will look at these later, so we can say no for this run.</p>
 <img alt="../_images/tut2_confirm_params.png" src="../_images/tut2_confirm_params.png" />
 <p>The program should now start running in the same way as the pre-defined set run.</p>
 </section>
 <section id="creating-a-local-data-animation-population-size-optional-python">
 <span id="tutorial-2-2"></span><h2>2.2 Creating a local data animation: population size (optional - python)<a class="headerlink" href="#creating-a-local-data-animation-population-size-optional-python" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tutorial will require the same installations as Tutorial <a class="reference internal" href="tutorial1.html#tutorial-1-2"><span class="std std-ref">1.2 Simple plots: coordinates and totals (optional - python)</span></a>.</p>
+</div>
 <p>Now that we have our output files for the custom run, we can do something even more exciting. We can combine the local data and the coordinates files to create an animation showing how the population sizes evolve over time and space. We can use the following script:</p>
 <details class="summary-script">
 <summary>Script</summary><div class="literal-block-wrapper docutils container" id="id3">

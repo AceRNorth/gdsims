@@ -499,7 +499,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</details><p>And enter the filename <code class="docutils literal notranslate"><span class="pre">params_set101.txt</span></code> into the program. Remember files need to be in the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory to be recognised.</p>
+</details><p>And, as before, enter the filepath for the parameters file (this time <code class="docutils literal notranslate"><span class="pre">params_set101.txt</span></code>) into the program. Remember these exercise files can be found in the <code class="docutils literal notranslate"><span class="pre">docs/exercises</span></code> directory and the filepath we use is relative to the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory, so we would enter <code class="docutils literal notranslate"><span class="pre">../docs/exercises/params_set101.txt</span></code> for this tutorial.</p>
 <p>Now we can say yes to the advanced options and we’ll be given a submenu of options. Let’s choose <code class="docutils literal notranslate"><span class="pre">4</span></code> - the custom patch coordinates option.</p>
 <a class="reference internal image-reference" href="../_images/tut3_adv_options.png"><img alt="../_images/tut3_adv_options.png" src="../_images/tut3_adv_options.png" style="width: 536.0px; height: 213.60000000000002px;" /></a>
 <p>The interface will then prompt us to enter a coordinates filename. Let’s have a quick look at what this file should look like before proceeding with the run.</p>
@@ -542,13 +542,17 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</details><p>Now we can enter the filename into the prompt. If there are no error messages, this will set the coordinates (more information on errors in the User Guide).</p>
+</details><p>Now we can enter the filepath into the prompt. Like with the parameters file, we can use the relative filepath to the <code class="docutils literal notranslate"><span class="pre">docs/exercises</span></code> directory. If there are no error messages, this will set the coordinates (more information on errors in the User Guide).</p>
 <p>We can exit the advanced options and run the program by entering <code class="docutils literal notranslate"><span class="pre">0</span></code>, which should start outputting day data as in previous runs.</p>
 <img alt="../_images/tut3_set_coords.png" src="../_images/tut3_set_coords.png" />
 <p>Finally, we could re-plot the coordinates and check the difference, but we will leave this as an exercise for the user.</p>
 </section>
 <section id="creating-a-local-data-animation-drive-allele-frequency-optional-python">
 <h2>3.4 Creating a local data animation: drive allele frequency (optional - python)<a class="headerlink" href="#creating-a-local-data-animation-drive-allele-frequency-optional-python" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tutorial will require the same installations as Tutorial <a class="reference internal" href="tutorial1.html#tutorial-1-2"><span class="std std-ref">1.2 Simple plots: coordinates and totals (optional - python)</span></a>.</p>
+</div>
 <p>With a few tweaks we can easily transform our previous population size animation into an animation of the drive allele frequency to track the spread of the gene drive.</p>
 <p>The drive allele (D) frequency is calculated relative to all available genotypes:</p>
 <div class="math notranslate nohighlight">

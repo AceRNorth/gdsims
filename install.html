@@ -488,6 +488,19 @@ mkdir<span class="w"> </span>build
 <span class="nb">cd</span><span class="w"> </span>build
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The location of this <code class="docutils literal notranslate"><span class="pre">build</span></code> directory relative to the project will be important when entering relative filepaths for additional input files. The <a class="reference internal" href="tutorials/tutorials_root.html#tutorials-root"><span class="std std-ref">Tutorials</span></a> will assume the following directory structure:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>GeneralMetapop
+├── build
+├── docs
+│   └── exercises
+├── includes
+├── src
+└── test
+</pre></div>
+</div>
+</div>
 </li>
 <li><p>Run CMake to configure the CMake project.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>..
