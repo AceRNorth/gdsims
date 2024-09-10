@@ -9,7 +9,7 @@
 
 By default, the program uses a single gene drive release time at ``driver_start`` (we can see this in the previous runs). We can also choose to use multiple release times through the advanced options menu. This can be useful when we have a specific release schedule we want to test. 
 
-We can create a text file named ``params_set17``, which contains the same parameters as set 1, which we used in Tutorial :ref:`tutorial-1`, except we change the last parameter in the file, ``set_label``, to 17. To speed this up, we can use the one in the ``docs/exercises`` directory directly.
+We can create a text file named ``params_set17.txt``, which contains the same parameters as set 1, which we used in Tutorial :ref:`tutorial-1`, except we change the last parameter in the file, ``set_label``, to 17. To speed this up, we can use the one in the ``docs/exercises`` directory directly.
 
 .. collapse:: Parameters
 

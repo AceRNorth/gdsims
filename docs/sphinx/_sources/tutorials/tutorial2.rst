@@ -89,6 +89,10 @@ The program should now start running in the same way as the pre-defined set run.
 2.2 Creating a local data animation: population size (optional - python)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. note:: 
+
+   This tutorial will require the same installations as Tutorial :ref:`tutorial-1.2`.
+
 Now that we have our output files for the custom run, we can do something even more exciting. We can combine the local data and the coordinates files to create an animation showing how the population sizes evolve over time and space. We can use the following script:
 
 .. collapse:: Script

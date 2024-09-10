@@ -81,7 +81,7 @@ Create a file that contains these parameters:
         101
 
  
-And, as before, enter the filepath for the parameters file (this time ``params_set101.txt``) into the program. Remember these exercises files can be found in the ``docs/exercises`` directory and the filepath we use is relative to the ``build`` directory, so we would enter ``../docs/exercises/params_set101.txt`` for this tutorial. 
+And, as before, enter the filepath for the parameters file (this time ``params_set101.txt``) into the program. Remember these exercise files can be found in the ``docs/exercises`` directory and the filepath we use is relative to the ``build`` directory, so we would enter ``../docs/exercises/params_set101.txt`` for this tutorial. 
 
 Now we can say yes to the advanced options and we'll be given a submenu of options. Let's choose ``4`` - the custom patch coordinates option. 
 
@@ -144,6 +144,10 @@ Finally, we could re-plot the coordinates and check the difference, but we will 
 
 3.4 Creating a local data animation: drive allele frequency (optional - python)
 -------------------------------------------------------------------------------
+
+.. note:: 
+
+   This tutorial will require the same installations as Tutorial :ref:`tutorial-1.2`.
 
 With a few tweaks we can easily transform our previous population size animation into an animation of the drive allele frequency to track the spread of the gene drive. 
 
