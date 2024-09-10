@@ -54,6 +54,8 @@ Included By
 
 - :ref:`file__github_workspace_src_main.cpp`
 
+- :ref:`file__github_workspace_src_main2.cpp`
+
 
 
 

@@ -16,6 +16,7 @@ Files
 - :ref:`file__github_workspace_src_Dispersal.cpp`
 - :ref:`file__github_workspace_src_GDRelease.cpp`
 - :ref:`file__github_workspace_src_main.cpp`
+- :ref:`file__github_workspace_src_main2.cpp`
 - :ref:`file__github_workspace_src_Model.cpp`
 - :ref:`file__github_workspace_src_Patch.cpp`
 - :ref:`file__github_workspace_src_random.cpp`

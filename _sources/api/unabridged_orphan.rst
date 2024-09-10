@@ -85,6 +85,11 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file__github_workspace_src_main2.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file__github_workspace_src_Model.cpp.rst
 
 .. toctree::
