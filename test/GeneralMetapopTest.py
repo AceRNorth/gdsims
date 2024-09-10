@@ -12,6 +12,7 @@ exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming
 
 # Selecting sets to run
 sets = [i for i in range(1, 19)]
+sets = [14, 15, 17]
 
 # ** Select other combinations of sets by listing below and uncommenting**
 #sets = [18]
@@ -143,24 +144,25 @@ output_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Progr
 exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\gdsimsapp.exe"
 
 sets = [i for i in range(1, 19)]
-sets = [101]
+sets = [14, 15, 17]
+#sets = [101]
 
 for j in range(0, len(sets)):
     params_filename = "params_set" + str(sets[j]) + ".txt"
     input_string = "100" + "\n" + params_filename + "\n" + "y" +"\n" + "y" + "\n"
     
     if sets[j] == 14 or sets[j] == 15:
-        input_string += "3" + "\n" + "rainfall.txt" + "\n"
+        input_string += "3" + "\n" + "../includes/rainfall.txt" + "\n"
     if sets[j] == 17:
-        input_string += "5" + "\n" + "rel_times.txt" + "\n"
+        input_string += "5" + "\n" + "../includes/rel_times.txt" + "\n"
         
     # if want advanced options, uncomment below line
     # e.g. setting boundary type to edge and dispersal type to radial
-    input_string += "1" + "\n" + "e" + "\n" + "2" + "\n" + "r" + "\n" 
+    input_string += "1" + "\n" + "t" + "\n" + "2" + "\n" + "d" + "\n" 
     # e.g. setting custom coords file
     #input_string += "4" + "\n" + "coords_set1run1.txt" + "\n"
     #input_string += "4" + "\n" + "coords_set" + str(sets[j]) + "run1" + "_td.txt" + "\n"
-    input_string += "4" + "\n" + "coords_grid.txt" + "\n"
+    #input_string += "4" + "\n" + "coords_grid.txt" + "\n"
     
     input_string += "0" + "\n"
         
@@ -211,12 +213,12 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\edge_radial"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel"
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
 sets = [i for i in range(1, 19)]
-#sets = [2, 11]
+sets = [14, 15, 17]
 
 # ** Modify the list of num_runs in each set selected as needed **
 num_runs_list = [2 for i in range(0, len(sets))]
