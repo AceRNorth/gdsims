@@ -108,12 +108,12 @@ Now that we have our output files for the custom run, we can do something even m
         fig, ax = plt.subplots()
 
         # get coords of sites
-        coords = np.loadtxt("CoordinateList1run1.txt", skiprows=2)
+        coords = np.loadtxt("CoordinateList100run1.txt", skiprows=2)
         x = coords[:, 1]
         y = coords[:, 2]
 
         # get populations
-        local_data = np.loadtxt("LocalData1run1.txt", skiprows=2)
+        local_data = np.loadtxt("LocalData100run1.txt", skiprows=2)
 
         # get populations on one day
         t=0 # recorded timestep
@@ -139,6 +139,9 @@ Now that we have our output files for the custom run, we can do something even m
         annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
         ax.set_xlabel("x (km)")
         ax.set_ylabel("y (km)")  
+        side = 1 # modify manually depending on selected side parameter
+        ax.set_xlim(0, side)
+        ax.set_ylim(0, side)
 
         def update(t):
             sim_day = int(local_data[t*len(x), 0])
@@ -162,7 +165,7 @@ Now that we have our output files for the custom run, we can do something even m
         num_frames = int(len(local_data[:, 0]) / (len(x) / rec_sites_freq))
 
         anim = animation.FuncAnimation(fig=fig, func=update, frames=num_frames, interval=1000)
-        anim.save("set1_pop_anim.gif")
+        anim.save("set100_pop_anim.gif")
         plt.show()
 
 

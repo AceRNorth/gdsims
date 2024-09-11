@@ -460,16 +460,12 @@ document.write(`
 </section>
 <section id="setting-the-dispersal-type-to-radial">
 <h2>6.2 Setting the dispersal type to Radial<a class="headerlink" href="#setting-the-dispersal-type-to-radial" title="Permalink to this heading">#</a></h2>
-<p>To set the dispersal type to Radial, we can once again use the advanced options of a custom run. We will build upon the previous tutorial (Tutorial <a class="reference internal" href="tutorial5.html#tutorial-5-1"><span class="std std-ref">5.1 Setting multiple release times</span></a>), using the same parameter set and custom coordinates, as well as an Edge boundary. These options may often be used together, as they create the most realistic setting for the model.</p>
+<p>To set the dispersal type to Radial, we can once again use the advanced options of a custom run. We will build upon  Tutorial <a class="reference internal" href="tutorial4.html#tutorial-4-1"><span class="std std-ref">4.1 Setting the boundary type to Edge</span></a>, using the same parameter set and custom coordinates, as well as an Edge boundary. These options may often be used together, as they create the most realistic setting for the model.</p>
 <p>After selecting all the previous advanced options, select option <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">–</span> <span class="pre">Dispersal</span> <span class="pre">type</span></code>. This will prompt us to choose between Distance Kernel and Radial. Choose Radial <code class="docutils literal notranslate"><span class="pre">r</span></code>.</p>
 <a class="reference internal image-reference" href="../_images/tut6_radial_confirm.png"><img alt="../_images/tut6_radial_confirm.png" src="../_images/tut6_radial_confirm.png" style="width: 378.40000000000003px; height: 195.20000000000002px;" /></a>
 <p>With this, we’re ready to run. From the output files we can create another animation as below to see the difference with the previous tutorial, which used the default dispersal type, Distance Kernel.</p>
 <a class="reference internal image-reference" href="../_images/tut6_anim_radial.gif"><img alt="../_images/tut6_anim_radial.gif" src="../_images/tut6_anim_radial.gif" style="width: 576.0px; height: 432.0px;" /></a>
-<p>The above animation may not be as exciting as the previous ones, but it illustrates two of the concepts from the previous section:</p>
-<ol class="arabic simple">
-<li><p>The gene drive will spread much slower with Radial dispersal, particularly under unfavourable circumstances such as long distances between patches (relative to the maximum dispersal distance). Here, the mosquitoes can only disperse to the patches above, below, to the right and to the left of their patch, as the patches in diagonal are too far.</p></li>
-<li><p>Some patches may remain uncolonised if the mosquitoes don’t set out in that direction, even though they are within range. This is the case for the bottom half of the area in our animation.</p></li>
-</ol>
+<p>Let’s compare this animation to the one from Tutorial <a class="reference internal" href="tutorial4.html#tutorial-4-1"><span class="std std-ref">4.1 Setting the boundary type to Edge</span></a>. We can see that in this case the gene drive will spread much quicker with the radial dispersal.</p>
 </section>
 </section>
 

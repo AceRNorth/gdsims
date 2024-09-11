@@ -24,7 +24,7 @@ Gene drive is a real-life technology that enhances the inheritance rates of cert
 
 To start the gene drive process, a number of modified mosquitoes are released into the wild populations. We would usually select a specific number of patches for it to be released into. The drive mosquitoes then mate with wild mosquitoes and carry out the same life processes as them. They will disperse too, which causes the natural spread of the drive throughout the simulation area. 
 
-We need to expand on the Patch concept to track the gene drive and so, the four types of individuals in a Patch are subdivided into several genotypes - let’s consider six genotypes as this is the current default. These are composed of three different alleles: wild-type (W), drive-type (D) and non-functional resistance-type (R). We thus have the following genotypes available: WW, WD, DD, DR, WR and RR, which we already plotted as part of our first run!
+We need to expand on the Patch concept to track the gene drive and so, the four types of individuals in a Patch are subdivided into several genotypes - let's consider six genotypes as this is the current default. These are composed of three different alleles: wild-type (W), drive-type (D) and non-functional resistance-type (R). We thus have the following genotypes available: WW, WD, DD, DR, WR and RR, which we already plotted as part of our first run!
 
 .. note:: 
     We count six genotypes and not nine because WD and DW genotypes are counted together, and likewise for the other heterozygous genotypes.
@@ -181,6 +181,8 @@ To modify our previous animation script, we can substitute some of the sections 
             tot = WW_day0[pat] + WD_day0[pat] + DD_day0[pat] + WR_day0[pat] + RR_day0[pat] + DR_day0[pat]
             if (tot == 0):
                 drive_freq[pat] = -2 # assign different distinguishable value for no-population patches
+            elif (tot == WW[pat]):
+                drive_freq[pat] = -0.5 #assign different distinguishable value for fully wild-population patches
             else:
                 drive_freq[pat] = (WD_day0[pat] + (2*DD_day0[pat]) + DR_day0[pat]) / (2*tot)
 
@@ -188,7 +190,7 @@ To modify our previous animation script, we can substitute some of the sections 
         main_cmap = ['aquamarine', 'mediumturquoise', 'darkcyan','steelblue', 'royalblue', 'mediumblue', 'slateblue', 'darkviolet', 'indigo', 'black']
         all_colours = ['darkgray', 'lightgreen'] + main_cmap # add colours for no-population patch and wild-population patch
         cmap = mcolors.ListedColormap(all_colours)
-        bounds = [-2, -1, 0.0001, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+        bounds = [-2, -1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
         cnorm = mcolors.BoundaryNorm(bounds, cmap.N)
 
         # make a scatter plot with drive frequency colour map
@@ -228,6 +230,8 @@ Secondly, we're going to substitute the section enclosed by ``# ~ ~ ~ ~ ~`` with
         This section should all be indented within the ``update()`` function.
 
 You'll also likely want to change the interval on the animation to 20 ms, since we have a lot more recorded days to cycle through.     
+
+Finally, remember too to change the CoordinateList and LocalData files to match the set we have just used, ``101``!
 
 Our new updated script should produce the following animation:
 
