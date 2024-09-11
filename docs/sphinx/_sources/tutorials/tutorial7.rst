@@ -46,7 +46,7 @@ This is the high seasonality, default rainfall parameter set. Observe how ``alph
 With our output data, we can plot the total males as we did in Tutorial :ref:`tutorial-1.2`:
 
 .. image:: ../images/tut7_totals_plot_set13.png
-    :scale: 90 %
+    :scale: 80 %
 
 And as we can see, the population greatly fluctuates in a sinusoid pattern due to the rainfall contribution!
 
@@ -163,7 +163,7 @@ Finally, enter the filepath and proceed to run the program. Remember again that 
 If we plot the total males again, we can observe that the fluctuations are more irregular than before, since our custom rainfall values don't follow a perfect sinusoid pattern. 
 
 .. image:: ../images/tut7_totals_plot_set15.png
-    :scale: 90 %
+    :scale: 80 %
 
 In this tutorial we have effectively run the pre-defined set 15! 
 

@@ -94,7 +94,7 @@ Notice how we skip the first two rows of the table containing the header labels.
 This script will generate the following plot:
 
 .. image:: ../images/tut1_coords_plot.png
-
+    :scale: 80 %
 
 Now we can see the spatial distribution of the patches!
 
@@ -133,6 +133,7 @@ As before, make sure to skip the first two rows of the table.
 This script will generate the following plot:
 
 .. image:: ../images/tut1_totals_plot.png
+    :scale: 80 %
 
 We can now clearly see how the composition of the overall mosquito population evolves over time!
 

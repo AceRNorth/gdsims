@@ -13,7 +13,7 @@ times = totals[:, 0]
 total_males = totals[:, 1:]
 
 plt.figure()
-#plt.title("Total males across the area - set 15 run 1")
+plt.title("Total males across the area")
 plt.xlabel("Day")
 plt.ylabel("Total number of individuals")
 plt.plot(times, total_males[:, 0], label="$M_{WW}$")
@@ -26,9 +26,9 @@ plt.legend()
 
 #%% Plot coordinates of patches
 
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files")
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set1")
 
-coords = np.loadtxt("CoordinateList101run1.txt", skiprows=2)
+coords = np.loadtxt("CoordinateList1run1.txt", skiprows=2)
 
 x = coords[:, 1]
 y = coords[:, 2]
@@ -76,7 +76,10 @@ cbar = fig.colorbar(scat, ax=ax, label='Total population size')
 ax.set_title("Population sizes - set 1 run 1")
 annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
 ax.set_xlabel("x (km)")
-ax.set_ylabel("y (km)")        
+ax.set_ylabel("y (km)")
+side = 1 
+ax.set_xlim(0, side)
+ax.set_ylim(0, side)     
 
 #%% Spatial animation of total population size
 
@@ -112,9 +115,12 @@ scat = ax.scatter(x, y, c=tot_pops, cmap='copper', vmin=min_pop, vmax=max_pop, m
 cbar = fig.colorbar(scat, ax=ax, label='Total population size')
 
 #ax.set_title("Population sizes - set 1 run 1")
-annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
+annotation = fig.text(x=0.1, y=0.92, s='t = {}'.format(sim_day))
 ax.set_xlabel("x (km)")
-ax.set_ylabel("y (km)")  
+ax.set_ylabel("y (km)") 
+side = 1 
+ax.set_xlim(0, side)
+ax.set_ylim(0, side)
 
 def update_pop_size(t):
     sim_day = int(local_data[t*len(x), 0])
@@ -135,9 +141,8 @@ def update_pop_size(t):
 rec_sites_freq = 1
 num_frames = int(len(local_data[:, 0]) / (len(x) / rec_sites_freq))
 
-print(num_frames)
 anim = animation.FuncAnimation(fig=fig, func=update_pop_size, frames=num_frames, interval=500)
-#anim.save("set1_pop_anim.gif")
+anim.save("set100_pop_anim.gif")
 plt.show()
 
 #%% Spatial plot of gene drive allele frequency on one day
@@ -188,6 +193,9 @@ cbar.ax.set_yticklabels(['None', '0.0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6'
 annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
 ax.set_xlabel("x (km)")
 ax.set_ylabel("y (km)")
+side = 1 
+ax.set_xlim(0, side)
+ax.set_ylim(0, side)
 #plt.grid()
 
 #%% Spatial animation of gene drive allele frequency
@@ -241,6 +249,9 @@ labels[1].set_verticalalignment('bottom')
 annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
 ax.set_xlabel("x (km)")
 ax.set_ylabel("y (km)")
+side = 1 
+ax.set_xlim(0, side)
+ax.set_ylim(0, side)
 #plt.grid()
 
 def update_drive_freq(t):

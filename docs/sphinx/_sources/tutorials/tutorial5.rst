@@ -82,4 +82,4 @@ And with this, we have effectively run the pre-defined set 17!
 We can look at the totals plot and see for ourselves the spikes at each release time:
 
 .. image:: ../images/tut5_totals_plot.png
-    :scale: 90 %
+    :scale: 80 %
