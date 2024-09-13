@@ -22,6 +22,7 @@ Program Listing for File GDRelease.h
    class GDRelease {
    public:
        GDRelease(int num_driver_M, std::vector<int> rel_times): num_driver_M(num_driver_M), release_times(rel_times) {}
+       ~GDRelease() {};
        void release_gene_drive(int day, std::vector<Patch*> &sites);
    protected:
        int num_driver_M;
