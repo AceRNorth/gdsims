@@ -138,13 +138,14 @@ Program Listing for File Model.cpp
    
    Model::~Model() 
    {
-       for (auto pat : sites) {
-           delete pat;
-       }
        delete aestivation;
        delete dispersal;
        delete gd_release;
        delete seasonality;
+       
+       for (auto pat : sites) {
+           delete pat;
+       }
    }
    
    double Model::alpha0() 
