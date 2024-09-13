@@ -18,6 +18,7 @@ public:
 	 * @param[in] rel_times 	days on which the gene drive mosquitoes will be released
 	 */
 	GDRelease(int num_driver_M, std::vector<int> rel_times): num_driver_M(num_driver_M), release_times(rel_times) {}
+	~GDRelease() {};
 	void release_gene_drive(int day, std::vector<Patch*> &sites);
 protected:
 	int num_driver_M;/**< Number of drive heterozygous (WD) male mosquitoes per release. */
