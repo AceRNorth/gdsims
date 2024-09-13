@@ -155,13 +155,14 @@ Model::Model(ModelParams* params, const std::array<std::array<std::array <double
  */
 Model::~Model() 
 {
-	for (auto pat : sites) {
-		delete pat;
-	}
 	delete aestivation;
 	delete dispersal;
 	delete gd_release;
 	delete seasonality;
+	
+	for (auto pat : sites) {
+		delete pat;
+	}
 }
 
 /**
