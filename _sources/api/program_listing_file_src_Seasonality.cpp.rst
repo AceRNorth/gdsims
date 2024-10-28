@@ -15,13 +15,11 @@ Program Listing for File Seasonality.cpp
    #include "Seasonality.h"
    #include "constants.h"
    
-   
    SineRainfall::SineRainfall(SineRainfallParams *params): Seasonality(params->alpha1) 
    {
        amp = params->amp;
    }
    
-   // 
    double SineRainfall::alpha(int day, double alpha0)
    {
        double alpha = alpha0 + alpha1*(1 + amp*std::sin(2 * constants::pi * day/365));

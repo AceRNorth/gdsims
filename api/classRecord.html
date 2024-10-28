@@ -181,7 +181,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial7.html">7. Customising seasonality</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="library_root.html">Library API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="library_root.html">API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="namespace_constants.html">Namespace constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structAestivationParams.html">Struct AestivationParams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structAreaParams.html">Struct AreaParams</a></li>
@@ -219,8 +219,6 @@
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517.html">Template Function check_bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be.html">Template Function check_interval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a38cf9054c93e1fced65fe33940dda566.html">Template Function file_read_and_validate_type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1af03c0e74140efa3114c4cd1361da5548.html">Function random_discrete(int, int)</a></li>
@@ -463,7 +461,8 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4N6Record6RecordEP12RecordParamsi">
 <span id="_CPPv3N6Record6RecordEP12RecordParamsi"></span><span id="_CPPv2N6Record6RecordEP12RecordParamsi"></span><span id="Record::Record__RecordParamsP.i"></span><span class="target" id="classRecord_1a977db4fb6aaa9ac09b0d17ba676cabda"></span><span class="sig-name descname"><span class="n"><span class="pre">Record</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../api.html#_CPPv412RecordParams" title="RecordParams"><span class="n"><span class="pre">RecordParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">rec_params</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rep</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p><a class="reference internal" href="class_record.html#classRecord"><span class="std std-ref">Record</span></a> constructor. </p>
-<p>Creates LocalData, Totals and CoordinateList output .txt files. </p>
+<p>Creates LocalData, Totals and CoordinateList output .txt files.</p>
+<p>Creates a subdirectory for output files in the current directory. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -487,7 +486,7 @@ document.write(`
 <dd><p>Records the coordinates of the population sites. </p>
 <p>Relevant parameters include the fraction of sites to collect data for. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a>, <a class="reference internal" href="../api.html#classRecord_1a8ab507dfcfb593428a8c23a81877fac3"><span class="std std-ref">Record::rec_sites_freq</span></a></p>
+<p><a class="reference internal" href="struct_input_params.html#structInputParams_1a0aa285f32fbb33162549d1480f36e1f0"><span class="std std-ref">InputParams::rec_sites_freq</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -503,7 +502,7 @@ document.write(`
 <dd><p>Records the total numbers of male mosquitoes for the given day, divided by genotype. </p>
 <p>The totals are assumed to be across all sites. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="class_model.html#classModel_1a6d5f4f68f41e76c3e966e312d2f6e9e3"><span class="std std-ref">Model::calculate_tot_M_gen()</span></a>, <a class="reference internal" href="../api.html#classPatch_1a6e9cda8c3620873eaadf23db0f5a7b27"><span class="std std-ref">Patch::M</span></a></p>
+<p><a class="reference internal" href="class_model.html#classModel_1a6d5f4f68f41e76c3e966e312d2f6e9e3"><span class="std std-ref">Model::calculate_tot_M_gen()</span></a>, <a class="reference internal" href="class_patch.html#classPatch_1a18366a21df794d2cebbbdfe3195734a5"><span class="std std-ref">Patch::get_M()</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -522,7 +521,7 @@ document.write(`
 <dd><p>Outputs the total numbers of juvenile (J), male (M), virgin female (V) and mated female (F) mosquitoes for the given day. </p>
 <p>The totals are assumed to be across all sites, and over all genotypes and age groups. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classPatch_1a9ec8ec87984a6e18efa7afd83e6df081"><span class="std std-ref">Patch::J</span></a>, <a class="reference internal" href="../api.html#classPatch_1a6e9cda8c3620873eaadf23db0f5a7b27"><span class="std std-ref">Patch::M</span></a>, <a class="reference internal" href="../api.html#classPatch_1ae4195468f66138a8bf7f0c37701098da"><span class="std std-ref">Patch::V</span></a>, <a class="reference internal" href="../api.html#classPatch_1a9e6066355010ba73abb33d8d41714677"><span class="std std-ref">Patch::F</span></a></p>
+<p><a class="reference internal" href="class_patch.html#classPatch"><span class="std std-ref">Patch</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -544,7 +543,7 @@ document.write(`
 <dd><p>Records the number of males at each site for the given day. </p>
 <p>The number of males at each site is divided by genotype. Relevant parameters include the fraction of sites to collect data for. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a>, <a class="reference internal" href="../api.html#classRecord_1a8ab507dfcfb593428a8c23a81877fac3"><span class="std std-ref">Record::rec_sites_freq</span></a></p>
+<p><a class="reference internal" href="struct_input_params.html#structInputParams_1a0aa285f32fbb33162549d1480f36e1f0"><span class="std std-ref">InputParams::rec_sites_freq</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -564,7 +563,7 @@ document.write(`
 <p>
 Other relevant parameters include the local recording interval. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="class_record.html#classRecord_1a8e504c6253ef29fa5c86d216e3f28e1c"><span class="std std-ref">Record::record_local()</span></a>, <a class="reference internal" href="../api.html#classRecord_1a13b20ef61772014de98c3d87354ad1e9"><span class="std std-ref">Record::rec_start</span></a>, <a class="reference internal" href="../api.html#classRecord_1a0598ebe2ae342bf3dc7be5a156ad4c34"><span class="std std-ref">Record::rec_end</span></a>, <a class="reference internal" href="../api.html#classRecord_1a9217590af69eb03412ac2c82c4fd853e"><span class="std std-ref">Record::rec_interval_local</span></a></p>
+<p><a class="reference internal" href="class_record.html#classRecord_1a8e504c6253ef29fa5c86d216e3f28e1c"><span class="std std-ref">Record::record_local()</span></a>, <a class="reference internal" href="struct_input_params.html#structInputParams_1a6e73a95f47dcfa05263838b0b1f3ad27"><span class="std std-ref">InputParams::rec_start</span></a>, <a class="reference internal" href="struct_input_params.html#structInputParams_1a1223c275e31ee8b901b5d5a274d85c74"><span class="std std-ref">InputParams::rec_end</span></a>, <a class="reference internal" href="struct_input_params.html#structInputParams_1ae1a85942abb2e6e81ee33bb395fee17d"><span class="std std-ref">InputParams::rec_interval_local</span></a></p>
 </div>
 </p>
 <div class="admonition note">

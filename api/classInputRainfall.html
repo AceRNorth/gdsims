@@ -48,6 +48,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script src="../_static/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/classInputRainfall';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -181,7 +182,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial7.html">7. Customising seasonality</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="library_root.html">Library API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="library_root.html">API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="namespace_constants.html">Namespace constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structAestivationParams.html">Struct AestivationParams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structAreaParams.html">Struct AreaParams</a></li>
@@ -219,8 +220,6 @@
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517.html">Template Function check_bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be.html">Template Function check_interval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a38cf9054c93e1fced65fe33940dda566.html">Template Function file_read_and_validate_type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1af03c0e74140efa3114c4cd1361da5548.html">Function random_discrete(int, int)</a></li>
@@ -486,11 +485,12 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4N13InputRainfall5alphaEid">
 <span id="_CPPv3N13InputRainfall5alphaEid"></span><span id="_CPPv2N13InputRainfall5alphaEid"></span><span id="InputRainfall::alpha__i.double"></span><span class="target" id="classInputRainfall_1a7599fc9d35cae87ac87f98d2ccb6b3fb"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alpha</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">alpha0</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><br /></dt>
 <dd><p>Computes the carrying-capacity alpha value for the given day and alpha0. </p>
-<p>Models rainfall contribution as an exponential of daily rainfall. <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classPatch_1a5b781b751c5a39bb3a94640e3542a517"><span class="std std-ref">Patch::alpha0</span></a></p>
-</div>
-</p>
+<p>Models rainfall contribution as an exponential of daily rainfall.</p>
+<p><div class="math notranslate nohighlight">
+\[
+     \alpha = \alpha_0 + \alpha_1 (1 - e^{-\textrm{R} r_d}),
+\]</div>
+ where <span class="math notranslate nohighlight">\( \alpha \)</span> is the carrying capacity, <span class="math notranslate nohighlight">\( \alpha_0 \)</span> is the baseline contribution, <span class="math notranslate nohighlight">\( \alpha_1 \)</span> is the factor accounting for rainfall contribution, <span class="math notranslate nohighlight">\( \textrm{R} \)</span> is the responsiveness to the rainfall contribution and <span class="math notranslate nohighlight">\( r_d \)</span> is the rainfall for the given day. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">

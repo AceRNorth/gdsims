@@ -181,7 +181,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial7.html">7. Customising seasonality</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="library_root.html">Library API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="library_root.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="namespace_constants.html">Namespace constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structAestivationParams.html">Struct AestivationParams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structAreaParams.html">Struct AreaParams</a></li>
@@ -219,8 +219,6 @@
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517.html">Template Function check_bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be.html">Template Function check_interval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a38cf9054c93e1fced65fe33940dda566.html">Template Function file_read_and_validate_type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1af03c0e74140efa3114c4cd1361da5548.html">Function random_discrete(int, int)</a></li>
@@ -452,11 +450,19 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv410Simulation">
 <span id="_CPPv310Simulation"></span><span id="_CPPv210Simulation"></span><span id="Simulation"></span><span class="target" id="classSimulation"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Simulation</span></span></span><br /></dt>
 <dd><p>Sets up and controls the flow of the simulation. </p>
-<p><div class="admonition seealso">
+<p>Running <a class="reference internal" href="#classSimulation_1ac5440a772e9d7788c588a795a7821fb6"><span class="std std-ref">set_inheritance()</span></a> and <a class="reference internal" href="#classSimulation_1a46325953f7df60733d519b8b3cd1de61"><span class="std std-ref">run_reps()</span></a> in this order is essential to run a simulation. The class also contains setters for advanced options, which should be run before <a class="reference internal" href="#classSimulation_1a46325953f7df60733d519b8b3cd1de61"><span class="std std-ref">run_reps()</span></a>. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classSimulation_1a8e1d4d667e07e3f7e453bbb936dd0c5a"><span class="std std-ref">Simulation::num_runs</span></a>, <a class="reference internal" href="../api.html#classSimulation_1adc775015be74841e3f9f99550af987bd"><span class="std std-ref">Simulation::max_t</span></a></p>
+<p><a class="reference internal" href="struct_input_params.html#structInputParams_1ab541958fd9e07697d71f0ea16e618de2"><span class="std std-ref">InputParams::num_runs</span></a>, <a class="reference internal" href="struct_input_params.html#structInputParams_1a2ff1e7d5dd5c45bf804f0701072200f4"><span class="std std-ref">InputParams::max_t</span></a></p>
 </div>
 </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Advanced options that have been set apply to all repetitions (runs) of a single simulation. </p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Advanced options will typically give an error message if the setting process has been unsuccessful. If they are not re-set successfully before running the simulation the option will maintain its default behaviour. </p>
+</div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -478,7 +484,7 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N10SimulationD0Ev">
 <span id="_CPPv3N10SimulationD0Ev"></span><span id="_CPPv2N10SimulationD0Ev"></span><span id="Simulation::~Simulation"></span><span class="target" id="classSimulation_1a80fad3f57dfaf195a36f7bc49bc88279"></span><span class="sig-name descname"><span class="n"><span class="pre">~Simulation</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
-<dd><p>Simualtion destructor. </p>
+<dd><p><a class="reference internal" href="#classSimulation"><span class="std std-ref">Simulation</span></a> destructor. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -486,13 +492,17 @@ document.write(`
 <span id="_CPPv3N10Simulation10set_coordsERKNSt6stringE"></span><span id="_CPPv2N10Simulation10set_coordsERKNSt6stringE"></span><span id="Simulation::set_coords__ssCR"></span><span class="target" id="classSimulation_1ab365e7a0000cae028998efae63b7d0c1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_coords</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Sets the sites’ coordinates and the release sites from a file, unless any errors are thrown. </p>
 <p>The file should be structured in three columns, with x and y coordinates and whether the site is a release site (y/n) respectively. Values should be delimited by white space, and site rows should be delimited by new lines. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The coordinates will undergo bound checks if the boundary type has been set to Toroid (the default) - coordinates will need to be in the range [0, side] for both x and y. </p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The file should be in the program’s running directory to be recognised. </p>
+<p>Setting specific release sites will change the mode of gene drive release from random to scheduled. The specified release sites will be used for each of the releases (if using multiple release times). Mosquitoes will be released at all release sites for each release time. </p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> coordinates filename </p>
+<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> coordinates filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
 </dd>
 </dl>
 </dd></dl>
@@ -533,10 +543,18 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4N10Simulation12set_rainfallERKNSt6stringE">
 <span id="_CPPv3N10Simulation12set_rainfallERKNSt6stringE"></span><span id="_CPPv2N10Simulation12set_rainfallERKNSt6stringE"></span><span id="Simulation::set_rainfall__ssCR"></span><span class="target" id="classSimulation_1abc5c5d0891de7943820db3e6682cd125"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_rainfall</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Sets the daily rainfall values from a file, unless any errors are thrown. </p>
-<p>These can be daily values for a year cycle (365 days), or daily values for all the simulated days (max_t). The values should be delimited by new lines. </p>
+<p>These can be daily values for a year cycle (365 days), or daily values for all the simulated days (max_t). The values should be delimited by new lines. <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="class_seasonality.html#classSeasonality"><span class="std std-ref">Seasonality</span></a></p>
+</div>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This option will use the input parameters alpha1 and resp previously provided and ignore amp. </p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> rainfall filename </p>
+<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> rainfall filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
 </dd>
 </dl>
 </dd></dl>
@@ -545,10 +563,18 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4N10Simulation17set_release_timesERKNSt6stringE">
 <span id="_CPPv3N10Simulation17set_release_timesERKNSt6stringE"></span><span id="_CPPv2N10Simulation17set_release_timesERKNSt6stringE"></span><span id="Simulation::set_release_times__ssCR"></span><span class="target" id="classSimulation_1a7d774bb0496b0ea95c2c88afc0d24731"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_release_times</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Sets the release times for gene drive release from a file, unless any errors are thrown. </p>
-<p>Release times should be simulation day numbers within the maximum time of simulation. Values should be delimited by new lines. </p>
+<p>Release times should be simulation day numbers within the maximum time of simulation. Values should be delimited by new lines. <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="class_g_d_release.html#classGDRelease"><span class="std std-ref">GDRelease</span></a></p>
+</div>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using this option, the input parameter driver_start previously entered will be ignored. </p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> release times filename </p>
+<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> release times filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
 </dd>
 </dl>
 </dd></dl>
@@ -556,12 +582,21 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N10Simulation15set_inheritanceE17InheritanceParams">
 <span id="_CPPv3N10Simulation15set_inheritanceE17InheritanceParams"></span><span id="_CPPv2N10Simulation15set_inheritanceE17InheritanceParams"></span><span id="Simulation::set_inheritance__InheritanceParams"></span><span class="target" id="classSimulation_1ac5440a772e9d7788c588a795a7821fb6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_inheritance</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../api.html#_CPPv417InheritanceParams" title="InheritanceParams"><span class="n"><span class="pre">InheritanceParams</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">inher_params</span></span><span class="sig-paren">)</span><br /></dt>
-<dd><p>Sets the values of the f_{ijk} inheritance fraction for the gene drive considering r2 resistant alleles. </p>
-<p>f_{ijk} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j. <div class="admonition seealso">
+<dd><p>Sets the values of the f_{ijk} inheritance fraction for the gene drive considering r2 non-functional resistance alleles. </p>
+<p>f_{ijk} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j.</p>
+<p>The order of elements in each matrix axis is the following genotype order: WW, WD, DD, WR, RR and DR, composed of wild-type (W), drive-type (D) and resistant-type (R) alleles. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="struct_inheritance_params.html#structInheritanceParams"><span class="std std-ref">InheritanceParams</span></a></p>
+<p><a class="reference internal" href="struct_inheritance_params.html#structInheritanceParams"><span class="std std-ref">InheritanceParams</span></a>, <a class="reference internal" href="struct_input_params.html#structInputParams"><span class="std std-ref">InputParams</span></a>:gamma, <a class="reference internal" href="struct_input_params.html#structInputParams"><span class="std std-ref">InputParams</span></a>:xi, <a class="reference internal" href="struct_input_params.html#structInputParams_1a803f48bc190f6b07b317539429626ee3"><span class="std std-ref">InputParams::e</span></a></p>
 </div>
 </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Six genotypes are counted and not nine because WD and DW genotypes are counted together, and likewise for the other heterozygous genotypes. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DD, RR and DR females are assumed to be sterile as they don’t possess one functional copy of the dsx gene and thus produce no offspring. </p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>inher_params</strong> – <strong>[in]</strong> inheritance parameters </p>
@@ -575,7 +610,7 @@ document.write(`
 <dd><p>Runs the simulation num_runs times, recording data in output files. </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classSimulation_1a8e1d4d667e07e3f7e453bbb936dd0c5a"><span class="std std-ref">Simulation::num_runs</span></a>, <a class="reference internal" href="class_record.html#classRecord"><span class="std std-ref">Record</span></a></p>
+<p><a class="reference internal" href="struct_input_params.html#structInputParams_1ab541958fd9e07697d71f0ea16e618de2"><span class="std std-ref">InputParams::num_runs</span></a>, <a class="reference internal" href="class_record.html#classRecord"><span class="std std-ref">Record</span></a></p>
 </div>
 </p>
 </dd></dl>

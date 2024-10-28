@@ -181,7 +181,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial7.html">7. Customising seasonality</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="library_root.html">Library API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="library_root.html">API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="namespace_constants.html">Namespace constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structAestivationParams.html">Struct AestivationParams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structAreaParams.html">Struct AreaParams</a></li>
@@ -219,8 +219,6 @@
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517.html">Template Function check_bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be.html">Template Function check_interval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a38cf9054c93e1fced65fe33940dda566.html">Template Function file_read_and_validate_type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1af03c0e74140efa3114c4cd1361da5548.html">Function random_discrete(int, int)</a></li>
@@ -466,7 +464,12 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv416BoundaryStrategy">
 <span id="_CPPv316BoundaryStrategy"></span><span id="_CPPv216BoundaryStrategy"></span><span id="BoundaryStrategy"></span><span class="target" id="classBoundaryStrategy"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BoundaryStrategy</span></span></span><br /></dt>
 <dd><p>Boundary strategy base class. </p>
-<p>Defines the interface for boundary-type classes. </p>
+<p>Defines the interface for boundary-type classes.</p>
+<p><a class="reference internal" href="class_boundary_strategy.html#classBoundaryStrategy"><span class="std std-ref">BoundaryStrategy</span></a> classes implement methods specific to the boundary type of the model. The simulation area is assumed to have boundary conditions at x = <code class="docutils literal notranslate"><span class="pre">side</span></code>, y = <code class="docutils literal notranslate"><span class="pre">side</span></code>, and have ranges [0, <code class="docutils literal notranslate"><span class="pre">side</span></code>] in all directions. <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="struct_area_params.html#structAreaParams_1a25bc9f9baa5f3b4f9352101dfec36a99"><span class="std std-ref">AreaParams::side</span></a></p>
+</div>
+</p>
 <p>Subclassed by <a class="reference internal" href="class_edge_boundary_strategy.html#classEdgeBoundaryStrategy"><span class="std std-ref">EdgeBoundaryStrategy</span></a>, <a class="reference internal" href="class_toroidal_boundary_strategy.html#classToroidalBoundaryStrategy"><span class="std std-ref">ToroidalBoundaryStrategy</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>

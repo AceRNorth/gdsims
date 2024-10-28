@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Library API &#8212; GDSiMS  documentation</title>
+    <title>API &#8212; GDSiMS  documentation</title>
   
   
   
@@ -48,6 +48,7 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script src="_static/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -181,7 +182,7 @@
 <li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial7.html">7. Customising seasonality</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="api/library_root.html">Library API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api/library_root.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/namespace_constants.html">Namespace constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/structAestivationParams.html">Struct AestivationParams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/structAreaParams.html">Struct AreaParams</a></li>
@@ -219,8 +220,6 @@
 <li class="toctree-l2"><a class="reference internal" href="api/function_inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517.html">Template Function check_bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/function_inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be.html">Template Function check_interval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/function_inputval_8h_1a38cf9054c93e1fced65fe33940dda566.html">Template Function file_read_and_validate_type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/function_main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/function_main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/function_random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/function_random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/function_random_8h_1af03c0e74140efa3114c4cd1361da5548.html">Function random_discrete(int, int)</a></li>
@@ -417,7 +416,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Library API</h1>
+    <h1>API</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -431,14 +430,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="library-api">
-<h1>Library API<a class="headerlink" href="#library-api" title="Permalink to this heading">#</a></h1>
+  <section id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this heading">#</a></h1>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv411Aestivation">
 <span id="_CPPv311Aestivation"></span><span id="_CPPv211Aestivation"></span><span id="Aestivation"></span><span class="target" id="classAestivation"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Aestivation</span></span></span><a class="headerlink" href="#_CPPv411Aestivation" title="Permalink to this definition">#</a><br /></dt>
 <dd><div class="docutils container">
 <em>#include &lt;<a class="reference internal" href="#Aestivation_8h"><span class="std std-ref">Aestivation.h</span></a>&gt;</em></div>
 <p>Implements aestivative behaviour for the model. </p>
+<p>Only mated females aestivate, going into aestivation within a hiding time window determined by <code class="docutils literal notranslate"><span class="pre">t_hide1</span></code> and <code class="docutils literal notranslate"><span class="pre">t_hide2</span></code> and emerging from aestivation within a waking time window determined by <code class="docutils literal notranslate"><span class="pre">t_wake1</span></code> and <code class="docutils literal notranslate"><span class="pre">t_wake2</span></code>. The females are isolated from their original patches during aestivation and returned back at the end, dependent on mortality. Other parameter rates controlling aestivation are <code class="docutils literal notranslate"><span class="pre">psi</span></code> and <code class="docutils literal notranslate"><span class="pre">mu_aes</span></code>, the aestivation rate and aestivation mortality respectively. <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="api/struct_aestivation_params.html#structAestivationParams"><span class="std std-ref">AestivationParams</span></a></p>
+</div>
+</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -447,7 +451,7 @@ document.write(`
 <dd><p><a class="reference internal" href="api/class_aestivation.html#classAestivation"><span class="std std-ref">Aestivation</span></a> constructor. </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a></p>
+<p><a class="reference internal" href="api/class_model.html#classModel_1a17b3a93529de4ef762254f9a1932b67e"><span class="std std-ref">Model::get_sites()</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -465,9 +469,9 @@ document.write(`
 <span id="_CPPv3N11Aestivation4hideERNSt6vectorIP5PatchEE"></span><span id="_CPPv2N11Aestivation4hideERNSt6vectorIP5PatchEE"></span><span id="Aestivation::hide__std::vector:PatchP:R"></span><span class="target" id="classAestivation_1a43390ce5cf1f9be08cf9b82d8cce00f3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hide</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11Aestivation4hideERNSt6vectorIP5PatchEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Hides aestivating females from their patches. </p>
 <p>
-The number of females that attempt to go into aestivation (of the given genotype combination) is determined by a binomial distribution of the aestivation rate. Of those, the number that survive is determined by a binomial distribution of 1 - mu_aes (the aestivation mortality). Aestivating females are temporarily separated from the rest of the female patch population. <div class="admonition seealso">
+The number of females that attempt to go into aestivation (of the given genotype combination) is determined by a binomial distribution of the aestivation rate. Of those, the number that survive is determined by a binomial distribution of 1 - <code class="docutils literal notranslate"><span class="pre">mu_aes</span></code> (the aestivation mortality). Aestivating females are temporarily separated from the rest of the female patch population. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classAestivation_1a8549d806f88e898cdd61219d75d517e1"><span class="std std-ref">Aestivation::psi</span></a>, <a class="reference internal" href="#classAestivation_1a8ba05278f1dce1144e82c32abd540dc0"><span class="std std-ref">Aestivation::mu_aes</span></a></p>
+<p><a class="reference internal" href="api/struct_input_params.html#structInputParams_1adc5b2a93829b4fa4eafa0e804446558a"><span class="std std-ref">InputParams::psi</span></a>, <a class="reference internal" href="api/struct_input_params.html#structInputParams_1af4132ca26a4a4ce1e19c46c89d8aee38"><span class="std std-ref">InputParams::mu_aes</span></a>, <a class="reference internal" href="#random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f"><span class="std std-ref">random_binomial()</span></a></p>
 </div>
 </p>
 <div class="admonition note">
@@ -485,9 +489,9 @@ The number of females that attempt to go into aestivation (of the given genotype
 <dt class="sig sig-object cpp" id="_CPPv4N11Aestivation4wakeEiRNSt6vectorIP5PatchEE">
 <span id="_CPPv3N11Aestivation4wakeEiRNSt6vectorIP5PatchEE"></span><span id="_CPPv2N11Aestivation4wakeEiRNSt6vectorIP5PatchEE"></span><span id="Aestivation::wake__i.std::vector:PatchP:R"></span><span class="target" id="classAestivation_1ade758967c3a5d774e15ffd2836b6e21d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wake</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11Aestivation4wakeEiRNSt6vectorIP5PatchEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Wakes a fraction of the aestivating females. </p>
-<p>The number of females that wake up on the given day (for the given genotype combination and patch) is determined by a binomial distribution with probability 1.0 / (1.0 + t_wake2 - (day%365). Those that wake are returned to their patch’s female population. <div class="admonition seealso">
+<p>The number of females that wake up on the given day (for the given genotype combination and patch) is determined by a binomial distribution with probability <code class="docutils literal notranslate"><span class="pre">1.0</span> <span class="pre">/</span> <span class="pre">(1.0</span> <span class="pre">+</span> <span class="pre">t_wake2</span> <span class="pre">-</span> <span class="pre">(day%365)</span></code>. Those that wake are returned to their patch’s female population. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classAestivation_1a63e9e51ce52b0df684c04584e30d89bd"><span class="std std-ref">Aestivation::t_wake2</span></a></p>
+<p><a class="reference internal" href="api/struct_input_params.html#structInputParams_1a4542cd7e2b6b2b386a9e63e08c2b527f"><span class="std std-ref">InputParams::t_wake2</span></a>, <a class="reference internal" href="#random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f"><span class="std std-ref">random_binomial()</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -504,9 +508,9 @@ The number of females that attempt to go into aestivation (of the given genotype
 <dt class="sig sig-object cpp" id="_CPPv4N11Aestivation12is_hide_timeEi">
 <span id="_CPPv3N11Aestivation12is_hide_timeEi"></span><span id="_CPPv2N11Aestivation12is_hide_timeEi"></span><span id="Aestivation::is_hide_time__i"></span><span class="target" id="classAestivation_1ad52ef1d1e4febab22176ac1690f22d76"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_hide_time</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11Aestivation12is_hide_timeEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Determines if the time is within the aestivation hiding window. </p>
-<p><div class="admonition seealso">
+<p><code class="docutils literal notranslate"><span class="pre">t_hide1</span></code> <span class="math notranslate nohighlight">\( &lt; t \le \)</span> <code class="docutils literal notranslate"><span class="pre">t_hide2</span></code> , where <span class="math notranslate nohighlight">\( t \)</span> is the day of the current year. Assumes <code class="docutils literal notranslate"><span class="pre">psi</span></code> &gt; 0.00001. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classAestivation_1af08e1211410a782de9d592829c6619e6"><span class="std std-ref">Aestivation::t_hide1</span></a>, <a class="reference internal" href="#classAestivation_1a22078820c3b6d2c0b410379fb85ba495"><span class="std std-ref">Aestivation::t_hide2</span></a>, <a class="reference internal" href="#classAestivation_1a8549d806f88e898cdd61219d75d517e1"><span class="std std-ref">Aestivation::psi</span></a></p>
+<p><a class="reference internal" href="api/struct_input_params.html#structInputParams_1a5d0c54631c85331b117bed861883fba5"><span class="std std-ref">InputParams::t_hide1</span></a>, <a class="reference internal" href="api/struct_input_params.html#structInputParams_1ae17cce0a7ef61941a6e97158ebf80f1c"><span class="std std-ref">InputParams::t_hide2</span></a>, <a class="reference internal" href="api/struct_input_params.html#structInputParams_1adc5b2a93829b4fa4eafa0e804446558a"><span class="std std-ref">InputParams::psi</span></a></p>
 </div>
 </p>
 <div class="admonition note">
@@ -527,14 +531,14 @@ The number of females that attempt to go into aestivation (of the given genotype
 <dt class="sig sig-object cpp" id="_CPPv4N11Aestivation12is_wake_timeEi">
 <span id="_CPPv3N11Aestivation12is_wake_timeEi"></span><span id="_CPPv2N11Aestivation12is_wake_timeEi"></span><span id="Aestivation::is_wake_time__i"></span><span class="target" id="classAestivation_1a28d413fd0b0ab424b5071832de34e86c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_wake_time</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11Aestivation12is_wake_timeEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Determines if the time is within the aestivation waking window. </p>
-<p><div class="admonition seealso">
+<p><code class="docutils literal notranslate"><span class="pre">t_wake1</span></code> <span class="math notranslate nohighlight">\( &lt; t \le \)</span> <code class="docutils literal notranslate"><span class="pre">t_wake2</span></code> , where <span class="math notranslate nohighlight">\( t \)</span> is the day of the current year. Assumes <code class="docutils literal notranslate"><span class="pre">psi</span></code> &gt; 0.00001. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classAestivation_1a786f12e5e6b5be06c83fa21fc3b070f0"><span class="std std-ref">Aestivation::t_wake1</span></a>, <a class="reference internal" href="#classAestivation_1a63e9e51ce52b0df684c04584e30d89bd"><span class="std std-ref">Aestivation::t_wake2</span></a>, <a class="reference internal" href="#classAestivation_1a8549d806f88e898cdd61219d75d517e1"><span class="std std-ref">Aestivation::psi</span></a></p>
+<p><a class="reference internal" href="api/struct_input_params.html#structInputParams_1aa0b9fe354099482dfdead7877fd3409b"><span class="std std-ref">InputParams::t_wake1</span></a>, <a class="reference internal" href="api/struct_input_params.html#structInputParams_1a4542cd7e2b6b2b386a9e63e08c2b527f"><span class="std std-ref">InputParams::t_wake2</span></a>, <a class="reference internal" href="api/struct_input_params.html#structInputParams_1adc5b2a93829b4fa4eafa0e804446558a"><span class="std std-ref">InputParams::psi</span></a></p>
 </div>
 </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The wakinf window is exclusive of the start time but inclusive of the end time. </p>
+<p>The waking window is exclusive of the start time but inclusive of the end time. </p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -671,7 +675,12 @@ The number of females that attempt to go into aestivation (of the given genotype
 <dd><div class="docutils container">
 <em>#include &lt;<a class="reference internal" href="#BoundaryStrategy_8h"><span class="std std-ref">BoundaryStrategy.h</span></a>&gt;</em></div>
 <p>Boundary strategy base class. </p>
-<p>Defines the interface for boundary-type classes. </p>
+<p>Defines the interface for boundary-type classes.</p>
+<p><a class="reference internal" href="api/class_boundary_strategy.html#classBoundaryStrategy"><span class="std std-ref">BoundaryStrategy</span></a> classes implement methods specific to the boundary type of the model. The simulation area is assumed to have boundary conditions at x = <code class="docutils literal notranslate"><span class="pre">side</span></code>, y = <code class="docutils literal notranslate"><span class="pre">side</span></code>, and have ranges [0, <code class="docutils literal notranslate"><span class="pre">side</span></code>] in all directions. <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="api/struct_area_params.html#structAreaParams_1a25bc9f9baa5f3b4f9352101dfec36a99"><span class="std std-ref">AreaParams::side</span></a></p>
+</div>
+</p>
 <p>Subclassed by <a class="reference internal" href="api/class_edge_boundary_strategy.html#classEdgeBoundaryStrategy"><span class="std std-ref">EdgeBoundaryStrategy</span></a>, <a class="reference internal" href="api/class_toroidal_boundary_strategy.html#classToroidalBoundaryStrategy"><span class="std std-ref">ToroidalBoundaryStrategy</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
@@ -719,7 +728,12 @@ The number of females that attempt to go into aestivation (of the given genotype
 <dd><div class="docutils container">
 <em>#include &lt;<a class="reference internal" href="#Dispersal_8h"><span class="std std-ref">Dispersal.h</span></a>&gt;</em></div>
 <p><a class="reference internal" href="api/class_dispersal.html#classDispersal"><span class="std std-ref">Dispersal</span></a> base class. </p>
-<p>Defines the interface for dispersal classes. </p>
+<p>Defines the interface for dispersal classes.</p>
+<p>The <a class="reference internal" href="api/class_dispersal.html#classDispersal"><span class="std std-ref">Dispersal</span></a> classes compute the connections between <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> objects with their respective connection weights, dependent on the maximum dispersal distance <code class="docutils literal notranslate"><span class="pre">max_dist</span></code>, and carry out dispersal in and out of the patches, dependent on the dispersal rate <code class="docutils literal notranslate"><span class="pre">disp_rate</span></code>. <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="api/struct_dispersal_params.html#structDispersalParams"><span class="std std-ref">DispersalParams</span></a></p>
+</div>
+</p>
 <p>Subclassed by <a class="reference internal" href="api/class_distance_kernel_dispersal.html#classDistanceKernelDispersal"><span class="std std-ref">DistanceKernelDispersal</span></a>, <a class="reference internal" href="api/class_radial_dispersal.html#classRadialDispersal"><span class="std std-ref">RadialDispersal</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
@@ -727,7 +741,7 @@ The number of females that attempt to go into aestivation (of the given genotype
 <dt class="sig sig-object cpp" id="_CPPv4N9Dispersal9DispersalEP15DispersalParams12BoundaryTyped">
 <span id="_CPPv3N9Dispersal9DispersalEP15DispersalParams12BoundaryTyped"></span><span id="_CPPv2N9Dispersal9DispersalEP15DispersalParams12BoundaryTyped"></span><span id="Dispersal::Dispersal__DispersalParamsP.BoundaryType.double"></span><span class="target" id="classDispersal_1a4eb55d34c12749b33bd68d4c8bfee61a"></span><span class="sig-name descname"><span class="n"><span class="pre">Dispersal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415DispersalParams" title="DispersalParams"><span class="n"><span class="pre">DispersalParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span>, <a class="reference internal" href="#_CPPv412BoundaryType" title="BoundaryType"><span class="n"><span class="pre">BoundaryType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">boundary</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Dispersal9DispersalEP15DispersalParams12BoundaryTyped" title="Permalink to this definition">#</a><br /></dt>
 <dd><p><a class="reference internal" href="api/class_dispersal.html#classDispersal"><span class="std std-ref">Dispersal</span></a> constructor. </p>
-<p>Determines what type of boundary strategy to use for calculating dispersal distances from the boundary type passed. </p>
+<p>Constructs the <a class="reference internal" href="api/class_boundary_strategy.html#classBoundaryStrategy"><span class="std std-ref">BoundaryStrategy</span></a> object from the boundary type passed. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -764,7 +778,7 @@ The number of females that attempt to go into aestivation (of the given genotype
 <dd><p>Determines the number of males (of each genotype) dispersing out from each patch. </p>
 <p>The number of males of a given genotype dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="api/class_dispersal.html#classDispersal_1ac4a92820d2e1967895862466abd1c701"><span class="std std-ref">Dispersal::disp_rate</span></a>, <a class="reference internal" href="#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a>, <a class="reference internal" href="#classPatch_1a6e9cda8c3620873eaadf23db0f5a7b27"><span class="std std-ref">Patch::M</span></a></p>
+<p><a class="reference internal" href="api/struct_dispersal_params.html#structDispersalParams_1a9a6b644b1897710b43f94688b73b42b4"><span class="std std-ref">DispersalParams::disp_rate</span></a>, <a class="reference internal" href="api/class_model.html#classModel_1a17b3a93529de4ef762254f9a1932b67e"><span class="std std-ref">Model::get_sites()</span></a>, <a class="reference internal" href="#random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f"><span class="std std-ref">random_binomial()</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -781,9 +795,9 @@ The number of females that attempt to go into aestivation (of the given genotype
 <dt class="sig sig-object cpp" id="_CPPv4N9Dispersal16F_dispersing_outERKNSt6vectorIP5PatchEE">
 <span id="_CPPv3N9Dispersal16F_dispersing_outERKNSt6vectorIP5PatchEE"></span><span id="_CPPv2N9Dispersal16F_dispersing_outERKNSt6vectorIP5PatchEE"></span><span id="Dispersal::F_dispersing_out__std::vector:PatchP:CR"></span><span class="target" id="classDispersal_1ade53b8a69c5eea72536bcf2c7ef76857"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">F_dispersing_out</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Dispersal16F_dispersing_outERKNSt6vectorIP5PatchEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Determines the number of mated females (of each genotype combination) dispersing out from each patch. </p>
-<p>The number of females of a given genotype conbination dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate. <div class="admonition seealso">
+<p>The number of females of a given genotype combination dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="api/class_dispersal.html#classDispersal_1ac4a92820d2e1967895862466abd1c701"><span class="std std-ref">Dispersal::disp_rate</span></a>, <a class="reference internal" href="#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a>, <a class="reference internal" href="#classPatch_1a9e6066355010ba73abb33d8d41714677"><span class="std std-ref">Patch::F</span></a></p>
+<p><a class="reference internal" href="api/struct_dispersal_params.html#structDispersalParams_1a9a6b644b1897710b43f94688b73b42b4"><span class="std std-ref">DispersalParams::disp_rate</span></a>, <a class="reference internal" href="api/class_model.html#classModel_1a17b3a93529de4ef762254f9a1932b67e"><span class="std std-ref">Model::get_sites()</span></a>, <a class="reference internal" href="#random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f"><span class="std std-ref">random_binomial()</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -882,6 +896,12 @@ The number of females that attempt to go into aestivation (of the given genotype
 <dt class="sig sig-object cpp" id="_CPPv4N23DistanceKernelDispersal11set_connecsERNSt6vectorIP5PatchEE">
 <span id="_CPPv3N23DistanceKernelDispersal11set_connecsERNSt6vectorIP5PatchEE"></span><span id="_CPPv2N23DistanceKernelDispersal11set_connecsERNSt6vectorIP5PatchEE"></span><span id="DistanceKernelDispersal::set_connecs__std::vector:PatchP:R"></span><span class="target" id="classDistanceKernelDispersal_1a980ed0ba571a2adf1e856f408d914078"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_connecs</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N23DistanceKernelDispersal11set_connecsERNSt6vectorIP5PatchEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the inter-patch connectivities for dispersal. </p>
+<p>If the distance between two patches is less than the the maximum dispersal distance <code class="docutils literal notranslate"><span class="pre">max_disp</span></code>, they are deemed to be connected. The connection weight is determined by the difference between the maximum dispersal distance and the distance between those patches:</p>
+<p>weight = max_disp - distance</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Under this dispersal type, patches are deemed to be connected to themselves, resulting in self-dispersal. This is such that dispersal can take place even in 1-population models. </p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>sites</strong> – <strong>[in]</strong> vector of all <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> objects </p>
@@ -896,7 +916,7 @@ The number of females that attempt to go into aestivation (of the given genotype
 <p>
 All dispersing individuals are assumed to survive dispersal, and are guaranteed a connected patch to disperse to. The number of males dispersing from a given patch to each of its connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a></p>
+<p><a class="reference internal" href="api/class_model.html#classModel_1a17b3a93529de4ef762254f9a1932b67e"><span class="std std-ref">Model::get_sites()</span></a>, <a class="reference internal" href="#random_8cpp_1a180e4f01c99b4c4fae00714c08fa647b"><span class="std std-ref">random_multinomial()</span></a></p>
 </div>
 </p>
 <div class="admonition note">
@@ -917,7 +937,8 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dt class="sig sig-object cpp" id="_CPPv4N23DistanceKernelDispersal15compute_connecsERNSt6vectorIP5PatchEE">
 <span id="_CPPv3N23DistanceKernelDispersal15compute_connecsERNSt6vectorIP5PatchEE"></span><span id="_CPPv2N23DistanceKernelDispersal15compute_connecsERNSt6vectorIP5PatchEE"></span><span id="DistanceKernelDispersal::compute_connecs__std::vector:PatchP:R"></span><span class="target" id="classDistanceKernelDispersal_1afc863f141fc20f64d770f3b54e8fd8f9"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">compute_connecs</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23DistanceKernelDispersal15compute_connecsERNSt6vectorIP5PatchEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Computes the set of connection indices and weights for a group of patches. </p>
-<p>If the distance between two patches is less than the the maximum dispersal distance, they are deemed to be connected. The connection weight is determined by the difference between the maximum dispersal distance and the distance between those patches. </p>
+<p>If the distance between two patches is less than the the maximum dispersal distance <code class="docutils literal notranslate"><span class="pre">max_disp</span></code>, they are deemed to be connected. The connection weight is determined by the difference between the maximum dispersal distance and the distance between those patches:</p>
+<p>weight = max_disp - distance</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Under this dispersal type, patches are deemed to be connected to themselves, resulting in self-dispersal. This is such that dispersal can take place even in 1-population models. </p>
@@ -927,7 +948,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dd class="field-odd"><p><strong>sites</strong> – <strong>[in]</strong> vector of all Patches objects </p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as <a class="reference internal" href="#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a>, where the first item represents all connections to the first patch in <a class="reference internal" href="#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a>, etc. </p>
+<dd class="field-even"><p>The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as <a class="reference internal" href="api/class_model.html#classModel_1a17b3a93529de4ef762254f9a1932b67e"><span class="std std-ref">Model::get_sites()</span></a>, where the first item represents all connections to the first <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> of the sites vector, etc. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -940,8 +961,12 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <span id="_CPPv320EdgeBoundaryStrategy"></span><span id="_CPPv220EdgeBoundaryStrategy"></span><span id="EdgeBoundaryStrategy"></span><span class="target" id="classEdgeBoundaryStrategy"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EdgeBoundaryStrategy</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv416BoundaryStrategy" title="BoundaryStrategy"><span class="n"><span class="pre">BoundaryStrategy</span></span></a><a class="headerlink" href="#_CPPv420EdgeBoundaryStrategy" title="Permalink to this definition">#</a><br /></dt>
 <dd><div class="docutils container">
 <em>#include &lt;<a class="reference internal" href="#BoundaryStrategy_8h"><span class="std std-ref">BoundaryStrategy.h</span></a>&gt;</em></div>
-<p>Implements the distance method for edge boundary conditions. </p>
-<p>The simulation area is assumed to have edge boundary conditions at x = side, y = side, and have ranges [0, side] in all directions. </p>
+<p>Implements methods for edge boundary conditions. </p>
+<p>The simulation area is assumed to have edge boundary conditions at x = <code class="docutils literal notranslate"><span class="pre">side</span></code>, y = <code class="docutils literal notranslate"><span class="pre">side</span></code>, and have ranges [0, <code class="docutils literal notranslate"><span class="pre">side</span></code>] in all directions. <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="api/struct_area_params.html#structAreaParams_1a25bc9f9baa5f3b4f9352101dfec36a99"><span class="std std-ref">AreaParams::side</span></a></p>
+</div>
+</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -953,11 +978,6 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dt class="sig sig-object cpp" id="_CPPv4N20EdgeBoundaryStrategy8distanceERK5PointRK5Point">
 <span id="_CPPv3N20EdgeBoundaryStrategy8distanceERK5PointRK5Point"></span><span id="_CPPv2N20EdgeBoundaryStrategy8distanceERK5PointRK5Point"></span><span id="EdgeBoundaryStrategy::distance__PointCR.PointCR"></span><span class="target" id="classEdgeBoundaryStrategy_1a58bed301f6c5f63a491bad0ebe982752"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">distance</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45Point" title="Point"><span class="n"><span class="pre">Point</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45Point" title="Point"><span class="n"><span class="pre">Point</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p2</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N20EdgeBoundaryStrategy8distanceERK5PointRK5Point" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Calculates the distance between two points. </p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="api/struct_point.html#structPoint"><span class="std std-ref">Point</span></a></p>
-</div>
-</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -997,7 +1017,8 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dd><div class="docutils container">
 <em>#include &lt;<a class="reference internal" href="#GDRelease_8h"><span class="std std-ref">GDRelease.h</span></a>&gt;</em></div>
 <p>Gene drive release base class. </p>
-<p>Defines the basic implementation of gene drive release in the model. </p>
+<p>Defines the basic implementation of gene drive release in the model.</p>
+<p><a class="reference internal" href="api/class_g_d_release.html#classGDRelease"><span class="std std-ref">GDRelease</span></a> classes implement the selection mechanism of the release sites from available patches and the release of gene drive mosquitoes into the <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> objects at the chosen release times. The number of drive heterozygous male mosquitoes released into each release site at each release time is determined by <code class="docutils literal notranslate"><span class="pre">num_driver_M</span></code>. </p>
 <p>Subclassed by <a class="reference internal" href="api/class_random_g_d_release.html#classRandomGDRelease"><span class="std std-ref">RandomGDRelease</span></a>, <a class="reference internal" href="api/class_sched_g_d_release.html#classSchedGDRelease"><span class="std std-ref">SchedGDRelease</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
@@ -1041,11 +1062,6 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dt class="sig sig-object cpp" id="_CPPv4N9GDRelease15is_release_timeEi">
 <span id="_CPPv3N9GDRelease15is_release_timeEi"></span><span id="_CPPv2N9GDRelease15is_release_timeEi"></span><span id="GDRelease::is_release_time__i"></span><span class="target" id="classGDRelease_1a69a14d4b9e59ee1e1375d76630da00e3"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_release_time</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9GDRelease15is_release_timeEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Determines if the day is a chosen release time. </p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="api/class_g_d_release.html#classGDRelease_1af257d77564ffbd7c694f57533dde7282"><span class="std std-ref">GDRelease::release_times</span></a></p>
-</div>
-</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>day</strong> – <strong>[in]</strong> simulation day </p>
@@ -1065,11 +1081,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dt class="sig sig-object cpp" id="_CPPv4N9GDRelease16put_driver_sitesERNSt6vectorIP5PatchEE">
 <span id="_CPPv3N9GDRelease16put_driver_sitesERNSt6vectorIP5PatchEE"></span><span id="_CPPv2N9GDRelease16put_driver_sitesERNSt6vectorIP5PatchEE"></span><span id="GDRelease::put_driver_sites__std::vector:PatchP:R"></span><span class="target" id="classGDRelease_1a46170fb6a9f1a248346206b99773b684"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">put_driver_sites</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rel_sites</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9GDRelease16put_driver_sitesERNSt6vectorIP5PatchEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Adds drive heterozygous (WD) male mosquitoes to the release sites. </p>
-<p>Relevant parameters include the number of male driver mosquitoes to be released at each site. <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="api/class_g_d_release.html#classGDRelease_1a7ac47883a59de0732047fccf0a1cf6e0"><span class="std std-ref">GDRelease::num_driver_M</span></a></p>
-</div>
-</p>
+<p>Relevant parameters include the number of male driver mosquitoes to be released at each site <code class="docutils literal notranslate"><span class="pre">num_driver_M</span></code>. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>rel_sites</strong> – <strong>[inout]</strong> release sites </p>
@@ -1431,11 +1443,12 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dt class="sig sig-object cpp" id="_CPPv4N13InputRainfall5alphaEid">
 <span id="_CPPv3N13InputRainfall5alphaEid"></span><span id="_CPPv2N13InputRainfall5alphaEid"></span><span id="InputRainfall::alpha__i.double"></span><span class="target" id="classInputRainfall_1a7599fc9d35cae87ac87f98d2ccb6b3fb"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alpha</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">alpha0</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N13InputRainfall5alphaEid" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Computes the carrying-capacity alpha value for the given day and alpha0. </p>
-<p>Models rainfall contribution as an exponential of daily rainfall. <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classPatch_1a5b781b751c5a39bb3a94640e3542a517"><span class="std std-ref">Patch::alpha0</span></a></p>
-</div>
-</p>
+<p>Models rainfall contribution as an exponential of daily rainfall.</p>
+<p><div class="math notranslate nohighlight">
+\[
+     \alpha = \alpha_0 + \alpha_1 (1 - e^{-\textrm{R} r_d}),
+\]</div>
+ where <span class="math notranslate nohighlight">\( \alpha \)</span> is the carrying capacity, <span class="math notranslate nohighlight">\( \alpha_0 \)</span> is the baseline contribution, <span class="math notranslate nohighlight">\( \alpha_1 \)</span> is the factor accounting for rainfall contribution, <span class="math notranslate nohighlight">\( \textrm{R} \)</span> is the responsiveness to the rainfall contribution and <span class="math notranslate nohighlight">\( r_d \)</span> is the rainfall for the given day. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1548,8 +1561,8 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <span id="_CPPv35Model"></span><span id="_CPPv25Model"></span><span id="Model"></span><span class="target" id="classModel"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Model</span></span></span><a class="headerlink" href="#_CPPv45Model" title="Permalink to this definition">#</a><br /></dt>
 <dd><div class="docutils container">
 <em>#include &lt;<a class="reference internal" href="#Model_8h"><span class="std std-ref">Model.h</span></a>&gt;</em></div>
-<p>Runs the model. </p>
-<p><div class="admonition seealso">
+<p>Sets up and runs the model. </p>
+<p>In addition to the set-up of the model, <a class="reference internal" href="api/class_model.html#classModel"><span class="std std-ref">Model</span></a> coordinates the different classes to run daily steps of mosquito life processes and dispersal as well as other events like gene drive release, aestivation and seasonality. It also contains methods to interface with the <a class="reference internal" href="api/class_record.html#classRecord"><span class="std std-ref">Record</span></a> class. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="api/struct_area_params.html#structAreaParams"><span class="std std-ref">AreaParams</span></a>, <a class="reference internal" href="api/struct_model_params.html#structModelParams"><span class="std std-ref">ModelParams</span></a></p>
 </div>
@@ -1560,7 +1573,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dt class="sig sig-object cpp" id="_CPPv4N5Model5ModelEP11ModelParamsRKNSt5arrayINSt5arrayINSt5arrayIdN9constants7num_genEEEN9constants7num_genEEEN9constants7num_genEEEP18SineRainfallParamsddNSt6vectorIiEE12BoundaryType13DispersalTypeNSt6vectorI5PointEE">
 <span id="_CPPv3N5Model5ModelEP11ModelParamsRKNSt5arrayINSt5arrayINSt5arrayIdN9constants7num_genEEEN9constants7num_genEEEN9constants7num_genEEEP18SineRainfallParamsddNSt6vectorIiEE12BoundaryType13DispersalTypeNSt6vectorI5PointEE"></span><span id="_CPPv2N5Model5ModelEP11ModelParamsRKNSt5arrayINSt5arrayINSt5arrayIdN9constants7num_genEEEN9constants7num_genEEEN9constants7num_genEEEP18SineRainfallParamsddNSt6vectorIiEE12BoundaryType13DispersalTypeNSt6vectorI5PointEE"></span><span id="Model::Model__ModelParamsP.std::array:std::array:std::array:double.constants::num_gen:.constants::num_gen:.constants::num_gen:CR.SineRainfallParamsP.double.double.std::vector:i:.BoundaryType.DispersalType.std::vector:Point:"></span><span class="target" id="classModel_1a46b88e44d343b0bc26544e1e77538e5b"></span><span class="sig-name descname"><span class="n"><span class="pre">Model</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv411ModelParams" title="ModelParams"><span class="n"><span class="pre">ModelParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inher_frac</span></span>, <a class="reference internal" href="#_CPPv418SineRainfallParams" title="SineRainfallParams"><span class="n"><span class="pre">SineRainfallParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">season</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a0_mean</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a0_var</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rel_sites</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span>, <a class="reference internal" href="#_CPPv412BoundaryType" title="BoundaryType"><span class="n"><span class="pre">BoundaryType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">boundary</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv412BoundaryType" title="BoundaryType"><span class="n"><span class="pre">BoundaryType</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N12BoundaryType6ToroidE" title="BoundaryType::Toroid"><span class="n"><span class="pre">Toroid</span></span></a>, <a class="reference internal" href="#_CPPv413DispersalType" title="DispersalType"><span class="n"><span class="pre">DispersalType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">disp_type</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv413DispersalType" title="DispersalType"><span class="n"><span class="pre">DispersalType</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N13DispersalType14DistanceKernelE" title="DispersalType::DistanceKernel"><span class="n"><span class="pre">DistanceKernel</span></span></a>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv45Point" title="Point"><span class="n"><span class="pre">Point</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coords</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Model5ModelEP11ModelParamsRKNSt5arrayINSt5arrayINSt5arrayIdN9constants7num_genEEEN9constants7num_genEEEN9constants7num_genEEEP18SineRainfallParamsddNSt6vectorIiEE12BoundaryType13DispersalTypeNSt6vectorI5PointEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p><a class="reference internal" href="api/class_model.html#classModel"><span class="std std-ref">Model</span></a> constructor. </p>
-<p>Builds the components of the model. </p>
+<p>Builds the components of the model for sinusoid rainfall-type seasonality. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1582,7 +1595,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dt class="sig sig-object cpp" id="_CPPv4N5Model5ModelEP11ModelParamsRKNSt5arrayINSt5arrayINSt5arrayIdN9constants7num_genEEEN9constants7num_genEEEN9constants7num_genEEEP19InputRainfallParamsddNSt6vectorIiEE12BoundaryType13DispersalTypeNSt6vectorI5PointEE">
 <span id="_CPPv3N5Model5ModelEP11ModelParamsRKNSt5arrayINSt5arrayINSt5arrayIdN9constants7num_genEEEN9constants7num_genEEEN9constants7num_genEEEP19InputRainfallParamsddNSt6vectorIiEE12BoundaryType13DispersalTypeNSt6vectorI5PointEE"></span><span id="_CPPv2N5Model5ModelEP11ModelParamsRKNSt5arrayINSt5arrayINSt5arrayIdN9constants7num_genEEEN9constants7num_genEEEN9constants7num_genEEEP19InputRainfallParamsddNSt6vectorIiEE12BoundaryType13DispersalTypeNSt6vectorI5PointEE"></span><span id="Model::Model__ModelParamsP.std::array:std::array:std::array:double.constants::num_gen:.constants::num_gen:.constants::num_gen:CR.InputRainfallParamsP.double.double.std::vector:i:.BoundaryType.DispersalType.std::vector:Point:"></span><span class="target" id="classModel_1a9665e30ee5c6339b78966f628dcdf468"></span><span class="sig-name descname"><span class="n"><span class="pre">Model</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv411ModelParams" title="ModelParams"><span class="n"><span class="pre">ModelParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">inher_frac</span></span>, <a class="reference internal" href="#_CPPv419InputRainfallParams" title="InputRainfallParams"><span class="n"><span class="pre">InputRainfallParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">season</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a0_mean</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a0_var</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rel_sites</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span>, <a class="reference internal" href="#_CPPv412BoundaryType" title="BoundaryType"><span class="n"><span class="pre">BoundaryType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">boundary</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv412BoundaryType" title="BoundaryType"><span class="n"><span class="pre">BoundaryType</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N12BoundaryType6ToroidE" title="BoundaryType::Toroid"><span class="n"><span class="pre">Toroid</span></span></a>, <a class="reference internal" href="#_CPPv413DispersalType" title="DispersalType"><span class="n"><span class="pre">DispersalType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">disp_type</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv413DispersalType" title="DispersalType"><span class="n"><span class="pre">DispersalType</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N13DispersalType14DistanceKernelE" title="DispersalType::DistanceKernel"><span class="n"><span class="pre">DistanceKernel</span></span></a>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv45Point" title="Point"><span class="n"><span class="pre">Point</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coords</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Model5ModelEP11ModelParamsRKNSt5arrayINSt5arrayINSt5arrayIdN9constants7num_genEEEN9constants7num_genEEEN9constants7num_genEEEP19InputRainfallParamsddNSt6vectorIiEE12BoundaryType13DispersalTypeNSt6vectorI5PointEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p><a class="reference internal" href="api/class_model.html#classModel"><span class="std std-ref">Model</span></a> constructor. </p>
-<p>Builds the components of the model. </p>
+<p>Builds the components of the model for input rainfall-type seasonality. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1610,13 +1623,14 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dt class="sig sig-object cpp" id="_CPPv4N5Model8initiateEv">
 <span id="_CPPv3N5Model8initiateEv"></span><span id="_CPPv2N5Model8initiateEv"></span><span id="Model::initiate"></span><span class="target" id="classModel_1a3d359ced00aacc31a7b50c53b8b1e340"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initiate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Model8initiateEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets up the model architecture. </p>
+<p>Populates sites and sets dispersal connections. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Model3runEi">
 <span id="_CPPv3N5Model3runEi"></span><span id="_CPPv2N5Model3runEi"></span><span id="Model::run__i"></span><span class="target" id="classModel_1a7e4eb741e72b3946a9166dceed6fc02d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">run</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Model3runEi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Runs the daily step of the model. </p>
-<p>The life processes do not run during the initialisation day (day 0). </p>
+<p>The life processes do not run during the initialisation day (day 0). However, gene drive release can be carried out on day 0. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>day</strong> – <strong>[in]</strong> simulation day </p>
@@ -1630,7 +1644,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dd><p>Returns the total number of juveniles across all ages and genotypes and across all patches. </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classPatch_1a9ec8ec87984a6e18efa7afd83e6df081"><span class="std std-ref">Patch::J</span></a></p>
+<p><a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -1662,7 +1676,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dd><p>Returns the total number of virgin (unmated) females across all genotypes and across all patches. </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classPatch_1ae4195468f66138a8bf7f0c37701098da"><span class="std std-ref">Patch::V</span></a></p>
+<p><a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -1694,7 +1708,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dd><p>Returns the total number of males of each genotype across all patches. </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classPatch_1a6e9cda8c3620873eaadf23db0f5a7b27"><span class="std std-ref">Patch::M</span></a></p>
+<p><a class="reference internal" href="api/class_patch.html#classPatch_1a18366a21df794d2cebbbdfe3195734a5"><span class="std std-ref">Patch::get_M()</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -1708,11 +1722,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dt class="sig sig-object cpp" id="_CPPv4NK5Model9get_sitesEv">
 <span id="_CPPv3NK5Model9get_sitesEv"></span><span id="_CPPv2NK5Model9get_sitesEv"></span><span id="Model::get_sitesC"></span><span class="target" id="classModel_1a17b3a93529de4ef762254f9a1932b67e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_sites</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5Model9get_sitesEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the sites vector. </p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a>, <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a></p>
-</div>
-</p>
+<p>The patches within the vector are ordered according to order of creation. If specific coordinates have been set for patches, the sites vector will follow the same order as the coordinates vector of the <a class="reference internal" href="api/class_model.html#classModel"><span class="std std-ref">Model</span></a> constructor. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The sites vector, containing all <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> objects. </p>
@@ -1724,6 +1734,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dt class="sig sig-object cpp" id="_CPPv4NK5Model7get_dayEv">
 <span id="_CPPv3NK5Model7get_dayEv"></span><span id="_CPPv2NK5Model7get_dayEv"></span><span id="Model::get_dayC"></span><span class="target" id="classModel_1a6499bfa0eeb48133e352ce72f79aee9d"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_day</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5Model7get_dayEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the current simulation day. </p>
+<p><a class="reference internal" href="api/class_simulation.html#classSimulation"><span class="std std-ref">Simulation</span></a> days run from 0 (initialisation day) up to <code class="docutils literal notranslate"><span class="pre">max_t</span></code> (inclusive). </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The simulation day. </p>
@@ -1734,7 +1745,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Model9get_alphaEd">
 <span id="_CPPv3N5Model9get_alphaEd"></span><span id="_CPPv2N5Model9get_alphaEd"></span><span id="Model::get_alpha__double"></span><span class="target" id="classModel_1a04c1c541fc6d4f4c12f854b971197ea5"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_alpha</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">alpha0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Model9get_alphaEd" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the carrying capacity for the given alpha0 (the baseline contribution to it) and the current day. </p>
+<dd><p>Returns the carrying capacity for the given alpha0 (the baseline contribution to carrying capacity) and for the current day. </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="api/class_seasonality.html#classSeasonality_1a86bfbdfc639ab1a08e3643e05b55d6f1"><span class="std std-ref">Seasonality::alpha()</span></a></p>
@@ -1753,15 +1764,15 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Model6alpha0Ev">
 <span id="_CPPv3N5Model6alpha0Ev"></span><span id="_CPPv2N5Model6alpha0Ev"></span><span id="Model::alpha0"></span><span class="target" id="classModel_1ad1efe8336546de49c99d0d8c8ec8e6e8"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alpha0</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Model6alpha0Ev" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns a random value for the baseline contribution to the carrying capacity (alpha0). </p>
-<p>The random value is obtained as a random draw from a lognormal distribution with desired mean alpha0_mean and desired variance alpha0_variance. <div class="admonition seealso">
+<dd><p>Returns a random value for the baseline contribution to the carrying capacity <code class="docutils literal notranslate"><span class="pre">alpha0</span></code>. </p>
+<p>The random value is obtained as a random draw from a lognormal distribution with desired mean <code class="docutils literal notranslate"><span class="pre">alpha0_mean</span></code> and desired variance <code class="docutils literal notranslate"><span class="pre">alpha0_variance</span></code>. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classModel_1a106416d6d9dc6510bda17ea0b6b1b588"><span class="std std-ref">Model::alpha0_mean</span></a>, <a class="reference internal" href="#classModel_1ad10cafc06c6b49b020c22efb034f8362"><span class="std std-ref">Model::alpha0_variance</span></a></p>
+<p><a class="reference internal" href="api/struct_input_params.html#structInputParams_1a2056a53757ab38ff189bca6870d2f7d5"><span class="std std-ref">InputParams::alpha0_mean</span></a>, <a class="reference internal" href="api/struct_input_params.html#structInputParams_1a4497eea80bab35f4d09bb8aa1fd71c3e"><span class="std std-ref">InputParams::alpha0_variance</span></a>, <a class="reference internal" href="#random_8cpp_1ab1651a929e139f6da870eae2f0c641e0"><span class="std std-ref">random_lognormal()</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A random draw of alpha0. </p>
+<dd class="field-odd"><p>A random draw of <code class="docutils literal notranslate"><span class="pre">alpha0</span></code>. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1987,6 +1998,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dd><div class="docutils container">
 <em>#include &lt;<a class="reference internal" href="#Patch_8h"><span class="std std-ref">Patch.h</span></a>&gt;</em></div>
 <p>Contains the information of a local mosquito population. </p>
+<p>The population is divided into four types: juveniles (J), males (M), virgin (unmated) females (V) and mated females (F). These are then subdivided into six genotypes (in this order): WW, WD, DD, DR, WR and RR composed of a wild-type allele (W), a drive-type allele (D) and a resistant-type allele (R). Juveniles are also subdivided into age groups, ordered from oldest (0 days left to eclosion) to youngest (max_dev - 1 days left). The population can carry out life-processes and interface with other classes to introduce gene drive mosquitoes into the <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a>, carry out dispersal in and out of the <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> and aestivate. <img alt="_images/patch_diagram.png" src="_images/patch_diagram.png" /></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -2048,57 +2060,27 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dd><p>Returns the coordinates of the patch. </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="api/struct_point.html#structPoint"><span class="std std-ref">Point</span></a>, <a class="reference internal" href="#classPatch_1ab18c50790301400e0a1130dbd4867db9"><span class="std std-ref">Patch::coords</span></a></p>
+<p><a class="reference internal" href="api/struct_point.html#structPoint"><span class="std std-ref">Point</span></a></p>
 </div>
 </p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The coordinates of the patch. </p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK5Patch5get_MEv">
 <span id="_CPPv3NK5Patch5get_MEv"></span><span id="_CPPv2NK5Patch5get_MEv"></span><span id="Patch::get_MC"></span><span class="target" id="classPatch_1a18366a21df794d2cebbbdfe3195734a5"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_M</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5Patch5get_MEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the number of males in the patch. </p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classPatch_1a6e9cda8c3620873eaadf23db0f5a7b27"><span class="std std-ref">Patch::M</span></a></p>
-</div>
-</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The number of males in the patch. </p>
-</dd>
-</dl>
+<dd><p>Returns the number of males in the patch, divided by genotype. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK5Patch5get_FEv">
 <span id="_CPPv3NK5Patch5get_FEv"></span><span id="_CPPv2NK5Patch5get_FEv"></span><span id="Patch::get_FC"></span><span class="target" id="classPatch_1a7754f3fd7fb22af2c3661d4d5229ab2d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_F</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5Patch5get_FEv" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Returns the number of females in the patch. </p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classPatch_1a9e6066355010ba73abb33d8d41714677"><span class="std std-ref">Patch::F</span></a></p>
-</div>
-</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The number of females in the patch. </p>
-</dd>
-</dl>
+<dd><p>Returns the number of females in the patch, divided by female genotype and male sperm genotype. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch15calculate_tot_JEv">
 <span id="_CPPv3N5Patch15calculate_tot_JEv"></span><span id="_CPPv2N5Patch15calculate_tot_JEv"></span><span id="Patch::calculate_tot_J"></span><span class="target" id="classPatch_1a3071272790d2c5cde8675e94a306ac0a"></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculate_tot_J</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Patch15calculate_tot_JEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Calculates the total number of juveniles in the patch. </p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classPatch_1a9ec8ec87984a6e18efa7afd83e6df081"><span class="std std-ref">Patch::J</span></a></p>
-</div>
-</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The total number of juveniles in the patch across all ages and genotypes. </p>
@@ -2110,11 +2092,6 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch15calculate_tot_MEv">
 <span id="_CPPv3N5Patch15calculate_tot_MEv"></span><span id="_CPPv2N5Patch15calculate_tot_MEv"></span><span id="Patch::calculate_tot_M"></span><span class="target" id="classPatch_1adf7fcfe3a5b2b00afe76c9dac3aea50c"></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculate_tot_M</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Patch15calculate_tot_MEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Calculates the total number of males in the patch. </p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classPatch_1a6e9cda8c3620873eaadf23db0f5a7b27"><span class="std std-ref">Patch::M</span></a></p>
-</div>
-</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The total number of males in the patch across all genotypes. </p>
@@ -2126,11 +2103,6 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch15calculate_tot_VEv">
 <span id="_CPPv3N5Patch15calculate_tot_VEv"></span><span id="_CPPv2N5Patch15calculate_tot_VEv"></span><span id="Patch::calculate_tot_V"></span><span class="target" id="classPatch_1af90e1ce58bd0c009e6dc9e939d2ee81d"></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculate_tot_V</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Patch15calculate_tot_VEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Calculates the total number of virgin (unmated) females in the patch. </p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classPatch_1ae4195468f66138a8bf7f0c37701098da"><span class="std std-ref">Patch::V</span></a></p>
-</div>
-</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The total number of virgin (unmated) females in the patch across all genotypes. </p>
@@ -2142,11 +2114,6 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch15calculate_tot_FEv">
 <span id="_CPPv3N5Patch15calculate_tot_FEv"></span><span id="_CPPv2N5Patch15calculate_tot_FEv"></span><span id="Patch::calculate_tot_F"></span><span class="target" id="classPatch_1a55c95af0f8a5c1d7ac885a828a873865"></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculate_tot_F</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Patch15calculate_tot_FEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Calculates the total number of mated females in the patch. </p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classPatch_1a9e6066355010ba73abb33d8d41714677"><span class="std std-ref">Patch::F</span></a></p>
-</div>
-</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The total number of mated females in the patch across all female and male sperm genotypes. </p>
@@ -2159,11 +2126,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <span id="_CPPv3N5Patch13juv_get_olderEv"></span><span id="_CPPv2N5Patch13juv_get_olderEv"></span><span id="Patch::juv_get_older"></span><span class="target" id="classPatch_1a1ac1a35f87b779415c9c0f91f0235add"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">juv_get_older</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Patch13juv_get_olderEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Ages the juveniles of different age groups in the patch by a day. </p>
 <p>
-The number of surviving individuals in an age group (for a given genotype) is determined by a binomial distibution of juvenile survival probability. <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classPatch_1a9807128f092d63158e4d75279b508557"><span class="std std-ref">Patch::comp</span></a></p>
-</div>
-</p>
+The number of surviving individuals in an age group (for a given genotype) is determined by a binomial distibution of juvenile survival probability. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Not all juveniles survive the aging process.</p>
@@ -2176,7 +2139,7 @@ The number of surviving individuals in an age group (for a given genotype) is de
 <dd><p>Removes dying adults from the patch. </p>
 <p>Determines the number of adults that die in the given day and removes them from the patch. The number of males that die (for a given genotype) is determined by a binomial distribution of adult mortality, and similarly for virgin and mated females. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="api/struct_life_params.html#structLifeParams_1a528e234b9f36c9ee20e1e65ccb6f18ac"><span class="std std-ref">LifeParams::mu_a</span></a></p>
+<p><a class="reference internal" href="api/struct_input_params.html#structInputParams_1ad5675a09a39929aa98cd569cb4c4403f"><span class="std std-ref">InputParams::mu_a</span></a></p>
 </div>
 </p>
 </dd></dl>
@@ -2185,11 +2148,7 @@ The number of surviving individuals in an age group (for a given genotype) is de
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch12virgins_mateEv">
 <span id="_CPPv3N5Patch12virgins_mateEv"></span><span id="_CPPv2N5Patch12virgins_mateEv"></span><span id="Patch::virgins_mate"></span><span class="target" id="classPatch_1a831b026c31ae2bbb56b04e8cc8fa2277"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">virgins_mate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Patch12virgins_mateEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Mates a fraction of the virgin females in the patch. </p>
-<p>Determines the number of virgin females that mate in the given day (for a given female genotype) with a male of genotype j by using a binomial distribution of the mating rate. Then, tranforms the virgin females into mated females carrying male sperm of genotype j. Mating is carried out within the patch, and females only mate once. <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classPatch_1a31046a60938f68ee9db3d779e2ba9dbe"><span class="std std-ref">Patch::mate_rate</span></a></p>
-</div>
-</p>
+<p>Determines the number of virgin females that mate in the given day (for a given female genotype) with a male of genotype j by using a binomial distribution of the mating rate. Then, tranforms the virgin females into mated females carrying male sperm of genotype j. Mating is carried out within the patch, and females only mate once. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -2198,7 +2157,7 @@ The number of surviving individuals in an age group (for a given genotype) is de
 <dd><p>Females lay eggs, creating new juveniles. </p>
 <p>Determines the number of eggs laid with genotype k on the given day by using a Poisson distribution. Other relevant parameters include the egg laying rate. Determines the development duration of these new juveniles using a multinomial distribution of development duration probabilities. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classSimulation_1a5bf54d592f89fb121f5f8225d2761e30"><span class="std std-ref">Simulation::inher_fraction</span></a>, <a class="reference internal" href="#classModel_1a1d8427bbcb5f7e9db04d213111e208ba"><span class="std std-ref">Model::dev_duration_probs</span></a>, <a class="reference internal" href="api/struct_life_params.html#structLifeParams_1aea4fb1949f3ae9889fbd022ce728c1e2"><span class="std std-ref">LifeParams::theta</span></a></p>
+<p><a class="reference internal" href="api/class_simulation.html#classSimulation_1ac5440a772e9d7788c588a795a7821fb6"><span class="std std-ref">Simulation::set_inheritance()</span></a>, <a class="reference internal" href="api/struct_input_params.html#structInputParams_1a7183128711c0a119f7fc72e94ae6bdd4"><span class="std std-ref">InputParams::theta</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -2216,11 +2175,7 @@ The number of surviving individuals in an age group (for a given genotype) is de
 <span id="_CPPv3N5Patch10juv_ecloseEv"></span><span id="_CPPv2N5Patch10juv_ecloseEv"></span><span id="Patch::juv_eclose"></span><span class="target" id="classPatch_1a935e1a959a81d818c161b1182a45e958"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">juv_eclose</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Patch10juv_ecloseEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Turns the oldest juveniles into adults. </p>
 <p>
-The number of survivors is determined by a binomial distribution of the juvenile survival probability. Sex determination upon eclosion is determined by a binomial distribution with 0.5 probability. <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classPatch_1a9807128f092d63158e4d75279b508557"><span class="std std-ref">Patch::comp</span></a></p>
-</div>
-</p>
+The number of survivors is determined by a binomial distribution of the juvenile survival probability. Sex determination upon eclosion is determined by a binomial distribution with 0.5 probability. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Not all juveniles survive eclosion.</p>
@@ -2231,9 +2186,13 @@ The number of survivors is determined by a binomial distribution of the juvenile
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch11update_compEv">
 <span id="_CPPv3N5Patch11update_compEv"></span><span id="_CPPv2N5Patch11update_compEv"></span><span id="Patch::update_comp"></span><span class="target" id="classPatch_1abfcba309e2ecc8eb224b89a5f11d6042"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update_comp</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Patch11update_compEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Updates the juvenile survival probability of the patch. </p>
-<p>Relevant parameters include the juvenile mortality rate, the juvenile survival probability power and the carrying capacity. <div class="admonition seealso">
+<p>Relevant parameters include the juvenile mortality rate, the juvenile survival probability power and the carrying capacity. The survival probability is computed as  <div class="math notranslate nohighlight">
+\[
+ \textrm{comp} = (1 - \mu_j)    \sqrt[\textrm{comp_power}]{\frac{\alpha}{\alpha + \textrm{J}_{\textrm{tot}}}},
+\]</div>
+ with <span class="math notranslate nohighlight">\( \mu_j \)</span> juvenile mortality rate and <span class="math notranslate nohighlight">\( \alpha \)</span> carrying capacity. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>Seasonality::get_alpha(), <a class="reference internal" href="#classPatch_1a5b781b751c5a39bb3a94640e3542a517"><span class="std std-ref">Patch::alpha0</span></a>, <a class="reference internal" href="api/struct_life_params.html#structLifeParams_1a02c6d31cc4adf7efc95abf6707c9f75b"><span class="std std-ref">LifeParams::mu_j</span></a>, <a class="reference internal" href="api/struct_life_params.html#structLifeParams_1a113c7b28bb3132aa7e9e34f5380f0837"><span class="std std-ref">LifeParams::comp_power</span></a>, <a class="reference internal" href="#classPatch_1a9807128f092d63158e4d75279b508557"><span class="std std-ref">Patch::comp</span></a></p>
+<p><a class="reference internal" href="api/class_seasonality.html#classSeasonality_1a86bfbdfc639ab1a08e3643e05b55d6f1"><span class="std std-ref">Seasonality::alpha()</span></a>, <a class="reference internal" href="api/struct_input_params.html#structInputParams_1a746b1ef46c9498a5dd09b825ea4b7a24"><span class="std std-ref">InputParams::mu_j</span></a>, <a class="reference internal" href="api/struct_input_params.html#structInputParams_1a99ec67370f4794427a09d93630b248e3"><span class="std std-ref">InputParams::comp_power</span></a></p>
 </div>
 </p>
 </dd></dl>
@@ -2242,9 +2201,13 @@ The number of survivors is determined by a binomial distribution of the juvenile
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch11update_mateEv">
 <span id="_CPPv3N5Patch11update_mateEv"></span><span id="_CPPv2N5Patch11update_mateEv"></span><span id="Patch::update_mate"></span><span class="target" id="classPatch_1a14846b95a2c4032ae4de370abc5ddb04"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update_mate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Patch11update_mateEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Updates the mating rate of the patch. </p>
-<p>Relevant parameters include the beta parameter. <div class="admonition seealso">
+<p>Relevant parameters include the beta parameter. The mating rate is computed as  <div class="math notranslate nohighlight">
+\[ 
+  \textrm{mate_rate} =  \frac{\textrm{M}_{\textrm{tot}}}{\beta + \textrm{M}_{\textrm{tot}}}.
+\]</div>
+ <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="api/struct_life_params.html#structLifeParams_1a2cf17ed50803c966c18b4d1ca30b442c"><span class="std std-ref">LifeParams::beta</span></a></p>
+<p><a class="reference internal" href="api/struct_input_params.html#structInputParams_1a4fb2cae8d6b3a9585e386b2bfeb03299"><span class="std std-ref">InputParams::beta</span></a></p>
 </div>
 </p>
 </dd></dl>
@@ -2455,7 +2418,7 @@ The number of survivors is determined by a binomial distribution of the juvenile
 <dd><div class="docutils container">
 <em>#include &lt;<a class="reference internal" href="#Dispersal_8h"><span class="std std-ref">Dispersal.h</span></a>&gt;</em></div>
 <p>Implements dispersive behaviour for radial dispersal, where connection weights between patches are determined by the direction the patches are in relative to each other and other patches. </p>
-<p>Particularly, connection weights will be determined by the arc of the first patch’s catchment radius covered by the second patch. Closer patches will reduce dispersal to further patches which are in the same interval. Those individuals that disperse in a direction with no patches will die. … </p>
+<p>Particularly, the connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. The individuals that disperse in an unconnected direction will die. <img alt="_images/radial_disp_diagram.png" src="_images/radial_disp_diagram.png" /></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -2476,7 +2439,8 @@ The number of survivors is determined by a binomial distribution of the juvenile
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N15RadialDispersal11set_connecsERNSt6vectorIP5PatchEE">
 <span id="_CPPv3N15RadialDispersal11set_connecsERNSt6vectorIP5PatchEE"></span><span id="_CPPv2N15RadialDispersal11set_connecsERNSt6vectorIP5PatchEE"></span><span id="RadialDispersal::set_connecs__std::vector:PatchP:R"></span><span class="target" id="classRadialDispersal_1a363d41e54203e0cd6cadb0667b1f6548"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_connecs</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N15RadialDispersal11set_connecsERNSt6vectorIP5PatchEE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Sets the inter-patch connectivities for dispersal. </p>
+<dd><p>Sets the inter-patch connectivities for radial dispersal. </p>
+<p>If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum dispersal distance are not connected. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>sites</strong> – <strong>[in]</strong> vector of all <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> objects </p>
@@ -2491,7 +2455,7 @@ The number of survivors is determined by a binomial distribution of the juvenile
 <p>
 Only those individuals that disperse out of a patch in a connected direction will survive. The number of dispersing males (of a given genotype) that survive dispersal out of their patch is determined by a random draw from a binomial distribution with probability of the total connection weight for all its connected patches. Of those, the number dispersing to each of the connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a>, <a class="reference internal" href="#classRadialDispersal_1ad09b4df09539d8b421c8d7ed3199d0c4"><span class="std std-ref">RadialDispersal::compute_connecs()</span></a></p>
+<p><a class="reference internal" href="api/class_model.html#classModel_1a17b3a93529de4ef762254f9a1932b67e"><span class="std std-ref">Model::get_sites()</span></a>, <a class="reference internal" href="#random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f"><span class="std std-ref">random_binomial()</span></a>, <a class="reference internal" href="#random_8cpp_1a180e4f01c99b4c4fae00714c08fa647b"><span class="std std-ref">random_multinomial()</span></a></p>
 </div>
 </p>
 <div class="admonition note">
@@ -2512,7 +2476,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
 <dt class="sig sig-object cpp" id="_CPPv4N15RadialDispersal15compute_connecsERNSt6vectorIP5PatchEE">
 <span id="_CPPv3N15RadialDispersal15compute_connecsERNSt6vectorIP5PatchEE"></span><span id="_CPPv2N15RadialDispersal15compute_connecsERNSt6vectorIP5PatchEE"></span><span id="RadialDispersal::compute_connecs__std::vector:PatchP:R"></span><span class="target" id="classRadialDispersal_1ad09b4df09539d8b421c8d7ed3199d0c4"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">compute_connecs</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15RadialDispersal15compute_connecsERNSt6vectorIP5PatchEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Computes the set of connection indices and weights for a group of patches. </p>
-<p>If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by angle of bisecting lines from the centre of the focal patch to the catchment of the recieving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum disperdal distance are not connected. </p>
+<p>If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum dispersal distance are not connected. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Under this dispersal type, patches are NOT connected to themselves. </p>
@@ -2616,7 +2580,11 @@ Only those individuals that disperse out of a patch in a connected direction wil
 <dd><div class="docutils container">
 <em>#include &lt;<a class="reference internal" href="#GDRelease_8h"><span class="std std-ref">GDRelease.h</span></a>&gt;</em></div>
 <p>Implements gene drive release for randomised release sites. </p>
-<p>Release sites are randomised upon each release time. </p>
+<p>Release sites are randomised upon each release time, with the number selected on each release dependent on <code class="docutils literal notranslate"><span class="pre">num_driver_sites</span></code>. <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="api/struct_release_params.html#structReleaseParams_1a58423db2e16b0553d09ebec4d0d8a625"><span class="std std-ref">ReleaseParams::num_driver_sites</span></a></p>
+</div>
+</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -2684,7 +2652,8 @@ Only those individuals that disperse out of a patch in a connected direction wil
 <dt class="sig sig-object cpp" id="_CPPv4N6Record6RecordEP12RecordParamsi">
 <span id="_CPPv3N6Record6RecordEP12RecordParamsi"></span><span id="_CPPv2N6Record6RecordEP12RecordParamsi"></span><span id="Record::Record__RecordParamsP.i"></span><span class="target" id="classRecord_1a977db4fb6aaa9ac09b0d17ba676cabda"></span><span class="sig-name descname"><span class="n"><span class="pre">Record</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv412RecordParams" title="RecordParams"><span class="n"><span class="pre">RecordParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">rec_params</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rep</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6Record6RecordEP12RecordParamsi" title="Permalink to this definition">#</a><br /></dt>
 <dd><p><a class="reference internal" href="api/class_record.html#classRecord"><span class="std std-ref">Record</span></a> constructor. </p>
-<p>Creates LocalData, Totals and CoordinateList output .txt files. </p>
+<p>Creates LocalData, Totals and CoordinateList output .txt files.</p>
+<p>Creates a subdirectory for output files in the current directory. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -2708,7 +2677,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
 <dd><p>Records the coordinates of the population sites. </p>
 <p>Relevant parameters include the fraction of sites to collect data for. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a>, <a class="reference internal" href="#classRecord_1a8ab507dfcfb593428a8c23a81877fac3"><span class="std std-ref">Record::rec_sites_freq</span></a></p>
+<p><a class="reference internal" href="api/struct_input_params.html#structInputParams_1a0aa285f32fbb33162549d1480f36e1f0"><span class="std std-ref">InputParams::rec_sites_freq</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -2724,7 +2693,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
 <dd><p>Records the total numbers of male mosquitoes for the given day, divided by genotype. </p>
 <p>The totals are assumed to be across all sites. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="api/class_model.html#classModel_1a6d5f4f68f41e76c3e966e312d2f6e9e3"><span class="std std-ref">Model::calculate_tot_M_gen()</span></a>, <a class="reference internal" href="#classPatch_1a6e9cda8c3620873eaadf23db0f5a7b27"><span class="std std-ref">Patch::M</span></a></p>
+<p><a class="reference internal" href="api/class_model.html#classModel_1a6d5f4f68f41e76c3e966e312d2f6e9e3"><span class="std std-ref">Model::calculate_tot_M_gen()</span></a>, <a class="reference internal" href="api/class_patch.html#classPatch_1a18366a21df794d2cebbbdfe3195734a5"><span class="std std-ref">Patch::get_M()</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -2743,7 +2712,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
 <dd><p>Outputs the total numbers of juvenile (J), male (M), virgin female (V) and mated female (F) mosquitoes for the given day. </p>
 <p>The totals are assumed to be across all sites, and over all genotypes and age groups. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classPatch_1a9ec8ec87984a6e18efa7afd83e6df081"><span class="std std-ref">Patch::J</span></a>, <a class="reference internal" href="#classPatch_1a6e9cda8c3620873eaadf23db0f5a7b27"><span class="std std-ref">Patch::M</span></a>, <a class="reference internal" href="#classPatch_1ae4195468f66138a8bf7f0c37701098da"><span class="std std-ref">Patch::V</span></a>, <a class="reference internal" href="#classPatch_1a9e6066355010ba73abb33d8d41714677"><span class="std std-ref">Patch::F</span></a></p>
+<p><a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -2765,7 +2734,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
 <dd><p>Records the number of males at each site for the given day. </p>
 <p>The number of males at each site is divided by genotype. Relevant parameters include the fraction of sites to collect data for. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a>, <a class="reference internal" href="#classRecord_1a8ab507dfcfb593428a8c23a81877fac3"><span class="std std-ref">Record::rec_sites_freq</span></a></p>
+<p><a class="reference internal" href="api/struct_input_params.html#structInputParams_1a0aa285f32fbb33162549d1480f36e1f0"><span class="std std-ref">InputParams::rec_sites_freq</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -2785,7 +2754,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
 <p>
 Other relevant parameters include the local recording interval. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="api/class_record.html#classRecord_1a8e504c6253ef29fa5c86d216e3f28e1c"><span class="std std-ref">Record::record_local()</span></a>, <a class="reference internal" href="#classRecord_1a13b20ef61772014de98c3d87354ad1e9"><span class="std std-ref">Record::rec_start</span></a>, <a class="reference internal" href="#classRecord_1a0598ebe2ae342bf3dc7be5a156ad4c34"><span class="std std-ref">Record::rec_end</span></a>, <a class="reference internal" href="#classRecord_1a9217590af69eb03412ac2c82c4fd853e"><span class="std std-ref">Record::rec_interval_local</span></a></p>
+<p><a class="reference internal" href="api/class_record.html#classRecord_1a8e504c6253ef29fa5c86d216e3f28e1c"><span class="std std-ref">Record::record_local()</span></a>, <a class="reference internal" href="api/struct_input_params.html#structInputParams_1a6e73a95f47dcfa05263838b0b1f3ad27"><span class="std std-ref">InputParams::rec_start</span></a>, <a class="reference internal" href="api/struct_input_params.html#structInputParams_1a1223c275e31ee8b901b5d5a274d85c74"><span class="std std-ref">InputParams::rec_end</span></a>, <a class="reference internal" href="api/struct_input_params.html#structInputParams_1ae1a85942abb2e6e81ee33bb395fee17d"><span class="std std-ref">InputParams::rec_interval_local</span></a></p>
 </div>
 </p>
 <div class="admonition note">
@@ -2987,7 +2956,7 @@ Other relevant parameters include the local recording interval. <div class="admo
 <dd><div class="docutils container">
 <em>#include &lt;<a class="reference internal" href="#GDRelease_8h"><span class="std std-ref">GDRelease.h</span></a>&gt;</em></div>
 <p>Implements gene drive release for pre-selected release sites. </p>
-<p>Release sites are kept the same for each release, using the same pre-selected sites. </p>
+<p>Release sites are kept the same for each release, using the same pre-selected sites from the available Patches. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -2998,7 +2967,7 @@ Other relevant parameters include the local recording interval. <div class="admo
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> – <strong>[in]</strong> gene drive release parameters </p></li>
-<li><p><strong>rel_sites</strong> – <strong>[in]</strong> chosen release sites, indices relative to <a class="reference internal" href="#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a></p></li>
+<li><p><strong>rel_sites</strong> – <strong>[in]</strong> chosen release sites, indices relative to <a class="reference internal" href="api/class_model.html#classModel_1a17b3a93529de4ef762254f9a1932b67e"><span class="std std-ref">Model::get_sites()</span></a></p></li>
 <li><p><strong>sites</strong> – <strong>[in]</strong> vector of all <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> objects </p></li>
 </ul>
 </dd>
@@ -3086,11 +3055,19 @@ Other relevant parameters include the local recording interval. <div class="admo
 <dd><div class="docutils container">
 <em>#include &lt;<a class="reference internal" href="#Simulation_8h"><span class="std std-ref">Simulation.h</span></a>&gt;</em></div>
 <p>Sets up and controls the flow of the simulation. </p>
-<p><div class="admonition seealso">
+<p>Running <a class="reference internal" href="api/class_simulation.html#classSimulation_1ac5440a772e9d7788c588a795a7821fb6"><span class="std std-ref">set_inheritance()</span></a> and <a class="reference internal" href="api/class_simulation.html#classSimulation_1a46325953f7df60733d519b8b3cd1de61"><span class="std std-ref">run_reps()</span></a> in this order is essential to run a simulation. The class also contains setters for advanced options, which should be run before <a class="reference internal" href="api/class_simulation.html#classSimulation_1a46325953f7df60733d519b8b3cd1de61"><span class="std std-ref">run_reps()</span></a>. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classSimulation_1a8e1d4d667e07e3f7e453bbb936dd0c5a"><span class="std std-ref">Simulation::num_runs</span></a>, <a class="reference internal" href="#classSimulation_1adc775015be74841e3f9f99550af987bd"><span class="std std-ref">Simulation::max_t</span></a></p>
+<p><a class="reference internal" href="api/struct_input_params.html#structInputParams_1ab541958fd9e07697d71f0ea16e618de2"><span class="std std-ref">InputParams::num_runs</span></a>, <a class="reference internal" href="api/struct_input_params.html#structInputParams_1a2ff1e7d5dd5c45bf804f0701072200f4"><span class="std std-ref">InputParams::max_t</span></a></p>
 </div>
 </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Advanced options that have been set apply to all repetitions (runs) of a single simulation. </p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Advanced options will typically give an error message if the setting process has been unsuccessful. If they are not re-set successfully before running the simulation the option will maintain its default behaviour. </p>
+</div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -3112,7 +3089,7 @@ Other relevant parameters include the local recording interval. <div class="admo
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N10SimulationD0Ev">
 <span id="_CPPv3N10SimulationD0Ev"></span><span id="_CPPv2N10SimulationD0Ev"></span><span id="Simulation::~Simulation"></span><span class="target" id="classSimulation_1a80fad3f57dfaf195a36f7bc49bc88279"></span><span class="sig-name descname"><span class="n"><span class="pre">~Simulation</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10SimulationD0Ev" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Simualtion destructor. </p>
+<dd><p><a class="reference internal" href="api/class_simulation.html#classSimulation"><span class="std std-ref">Simulation</span></a> destructor. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -3120,13 +3097,17 @@ Other relevant parameters include the local recording interval. <div class="admo
 <span id="_CPPv3N10Simulation10set_coordsERKNSt6stringE"></span><span id="_CPPv2N10Simulation10set_coordsERKNSt6stringE"></span><span id="Simulation::set_coords__ssCR"></span><span class="target" id="classSimulation_1ab365e7a0000cae028998efae63b7d0c1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_coords</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation10set_coordsERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the sites’ coordinates and the release sites from a file, unless any errors are thrown. </p>
 <p>The file should be structured in three columns, with x and y coordinates and whether the site is a release site (y/n) respectively. Values should be delimited by white space, and site rows should be delimited by new lines. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The coordinates will undergo bound checks if the boundary type has been set to Toroid (the default) - coordinates will need to be in the range [0, side] for both x and y. </p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The file should be in the program’s running directory to be recognised. </p>
+<p>Setting specific release sites will change the mode of gene drive release from random to scheduled. The specified release sites will be used for each of the releases (if using multiple release times). Mosquitoes will be released at all release sites for each release time. </p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> coordinates filename </p>
+<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> coordinates filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
 </dd>
 </dl>
 </dd></dl>
@@ -3167,10 +3148,18 @@ Other relevant parameters include the local recording interval. <div class="admo
 <dt class="sig sig-object cpp" id="_CPPv4N10Simulation12set_rainfallERKNSt6stringE">
 <span id="_CPPv3N10Simulation12set_rainfallERKNSt6stringE"></span><span id="_CPPv2N10Simulation12set_rainfallERKNSt6stringE"></span><span id="Simulation::set_rainfall__ssCR"></span><span class="target" id="classSimulation_1abc5c5d0891de7943820db3e6682cd125"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_rainfall</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation12set_rainfallERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the daily rainfall values from a file, unless any errors are thrown. </p>
-<p>These can be daily values for a year cycle (365 days), or daily values for all the simulated days (max_t). The values should be delimited by new lines. </p>
+<p>These can be daily values for a year cycle (365 days), or daily values for all the simulated days (max_t). The values should be delimited by new lines. <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="api/class_seasonality.html#classSeasonality"><span class="std std-ref">Seasonality</span></a></p>
+</div>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This option will use the input parameters alpha1 and resp previously provided and ignore amp. </p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> rainfall filename </p>
+<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> rainfall filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
 </dd>
 </dl>
 </dd></dl>
@@ -3179,10 +3168,18 @@ Other relevant parameters include the local recording interval. <div class="admo
 <dt class="sig sig-object cpp" id="_CPPv4N10Simulation17set_release_timesERKNSt6stringE">
 <span id="_CPPv3N10Simulation17set_release_timesERKNSt6stringE"></span><span id="_CPPv2N10Simulation17set_release_timesERKNSt6stringE"></span><span id="Simulation::set_release_times__ssCR"></span><span class="target" id="classSimulation_1a7d774bb0496b0ea95c2c88afc0d24731"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_release_times</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation17set_release_timesERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the release times for gene drive release from a file, unless any errors are thrown. </p>
-<p>Release times should be simulation day numbers within the maximum time of simulation. Values should be delimited by new lines. </p>
+<p>Release times should be simulation day numbers within the maximum time of simulation. Values should be delimited by new lines. <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="api/class_g_d_release.html#classGDRelease"><span class="std std-ref">GDRelease</span></a></p>
+</div>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using this option, the input parameter driver_start previously entered will be ignored. </p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> release times filename </p>
+<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> release times filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
 </dd>
 </dl>
 </dd></dl>
@@ -3190,12 +3187,21 @@ Other relevant parameters include the local recording interval. <div class="admo
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N10Simulation15set_inheritanceE17InheritanceParams">
 <span id="_CPPv3N10Simulation15set_inheritanceE17InheritanceParams"></span><span id="_CPPv2N10Simulation15set_inheritanceE17InheritanceParams"></span><span id="Simulation::set_inheritance__InheritanceParams"></span><span class="target" id="classSimulation_1ac5440a772e9d7788c588a795a7821fb6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_inheritance</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv417InheritanceParams" title="InheritanceParams"><span class="n"><span class="pre">InheritanceParams</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">inher_params</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation15set_inheritanceE17InheritanceParams" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Sets the values of the f_{ijk} inheritance fraction for the gene drive considering r2 resistant alleles. </p>
-<p>f_{ijk} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j. <div class="admonition seealso">
+<dd><p>Sets the values of the f_{ijk} inheritance fraction for the gene drive considering r2 non-functional resistance alleles. </p>
+<p>f_{ijk} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j.</p>
+<p>The order of elements in each matrix axis is the following genotype order: WW, WD, DD, WR, RR and DR, composed of wild-type (W), drive-type (D) and resistant-type (R) alleles. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="api/struct_inheritance_params.html#structInheritanceParams"><span class="std std-ref">InheritanceParams</span></a></p>
+<p><a class="reference internal" href="api/struct_inheritance_params.html#structInheritanceParams"><span class="std std-ref">InheritanceParams</span></a>, <a class="reference internal" href="api/struct_input_params.html#structInputParams"><span class="std std-ref">InputParams</span></a>:gamma, <a class="reference internal" href="api/struct_input_params.html#structInputParams"><span class="std std-ref">InputParams</span></a>:xi, <a class="reference internal" href="api/struct_input_params.html#structInputParams_1a803f48bc190f6b07b317539429626ee3"><span class="std std-ref">InputParams::e</span></a></p>
 </div>
 </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Six genotypes are counted and not nine because WD and DW genotypes are counted together, and likewise for the other heterozygous genotypes. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DD, RR and DR females are assumed to be sterile as they don’t possess one functional copy of the dsx gene and thus produce no offspring. </p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>inher_params</strong> – <strong>[in]</strong> inheritance parameters </p>
@@ -3209,7 +3215,7 @@ Other relevant parameters include the local recording interval. <div class="admo
 <dd><p>Runs the simulation num_runs times, recording data in output files. </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classSimulation_1a8e1d4d667e07e3f7e453bbb936dd0c5a"><span class="std std-ref">Simulation::num_runs</span></a>, <a class="reference internal" href="api/class_record.html#classRecord"><span class="std std-ref">Record</span></a></p>
+<p><a class="reference internal" href="api/struct_input_params.html#structInputParams_1ab541958fd9e07697d71f0ea16e618de2"><span class="std std-ref">InputParams::num_runs</span></a>, <a class="reference internal" href="api/class_record.html#classRecord"><span class="std std-ref">Record</span></a></p>
 </div>
 </p>
 </dd></dl>
@@ -3321,11 +3327,12 @@ Other relevant parameters include the local recording interval. <div class="admo
 <dt class="sig sig-object cpp" id="_CPPv4N12SineRainfall5alphaEid">
 <span id="_CPPv3N12SineRainfall5alphaEid"></span><span id="_CPPv2N12SineRainfall5alphaEid"></span><span id="SineRainfall::alpha__i.double"></span><span class="target" id="classSineRainfall_1a208a62a5176ae5db43120cf938a7f067"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alpha</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">alpha0</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N12SineRainfall5alphaEid" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Computes the carrying-capacity alpha value for the given day and alpha0. </p>
-<p>Models rainfall contribution as a sine wave. <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#classPatch_1a5b781b751c5a39bb3a94640e3542a517"><span class="std std-ref">Patch::alpha0</span></a></p>
-</div>
-</p>
+<p>Models rainfall contribution as a sine wave.</p>
+<p><div class="math notranslate nohighlight">
+\[
+     \alpha = \alpha_0 + \alpha_1 \left(1 + \textrm{A}\sin\left(\frac{2 \pi d}{365}\right)\right),
+\]</div>
+ where <span class="math notranslate nohighlight">\( \alpha \)</span> is the carrying capacity, <span class="math notranslate nohighlight">\( \alpha_0 \)</span> is the baseline contribution, <span class="math notranslate nohighlight">\( \alpha_1 \)</span> is the factor accounting for rainfall contribution, <span class="math notranslate nohighlight">\( \textrm{A} \)</span> is the amplitude of rainfall fluctuations and <span class="math notranslate nohighlight">\( d \)</span> is the given simulation day. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -3379,8 +3386,12 @@ Other relevant parameters include the local recording interval. <div class="admo
 <span id="_CPPv324ToroidalBoundaryStrategy"></span><span id="_CPPv224ToroidalBoundaryStrategy"></span><span id="ToroidalBoundaryStrategy"></span><span class="target" id="classToroidalBoundaryStrategy"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ToroidalBoundaryStrategy</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv416BoundaryStrategy" title="BoundaryStrategy"><span class="n"><span class="pre">BoundaryStrategy</span></span></a><a class="headerlink" href="#_CPPv424ToroidalBoundaryStrategy" title="Permalink to this definition">#</a><br /></dt>
 <dd><div class="docutils container">
 <em>#include &lt;<a class="reference internal" href="#BoundaryStrategy_8h"><span class="std std-ref">BoundaryStrategy.h</span></a>&gt;</em></div>
-<p>Implements the distance method for toroidal boundary conditions. </p>
-<p>The simulation area is assumed to have periodic boundary conditions at x = side, y = side, and have ranges [0, side] in all directions. </p>
+<p>Implements the methods for toroidal boundary conditions. </p>
+<p>The simulation area is assumed to have periodic boundary conditions at x = <code class="docutils literal notranslate"><span class="pre">side</span></code>, y = <code class="docutils literal notranslate"><span class="pre">side</span></code>, and have ranges [0, <code class="docutils literal notranslate"><span class="pre">side</span></code>] in all directions. <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="api/struct_area_params.html#structAreaParams_1a25bc9f9baa5f3b4f9352101dfec36a99"><span class="std std-ref">AreaParams::side</span></a></p>
+</div>
+</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -3392,11 +3403,6 @@ Other relevant parameters include the local recording interval. <div class="admo
 <dt class="sig sig-object cpp" id="_CPPv4N24ToroidalBoundaryStrategy8distanceERK5PointRK5Point">
 <span id="_CPPv3N24ToroidalBoundaryStrategy8distanceERK5PointRK5Point"></span><span id="_CPPv2N24ToroidalBoundaryStrategy8distanceERK5PointRK5Point"></span><span id="ToroidalBoundaryStrategy::distance__PointCR.PointCR"></span><span class="target" id="classToroidalBoundaryStrategy_1a262f8bca65f10efa4e88c1aa67ac41ee"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">distance</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45Point" title="Point"><span class="n"><span class="pre">Point</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p1</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv45Point" title="Point"><span class="n"><span class="pre">Point</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">p2</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N24ToroidalBoundaryStrategy8distanceERK5PointRK5Point" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Calculates the shortest periodic distance between two points. </p>
-<p>The simulation area is assumed to have toroidal (or periodic) boundaries at x = side, y = side, and x and y to be in the range [0, side]. <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="api/struct_point.html#structPoint"><span class="std std-ref">Point</span></a>, <a class="reference internal" href="api/class_boundary_strategy.html#classBoundaryStrategy_1a8b9e897d2396509ec12f4d797e3101f1"><span class="std std-ref">BoundaryStrategy::side</span></a></p>
-</div>
-</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -3446,6 +3452,7 @@ Other relevant parameters include the local recording interval. <div class="admo
 <dt class="sig sig-object cpp" id="_CPPv4N9constants7num_genE">
 <span id="_CPPv3N9constants7num_genE"></span><span id="_CPPv2N9constants7num_genE"></span><span id="constants::num_gen__iC"></span><span class="target" id="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_gen</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><a class="headerlink" href="#_CPPv4N9constants7num_genE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The number of different genotypes in the mosquito population. </p>
+<p>For 6 genotypes these represent WW, WD, DD, WR, RR and DR (in this order), where W is the wild type allele, D is the drive type allele and R is the non-functional resistance allele. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -3555,6 +3562,7 @@ Other relevant parameters include the local recording interval. <div class="admo
 <dt class="sig sig-object cpp" id="_CPPv47num_gen">
 <span id="_CPPv37num_gen"></span><span id="_CPPv27num_gen"></span><span id="num_gen__iC"></span><span class="target" id="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_gen</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">6</span></span><a class="headerlink" href="#_CPPv47num_gen" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The number of different genotypes in the mosquito population. </p>
+<p>For 6 genotypes these represent WW, WD, DD, WR, RR and DR (in this order), where W is the wild type allele, D is the drive type allele and R is the non-functional resistance allele. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -4186,14 +4194,6 @@ Other relevant parameters include the local recording interval. <div class="admo
 <em>#include “<a class="reference internal" href="#InputParams_8h"><span class="std std-ref">InputParams.h</span></a>”</em></div>
 <div class="docutils container">
 <em>#include “<a class="reference internal" href="#sets_8h"><span class="std std-ref">sets.h</span></a>”</em></div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv44mainv">
-<span id="_CPPv34mainv"></span><span id="_CPPv24mainv"></span><span id="main"></span><span class="target" id="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">main</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44mainv" title="Permalink to this definition">#</a><br /></dt>
-<dd></dd></dl>
-
-</div>
 </dd></dl>
 
 <dl>
@@ -4211,14 +4211,6 @@ Other relevant parameters include the local recording interval. <div class="admo
 <em>#include “<a class="reference internal" href="#constants_8h"><span class="std std-ref">constants.h</span></a>”</em></div>
 <div class="docutils container">
 <em>#include “<a class="reference internal" href="#Params_8h"><span class="std std-ref">Params.h</span></a>”</em></div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
-<dl class="cpp function">
-<dt class="sig sig-object cpp">
-<span class="target" id="main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">main</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
-<dd></dd></dl>
-
-</div>
 </dd></dl>
 
 <dl>

@@ -211,7 +211,7 @@ Program Listing for File Dispersal.cpp
    }
    
    std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> RadialDispersal::compute_connecs(std::vector<Patch*> &sites) {
-        int num_sites = sites.size();
+       int num_sites = sites.size();
        std::vector<std::vector<double>> connec_weights(num_sites);
        std::vector<std::vector<int>> connec_indices(num_sites);
        // Compute inter-point distances
@@ -301,11 +301,6 @@ Program Listing for File Dispersal.cpp
                    }
                }
            }
-   
-       /*  std::cout<<i<<"     ";
-           for(int jj=0;jj<connec_weights[i].size();++jj)std::cout<<connec_indices[i][jj]<<"     "<<connec_weights[i][jj]<<"    ";
-           std::cout<<std::endl;
-       */
    
        }
        return {connec_indices, connec_weights};

@@ -48,6 +48,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script src="../_static/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/classPatch';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -181,7 +182,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial7.html">7. Customising seasonality</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="library_root.html">Library API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="library_root.html">API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="namespace_constants.html">Namespace constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structAestivationParams.html">Struct AestivationParams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structAreaParams.html">Struct AreaParams</a></li>
@@ -219,8 +220,6 @@
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517.html">Template Function check_bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be.html">Template Function check_interval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a38cf9054c93e1fced65fe33940dda566.html">Template Function file_read_and_validate_type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1af03c0e74140efa3114c4cd1361da5548.html">Function random_discrete(int, int)</a></li>
@@ -452,6 +451,7 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv45Patch">
 <span id="_CPPv35Patch"></span><span id="_CPPv25Patch"></span><span id="Patch"></span><span class="target" id="classPatch"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Patch</span></span></span><br /></dt>
 <dd><p>Contains the information of a local mosquito population. </p>
+<p>The population is divided into four types: juveniles (J), males (M), virgin (unmated) females (V) and mated females (F). These are then subdivided into six genotypes (in this order): WW, WD, DD, DR, WR and RR composed of a wild-type allele (W), a drive-type allele (D) and a resistant-type allele (R). Juveniles are also subdivided into age groups, ordered from oldest (0 days left to eclosion) to youngest (max_dev - 1 days left). The population can carry out life-processes and interface with other classes to introduce gene drive mosquitoes into the <a class="reference internal" href="class_patch.html#classPatch"><span class="std std-ref">Patch</span></a>, carry out dispersal in and out of the <a class="reference internal" href="class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> and aestivate. <img alt="../_images/patch_diagram.png" src="../_images/patch_diagram.png" /></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -513,57 +513,27 @@ document.write(`
 <dd><p>Returns the coordinates of the patch. </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="struct_point.html#structPoint"><span class="std std-ref">Point</span></a>, <a class="reference internal" href="../api.html#classPatch_1ab18c50790301400e0a1130dbd4867db9"><span class="std std-ref">Patch::coords</span></a></p>
+<p><a class="reference internal" href="struct_point.html#structPoint"><span class="std std-ref">Point</span></a></p>
 </div>
 </p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The coordinates of the patch. </p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK5Patch5get_MEv">
 <span id="_CPPv3NK5Patch5get_MEv"></span><span id="_CPPv2NK5Patch5get_MEv"></span><span id="Patch::get_MC"></span><span class="target" id="classPatch_1a18366a21df794d2cebbbdfe3195734a5"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../api.html#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_M</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
-<dd><p>Returns the number of males in the patch. </p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classPatch_1a6e9cda8c3620873eaadf23db0f5a7b27"><span class="std std-ref">Patch::M</span></a></p>
-</div>
-</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The number of males in the patch. </p>
-</dd>
-</dl>
+<dd><p>Returns the number of males in the patch, divided by genotype. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK5Patch5get_FEv">
 <span id="_CPPv3NK5Patch5get_FEv"></span><span id="_CPPv2NK5Patch5get_FEv"></span><span id="Patch::get_FC"></span><span class="target" id="classPatch_1a7754f3fd7fb22af2c3661d4d5229ab2d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../api.html#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../api.html#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_F</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
-<dd><p>Returns the number of females in the patch. </p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classPatch_1a9e6066355010ba73abb33d8d41714677"><span class="std std-ref">Patch::F</span></a></p>
-</div>
-</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The number of females in the patch. </p>
-</dd>
-</dl>
+<dd><p>Returns the number of females in the patch, divided by female genotype and male sperm genotype. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch15calculate_tot_JEv">
 <span id="_CPPv3N5Patch15calculate_tot_JEv"></span><span id="_CPPv2N5Patch15calculate_tot_JEv"></span><span id="Patch::calculate_tot_J"></span><span class="target" id="classPatch_1a3071272790d2c5cde8675e94a306ac0a"></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculate_tot_J</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Calculates the total number of juveniles in the patch. </p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classPatch_1a9ec8ec87984a6e18efa7afd83e6df081"><span class="std std-ref">Patch::J</span></a></p>
-</div>
-</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The total number of juveniles in the patch across all ages and genotypes. </p>
@@ -575,11 +545,6 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch15calculate_tot_MEv">
 <span id="_CPPv3N5Patch15calculate_tot_MEv"></span><span id="_CPPv2N5Patch15calculate_tot_MEv"></span><span id="Patch::calculate_tot_M"></span><span class="target" id="classPatch_1adf7fcfe3a5b2b00afe76c9dac3aea50c"></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculate_tot_M</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Calculates the total number of males in the patch. </p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classPatch_1a6e9cda8c3620873eaadf23db0f5a7b27"><span class="std std-ref">Patch::M</span></a></p>
-</div>
-</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The total number of males in the patch across all genotypes. </p>
@@ -591,11 +556,6 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch15calculate_tot_VEv">
 <span id="_CPPv3N5Patch15calculate_tot_VEv"></span><span id="_CPPv2N5Patch15calculate_tot_VEv"></span><span id="Patch::calculate_tot_V"></span><span class="target" id="classPatch_1af90e1ce58bd0c009e6dc9e939d2ee81d"></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculate_tot_V</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Calculates the total number of virgin (unmated) females in the patch. </p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classPatch_1ae4195468f66138a8bf7f0c37701098da"><span class="std std-ref">Patch::V</span></a></p>
-</div>
-</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The total number of virgin (unmated) females in the patch across all genotypes. </p>
@@ -607,11 +567,6 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch15calculate_tot_FEv">
 <span id="_CPPv3N5Patch15calculate_tot_FEv"></span><span id="_CPPv2N5Patch15calculate_tot_FEv"></span><span id="Patch::calculate_tot_F"></span><span class="target" id="classPatch_1a55c95af0f8a5c1d7ac885a828a873865"></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculate_tot_F</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Calculates the total number of mated females in the patch. </p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classPatch_1a9e6066355010ba73abb33d8d41714677"><span class="std std-ref">Patch::F</span></a></p>
-</div>
-</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The total number of mated females in the patch across all female and male sperm genotypes. </p>
@@ -624,11 +579,7 @@ document.write(`
 <span id="_CPPv3N5Patch13juv_get_olderEv"></span><span id="_CPPv2N5Patch13juv_get_olderEv"></span><span id="Patch::juv_get_older"></span><span class="target" id="classPatch_1a1ac1a35f87b779415c9c0f91f0235add"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">juv_get_older</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Ages the juveniles of different age groups in the patch by a day. </p>
 <p>
-The number of surviving individuals in an age group (for a given genotype) is determined by a binomial distibution of juvenile survival probability. <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classPatch_1a9807128f092d63158e4d75279b508557"><span class="std std-ref">Patch::comp</span></a></p>
-</div>
-</p>
+The number of surviving individuals in an age group (for a given genotype) is determined by a binomial distibution of juvenile survival probability. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Not all juveniles survive the aging process.</p>
@@ -641,7 +592,7 @@ The number of surviving individuals in an age group (for a given genotype) is de
 <dd><p>Removes dying adults from the patch. </p>
 <p>Determines the number of adults that die in the given day and removes them from the patch. The number of males that die (for a given genotype) is determined by a binomial distribution of adult mortality, and similarly for virgin and mated females. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="struct_life_params.html#structLifeParams_1a528e234b9f36c9ee20e1e65ccb6f18ac"><span class="std std-ref">LifeParams::mu_a</span></a></p>
+<p><a class="reference internal" href="struct_input_params.html#structInputParams_1ad5675a09a39929aa98cd569cb4c4403f"><span class="std std-ref">InputParams::mu_a</span></a></p>
 </div>
 </p>
 </dd></dl>
@@ -650,11 +601,7 @@ The number of surviving individuals in an age group (for a given genotype) is de
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch12virgins_mateEv">
 <span id="_CPPv3N5Patch12virgins_mateEv"></span><span id="_CPPv2N5Patch12virgins_mateEv"></span><span id="Patch::virgins_mate"></span><span class="target" id="classPatch_1a831b026c31ae2bbb56b04e8cc8fa2277"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">virgins_mate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Mates a fraction of the virgin females in the patch. </p>
-<p>Determines the number of virgin females that mate in the given day (for a given female genotype) with a male of genotype j by using a binomial distribution of the mating rate. Then, tranforms the virgin females into mated females carrying male sperm of genotype j. Mating is carried out within the patch, and females only mate once. <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classPatch_1a31046a60938f68ee9db3d779e2ba9dbe"><span class="std std-ref">Patch::mate_rate</span></a></p>
-</div>
-</p>
+<p>Determines the number of virgin females that mate in the given day (for a given female genotype) with a male of genotype j by using a binomial distribution of the mating rate. Then, tranforms the virgin females into mated females carrying male sperm of genotype j. Mating is carried out within the patch, and females only mate once. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -663,7 +610,7 @@ The number of surviving individuals in an age group (for a given genotype) is de
 <dd><p>Females lay eggs, creating new juveniles. </p>
 <p>Determines the number of eggs laid with genotype k on the given day by using a Poisson distribution. Other relevant parameters include the egg laying rate. Determines the development duration of these new juveniles using a multinomial distribution of development duration probabilities. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classSimulation_1a5bf54d592f89fb121f5f8225d2761e30"><span class="std std-ref">Simulation::inher_fraction</span></a>, <a class="reference internal" href="../api.html#classModel_1a1d8427bbcb5f7e9db04d213111e208ba"><span class="std std-ref">Model::dev_duration_probs</span></a>, <a class="reference internal" href="struct_life_params.html#structLifeParams_1aea4fb1949f3ae9889fbd022ce728c1e2"><span class="std std-ref">LifeParams::theta</span></a></p>
+<p><a class="reference internal" href="class_simulation.html#classSimulation_1ac5440a772e9d7788c588a795a7821fb6"><span class="std std-ref">Simulation::set_inheritance()</span></a>, <a class="reference internal" href="struct_input_params.html#structInputParams_1a7183128711c0a119f7fc72e94ae6bdd4"><span class="std std-ref">InputParams::theta</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -681,11 +628,7 @@ The number of surviving individuals in an age group (for a given genotype) is de
 <span id="_CPPv3N5Patch10juv_ecloseEv"></span><span id="_CPPv2N5Patch10juv_ecloseEv"></span><span id="Patch::juv_eclose"></span><span class="target" id="classPatch_1a935e1a959a81d818c161b1182a45e958"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">juv_eclose</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Turns the oldest juveniles into adults. </p>
 <p>
-The number of survivors is determined by a binomial distribution of the juvenile survival probability. Sex determination upon eclosion is determined by a binomial distribution with 0.5 probability. <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classPatch_1a9807128f092d63158e4d75279b508557"><span class="std std-ref">Patch::comp</span></a></p>
-</div>
-</p>
+The number of survivors is determined by a binomial distribution of the juvenile survival probability. Sex determination upon eclosion is determined by a binomial distribution with 0.5 probability. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Not all juveniles survive eclosion.</p>
@@ -696,9 +639,13 @@ The number of survivors is determined by a binomial distribution of the juvenile
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch11update_compEv">
 <span id="_CPPv3N5Patch11update_compEv"></span><span id="_CPPv2N5Patch11update_compEv"></span><span id="Patch::update_comp"></span><span class="target" id="classPatch_1abfcba309e2ecc8eb224b89a5f11d6042"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update_comp</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Updates the juvenile survival probability of the patch. </p>
-<p>Relevant parameters include the juvenile mortality rate, the juvenile survival probability power and the carrying capacity. <div class="admonition seealso">
+<p>Relevant parameters include the juvenile mortality rate, the juvenile survival probability power and the carrying capacity. The survival probability is computed as  <div class="math notranslate nohighlight">
+\[
+ \textrm{comp} = (1 - \mu_j)    \sqrt[\textrm{comp_power}]{\frac{\alpha}{\alpha + \textrm{J}_{\textrm{tot}}}},
+\]</div>
+ with <span class="math notranslate nohighlight">\( \mu_j \)</span> juvenile mortality rate and <span class="math notranslate nohighlight">\( \alpha \)</span> carrying capacity. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>Seasonality::get_alpha(), <a class="reference internal" href="../api.html#classPatch_1a5b781b751c5a39bb3a94640e3542a517"><span class="std std-ref">Patch::alpha0</span></a>, <a class="reference internal" href="struct_life_params.html#structLifeParams_1a02c6d31cc4adf7efc95abf6707c9f75b"><span class="std std-ref">LifeParams::mu_j</span></a>, <a class="reference internal" href="struct_life_params.html#structLifeParams_1a113c7b28bb3132aa7e9e34f5380f0837"><span class="std std-ref">LifeParams::comp_power</span></a>, <a class="reference internal" href="../api.html#classPatch_1a9807128f092d63158e4d75279b508557"><span class="std std-ref">Patch::comp</span></a></p>
+<p><a class="reference internal" href="class_seasonality.html#classSeasonality_1a86bfbdfc639ab1a08e3643e05b55d6f1"><span class="std std-ref">Seasonality::alpha()</span></a>, <a class="reference internal" href="struct_input_params.html#structInputParams_1a746b1ef46c9498a5dd09b825ea4b7a24"><span class="std std-ref">InputParams::mu_j</span></a>, <a class="reference internal" href="struct_input_params.html#structInputParams_1a99ec67370f4794427a09d93630b248e3"><span class="std std-ref">InputParams::comp_power</span></a></p>
 </div>
 </p>
 </dd></dl>
@@ -707,9 +654,13 @@ The number of survivors is determined by a binomial distribution of the juvenile
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch11update_mateEv">
 <span id="_CPPv3N5Patch11update_mateEv"></span><span id="_CPPv2N5Patch11update_mateEv"></span><span id="Patch::update_mate"></span><span class="target" id="classPatch_1a14846b95a2c4032ae4de370abc5ddb04"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update_mate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Updates the mating rate of the patch. </p>
-<p>Relevant parameters include the beta parameter. <div class="admonition seealso">
+<p>Relevant parameters include the beta parameter. The mating rate is computed as  <div class="math notranslate nohighlight">
+\[ 
+  \textrm{mate_rate} =  \frac{\textrm{M}_{\textrm{tot}}}{\beta + \textrm{M}_{\textrm{tot}}}.
+\]</div>
+ <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="struct_life_params.html#structLifeParams_1a2cf17ed50803c966c18b4d1ca30b442c"><span class="std std-ref">LifeParams::beta</span></a></p>
+<p><a class="reference internal" href="struct_input_params.html#structInputParams_1a4fb2cae8d6b3a9585e386b2bfeb03299"><span class="std std-ref">InputParams::beta</span></a></p>
 </div>
 </p>
 </dd></dl>

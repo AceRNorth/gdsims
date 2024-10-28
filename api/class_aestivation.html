@@ -48,6 +48,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script src="../_static/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/class_aestivation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -181,7 +182,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial7.html">7. Customising seasonality</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="library_root.html">Library API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="library_root.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="namespace_constants.html">Namespace constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structAestivationParams.html">Struct AestivationParams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structAreaParams.html">Struct AreaParams</a></li>
@@ -219,8 +220,6 @@
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517.html">Template Function check_bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be.html">Template Function check_interval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a38cf9054c93e1fced65fe33940dda566.html">Template Function file_read_and_validate_type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1af03c0e74140efa3114c4cd1361da5548.html">Function random_discrete(int, int)</a></li>
@@ -452,6 +451,11 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv411Aestivation">
 <span id="_CPPv311Aestivation"></span><span id="_CPPv211Aestivation"></span><span id="Aestivation"></span><span class="target" id="classAestivation"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Aestivation</span></span></span><br /></dt>
 <dd><p>Implements aestivative behaviour for the model. </p>
+<p>Only mated females aestivate, going into aestivation within a hiding time window determined by <code class="docutils literal notranslate"><span class="pre">t_hide1</span></code> and <code class="docutils literal notranslate"><span class="pre">t_hide2</span></code> and emerging from aestivation within a waking time window determined by <code class="docutils literal notranslate"><span class="pre">t_wake1</span></code> and <code class="docutils literal notranslate"><span class="pre">t_wake2</span></code>. The females are isolated from their original patches during aestivation and returned back at the end, dependent on mortality. Other parameter rates controlling aestivation are <code class="docutils literal notranslate"><span class="pre">psi</span></code> and <code class="docutils literal notranslate"><span class="pre">mu_aes</span></code>, the aestivation rate and aestivation mortality respectively. <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="struct_aestivation_params.html#structAestivationParams"><span class="std std-ref">AestivationParams</span></a></p>
+</div>
+</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -460,7 +464,7 @@ document.write(`
 <dd><p><a class="reference internal" href="#classAestivation"><span class="std std-ref">Aestivation</span></a> constructor. </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a></p>
+<p><a class="reference internal" href="class_model.html#classModel_1a17b3a93529de4ef762254f9a1932b67e"><span class="std std-ref">Model::get_sites()</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -478,9 +482,9 @@ document.write(`
 <span id="_CPPv3N11Aestivation4hideERNSt6vectorIP5PatchEE"></span><span id="_CPPv2N11Aestivation4hideERNSt6vectorIP5PatchEE"></span><span id="Aestivation::hide__std::vector:PatchP:R"></span><span class="target" id="classAestivation_1a43390ce5cf1f9be08cf9b82d8cce00f3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hide</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../api.html#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Hides aestivating females from their patches. </p>
 <p>
-The number of females that attempt to go into aestivation (of the given genotype combination) is determined by a binomial distribution of the aestivation rate. Of those, the number that survive is determined by a binomial distribution of 1 - mu_aes (the aestivation mortality). Aestivating females are temporarily separated from the rest of the female patch population. <div class="admonition seealso">
+The number of females that attempt to go into aestivation (of the given genotype combination) is determined by a binomial distribution of the aestivation rate. Of those, the number that survive is determined by a binomial distribution of 1 - <code class="docutils literal notranslate"><span class="pre">mu_aes</span></code> (the aestivation mortality). Aestivating females are temporarily separated from the rest of the female patch population. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classAestivation_1a8549d806f88e898cdd61219d75d517e1"><span class="std std-ref">Aestivation::psi</span></a>, <a class="reference internal" href="../api.html#classAestivation_1a8ba05278f1dce1144e82c32abd540dc0"><span class="std std-ref">Aestivation::mu_aes</span></a></p>
+<p><a class="reference internal" href="struct_input_params.html#structInputParams_1adc5b2a93829b4fa4eafa0e804446558a"><span class="std std-ref">InputParams::psi</span></a>, <a class="reference internal" href="struct_input_params.html#structInputParams_1af4132ca26a4a4ce1e19c46c89d8aee38"><span class="std std-ref">InputParams::mu_aes</span></a>, <a class="reference internal" href="../api.html#random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f"><span class="std std-ref">random_binomial()</span></a></p>
 </div>
 </p>
 <div class="admonition note">
@@ -498,9 +502,9 @@ The number of females that attempt to go into aestivation (of the given genotype
 <dt class="sig sig-object cpp" id="_CPPv4N11Aestivation4wakeEiRNSt6vectorIP5PatchEE">
 <span id="_CPPv3N11Aestivation4wakeEiRNSt6vectorIP5PatchEE"></span><span id="_CPPv2N11Aestivation4wakeEiRNSt6vectorIP5PatchEE"></span><span id="Aestivation::wake__i.std::vector:PatchP:R"></span><span class="target" id="classAestivation_1ade758967c3a5d774e15ffd2836b6e21d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wake</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../api.html#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Wakes a fraction of the aestivating females. </p>
-<p>The number of females that wake up on the given day (for the given genotype combination and patch) is determined by a binomial distribution with probability 1.0 / (1.0 + t_wake2 - (day%365). Those that wake are returned to their patch’s female population. <div class="admonition seealso">
+<p>The number of females that wake up on the given day (for the given genotype combination and patch) is determined by a binomial distribution with probability <code class="docutils literal notranslate"><span class="pre">1.0</span> <span class="pre">/</span> <span class="pre">(1.0</span> <span class="pre">+</span> <span class="pre">t_wake2</span> <span class="pre">-</span> <span class="pre">(day%365)</span></code>. Those that wake are returned to their patch’s female population. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classAestivation_1a63e9e51ce52b0df684c04584e30d89bd"><span class="std std-ref">Aestivation::t_wake2</span></a></p>
+<p><a class="reference internal" href="struct_input_params.html#structInputParams_1a4542cd7e2b6b2b386a9e63e08c2b527f"><span class="std std-ref">InputParams::t_wake2</span></a>, <a class="reference internal" href="../api.html#random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f"><span class="std std-ref">random_binomial()</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
@@ -517,9 +521,9 @@ The number of females that attempt to go into aestivation (of the given genotype
 <dt class="sig sig-object cpp" id="_CPPv4N11Aestivation12is_hide_timeEi">
 <span id="_CPPv3N11Aestivation12is_hide_timeEi"></span><span id="_CPPv2N11Aestivation12is_hide_timeEi"></span><span id="Aestivation::is_hide_time__i"></span><span class="target" id="classAestivation_1ad52ef1d1e4febab22176ac1690f22d76"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_hide_time</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Determines if the time is within the aestivation hiding window. </p>
-<p><div class="admonition seealso">
+<p><code class="docutils literal notranslate"><span class="pre">t_hide1</span></code> <span class="math notranslate nohighlight">\( &lt; t \le \)</span> <code class="docutils literal notranslate"><span class="pre">t_hide2</span></code> , where <span class="math notranslate nohighlight">\( t \)</span> is the day of the current year. Assumes <code class="docutils literal notranslate"><span class="pre">psi</span></code> &gt; 0.00001. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classAestivation_1af08e1211410a782de9d592829c6619e6"><span class="std std-ref">Aestivation::t_hide1</span></a>, <a class="reference internal" href="../api.html#classAestivation_1a22078820c3b6d2c0b410379fb85ba495"><span class="std std-ref">Aestivation::t_hide2</span></a>, <a class="reference internal" href="../api.html#classAestivation_1a8549d806f88e898cdd61219d75d517e1"><span class="std std-ref">Aestivation::psi</span></a></p>
+<p><a class="reference internal" href="struct_input_params.html#structInputParams_1a5d0c54631c85331b117bed861883fba5"><span class="std std-ref">InputParams::t_hide1</span></a>, <a class="reference internal" href="struct_input_params.html#structInputParams_1ae17cce0a7ef61941a6e97158ebf80f1c"><span class="std std-ref">InputParams::t_hide2</span></a>, <a class="reference internal" href="struct_input_params.html#structInputParams_1adc5b2a93829b4fa4eafa0e804446558a"><span class="std std-ref">InputParams::psi</span></a></p>
 </div>
 </p>
 <div class="admonition note">
@@ -540,14 +544,14 @@ The number of females that attempt to go into aestivation (of the given genotype
 <dt class="sig sig-object cpp" id="_CPPv4N11Aestivation12is_wake_timeEi">
 <span id="_CPPv3N11Aestivation12is_wake_timeEi"></span><span id="_CPPv2N11Aestivation12is_wake_timeEi"></span><span id="Aestivation::is_wake_time__i"></span><span class="target" id="classAestivation_1a28d413fd0b0ab424b5071832de34e86c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_wake_time</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Determines if the time is within the aestivation waking window. </p>
-<p><div class="admonition seealso">
+<p><code class="docutils literal notranslate"><span class="pre">t_wake1</span></code> <span class="math notranslate nohighlight">\( &lt; t \le \)</span> <code class="docutils literal notranslate"><span class="pre">t_wake2</span></code> , where <span class="math notranslate nohighlight">\( t \)</span> is the day of the current year. Assumes <code class="docutils literal notranslate"><span class="pre">psi</span></code> &gt; 0.00001. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../api.html#classAestivation_1a786f12e5e6b5be06c83fa21fc3b070f0"><span class="std std-ref">Aestivation::t_wake1</span></a>, <a class="reference internal" href="../api.html#classAestivation_1a63e9e51ce52b0df684c04584e30d89bd"><span class="std std-ref">Aestivation::t_wake2</span></a>, <a class="reference internal" href="../api.html#classAestivation_1a8549d806f88e898cdd61219d75d517e1"><span class="std std-ref">Aestivation::psi</span></a></p>
+<p><a class="reference internal" href="struct_input_params.html#structInputParams_1aa0b9fe354099482dfdead7877fd3409b"><span class="std std-ref">InputParams::t_wake1</span></a>, <a class="reference internal" href="struct_input_params.html#structInputParams_1a4542cd7e2b6b2b386a9e63e08c2b527f"><span class="std std-ref">InputParams::t_wake2</span></a>, <a class="reference internal" href="struct_input_params.html#structInputParams_1adc5b2a93829b4fa4eafa0e804446558a"><span class="std std-ref">InputParams::psi</span></a></p>
 </div>
 </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The wakinf window is exclusive of the start time but inclusive of the end time. </p>
+<p>The waking window is exclusive of the start time but inclusive of the end time. </p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

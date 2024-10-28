@@ -3,7 +3,7 @@
 Function main()
 ===============
 
-- Defined in :ref:`file__github_workspace_src_main.cpp`
+- Defined in :ref:`file_src_main.cpp`
 
 
 Function Documentation

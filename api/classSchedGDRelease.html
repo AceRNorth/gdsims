@@ -181,7 +181,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial7.html">7. Customising seasonality</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="library_root.html">Library API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="library_root.html">API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="namespace_constants.html">Namespace constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structAestivationParams.html">Struct AestivationParams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structAreaParams.html">Struct AreaParams</a></li>
@@ -219,8 +219,6 @@
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517.html">Template Function check_bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be.html">Template Function check_interval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a38cf9054c93e1fced65fe33940dda566.html">Template Function file_read_and_validate_type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1af03c0e74140efa3114c4cd1361da5548.html">Function random_discrete(int, int)</a></li>
@@ -465,7 +463,7 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv414SchedGDRelease">
 <span id="_CPPv314SchedGDRelease"></span><span id="_CPPv214SchedGDRelease"></span><span id="SchedGDRelease"></span><span class="target" id="classSchedGDRelease"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SchedGDRelease</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49GDRelease" title="GDRelease"><span class="n"><span class="pre">GDRelease</span></span></a><br /></dt>
 <dd><p>Implements gene drive release for pre-selected release sites. </p>
-<p>Release sites are kept the same for each release, using the same pre-selected sites. </p>
+<p>Release sites are kept the same for each release, using the same pre-selected sites from the available Patches. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -476,7 +474,7 @@ document.write(`
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> – <strong>[in]</strong> gene drive release parameters </p></li>
-<li><p><strong>rel_sites</strong> – <strong>[in]</strong> chosen release sites, indices relative to <a class="reference internal" href="../api.html#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a></p></li>
+<li><p><strong>rel_sites</strong> – <strong>[in]</strong> chosen release sites, indices relative to <a class="reference internal" href="class_model.html#classModel_1a17b3a93529de4ef762254f9a1932b67e"><span class="std std-ref">Model::get_sites()</span></a></p></li>
 <li><p><strong>sites</strong> – <strong>[in]</strong> vector of all <a class="reference internal" href="class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> objects </p></li>
 </ul>
 </dd>
