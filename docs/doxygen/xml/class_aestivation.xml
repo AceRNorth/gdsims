@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="24" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="24" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="26" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_aestivation_1a8ba05278f1dce1144e82c32abd540dc0" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="25" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="25" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="27" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_aestivation_1af08e1211410a782de9d592829c6619e6" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="26" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="26" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="28" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_aestivation_1a22078820c3b6d2c0b410379fb85ba495" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -62,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="27" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="27" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="29" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_aestivation_1a786f12e5e6b5be06c83fa21fc3b070f0" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -77,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="28" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="28" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="30" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_aestivation_1a63e9e51ce52b0df684c04584e30d89bd" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -92,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="29" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="29" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="31" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_aestivation_1af713622c387e052969ec6d2ceef88213" prot="private" static="no" mutable="no">
         <type>std::vector&lt; std::array&lt; std::array&lt; long long int, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt;, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt; &gt;</type>
@@ -108,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="31" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="31" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="33" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="33" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -147,13 +147,13 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">Model::sites</ref> </para>
+<simplesect kind="see"><para><ref refid="class_model_1a17b3a93529de4ef762254f9a1932b67e" kindref="member">Model::get_sites()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="17" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp" bodystart="13" bodyend="34"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="19" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp" bodystart="13" bodyend="34"/>
       </memberdef>
       <memberdef kind="function" id="class_aestivation_1a43390ce5cf1f9be08cf9b82d8cce00f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -171,7 +171,7 @@
         <detaileddescription>
 <para><simplesect kind="note"><para>Not all females survive aestivation. Only mated females aestivate.</para>
 </simplesect>
-The number of females that attempt to go into aestivation (of the given genotype combination) is determined by a binomial distribution of the aestivation rate. Of those, the number that survive is determined by a binomial distribution of 1 - mu_aes (the aestivation mortality). Aestivating females are temporarily separated from the rest of the female patch population. <parameterlist kind="param"><parameteritem>
+The number of females that attempt to go into aestivation (of the given genotype combination) is determined by a binomial distribution of the aestivation rate. Of those, the number that survive is determined by a binomial distribution of 1 - <computeroutput>mu_aes</computeroutput> (the aestivation mortality). Aestivating females are temporarily separated from the rest of the female patch population. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="inout">sites</parametername>
 </parameternamelist>
@@ -180,13 +180,13 @@ The number of females that attempt to go into aestivation (of the given genotype
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para><ref refid="class_aestivation_1a8549d806f88e898cdd61219d75d517e1" kindref="member">Aestivation::psi</ref>, <ref refid="class_aestivation_1a8ba05278f1dce1144e82c32abd540dc0" kindref="member">Aestivation::mu_aes</ref> </para>
+<simplesect kind="see"><para><ref refid="struct_input_params_1adc5b2a93829b4fa4eafa0e804446558a" kindref="member">InputParams::psi</ref>, <ref refid="struct_input_params_1af4132ca26a4a4ce1e19c46c89d8aee38" kindref="member">InputParams::mu_aes</ref>, <ref refid="random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f" kindref="member">random_binomial()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="18" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp" bodystart="43" bodyend="59"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="20" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp" bodystart="43" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="class_aestivation_1ade758967c3a5d774e15ffd2836b6e21d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -206,7 +206,7 @@ The number of females that attempt to go into aestivation (of the given genotype
 <para>Wakes a fraction of the aestivating females. </para>
         </briefdescription>
         <detaileddescription>
-<para>The number of females that wake up on the given day (for the given genotype combination and patch) is determined by a binomial distribution with probability 1.0 / (1.0 + t_wake2 - (day%365). Those that wake are returned to their patch&apos;s female population. <parameterlist kind="param"><parameteritem>
+<para>The number of females that wake up on the given day (for the given genotype combination and patch) is determined by a binomial distribution with probability <computeroutput>1.0 / (1.0 + t_wake2 - (day%365)</computeroutput>. Those that wake are returned to their patch&apos;s female population. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">day</parametername>
 </parameternamelist>
@@ -223,13 +223,13 @@ The number of females that attempt to go into aestivation (of the given genotype
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para><ref refid="class_aestivation_1a63e9e51ce52b0df684c04584e30d89bd" kindref="member">Aestivation::t_wake2</ref> </para>
+<simplesect kind="see"><para><ref refid="struct_input_params_1a4542cd7e2b6b2b386a9e63e08c2b527f" kindref="member">InputParams::t_wake2</ref>, <ref refid="random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f" kindref="member">random_binomial()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="19" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp" bodystart="68" bodyend="83"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="21" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp" bodystart="68" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="class_aestivation_1ad52ef1d1e4febab22176ac1690f22d76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -245,7 +245,7 @@ The number of females that attempt to go into aestivation (of the given genotype
 <para>Determines if the time is within the aestivation hiding window. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>The hiding window is exclusive of the start time but inclusive of the end time. </para>
+<para><computeroutput>t_hide1</computeroutput> <formula id="0">$ &lt; t \le $</formula> <computeroutput>t_hide2</computeroutput> , where <formula id="1">$ t $</formula> is the day of the current year. Assumes <computeroutput>psi</computeroutput> &gt; 0.00001. <simplesect kind="note"><para>The hiding window is exclusive of the start time but inclusive of the end time. </para>
 </simplesect>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -258,13 +258,13 @@ The number of females that attempt to go into aestivation (of the given genotype
 </parameterlist>
 <simplesect kind="return"><para>As you would expect. </para>
 </simplesect>
-<simplesect kind="see"><para><ref refid="class_aestivation_1af08e1211410a782de9d592829c6619e6" kindref="member">Aestivation::t_hide1</ref>, <ref refid="class_aestivation_1a22078820c3b6d2c0b410379fb85ba495" kindref="member">Aestivation::t_hide2</ref>, <ref refid="class_aestivation_1a8549d806f88e898cdd61219d75d517e1" kindref="member">Aestivation::psi</ref> </para>
+<simplesect kind="see"><para><ref refid="struct_input_params_1a5d0c54631c85331b117bed861883fba5" kindref="member">InputParams::t_hide1</ref>, <ref refid="struct_input_params_1ae17cce0a7ef61941a6e97158ebf80f1c" kindref="member">InputParams::t_hide2</ref>, <ref refid="struct_input_params_1adc5b2a93829b4fa4eafa0e804446558a" kindref="member">InputParams::psi</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="20" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp" bodystart="92" bodyend="95"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="22" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp" bodystart="94" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="class_aestivation_1a28d413fd0b0ab424b5071832de34e86c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -280,7 +280,7 @@ The number of females that attempt to go into aestivation (of the given genotype
 <para>Determines if the time is within the aestivation waking window. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>The wakinf window is exclusive of the start time but inclusive of the end time. </para>
+<para><computeroutput>t_wake1</computeroutput> <formula id="0">$ &lt; t \le $</formula> <computeroutput>t_wake2</computeroutput> , where <formula id="1">$ t $</formula> is the day of the current year. Assumes <computeroutput>psi</computeroutput> &gt; 0.00001. <simplesect kind="note"><para>The waking window is exclusive of the start time but inclusive of the end time. </para>
 </simplesect>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -293,21 +293,22 @@ The number of females that attempt to go into aestivation (of the given genotype
 </parameterlist>
 <simplesect kind="return"><para>As you would expect. </para>
 </simplesect>
-<simplesect kind="see"><para><ref refid="class_aestivation_1a786f12e5e6b5be06c83fa21fc3b070f0" kindref="member">Aestivation::t_wake1</ref>, <ref refid="class_aestivation_1a63e9e51ce52b0df684c04584e30d89bd" kindref="member">Aestivation::t_wake2</ref>, <ref refid="class_aestivation_1a8549d806f88e898cdd61219d75d517e1" kindref="member">Aestivation::psi</ref> </para>
+<simplesect kind="see"><para><ref refid="struct_input_params_1aa0b9fe354099482dfdead7877fd3409b" kindref="member">InputParams::t_wake1</ref>, <ref refid="struct_input_params_1a4542cd7e2b6b2b386a9e63e08c2b527f" kindref="member">InputParams::t_wake2</ref>, <ref refid="struct_input_params_1adc5b2a93829b4fa4eafa0e804446558a" kindref="member">InputParams::psi</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="21" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp" bodystart="104" bodyend="107"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="23" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp" bodystart="108" bodyend="111"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Implements aestivative behaviour for the model. </para>
     </briefdescription>
     <detaileddescription>
-<para><linebreak/>
- </para>
+<para>Only mated females aestivate, going into aestivation within a hiding time window determined by <computeroutput>t_hide1</computeroutput> and <computeroutput>t_hide2</computeroutput> and emerging from aestivation within a waking time window determined by <computeroutput>t_wake1</computeroutput> and <computeroutput>t_wake2</computeroutput>. The females are isolated from their original patches during aestivation and returned back at the end, dependent on mortality. Other parameter rates controlling aestivation are <computeroutput>psi</computeroutput> and <computeroutput>mu_aes</computeroutput>, the aestivation rate and aestivation mortality respectively. <simplesect kind="see"><para><ref refid="struct_aestivation_params" kindref="compound">AestivationParams</ref> </para>
+</simplesect>
+</para>
     </detaileddescription>
     <collaborationgraph>
       <node id="1">
@@ -315,7 +316,7 @@ The number of females that attempt to go into aestivation (of the given genotype
         <link refid="class_aestivation"/>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="15" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="15" bodyend="32"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" line="17" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Aestivation.h" bodystart="17" bodyend="34"/>
     <listofallmembers>
       <member refid="class_aestivation_1af713622c387e052969ec6d2ceef88213" prot="private" virt="non-virtual"><scope>Aestivation</scope><name>aes_F</name></member>
       <member refid="class_aestivation_1a51e62f2785f14f40c74698c76da16f41" prot="public" virt="non-virtual"><scope>Aestivation</scope><name>Aestivation</name></member>

@@ -1,7 +1,7 @@
 <map id="DistanceKernelDispersal" name="DistanceKernelDispersal">
-<area shape="rect" id="Node000001" title="Implements dispersive behaviour in the model for simple dispersal, where connection weights between p..." alt="" coords="5,471,179,604"/>
-<area shape="rect" id="Node000002" href="$class_dispersal.html" title="Dispersal base class." alt="" coords="25,181,159,421"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,436,95,471,89,471,89,436"/>
-<area shape="rect" id="Node000003" href="$class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="24,5,160,117"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="95,117,95,164,89,164,89,117"/>
+<area shape="rect" id="Node000001" title="Implements dispersive behaviour in the model for simple dispersal, where connection weights between p..." alt="" coords="5,492,179,625"/>
+<area shape="rect" id="Node000002" href="$class_dispersal.html" title="Dispersal base class." alt="" coords="25,203,159,443"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,458,95,492,89,492,89,458"/>
+<area shape="rect" id="Node000003" href="$class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="20,5,164,139"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="95,138,95,186,89,186,89,138"/>
 </map>

@@ -4,7 +4,6 @@
 #include "Patch.h"
 #include "random.h"
 
-// Releases the gene drive mosquitoes into the simulation area
 /**
  * Releases the gene drive mosquitoes into the simulation area if it is time for release.
  * @param[in] day 			simulation day
@@ -22,7 +21,6 @@ void GDRelease::release_gene_drive(int day, std::vector<Patch*> &sites)
  * Determines if the day is a chosen release time.
  * @param[in] day simulation day
  * @return As you would expect.
- * @see GDRelease::release_times
  */
 bool GDRelease::is_release_time(int day)
 {
@@ -31,9 +29,8 @@ bool GDRelease::is_release_time(int day)
 
 /**
  * Adds drive heterozygous (WD) male mosquitoes to the release sites.
- * @details Relevant parameters include the number of male driver mosquitoes to be released at each site.
+ * @details Relevant parameters include the number of male driver mosquitoes to be released at each site ``num_driver_M``.
  * @param[in, out] rel_sites release sites
- * @see GDRelease::num_driver_M
  */
 void GDRelease::put_driver_sites(std::vector<Patch*>& rel_sites) 
 {
@@ -78,7 +75,7 @@ std::vector<Patch*> RandomGDRelease::select_driver_sites(int day, const std::vec
 /**
  * SchedGDRelease constructor. 
  * @param[in] params 	gene drive release parameters
- * @param[in] rel_sites chosen release sites, indices relative to Model::sites
+ * @param[in] rel_sites chosen release sites, indices relative to Model::get_sites()
  * @param[in] sites		vector of all Patch objects
  */
 SchedGDRelease::SchedGDRelease(ReleaseParams* params, std::vector<int> rel_sites, std::vector<Patch*> &sites): GDRelease(params->num_driver_M, params->release_times) 
@@ -88,7 +85,6 @@ SchedGDRelease::SchedGDRelease(ReleaseParams* params, std::vector<int> rel_sites
     }
 }
 
-// Selects the release sites corresponding to the selected release time
 /**
  * Selects the release sites corresponding to the selected release time.
  * @param[in] day	simulation day

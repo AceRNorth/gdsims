@@ -33,7 +33,7 @@ Collaboration diagram for Radial\+Dispersal\+:\nopagebreak
 \mbox{\hyperlink{class_radial_dispersal_ac63e6e6d97e7c720b6e6ef349e07c711}{Radial\+Dispersal}} (\mbox{\hyperlink{struct_dispersal_params}{Dispersal\+Params}} \texorpdfstring{$\ast$}{*}params, \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} boundary, double side)
 \begin{DoxyCompactList}\small\item\em \doxylink{class_radial_dispersal}{Radial\+Dispersal} constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_radial_dispersal_a363d41e54203e0cd6cadb0667b1f6548}{set\+\_\+connecs}} (std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites) override
-\begin{DoxyCompactList}\small\item\em Sets the inter-\/patch connectivities for dispersal. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Sets the inter-\/patch connectivities for radial dispersal. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_radial_dispersal_aa3bca3cc8b2d80af4bd11d91cacf09bb}{adults\+\_\+disperse}} (std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites) override
 \begin{DoxyCompactList}\small\item\em Implements dispersal by adults from and to each patch, depending on the patch connectivities. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_dispersal}{Dispersal}}}
@@ -87,7 +87,7 @@ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{class_dispersa
 \doxysubsection{Detailed Description}
 Implements dispersive behaviour for radial dispersal, where connection weights between patches are determined by the direction the patches are in relative to each other and other patches. 
 
-Particularly, connection weights will be determined by the arc of the first patch\textquotesingle{}s catchment radius covered by the second patch. Closer patches will reduce dispersal to further patches which are in the same interval. Those individuals that disperse in a direction with no patches will die. ... 
+Particularly, the connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. The individuals that disperse in an unconnected direction will die.  
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_radial_dispersal_ac63e6e6d97e7c720b6e6ef349e07c711}\label{class_radial_dispersal_ac63e6e6d97e7c720b6e6ef349e07c711} 
@@ -131,7 +131,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}, \doxylink{class_radial_dispersal_ad09b4df09539d8b421c8d7ed3199d0c4}{Radial\+Dispersal\+::compute\+\_\+connecs()} 
+\doxylink{class_model_a17b3a93529de4ef762254f9a1932b67e}{Model\+::get\+\_\+sites()}, \doxylink{random_8cpp_a4e7a8d4c70cb879b071d51ddec9a8b1f}{random\+\_\+binomial()}, \doxylink{random_8cpp_a180e4f01c99b4c4fae00714c08fa647b}{random\+\_\+multinomial()} 
 \end{DoxySeeAlso}
 
 
@@ -147,7 +147,7 @@ Implements \mbox{\hyperlink{class_dispersal_a90638547dc5983463ee88d89a9167b5a}{D
 
 Computes the set of connection indices and weights for a group of patches. 
 
-If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by angle of bisecting lines from the centre of the focal patch to the catchment of the recieving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum disperdal distance are not connected. \begin{DoxyNote}{Note}
+If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum dispersal distance are not connected. \begin{DoxyNote}{Note}
 Under this dispersal type, patches are NOT connected to themselves. 
 \end{DoxyNote}
 
@@ -229,9 +229,9 @@ The sorted indices vector.
 
 
 
-Sets the inter-\/patch connectivities for dispersal. 
+Sets the inter-\/patch connectivities for radial dispersal. 
 
-
+If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum dispersal distance are not connected. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
 \hline

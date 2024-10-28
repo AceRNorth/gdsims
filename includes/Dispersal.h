@@ -14,6 +14,8 @@ class Patch;
 
 /**
  * Dispersal base class. Defines the interface for dispersal classes. 
+ * @details The Dispersal classes compute the connections between Patch objects with their respective connection weights, dependent on the maximum dispersal distance ``max_dist``, and carry out dispersal in and out of the patches, dependent on the dispersal rate ``disp_rate``. 
+ * @see DispersalParams
  */
 class Dispersal {
 public:
@@ -58,7 +60,8 @@ private:
 
 /**
  * Implements dispersive behaviour for radial dispersal, where connection weights between patches are determined by the direction the patches are in relative to each other and other patches. 
- * @details Particularly, connection weights will be determined by the arc of the first patch's catchment radius covered by the second patch. Closer patches will reduce dispersal to further patches which are in the same interval. Those individuals that disperse in a direction with no patches will die. ...
+ * @details Particularly, the connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. The individuals that disperse in an unconnected direction will die. 
+ * @image xml radial_disp_diagram.png "Radial dispersal diagram"
  */
 class RadialDispersal: public Dispersal {
 public:

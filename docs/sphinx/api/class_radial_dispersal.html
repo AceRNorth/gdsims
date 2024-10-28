@@ -160,6 +160,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="../user_guide/user_guide_root.html">User Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/param_sets.html">Parameter sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/output.html">Output files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/custom_set.html">Custom sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/adv_options.html">Advanced options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/defaults.html">Default behaviours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/structure.html">File structure and architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/code.html">Interacting through code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/test.html">Running tests</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/tutorials_root.html">Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial1.html">1. Running a pre-defined set</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial2.html">2. Running a custom set</a></li>
@@ -170,7 +181,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial7.html">7. Customising seasonality</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="library_root.html">Library API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="library_root.html">API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="namespace_constants.html">Namespace constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="struct_aestivation_params.html">Struct AestivationParams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="struct_area_params.html">Struct AreaParams</a></li>
@@ -208,8 +219,6 @@
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517.html">Template Function check_bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be.html">Template Function check_interval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_inputval_8h_1a38cf9054c93e1fced65fe33940dda566.html">Template Function file_read_and_validate_type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_random_8h_1af03c0e74140efa3114c4cd1361da5548.html">Function random_discrete(int, int)</a></li>
@@ -454,7 +463,7 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv415RadialDispersal">
 <span id="_CPPv315RadialDispersal"></span><span id="_CPPv215RadialDispersal"></span><span id="RadialDispersal"></span><span class="target" id="class_radial_dispersal"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RadialDispersal</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="class_dispersal.html#_CPPv49Dispersal" title="Dispersal"><span class="n"><span class="pre">Dispersal</span></span></a><a class="headerlink" href="#_CPPv415RadialDispersal" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Implements dispersive behaviour for radial dispersal, where connection weights between patches are determined by the direction the patches are in relative to each other and other patches. </p>
-<p>Particularly, connection weights will be determined by the arc of the first patch’s catchment radius covered by the second patch. Closer patches will reduce dispersal to further patches which are in the same interval. Those individuals that disperse in a direction with no patches will die. … </p>
+<p>Particularly, the connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. The individuals that disperse in an unconnected direction will die. <img alt="../_images/radial_disp_diagram.png" src="../_images/radial_disp_diagram.png" /></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -475,7 +484,8 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N15RadialDispersal11set_connecsERNSt6vectorIP5PatchEE">
 <span id="_CPPv3N15RadialDispersal11set_connecsERNSt6vectorIP5PatchEE"></span><span id="_CPPv2N15RadialDispersal11set_connecsERNSt6vectorIP5PatchEE"></span><span id="RadialDispersal::set_connecs__std::vector:PatchP:R"></span><span class="target" id="class_radial_dispersal_1a363d41e54203e0cd6cadb0667b1f6548"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_connecs</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="class_patch.html#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N15RadialDispersal11set_connecsERNSt6vectorIP5PatchEE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Sets the inter-patch connectivities for dispersal. </p>
+<dd><p>Sets the inter-patch connectivities for radial dispersal. </p>
+<p>If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum dispersal distance are not connected. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>sites</strong> – <strong>[in]</strong> vector of all <a class="reference internal" href="class_patch.html#class_patch"><span class="std std-ref">Patch</span></a> objects </p>
@@ -490,7 +500,7 @@ document.write(`
 <p>
 Only those individuals that disperse out of a patch in a connected direction will survive. The number of dispersing males (of a given genotype) that survive dispersal out of their patch is determined by a random draw from a binomial distribution with probability of the total connection weight for all its connected patches. Of those, the number dispersing to each of the connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>Model::sites, RadialDispersal::compute_connecs()</p>
+<p><a class="reference internal" href="class_model.html#class_model_1a17b3a93529de4ef762254f9a1932b67e"><span class="std std-ref">Model::get_sites()</span></a>, <a class="reference internal" href="../api.html#random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f"><span class="std std-ref">random_binomial()</span></a>, <a class="reference internal" href="../api.html#random_8cpp_1a180e4f01c99b4c4fae00714c08fa647b"><span class="std std-ref">random_multinomial()</span></a></p>
 </div>
 </p>
 <div class="admonition note">

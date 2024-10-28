@@ -22,59 +22,59 @@
 \DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_g_d_release}{GDRelease}};}
 \DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_seasonality}{Seasonality}};}
 \DoxyCodeLine{00020\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_model}{Model}}\ \{}
-\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_model_a46b88e44d343b0bc26544e1e77538e5b}{Model}}(\mbox{\hyperlink{struct_model_params}{ModelParams}}\ *params,\ \textcolor{keyword}{const}\ std::array<std::array<std::array\ <double,\ constants::num\_gen>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>\ \&inher\_frac,\ \mbox{\hyperlink{struct_sine_rainfall_params}{SineRainfallParams}}\ *season,\ \textcolor{keywordtype}{double}\ a0\_mean,\ \textcolor{keywordtype}{double}\ a0\_var,\ std::vector<int>\ rel\_sites\ =\ \{\},\ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{BoundaryType}}\ boundary\ =\ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d}{BoundaryType::Toroid}},\ \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{DispersalType}}\ disp\_type\ =\ \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf}{DispersalType::DistanceKernel}},\ std::vector<Point>\ coords\ =\ \{\});}
-\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_model_a46b88e44d343b0bc26544e1e77538e5b}{Model}}(\mbox{\hyperlink{struct_model_params}{ModelParams}}\ *params,\ \textcolor{keyword}{const}\ std::array<std::array<std::array\ <double,\ constants::num\_gen>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>\ \&inher\_frac,\ \mbox{\hyperlink{struct_input_rainfall_params}{InputRainfallParams}}\ *season,\ \textcolor{keywordtype}{double}\ a0\_mean,\ \textcolor{keywordtype}{double}\ a0\_var,\ std::vector<int>\ rel\_sites\ =\ \{\},\ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{BoundaryType}}\ boundary\ =\ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d}{BoundaryType::Toroid}},\ \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{DispersalType}}\ disp\_type\ =\ \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf}{DispersalType::DistanceKernel}},\ std::vector<Point>\ coords\ =\ \{\});}
-\DoxyCodeLine{00029\ \ \ \ \ }
-\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_model_ad6ebd2062a0b823db841a0b88baac4c0}{\string~Model}}();}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a3d359ced00aacc31a7b50c53b8b1e340}{initiate}}();}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a7e4eb741e72b3946a9166dceed6fc02d}{run}}(\textcolor{keywordtype}{int}\ day);}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_a8aaa1031c217f20626283a360d44b53f}{calculate\_tot\_J}}();\ }
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_ab92b4e7f88b556e690391528330ba6af}{calculate\_tot\_M}}();}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_a0d762e0b53f2f1443b59d1425366cfc4}{calculate\_tot\_V}}();}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_a8be5555da392871558de820795938a04}{calculate\_tot\_F}}();}
-\DoxyCodeLine{00038\ \ \ \ \ std::array<long\ long\ int,\ constants::num\_gen>\ \mbox{\hyperlink{class_model_a6d5f4f68f41e76c3e966e312d2f6e9e3}{calculate\_tot\_M\_gen}}();}
-\DoxyCodeLine{00039\ \ \ \ \ std::vector<Patch*>\ \mbox{\hyperlink{class_model_a17b3a93529de4ef762254f9a1932b67e}{get\_sites}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_a6499bfa0eeb48133e352ce72f79aee9d}{get\_day}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_a04c1c541fc6d4f4c12f854b971197ea5}{get\_alpha}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_ad1efe8336546de49c99d0d8c8ec8e6e8}{alpha0}});}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00044\ \ \ \ \ std::vector<Patch*>\ \mbox{\hyperlink{class_model_a9aadb122b13c0e8be4f2437117264879}{sites}};\ }
-\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_dispersal}{Dispersal}}*\ \mbox{\hyperlink{class_model_a76d71b89f763d239c57657156b143231}{dispersal}};}
-\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_aestivation}{Aestivation}}*\ \mbox{\hyperlink{class_model_a9671f0b8d7b750684254ced32a7b1bc9}{aestivation}};}
-\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_g_d_release}{GDRelease}}*\ \mbox{\hyperlink{class_model_a9d0be7ddf0f62f9e9444ab5be8be8da6}{gd\_release}};}
-\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_seasonality}{Seasonality}}*\ \mbox{\hyperlink{class_model_a9d3cb8400740de092adeaa6fdea121a8}{seasonality}};}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_a864dafb787704b50f6b3ca2b416533df}{day\_sim}};\ }
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ simulation\ area\ parameters}}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_a73f36f72009040a8bcf8b15a94961b55}{num\_pat}};\ }
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_ad456b9a7464879d80abb19f1d14971cf}{side}};\ }
-\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{struct_initial_pops_params}{InitialPopsParams}}\ *\mbox{\hyperlink{class_model_a9f55ce896e1332f492570af65cfe76d4}{initial\_pops}};\ }
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ juvenile\ development\ parameters\ -\/\ common\ for\ all\ Patches}}
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_af1ba01eda7176a872d16eff80fa8cde9}{min\_dev}};\ }
-\DoxyCodeLine{00060\ \ \ \ \ std::array<double,\ constants::max\_dev+1>\ \mbox{\hyperlink{class_model_a1d8427bbcb5f7e9db04d213111e208ba}{dev\_duration\_probs}};\ }
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ inheritance}}
-\DoxyCodeLine{00063\ \ \ \ \ std::array<std::array<std::array\ <double,\ constants::num\_gen>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>\ \mbox{\hyperlink{class_model_a0fb3ac96dac77d8c0f67142ab70ad899}{inher\_fraction}};\ }
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ Patch\ construction\ parameters}}
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_a106416d6d9dc6510bda17ea0b6b1b588}{alpha0\_mean}};\ }
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_ad10cafc06c6b49b020c22efb034f8362}{alpha0\_variance}};\ }
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_ad1efe8336546de49c99d0d8c8ec8e6e8}{alpha0}}();}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ initiation\ methods}}
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_add15fa39b2e8fda3fefc551de4d0e1bb}{populate\_sites}}();}
-\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a1b78097ea008a3b4cc36b321c7d42289}{set\_dev\_duration\_probs}}(\textcolor{keywordtype}{int}\ min\_time,\ \textcolor{keywordtype}{int}\ max\_time);}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ life-\/processes\ -\/\ interface\ with\ Patch}}
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_ae7c17f3d562ffc8baea8945ba4ffd3c3}{run\_step}}(\textcolor{keywordtype}{int}\ day);}
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a2a3151eb1bb6333c2ba103f0c7c6c475}{juv\_get\_older}}();}
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_ae2fa6af0cf426e1df144e4dcbee4069d}{adults\_die}}();}
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a76f26441a5112d1f596d5b9317734be4}{virgins\_mate}}();}
-\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a85c48027be32159a36337531249a435a}{lay\_eggs}}();}
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_af30fafd15a6451c20c3dcef622aaf6d0}{juv\_eclose}}();}
-\DoxyCodeLine{00081\ \};}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_MODEL\_H}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_model}{Model}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_model_a46b88e44d343b0bc26544e1e77538e5b}{Model}}(\mbox{\hyperlink{struct_model_params}{ModelParams}}\ *params,\ \textcolor{keyword}{const}\ std::array<std::array<std::array\ <double,\ constants::num\_gen>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>\ \&inher\_frac,\ \mbox{\hyperlink{struct_sine_rainfall_params}{SineRainfallParams}}\ *season,\ \textcolor{keywordtype}{double}\ a0\_mean,\ \textcolor{keywordtype}{double}\ a0\_var,\ std::vector<int>\ rel\_sites\ =\ \{\},\ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{BoundaryType}}\ boundary\ =\ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d}{BoundaryType::Toroid}},\ \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{DispersalType}}\ disp\_type\ =\ \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf}{DispersalType::DistanceKernel}},\ std::vector<Point>\ coords\ =\ \{\});}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_model_a46b88e44d343b0bc26544e1e77538e5b}{Model}}(\mbox{\hyperlink{struct_model_params}{ModelParams}}\ *params,\ \textcolor{keyword}{const}\ std::array<std::array<std::array\ <double,\ constants::num\_gen>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>\ \&inher\_frac,\ \mbox{\hyperlink{struct_input_rainfall_params}{InputRainfallParams}}\ *season,\ \textcolor{keywordtype}{double}\ a0\_mean,\ \textcolor{keywordtype}{double}\ a0\_var,\ std::vector<int>\ rel\_sites\ =\ \{\},\ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{BoundaryType}}\ boundary\ =\ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d}{BoundaryType::Toroid}},\ \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{DispersalType}}\ disp\_type\ =\ \mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf}{DispersalType::DistanceKernel}},\ std::vector<Point>\ coords\ =\ \{\});}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_model_ad6ebd2062a0b823db841a0b88baac4c0}{\string~Model}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a3d359ced00aacc31a7b50c53b8b1e340}{initiate}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a7e4eb741e72b3946a9166dceed6fc02d}{run}}(\textcolor{keywordtype}{int}\ day);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_a8aaa1031c217f20626283a360d44b53f}{calculate\_tot\_J}}();\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_ab92b4e7f88b556e690391528330ba6af}{calculate\_tot\_M}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_a0d762e0b53f2f1443b59d1425366cfc4}{calculate\_tot\_V}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_a8be5555da392871558de820795938a04}{calculate\_tot\_F}}();}
+\DoxyCodeLine{00039\ \ \ \ \ std::array<long\ long\ int,\ constants::num\_gen>\ \mbox{\hyperlink{class_model_a6d5f4f68f41e76c3e966e312d2f6e9e3}{calculate\_tot\_M\_gen}}();}
+\DoxyCodeLine{00040\ \ \ \ \ std::vector<Patch*>\ \mbox{\hyperlink{class_model_a17b3a93529de4ef762254f9a1932b67e}{get\_sites}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_a6499bfa0eeb48133e352ce72f79aee9d}{get\_day}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_a04c1c541fc6d4f4c12f854b971197ea5}{get\_alpha}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_ad1efe8336546de49c99d0d8c8ec8e6e8}{alpha0}});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ std::vector<Patch*>\ \mbox{\hyperlink{class_model_a9aadb122b13c0e8be4f2437117264879}{sites}};\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_dispersal}{Dispersal}}*\ \mbox{\hyperlink{class_model_a76d71b89f763d239c57657156b143231}{dispersal}};}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_aestivation}{Aestivation}}*\ \mbox{\hyperlink{class_model_a9671f0b8d7b750684254ced32a7b1bc9}{aestivation}};}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_g_d_release}{GDRelease}}*\ \mbox{\hyperlink{class_model_a9d0be7ddf0f62f9e9444ab5be8be8da6}{gd\_release}};}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_seasonality}{Seasonality}}*\ \mbox{\hyperlink{class_model_a9d3cb8400740de092adeaa6fdea121a8}{seasonality}};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_a864dafb787704b50f6b3ca2b416533df}{day\_sim}};\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ simulation\ area\ parameters}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_a73f36f72009040a8bcf8b15a94961b55}{num\_pat}};\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_ad456b9a7464879d80abb19f1d14971cf}{side}};\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{struct_initial_pops_params}{InitialPopsParams}}\ *\mbox{\hyperlink{class_model_a9f55ce896e1332f492570af65cfe76d4}{initial\_pops}};\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ juvenile\ development\ parameters\ -\/\ common\ for\ all\ Patches}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_af1ba01eda7176a872d16eff80fa8cde9}{min\_dev}};\ }
+\DoxyCodeLine{00061\ \ \ \ \ std::array<double,\ constants::max\_dev+1>\ \mbox{\hyperlink{class_model_a1d8427bbcb5f7e9db04d213111e208ba}{dev\_duration\_probs}};\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ inheritance}}
+\DoxyCodeLine{00064\ \ \ \ \ std::array<std::array<std::array\ <double,\ constants::num\_gen>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>\ \mbox{\hyperlink{class_model_a0fb3ac96dac77d8c0f67142ab70ad899}{inher\_fraction}};\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ Patch\ construction\ parameters}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_a106416d6d9dc6510bda17ea0b6b1b588}{alpha0\_mean}};\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_ad10cafc06c6b49b020c22efb034f8362}{alpha0\_variance}};\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_ad1efe8336546de49c99d0d8c8ec8e6e8}{alpha0}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\ initiation\ methods}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_add15fa39b2e8fda3fefc551de4d0e1bb}{populate\_sites}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a1b78097ea008a3b4cc36b321c7d42289}{set\_dev\_duration\_probs}}(\textcolor{keywordtype}{int}\ min\_time,\ \textcolor{keywordtype}{int}\ max\_time);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ life-\/processes\ -\/\ interface\ with\ Patch}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_ae7c17f3d562ffc8baea8945ba4ffd3c3}{run\_step}}(\textcolor{keywordtype}{int}\ day);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a2a3151eb1bb6333c2ba103f0c7c6c475}{juv\_get\_older}}();}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_ae2fa6af0cf426e1df144e4dcbee4069d}{adults\_die}}();}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a76f26441a5112d1f596d5b9317734be4}{virgins\_mate}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a85c48027be32159a36337531249a435a}{lay\_eggs}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_af30fafd15a6451c20c3dcef622aaf6d0}{juv\_eclose}}();}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_MODEL\_H}}
 
 \end{DoxyCode}

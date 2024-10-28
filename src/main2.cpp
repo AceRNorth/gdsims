@@ -5,16 +5,18 @@
 #include "constants.h"
 #include "Params.h"
 
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+
 int main() {
 
-    //std::string params_filename; // file needs to be in build directory
+    //std::string params_filename; 
     //std::cin >> params_filename;
 
     char boundary_type;
     char disp_type;
-    std::string coords_filename; // file needs to be in build directory
-    std::string rainfall_filename; // file needs to be in build directory
-    std::string rel_times_filename; // file needs to be in build directory
+    std::string coords_filename; 
+    std::string rainfall_filename; 
+    std::string rel_times_filename;
 
     // input parameters
 	// progression parameters
@@ -186,3 +188,5 @@ int main() {
 
     return 0;
 }
+
+#endif /* DOXYGEN_SHOULD_SKIP_THIS */

@@ -223,15 +223,15 @@
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="83"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_aestivation_1ad52ef1d1e4febab22176ac1690f22d76" kindref="member">Aestivation::is_hide_time</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day)<sp/></highlight></codeline>
-<codeline lineno="93"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>day%365<sp/>&gt;<sp/><ref refid="class_aestivation_1af08e1211410a782de9d592829c6619e6" kindref="member">t_hide1</ref><sp/>&amp;&amp;<sp/>day%365<sp/>&lt;=<sp/><ref refid="class_aestivation_1a22078820c3b6d2c0b410379fb85ba495" kindref="member">t_hide2</ref><sp/>&amp;&amp;<sp/><ref refid="class_aestivation_1a8549d806f88e898cdd61219d75d517e1" kindref="member">psi</ref><sp/>&gt;<sp/>0.00001;</highlight></codeline>
-<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_aestivation_1a28d413fd0b0ab424b5071832de34e86c" kindref="member">Aestivation::is_wake_time</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day)<sp/></highlight></codeline>
-<codeline lineno="105"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>day%365<sp/>&gt;<sp/><ref refid="class_aestivation_1a786f12e5e6b5be06c83fa21fc3b070f0" kindref="member">t_wake1</ref><sp/>&amp;&amp;<sp/>day%365<sp/>&lt;=<sp/><ref refid="class_aestivation_1a63e9e51ce52b0df684c04584e30d89bd" kindref="member">t_wake2</ref><sp/>&amp;&amp;<sp/><ref refid="class_aestivation_1a8549d806f88e898cdd61219d75d517e1" kindref="member">psi</ref><sp/>&gt;<sp/>0.00001;</highlight></codeline>
-<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_aestivation_1ad52ef1d1e4febab22176ac1690f22d76" kindref="member">Aestivation::is_hide_time</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day)<sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>day%365<sp/>&gt;<sp/><ref refid="class_aestivation_1af08e1211410a782de9d592829c6619e6" kindref="member">t_hide1</ref><sp/>&amp;&amp;<sp/>day%365<sp/>&lt;=<sp/><ref refid="class_aestivation_1a22078820c3b6d2c0b410379fb85ba495" kindref="member">t_hide2</ref><sp/>&amp;&amp;<sp/><ref refid="class_aestivation_1a8549d806f88e898cdd61219d75d517e1" kindref="member">psi</ref><sp/>&gt;<sp/>0.00001;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_aestivation_1a28d413fd0b0ab424b5071832de34e86c" kindref="member">Aestivation::is_wake_time</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day)<sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>day%365<sp/>&gt;<sp/><ref refid="class_aestivation_1a786f12e5e6b5be06c83fa21fc3b070f0" kindref="member">t_wake1</ref><sp/>&amp;&amp;<sp/>day%365<sp/>&lt;=<sp/><ref refid="class_aestivation_1a63e9e51ce52b0df684c04584e30d89bd" kindref="member">t_wake2</ref><sp/>&amp;&amp;<sp/><ref refid="class_aestivation_1a8549d806f88e898cdd61219d75d517e1" kindref="member">psi</ref><sp/>&gt;<sp/>0.00001;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Aestivation.cpp"/>
   </compounddef>

@@ -9,6 +9,7 @@ class Patch;
 
 /**
  * Gene drive release base class. Defines the basic implementation of gene drive release in the model.
+ * @details GDRelease classes implement the selection mechanism of the release sites from available patches and the release of gene drive mosquitoes into the Patch objects at the chosen release times. The number of drive heterozygous male mosquitoes released into each release site at each release time is determined by ``num_driver_M``. 
  */
 class GDRelease {
 public:
@@ -30,7 +31,8 @@ protected:
 
 /**
  * Implements gene drive release for randomised release sites. 
- * @details Release sites are randomised upon each release time. 
+ * @details Release sites are randomised upon each release time, with the number selected on each release dependent on ``num_driver_sites``.
+ * @see ReleaseParams::num_driver_sites
  */
 class RandomGDRelease: public GDRelease {
 public:
@@ -42,7 +44,7 @@ private:
 
 /**
  * Implements gene drive release for pre-selected release sites.
- * @details Release sites are kept the same for each release, using the same pre-selected sites. 
+ * @details Release sites are kept the same for each release, using the same pre-selected sites from the available Patches. 
  */
 class SchedGDRelease: public GDRelease {
 public:

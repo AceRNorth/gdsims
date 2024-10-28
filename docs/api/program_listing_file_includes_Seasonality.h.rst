@@ -19,6 +19,7 @@ Program Listing for File Seasonality.h
    class Seasonality {
    public:
        Seasonality(double alpha1): alpha1(alpha1) {}
+       ~Seasonality() {}
        virtual double alpha(int day, double alpha0) = 0;
    
    protected:

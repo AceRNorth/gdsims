@@ -99,11 +99,11 @@ Collaboration diagram for RadialDispersal:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_radial_dispersal__coll__graph.png" border="0" usemap="#a_radial_dispersal_coll__map" alt="Collaboration graph"/></div>
 <map name="a_radial_dispersal_coll__map" id="a_radial_dispersal_coll__map">
-<area shape="rect" title="Implements dispersive behaviour for radial dispersal, where connection weights between patches are de..." alt="" coords="5,471,172,689"/>
-<area shape="rect" href="class_dispersal.html" title="Dispersal base class." alt="" coords="22,181,155,421"/>
-<area shape="poly" title=" " alt="" coords="91,436,91,471,86,471,86,436"/>
-<area shape="rect" href="class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="21,5,157,117"/>
-<area shape="poly" title=" " alt="" coords="91,117,91,164,86,164,86,117"/>
+<area shape="rect" title="Implements dispersive behaviour for radial dispersal, where connection weights between patches are de..." alt="" coords="5,492,172,711"/>
+<area shape="rect" href="class_dispersal.html" title="Dispersal base class." alt="" coords="22,203,155,443"/>
+<area shape="poly" title=" " alt="" coords="91,458,91,492,86,492,86,458"/>
+<area shape="rect" href="class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="17,5,161,139"/>
+<area shape="poly" title=" " alt="" coords="91,138,91,186,86,186,86,138"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -113,7 +113,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac63e6e6d97e7c720b6e6ef349e07c711"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_radial_dispersal.html" title="Implements dispersive behaviour for radial dispersal, where connection weights between patches are de...">RadialDispersal</a> constructor.  <br /></td></tr>
 <tr class="separator:ac63e6e6d97e7c720b6e6ef349e07c711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a363d41e54203e0cd6cadb0667b1f6548" id="r_a363d41e54203e0cd6cadb0667b1f6548"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a363d41e54203e0cd6cadb0667b1f6548">set_connecs</a> (std::vector&lt; <a class="el" href="class_patch.html">Patch</a> * &gt; &amp;sites) override</td></tr>
-<tr class="memdesc:a363d41e54203e0cd6cadb0667b1f6548"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the inter-patch connectivities for dispersal.  <br /></td></tr>
+<tr class="memdesc:a363d41e54203e0cd6cadb0667b1f6548"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the inter-patch connectivities for radial dispersal.  <br /></td></tr>
 <tr class="separator:a363d41e54203e0cd6cadb0667b1f6548"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3bca3cc8b2d80af4bd11d91cacf09bb" id="r_aa3bca3cc8b2d80af4bd11d91cacf09bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3bca3cc8b2d80af4bd11d91cacf09bb">adults_disperse</a> (std::vector&lt; <a class="el" href="class_patch.html">Patch</a> * &gt; &amp;sites) override</td></tr>
 <tr class="memdesc:aa3bca3cc8b2d80af4bd11d91cacf09bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements dispersal by adults from and to each patch, depending on the patch connectivities.  <br /></td></tr>
@@ -177,7 +177,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implements dispersive behaviour for radial dispersal, where connection weights between patches are determined by the direction the patches are in relative to each other and other patches. </p>
-<p>Particularly, connection weights will be determined by the arc of the first patch's catchment radius covered by the second patch. Closer patches will reduce dispersal to further patches which are in the same interval. Those individuals that disperse in a direction with no patches will die. ... </p>
+<p>Particularly, the connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. The individuals that disperse in an unconnected direction will die.  </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac63e6e6d97e7c720b6e6ef349e07c711" name="ac63e6e6d97e7c720b6e6ef349e07c711"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac63e6e6d97e7c720b6e6ef349e07c711">&#9670;&#160;</a></span>RadialDispersal()</h2>
@@ -247,7 +247,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_model.html#a9aadb122b13c0e8be4f2437117264879" title="Vector of all Patch objects.">Model::sites</a>, <a class="el" href="#ad09b4df09539d8b421c8d7ed3199d0c4" title="Computes the set of connection indices and weights for a group of patches.">RadialDispersal::compute_connecs()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_model.html#a17b3a93529de4ef762254f9a1932b67e" title="Returns the sites vector.">Model::get_sites()</a>, <a class="el" href="random_8cpp.html#a4e7a8d4c70cb879b071d51ddec9a8b1f" title="Returns a random draw (non-negative integer) from the Binomial distribution B(N,p).">random_binomial()</a>, <a class="el" href="random_8cpp.html#a180e4f01c99b4c4fae00714c08fa647b" title="Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where e...">random_multinomial()</a> </dd></dl>
 
 <p>Implements <a class="el" href="class_dispersal.html#a90638547dc5983463ee88d89a9167b5a">Dispersal</a>.</p>
 
@@ -277,7 +277,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the set of connection indices and weights for a group of patches. </p>
-<p>If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by angle of bisecting lines from the centre of the focal patch to the catchment of the recieving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum disperdal distance are not connected. </p><dl class="section note"><dt>Note</dt><dd>Under this dispersal type, patches are NOT connected to themselves. </dd></dl>
+<p>If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum dispersal distance are not connected. </p><dl class="section note"><dt>Note</dt><dd>Under this dispersal type, patches are NOT connected to themselves. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">sites</td><td>vector of all Patches objects </td></tr>
@@ -423,8 +423,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Sets the inter-patch connectivities for dispersal. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Sets the inter-patch connectivities for radial dispersal. </p>
+<p>If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum dispersal distance are not connected. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">sites</td><td>vector of all <a class="el" href="class_patch.html" title="Contains the information of a local mosquito population.">Patch</a> objects </td></tr>
   </table>

@@ -136,8 +136,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implements aestivative behaviour for the model. </p>
-<p><br  />
- </p>
+<p>Only mated females aestivate, going into aestivation within a hiding time window determined by <code>t_hide1</code> and <code>t_hide2</code> and emerging from aestivation within a waking time window determined by <code>t_wake1</code> and <code>t_wake2</code>. The females are isolated from their original patches during aestivation and returned back at the end, dependent on mortality. Other parameter rates controlling aestivation are <code>psi</code> and <code>mu_aes</code>, the aestivation rate and aestivation mortality respectively. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_aestivation_params.html" title="Aestivation model parameters.">AestivationParams</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a51e62f2785f14f40c74698c76da16f41" name="a51e62f2785f14f40c74698c76da16f41"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51e62f2785f14f40c74698c76da16f41">&#9670;&#160;</a></span>Aestivation()</h2>
@@ -166,7 +165,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_model.html#a9aadb122b13c0e8be4f2437117264879">Model::sites</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_model.html#a17b3a93529de4ef762254f9a1932b67e" title="Returns the sites vector.">Model::get_sites()</a> </dd></dl>
 
 </div>
 </div>
@@ -188,13 +187,13 @@ Private Attributes</h2></td></tr>
 
 <p>Hides aestivating females from their patches. </p>
 <dl class="section note"><dt>Note</dt><dd>Not all females survive aestivation. Only mated females aestivate.</dd></dl>
-<p>The number of females that attempt to go into aestivation (of the given genotype combination) is determined by a binomial distribution of the aestivation rate. Of those, the number that survive is determined by a binomial distribution of 1 - mu_aes (the aestivation mortality). Aestivating females are temporarily separated from the rest of the female patch population. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The number of females that attempt to go into aestivation (of the given genotype combination) is determined by a binomial distribution of the aestivation rate. Of those, the number that survive is determined by a binomial distribution of 1 - <code>mu_aes</code> (the aestivation mortality). Aestivating females are temporarily separated from the rest of the female patch population. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">sites</td><td>vector of all <a class="el" href="class_patch.html" title="Contains the information of a local mosquito population.">Patch</a> objects </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a8549d806f88e898cdd61219d75d517e1" title="Aestivation rate.">Aestivation::psi</a>, <a class="el" href="#a8ba05278f1dce1144e82c32abd540dc0" title="Aestivation mortality.">Aestivation::mu_aes</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_input_params.html#adc5b2a93829b4fa4eafa0e804446558a" title="Aestivation rate.">InputParams::psi</a>, <a class="el" href="struct_input_params.html#af4132ca26a4a4ce1e19c46c89d8aee38" title="Aestivation mortality rate.">InputParams::mu_aes</a>, <a class="el" href="random_8cpp.html#a4e7a8d4c70cb879b071d51ddec9a8b1f" title="Returns a random draw (non-negative integer) from the Binomial distribution B(N,p).">random_binomial()</a> </dd></dl>
 
 </div>
 </div>
@@ -214,7 +213,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Determines if the time is within the aestivation hiding window. </p>
-<dl class="section note"><dt>Note</dt><dd>The hiding window is exclusive of the start time but inclusive of the end time. </dd></dl>
+<p><code>t_hide1</code> <picture><source srcset="form_0_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ &lt; t \le $" src="form_0.png"/></picture> <code>t_hide2</code> , where <picture><source srcset="form_1_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ t $" src="form_1.png"/></picture> is the day of the current year. Assumes <code>psi</code> &gt; 0.00001. </p><dl class="section note"><dt>Note</dt><dd>The hiding window is exclusive of the start time but inclusive of the end time. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">day</td><td>simulation day </td></tr>
@@ -222,7 +221,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>As you would expect. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#af08e1211410a782de9d592829c6619e6" title="Start day of aestivation-hiding period (exclusive).">Aestivation::t_hide1</a>, <a class="el" href="#a22078820c3b6d2c0b410379fb85ba495" title="End day of aestivation-hiding period (inclusive).">Aestivation::t_hide2</a>, <a class="el" href="#a8549d806f88e898cdd61219d75d517e1" title="Aestivation rate.">Aestivation::psi</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_input_params.html#a5d0c54631c85331b117bed861883fba5" title="Start day of aestivation-hiding period (exclusive).">InputParams::t_hide1</a>, <a class="el" href="struct_input_params.html#ae17cce0a7ef61941a6e97158ebf80f1c" title="End day of aestivation-hiding period (inclusive).">InputParams::t_hide2</a>, <a class="el" href="struct_input_params.html#adc5b2a93829b4fa4eafa0e804446558a" title="Aestivation rate.">InputParams::psi</a> </dd></dl>
 
 </div>
 </div>
@@ -242,7 +241,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Determines if the time is within the aestivation waking window. </p>
-<dl class="section note"><dt>Note</dt><dd>The wakinf window is exclusive of the start time but inclusive of the end time. </dd></dl>
+<p><code>t_wake1</code> <picture><source srcset="form_0_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ &lt; t \le $" src="form_0.png"/></picture> <code>t_wake2</code> , where <picture><source srcset="form_1_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ t $" src="form_1.png"/></picture> is the day of the current year. Assumes <code>psi</code> &gt; 0.00001. </p><dl class="section note"><dt>Note</dt><dd>The waking window is exclusive of the start time but inclusive of the end time. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">day</td><td>simulation day </td></tr>
@@ -250,7 +249,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>As you would expect. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a786f12e5e6b5be06c83fa21fc3b070f0" title="Start day of aestivation-waking period (exclusive).">Aestivation::t_wake1</a>, <a class="el" href="#a63e9e51ce52b0df684c04584e30d89bd" title="End day of aestivation-waking period (inclusive).">Aestivation::t_wake2</a>, <a class="el" href="#a8549d806f88e898cdd61219d75d517e1" title="Aestivation rate.">Aestivation::psi</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_input_params.html#aa0b9fe354099482dfdead7877fd3409b" title="Start day of aestivation-waking period (exclusive).">InputParams::t_wake1</a>, <a class="el" href="struct_input_params.html#a4542cd7e2b6b2b386a9e63e08c2b527f" title="End day of aestivation-waking period (inclusive).">InputParams::t_wake2</a>, <a class="el" href="struct_input_params.html#adc5b2a93829b4fa4eafa0e804446558a" title="Aestivation rate.">InputParams::psi</a> </dd></dl>
 
 </div>
 </div>
@@ -274,14 +273,14 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Wakes a fraction of the aestivating females. </p>
-<p>The number of females that wake up on the given day (for the given genotype combination and patch) is determined by a binomial distribution with probability 1.0 / (1.0 + t_wake2 - (day%365). Those that wake are returned to their patch's female population. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The number of females that wake up on the given day (for the given genotype combination and patch) is determined by a binomial distribution with probability <code>1.0 / (1.0 + t_wake2 - (day%365)</code>. Those that wake are returned to their patch's female population. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">day</td><td>simulation day </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">sites</td><td>vector of all <a class="el" href="class_patch.html" title="Contains the information of a local mosquito population.">Patch</a> objects </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a63e9e51ce52b0df684c04584e30d89bd" title="End day of aestivation-waking period (inclusive).">Aestivation::t_wake2</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_input_params.html#a4542cd7e2b6b2b386a9e63e08c2b527f" title="End day of aestivation-waking period (inclusive).">InputParams::t_wake2</a>, <a class="el" href="random_8cpp.html#a4e7a8d4c70cb879b071d51ddec9a8b1f" title="Returns a random draw (non-negative integer) from the Binomial distribution B(N,p).">random_binomial()</a> </dd></dl>
 
 </div>
 </div>

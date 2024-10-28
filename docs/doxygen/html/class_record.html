@@ -185,7 +185,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="class_record.html" title="Records model data.">Record</a> constructor. </p>
-<p>Creates LocalData, Totals and CoordinateList output .txt files. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Creates LocalData, Totals and CoordinateList output .txt files.</p>
+<p>Creates a subdirectory for output files in the current directory. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">rec_params</td><td>recording parameters </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">rep</td><td>initial repetition label for the given set of runs </td></tr>
@@ -268,7 +269,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>As you would expect. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a8e504c6253ef29fa5c86d216e3f28e1c" title="Records the number of males at each site for the given day.">Record::record_local()</a>, <a class="el" href="#a13b20ef61772014de98c3d87354ad1e9" title="Start time for the data recording window (in days) (inclusive)">Record::rec_start</a>, <a class="el" href="#a0598ebe2ae342bf3dc7be5a156ad4c34" title="End time for the data recording window (in days) (inclusive)">Record::rec_end</a>, <a class="el" href="#a9217590af69eb03412ac2c82c4fd853e" title="Time interval for local data recording (in days)">Record::rec_interval_local</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a8e504c6253ef29fa5c86d216e3f28e1c" title="Records the number of males at each site for the given day.">Record::record_local()</a>, <a class="el" href="struct_input_params.html#a6e73a95f47dcfa05263838b0b1f3ad27" title="Start time for the data recording window (inclusive).">InputParams::rec_start</a>, <a class="el" href="struct_input_params.html#a1223c275e31ee8b901b5d5a274d85c74" title="End time for the data recording window (inclusive).">InputParams::rec_end</a>, <a class="el" href="struct_input_params.html#ae1a85942abb2e6e81ee33bb395fee17d" title="Time interval at which to collect/record local data (in days).">InputParams::rec_interval_local</a> </dd></dl>
 
 </div>
 </div>
@@ -317,7 +318,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_patch.html#a9ec8ec87984a6e18efa7afd83e6df081" title="Number of juvenile mosquitoes in the patch, divided by genotype and age group.">Patch::J</a>, <a class="el" href="class_patch.html#a6e9cda8c3620873eaadf23db0f5a7b27" title="Number of male mosquitoes in the patch, divided by genotype.">Patch::M</a>, <a class="el" href="class_patch.html#ae4195468f66138a8bf7f0c37701098da" title="Number of virgin (unmated) female mosquitoes, divided by genotype.">Patch::V</a>, <a class="el" href="class_patch.html#a9e6066355010ba73abb33d8d41714677" title="Number of mated female mosquitoes F_{ij}, divided by female genotype i and male sperm genotype j.">Patch::F</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_patch.html" title="Contains the information of a local mosquito population.">Patch</a> </dd></dl>
 
 </div>
 </div>
@@ -343,7 +344,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_model.html#a9aadb122b13c0e8be4f2437117264879" title="Vector of all Patch objects.">Model::sites</a>, <a class="el" href="#a8ab507dfcfb593428a8c23a81877fac3" title="Fraction of sites to collect local data for (1 is all sites, 10 is 1 in 10 etc.).">Record::rec_sites_freq</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_input_params.html#a0aa285f32fbb33162549d1480f36e1f0" title="Fraction of sites to collect local data for (1 is all sites, 10 is 1 in 10 etc).">InputParams::rec_sites_freq</a> </dd></dl>
 
 </div>
 </div>
@@ -374,7 +375,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_model.html#a6d5f4f68f41e76c3e966e312d2f6e9e3" title="Returns the total number of males of each genotype across all patches.">Model::calculate_tot_M_gen()</a>, <a class="el" href="class_patch.html#a6e9cda8c3620873eaadf23db0f5a7b27" title="Number of male mosquitoes in the patch, divided by genotype.">Patch::M</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_model.html#a6d5f4f68f41e76c3e966e312d2f6e9e3" title="Returns the total number of males of each genotype across all patches.">Model::calculate_tot_M_gen()</a>, <a class="el" href="class_patch.html#a18366a21df794d2cebbbdfe3195734a5" title="Returns the number of males in the patch, divided by genotype.">Patch::get_M()</a> </dd></dl>
 
 </div>
 </div>
@@ -405,7 +406,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_model.html#a9aadb122b13c0e8be4f2437117264879" title="Vector of all Patch objects.">Model::sites</a>, <a class="el" href="#a8ab507dfcfb593428a8c23a81877fac3" title="Fraction of sites to collect local data for (1 is all sites, 10 is 1 in 10 etc.).">Record::rec_sites_freq</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_input_params.html#a0aa285f32fbb33162549d1480f36e1f0" title="Fraction of sites to collect local data for (1 is all sites, 10 is 1 in 10 etc).">InputParams::rec_sites_freq</a> </dd></dl>
 
 </div>
 </div>

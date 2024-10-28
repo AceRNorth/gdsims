@@ -56,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="51" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="51" bodyend="51"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="53" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="53" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="class_distance_kernel_dispersal_1a980ed0ba571a2adf1e856f408d914078" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -73,7 +73,11 @@
 <para>Sets the inter-patch connectivities for dispersal. </para>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
+<para>If the distance between two patches is less than the the maximum dispersal distance <computeroutput>max_disp</computeroutput>, they are deemed to be connected. The connection weight is determined by the difference between the maximum dispersal distance and the distance between those patches:</para>
+<para>weight = max_disp - distance</para>
+<para><simplesect kind="note"><para>Under this dispersal type, patches are deemed to be connected to themselves, resulting in self-dispersal. This is such that dispersal can take place even in 1-population models. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">sites</parametername>
 </parameternamelist>
@@ -86,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="52" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="93" bodyend="99"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="54" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="98" bodyend="104"/>
       </memberdef>
       <memberdef kind="function" id="class_distance_kernel_dispersal_1a8f42419dd4e180ed62680ffab734c677" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -114,13 +118,13 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">Model::sites</ref> </para>
+<simplesect kind="see"><para><ref refid="class_model_1a17b3a93529de4ef762254f9a1932b67e" kindref="member">Model::get_sites()</ref>, <ref refid="random_8cpp_1a180e4f01c99b4c4fae00714c08fa647b" kindref="member">random_multinomial()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="53" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="108" bodyend="143"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="55" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="113" bodyend="148"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -138,7 +142,9 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <para>Computes the set of connection indices and weights for a group of patches. </para>
         </briefdescription>
         <detaileddescription>
-<para>If the distance between two patches is less than the the maximum dispersal distance, they are deemed to be connected. The connection weight is determined by the difference between the maximum dispersal distance and the distance between those patches. <simplesect kind="note"><para>Under this dispersal type, patches are deemed to be connected to themselves, resulting in self-dispersal. This is such that dispersal can take place even in 1-population models. </para>
+<para>If the distance between two patches is less than the the maximum dispersal distance <computeroutput>max_disp</computeroutput>, they are deemed to be connected. The connection weight is determined by the difference between the maximum dispersal distance and the distance between those patches:</para>
+<para>weight = max_disp - distance</para>
+<para><simplesect kind="note"><para>Under this dispersal type, patches are deemed to be connected to themselves, resulting in self-dispersal. This is such that dispersal can take place even in 1-population models. </para>
 </simplesect>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -149,13 +155,13 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as <ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">Model::sites</ref>, where the first item represents all connections to the first patch in <ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">Model::sites</ref>, etc. </para>
+<simplesect kind="return"><para>The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as <ref refid="class_model_1a17b3a93529de4ef762254f9a1932b67e" kindref="member">Model::get_sites()</ref>, where the first item represents all connections to the first <ref refid="class_patch" kindref="compound">Patch</ref> of the sites vector, etc. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="56" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="152" bodyend="175"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="58" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="160" bodyend="183"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -195,7 +201,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="43" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="43" bodyend="57"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="45" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="45" bodyend="59"/>
     <listofallmembers>
       <member refid="class_distance_kernel_dispersal_1a8f42419dd4e180ed62680ffab734c677" prot="public" virt="virtual"><scope>DistanceKernelDispersal</scope><name>adults_disperse</name></member>
       <member refid="class_dispersal_1ab408b6c47b542c65c99e2c141962e81e" prot="protected" virt="non-virtual"><scope>DistanceKernelDispersal</scope><name>boundary_strategy</name></member>

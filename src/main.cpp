@@ -11,6 +11,8 @@
 #include "InputParams.h"
 #include "sets.h"
 
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+
 int main()
 {	
 	std::vector<InputParams> sets = {set1, set2, set3, set4, set5, set6, set7, set8, set9, set10, set11, set12, set13, set14, set15, set16, set17, set18};
@@ -674,3 +676,5 @@ int main()
 	
 	return 0;
 }
+
+#endif /* DOXYGEN_SHOULD_SKIP_THIS */

@@ -16,7 +16,6 @@ Program Listing for File GDRelease.cpp
    #include "Patch.h"
    #include "random.h"
    
-   // Releases the gene drive mosquitoes into the simulation area
    void GDRelease::release_gene_drive(int day, std::vector<Patch*> &sites) 
    {
        if (is_release_time(day)) {
@@ -65,7 +64,6 @@ Program Listing for File GDRelease.cpp
        }
    }
    
-   // Selects the release sites corresponding to the selected release time
    std::vector<Patch*> SchedGDRelease::select_driver_sites(int day, const std::vector<Patch*> &sites)
    {
        return release_sites;

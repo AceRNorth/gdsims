@@ -12,7 +12,7 @@ exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming
 
 # Selecting sets to run
 sets = [i for i in range(1, 19)]
-sets = [14, 15, 17]
+sets = [1]
 
 # ** Select other combinations of sets by listing below and uncommenting**
 #sets = [18]
@@ -218,7 +218,7 @@ test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Pr
 
 # ** Modify the list of set numbers selected as needed **
 sets = [i for i in range(1, 19)]
-sets = [14, 15, 17]
+sets = [1]
 
 # ** Modify the list of num_runs in each set selected as needed **
 num_runs_list = [2 for i in range(0, len(sets))]
@@ -229,9 +229,8 @@ make_plot = True
 for j in range(0, len(sets)):
     print("Set " + str(sets[j]))
     for i in range(1, num_runs_list[j] + 1):
-        # #import oracle data
+        #import oracle data
         os.chdir(os.path.join(oracle_folder_path, "set" + str(sets[j])))
-        #os.chdir(oracle_folder_path)
         totals_oracle = np.loadtxt("Totals" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
         times_oracle = totals_oracle[:, 0]
         tot_males_oracle = totals_oracle[:, 1:]

@@ -11,7 +11,7 @@
 
 /**
  * Dispersal constructor. 
- * @details Determines what type of boundary strategy to use for calculating dispersal distances from the boundary type passed. 
+ * @details Constructs the BoundaryStrategy object from the boundary type passed. 
  * @param[in] params 	dispersal parameters
  * @param[in] boundary 	boundary type to use for calculating dispersal distances
  * @param[in] side 		size of one side of the simulation square
@@ -45,7 +45,7 @@ Dispersal::~Dispersal()
  * @details The number of males of a given genotype dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate.
  * @param[in] sites vector of all Patch objects
  * @return The number of males dispersing out, divided by genotype and outgoing patch.
- * @see Dispersal::disp_rate, Model::sites, Patch::M
+ * @see DispersalParams::disp_rate, Model::get_sites(), random_binomial()
  */
 std::vector<std::array<long long int, constants::num_gen>> Dispersal::M_dispersing_out(const std::vector<Patch*> &sites) 
 {
@@ -64,10 +64,10 @@ std::vector<std::array<long long int, constants::num_gen>> Dispersal::M_dispersi
 
 /**
  * Determines the number of mated females (of each genotype combination) dispersing out from each patch.
- * @details The number of females of a given genotype conbination dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate.
+ * @details The number of females of a given genotype combination dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate.
  * @param[in] sites vector of all Patch objects
  * @return The number of mated females dispersing out, divided by female genotype, male sperm genotype and outgoing patch.
- * @see Dispersal::disp_rate, Model::sites, Patch::F
+ * @see DispersalParams::disp_rate, Model::get_sites(), random_binomial()
  */
 std::vector<std::array<std::array<long long int, constants::num_gen>, constants::num_gen>> Dispersal::F_dispersing_out(const std::vector<Patch*> &sites)
 {
@@ -88,6 +88,11 @@ std::vector<std::array<std::array<long long int, constants::num_gen>, constants:
 
 /**
  * Sets the inter-patch connectivities for dispersal.
+ * @details If the distance between two patches is less than the the maximum dispersal distance ``max_disp``, they are deemed to be connected. The connection weight is determined by the difference between the maximum dispersal distance and the distance between those patches:
+ * 
+ * weight = max_disp - distance
+ * 
+ * @note Under this dispersal type, patches are deemed to be connected to themselves, resulting in self-dispersal. This is such that dispersal can take place even in 1-population models. 
  * @param[in] sites vector of all Patch objects
  */
 void DistanceKernelDispersal::set_connecs(std::vector<Patch*> &sites) {
@@ -103,7 +108,7 @@ void DistanceKernelDispersal::set_connecs(std::vector<Patch*> &sites) {
  * @note Only males and mated females are assumed to disperse from the patches.
  * @details All dispersing individuals are assumed to survive dispersal, and are guaranteed a connected patch to disperse to. The number of males dispersing from a given patch to each of its connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females.
  * @param[in, out] sites vector of all Patch objects
- * @see Model::sites
+ * @see Model::get_sites(), random_multinomial()
  */
 void DistanceKernelDispersal::adults_disperse(std::vector<Patch*> &sites) {
 	// adults dispersing out from each patch 
@@ -144,10 +149,13 @@ void DistanceKernelDispersal::adults_disperse(std::vector<Patch*> &sites) {
  
 /**
  * Computes the set of connection indices and weights for a group of patches.
- * @details If the distance between two patches is less than the the maximum dispersal distance, they are deemed to be connected. The connection weight is determined by the difference between the maximum dispersal distance and the distance between those patches. 
+ * @details If the distance between two patches is less than the the maximum dispersal distance ``max_disp``, they are deemed to be connected. The connection weight is determined by the difference between the maximum dispersal distance and the distance between those patches:
+ * 
+ * weight = max_disp - distance
+ * 
  * @note Under this dispersal type, patches are deemed to be connected to themselves, resulting in self-dispersal. This is such that dispersal can take place even in 1-population models. 
  * @param[in] sites vector of all Patches objects
- * @return The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as Model::sites, where the first item represents all connections to the first patch in Model::sites, etc. 
+ * @return The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as Model::get_sites(), where the first item represents all connections to the first Patch of the sites vector, etc. 
  */
 std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> DistanceKernelDispersal::compute_connecs(std::vector<Patch*>
  &sites) 
@@ -185,7 +193,8 @@ RadialDispersal::RadialDispersal(DispersalParams* params, BoundaryType boundary,
 }
 
 /**
- * Sets the inter-patch connectivities for dispersal.
+ * Sets the inter-patch connectivities for radial dispersal.
+ *  @details If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum dispersal distance are not connected.
  * @param[in] sites vector of all Patch objects
  */
 void RadialDispersal::set_connecs(std::vector<Patch*> &sites) {
@@ -210,7 +219,7 @@ void RadialDispersal::set_connecs(std::vector<Patch*> &sites) {
  * @note Only males and mated females are assumed to disperse from the patches. There is also dispersal mortality associated with this dispersal type.
  * @details Only those individuals that disperse out of a patch in a connected direction will survive. The number of dispersing males (of a given genotype) that survive dispersal out of their patch is determined by a random draw from a binomial distribution with probability of the total connection weight for all its connected patches. Of those, the number dispersing to each of the connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females.
  * @param[in, out] sites vector of all Patch objects
- * @see Model::sites, RadialDispersal::compute_connecs()
+ * @see Model::get_sites(), random_binomial(), random_multinomial()
  */
 void RadialDispersal::adults_disperse(std::vector<Patch*> &sites) {
 	// adults dispersing out from each patch 
@@ -259,13 +268,13 @@ void RadialDispersal::adults_disperse(std::vector<Patch*> &sites) {
 
 /**
  * Computes the set of connection indices and weights for a group of patches.
- * @details If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by angle of bisecting lines from the centre of the focal patch to the catchment of the recieving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum disperdal distance are not connected.
+ * @details If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum dispersal distance are not connected.
  * @note Under this dispersal type, patches are NOT connected to themselves. 
  * @param[in] sites vector of all Patches objects
  * @return The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as Model::sites, where the first item represents all connections to the first patch in Model::sites, etc. 
  */
 std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> RadialDispersal::compute_connecs(std::vector<Patch*> &sites) {
-	 int num_sites = sites.size();
+	int num_sites = sites.size();
 	std::vector<std::vector<double>> connec_weights(num_sites);
 	std::vector<std::vector<int>> connec_indices(num_sites);
 	// Compute inter-point distances
@@ -355,11 +364,6 @@ std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> Radia
 				}
 			}
 		}
-
-	/*	std::cout<<i<<"     ";
-		for(int jj=0;jj<connec_weights[i].size();++jj)std::cout<<connec_indices[i][jj]<<"     "<<connec_weights[i][jj]<<"    ";
-		std::cout<<std::endl;
-	*/
 
 	}
 	return {connec_indices, connec_weights};

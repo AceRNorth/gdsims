@@ -1,6 +1,6 @@
 
-Library API
-===========
+API
+===
 
 .. doxygenindex::
     :path: ./doxygen/xml

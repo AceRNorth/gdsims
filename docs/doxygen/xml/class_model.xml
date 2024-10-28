@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="44" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="44" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="45" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="45" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_model_1a76d71b89f763d239c57657156b143231" prot="private" static="no" mutable="no">
         <type><ref refid="class_dispersal" kindref="compound">Dispersal</ref> *</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="45" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="45" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="46" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="46" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" prot="private" static="no" mutable="no">
         <type><ref refid="class_aestivation" kindref="compound">Aestivation</ref> *</type>
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="46" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="46" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="47" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_model_1a9d0be7ddf0f62f9e9444ab5be8be8da6" prot="private" static="no" mutable="no">
         <type><ref refid="class_g_d_release" kindref="compound">GDRelease</ref> *</type>
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="47" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="47" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="48" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_model_1a9d3cb8400740de092adeaa6fdea121a8" prot="private" static="no" mutable="no">
         <type><ref refid="class_seasonality" kindref="compound">Seasonality</ref> *</type>
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="48" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="48" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="49" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_model_1a864dafb787704b50f6b3ca2b416533df" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -89,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="50" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="50" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="51" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_model_1a73f36f72009040a8bcf8b15a94961b55" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -104,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="53" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="53" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="54" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_model_1ad456b9a7464879d80abb19f1d14971cf" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -119,7 +119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="54" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="54" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="55" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_model_1a9f55ce896e1332f492570af65cfe76d4" prot="private" static="no" mutable="no">
         <type><ref refid="struct_initial_pops_params" kindref="compound">InitialPopsParams</ref> *</type>
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="56" column="19" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="56" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="57" column="19" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_model_1af1ba01eda7176a872d16eff80fa8cde9" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -149,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="59" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="59" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="60" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="60" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_model_1a1d8427bbcb5f7e9db04d213111e208ba" prot="private" static="no" mutable="no">
         <type>std::array&lt; double, <ref refid="namespaceconstants_1ab5cd2d6cdf356d98576ea193f6a54476" kindref="member">constants::max_dev</ref>+1 &gt;</type>
@@ -164,7 +164,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="60" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="60" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="61" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="61" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_model_1a0fb3ac96dac77d8c0f67142ab70ad899" prot="private" static="no" mutable="no">
         <type>std::array&lt; std::array&lt; std::array&lt; double, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt;, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt;, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt;</type>
@@ -180,7 +180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="63" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="63" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="64" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="64" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_model_1a106416d6d9dc6510bda17ea0b6b1b588" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -195,7 +195,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="66" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="66" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="67" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_model_1ad10cafc06c6b49b020c22efb034f8362" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -210,7 +210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="67" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="67" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="68" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="68" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -264,7 +264,7 @@
 <para><ref refid="class_model" kindref="compound">Model</ref> constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para>Builds the components of the model. <parameterlist kind="param"><parameteritem>
+<para>Builds the components of the model for sinusoid rainfall-type seasonality. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">params</parametername>
 </parameternamelist>
@@ -341,7 +341,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="27" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="26" bodyend="81"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="28" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="26" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1a9665e30ee5c6339b78966f628dcdf468" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -393,7 +393,7 @@
 <para><ref refid="class_model" kindref="compound">Model</ref> constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para>Builds the components of the model. <parameterlist kind="param"><parameteritem>
+<para>Builds the components of the model for input rainfall-type seasonality. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">params</parametername>
 </parameternamelist>
@@ -470,7 +470,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="28" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="96" bodyend="151"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="29" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="96" bodyend="151"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1ad6ebd2062a0b823db841a0b88baac4c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -485,7 +485,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="30" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="156" bodyend="165"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="31" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="156" bodyend="166"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1a3d359ced00aacc31a7b50c53b8b1e340" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -497,10 +497,11 @@
 <para>Sets up the model architecture. </para>
         </briefdescription>
         <detaileddescription>
+<para>Populates sites and sets dispersal connections. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="31" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="181" bodyend="186"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="32" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="182" bodyend="187"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1a7e4eb741e72b3946a9166dceed6fc02d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -516,7 +517,7 @@
 <para>Runs the daily step of the model. </para>
         </briefdescription>
         <detaileddescription>
-<para>The life processes do not run during the initialisation day (day 0). <parameterlist kind="param"><parameteritem>
+<para>The life processes do not run during the initialisation day (day 0). However, gene drive release can be carried out on day 0. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">day</parametername>
 </parameternamelist>
@@ -529,7 +530,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="32" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="220" bodyend="227"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="33" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="221" bodyend="228"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1a8aaa1031c217f20626283a360d44b53f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>long long int</type>
@@ -543,13 +544,13 @@
         <detaileddescription>
 <para><simplesect kind="return"><para>The total number of juveniles in the model run. </para>
 </simplesect>
-<simplesect kind="see"><para><ref refid="class_patch_1a9ec8ec87984a6e18efa7afd83e6df081" kindref="member">Patch::J</ref> </para>
+<simplesect kind="see"><para><ref refid="class_patch" kindref="compound">Patch</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="34" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="250" bodyend="257"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="35" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="251" bodyend="258"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1ab92b4e7f88b556e690391528330ba6af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>long long int</type>
@@ -569,7 +570,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="35" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="264" bodyend="271"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="36" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="265" bodyend="272"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1a0d762e0b53f2f1443b59d1425366cfc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>long long int</type>
@@ -583,13 +584,13 @@
         <detaileddescription>
 <para><simplesect kind="return"><para>The total number of virgin (unmated) females in the model run. </para>
 </simplesect>
-<simplesect kind="see"><para><ref refid="class_patch_1ae4195468f66138a8bf7f0c37701098da" kindref="member">Patch::V</ref> </para>
+<simplesect kind="see"><para><ref refid="class_patch" kindref="compound">Patch</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="36" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="278" bodyend="285"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="37" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="279" bodyend="286"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1a8be5555da392871558de820795938a04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>long long int</type>
@@ -609,7 +610,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="37" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="292" bodyend="299"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="38" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="293" bodyend="300"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1a6d5f4f68f41e76c3e966e312d2f6e9e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::array&lt; long long int, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt;</type>
@@ -623,13 +624,13 @@
         <detaileddescription>
 <para><simplesect kind="return"><para>The total number of males in the model run, divided by genotype. </para>
 </simplesect>
-<simplesect kind="see"><para><ref refid="class_patch_1a6e9cda8c3620873eaadf23db0f5a7b27" kindref="member">Patch::M</ref> </para>
+<simplesect kind="see"><para><ref refid="class_patch_1a18366a21df794d2cebbbdfe3195734a5" kindref="member">Patch::get_M()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="38" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="306" bodyend="317"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="39" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="307" bodyend="318"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1a17b3a93529de4ef762254f9a1932b67e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt;</type>
@@ -641,15 +642,13 @@
 <para>Returns the sites vector. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>The sites vector, containing all <ref refid="class_patch" kindref="compound">Patch</ref> objects. </para>
-</simplesect>
-<simplesect kind="see"><para><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">Model::sites</ref>, <ref refid="class_patch" kindref="compound">Patch</ref> </para>
+<para>The patches within the vector are ordered according to order of creation. If specific coordinates have been set for patches, the sites vector will follow the same order as the coordinates vector of the <ref refid="class_model" kindref="compound">Model</ref> constructor. <simplesect kind="return"><para>The sites vector, containing all <ref refid="class_patch" kindref="compound">Patch</ref> objects. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="39" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="324" bodyend="327"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="40" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="325" bodyend="328"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1a6499bfa0eeb48133e352ce72f79aee9d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -661,13 +660,13 @@
 <para>Returns the current simulation day. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>The simulation day. </para>
+<para><ref refid="class_simulation" kindref="compound">Simulation</ref> days run from 0 (initialisation day) up to <computeroutput>max_t</computeroutput> (inclusive). <simplesect kind="return"><para>The simulation day. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="40" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="333" bodyend="336"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="41" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="335" bodyend="338"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1a04c1c541fc6d4f4c12f854b971197ea5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -680,7 +679,7 @@
           <declname>alpha0</declname>
         </param>
         <briefdescription>
-<para>Returns the carrying capacity for the given alpha0 (the baseline contribution to it) and the current day. </para>
+<para>Returns the carrying capacity for the given alpha0 (the baseline contribution to carrying capacity) and for the current day. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -698,7 +697,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="41" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="343" bodyend="347"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="42" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="345" bodyend="349"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -709,18 +708,18 @@
         <name>alpha0</name>
         <qualifiedname>Model::alpha0</qualifiedname>
         <briefdescription>
-<para>Returns a random value for the baseline contribution to the carrying capacity (alpha0). </para>
+<para>Returns a random value for the baseline contribution to the carrying capacity <computeroutput>alpha0</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The random value is obtained as a random draw from a lognormal distribution with desired mean alpha0_mean and desired variance alpha0_variance. <simplesect kind="return"><para>A random draw of alpha0. </para>
+<para>The random value is obtained as a random draw from a lognormal distribution with desired mean <computeroutput>alpha0_mean</computeroutput> and desired variance <computeroutput>alpha0_variance</computeroutput>. <simplesect kind="return"><para>A random draw of <computeroutput>alpha0</computeroutput>. </para>
 </simplesect>
-<simplesect kind="see"><para><ref refid="class_model_1a106416d6d9dc6510bda17ea0b6b1b588" kindref="member">Model::alpha0_mean</ref>, <ref refid="class_model_1ad10cafc06c6b49b020c22efb034f8362" kindref="member">Model::alpha0_variance</ref> </para>
+<simplesect kind="see"><para><ref refid="struct_input_params_1a2056a53757ab38ff189bca6870d2f7d5" kindref="member">InputParams::alpha0_mean</ref>, <ref refid="struct_input_params_1a4497eea80bab35f4d09bb8aa1fd71c3e" kindref="member">InputParams::alpha0_variance</ref>, <ref refid="random_8cpp_1ab1651a929e139f6da870eae2f0c641e0" kindref="member">random_lognormal()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="68" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="173" bodyend="176"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="69" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="174" bodyend="177"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1add15fa39b2e8fda3fefc551de4d0e1bb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -735,7 +734,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="71" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="191" bodyend="196"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="72" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="192" bodyend="197"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1a1b78097ea008a3b4cc36b321c7d42289" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -776,7 +775,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="72" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="203" bodyend="213"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="73" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="204" bodyend="214"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1ae7c17f3d562ffc8baea8945ba4ffd3c3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -805,7 +804,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="75" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="233" bodyend="243"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="76" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="234" bodyend="244"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1a2a3151eb1bb6333c2ba103f0c7c6c475" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -823,7 +822,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="76" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="353" bodyend="358"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="77" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="355" bodyend="360"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1ae2fa6af0cf426e1df144e4dcbee4069d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -841,7 +840,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="77" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="364" bodyend="369"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="78" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="366" bodyend="371"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1a76f26441a5112d1f596d5b9317734be4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -859,7 +858,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="78" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="375" bodyend="380"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="79" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="377" bodyend="382"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1a85c48027be32159a36337531249a435a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -877,7 +876,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="79" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="386" bodyend="391"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="80" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="388" bodyend="393"/>
       </memberdef>
       <memberdef kind="function" id="class_model_1af30fafd15a6451c20c3dcef622aaf6d0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -895,14 +894,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="80" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="398" bodyend="403"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="81" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp" bodystart="400" bodyend="405"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Runs the model. </para>
+<para>Sets up and runs the model. </para>
     </briefdescription>
     <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="struct_area_params" kindref="compound">AreaParams</ref>, <ref refid="struct_model_params" kindref="compound">ModelParams</ref> </para>
+<para>In addition to the set-up of the model, <ref refid="class_model" kindref="compound">Model</ref> coordinates the different classes to run daily steps of mosquito life processes and dispersal as well as other events like gene drive release, aestivation and seasonality. It also contains methods to interface with the <ref refid="class_record" kindref="compound">Record</ref> class. <simplesect kind="see"><para><ref refid="struct_area_params" kindref="compound">AreaParams</ref>, <ref refid="struct_model_params" kindref="compound">ModelParams</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>
@@ -954,7 +953,7 @@
         <link refid="class_seasonality"/>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="25" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="25" bodyend="81"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" line="26" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Model.h" bodystart="26" bodyend="82"/>
     <listofallmembers>
       <member refid="class_model_1ae2fa6af0cf426e1df144e4dcbee4069d" prot="private" virt="non-virtual"><scope>Model</scope><name>adults_die</name></member>
       <member refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" prot="private" virt="non-virtual"><scope>Model</scope><name>aestivation</name></member>

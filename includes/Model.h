@@ -19,7 +19,8 @@ class GDRelease;
 class Seasonality;
 
 /**
- * Runs the model.
+ * Sets up and runs the model.
+ * @details In addition to the set-up of the model, Model coordinates the different classes to run daily steps of mosquito life processes and dispersal as well as other events like gene drive release, aestivation and seasonality. It also contains methods to interface with the Record class.
  * @see AreaParams, ModelParams
  */ 
 class Model {

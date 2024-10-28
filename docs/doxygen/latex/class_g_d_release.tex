@@ -32,6 +32,8 @@ Collaboration diagram for GDRelease\+:\nopagebreak
 \item 
 \mbox{\hyperlink{class_g_d_release_a7d3d5cfa8f9d71e08383edf435fcfdbb}{GDRelease}} (int \mbox{\hyperlink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{num\+\_\+driver\+\_\+M}}, std\+::vector$<$ int $>$ rel\+\_\+times)
 \begin{DoxyCompactList}\small\item\em \doxylink{class_g_d_release}{GDRelease} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_g_d_release_aef932e9494f48a28b012c04603d483fa}{\texorpdfstring{$\sim$}{\string~}\+GDRelease}} ()
+\item 
 void \mbox{\hyperlink{class_g_d_release_ac69ecb74bc31ac1d57764be524c68ca7}{release\+\_\+gene\+\_\+drive}} (int day, std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
 \begin{DoxyCompactList}\small\item\em Releases the gene drive mosquitoes into the simulation area if it is time for release. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
@@ -55,7 +57,9 @@ std\+::vector$<$ int $>$ \mbox{\hyperlink{class_g_d_release_af257d77564ffbd7c694
 \doxysubsection{Detailed Description}
 Gene drive release base class. 
 
-Defines the basic implementation of gene drive release in the model. 
+Defines the basic implementation of gene drive release in the model.
+
+\doxylink{class_g_d_release}{GDRelease} classes implement the selection mechanism of the release sites from available patches and the release of gene drive mosquitoes into the \doxylink{class_patch}{Patch} objects at the chosen release times. The number of drive heterozygous male mosquitoes released into each release site at each release time is determined by {\ttfamily num\+\_\+driver\+\_\+M}. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_g_d_release_a7d3d5cfa8f9d71e08383edf435fcfdbb}\label{class_g_d_release_a7d3d5cfa8f9d71e08383edf435fcfdbb} 
@@ -75,6 +79,12 @@ Defines the basic implementation of gene drive release in the model.
 \mbox{\texttt{ in}}  & {\em rel\+\_\+times} & days on which the gene drive mosquitoes will be released \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_g_d_release_aef932e9494f48a28b012c04603d483fa}\label{class_g_d_release_aef932e9494f48a28b012c04603d483fa} 
+\index{GDRelease@{GDRelease}!````~GDRelease@{\texorpdfstring{$\sim$}{\string~}GDRelease}}
+\index{````~GDRelease@{\texorpdfstring{$\sim$}{\string~}GDRelease}!GDRelease@{GDRelease}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GDRelease()}{\string~GDRelease()}}
+{\footnotesize\ttfamily GDRelease\+::\texorpdfstring{$\sim$}{\string~}\+GDRelease (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -96,9 +106,6 @@ Determines if the day is a chosen release time.
 \begin{DoxyReturn}{Returns}
 As you would expect. 
 \end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\doxylink{class_g_d_release_af257d77564ffbd7c694f57533dde7282}{GDRelease\+::release\+\_\+times} 
-\end{DoxySeeAlso}
 \Hypertarget{class_g_d_release_a46170fb6a9f1a248346206b99773b684}\label{class_g_d_release_a46170fb6a9f1a248346206b99773b684} 
 \index{GDRelease@{GDRelease}!put\_driver\_sites@{put\_driver\_sites}}
 \index{put\_driver\_sites@{put\_driver\_sites}!GDRelease@{GDRelease}}
@@ -109,14 +116,11 @@ As you would expect.
 
 Adds drive heterozygous (WD) male mosquitoes to the release sites. 
 
-Relevant parameters include the number of male driver mosquitoes to be released at each site. 
+Relevant parameters include the number of male driver mosquitoes to be released at each site {\ttfamily num\+\_\+driver\+\_\+M}. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in,out}}  & {\em rel\+\_\+sites} & release sites \\
 \hline
 \end{DoxyParams}
-\begin{DoxySeeAlso}{See also}
-\doxylink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{GDRelease\+::num\+\_\+driver\+\_\+M} 
-\end{DoxySeeAlso}
 \Hypertarget{class_g_d_release_ac69ecb74bc31ac1d57764be524c68ca7}\label{class_g_d_release_ac69ecb74bc31ac1d57764be524c68ca7} 
 \index{GDRelease@{GDRelease}!release\_gene\_drive@{release\_gene\_drive}}
 \index{release\_gene\_drive@{release\_gene\_drive}!GDRelease@{GDRelease}}

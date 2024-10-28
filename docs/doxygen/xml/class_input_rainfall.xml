@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="45" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" bodystart="45" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="46" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" bodystart="46" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_input_rainfall_1a44c851f69b6dc275e65799c52c7e9cde" prot="private" static="no" mutable="no">
         <type>std::vector&lt; double &gt;</type>
@@ -33,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="46" column="17" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" bodystart="46" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="47" column="17" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" bodystart="47" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -64,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="41" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Seasonality.cpp" bodystart="34" bodyend="46"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="42" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Seasonality.cpp" bodystart="36" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="class_input_rainfall_1a7599fc9d35cae87ac87f98d2ccb6b3fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -85,7 +85,10 @@
 <para>Computes the carrying-capacity alpha value for the given day and alpha0. </para>
         </briefdescription>
         <detaileddescription>
-<para>Models rainfall contribution as an exponential of daily rainfall. <parameterlist kind="param"><parameteritem>
+<para>Models rainfall contribution as an exponential of daily rainfall.</para>
+<para><formula id="11">\[
+     \alpha = \alpha_0 + \alpha_1 (1 - e^{-\textrm{R} r_d}),
+\]</formula> where <formula id="4">$ \alpha $</formula> is the carrying capacity, <formula id="7">$ \alpha_0 $</formula> is the baseline contribution, <formula id="8">$ \alpha_1 $</formula> is the factor accounting for rainfall contribution, <formula id="12">$ \textrm{R} $</formula> is the responsiveness to the rainfall contribution and <formula id="13">$ r_d $</formula> is the rainfall for the given day. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">day</parametername>
 </parameternamelist>
@@ -104,13 +107,11 @@
 </parameterlist>
 <simplesect kind="return"><para>The carrying-capacity. </para>
 </simplesect>
-<simplesect kind="see"><para><ref refid="class_patch_1a5b781b751c5a39bb3a94640e3542a517" kindref="member">Patch::alpha0</ref> </para>
-</simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="42" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Seasonality.cpp" bodystart="55" bodyend="69"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="43" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Seasonality.cpp" bodystart="61" bodyend="75"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -145,7 +146,7 @@
         <link refid="class_seasonality"/>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="39" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" bodystart="39" bodyend="47"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" line="40" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Seasonality.h" bodystart="40" bodyend="48"/>
     <listofallmembers>
       <member refid="class_input_rainfall_1a7599fc9d35cae87ac87f98d2ccb6b3fb" prot="public" virt="virtual"><scope>InputRainfall</scope><name>alpha</name></member>
       <member refid="class_seasonality_1ac69d88cb94f794d9e317b7d259eaff64" prot="protected" virt="non-virtual"><scope>InputRainfall</scope><name>alpha1</name></member>
@@ -153,6 +154,7 @@
       <member refid="class_input_rainfall_1a44c851f69b6dc275e65799c52c7e9cde" prot="private" virt="non-virtual"><scope>InputRainfall</scope><name>rainfall</name></member>
       <member refid="class_input_rainfall_1adb68f5eb090485f2a362e227aeaf91c8" prot="private" virt="non-virtual"><scope>InputRainfall</scope><name>resp</name></member>
       <member refid="class_seasonality_1a58daa86e6a5d8f1b1b8d4db8c9389870" prot="public" virt="non-virtual"><scope>InputRainfall</scope><name>Seasonality</name></member>
+      <member refid="class_seasonality_1aebc63e539781730aba9fcf84ce590405" prot="public" virt="non-virtual"><scope>InputRainfall</scope><name>~Seasonality</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

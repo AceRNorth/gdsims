@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="70" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="70" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="73" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="73" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="65" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="183" bodyend="185"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="68" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="191" bodyend="193"/>
       </memberdef>
       <memberdef kind="function" id="class_radial_dispersal_1a363d41e54203e0cd6cadb0667b1f6548" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -87,10 +87,10 @@
           <declname>sites</declname>
         </param>
         <briefdescription>
-<para>Sets the inter-patch connectivities for dispersal. </para>
+<para>Sets the inter-patch connectivities for radial dispersal. </para>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
+<para>If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum dispersal distance are not connected. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">sites</parametername>
 </parameternamelist>
@@ -103,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="66" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="191" bodyend="206"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="69" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="200" bodyend="215"/>
       </memberdef>
       <memberdef kind="function" id="class_radial_dispersal_1aa3bca3cc8b2d80af4bd11d91cacf09bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -131,13 +131,13 @@ Only those individuals that disperse out of a patch in a connected direction wil
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">Model::sites</ref>, <ref refid="class_radial_dispersal_1ad09b4df09539d8b421c8d7ed3199d0c4" kindref="member">RadialDispersal::compute_connecs()</ref> </para>
+<simplesect kind="see"><para><ref refid="class_model_1a17b3a93529de4ef762254f9a1932b67e" kindref="member">Model::get_sites()</ref>, <ref refid="random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f" kindref="member">random_binomial()</ref>, <ref refid="random_8cpp_1a180e4f01c99b4c4fae00714c08fa647b" kindref="member">random_multinomial()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="67" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="215" bodyend="258"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="70" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="224" bodyend="267"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -155,7 +155,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
 <para>Computes the set of connection indices and weights for a group of patches. </para>
         </briefdescription>
         <detaileddescription>
-<para>If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by angle of bisecting lines from the centre of the focal patch to the catchment of the recieving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum disperdal distance are not connected. <simplesect kind="note"><para>Under this dispersal type, patches are NOT connected to themselves. </para>
+<para>If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum dispersal distance are not connected. <simplesect kind="note"><para>Under this dispersal type, patches are NOT connected to themselves. </para>
 </simplesect>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -172,7 +172,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="72" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="267" bodyend="366"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="75" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="276" bodyend="370"/>
       </memberdef>
       <memberdef kind="function" id="class_radial_dispersal_1ae456b5d871312e16812fb6c4024288f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::pair&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt;, double &gt;</type>
@@ -221,7 +221,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="73" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="398" bodyend="432"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="76" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="402" bodyend="436"/>
       </memberdef>
       <memberdef kind="function" id="class_radial_dispersal_1a55a26db2720e9bf5811aa51cf3a8d873" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -264,7 +264,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="75" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="374" bodyend="377"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="78" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="378" bodyend="381"/>
       </memberdef>
       <memberdef kind="function" id="class_radial_dispersal_1a4df7ea1ccbcc88991b3e63a46f0e0bb1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; int &gt;</type>
@@ -295,7 +295,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="76" column="17" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="440" bodyend="450"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="79" column="17" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="444" bodyend="454"/>
       </memberdef>
       <memberdef kind="function" id="class_radial_dispersal_1a28a558e2dcb75b8db11fd424aa66243e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; std::vector&lt; double &gt; &gt;</type>
@@ -326,14 +326,15 @@ Only those individuals that disperse out of a patch in a connected direction wil
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="77" column="17" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="458" bodyend="471"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="80" column="17" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="462" bodyend="475"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Implements dispersive behaviour for radial dispersal, where connection weights between patches are determined by the direction the patches are in relative to each other and other patches. </para>
     </briefdescription>
     <detaileddescription>
-<para>Particularly, connection weights will be determined by the arc of the first patch&apos;s catchment radius covered by the second patch. Closer patches will reduce dispersal to further patches which are in the same interval. Those individuals that disperse in a direction with no patches will die. ... </para>
+<para>Particularly, the connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. The individuals that disperse in an unconnected direction will die. <image type="xml" name="radial_disp_diagram.png">Radial dispersal diagram</image>
+ </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -366,7 +367,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="63" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="63" bodyend="78"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="66" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="66" bodyend="81"/>
     <listofallmembers>
       <member refid="class_radial_dispersal_1aa3bca3cc8b2d80af4bd11d91cacf09bb" prot="public" virt="virtual"><scope>RadialDispersal</scope><name>adults_disperse</name></member>
       <member refid="class_dispersal_1ab408b6c47b542c65c99e2c141962e81e" prot="protected" virt="non-virtual"><scope>RadialDispersal</scope><name>boundary_strategy</name></member>

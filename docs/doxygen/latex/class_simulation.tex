@@ -24,7 +24,7 @@ Collaboration diagram for Simulation\+:\nopagebreak
 \mbox{\hyperlink{class_simulation_a78403ca84dfef50ffa06c053648347a6}{Simulation}} (\mbox{\hyperlink{struct_input_params}{Input\+Params}} input)
 \begin{DoxyCompactList}\small\item\em \doxylink{class_simulation}{Simulation} constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_simulation_a80fad3f57dfaf195a36f7bc49bc88279}{\texorpdfstring{$\sim$}{\string~}\+Simulation}} ()
-\begin{DoxyCompactList}\small\item\em Simualtion destructor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{class_simulation}{Simulation} destructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simulation_ab365e7a0000cae028998efae63b7d0c1}{set\+\_\+coords}} (const std\+::string \&filename)
 \begin{DoxyCompactList}\small\item\em Sets the sites\textquotesingle{} coordinates and the release sites from a file, unless any errors are thrown. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simulation_ac6575f63c78f7fffff4817665f5a0f05}{set\+\_\+boundary\+\_\+type}} (\mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} boundary)
@@ -36,7 +36,7 @@ void \mbox{\hyperlink{class_simulation_abc5c5d0891de7943820db3e6682cd125}{set\+\
 void \mbox{\hyperlink{class_simulation_a7d774bb0496b0ea95c2c88afc0d24731}{set\+\_\+release\+\_\+times}} (const std\+::string \&filename)
 \begin{DoxyCompactList}\small\item\em Sets the release times for gene drive release from a file, unless any errors are thrown. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simulation_ac5440a772e9d7788c588a795a7821fb6}{set\+\_\+inheritance}} (\mbox{\hyperlink{struct_inheritance_params}{Inheritance\+Params}} inher\+\_\+params)
-\begin{DoxyCompactList}\small\item\em Sets the values of the f\+\_\+\{ijk\} inheritance fraction for the gene drive considering r2 resistant alleles. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Sets the values of the f\+\_\+\{ijk\} inheritance fraction for the gene drive considering r2 non-\/functional resistance alleles. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simulation_a46325953f7df60733d519b8b3cd1de61}{run\+\_\+reps}} ()
 \begin{DoxyCompactList}\small\item\em Runs the simulation num\+\_\+runs times, recording data in output files. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
@@ -73,8 +73,14 @@ std\+::array$<$ std\+::array$<$ std\+::array$<$ double, \mbox{\hyperlink{namespa
 \doxysubsection{Detailed Description}
 Sets up and controls the flow of the simulation. 
 
+Running \doxylink{class_simulation_ac5440a772e9d7788c588a795a7821fb6}{set\+\_\+inheritance()} and \doxylink{class_simulation_a46325953f7df60733d519b8b3cd1de61}{run\+\_\+reps()} in this order is essential to run a simulation. The class also contains setters for advanced options, which should be run before \doxylink{class_simulation_a46325953f7df60733d519b8b3cd1de61}{run\+\_\+reps()}. \begin{DoxyNote}{Note}
+Advanced options that have been set apply to all repetitions (runs) of a single simulation. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Advanced options will typically give an error message if the setting process has been unsuccessful. If they are not re-\/set successfully before running the simulation the option will maintain its default behaviour. 
+\end{DoxyWarning}
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_simulation_a8e1d4d667e07e3f7e453bbb936dd0c5a}{Simulation\+::num\+\_\+runs}, \doxylink{class_simulation_adc775015be74841e3f9f99550af987bd}{Simulation\+::max\+\_\+t} 
+\doxylink{struct_input_params_ab541958fd9e07697d71f0ea16e618de2}{Input\+Params\+::num\+\_\+runs}, \doxylink{struct_input_params_a2ff1e7d5dd5c45bf804f0701072200f4}{Input\+Params\+::max\+\_\+t} 
 \end{DoxySeeAlso}
 
 
@@ -105,7 +111,7 @@ Sets up and controls the flow of the simulation.
 
 
 
-Simualtion destructor. 
+\doxylink{class_simulation}{Simulation} destructor. 
 
 
 
@@ -121,7 +127,7 @@ Simualtion destructor.
 Runs the simulation num\+\_\+runs times, recording data in output files. 
 
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_simulation_a8e1d4d667e07e3f7e453bbb936dd0c5a}{Simulation\+::num\+\_\+runs}, \doxylink{class_record}{Record} 
+\doxylink{struct_input_params_ab541958fd9e07697d71f0ea16e618de2}{Input\+Params\+::num\+\_\+runs}, \doxylink{class_record}{Record} 
 \end{DoxySeeAlso}
 \Hypertarget{class_simulation_ac6575f63c78f7fffff4817665f5a0f05}\label{class_simulation_ac6575f63c78f7fffff4817665f5a0f05} 
 \index{Simulation@{Simulation}!set\_boundary\_type@{set\_boundary\_type}}
@@ -152,11 +158,14 @@ Sets the boundary type for the model.
 Sets the sites\textquotesingle{} coordinates and the release sites from a file, unless any errors are thrown. 
 
 The file should be structured in three columns, with x and y coordinates and whether the site is a release site (y/n) respectively. Values should be delimited by white space, and site rows should be delimited by new lines. \begin{DoxyWarning}{Warning}
-The file should be in the program\textquotesingle{}s running directory to be recognised. 
+Setting specific release sites will change the mode of gene drive release from random to scheduled. The specified release sites will be used for each of the releases (if using multiple release times). Mosquitoes will be released at all release sites for each release time. 
 \end{DoxyWarning}
+\begin{DoxyNote}{Note}
+The coordinates will undergo bound checks if the boundary type has been set to Toroid (the default) -\/ coordinates will need to be in the range \mbox{[}0, side\mbox{]} for both x and y. 
+\end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em filename} & coordinates filename \\
+\mbox{\texttt{ in}}  & {\em filename} & coordinates filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_simulation_a451b81744f93c2470a28d75bece48783}\label{class_simulation_a451b81744f93c2470a28d75bece48783} 
@@ -185,15 +194,22 @@ Sets the dispersal type for the model.
 
 
 
-Sets the values of the f\+\_\+\{ijk\} inheritance fraction for the gene drive considering r2 resistant alleles. 
+Sets the values of the f\+\_\+\{ijk\} inheritance fraction for the gene drive considering r2 non-\/functional resistance alleles. 
 
-f\+\_\+\{ijk\} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j. 
+f\+\_\+\{ijk\} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j.
+
+The order of elements in each matrix axis is the following genotype order\+: WW, WD, DD, WR, RR and DR, composed of wild-\/type (W), drive-\/type (D) and resistant-\/type (R) alleles. \begin{DoxyNote}{Note}
+Six genotypes are counted and not nine because WD and DW genotypes are counted together, and likewise for the other heterozygous genotypes. 
+
+DD, RR and DR females are assumed to be sterile as they don\textquotesingle{}t possess one functional copy of the dsx gene and thus produce no offspring. 
+\end{DoxyNote}
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em inher\+\_\+params} & inheritance parameters \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\doxylink{struct_inheritance_params}{Inheritance\+Params} 
+\doxylink{struct_inheritance_params}{Inheritance\+Params}, \doxylink{struct_input_params}{Input\+Params}\+:gamma, \doxylink{struct_input_params}{Input\+Params}\+:xi, \doxylink{struct_input_params_a803f48bc190f6b07b317539429626ee3}{Input\+Params\+::e} 
 \end{DoxySeeAlso}
 \Hypertarget{class_simulation_abc5c5d0891de7943820db3e6682cd125}\label{class_simulation_abc5c5d0891de7943820db3e6682cd125} 
 \index{Simulation@{Simulation}!set\_rainfall@{set\_rainfall}}
@@ -205,11 +221,17 @@ f\+\_\+\{ijk\} denotes the fraction of genotype k offspring from mother with gen
 
 Sets the daily rainfall values from a file, unless any errors are thrown. 
 
-These can be daily values for a year cycle (365 days), or daily values for all the simulated days (max\+\_\+t). The values should be delimited by new lines. 
+These can be daily values for a year cycle (365 days), or daily values for all the simulated days (max\+\_\+t). The values should be delimited by new lines. \begin{DoxyNote}{Note}
+This option will use the input parameters alpha1 and resp previously provided and ignore amp. 
+\end{DoxyNote}
+
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em filename} & rainfall filename \\
+\mbox{\texttt{ in}}  & {\em filename} & rainfall filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) \\
 \hline
 \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_seasonality}{Seasonality} 
+\end{DoxySeeAlso}
 \Hypertarget{class_simulation_a7d774bb0496b0ea95c2c88afc0d24731}\label{class_simulation_a7d774bb0496b0ea95c2c88afc0d24731} 
 \index{Simulation@{Simulation}!set\_release\_times@{set\_release\_times}}
 \index{set\_release\_times@{set\_release\_times}!Simulation@{Simulation}}
@@ -220,11 +242,17 @@ These can be daily values for a year cycle (365 days), or daily values for all t
 
 Sets the release times for gene drive release from a file, unless any errors are thrown. 
 
-Release times should be simulation day numbers within the maximum time of simulation. Values should be delimited by new lines. 
+Release times should be simulation day numbers within the maximum time of simulation. Values should be delimited by new lines. \begin{DoxyNote}{Note}
+When using this option, the input parameter driver\+\_\+start previously entered will be ignored. 
+\end{DoxyNote}
+
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em filename} & release times filename \\
+\mbox{\texttt{ in}}  & {\em filename} & release times filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) \\
 \hline
 \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_g_d_release}{GDRelease} 
+\end{DoxySeeAlso}
 
 
 \doxysubsection{Member Data Documentation}

@@ -118,7 +118,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites} 
+\doxylink{class_model_a17b3a93529de4ef762254f9a1932b67e}{Model\+::get\+\_\+sites()}, \doxylink{random_8cpp_a180e4f01c99b4c4fae00714c08fa647b}{random\+\_\+multinomial()} 
 \end{DoxySeeAlso}
 
 
@@ -134,7 +134,11 @@ Implements \mbox{\hyperlink{class_dispersal_a90638547dc5983463ee88d89a9167b5a}{D
 
 Computes the set of connection indices and weights for a group of patches. 
 
-If the distance between two patches is less than the the maximum dispersal distance, they are deemed to be connected. The connection weight is determined by the difference between the maximum dispersal distance and the distance between those patches. \begin{DoxyNote}{Note}
+If the distance between two patches is less than the the maximum dispersal distance {\ttfamily max\+\_\+disp}, they are deemed to be connected. The connection weight is determined by the difference between the maximum dispersal distance and the distance between those patches\+:
+
+weight = max\+\_\+disp -\/ distance
+
+\begin{DoxyNote}{Note}
 Under this dispersal type, patches are deemed to be connected to themselves, resulting in self-\/dispersal. This is such that dispersal can take place even in 1-\/population models. 
 \end{DoxyNote}
 
@@ -143,7 +147,7 @@ Under this dispersal type, patches are deemed to be connected to themselves, res
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as \doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}, where the first item represents all connections to the first patch in \doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}, etc. 
+The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as \doxylink{class_model_a17b3a93529de4ef762254f9a1932b67e}{Model\+::get\+\_\+sites()}, where the first item represents all connections to the first \doxylink{class_patch}{Patch} of the sites vector, etc. 
 \end{DoxyReturn}
 \Hypertarget{class_distance_kernel_dispersal_a980ed0ba571a2adf1e856f408d914078}\label{class_distance_kernel_dispersal_a980ed0ba571a2adf1e856f408d914078} 
 \index{DistanceKernelDispersal@{DistanceKernelDispersal}!set\_connecs@{set\_connecs}}
@@ -155,6 +159,13 @@ The connections between all patches, divided into connection indices and connect
 
 Sets the inter-\/patch connectivities for dispersal. 
 
+If the distance between two patches is less than the the maximum dispersal distance {\ttfamily max\+\_\+disp}, they are deemed to be connected. The connection weight is determined by the difference between the maximum dispersal distance and the distance between those patches\+:
+
+weight = max\+\_\+disp -\/ distance
+
+\begin{DoxyNote}{Note}
+Under this dispersal type, patches are deemed to be connected to themselves, resulting in self-\/dispersal. This is such that dispersal can take place even in 1-\/population models. 
+\end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\

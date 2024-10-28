@@ -5,15 +5,15 @@ import matplotlib.animation as animation
 import matplotlib.colors as mcolors
 
 #%% Plot global output (totals) from model
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set1")
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set15")
 
-totals = np.loadtxt("Totals1run1.txt", skiprows=2)
+totals = np.loadtxt("Totals15run1.txt", skiprows=2)
 
 times = totals[:, 0]
 total_males = totals[:, 1:]
 
 plt.figure()
-plt.title("Total males across the area")
+plt.title("Total males across the area - set 15 run 1")
 plt.xlabel("Day")
 plt.ylabel("Total number of individuals")
 plt.plot(times, total_males[:, 0], label="$M_{WW}$")
@@ -77,7 +77,7 @@ ax.set_title("Population sizes - set 1 run 1")
 annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
 ax.set_xlabel("x (km)")
 ax.set_ylabel("y (km)")
-side = 1 
+side = 1 # modify manually depending on selected side parameter
 ax.set_xlim(0, side)
 ax.set_ylim(0, side)     
 
@@ -118,7 +118,7 @@ cbar = fig.colorbar(scat, ax=ax, label='Total population size')
 annotation = fig.text(x=0.1, y=0.92, s='t = {}'.format(sim_day))
 ax.set_xlabel("x (km)")
 ax.set_ylabel("y (km)") 
-side = 1 
+side = 1 # modify manually depending on selected side parameter
 ax.set_xlim(0, side)
 ax.set_ylim(0, side)
 
@@ -193,7 +193,7 @@ cbar.ax.set_yticklabels(['None', '0.0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6'
 annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
 ax.set_xlabel("x (km)")
 ax.set_ylabel("y (km)")
-side = 1 
+side = 1 # modify manually depending on selected side parameter
 ax.set_xlim(0, side)
 ax.set_ylim(0, side)
 #plt.grid()
@@ -204,12 +204,13 @@ fig, ax = plt.subplots()
 
 # get coords of sites
 os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files")
-coords = np.loadtxt("CoordinateList101run1.txt", skiprows=2)
+#os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set10")
+coords = np.loadtxt("CoordinateList1run1.txt", skiprows=2)
 x = coords[:, 1]
 y = coords[:, 2]
 
 # get populations per genotype
-local_data = np.loadtxt("LocalData101run1.txt", skiprows=2)
+local_data = np.loadtxt("LocalData1run1.txt", skiprows=2)
 t=0 # recorded timestep
 sim_day = int(local_data[t*len(x), 0])
 local_data_day0 = local_data[t*len(x):((t+1)*len(x)), 2:8]
@@ -234,7 +235,7 @@ for pat in range(0, len(x)):
 main_cmap = ['aquamarine', 'mediumturquoise', 'darkcyan','steelblue', 'royalblue', 'mediumblue', 'slateblue', 'darkviolet', 'indigo', 'black']
 all_colours = ['darkgray', 'lightgreen'] + main_cmap # add colours for no-population patch and wild-population patch
 cmap = mcolors.ListedColormap(all_colours)
-bounds = [-2, -1, 0.0001, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+bounds = [-2, -1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 cnorm = mcolors.BoundaryNorm(bounds, cmap.N)
 
 # make a scatter plot with drive frequency colour map
@@ -249,7 +250,7 @@ labels[1].set_verticalalignment('bottom')
 annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
 ax.set_xlabel("x (km)")
 ax.set_ylabel("y (km)")
-side = 1 
+side = 1 # modify manually depending on selected side parameter
 ax.set_xlim(0, side)
 ax.set_ylim(0, side)
 #plt.grid()
@@ -270,6 +271,8 @@ def update_drive_freq(t):
         tot = WW[pat] + WD[pat] + DD[pat] + WR[pat] + RR[pat] + DR[pat]
         if (tot == 0):
             drive_freq[pat] = -2
+        elif (tot == WW[pat]):
+            drive_freq[pat] = -0.5
         else:
             drive_freq[pat] = (WD[pat] + (2*DD[pat]) + DR[pat]) / (2*tot)
 
@@ -281,5 +284,5 @@ def update_drive_freq(t):
 rec_sites_freq = 1
 num_frames = int(len(local_data[:, 0]) / (len(x) / rec_sites_freq))
 anim = animation.FuncAnimation(fig=fig, func=update_drive_freq, frames=num_frames, interval=20)
-anim.save("set101_drive_anim_radial.gif")
+anim.save("set1_anim.gif")
 plt.show()

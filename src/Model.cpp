@@ -12,7 +12,7 @@ using namespace constants;
 
 /**
  * Model constructor.
- * Builds the components of the model.
+ * Builds the components of the model for sinusoid rainfall-type seasonality.
  * @param[in] params 		model parameters
  * @param[in] inher_frac 	inheritance fraction
  * @param[in] season 		seasonality parameters for sinusoid rainfall
@@ -82,7 +82,7 @@ Model::Model(ModelParams* params, const std::array<std::array<std::array <double
 
 /**
  * Model constructor.
- * Builds the components of the model.
+ * Builds the components of the model for input rainfall-type seasonality.
  * @param[in] params 		model parameters
  * @param[in] inher_frac 	inheritance fraction
  * @param[in] season 		seasonality parameters for input rainfall data
@@ -166,10 +166,10 @@ Model::~Model()
 }
 
 /**
- * Returns a random value for the baseline contribution to the carrying capacity (alpha0). 
- * @details The random value is obtained as a random draw from a lognormal distribution with desired mean alpha0_mean and desired variance alpha0_variance.
- * @return A random draw of alpha0.
- * @see Model::alpha0_mean, Model::alpha0_variance
+ * Returns a random value for the baseline contribution to the carrying capacity ``alpha0``. 
+ * @details The random value is obtained as a random draw from a lognormal distribution with desired mean ``alpha0_mean`` and desired variance ``alpha0_variance``.
+ * @return A random draw of ``alpha0``.
+ * @see InputParams::alpha0_mean, InputParams::alpha0_variance, random_lognormal()
  */
 double Model::alpha0() 
 {
@@ -177,7 +177,7 @@ double Model::alpha0()
 }
 
 /**
- * Sets up the model architecture. 
+ * Sets up the model architecture. Populates sites and sets dispersal connections. 
  */
 void Model::initiate()
 {
@@ -215,7 +215,7 @@ void Model::set_dev_duration_probs(int min_time, int max_time)
 
 /**
  * Runs the daily step of the model.
- * @details The life processes do not run during the initialisation day (day 0).
+ * @details The life processes do not run during the initialisation day (day 0). However, gene drive release can be carried out on day 0.
  * @param[in] day simulation day
  */ 
 void Model::run(int day)
@@ -246,7 +246,7 @@ void Model::run_step(int day)
 /**
  * Returns the total number of juveniles across all ages and genotypes and across all patches.
  * @return The total number of juveniles in the model run. 
- * @see Patch::J
+ * @see Patch
  */
 long long int Model::calculate_tot_J()
 {
@@ -274,7 +274,7 @@ long long int Model::calculate_tot_M()
 /**
  * Returns the total number of virgin (unmated) females across all genotypes and across all patches.
  * @return The total number of virgin (unmated) females in the model run.
- * @see Patch::V
+ * @see Patch
  */
 long long int Model::calculate_tot_V()
 {
@@ -302,7 +302,7 @@ long long int Model::calculate_tot_F()
 /**
  * Returns the total number of males of each genotype across all patches.
  * @return The total number of males in the model run, divided by genotype.
- * @see Patch::M
+ * @see Patch::get_M()
  */
 std::array<long long int, constants::num_gen> Model::calculate_tot_M_gen() 
 {
@@ -319,8 +319,8 @@ std::array<long long int, constants::num_gen> Model::calculate_tot_M_gen()
 
 /**
  * Returns the sites vector.
+ * @details The patches within the vector are ordered according to order of creation. If specific coordinates have been set for patches, the sites vector will follow the same order as the coordinates vector of the Model constructor.
  * @return The sites vector, containing all Patch objects. 
- * @see Model::sites, Patch
  */
 std::vector<Patch*> Model::get_sites() const
 {
@@ -328,7 +328,8 @@ std::vector<Patch*> Model::get_sites() const
 }
 
 /**
- * Returns the current simulation day.
+ * Returns the current simulation day. 
+ * @details Simulation days run from 0 (initialisation day) up to ``max_t`` (inclusive). 
  * @return The simulation day.
  */
 int Model::get_day() const
@@ -337,7 +338,7 @@ int Model::get_day() const
 }
 
 /**
- * Returns the carrying capacity for the given alpha0 (the baseline contribution to it) and the current day.
+ * Returns the carrying capacity for the given alpha0 (the baseline contribution to carrying capacity) and for the current day.
  * @param[in] alpha0 baseline contribution to the carrying capacity
  * @see Seasonality::alpha()
  */

@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{ifthen}
+\usepackage{epsfig}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{newunicodechar}
+  \makeatletter
+    \def\doxynewunicodechar#1#2{%
+    \@tempswafalse
+    \edef\nuc@tempa{\detokenize{#1}}%
+    \if\relax\nuc@tempa\relax
+      \nuc@emptyargerr
+    \else
+      \edef\@tempb{\expandafter\@car\nuc@tempa\@nil}%
+      \nuc@check
+      \if@tempswa
+        \@namedef{u8:\nuc@tempa}{#2}%
+      \fi
+    \fi
+  }
+  \makeatother
+  \doxynewunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \doxynewunicodechar{²}{${}^{2}$}% Superscript two
+  \doxynewunicodechar{³}{${}^{3}$}% Superscript three
+
+\pagestyle{empty}
+\begin{document}
+$ < t \le $
+\pagebreak
+
+$ t $
+\pagebreak
+
+\[
+ \textrm{comp} = (1 - \mu_j)    \sqrt[\textrm{comp_power}]{\frac{\alpha}{\alpha + \textrm{J}_{\textrm{tot}}}},
+\]
+\pagebreak
+
+$ \mu_j $
+\pagebreak
+
+$ \alpha $
+\pagebreak
+
+\[ 
+  \textrm{mate_rate} =  \frac{\textrm{M}_{\textrm{tot}}}{\beta + \textrm{M}_{\textrm{tot}}}.
+\]
+\pagebreak
+
+\[
+     \alpha = \alpha_0 + \alpha_1 \left(1 + \textrm{A}\sin\left(\frac{2 \pi d}{365}\right)\right),
+\]
+\pagebreak
+
+$ \alpha_0 $
+\pagebreak
+
+$ \alpha_1 $
+\pagebreak
+
+$ \textrm{A} $
+\pagebreak
+
+$ d $
+\pagebreak
+
+\[
+     \alpha = \alpha_0 + \alpha_1 (1 - e^{-\textrm{R} r_d}),
+\]
+\pagebreak
+
+$ \textrm{R} $
+\pagebreak
+
+$ r_d $
+\pagebreak
+
+\end{document}

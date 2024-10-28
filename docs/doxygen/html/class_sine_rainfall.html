@@ -88,9 +88,9 @@ Inheritance diagram for SineRainfall:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_sine_rainfall__inherit__graph.png" border="0" usemap="#a_sine_rainfall_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_sine_rainfall_inherit__map" id="a_sine_rainfall_inherit__map">
-<area shape="rect" title="Implements seasonality by modelling the rainfall contribution to carrying capacity as a sinusoid wave..." alt="" coords="5,144,105,235"/>
-<area shape="rect" href="class_seasonality.html" title="Seasonality base class." alt="" coords="5,5,105,96"/>
-<area shape="poly" title=" " alt="" coords="58,111,58,144,53,144,53,111"/>
+<area shape="rect" title="Implements seasonality by modelling the rainfall contribution to carrying capacity as a sinusoid wave..." alt="" coords="9,165,109,256"/>
+<area shape="rect" href="class_seasonality.html" title="Seasonality base class." alt="" coords="5,5,113,117"/>
+<area shape="poly" title=" " alt="" coords="62,133,62,166,57,166,57,133"/>
 </map>
 </div>
 <div class="dynheader">
@@ -98,9 +98,9 @@ Collaboration diagram for SineRainfall:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_sine_rainfall__coll__graph.png" border="0" usemap="#a_sine_rainfall_coll__map" alt="Collaboration graph"/></div>
 <map name="a_sine_rainfall_coll__map" id="a_sine_rainfall_coll__map">
-<area shape="rect" title="Implements seasonality by modelling the rainfall contribution to carrying capacity as a sinusoid wave..." alt="" coords="5,144,105,235"/>
-<area shape="rect" href="class_seasonality.html" title="Seasonality base class." alt="" coords="5,5,105,96"/>
-<area shape="poly" title=" " alt="" coords="58,111,58,144,53,144,53,111"/>
+<area shape="rect" title="Implements seasonality by modelling the rainfall contribution to carrying capacity as a sinusoid wave..." alt="" coords="9,165,109,256"/>
+<area shape="rect" href="class_seasonality.html" title="Seasonality base class." alt="" coords="5,5,113,117"/>
+<area shape="poly" title=" " alt="" coords="62,133,62,166,57,166,57,133"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -116,6 +116,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a58daa86e6a5d8f1b1b8d4db8c9389870 inherit pub_methods_class_seasonality" id="r_a58daa86e6a5d8f1b1b8d4db8c9389870"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seasonality.html#a58daa86e6a5d8f1b1b8d4db8c9389870">Seasonality</a> (double <a class="el" href="class_seasonality.html#ac69d88cb94f794d9e317b7d259eaff64">alpha1</a>)</td></tr>
 <tr class="memdesc:a58daa86e6a5d8f1b1b8d4db8c9389870 inherit pub_methods_class_seasonality"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_seasonality.html" title="Seasonality base class.">Seasonality</a> constructor.  <br /></td></tr>
 <tr class="separator:a58daa86e6a5d8f1b1b8d4db8c9389870 inherit pub_methods_class_seasonality"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc63e539781730aba9fcf84ce590405 inherit pub_methods_class_seasonality" id="r_aebc63e539781730aba9fcf84ce590405"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seasonality.html#aebc63e539781730aba9fcf84ce590405">~Seasonality</a> ()</td></tr>
+<tr class="separator:aebc63e539781730aba9fcf84ce590405 inherit pub_methods_class_seasonality"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -188,7 +190,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes the carrying-capacity alpha value for the given day and alpha0. </p>
-<p>Models rainfall contribution as a sine wave. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Models rainfall contribution as a sine wave.</p>
+<p class="formulaDsp">
+<picture><source srcset="form_6_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\[
+     \alpha = \alpha_0 + \alpha_1 \left(1 + \textrm{A}\sin\left(\frac{2 \pi d}{365}\right)\right),
+\]" src="form_6.png"/></picture>
+</p>
+<p> where <picture><source srcset="form_4_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \alpha $" src="form_4.png"/></picture> is the carrying capacity, <picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \alpha_0 $" src="form_7.png"/></picture> is the baseline contribution, <picture><source srcset="form_8_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \alpha_1 $" src="form_8.png"/></picture> is the factor accounting for rainfall contribution, <picture><source srcset="form_9_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \textrm{A} $" src="form_9.png"/></picture> is the amplitude of rainfall fluctuations and <picture><source srcset="form_10_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ d $" src="form_10.png"/></picture> is the given simulation day. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">day</td><td>simulation day </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">alpha0</td><td>baseline contribution to the carrying capacity </td></tr>
@@ -196,7 +204,6 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The carrying-capacity. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_patch.html#a5b781b751c5a39bb3a94640e3542a517" title="Baseline contribution to the carrying capacity.">Patch::alpha0</a> </dd></dl>
 
 <p>Implements <a class="el" href="class_seasonality.html#a86bfbdfc639ab1a08e3643e05b55d6f1">Seasonality</a>.</p>
 

@@ -15,7 +15,7 @@ Inheritance diagram for Input\+Rainfall\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=156pt]{class_input_rainfall__inherit__graph}
+\includegraphics[width=161pt]{class_input_rainfall__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -24,7 +24,7 @@ Collaboration diagram for Input\+Rainfall\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=156pt]{class_input_rainfall__coll__graph}
+\includegraphics[width=161pt]{class_input_rainfall__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -38,7 +38,9 @@ double \mbox{\hyperlink{class_input_rainfall_a7599fc9d35cae87ac87f98d2ccb6b3fb}{
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_seasonality_a58daa86e6a5d8f1b1b8d4db8c9389870}{Seasonality}} (double \mbox{\hyperlink{class_seasonality_ac69d88cb94f794d9e317b7d259eaff64}{alpha1}})
-\begin{DoxyCompactList}\small\item\em \doxylink{class_seasonality}{Seasonality} constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_seasonality}{Seasonality} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_seasonality_aebc63e539781730aba9fcf84ce590405}{\texorpdfstring{$\sim$}{\string~}\+Seasonality}} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -91,7 +93,11 @@ This class expects rainfall data for either every day of a year (365 days) or ev
 
 Computes the carrying-\/capacity alpha value for the given day and alpha0. 
 
-Models rainfall contribution as an exponential of daily rainfall. 
+Models rainfall contribution as an exponential of daily rainfall.
+
+\[
+     \alpha = \alpha_0 + \alpha_1 (1 - e^{-\textrm{R} r_d}),
+\] where $ \alpha $ is the carrying capacity, $ \alpha_0 $ is the baseline contribution, $ \alpha_1 $ is the factor accounting for rainfall contribution, $ \textrm{R} $ is the responsiveness to the rainfall contribution and $ r_d $ is the rainfall for the given day. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em day} & simulation day \\
 \hline
@@ -101,9 +107,6 @@ Models rainfall contribution as an exponential of daily rainfall.
 \begin{DoxyReturn}{Returns}
 The carrying-\/capacity. 
 \end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\doxylink{class_patch_a5b781b751c5a39bb3a94640e3542a517}{Patch\+::alpha0} 
-\end{DoxySeeAlso}
 
 
 Implements \mbox{\hyperlink{class_seasonality_a86bfbdfc639ab1a08e3643e05b55d6f1}{Seasonality}}.

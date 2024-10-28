@@ -2,7 +2,7 @@
 \hypertarget{class_model}{}\label{class_model}\index{Model@{Model}}
 
 
-Runs the model.  
+Sets up and runs the model.  
 
 
 
@@ -46,12 +46,12 @@ std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*
 int \mbox{\hyperlink{class_model_a6499bfa0eeb48133e352ce72f79aee9d}{get\+\_\+day}} () const
 \begin{DoxyCompactList}\small\item\em Returns the current simulation day. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_model_a04c1c541fc6d4f4c12f854b971197ea5}{get\+\_\+alpha}} (double \mbox{\hyperlink{class_model_ad1efe8336546de49c99d0d8c8ec8e6e8}{alpha0}})
-\begin{DoxyCompactList}\small\item\em Returns the carrying capacity for the given alpha0 (the baseline contribution to it) and the current day. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the carrying capacity for the given alpha0 (the baseline contribution to carrying capacity) and for the current day. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 double \mbox{\hyperlink{class_model_ad1efe8336546de49c99d0d8c8ec8e6e8}{alpha0}} ()
-\begin{DoxyCompactList}\small\item\em Returns a random value for the baseline contribution to the carrying capacity (alpha0). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns a random value for the baseline contribution to the carrying capacity {\ttfamily alpha0}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_model_add15fa39b2e8fda3fefc551de4d0e1bb}{populate\+\_\+sites}} ()
 \begin{DoxyCompactList}\small\item\em Populates all sites with a wild mosquito population of different types (age and sex). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_model_a1b78097ea008a3b4cc36b321c7d42289}{set\+\_\+dev\+\_\+duration\+\_\+probs}} (int min\+\_\+time, int max\+\_\+time)
@@ -102,9 +102,9 @@ double \mbox{\hyperlink{class_model_ad10cafc06c6b49b020c22efb034f8362}{alpha0\+\
 
 
 \doxysubsection{Detailed Description}
-Runs the model. 
+Sets up and runs the model. 
 
-\begin{DoxySeeAlso}{See also}
+In addition to the set-\/up of the model, \doxylink{class_model}{Model} coordinates the different classes to run daily steps of mosquito life processes and dispersal as well as other events like gene drive release, aestivation and seasonality. It also contains methods to interface with the \doxylink{class_record}{Record} class. \begin{DoxySeeAlso}{See also}
 \doxylink{struct_area_params}{Area\+Params}, \doxylink{struct_model_params}{Model\+Params} 
 \end{DoxySeeAlso}
 
@@ -120,7 +120,7 @@ Runs the model.
 
 \doxylink{class_model}{Model} constructor. 
 
-Builds the components of the model. 
+Builds the components of the model for sinusoid rainfall-\/type seasonality. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em params} & model parameters \\
 \hline
@@ -151,7 +151,7 @@ Builds the components of the model.
 
 \doxylink{class_model}{Model} constructor. 
 
-Builds the components of the model. 
+Builds the components of the model for input rainfall-\/type seasonality. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em params} & model parameters \\
 \hline
@@ -206,13 +206,13 @@ Carries out adult mortality across all patches.
 
 
 
-Returns a random value for the baseline contribution to the carrying capacity (alpha0). 
+Returns a random value for the baseline contribution to the carrying capacity {\ttfamily alpha0}. 
 
-The random value is obtained as a random draw from a lognormal distribution with desired mean alpha0\+\_\+mean and desired variance alpha0\+\_\+variance. \begin{DoxyReturn}{Returns}
-A random draw of alpha0. 
+The random value is obtained as a random draw from a lognormal distribution with desired mean {\ttfamily alpha0\+\_\+mean} and desired variance {\ttfamily alpha0\+\_\+variance}. \begin{DoxyReturn}{Returns}
+A random draw of {\ttfamily alpha0}. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_model_a106416d6d9dc6510bda17ea0b6b1b588}{Model\+::alpha0\+\_\+mean}, \doxylink{class_model_ad10cafc06c6b49b020c22efb034f8362}{Model\+::alpha0\+\_\+variance} 
+\doxylink{struct_input_params_a2056a53757ab38ff189bca6870d2f7d5}{Input\+Params\+::alpha0\+\_\+mean}, \doxylink{struct_input_params_a4497eea80bab35f4d09bb8aa1fd71c3e}{Input\+Params\+::alpha0\+\_\+variance}, \doxylink{random_8cpp_ab1651a929e139f6da870eae2f0c641e0}{random\+\_\+lognormal()} 
 \end{DoxySeeAlso}
 \Hypertarget{class_model_a8be5555da392871558de820795938a04}\label{class_model_a8be5555da392871558de820795938a04} 
 \index{Model@{Model}!calculate\_tot\_F@{calculate\_tot\_F}}
@@ -244,7 +244,7 @@ Returns the total number of juveniles across all ages and genotypes and across a
 The total number of juveniles in the model run. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_patch_a9ec8ec87984a6e18efa7afd83e6df081}{Patch\+::J} 
+\doxylink{class_patch}{Patch} 
 \end{DoxySeeAlso}
 \Hypertarget{class_model_ab92b4e7f88b556e690391528330ba6af}\label{class_model_ab92b4e7f88b556e690391528330ba6af} 
 \index{Model@{Model}!calculate\_tot\_M@{calculate\_tot\_M}}
@@ -276,7 +276,7 @@ Returns the total number of males of each genotype across all patches.
 The total number of males in the model run, divided by genotype. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_patch_a6e9cda8c3620873eaadf23db0f5a7b27}{Patch\+::M} 
+\doxylink{class_patch_a18366a21df794d2cebbbdfe3195734a5}{Patch\+::get\+\_\+\+M()} 
 \end{DoxySeeAlso}
 \Hypertarget{class_model_a0d762e0b53f2f1443b59d1425366cfc4}\label{class_model_a0d762e0b53f2f1443b59d1425366cfc4} 
 \index{Model@{Model}!calculate\_tot\_V@{calculate\_tot\_V}}
@@ -292,7 +292,7 @@ Returns the total number of virgin (unmated) females across all genotypes and ac
 The total number of virgin (unmated) females in the model run. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_patch_ae4195468f66138a8bf7f0c37701098da}{Patch\+::V} 
+\doxylink{class_patch}{Patch} 
 \end{DoxySeeAlso}
 \Hypertarget{class_model_a04c1c541fc6d4f4c12f854b971197ea5}\label{class_model_a04c1c541fc6d4f4c12f854b971197ea5} 
 \index{Model@{Model}!get\_alpha@{get\_alpha}}
@@ -302,7 +302,7 @@ The total number of virgin (unmated) females in the model run.
 
 
 
-Returns the carrying capacity for the given alpha0 (the baseline contribution to it) and the current day. 
+Returns the carrying capacity for the given alpha0 (the baseline contribution to carrying capacity) and for the current day. 
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -322,7 +322,7 @@ Returns the carrying capacity for the given alpha0 (the baseline contribution to
 
 Returns the current simulation day. 
 
-\begin{DoxyReturn}{Returns}
+\doxylink{class_simulation}{Simulation} days run from 0 (initialisation day) up to {\ttfamily max\+\_\+t} (inclusive). \begin{DoxyReturn}{Returns}
 The simulation day. 
 \end{DoxyReturn}
 \Hypertarget{class_model_a17b3a93529de4ef762254f9a1932b67e}\label{class_model_a17b3a93529de4ef762254f9a1932b67e} 
@@ -335,12 +335,9 @@ The simulation day.
 
 Returns the sites vector. 
 
-\begin{DoxyReturn}{Returns}
+The patches within the vector are ordered according to order of creation. If specific coordinates have been set for patches, the sites vector will follow the same order as the coordinates vector of the \doxylink{class_model}{Model} constructor. \begin{DoxyReturn}{Returns}
 The sites vector, containing all \doxylink{class_patch}{Patch} objects. 
 \end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}, \doxylink{class_patch}{Patch} 
-\end{DoxySeeAlso}
 \Hypertarget{class_model_a3d359ced00aacc31a7b50c53b8b1e340}\label{class_model_a3d359ced00aacc31a7b50c53b8b1e340} 
 \index{Model@{Model}!initiate@{initiate}}
 \index{initiate@{initiate}!Model@{Model}}
@@ -351,7 +348,7 @@ The sites vector, containing all \doxylink{class_patch}{Patch} objects.
 
 Sets up the model architecture. 
 
-\Hypertarget{class_model_af30fafd15a6451c20c3dcef622aaf6d0}\label{class_model_af30fafd15a6451c20c3dcef622aaf6d0} 
+Populates sites and sets dispersal connections. \Hypertarget{class_model_af30fafd15a6451c20c3dcef622aaf6d0}\label{class_model_af30fafd15a6451c20c3dcef622aaf6d0} 
 \index{Model@{Model}!juv\_eclose@{juv\_eclose}}
 \index{juv\_eclose@{juv\_eclose}!Model@{Model}}
 \doxysubsubsection{\texorpdfstring{juv\_eclose()}{juv\_eclose()}}
@@ -410,7 +407,7 @@ Populates all sites with a wild mosquito population of different types (age and 
 
 Runs the daily step of the model. 
 
-The life processes do not run during the initialisation day (day 0). 
+The life processes do not run during the initialisation day (day 0). However, gene drive release can be carried out on day 0. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em day} & simulation day \\
 \hline

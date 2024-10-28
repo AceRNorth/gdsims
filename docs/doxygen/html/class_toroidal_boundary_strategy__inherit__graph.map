@@ -1,5 +1,5 @@
 <map id="ToroidalBoundaryStrategy" name="ToroidalBoundaryStrategy">
-<area shape="rect" id="Node000001" title="Implements the distance method for toroidal boundary conditions." alt="" coords="5,165,185,277"/>
-<area shape="rect" id="Node000002" href="$class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="27,5,163,117"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,133,98,166,93,166,93,133"/>
+<area shape="rect" id="Node000001" title="Implements the methods for toroidal boundary conditions." alt="" coords="5,187,185,299"/>
+<area shape="rect" id="Node000002" href="$class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="23,5,167,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,154,98,187,93,187,93,154"/>
 </map>

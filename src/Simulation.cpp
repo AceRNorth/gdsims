@@ -87,7 +87,7 @@ Simulation::Simulation(InputParams input)
 }
 
 /**
- * Simualtion destructor.
+ * Simulation destructor.
  */
 Simulation::~Simulation() 
 {
@@ -106,8 +106,9 @@ Simulation::~Simulation()
 /**
  * Sets the sites' coordinates and the release sites from a file, unless any errors are thrown.
  * The file should be structured in three columns, with x and y coordinates and whether the site is a release site (y/n) respectively. Values should be delimited by white space, and site rows should be delimited by new lines. 
- * @warning The file should be in the program's running directory to be recognised.
- * @param[in] filename coordinates filename
+ * @warning Setting specific release sites will change the mode of gene drive release from random to scheduled. The specified release sites will be used for each of the releases (if using multiple release times). Mosquitoes will be released at all release sites for each release time.
+ * @note The coordinates will undergo bound checks if the boundary type has been set to Toroid (the default) - coordinates will need to be in the range [0, side] for both x and y.
+ * @param[in] filename coordinates filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory)
  */
 void Simulation::set_coords(const std::string& filename) 
 {
@@ -189,7 +190,9 @@ void Simulation::set_dispersal_type(DispersalType disp)
  * Sets the daily rainfall values from a file, unless any errors are thrown.
  * These can be daily values for a year cycle (365 days), or daily values for all the simulated days (max_t). 
  * The values should be delimited by new lines.
- * @param[in] filename rainfall filename
+ * @note This option will use the input parameters alpha1 and resp previously provided and ignore amp.
+ * @param[in] filename rainfall filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory)
+ * @see Seasonality
  */
 void Simulation::set_rainfall(const std::string& filename)
 {
@@ -234,7 +237,9 @@ void Simulation::set_rainfall(const std::string& filename)
  * Sets the release times for gene drive release from a file, unless any errors are thrown.
  * Release times should be simulation day numbers within the maximum time of simulation.
  * Values should be delimited by new lines.
- * @param[in] filename release times filename
+ * @note When using this option, the input parameter driver_start previously entered will be ignored.
+ * @param[in] filename release times filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory)
+ * @see GDRelease
  */
 void Simulation::set_release_times(const std::string& filename) 
 {
@@ -276,9 +281,12 @@ void Simulation::set_release_times(const std::string& filename)
 }
 
 /**
- * Sets the values of the f_{ijk} inheritance fraction for the gene drive considering r2 resistant alleles. f_{ijk} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j.
+ * Sets the values of the f_{ijk} inheritance fraction for the gene drive considering r2 non-functional resistance alleles. f_{ijk} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j.
+ * @details The order of elements in each matrix axis is the following genotype order: WW, WD, DD, WR, RR and DR, composed of wild-type (W), drive-type (D) and resistant-type (R) alleles. 
+ * @note Six genotypes are counted and not nine because WD and DW genotypes are counted together, and likewise for the other heterozygous genotypes.
+ * @note  DD, RR and DR females are assumed to be sterile as they don't possess one functional copy of the dsx gene and thus produce no offspring.
  * @param[in] inher_params inheritance parameters
- * @see InheritanceParams
+ * @see InheritanceParams, InputParams:gamma, InputParams:xi, InputParams::e
  */
 void Simulation::set_inheritance(InheritanceParams inher_params)
 {
@@ -387,7 +395,7 @@ void Simulation::set_inheritance(InheritanceParams inher_params)
 
 /**
  * Runs the simulation num_runs times, recording data in output files.
- * @see Simulation::num_runs, Record
+ * @see InputParams::num_runs, Record
  */
 void Simulation::run_reps() 
 {

@@ -219,7 +219,8 @@
 <para><ref refid="class_record" kindref="compound">Record</ref> constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para>Creates LocalData, Totals and CoordinateList output .txt files. <parameterlist kind="param"><parameteritem>
+<para>Creates LocalData, Totals and CoordinateList output .txt files.</para>
+<para>Creates a subdirectory for output files in the current directory. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">rec_params</parametername>
 </parameternamelist>
@@ -240,7 +241,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="22" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="15" bodyend="46"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="22" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="16" bodyend="47"/>
       </memberdef>
       <memberdef kind="function" id="class_record_1ad2ce1a99d866834ab53dedd788cb1ea6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -256,7 +257,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="23" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="52" bodyend="55"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="23" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="53" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="class_record_1a0c4d71ceed2e84f89273a73a304fcc4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -281,13 +282,13 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">Model::sites</ref>, <ref refid="class_record_1a8ab507dfcfb593428a8c23a81877fac3" kindref="member">Record::rec_sites_freq</ref> </para>
+<simplesect kind="see"><para><ref refid="struct_input_params_1a0aa285f32fbb33162549d1480f36e1f0" kindref="member">InputParams::rec_sites_freq</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="24" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="63" bodyend="72"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="24" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="64" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="class_record_1aa8ed3bd4fdee0c2dddbb5cec2f685577" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -324,13 +325,13 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para><ref refid="class_model_1a6d5f4f68f41e76c3e966e312d2f6e9e3" kindref="member">Model::calculate_tot_M_gen()</ref>, <ref refid="class_patch_1a6e9cda8c3620873eaadf23db0f5a7b27" kindref="member">Patch::M</ref> </para>
+<simplesect kind="see"><para><ref refid="class_model_1a6d5f4f68f41e76c3e966e312d2f6e9e3" kindref="member">Model::calculate_tot_M_gen()</ref>, <ref refid="class_patch_1a18366a21df794d2cebbbdfe3195734a5" kindref="member">Patch::get_M()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="25" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="81" bodyend="88"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="25" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="82" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="class_record_1a27622a9c11aa4a86ca123456ef0ad236" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -403,13 +404,13 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para><ref refid="class_patch_1a9ec8ec87984a6e18efa7afd83e6df081" kindref="member">Patch::J</ref>, <ref refid="class_patch_1a6e9cda8c3620873eaadf23db0f5a7b27" kindref="member">Patch::M</ref>, <ref refid="class_patch_1ae4195468f66138a8bf7f0c37701098da" kindref="member">Patch::V</ref>, <ref refid="class_patch_1a9e6066355010ba73abb33d8d41714677" kindref="member">Patch::F</ref> </para>
+<simplesect kind="see"><para><ref refid="class_patch" kindref="compound">Patch</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="26" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="100" bodyend="107"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="26" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="101" bodyend="108"/>
       </memberdef>
       <memberdef kind="function" id="class_record_1a8e504c6253ef29fa5c86d216e3f28e1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -446,13 +447,13 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">Model::sites</ref>, <ref refid="class_record_1a8ab507dfcfb593428a8c23a81877fac3" kindref="member">Record::rec_sites_freq</ref> </para>
+<simplesect kind="see"><para><ref refid="struct_input_params_1a0aa285f32fbb33162549d1480f36e1f0" kindref="member">InputParams::rec_sites_freq</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="27" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="116" bodyend="125"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="27" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="117" bodyend="126"/>
       </memberdef>
       <memberdef kind="function" id="class_record_1ae6b89328b0fcaa2bfa5eebe819782b50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -481,13 +482,13 @@ Other relevant parameters include the local recording interval. <parameterlist k
 </parameterlist>
 <simplesect kind="return"><para>As you would expect. </para>
 </simplesect>
-<simplesect kind="see"><para><ref refid="class_record_1a8e504c6253ef29fa5c86d216e3f28e1c" kindref="member">Record::record_local()</ref>, <ref refid="class_record_1a13b20ef61772014de98c3d87354ad1e9" kindref="member">Record::rec_start</ref>, <ref refid="class_record_1a0598ebe2ae342bf3dc7be5a156ad4c34" kindref="member">Record::rec_end</ref>, <ref refid="class_record_1a9217590af69eb03412ac2c82c4fd853e" kindref="member">Record::rec_interval_local</ref> </para>
+<simplesect kind="see"><para><ref refid="class_record_1a8e504c6253ef29fa5c86d216e3f28e1c" kindref="member">Record::record_local()</ref>, <ref refid="struct_input_params_1a6e73a95f47dcfa05263838b0b1f3ad27" kindref="member">InputParams::rec_start</ref>, <ref refid="struct_input_params_1a1223c275e31ee8b901b5d5a274d85c74" kindref="member">InputParams::rec_end</ref>, <ref refid="struct_input_params_1ae1a85942abb2e6e81ee33bb395fee17d" kindref="member">InputParams::rec_interval_local</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="29" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="147" bodyend="150"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="29" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="148" bodyend="151"/>
       </memberdef>
       <memberdef kind="function" id="class_record_1a97f3aed77c0f4b5979da3a9a11bce42c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -521,7 +522,7 @@ Other relevant parameters include the local recording interval. <parameterlist k
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="30" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="134" bodyend="137"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Record.h" line="30" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Record.cpp" bodystart="135" bodyend="138"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

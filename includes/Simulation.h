@@ -11,7 +11,10 @@
 
 /**
  * Sets up and controls the flow of the simulation.
- * @see Simulation::num_runs, Simulation::max_t
+ * @details Running set_inheritance() and run_reps() in this order is essential to run a simulation. The class also contains setters for advanced options, which should be run before run_reps(). 
+ * @note Advanced options that have been set apply to all repetitions (runs) of a single simulation.
+ * @warning Advanced options will typically give an error message if the setting process has been unsuccessful. If they are not re-set successfully before running the simulation the option will maintain its default behaviour.
+ * @see InputParams::num_runs, InputParams::max_t
  */
 class Simulation {
 public:

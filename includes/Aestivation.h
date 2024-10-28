@@ -10,7 +10,9 @@
 class Patch;
 
 /**
- * Implements aestivative behaviour for the model.  
+ * Implements aestivative behaviour for the model. 
+ * @details Only mated females aestivate, going into aestivation within a hiding time window determined by ``t_hide1`` and ``t_hide2`` and emerging from aestivation within a waking time window determined by ``t_wake1`` and ``t_wake2``. The females are isolated from their original patches during aestivation and returned back at the end, dependent on mortality. Other parameter rates controlling aestivation are ``psi`` and ``mu_aes``, the aestivation rate and aestivation mortality respectively. 
+ * @see AestivationParams
  */
 class Aestivation {
 public:

@@ -89,11 +89,11 @@ Inheritance diagram for GDRelease:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_g_d_release__inherit__graph.png" border="0" usemap="#a_g_d_release_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_g_d_release_inherit__map" id="a_g_d_release_inherit__map">
-<area shape="rect" title="Gene drive release base class." alt="" coords="90,5,231,181"/>
-<area shape="rect" href="class_random_g_d_release.html" title="Implements gene drive release for randomised release sites." alt="" coords="5,229,151,320"/>
-<area shape="poly" title=" " alt="" coords="117,196,101,231,96,229,112,194"/>
-<area shape="rect" href="class_sched_g_d_release.html" title="Implements gene drive release for pre&#45;selected release sites." alt="" coords="175,229,314,320"/>
-<area shape="poly" title=" " alt="" coords="210,194,227,229,222,231,205,196"/>
+<area shape="rect" title="Gene drive release base class." alt="" coords="90,5,231,203"/>
+<area shape="rect" href="class_random_g_d_release.html" title="Implements gene drive release for randomised release sites." alt="" coords="5,251,151,341"/>
+<area shape="poly" title=" " alt="" coords="115,217,100,252,95,250,110,215"/>
+<area shape="rect" href="class_sched_g_d_release.html" title="Implements gene drive release for pre&#45;selected release sites." alt="" coords="175,251,314,341"/>
+<area shape="poly" title=" " alt="" coords="212,215,228,250,223,252,207,217"/>
 </map>
 </div>
 <div class="dynheader">
@@ -101,7 +101,7 @@ Collaboration diagram for GDRelease:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_g_d_release__coll__graph.png" border="0" usemap="#a_g_d_release_coll__map" alt="Collaboration graph"/></div>
 <map name="a_g_d_release_coll__map" id="a_g_d_release_coll__map">
-<area shape="rect" title="Gene drive release base class." alt="" coords="5,5,147,181"/>
+<area shape="rect" title="Gene drive release base class." alt="" coords="5,5,147,203"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -110,6 +110,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7d3d5cfa8f9d71e08383edf435fcfdbb" id="r_a7d3d5cfa8f9d71e08383edf435fcfdbb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d3d5cfa8f9d71e08383edf435fcfdbb">GDRelease</a> (int <a class="el" href="#a7ac47883a59de0732047fccf0a1cf6e0">num_driver_M</a>, std::vector&lt; int &gt; rel_times)</td></tr>
 <tr class="memdesc:a7d3d5cfa8f9d71e08383edf435fcfdbb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_g_d_release.html" title="Gene drive release base class.">GDRelease</a> constructor.  <br /></td></tr>
 <tr class="separator:a7d3d5cfa8f9d71e08383edf435fcfdbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef932e9494f48a28b012c04603d483fa" id="r_aef932e9494f48a28b012c04603d483fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef932e9494f48a28b012c04603d483fa">~GDRelease</a> ()</td></tr>
+<tr class="separator:aef932e9494f48a28b012c04603d483fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac69ecb74bc31ac1d57764be524c68ca7" id="r_ac69ecb74bc31ac1d57764be524c68ca7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac69ecb74bc31ac1d57764be524c68ca7">release_gene_drive</a> (int day, std::vector&lt; <a class="el" href="class_patch.html">Patch</a> * &gt; &amp;sites)</td></tr>
 <tr class="memdesc:ac69ecb74bc31ac1d57764be524c68ca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the gene drive mosquitoes into the simulation area if it is time for release.  <br /></td></tr>
 <tr class="separator:ac69ecb74bc31ac1d57764be524c68ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,7 +138,8 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Gene drive release base class. </p>
-<p>Defines the basic implementation of gene drive release in the model. </p>
+<p>Defines the basic implementation of gene drive release in the model.</p>
+<p><a class="el" href="class_g_d_release.html" title="Gene drive release base class.">GDRelease</a> classes implement the selection mechanism of the release sites from available patches and the release of gene drive mosquitoes into the <a class="el" href="class_patch.html" title="Contains the information of a local mosquito population.">Patch</a> objects at the chosen release times. The number of drive heterozygous male mosquitoes released into each release site at each release time is determined by <code>num_driver_M</code>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7d3d5cfa8f9d71e08383edf435fcfdbb" name="a7d3d5cfa8f9d71e08383edf435fcfdbb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7d3d5cfa8f9d71e08383edf435fcfdbb">&#9670;&#160;</a></span>GDRelease()</h2>
@@ -176,6 +179,31 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aef932e9494f48a28b012c04603d483fa" name="aef932e9494f48a28b012c04603d483fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef932e9494f48a28b012c04603d483fa">&#9670;&#160;</a></span>~GDRelease()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GDRelease::~GDRelease </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a69a14d4b9e59ee1e1375d76630da00e3" name="a69a14d4b9e59ee1e1375d76630da00e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a69a14d4b9e59ee1e1375d76630da00e3">&#9670;&#160;</a></span>is_release_time()</h2>
@@ -208,7 +236,6 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>As you would expect. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#af257d77564ffbd7c694f57533dde7282" title="Days on which the gene drive mosquitoes will be released.">GDRelease::release_times</a> </dd></dl>
 
 </div>
 </div>
@@ -236,13 +263,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds drive heterozygous (WD) male mosquitoes to the release sites. </p>
-<p>Relevant parameters include the number of male driver mosquitoes to be released at each site. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Relevant parameters include the number of male driver mosquitoes to be released at each site <code>num_driver_M</code>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">rel_sites</td><td>release sites </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a7ac47883a59de0732047fccf0a1cf6e0" title="Number of drive heterozygous (WD) male mosquitoes per release.">GDRelease::num_driver_M</a> </dd></dl>
 
 </div>
 </div>

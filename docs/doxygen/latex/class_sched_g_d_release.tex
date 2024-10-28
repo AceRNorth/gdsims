@@ -37,6 +37,8 @@ Collaboration diagram for Sched\+GDRelease\+:\nopagebreak
 \item 
 \mbox{\hyperlink{class_g_d_release_a7d3d5cfa8f9d71e08383edf435fcfdbb}{GDRelease}} (int \mbox{\hyperlink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{num\+\_\+driver\+\_\+M}}, std\+::vector$<$ int $>$ rel\+\_\+times)
 \begin{DoxyCompactList}\small\item\em \doxylink{class_g_d_release}{GDRelease} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_g_d_release_aef932e9494f48a28b012c04603d483fa}{\texorpdfstring{$\sim$}{\string~}\+GDRelease}} ()
+\item 
 void \mbox{\hyperlink{class_g_d_release_ac69ecb74bc31ac1d57764be524c68ca7}{release\+\_\+gene\+\_\+drive}} (int day, std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
 \begin{DoxyCompactList}\small\item\em Releases the gene drive mosquitoes into the simulation area if it is time for release. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
@@ -69,7 +71,7 @@ std\+::vector$<$ int $>$ \mbox{\hyperlink{class_g_d_release_af257d77564ffbd7c694
 \doxysubsection{Detailed Description}
 Implements gene drive release for pre-\/selected release sites. 
 
-Release sites are kept the same for each release, using the same pre-\/selected sites. 
+Release sites are kept the same for each release, using the same pre-\/selected sites from the available Patches. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_sched_g_d_release_a5bfb7430747b3f7764b085eec40173be}\label{class_sched_g_d_release_a5bfb7430747b3f7764b085eec40173be} 
@@ -86,7 +88,7 @@ Release sites are kept the same for each release, using the same pre-\/selected 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em params} & gene drive release parameters \\
 \hline
-\mbox{\texttt{ in}}  & {\em rel\+\_\+sites} & chosen release sites, indices relative to \doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites} \\
+\mbox{\texttt{ in}}  & {\em rel\+\_\+sites} & chosen release sites, indices relative to \doxylink{class_model_a17b3a93529de4ef762254f9a1932b67e}{Model\+::get\+\_\+sites()} \\
 \hline
 \mbox{\texttt{ in}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
 \hline

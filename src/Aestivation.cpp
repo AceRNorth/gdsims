@@ -8,7 +8,7 @@
  * Aestivation constructor.
  * @param params 		aestivation parameters
  * @param sites_size	number of sites in the model, size of Model::sites
- * @see @ref Model::sites
+ * @see Model::get_sites()
  */
 Aestivation::Aestivation(AestivationParams* params, int sites_size) 
 {
@@ -36,9 +36,9 @@ Aestivation::Aestivation(AestivationParams* params, int sites_size)
 /**
  * Hides aestivating females from their patches.
  * @note Not all females survive aestivation. Only mated females aestivate. 
- * @details The number of females that attempt to go into aestivation (of the given genotype combination) is determined by a binomial distribution of the aestivation rate. Of those, the number that survive is determined by a binomial distribution of 1 - mu_aes (the aestivation mortality). Aestivating females are temporarily separated from the rest of the female patch population.
+ * @details The number of females that attempt to go into aestivation (of the given genotype combination) is determined by a binomial distribution of the aestivation rate. Of those, the number that survive is determined by a binomial distribution of 1 - ``mu_aes`` (the aestivation mortality). Aestivating females are temporarily separated from the rest of the female patch population.
  * @param[in, out] sites vector of all Patch objects
- * @see Aestivation::psi, Aestivation::mu_aes
+ * @see InputParams::psi, InputParams::mu_aes, random_binomial()
  */
 void Aestivation::hide(std::vector<Patch*> &sites) 
 {
@@ -60,10 +60,10 @@ void Aestivation::hide(std::vector<Patch*> &sites)
 
 /**
  * Wakes a fraction of the aestivating females.
- * @details The number of females that wake up on the given day (for the given genotype combination and patch) is determined by a binomial distribution with probability 1.0 / (1.0 + t_wake2 - (day%365). Those that wake are returned to their patch's female population. 
+ * @details The number of females that wake up on the given day (for the given genotype combination and patch) is determined by a binomial distribution with probability ``1.0 / (1.0 + t_wake2 - (day%365)``. Those that wake are returned to their patch's female population. 
  * @param[in] day 			simulation day
  * @param[in, out] sites	vector of all Patch objects
- * @see Aestivation::t_wake2
+ * @see InputParams::t_wake2, random_binomial()
  */ 
 void Aestivation::wake(int day, std::vector<Patch*> &sites) 
 {
@@ -84,10 +84,12 @@ void Aestivation::wake(int day, std::vector<Patch*> &sites)
 
 /**
  * Determines if the time is within the aestivation hiding window. 
+ * @details ``t_hide1`` \f$ < t \le \f$ ``t_hide2`` , where \f$ t \f$ is the day of the current year. 
+ * Assumes ``psi`` > 0.00001.
  * @note The hiding window is exclusive of the start time but inclusive of the end time. 
  * @param[in] day 			simulation day
  * @return As you would expect.
- * @see Aestivation::t_hide1, Aestivation::t_hide2, Aestivation::psi
+ * @see InputParams::t_hide1, InputParams::t_hide2, InputParams::psi
  */ 
 bool Aestivation::is_hide_time(int day) 
 {
@@ -96,10 +98,12 @@ bool Aestivation::is_hide_time(int day)
 
 /**
  * Determines if the time is within the aestivation waking window. 
- * @note The wakinf window is exclusive of the start time but inclusive of the end time. 
+ * @details ``t_wake1`` \f$ < t \le \f$ ``t_wake2`` , where \f$ t \f$ is the day of the current year. 
+ * Assumes ``psi`` > 0.00001.
+ * @note The waking window is exclusive of the start time but inclusive of the end time. 
  * @param[in] day 			simulation day
  * @return As you would expect.
- * @see Aestivation::t_wake1, Aestivation::t_wake2, Aestivation::psi
+ * @see InputParams::t_wake1, InputParams::t_wake2, InputParams::psi
  */ 
 bool Aestivation::is_wake_time(int day) 
 {

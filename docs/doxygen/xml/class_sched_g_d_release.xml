@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="50" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" bodystart="50" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="53" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" bodystart="53" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -57,7 +57,7 @@
 <parametername direction="in">rel_sites</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>chosen release sites, indices relative to <ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">Model::sites</ref> </para>
+<para>chosen release sites, indices relative to <ref refid="class_model_1a17b3a93529de4ef762254f9a1932b67e" kindref="member">Model::get_sites()</ref> </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="48" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/GDRelease.cpp" bodystart="84" bodyend="89"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="51" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/GDRelease.cpp" bodystart="81" bodyend="86"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -119,14 +119,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="51" column="17" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/GDRelease.cpp" bodystart="98" bodyend="101"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="54" column="17" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/GDRelease.cpp" bodystart="94" bodyend="97"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Implements gene drive release for pre-selected release sites. </para>
     </briefdescription>
     <detaileddescription>
-<para>Release sites are kept the same for each release, using the same pre-selected sites. </para>
+<para>Release sites are kept the same for each release, using the same pre-selected sites from the available Patches. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -152,7 +152,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="46" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" bodystart="46" bodyend="52"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" line="49" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/GDRelease.h" bodystart="49" bodyend="55"/>
     <listofallmembers>
       <member refid="class_g_d_release_1a7d3d5cfa8f9d71e08383edf435fcfdbb" prot="public" virt="non-virtual"><scope>SchedGDRelease</scope><name>GDRelease</name></member>
       <member refid="class_g_d_release_1a69a14d4b9e59ee1e1375d76630da00e3" prot="protected" virt="non-virtual"><scope>SchedGDRelease</scope><name>is_release_time</name></member>
@@ -163,6 +163,7 @@
       <member refid="class_g_d_release_1af257d77564ffbd7c694f57533dde7282" prot="protected" virt="non-virtual"><scope>SchedGDRelease</scope><name>release_times</name></member>
       <member refid="class_sched_g_d_release_1a5bfb7430747b3f7764b085eec40173be" prot="public" virt="non-virtual"><scope>SchedGDRelease</scope><name>SchedGDRelease</name></member>
       <member refid="class_sched_g_d_release_1a40212411e7dd81dac953dd0d6f9ad4ad" prot="private" virt="virtual"><scope>SchedGDRelease</scope><name>select_driver_sites</name></member>
+      <member refid="class_g_d_release_1aef932e9494f48a28b012c04603d483fa" prot="public" virt="non-virtual"><scope>SchedGDRelease</scope><name>~GDRelease</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
