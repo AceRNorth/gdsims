@@ -161,6 +161,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="../user_guide/user_guide_root.html">User Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/param_sets.html">Parameter sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/output.html">Output files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/custom_set.html">Custom sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/adv_options.html">Advanced options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/defaults.html">Default behaviours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/structure.html">File structure and architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/code.html">Interacting through code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/test.html">Running tests</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="tutorials_root.html">Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="tutorial1.html">1. Running a pre-defined set</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial2.html">2. Running a custom set</a></li>
@@ -209,8 +220,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../api/function_inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517.html">Template Function check_bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be.html">Template Function check_interval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_inputval_8h_1a38cf9054c93e1fced65fe33940dda566.html">Template Function file_read_and_validate_type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/function_main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/function_main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_random_8h_1af03c0e74140efa3114c4cd1361da5548.html">Function random_discrete(int, int)</a></li>
@@ -455,7 +464,7 @@ document.write(`
 <p>Another available dispersal type is the radial dispersal, which gives a more advanced and realistic implementation of dispersal.</p>
 <p>The grey circle below represents the maximum dispersal area available for connections to the central patch. All other patches within this circle are connected to the central patch. With Radial dispersal, mosquitoes disperse in set directions out of their patch. Those that set out in a direction with no patches will die (as opposed to Distance Kernel, where dispersing mosquitoes are guaranteed a connected patch to disperse to). The rest will disperse to the nearest patch in their set direction. Thus, some of the connected patches will have zero or reduced connection weight to the central patch, as they will be blocked by closer patches.</p>
 <a class="reference internal image-reference" href="../_images/tut6_radial_disp_diagram.png"><img alt="../_images/tut6_radial_disp_diagram.png" src="../_images/tut6_radial_disp_diagram.png" style="width: 498.4px; height: 471.09999999999997px;" /></a>
-<p>More details on dispersal types can be found in the User Guide.</p>
+<p>More details on dispersal types can be found in the <a class="reference internal" href="../user_guide/adv_options.html"><span class="doc">Advanced options</span></a> section of the User Guide.</p>
 </section>
 </section>
 <section id="setting-the-dispersal-type-to-radial">

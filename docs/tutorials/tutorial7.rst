@@ -4,6 +4,8 @@
 
 In this tutorial we will give a bite-sized introduction to seasonality and the types used in the model. As with previous tutorials, feel free to skip over this part if you're not ready for the model details. We then look at running the model with some default rainfall parameters, and finally look at setting our own rainfall data. 
 
+.. _tutorial-7.1:
+
 7.1 Model Introduction: Seasonality
 -----------------------------------
 

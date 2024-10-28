@@ -1,6 +1,9 @@
 
+.. _install:
+
 Installation
 ============
+
 The C++ program can be installed from the source code on our GitHub repository (link on the icon above). The project uses CMake, a cross-platform tool, to build the software from multiple source files. The instructions for command-line installations are below. 
 
 Requirements
