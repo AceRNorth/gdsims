@@ -160,6 +160,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="../user_guide/user_guide_root.html">User Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/param_sets.html">Parameter sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/output.html">Output files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/custom_set.html">Custom sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/adv_options.html">Advanced options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/defaults.html">Default behaviours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/structure.html">File structure and architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/code.html">Interacting through code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/test.html">Running tests</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/tutorials_root.html">Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial1.html">1. Running a pre-defined set</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial2.html">2. Running a custom set</a></li>
@@ -452,14 +463,14 @@ document.write(`
 <h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this heading">#</a></h2>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv412SineRainfall">
-<span id="_CPPv312SineRainfall"></span><span id="_CPPv212SineRainfall"></span><span id="SineRainfall"></span><span class="target" id="classSineRainfall"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SineRainfall</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="classSeasonality.html#_CPPv411Seasonality" title="Seasonality"><span class="n"><span class="pre">Seasonality</span></span></a><br /></dt>
+<span id="_CPPv312SineRainfall"></span><span id="_CPPv212SineRainfall"></span><span id="SineRainfall"></span><span class="target" id="classSineRainfall"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SineRainfall</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv411Seasonality" title="Seasonality"><span class="n"><span class="pre">Seasonality</span></span></a><br /></dt>
 <dd><p>Implements seasonality by modelling the rainfall contribution to carrying capacity as a sinusoid wave. </p>
 <p>Most useful for theoretical applications. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N12SineRainfall12SineRainfallEP18SineRainfallParams">
-<span id="_CPPv3N12SineRainfall12SineRainfallEP18SineRainfallParams"></span><span id="_CPPv2N12SineRainfall12SineRainfallEP18SineRainfallParams"></span><span id="SineRainfall::SineRainfall__SineRainfallParamsP"></span><span class="target" id="classSineRainfall_1a5400eca90b6aae50317446023a020f6c"></span><span class="sig-name descname"><span class="n"><span class="pre">SineRainfall</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structSineRainfallParams.html#_CPPv418SineRainfallParams" title="SineRainfallParams"><span class="n"><span class="pre">SineRainfallParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span><span class="sig-paren">)</span><br /></dt>
+<span id="_CPPv3N12SineRainfall12SineRainfallEP18SineRainfallParams"></span><span id="_CPPv2N12SineRainfall12SineRainfallEP18SineRainfallParams"></span><span id="SineRainfall::SineRainfall__SineRainfallParamsP"></span><span class="target" id="classSineRainfall_1a5400eca90b6aae50317446023a020f6c"></span><span class="sig-name descname"><span class="n"><span class="pre">SineRainfall</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../api.html#_CPPv418SineRainfallParams" title="SineRainfallParams"><span class="n"><span class="pre">SineRainfallParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p><a class="reference internal" href="#classSineRainfall"><span class="std std-ref">SineRainfall</span></a> constructor. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -474,7 +485,7 @@ document.write(`
 <dd><p>Computes the carrying-capacity alpha value for the given day and alpha0. </p>
 <p>Models rainfall contribution as a sine wave. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>Patch::alpha0</p>
+<p><a class="reference internal" href="../api.html#classPatch_1a5b781b751c5a39bb3a94640e3542a517"><span class="std std-ref">Patch::alpha0</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">

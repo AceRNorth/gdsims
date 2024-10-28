@@ -7,7 +7,7 @@ In this tutorial we give bite-sized introductions to some of the essential compo
 3.1 Model introduction: Patch
 -----------------------------
 
-The Patch component is the essential building block of the model. It represents a population of mosquitoes mating, aging, dying… carrying out all the essential behaviours of a living, breathing population. As we've seen, the mosquitoes are divided into four types of individuals: juveniles (J), males (M), unmated (virgin) females (V) and mated females (F). 
+The :class:`Patch` component is the essential building block of the model. It represents a population of mosquitoes mating, aging, dying… carrying out all the essential behaviours of a living, breathing population. As we've seen, the mosquitoes are divided into four types of individuals: juveniles (J), males (M), unmated (virgin) females (V) and mated females (F). 
 
 .. figure:: ../images/tut3_patch_intro.png
     :align: left
@@ -92,9 +92,9 @@ The interface will then prompt us to enter a coordinates filename. Let's have a 
 
 The custom coordinates file should have three columns - the x and y coordinates plus a ``y`` / ``n`` character. The last character describes whether the coordinate is a gene drive release site or not (yes or no).
 
-As in other parameter files, each row should be delimited by new lines and each value in a column by white space. 
+As in other parameter files, each row should be delimited by new lines and each value in a row by white space. 
 
-The coordinate values may also be subject to certain bound checks - more information on this in the User Guide. 
+The coordinate values may also be subject to certain bound checks - more information on this in the :doc:`../user_guide/adv_options` section of the User Guide. 
 
 .. warning::
     Selecting release sites in this way will overwrite the number of release sites previously chosen with the ``num_driver_sites`` parameter. 
@@ -133,7 +133,7 @@ Let's use the coordinates file below to create a square grid of patches.
         0.6    0.8    n
         0.8    0.8    n
 
-Now we can enter the filepath into the prompt. Like with the parameters file, we can use the relative filepath to the ``docs/exercises`` directory. If there are no error messages, this will set the coordinates (more information on errors in the User Guide).
+Now we can enter the filepath into the prompt. Like with the parameters file, we can use the relative filepath to the ``docs/exercises`` directory. If there are no error messages, this will set the coordinates (more information on errors in the :doc:`../user_guide/custom_set` and :doc:`../user_guide/adv_options` sections of the User Guide).
 
 We can exit the advanced options and run the program by entering ``0``, which should start outputting day data as in previous runs. 
 

@@ -9,6 +9,7 @@
 
    install
    usage
+   user_guide/user_guide_root
    tutorials/tutorials_root
    api/library_root
 
@@ -23,7 +24,7 @@ Features
 --------
 - Spatial modelling
 - Specific to mosquito behaviour
-- Fast, complex simulations
+- Complex behaviour simulations
 - Simple, easy-to-use interface 
 - Apply to real-life locations (in progress)
 
@@ -41,7 +42,7 @@ Output files will be generated in an ``output_files`` subdirectory.
 
 For those comfortable with C++ programming, a code-based option also exists.
 
-More details on both options can be found in the :doc:`tutorials/tutorials_root` and User Guide.
+More details on both options can be found in the :doc:`tutorials/tutorials_root` and :doc:`user_guide/user_guide_root`.
 
 .. warning::
 
@@ -57,7 +58,7 @@ More details on both options can be found in the :doc:`tutorials/tutorials_root`
 
       twister(rd())
 
-   The CMake project must then be re-built and re-compiled (as in the Installation Instructions).
+   The CMake project must then be re-built and re-compiled (as in the :doc:`install` instructions).
 
    When doing this, pre-defined set results will not match saved test data. 
 

@@ -31,7 +31,7 @@ The grey circle below represents the maximum dispersal area available for connec
 .. image:: ../images/tut6_radial_disp_diagram.png
     :scale: 70 %
 
-More details on dispersal types can be found in the User Guide.
+More details on dispersal types can be found in the :doc:`../user_guide/adv_options` section of the User Guide.
 
 6.2 Setting the dispersal type to Radial
 ----------------------------------------

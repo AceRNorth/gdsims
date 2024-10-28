@@ -68,7 +68,7 @@ This will prompt us to enter another filename or filepath for the release times.
         300
         400
 
-The drive mosquitoes will be released at all selected release sites at each release time. The method of release site selection will vary depending on the method of release chosen - more details in the User Guide. For this run, new release sites will be randomly chosen upon each release time.
+The drive mosquitoes will be released at all selected release sites at each release time. The method of release site selection will vary depending on the method of release chosen - more details in the :doc:`../user_guide/user_guide_root`. For this run, new release sites will be randomly chosen upon each release time.
 
 .. caution:: 
 

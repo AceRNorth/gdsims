@@ -161,6 +161,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="../user_guide/user_guide_root.html">User Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/param_sets.html">Parameter sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/output.html">Output files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/custom_set.html">Custom sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/adv_options.html">Advanced options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/defaults.html">Default behaviours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/structure.html">File structure and architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/code.html">Interacting through code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/test.html">Running tests</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="tutorials_root.html">Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="tutorial1.html">1. Running a pre-defined set</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial2.html">2. Running a custom set</a></li>
@@ -455,7 +466,7 @@ document.write(`
 <p>Another available dispersal type is the radial dispersal, which gives a more advanced and realistic implementation of dispersal.</p>
 <p>The grey circle below represents the maximum dispersal area available for connections to the central patch. All other patches within this circle are connected to the central patch. With Radial dispersal, mosquitoes disperse in set directions out of their patch. Those that set out in a direction with no patches will die (as opposed to Distance Kernel, where dispersing mosquitoes are guaranteed a connected patch to disperse to). The rest will disperse to the nearest patch in their set direction. Thus, some of the connected patches will have zero or reduced connection weight to the central patch, as they will be blocked by closer patches.</p>
 <a class="reference internal image-reference" href="../_images/tut6_radial_disp_diagram.png"><img alt="../_images/tut6_radial_disp_diagram.png" src="../_images/tut6_radial_disp_diagram.png" style="width: 498.4px; height: 471.09999999999997px;" /></a>
-<p>More details on dispersal types can be found in the User Guide.</p>
+<p>More details on dispersal types can be found in the <a class="reference internal" href="../user_guide/adv_options.html"><span class="doc">Advanced options</span></a> section of the User Guide.</p>
 </section>
 </section>
 <section id="setting-the-dispersal-type-to-radial">

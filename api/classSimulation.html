@@ -160,6 +160,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="../user_guide/user_guide_root.html">User Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/param_sets.html">Parameter sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/output.html">Output files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/custom_set.html">Custom sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/adv_options.html">Advanced options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/defaults.html">Default behaviours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/structure.html">File structure and architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/code.html">Interacting through code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/test.html">Running tests</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/tutorials_root.html">Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial1.html">1. Running a pre-defined set</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial2.html">2. Running a custom set</a></li>
@@ -439,18 +450,18 @@ document.write(`
 <h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this heading">#</a></h2>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv410Simulation">
-<span id="_CPPv310Simulation"></span><span id="_CPPv210Simulation"></span><span id="Simulation"></span><span class="target" id="classSimulation"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Simulation</span></span></span><a class="headerlink" href="#_CPPv410Simulation" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv310Simulation"></span><span id="_CPPv210Simulation"></span><span id="Simulation"></span><span class="target" id="classSimulation"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Simulation</span></span></span><br /></dt>
 <dd><p>Sets up and controls the flow of the simulation. </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>Simulation::num_runs, Simulation::max_t</p>
+<p><a class="reference internal" href="../api.html#classSimulation_1a8e1d4d667e07e3f7e453bbb936dd0c5a"><span class="std std-ref">Simulation::num_runs</span></a>, <a class="reference internal" href="../api.html#classSimulation_1adc775015be74841e3f9f99550af987bd"><span class="std std-ref">Simulation::max_t</span></a></p>
 </div>
 </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N10Simulation10SimulationE11InputParams">
-<span id="_CPPv3N10Simulation10SimulationE11InputParams"></span><span id="_CPPv2N10Simulation10SimulationE11InputParams"></span><span id="Simulation::Simulation__InputParams"></span><span class="target" id="classSimulation_1a78403ca84dfef50ffa06c053648347a6"></span><span class="sig-name descname"><span class="n"><span class="pre">Simulation</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structInputParams.html#_CPPv411InputParams" title="InputParams"><span class="n"><span class="pre">InputParams</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">input</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation10SimulationE11InputParams" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N10Simulation10SimulationE11InputParams"></span><span id="_CPPv2N10Simulation10SimulationE11InputParams"></span><span id="Simulation::Simulation__InputParams"></span><span class="target" id="classSimulation_1a78403ca84dfef50ffa06c053648347a6"></span><span class="sig-name descname"><span class="n"><span class="pre">Simulation</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../api.html#_CPPv411InputParams" title="InputParams"><span class="n"><span class="pre">InputParams</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">input</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p><a class="reference internal" href="class_simulation.html#classSimulation"><span class="std std-ref">Simulation</span></a> constructor. </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -466,13 +477,13 @@ document.write(`
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N10SimulationD0Ev">
-<span id="_CPPv3N10SimulationD0Ev"></span><span id="_CPPv2N10SimulationD0Ev"></span><span id="Simulation::~Simulation"></span><span class="target" id="classSimulation_1a80fad3f57dfaf195a36f7bc49bc88279"></span><span class="sig-name descname"><span class="n"><span class="pre">~Simulation</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10SimulationD0Ev" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N10SimulationD0Ev"></span><span id="_CPPv2N10SimulationD0Ev"></span><span id="Simulation::~Simulation"></span><span class="target" id="classSimulation_1a80fad3f57dfaf195a36f7bc49bc88279"></span><span class="sig-name descname"><span class="n"><span class="pre">~Simulation</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Simualtion destructor. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N10Simulation10set_coordsERKNSt6stringE">
-<span id="_CPPv3N10Simulation10set_coordsERKNSt6stringE"></span><span id="_CPPv2N10Simulation10set_coordsERKNSt6stringE"></span><span id="Simulation::set_coords__ssCR"></span><span class="target" id="classSimulation_1ab365e7a0000cae028998efae63b7d0c1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_coords</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation10set_coordsERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N10Simulation10set_coordsERKNSt6stringE"></span><span id="_CPPv2N10Simulation10set_coordsERKNSt6stringE"></span><span id="Simulation::set_coords__ssCR"></span><span class="target" id="classSimulation_1ab365e7a0000cae028998efae63b7d0c1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_coords</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Sets the sites’ coordinates and the release sites from a file, unless any errors are thrown. </p>
 <p>The file should be structured in three columns, with x and y coordinates and whether the site is a release site (y/n) respectively. Values should be delimited by white space, and site rows should be delimited by new lines. </p>
 <div class="admonition warning">
@@ -488,7 +499,7 @@ document.write(`
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N10Simulation17set_boundary_typeE12BoundaryType">
-<span id="_CPPv3N10Simulation17set_boundary_typeE12BoundaryType"></span><span id="_CPPv2N10Simulation17set_boundary_typeE12BoundaryType"></span><span id="Simulation::set_boundary_type__BoundaryType"></span><span class="target" id="classSimulation_1ac6575f63c78f7fffff4817665f5a0f05"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_boundary_type</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="enum_constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8.html#_CPPv412BoundaryType" title="BoundaryType"><span class="n"><span class="pre">BoundaryType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">boundary</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation17set_boundary_typeE12BoundaryType" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N10Simulation17set_boundary_typeE12BoundaryType"></span><span id="_CPPv2N10Simulation17set_boundary_typeE12BoundaryType"></span><span id="Simulation::set_boundary_type__BoundaryType"></span><span class="target" id="classSimulation_1ac6575f63c78f7fffff4817665f5a0f05"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_boundary_type</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../api.html#_CPPv412BoundaryType" title="BoundaryType"><span class="n"><span class="pre">BoundaryType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">boundary</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Sets the boundary type for the model. </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -504,7 +515,7 @@ document.write(`
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N10Simulation18set_dispersal_typeE13DispersalType">
-<span id="_CPPv3N10Simulation18set_dispersal_typeE13DispersalType"></span><span id="_CPPv2N10Simulation18set_dispersal_typeE13DispersalType"></span><span id="Simulation::set_dispersal_type__DispersalType"></span><span class="target" id="classSimulation_1a451b81744f93c2470a28d75bece48783"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_dispersal_type</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="enum_constants_8h_1ac025f1e887ae43bed8cad7aff794c04a.html#_CPPv413DispersalType" title="DispersalType"><span class="n"><span class="pre">DispersalType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">disp</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation18set_dispersal_typeE13DispersalType" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N10Simulation18set_dispersal_typeE13DispersalType"></span><span id="_CPPv2N10Simulation18set_dispersal_typeE13DispersalType"></span><span id="Simulation::set_dispersal_type__DispersalType"></span><span class="target" id="classSimulation_1a451b81744f93c2470a28d75bece48783"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_dispersal_type</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../api.html#_CPPv413DispersalType" title="DispersalType"><span class="n"><span class="pre">DispersalType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">disp</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Sets the dispersal type for the model. </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -520,7 +531,7 @@ document.write(`
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N10Simulation12set_rainfallERKNSt6stringE">
-<span id="_CPPv3N10Simulation12set_rainfallERKNSt6stringE"></span><span id="_CPPv2N10Simulation12set_rainfallERKNSt6stringE"></span><span id="Simulation::set_rainfall__ssCR"></span><span class="target" id="classSimulation_1abc5c5d0891de7943820db3e6682cd125"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_rainfall</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation12set_rainfallERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N10Simulation12set_rainfallERKNSt6stringE"></span><span id="_CPPv2N10Simulation12set_rainfallERKNSt6stringE"></span><span id="Simulation::set_rainfall__ssCR"></span><span class="target" id="classSimulation_1abc5c5d0891de7943820db3e6682cd125"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_rainfall</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Sets the daily rainfall values from a file, unless any errors are thrown. </p>
 <p>These can be daily values for a year cycle (365 days), or daily values for all the simulated days (max_t). The values should be delimited by new lines. </p>
 <dl class="field-list simple">
@@ -532,7 +543,7 @@ document.write(`
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N10Simulation17set_release_timesERKNSt6stringE">
-<span id="_CPPv3N10Simulation17set_release_timesERKNSt6stringE"></span><span id="_CPPv2N10Simulation17set_release_timesERKNSt6stringE"></span><span id="Simulation::set_release_times__ssCR"></span><span class="target" id="classSimulation_1a7d774bb0496b0ea95c2c88afc0d24731"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_release_times</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation17set_release_timesERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N10Simulation17set_release_timesERKNSt6stringE"></span><span id="_CPPv2N10Simulation17set_release_timesERKNSt6stringE"></span><span id="Simulation::set_release_times__ssCR"></span><span class="target" id="classSimulation_1a7d774bb0496b0ea95c2c88afc0d24731"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_release_times</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Sets the release times for gene drive release from a file, unless any errors are thrown. </p>
 <p>Release times should be simulation day numbers within the maximum time of simulation. Values should be delimited by new lines. </p>
 <dl class="field-list simple">
@@ -544,7 +555,7 @@ document.write(`
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N10Simulation15set_inheritanceE17InheritanceParams">
-<span id="_CPPv3N10Simulation15set_inheritanceE17InheritanceParams"></span><span id="_CPPv2N10Simulation15set_inheritanceE17InheritanceParams"></span><span id="Simulation::set_inheritance__InheritanceParams"></span><span class="target" id="classSimulation_1ac5440a772e9d7788c588a795a7821fb6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_inheritance</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structInheritanceParams.html#_CPPv417InheritanceParams" title="InheritanceParams"><span class="n"><span class="pre">InheritanceParams</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">inher_params</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation15set_inheritanceE17InheritanceParams" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N10Simulation15set_inheritanceE17InheritanceParams"></span><span id="_CPPv2N10Simulation15set_inheritanceE17InheritanceParams"></span><span id="Simulation::set_inheritance__InheritanceParams"></span><span class="target" id="classSimulation_1ac5440a772e9d7788c588a795a7821fb6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_inheritance</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../api.html#_CPPv417InheritanceParams" title="InheritanceParams"><span class="n"><span class="pre">InheritanceParams</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">inher_params</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Sets the values of the f_{ijk} inheritance fraction for the gene drive considering r2 resistant alleles. </p>
 <p>f_{ijk} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -560,11 +571,11 @@ document.write(`
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N10Simulation8run_repsEv">
-<span id="_CPPv3N10Simulation8run_repsEv"></span><span id="_CPPv2N10Simulation8run_repsEv"></span><span id="Simulation::run_reps"></span><span class="target" id="classSimulation_1a46325953f7df60733d519b8b3cd1de61"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">run_reps</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation8run_repsEv" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N10Simulation8run_repsEv"></span><span id="_CPPv2N10Simulation8run_repsEv"></span><span id="Simulation::run_reps"></span><span class="target" id="classSimulation_1a46325953f7df60733d519b8b3cd1de61"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">run_reps</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Runs the simulation num_runs times, recording data in output files. </p>
 <p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>Simulation::num_runs, <a class="reference internal" href="class_record.html#classRecord"><span class="std std-ref">Record</span></a></p>
+<p><a class="reference internal" href="../api.html#classSimulation_1a8e1d4d667e07e3f7e453bbb936dd0c5a"><span class="std std-ref">Simulation::num_runs</span></a>, <a class="reference internal" href="class_record.html#classRecord"><span class="std std-ref">Record</span></a></p>
 </div>
 </p>
 </dd></dl>
