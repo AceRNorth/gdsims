@@ -1,0 +1,126 @@
+\doxysection{Sine\+Rainfall Class Reference}
+\hypertarget{class_sine_rainfall}{}\label{class_sine_rainfall}\index{SineRainfall@{SineRainfall}}
+
+
+Implements seasonality by modelling the rainfall contribution to carrying capacity as a sinusoid wave.  
+
+
+
+
+{\ttfamily \#include $<$Seasonality.\+h$>$}
+
+
+
+Inheritance diagram for Sine\+Rainfall\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{d6/d00/class_sine_rainfall__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sine\+Rainfall\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{dd/d00/class_sine_rainfall__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sine_rainfall_a5400eca90b6aae50317446023a020f6c}{Sine\+Rainfall}} (\mbox{\hyperlink{struct_sine_rainfall_params}{Sine\+Rainfall\+Params}} \texorpdfstring{$\ast$}{*}params)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_sine_rainfall}{Sine\+Rainfall} constructor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sine_rainfall_a208a62a5176ae5db43120cf938a7f067}{alpha}} (int day, double alpha0) override
+\begin{DoxyCompactList}\small\item\em Computes the carrying-\/capacity alpha value for the given day and alpha0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_seasonality}{Seasonality}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_seasonality_a58daa86e6a5d8f1b1b8d4db8c9389870}{Seasonality}} (double \mbox{\hyperlink{class_seasonality_ac69d88cb94f794d9e317b7d259eaff64}{alpha1}})
+\begin{DoxyCompactList}\small\item\em \doxylink{class_seasonality}{Seasonality} constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_sine_rainfall_a83a33e17ca162e92beea4ba741807d63}{amp}}
+\begin{DoxyCompactList}\small\item\em Amplitude of rainfall fluctuations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_seasonality}{Seasonality}}}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_seasonality_ac69d88cb94f794d9e317b7d259eaff64}{alpha1}}
+\begin{DoxyCompactList}\small\item\em Carrying capacity factor accounting for rainfall contribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements seasonality by modelling the rainfall contribution to carrying capacity as a sinusoid wave. 
+
+Most useful for theoretical applications. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sine_rainfall_a5400eca90b6aae50317446023a020f6c}\label{class_sine_rainfall_a5400eca90b6aae50317446023a020f6c} 
+\index{SineRainfall@{SineRainfall}!SineRainfall@{SineRainfall}}
+\index{SineRainfall@{SineRainfall}!SineRainfall@{SineRainfall}}
+\doxysubsubsection{\texorpdfstring{SineRainfall()}{SineRainfall()}}
+{\footnotesize\ttfamily Sine\+Rainfall\+::\+Sine\+Rainfall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sine_rainfall_params}{Sine\+Rainfall\+Params}} \texorpdfstring{$\ast$}{*}}]{params }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_sine_rainfall}{Sine\+Rainfall} constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em params} & seasonality parameters for sine rainfall-\/type seasonality \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sine_rainfall_a208a62a5176ae5db43120cf938a7f067}\label{class_sine_rainfall_a208a62a5176ae5db43120cf938a7f067} 
+\index{SineRainfall@{SineRainfall}!alpha@{alpha}}
+\index{alpha@{alpha}!SineRainfall@{SineRainfall}}
+\doxysubsubsection{\texorpdfstring{alpha()}{alpha()}}
+{\footnotesize\ttfamily double Sine\+Rainfall\+::alpha (\begin{DoxyParamCaption}\item[{int}]{day,  }\item[{double}]{alpha0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computes the carrying-\/capacity alpha value for the given day and alpha0. 
+
+Models rainfall contribution as a sine wave. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em day} & simulation day \\
+\hline
+\mbox{\texttt{ in}}  & {\em alpha0} & baseline contribution to the carrying capacity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The carrying-\/capacity. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_patch_a5b781b751c5a39bb3a94640e3542a517}{Patch\+::alpha0} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_seasonality_a86bfbdfc639ab1a08e3643e05b55d6f1}{Seasonality}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_sine_rainfall_a83a33e17ca162e92beea4ba741807d63}\label{class_sine_rainfall_a83a33e17ca162e92beea4ba741807d63} 
+\index{SineRainfall@{SineRainfall}!amp@{amp}}
+\index{amp@{amp}!SineRainfall@{SineRainfall}}
+\doxysubsubsection{\texorpdfstring{amp}{amp}}
+{\footnotesize\ttfamily double Sine\+Rainfall\+::amp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Amplitude of rainfall fluctuations. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/includes/\mbox{\hyperlink{_seasonality_8h}{Seasonality.\+h}}\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/src/\mbox{\hyperlink{_seasonality_8cpp}{Seasonality.\+cpp}}\end{DoxyCompactItemize}

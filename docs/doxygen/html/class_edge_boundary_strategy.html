@@ -78,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Implements the distance method for edge boundary conditions.  
+<p>Implements methods for edge boundary conditions.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_boundary_strategy_8h_source.html">BoundaryStrategy.h</a>&gt;</code></p>
@@ -87,9 +87,9 @@ Inheritance diagram for EdgeBoundaryStrategy:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_edge_boundary_strategy__inherit__graph.png" border="0" usemap="#a_edge_boundary_strategy_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_edge_boundary_strategy_inherit__map" id="a_edge_boundary_strategy_inherit__map">
-<area shape="rect" title="Implements the distance method for edge boundary conditions." alt="" coords="5,165,171,277"/>
-<area shape="rect" href="class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="20,5,156,117"/>
-<area shape="poly" title=" " alt="" coords="91,133,91,166,85,166,85,133"/>
+<area shape="rect" title="Implements methods for edge boundary conditions." alt="" coords="5,187,171,299"/>
+<area shape="rect" href="class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="16,5,160,139"/>
+<area shape="poly" title=" " alt="" coords="91,154,91,187,85,187,85,154"/>
 </map>
 </div>
 <div class="dynheader">
@@ -97,9 +97,9 @@ Collaboration diagram for EdgeBoundaryStrategy:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_edge_boundary_strategy__coll__graph.png" border="0" usemap="#a_edge_boundary_strategy_coll__map" alt="Collaboration graph"/></div>
 <map name="a_edge_boundary_strategy_coll__map" id="a_edge_boundary_strategy_coll__map">
-<area shape="rect" title="Implements the distance method for edge boundary conditions." alt="" coords="5,165,171,277"/>
-<area shape="rect" href="class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="20,5,156,117"/>
-<area shape="poly" title=" " alt="" coords="91,133,91,166,85,166,85,133"/>
+<area shape="rect" title="Implements methods for edge boundary conditions." alt="" coords="5,187,171,299"/>
+<area shape="rect" href="class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="16,5,160,139"/>
+<area shape="poly" title=" " alt="" coords="91,154,91,187,85,187,85,154"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -117,6 +117,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8fbbc051751dbb883c0f00673d9027c4 inherit pub_methods_class_boundary_strategy" id="r_a8fbbc051751dbb883c0f00673d9027c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_boundary_strategy.html#a8fbbc051751dbb883c0f00673d9027c4">BoundaryStrategy</a> (double <a class="el" href="class_boundary_strategy.html#a8b9e897d2396509ec12f4d797e3101f1">side</a>)</td></tr>
 <tr class="memdesc:a8fbbc051751dbb883c0f00673d9027c4 inherit pub_methods_class_boundary_strategy"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_boundary_strategy.html" title="Boundary strategy base class.">BoundaryStrategy</a> constructor.  <br /></td></tr>
 <tr class="separator:a8fbbc051751dbb883c0f00673d9027c4 inherit pub_methods_class_boundary_strategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f8754869c6cbe6af73352e61b581c48 inherit pub_methods_class_boundary_strategy" id="r_a9f8754869c6cbe6af73352e61b581c48"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_boundary_strategy.html#a9f8754869c6cbe6af73352e61b581c48">~BoundaryStrategy</a> ()</td></tr>
+<tr class="separator:a9f8754869c6cbe6af73352e61b581c48 inherit pub_methods_class_boundary_strategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -126,8 +128,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a8b9e897d2396509ec12f4d797e3101f1 inherit pro_attribs_class_boundary_strategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implements the distance method for edge boundary conditions. </p>
-<p>The simulation area is assumed to have edge boundary conditions at x = side, y = side, and have ranges [0, side] in all directions. </p>
+<div class="textblock"><p>Implements methods for edge boundary conditions. </p>
+<p>The simulation area is assumed to have edge boundary conditions at x = <code>side</code>, y = <code>side</code>, and have ranges [0, <code>side</code>] in all directions. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_area_params.html#a25bc9f9baa5f3b4f9352101dfec36a99" title="Size of the square simulation area (side x side).">AreaParams::side</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1746c13f06d1b1514c32a41ef6804389" name="a1746c13f06d1b1514c32a41ef6804389"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1746c13f06d1b1514c32a41ef6804389">&#9670;&#160;</a></span>EdgeBoundaryStrategy()</h2>
@@ -191,7 +193,6 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The distance between the points. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_point.html" title="Represents a 2D point with Cartesian coordinates.">Point</a> </dd></dl>
 
 <p>Implements <a class="el" href="class_boundary_strategy.html#ab845b40ed83aeb78018c23f45565cd0e">BoundaryStrategy</a>.</p>
 

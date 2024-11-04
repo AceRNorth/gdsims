@@ -206,16 +206,6 @@ Functions
 .. toctree::
    :maxdepth: 5
 
-   function_main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.rst
-
-.. toctree::
-   :maxdepth: 5
-
-   function_main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.rst
-
-.. toctree::
-   :maxdepth: 5
-
    function_random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f.rst
 
 .. toctree::

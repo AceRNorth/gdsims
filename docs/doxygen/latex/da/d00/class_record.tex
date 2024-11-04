@@ -1,0 +1,379 @@
+\doxysection{Record Class Reference}
+\hypertarget{class_record}{}\label{class_record}\index{Record@{Record}}
+
+
+Records model data.  
+
+
+
+
+{\ttfamily \#include $<$Record.\+h$>$}
+
+
+
+Collaboration diagram for Record\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{d8/d00/class_record__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_record_a977db4fb6aaa9ac09b0d17ba676cabda}{Record}} (\mbox{\hyperlink{struct_record_params}{Record\+Params}} \texorpdfstring{$\ast$}{*}rec\+\_\+params, int rep)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_record}{Record} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_record_ad2ce1a99d866834ab53dedd788cb1ea6}{\texorpdfstring{$\sim$}{\string~}\+Record}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_record}{Record} destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_record_a0c4d71ceed2e84f89273a73a304fcc4c}{record\+\_\+coords}} (const std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
+\begin{DoxyCompactList}\small\item\em Records the coordinates of the population sites. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_record_aa8ed3bd4fdee0c2dddbb5cec2f685577}{record\+\_\+global}} (int day, const std\+::array$<$ long long int, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ \&tot\+\_\+\+M\+\_\+gen)
+\begin{DoxyCompactList}\small\item\em Records the total numbers of male mosquitoes for the given day, divided by genotype. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_record_a27622a9c11aa4a86ca123456ef0ad236}{output\+\_\+totals}} (int day, long long int tot\+\_\+J, long long int tot\+\_\+M, long long int tot\+\_\+V, long long int tot\+\_\+F)
+\begin{DoxyCompactList}\small\item\em Outputs the total numbers of juvenile (J), male (M), virgin female (V) and mated female (F) mosquitoes for the given day. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_record_a8e504c6253ef29fa5c86d216e3f28e1c}{record\+\_\+local}} (int day, const std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
+\begin{DoxyCompactList}\small\item\em Records the number of males at each site for the given day. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_record_ae6b89328b0fcaa2bfa5eebe819782b50}{is\+\_\+rec\+\_\+local\+\_\+time}} (int day)
+\begin{DoxyCompactList}\small\item\em Determines if it is time to record local data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_record_a97f3aed77c0f4b5979da3a9a11bce42c}{is\+\_\+rec\+\_\+global\+\_\+time}} (int day)
+\begin{DoxyCompactList}\small\item\em Determines if it is time to record global data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_record_a13b20ef61772014de98c3d87354ad1e9}{rec\+\_\+start}}
+\begin{DoxyCompactList}\small\item\em Start time for the data recording window (in days) (inclusive) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_record_a0598ebe2ae342bf3dc7be5a156ad4c34}{rec\+\_\+end}}
+\begin{DoxyCompactList}\small\item\em End time for the data recording window (in days) (inclusive) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_record_a3086c7b10d3d1a9983703d0865230cfa}{rec\+\_\+interval\+\_\+global}}
+\begin{DoxyCompactList}\small\item\em Time interval for global data recording (in days) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_record_a9217590af69eb03412ac2c82c4fd853e}{rec\+\_\+interval\+\_\+local}}
+\begin{DoxyCompactList}\small\item\em Time interval for local data recording (in days) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_record_a8ab507dfcfb593428a8c23a81877fac3}{rec\+\_\+sites\+\_\+freq}}
+\begin{DoxyCompactList}\small\item\em Fraction of sites to collect local data for (1 is all sites, 10 is 1 in 10 etc.). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_record_a6af350cda36acab3641fce143db9e23f}{set\+\_\+label}}
+\begin{DoxyCompactList}\small\item\em \textquotesingle{}Set of repetitions\textquotesingle{} index label for output files. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_record_ae9d8484927a4355098e0838c4d9a9314}{rep\+\_\+label}}
+\begin{DoxyCompactList}\small\item\em \textquotesingle{}Repetition\textquotesingle{} index label for output files (within given set). \end{DoxyCompactList}\item 
+std\+::ostringstream \mbox{\hyperlink{class_record_a5b2c0fc66b1b06b02f0fb485c2e7b4d1}{os1}}
+\begin{DoxyCompactList}\small\item\em Local data output filename. \end{DoxyCompactList}\item 
+std\+::ostringstream \mbox{\hyperlink{class_record_a41aeed0c4345e36767be33f8c906a5b8}{os2}}
+\begin{DoxyCompactList}\small\item\em Global data output filename. \end{DoxyCompactList}\item 
+std\+::ostringstream \mbox{\hyperlink{class_record_a980b8c85bb233ad19544124db3634465}{os3}}
+\begin{DoxyCompactList}\small\item\em Coordinate data output filename. \end{DoxyCompactList}\item 
+std\+::ofstream \mbox{\hyperlink{class_record_aef62117702c3e667f8353be450f7c176}{local\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Local data filestream object. \end{DoxyCompactList}\item 
+std\+::ofstream \mbox{\hyperlink{class_record_a09e1fe18d5084ac207ff42cfcec68858}{global\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Global data filestream object. \end{DoxyCompactList}\item 
+std\+::ofstream \mbox{\hyperlink{class_record_a2165facbe1dd7fa3b3196b799eb7bbc4}{coord\+\_\+list}}
+\begin{DoxyCompactList}\small\item\em Coordinate data filestream object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Records model data. 
+
+Creates Coordinate\+List, Totals and Local\+Data output .txt files for each repetition of the model. Coordinate\+List\+: contains the coordinates of all recorded sites. Totals\+: contains the total numbers of males of each genotype across all sites, for each recorded day of the simulation. Local\+Data\+: contains the number of males of each genotype for each site on each simulated day that is recorded. \begin{DoxySeeAlso}{See also}
+\doxylink{struct_record_params}{Record\+Params} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_record_a977db4fb6aaa9ac09b0d17ba676cabda}\label{class_record_a977db4fb6aaa9ac09b0d17ba676cabda} 
+\index{Record@{Record}!Record@{Record}}
+\index{Record@{Record}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{Record()}{Record()}}
+{\footnotesize\ttfamily Record\+::\+Record (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_record_params}{Record\+Params}} \texorpdfstring{$\ast$}{*}}]{rec\+\_\+params,  }\item[{int}]{rep }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_record}{Record} constructor. 
+
+Creates Local\+Data, Totals and Coordinate\+List output .txt files. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rec\+\_\+params} & recording parameters \\
+\hline
+\mbox{\texttt{ in}}  & {\em rep} & initial repetition label for the given set of runs \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_record_ad2ce1a99d866834ab53dedd788cb1ea6}\label{class_record_ad2ce1a99d866834ab53dedd788cb1ea6} 
+\index{Record@{Record}!````~Record@{\texorpdfstring{$\sim$}{\string~}Record}}
+\index{````~Record@{\texorpdfstring{$\sim$}{\string~}Record}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Record()}{\string~Record()}}
+{\footnotesize\ttfamily Record\+::\texorpdfstring{$\sim$}{\string~}\+Record (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_record}{Record} destructor. 
+
+Resets the current filepath so the output\+\_\+files directory can be found in the next set of runs. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_record_a97f3aed77c0f4b5979da3a9a11bce42c}\label{class_record_a97f3aed77c0f4b5979da3a9a11bce42c} 
+\index{Record@{Record}!is\_rec\_global\_time@{is\_rec\_global\_time}}
+\index{is\_rec\_global\_time@{is\_rec\_global\_time}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{is\_rec\_global\_time()}{is\_rec\_global\_time()}}
+{\footnotesize\ttfamily bool Record\+::is\+\_\+rec\+\_\+global\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{day }\end{DoxyParamCaption})}
+
+
+
+Determines if it is time to record global data. 
+
+The number of males at each site is divided by genotype. ~\newline
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em day} & simulation day \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+As you would expect. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_record_aa8ed3bd4fdee0c2dddbb5cec2f685577}{Record\+::record\+\_\+global()} 
+\end{DoxySeeAlso}
+\Hypertarget{class_record_ae6b89328b0fcaa2bfa5eebe819782b50}\label{class_record_ae6b89328b0fcaa2bfa5eebe819782b50} 
+\index{Record@{Record}!is\_rec\_local\_time@{is\_rec\_local\_time}}
+\index{is\_rec\_local\_time@{is\_rec\_local\_time}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{is\_rec\_local\_time()}{is\_rec\_local\_time()}}
+{\footnotesize\ttfamily bool Record\+::is\+\_\+rec\+\_\+local\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{day }\end{DoxyParamCaption})}
+
+
+
+Determines if it is time to record local data. 
+
+\begin{DoxyNote}{Note}
+The initialisation day (day 0) will always be recorded, and the recording window will be inclusive of the start and end times.
+\end{DoxyNote}
+Other relevant parameters include the local recording interval. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em day} & simulation day \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+As you would expect. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_record_a8e504c6253ef29fa5c86d216e3f28e1c}{Record\+::record\+\_\+local()}, \doxylink{class_record_a13b20ef61772014de98c3d87354ad1e9}{Record\+::rec\+\_\+start}, \doxylink{class_record_a0598ebe2ae342bf3dc7be5a156ad4c34}{Record\+::rec\+\_\+end}, \doxylink{class_record_a9217590af69eb03412ac2c82c4fd853e}{Record\+::rec\+\_\+interval\+\_\+local} 
+\end{DoxySeeAlso}
+\Hypertarget{class_record_a27622a9c11aa4a86ca123456ef0ad236}\label{class_record_a27622a9c11aa4a86ca123456ef0ad236} 
+\index{Record@{Record}!output\_totals@{output\_totals}}
+\index{output\_totals@{output\_totals}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{output\_totals()}{output\_totals()}}
+{\footnotesize\ttfamily void Record\+::output\+\_\+totals (\begin{DoxyParamCaption}\item[{int}]{day,  }\item[{long long int}]{tot\+\_\+J,  }\item[{long long int}]{tot\+\_\+M,  }\item[{long long int}]{tot\+\_\+V,  }\item[{long long int}]{tot\+\_\+F }\end{DoxyParamCaption})}
+
+
+
+Outputs the total numbers of juvenile (J), male (M), virgin female (V) and mated female (F) mosquitoes for the given day. 
+
+The totals are assumed to be across all sites, and over all genotypes and age groups. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em day} & simulation day \\
+\hline
+\mbox{\texttt{ in}}  & {\em tot\+\_\+J} & total number of juveniles \\
+\hline
+\mbox{\texttt{ in}}  & {\em tot\+\_\+M} & total number of males \\
+\hline
+\mbox{\texttt{ in}}  & {\em tot\+\_\+V} & total number of virgin (unmated) females \\
+\hline
+\mbox{\texttt{ in}}  & {\em tot\+\_\+F} & total number of mated females \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_patch_a9ec8ec87984a6e18efa7afd83e6df081}{Patch\+::J}, \doxylink{class_patch_a6e9cda8c3620873eaadf23db0f5a7b27}{Patch\+::M}, \doxylink{class_patch_ae4195468f66138a8bf7f0c37701098da}{Patch\+::V}, \doxylink{class_patch_a9e6066355010ba73abb33d8d41714677}{Patch\+::F} 
+\end{DoxySeeAlso}
+\Hypertarget{class_record_a0c4d71ceed2e84f89273a73a304fcc4c}\label{class_record_a0c4d71ceed2e84f89273a73a304fcc4c} 
+\index{Record@{Record}!record\_coords@{record\_coords}}
+\index{record\_coords@{record\_coords}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{record\_coords()}{record\_coords()}}
+{\footnotesize\ttfamily void Record\+::record\+\_\+coords (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&}]{sites }\end{DoxyParamCaption})}
+
+
+
+Records the coordinates of the population sites. 
+
+Relevant parameters include the fraction of sites to collect data for. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}, \doxylink{class_record_a8ab507dfcfb593428a8c23a81877fac3}{Record\+::rec\+\_\+sites\+\_\+freq} 
+\end{DoxySeeAlso}
+\Hypertarget{class_record_aa8ed3bd4fdee0c2dddbb5cec2f685577}\label{class_record_aa8ed3bd4fdee0c2dddbb5cec2f685577} 
+\index{Record@{Record}!record\_global@{record\_global}}
+\index{record\_global@{record\_global}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{record\_global()}{record\_global()}}
+{\footnotesize\ttfamily void Record\+::record\+\_\+global (\begin{DoxyParamCaption}\item[{int}]{day,  }\item[{const std\+::array$<$ long long int, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ \&}]{tot\+\_\+\+M\+\_\+gen }\end{DoxyParamCaption})}
+
+
+
+Records the total numbers of male mosquitoes for the given day, divided by genotype. 
+
+The totals are assumed to be across all sites. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em day} & simulation day \\
+\hline
+\mbox{\texttt{ in}}  & {\em tot\+\_\+\+M\+\_\+gen} & total number of males divided by genotype \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_model_a6d5f4f68f41e76c3e966e312d2f6e9e3}{Model\+::calculate\+\_\+tot\+\_\+\+M\+\_\+gen()}, \doxylink{class_patch_a6e9cda8c3620873eaadf23db0f5a7b27}{Patch\+::M} 
+\end{DoxySeeAlso}
+\Hypertarget{class_record_a8e504c6253ef29fa5c86d216e3f28e1c}\label{class_record_a8e504c6253ef29fa5c86d216e3f28e1c} 
+\index{Record@{Record}!record\_local@{record\_local}}
+\index{record\_local@{record\_local}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{record\_local()}{record\_local()}}
+{\footnotesize\ttfamily void Record\+::record\+\_\+local (\begin{DoxyParamCaption}\item[{int}]{day,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&}]{sites }\end{DoxyParamCaption})}
+
+
+
+Records the number of males at each site for the given day. 
+
+The number of males at each site is divided by genotype. Relevant parameters include the fraction of sites to collect data for. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em day} & simulation day \\
+\hline
+\mbox{\texttt{ in}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}, \doxylink{class_record_a8ab507dfcfb593428a8c23a81877fac3}{Record\+::rec\+\_\+sites\+\_\+freq} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_record_a2165facbe1dd7fa3b3196b799eb7bbc4}\label{class_record_a2165facbe1dd7fa3b3196b799eb7bbc4} 
+\index{Record@{Record}!coord\_list@{coord\_list}}
+\index{coord\_list@{coord\_list}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{coord\_list}{coord\_list}}
+{\footnotesize\ttfamily std\+::ofstream Record\+::coord\+\_\+list\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Coordinate data filestream object. 
+
+\Hypertarget{class_record_a09e1fe18d5084ac207ff42cfcec68858}\label{class_record_a09e1fe18d5084ac207ff42cfcec68858} 
+\index{Record@{Record}!global\_data@{global\_data}}
+\index{global\_data@{global\_data}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{global\_data}{global\_data}}
+{\footnotesize\ttfamily std\+::ofstream Record\+::global\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Global data filestream object. 
+
+\Hypertarget{class_record_aef62117702c3e667f8353be450f7c176}\label{class_record_aef62117702c3e667f8353be450f7c176} 
+\index{Record@{Record}!local\_data@{local\_data}}
+\index{local\_data@{local\_data}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{local\_data}{local\_data}}
+{\footnotesize\ttfamily std\+::ofstream Record\+::local\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Local data filestream object. 
+
+\Hypertarget{class_record_a5b2c0fc66b1b06b02f0fb485c2e7b4d1}\label{class_record_a5b2c0fc66b1b06b02f0fb485c2e7b4d1} 
+\index{Record@{Record}!os1@{os1}}
+\index{os1@{os1}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{os1}{os1}}
+{\footnotesize\ttfamily std\+::ostringstream Record\+::os1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Local data output filename. 
+
+\Hypertarget{class_record_a41aeed0c4345e36767be33f8c906a5b8}\label{class_record_a41aeed0c4345e36767be33f8c906a5b8} 
+\index{Record@{Record}!os2@{os2}}
+\index{os2@{os2}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{os2}{os2}}
+{\footnotesize\ttfamily std\+::ostringstream Record\+::os2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Global data output filename. 
+
+\Hypertarget{class_record_a980b8c85bb233ad19544124db3634465}\label{class_record_a980b8c85bb233ad19544124db3634465} 
+\index{Record@{Record}!os3@{os3}}
+\index{os3@{os3}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{os3}{os3}}
+{\footnotesize\ttfamily std\+::ostringstream Record\+::os3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Coordinate data output filename. 
+
+\Hypertarget{class_record_a0598ebe2ae342bf3dc7be5a156ad4c34}\label{class_record_a0598ebe2ae342bf3dc7be5a156ad4c34} 
+\index{Record@{Record}!rec\_end@{rec\_end}}
+\index{rec\_end@{rec\_end}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{rec\_end}{rec\_end}}
+{\footnotesize\ttfamily int Record\+::rec\+\_\+end\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+End time for the data recording window (in days) (inclusive) 
+
+\Hypertarget{class_record_a3086c7b10d3d1a9983703d0865230cfa}\label{class_record_a3086c7b10d3d1a9983703d0865230cfa} 
+\index{Record@{Record}!rec\_interval\_global@{rec\_interval\_global}}
+\index{rec\_interval\_global@{rec\_interval\_global}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{rec\_interval\_global}{rec\_interval\_global}}
+{\footnotesize\ttfamily int Record\+::rec\+\_\+interval\+\_\+global\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time interval for global data recording (in days) 
+
+\Hypertarget{class_record_a9217590af69eb03412ac2c82c4fd853e}\label{class_record_a9217590af69eb03412ac2c82c4fd853e} 
+\index{Record@{Record}!rec\_interval\_local@{rec\_interval\_local}}
+\index{rec\_interval\_local@{rec\_interval\_local}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{rec\_interval\_local}{rec\_interval\_local}}
+{\footnotesize\ttfamily int Record\+::rec\+\_\+interval\+\_\+local\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time interval for local data recording (in days) 
+
+\Hypertarget{class_record_a8ab507dfcfb593428a8c23a81877fac3}\label{class_record_a8ab507dfcfb593428a8c23a81877fac3} 
+\index{Record@{Record}!rec\_sites\_freq@{rec\_sites\_freq}}
+\index{rec\_sites\_freq@{rec\_sites\_freq}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{rec\_sites\_freq}{rec\_sites\_freq}}
+{\footnotesize\ttfamily int Record\+::rec\+\_\+sites\+\_\+freq\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fraction of sites to collect local data for (1 is all sites, 10 is 1 in 10 etc.). 
+
+\Hypertarget{class_record_a13b20ef61772014de98c3d87354ad1e9}\label{class_record_a13b20ef61772014de98c3d87354ad1e9} 
+\index{Record@{Record}!rec\_start@{rec\_start}}
+\index{rec\_start@{rec\_start}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{rec\_start}{rec\_start}}
+{\footnotesize\ttfamily int Record\+::rec\+\_\+start\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Start time for the data recording window (in days) (inclusive) 
+
+\Hypertarget{class_record_ae9d8484927a4355098e0838c4d9a9314}\label{class_record_ae9d8484927a4355098e0838c4d9a9314} 
+\index{Record@{Record}!rep\_label@{rep\_label}}
+\index{rep\_label@{rep\_label}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{rep\_label}{rep\_label}}
+{\footnotesize\ttfamily int Record\+::rep\+\_\+label\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\textquotesingle{}Repetition\textquotesingle{} index label for output files (within given set). 
+
+\Hypertarget{class_record_a6af350cda36acab3641fce143db9e23f}\label{class_record_a6af350cda36acab3641fce143db9e23f} 
+\index{Record@{Record}!set\_label@{set\_label}}
+\index{set\_label@{set\_label}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{set\_label}{set\_label}}
+{\footnotesize\ttfamily int Record\+::set\+\_\+label\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\textquotesingle{}Set of repetitions\textquotesingle{} index label for output files. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/includes/\mbox{\hyperlink{_record_8h}{Record.\+h}}\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/src/\mbox{\hyperlink{_record_8cpp}{Record.\+cpp}}\end{DoxyCompactItemize}

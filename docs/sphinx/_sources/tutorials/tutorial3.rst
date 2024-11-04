@@ -7,7 +7,7 @@ In this tutorial we give bite-sized introductions to some of the essential compo
 3.1 Model introduction: Patch
 -----------------------------
 
-The Patch component is the essential building block of the model. It represents a population of mosquitoes mating, aging, dying… carrying out all the essential behaviours of a living, breathing population. As we've seen, the mosquitoes are divided into four types of individuals: juveniles (J), males (M), unmated (virgin) females (V) and mated females (F). 
+The :class:`Patch` component is the essential building block of the model. It represents a population of mosquitoes mating, aging, dying… carrying out all the essential behaviours of a living, breathing population. As we've seen, the mosquitoes are divided into four types of individuals: juveniles (J), males (M), unmated (virgin) females (V) and mated females (F). 
 
 .. figure:: ../images/tut3_patch_intro.png
     :align: left
@@ -24,7 +24,7 @@ Gene drive is a real-life technology that enhances the inheritance rates of cert
 
 To start the gene drive process, a number of modified mosquitoes are released into the wild populations. We would usually select a specific number of patches for it to be released into. The drive mosquitoes then mate with wild mosquitoes and carry out the same life processes as them. They will disperse too, which causes the natural spread of the drive throughout the simulation area. 
 
-We need to expand on the Patch concept to track the gene drive and so, the four types of individuals in a Patch are subdivided into several genotypes - let’s consider six genotypes as this is the current default. These are composed of three different alleles: wild-type (W), drive-type (D) and non-functional resistance-type (R). We thus have the following genotypes available: WW, WD, DD, DR, WR and RR, which we already plotted as part of our first run!
+We need to expand on the Patch concept to track the gene drive and so, the four types of individuals in a Patch are subdivided into several genotypes - let's consider six genotypes as this is the current default. These are composed of three different alleles: wild-type (W), drive-type (D) and non-functional resistance-type (R). We thus have the following genotypes available: WW, WD, DD, DR, WR and RR, which we already plotted as part of our first run!
 
 .. note:: 
     We count six genotypes and not nine because WD and DW genotypes are counted together, and likewise for the other heterozygous genotypes.
@@ -81,7 +81,7 @@ Create a file that contains these parameters:
         101
 
  
-And enter the filename ``params_set101.txt`` into the program. Remember files need to be in the ``build`` directory to be recognised.
+And, as before, enter the filepath for the parameters file (this time ``params_set101.txt``) into the program. Remember these exercise files can be found in the ``docs/exercises`` directory and the filepath we use is relative to the ``build`` directory, so we would enter ``../docs/exercises/params_set101.txt`` for this tutorial. 
 
 Now we can say yes to the advanced options and we'll be given a submenu of options. Let's choose ``4`` - the custom patch coordinates option. 
 
@@ -92,9 +92,9 @@ The interface will then prompt us to enter a coordinates filename. Let's have a 
 
 The custom coordinates file should have three columns - the x and y coordinates plus a ``y`` / ``n`` character. The last character describes whether the coordinate is a gene drive release site or not (yes or no).
 
-As in other parameter files, each row should be delimited by new lines and each value in a column by white space. 
+As in other parameter files, each row should be delimited by new lines and each value in a row by white space. 
 
-The coordinate values may also be subject to certain bound checks - more information on this in the User Guide. 
+The coordinate values may also be subject to certain bound checks - more information on this in the :doc:`../user_guide/adv_options` section of the User Guide. 
 
 .. warning::
     Selecting release sites in this way will overwrite the number of release sites previously chosen with the ``num_driver_sites`` parameter. 
@@ -133,7 +133,7 @@ Let's use the coordinates file below to create a square grid of patches.
         0.6    0.8    n
         0.8    0.8    n
 
-Now we can enter the filename into the prompt. If there are no error messages, this will set the coordinates (more information on errors in the User Guide).
+Now we can enter the filepath into the prompt. Like with the parameters file, we can use the relative filepath to the ``docs/exercises`` directory. If there are no error messages, this will set the coordinates (more information on errors in the :doc:`../user_guide/custom_set` and :doc:`../user_guide/adv_options` sections of the User Guide).
 
 We can exit the advanced options and run the program by entering ``0``, which should start outputting day data as in previous runs. 
 
@@ -144,6 +144,10 @@ Finally, we could re-plot the coordinates and check the difference, but we will 
 
 3.4 Creating a local data animation: drive allele frequency (optional - python)
 -------------------------------------------------------------------------------
+
+.. note:: 
+
+   This tutorial will require the same installations as Tutorial :ref:`tutorial-1.2`.
 
 With a few tweaks we can easily transform our previous population size animation into an animation of the drive allele frequency to track the spread of the gene drive. 
 
@@ -177,6 +181,8 @@ To modify our previous animation script, we can substitute some of the sections 
             tot = WW_day0[pat] + WD_day0[pat] + DD_day0[pat] + WR_day0[pat] + RR_day0[pat] + DR_day0[pat]
             if (tot == 0):
                 drive_freq[pat] = -2 # assign different distinguishable value for no-population patches
+            elif (tot == WW[pat]):
+                drive_freq[pat] = -0.5 #assign different distinguishable value for fully wild-population patches
             else:
                 drive_freq[pat] = (WD_day0[pat] + (2*DD_day0[pat]) + DR_day0[pat]) / (2*tot)
 
@@ -184,7 +190,7 @@ To modify our previous animation script, we can substitute some of the sections 
         main_cmap = ['aquamarine', 'mediumturquoise', 'darkcyan','steelblue', 'royalblue', 'mediumblue', 'slateblue', 'darkviolet', 'indigo', 'black']
         all_colours = ['darkgray', 'lightgreen'] + main_cmap # add colours for no-population patch and wild-population patch
         cmap = mcolors.ListedColormap(all_colours)
-        bounds = [-2, -1, 0.0001, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+        bounds = [-2, -1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
         cnorm = mcolors.BoundaryNorm(bounds, cmap.N)
 
         # make a scatter plot with drive frequency colour map
@@ -224,6 +230,8 @@ Secondly, we're going to substitute the section enclosed by ``# ~ ~ ~ ~ ~`` with
         This section should all be indented within the ``update()`` function.
 
 You'll also likely want to change the interval on the animation to 20 ms, since we have a lot more recorded days to cycle through.     
+
+Finally, remember too to change the CoordinateList and LocalData files to match the set we have just used, ``101``!
 
 Our new updated script should produce the following animation:
 

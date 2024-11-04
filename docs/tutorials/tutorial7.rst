@@ -4,6 +4,8 @@
 
 In this tutorial we will give a bite-sized introduction to seasonality and the types used in the model. As with previous tutorials, feel free to skip over this part if you're not ready for the model details. We then look at running the model with some default rainfall parameters, and finally look at setting our own rainfall data. 
 
+.. _tutorial-7.1:
+
 7.1 Model Introduction: Seasonality
 -----------------------------------
 
@@ -46,7 +48,7 @@ This is the high seasonality, default rainfall parameter set. Observe how ``alph
 With our output data, we can plot the total males as we did in Tutorial :ref:`tutorial-1.2`:
 
 .. image:: ../images/tut7_totals_plot_set13.png
-    :scale: 90 %
+    :scale: 80 %
 
 And as we can see, the population greatly fluctuates in a sinusoid pattern due to the rainfall contribution!
 
@@ -156,14 +158,14 @@ The file should contain a daily rainfall value for every day of a year. The exam
 
 With this number of values, the program will infer that we want to cycle them yearly. We also have the option to include daily values for every day we're simulating instead, i.e. for a ``max_t`` number of days.
 
-Finally, enter the filename and proceed to run the program. Remember again that input files must be in the ``build`` directory to be recognised. 
+Finally, enter the filepath and proceed to run the program. Remember again that input file filepaths must be relative to the ``build`` directory.
 
 .. image:: ../images/tut7_confirm.png
 
 If we plot the total males again, we can observe that the fluctuations are more irregular than before, since our custom rainfall values don't follow a perfect sinusoid pattern. 
 
 .. image:: ../images/tut7_totals_plot_set15.png
-    :scale: 90 %
+    :scale: 80 %
 
 In this tutorial we have effectively run the pre-defined set 15! 
 

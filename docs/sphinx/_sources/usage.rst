@@ -2,9 +2,9 @@
 Usage
 =====
 
-The program can be used in two ways: through a command-line interface or using the Simulation class directly in C++ code. 
+The program can be used in two ways: through a command-line interface or interacting directly with the :class:`Simulation` class through C++ code. 
 
-There also exists a more advanced option, where you can use the Model and Record classes directly, discussed in the User Guide.
+There also exists a more advanced option, where you can interact with the :class:`Model` and :class:`Record` classes directly, which may be added to the :doc:`user_guide/user_guide_root` in the future.
 
 Command-line interface (CLI)
 ----------------------------
@@ -20,31 +20,31 @@ Our :doc:`tutorials/tutorials_root` explain how to use the CLI in full detail.
 User-defined main file
 ----------------------
 
-For those comfortable with C++ programming, a user-defined main file may be specified to use the Simulation class directly.
+For those comfortable with C++ programming, a user-defined main file may be specified to interact with the :class:`Simulation` class directly.
 
-The new main file can be substituted in CMakeLists.txt as the executable source file:
+The new main file can be substituted in ``CMakeLists.txt`` as the executable source file:
 
 .. image:: images/usage_main2_cmakelists.png
     :scale: 80 %
 
 
-To run the simulation with the default parameters of set 1, main2.cpp would look like this:
+To run the simulation with the default parameters of set 1, ``main2.cpp`` would look like this:
 
 .. image:: images/usage_main2_file.png
     :scale: 80 %
 
 
-The CMake project will need to be re-built and re-compiled after making these changes (as explained in :doc:`install`).
+The CMake project will need to be re-built and re-compiled after making these changes (as explained in the :doc:`install` section).
 
-More examples can be found in the User Guide.
+More examples can be found in the :doc:`user_guide/code` section of the User Guide.
 
 Output
 ======
 
 Upon running a set, output files will be created in a new subdirectory called ``output_files``. This will contain:
 
-- CoordinateList.txt
-- LocalData.txt
-- Totals.txt 
+- ``CoordinateList.txt``
+- ``LocalData.txt``
+- ``Totals.txt``
 
-for each run of the set. Optional Python scripts are provided in the test directory for default visualisation options and running tests.
+for each run of the set. Optional Python scripts are provided in the ``test`` directory for default visualisation options and running tests.

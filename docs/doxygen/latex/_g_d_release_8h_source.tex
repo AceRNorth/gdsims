@@ -11,34 +11,35 @@
 \DoxyCodeLine{00007\ }
 \DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_patch}{Patch}};}
 \DoxyCodeLine{00009\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_g_d_release}{GDRelease}}\ \{}
-\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_g_d_release_a7d3d5cfa8f9d71e08383edf435fcfdbb}{GDRelease}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{num\_driver\_M}},\ std::vector<int>\ rel\_times):\ \mbox{\hyperlink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{num\_driver\_M}}(\mbox{\hyperlink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{num\_driver\_M}}),\ \mbox{\hyperlink{class_g_d_release_af257d77564ffbd7c694f57533dde7282}{release\_times}}(rel\_times)\ \{\}}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_d_release_ac69ecb74bc31ac1d57764be524c68ca7}{release\_gene\_drive}}(\textcolor{keywordtype}{int}\ day,\ std::vector<Patch*>\ \&sites);}
-\DoxyCodeLine{00022\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{num\_driver\_M}};}
-\DoxyCodeLine{00024\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_g_d_release_af257d77564ffbd7c694f57533dde7282}{release\_times}};\ }
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_g_d_release_a69a14d4b9e59ee1e1375d76630da00e3}{is\_release\_time}}(\textcolor{keywordtype}{int}\ day);}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<Patch*>\ \mbox{\hyperlink{class_g_d_release_a941e51bbc4999dacdb4f22277ffdebbf}{select\_driver\_sites}}(\textcolor{keywordtype}{int}\ day,\ \textcolor{keyword}{const}\ std::vector<Patch*>\ \&sites)\ =\ 0;}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_d_release_a46170fb6a9f1a248346206b99773b684}{put\_driver\_sites}}(std::vector<Patch*>\&\ rel\_sites);}
-\DoxyCodeLine{00028\ \};}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_random_g_d_release}{RandomGDRelease}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_g_d_release}{GDRelease}}\ \{}
-\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_random_g_d_release_abbf9f26d2fa13619476400ce3b0e17b8}{RandomGDRelease}}(\mbox{\hyperlink{struct_release_params}{ReleaseParams}}*\ params);}
-\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_random_g_d_release_aa45f254b5d9bfa9239e5ec3833f33cf5}{num\_driver\_sites}};\ }
-\DoxyCodeLine{00039\ \ \ \ \ std::vector<Patch*>\ \mbox{\hyperlink{class_random_g_d_release_a3dfe5435b6e54b577bd6e30ccc1117d6}{select\_driver\_sites}}(\textcolor{keywordtype}{int}\ day,\ \textcolor{keyword}{const}\ std::vector<Patch*>\ \&sites)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00040\ \};}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sched_g_d_release}{SchedGDRelease}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_g_d_release}{GDRelease}}\ \{}
-\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_sched_g_d_release_a5bfb7430747b3f7764b085eec40173be}{SchedGDRelease}}(\mbox{\hyperlink{struct_release_params}{ReleaseParams}}*\ params,\ std::vector<int>\ rel\_sites,\ std::vector<Patch*>\ \&sites);}
-\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00050\ \ \ \ \ std::vector<Patch*>\ \mbox{\hyperlink{class_sched_g_d_release_a84d5e62bd160c6ff007b31db117b24e7}{release\_sites}};\ }
-\DoxyCodeLine{00051\ \ \ \ \ std::vector<Patch*>\ \mbox{\hyperlink{class_sched_g_d_release_a40212411e7dd81dac953dd0d6f9ad4ad}{select\_driver\_sites}}(\textcolor{keywordtype}{int}\ day,\ \textcolor{keyword}{const}\ std::vector<Patch*>\ \&sites)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00052\ \};}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_GDRELEASE\_H}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_g_d_release}{GDRelease}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_g_d_release_a7d3d5cfa8f9d71e08383edf435fcfdbb}{GDRelease}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{num\_driver\_M}},\ std::vector<int>\ rel\_times):\ \mbox{\hyperlink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{num\_driver\_M}}(\mbox{\hyperlink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{num\_driver\_M}}),\ \mbox{\hyperlink{class_g_d_release_af257d77564ffbd7c694f57533dde7282}{release\_times}}(rel\_times)\ \{\}}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_g_d_release_aef932e9494f48a28b012c04603d483fa}{\string~GDRelease}}()\ \{\};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_d_release_ac69ecb74bc31ac1d57764be524c68ca7}{release\_gene\_drive}}(\textcolor{keywordtype}{int}\ day,\ std::vector<Patch*>\ \&sites);}
+\DoxyCodeLine{00024\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{num\_driver\_M}};}
+\DoxyCodeLine{00026\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_g_d_release_af257d77564ffbd7c694f57533dde7282}{release\_times}};\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_g_d_release_a69a14d4b9e59ee1e1375d76630da00e3}{is\_release\_time}}(\textcolor{keywordtype}{int}\ day);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<Patch*>\ \mbox{\hyperlink{class_g_d_release_a941e51bbc4999dacdb4f22277ffdebbf}{select\_driver\_sites}}(\textcolor{keywordtype}{int}\ day,\ \textcolor{keyword}{const}\ std::vector<Patch*>\ \&sites)\ =\ 0;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_d_release_a46170fb6a9f1a248346206b99773b684}{put\_driver\_sites}}(std::vector<Patch*>\&\ rel\_sites);}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_random_g_d_release}{RandomGDRelease}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_g_d_release}{GDRelease}}\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_random_g_d_release_abbf9f26d2fa13619476400ce3b0e17b8}{RandomGDRelease}}(\mbox{\hyperlink{struct_release_params}{ReleaseParams}}*\ params);}
+\DoxyCodeLine{00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_random_g_d_release_aa45f254b5d9bfa9239e5ec3833f33cf5}{num\_driver\_sites}};\ }
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<Patch*>\ \mbox{\hyperlink{class_random_g_d_release_a3dfe5435b6e54b577bd6e30ccc1117d6}{select\_driver\_sites}}(\textcolor{keywordtype}{int}\ day,\ \textcolor{keyword}{const}\ std::vector<Patch*>\ \&sites)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sched_g_d_release}{SchedGDRelease}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_g_d_release}{GDRelease}}\ \{}
+\DoxyCodeLine{00050\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_sched_g_d_release_a5bfb7430747b3f7764b085eec40173be}{SchedGDRelease}}(\mbox{\hyperlink{struct_release_params}{ReleaseParams}}*\ params,\ std::vector<int>\ rel\_sites,\ std::vector<Patch*>\ \&sites);}
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ \ \ std::vector<Patch*>\ \mbox{\hyperlink{class_sched_g_d_release_a84d5e62bd160c6ff007b31db117b24e7}{release\_sites}};\ }
+\DoxyCodeLine{00054\ \ \ \ \ std::vector<Patch*>\ \mbox{\hyperlink{class_sched_g_d_release_a40212411e7dd81dac953dd0d6f9ad4ad}{select\_driver\_sites}}(\textcolor{keywordtype}{int}\ day,\ \textcolor{keyword}{const}\ std::vector<Patch*>\ \&sites)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_GDRELEASE\_H}}
 
 \end{DoxyCode}

@@ -18,6 +18,7 @@ Program Listing for File BoundaryStrategy.h
    class BoundaryStrategy {
    public:
        BoundaryStrategy(double side): side(side) {};
+       ~BoundaryStrategy() {}; 
        virtual double distance(const Point& p1, const Point& p2) = 0;
        virtual Point relative_pos(const Point &p1, const Point &p2) = 0;
    

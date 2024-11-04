@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists\css\tree_view.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-treeview\bootstrap-treeview.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -47,8 +47,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
-    <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
-    <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+    <script src="../_static/bootstrap-treeview\bootstrap-treeview.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/tutorial2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -161,6 +160,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="../user_guide/user_guide_root.html">User Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/param_sets.html">Parameter sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/output.html">Output files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/custom_set.html">Custom sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/adv_options.html">Advanced options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/defaults.html">Default behaviours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/structure.html">File structure and architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/code.html">Interacting through code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/test.html">Running tests</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="tutorials_root.html">Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="tutorial1.html">1. Running a pre-defined set</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2. Running a custom set</a></li>
@@ -171,7 +181,7 @@
 <li class="toctree-l2"><a class="reference internal" href="tutorial7.html">7. Customising seasonality</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../api/library_root.html">Library API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/library_root.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../api/namespace_constants.html">Namespace constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/struct_aestivation_params.html">Struct AestivationParams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/struct_area_params.html">Struct AreaParams</a></li>
@@ -209,8 +219,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../api/function_inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517.html">Template Function check_bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be.html">Template Function check_interval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_inputval_8h_1a38cf9054c93e1fced65fe33940dda566.html">Template Function file_read_and_validate_type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/function_main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/function_main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_random_8h_1af03c0e74140efa3114c4cd1361da5548.html">Function random_discrete(int, int)</a></li>
@@ -440,7 +448,7 @@ document.write(`
 <p>We will now run the program with a set of custom parameters carefully selected to make an interesting animation.</p>
 <p>Run the executable and enter the custom option number <code class="docutils literal notranslate"><span class="pre">100</span></code>. This will display the list of parameters needed.</p>
 <p>You will need to create a text file with the parameters, listed in the same order as above.
-For this example, you can include the following parameters. You can copy these or move the <code class="docutils literal notranslate"><span class="pre">params_set100.txt</span></code> file from the GitHub <code class="docutils literal notranslate"><span class="pre">docs/exercises</span></code> directory into your <code class="docutils literal notranslate"><span class="pre">build</span></code> directory.</p>
+For this example, you can include the following parameters. You can copy these into a file in the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory or we can use the relative filepath to the <code class="docutils literal notranslate"><span class="pre">params_set100.txt</span></code> file in the GitHub <code class="docutils literal notranslate"><span class="pre">docs/exercises</span></code> directory. Let’s try the latter - we can directly use the files we cloned from the repository.</p>
 <figure class="align-left" id="id1">
 <a class="reference internal image-reference" href="../_images/tut2_params_set100.png"><img alt="../_images/tut2_params_set100.png" src="../_images/tut2_params_set100.png" style="width: 346.5px; height: 609.6999999999999px;" /></a>
 <figcaption>
@@ -503,17 +511,17 @@ The values should be delimited by new lines.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">set_label</span></code> : the number given to the output filenames, in the format <code class="docutils literal notranslate"><span class="pre">Totals{set_label}run1.txt</span></code>. Our filenames will now end in “100” to distinguish them from our Tutorial 1 run.</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">rec_end</span></code> and <code class="docutils literal notranslate"><span class="pre">rec_interval_local</span></code> will be particularly useful in making the following animation. Notice how the <code class="docutils literal notranslate"><span class="pre">rec_end</span></code> we have chosen matches <code class="docutils literal notranslate"><span class="pre">max_t</span></code> so we can later display the full run.</p>
-<p>We can now proceed with the program and enter the parameter filename.</p>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>The file should be in the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory for the filename to be recognised. This will apply to all filenames we enter in the program.</p>
-</div>
+<p>We can now proceed with the program and enter the parameter filepath. We will use the relative filepath <code class="docutils literal notranslate"><span class="pre">../docs/exercises/params_set100.txt</span></code>, which will be relative to the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory. The first <code class="docutils literal notranslate"><span class="pre">../</span></code> means we are going up a directory from our current directory <code class="docutils literal notranslate"><span class="pre">build</span></code>.</p>
 <p>The interface will then confirm that we are happy with the parameters read in and finally, we will be asked if we want to choose advanced options - we will look at these later, so we can say no for this run.</p>
 <img alt="../_images/tut2_confirm_params.png" src="../_images/tut2_confirm_params.png" />
 <p>The program should now start running in the same way as the pre-defined set run.</p>
 </section>
 <section id="creating-a-local-data-animation-population-size-optional-python">
 <span id="tutorial-2-2"></span><h2>2.2 Creating a local data animation: population size (optional - python)<a class="headerlink" href="#creating-a-local-data-animation-population-size-optional-python" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tutorial will require the same installations as Tutorial <a class="reference internal" href="tutorial1.html#tutorial-1-2"><span class="std std-ref">1.2 Simple plots: coordinates and totals (optional - python)</span></a>.</p>
+</div>
 <p>Now that we have our output files for the custom run, we can do something even more exciting. We can combine the local data and the coordinates files to create an animation showing how the population sizes evolve over time and space. We can use the following script:</p>
 <details class="summary-script">
 <summary>Script</summary><div class="literal-block-wrapper docutils container" id="id3">
@@ -526,12 +534,12 @@ The values should be delimited by new lines.</p>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="c1"># get coords of sites</span>
-<span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;CoordinateList1run1.txt&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;CoordinateList100run1.txt&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">coords</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">coords</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
 
 <span class="c1"># get populations</span>
-<span class="n">local_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;LocalData1run1.txt&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">local_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;LocalData100run1.txt&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># get populations on one day</span>
 <span class="n">t</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># recorded timestep</span>
@@ -557,6 +565,9 @@ The values should be delimited by new lines.</p>
 <span class="n">annotation</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="s1">&#39;t = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sim_day</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x (km)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;y (km)&quot;</span><span class="p">)</span>
+<span class="n">side</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># modify manually depending on selected side parameter</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">side</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">side</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">sim_day</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">local_data</span><span class="p">[</span><span class="n">t</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">0</span><span class="p">])</span>
@@ -580,7 +591,7 @@ The values should be delimited by new lines.</p>
 <span class="n">num_frames</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">local_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">rec_sites_freq</span><span class="p">))</span>
 
 <span class="n">anim</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="n">update</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">num_frames</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">anim</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;set1_pop_anim.gif&quot;</span><span class="p">)</span>
+<span class="n">anim</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;set100_pop_anim.gif&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>

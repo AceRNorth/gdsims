@@ -53,8 +53,10 @@ std\+::vector$<$ std\+::array$<$ std\+::array$<$ long long int, \mbox{\hyperlink
 \doxysubsection{Detailed Description}
 Implements aestivative behaviour for the model. 
 
-~\newline
- 
+Only mated females aestivate, going into aestivation within a hiding time window determined by {\ttfamily t\+\_\+hide1} and {\ttfamily t\+\_\+hide2} and emerging from aestivation within a waking time window determined by {\ttfamily t\+\_\+wake1} and {\ttfamily t\+\_\+wake2}. The females are isolated from their original patches during aestivation and returned back at the end, dependent on mortality. Other parameter rates controlling aestivation are {\ttfamily psi} and {\ttfamily mu\+\_\+aes}, the aestivation rate and aestivation mortality respectively. \begin{DoxySeeAlso}{See also}
+\doxylink{struct_aestivation_params}{Aestivation\+Params} 
+\end{DoxySeeAlso}
+
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_aestivation_a51e62f2785f14f40c74698c76da16f41}\label{class_aestivation_a51e62f2785f14f40c74698c76da16f41} 
@@ -75,7 +77,7 @@ Implements aestivative behaviour for the model.
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites} 
+\doxylink{class_model_a17b3a93529de4ef762254f9a1932b67e}{Model\+::get\+\_\+sites()} 
 \end{DoxySeeAlso}
 
 
@@ -93,13 +95,13 @@ Hides aestivating females from their patches.
 \begin{DoxyNote}{Note}
 Not all females survive aestivation. Only mated females aestivate.
 \end{DoxyNote}
-The number of females that attempt to go into aestivation (of the given genotype combination) is determined by a binomial distribution of the aestivation rate. Of those, the number that survive is determined by a binomial distribution of 1 -\/ mu\+\_\+aes (the aestivation mortality). Aestivating females are temporarily separated from the rest of the female patch population. 
+The number of females that attempt to go into aestivation (of the given genotype combination) is determined by a binomial distribution of the aestivation rate. Of those, the number that survive is determined by a binomial distribution of 1 -\/ {\ttfamily mu\+\_\+aes} (the aestivation mortality). Aestivating females are temporarily separated from the rest of the female patch population. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in,out}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_aestivation_a8549d806f88e898cdd61219d75d517e1}{Aestivation\+::psi}, \doxylink{class_aestivation_a8ba05278f1dce1144e82c32abd540dc0}{Aestivation\+::mu\+\_\+aes} 
+\doxylink{struct_input_params_adc5b2a93829b4fa4eafa0e804446558a}{Input\+Params\+::psi}, \doxylink{struct_input_params_af4132ca26a4a4ce1e19c46c89d8aee38}{Input\+Params\+::mu\+\_\+aes}, \doxylink{random_8cpp_a4e7a8d4c70cb879b071d51ddec9a8b1f}{random\+\_\+binomial()} 
 \end{DoxySeeAlso}
 \Hypertarget{class_aestivation_ad52ef1d1e4febab22176ac1690f22d76}\label{class_aestivation_ad52ef1d1e4febab22176ac1690f22d76} 
 \index{Aestivation@{Aestivation}!is\_hide\_time@{is\_hide\_time}}
@@ -111,7 +113,7 @@ The number of females that attempt to go into aestivation (of the given genotype
 
 Determines if the time is within the aestivation hiding window. 
 
-\begin{DoxyNote}{Note}
+{\ttfamily t\+\_\+hide1} $ < t \le $ {\ttfamily t\+\_\+hide2} , where $ t $ is the day of the current year. Assumes {\ttfamily psi} \texorpdfstring{$>$}{>} 0.\+00001. \begin{DoxyNote}{Note}
 The hiding window is exclusive of the start time but inclusive of the end time. 
 \end{DoxyNote}
 
@@ -123,7 +125,7 @@ The hiding window is exclusive of the start time but inclusive of the end time.
 As you would expect. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_aestivation_af08e1211410a782de9d592829c6619e6}{Aestivation\+::t\+\_\+hide1}, \doxylink{class_aestivation_a22078820c3b6d2c0b410379fb85ba495}{Aestivation\+::t\+\_\+hide2}, \doxylink{class_aestivation_a8549d806f88e898cdd61219d75d517e1}{Aestivation\+::psi} 
+\doxylink{struct_input_params_a5d0c54631c85331b117bed861883fba5}{Input\+Params\+::t\+\_\+hide1}, \doxylink{struct_input_params_ae17cce0a7ef61941a6e97158ebf80f1c}{Input\+Params\+::t\+\_\+hide2}, \doxylink{struct_input_params_adc5b2a93829b4fa4eafa0e804446558a}{Input\+Params\+::psi} 
 \end{DoxySeeAlso}
 \Hypertarget{class_aestivation_a28d413fd0b0ab424b5071832de34e86c}\label{class_aestivation_a28d413fd0b0ab424b5071832de34e86c} 
 \index{Aestivation@{Aestivation}!is\_wake\_time@{is\_wake\_time}}
@@ -135,8 +137,8 @@ As you would expect.
 
 Determines if the time is within the aestivation waking window. 
 
-\begin{DoxyNote}{Note}
-The wakinf window is exclusive of the start time but inclusive of the end time. 
+{\ttfamily t\+\_\+wake1} $ < t \le $ {\ttfamily t\+\_\+wake2} , where $ t $ is the day of the current year. Assumes {\ttfamily psi} \texorpdfstring{$>$}{>} 0.\+00001. \begin{DoxyNote}{Note}
+The waking window is exclusive of the start time but inclusive of the end time. 
 \end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
@@ -147,7 +149,7 @@ The wakinf window is exclusive of the start time but inclusive of the end time.
 As you would expect. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_aestivation_a786f12e5e6b5be06c83fa21fc3b070f0}{Aestivation\+::t\+\_\+wake1}, \doxylink{class_aestivation_a63e9e51ce52b0df684c04584e30d89bd}{Aestivation\+::t\+\_\+wake2}, \doxylink{class_aestivation_a8549d806f88e898cdd61219d75d517e1}{Aestivation\+::psi} 
+\doxylink{struct_input_params_aa0b9fe354099482dfdead7877fd3409b}{Input\+Params\+::t\+\_\+wake1}, \doxylink{struct_input_params_a4542cd7e2b6b2b386a9e63e08c2b527f}{Input\+Params\+::t\+\_\+wake2}, \doxylink{struct_input_params_adc5b2a93829b4fa4eafa0e804446558a}{Input\+Params\+::psi} 
 \end{DoxySeeAlso}
 \Hypertarget{class_aestivation_ade758967c3a5d774e15ffd2836b6e21d}\label{class_aestivation_ade758967c3a5d774e15ffd2836b6e21d} 
 \index{Aestivation@{Aestivation}!wake@{wake}}
@@ -159,7 +161,7 @@ As you would expect.
 
 Wakes a fraction of the aestivating females. 
 
-The number of females that wake up on the given day (for the given genotype combination and patch) is determined by a binomial distribution with probability 1.\+0 / (1.\+0 + t\+\_\+wake2 -\/ (day\%365). Those that wake are returned to their patch\textquotesingle{}s female population. 
+The number of females that wake up on the given day (for the given genotype combination and patch) is determined by a binomial distribution with probability {\ttfamily 1.\+0 / (1.\+0 + t\+\_\+wake2 -\/ (day\%365)}. Those that wake are returned to their patch\textquotesingle{}s female population. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em day} & simulation day \\
 \hline
@@ -167,7 +169,7 @@ The number of females that wake up on the given day (for the given genotype comb
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_aestivation_a63e9e51ce52b0df684c04584e30d89bd}{Aestivation\+::t\+\_\+wake2} 
+\doxylink{struct_input_params_a4542cd7e2b6b2b386a9e63e08c2b527f}{Input\+Params\+::t\+\_\+wake2}, \doxylink{random_8cpp_a4e7a8d4c70cb879b071d51ddec9a8b1f}{random\+\_\+binomial()} 
 \end{DoxySeeAlso}
 
 

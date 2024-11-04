@@ -9,6 +9,7 @@
 /**
  * Record constructor.
  * Creates LocalData, Totals and CoordinateList output .txt files.
+ * @details Creates a subdirectory for output files in the current directory.
  * @param[in] rec_params 	recording parameters
  * @param[in] rep 			initial repetition label for the given set of runs
  */
@@ -58,7 +59,7 @@ Record::~Record()
  * @brief Records the coordinates of the population sites. 
  * @details Relevant parameters include the fraction of sites to collect data for.
  * @param[in] sites vector of all Patch objects
- * @see Model::sites, Record::rec_sites_freq
+ * @see InputParams::rec_sites_freq
  */
 void Record::record_coords(const std::vector<Patch*> &sites) 
 {
@@ -76,7 +77,7 @@ void Record::record_coords(const std::vector<Patch*> &sites)
  * @details The totals are assumed to be across all sites. 
  * @param[in] day 		simulation day
  * @param[in] tot_M_gen total number of males divided by genotype
- * @see Model::calculate_tot_M_gen(), Patch::M
+ * @see Model::calculate_tot_M_gen(), Patch::get_M()
  */
 void Record::record_global(int day, const std::array<long long int, constants::num_gen> &tot_M_gen)
 {
@@ -95,7 +96,7 @@ void Record::record_global(int day, const std::array<long long int, constants::n
  * @param[in] tot_M	total number of males
  * @param[in] tot_V	total number of virgin (unmated) females
  * @param[in] tot_F	total number of mated females
- * @see Patch::J, Patch::M, Patch::V, Patch::F
+ * @see Patch
  */
 void Record::output_totals(int day, long long int tot_J, long long int tot_M, long long int tot_V, long long int tot_F)
 {
@@ -111,7 +112,7 @@ void Record::output_totals(int day, long long int tot_J, long long int tot_M, lo
  * @details The number of males at each site is divided by genotype. Relevant parameters include the fraction of sites to collect data for.
  * @param[in] day 	simulation day
  * @param[in] sites vector of all Patch objects
- * @see Model::sites, Record::rec_sites_freq
+ * @see InputParams::rec_sites_freq
  */
 void Record::record_local(int day, const std::vector<Patch*> &sites) 
 {
@@ -142,7 +143,7 @@ bool Record::is_rec_global_time(int day)
  * @details Other relevant parameters include the local recording interval. 
  * @param[in] day 	simulation day
  * @return As you would expect.
- * @see Record::record_local(), Record::rec_start, Record::rec_end, Record::rec_interval_local
+ * @see Record::record_local(), InputParams::rec_start, InputParams::rec_end, InputParams::rec_interval_local
  */
 bool Record::is_rec_local_time(int day) 
 {

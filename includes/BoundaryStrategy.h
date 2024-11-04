@@ -5,6 +5,8 @@
 
 /**
  * Boundary strategy base class. Defines the interface for boundary-type classes. 
+ * @details BoundaryStrategy classes implement methods specific to the boundary type of the model. The simulation area is assumed to have boundary conditions at x = ``side``, y = ``side``, and have ranges [0, ``side``] in all directions.
+ * @see AreaParams::side
  */
 class BoundaryStrategy {
 public:
@@ -13,6 +15,7 @@ public:
      * @param[in] side size of one side of the simulation square
      */
     BoundaryStrategy(double side): side(side) {};
+    ~BoundaryStrategy() {}; 
     virtual double distance(const Point& p1, const Point& p2) = 0;
     virtual Point relative_pos(const Point &p1, const Point &p2) = 0;
 
@@ -21,8 +24,9 @@ protected:
 };
 
 /**
- * Implements the distance method for toroidal boundary conditions.
- * @details The simulation area is assumed to have periodic boundary conditions at x = side, y = side, and have ranges [0, side] in all directions.
+ * Implements the methods for toroidal boundary conditions.
+ * @details The simulation area is assumed to have periodic boundary conditions at x = ``side``, y = ``side``, and have ranges [0, ``side``] in all directions.
+ * @see AreaParams::side
  */
 class ToroidalBoundaryStrategy: public BoundaryStrategy {
 public:
@@ -32,8 +36,9 @@ public:
 };
 
 /**
- * Implements the distance method for edge boundary conditions.
- * @details The simulation area is assumed to have edge boundary conditions at x = side, y = side, and have ranges [0, side] in all directions.
+ * Implements methods for edge boundary conditions.
+ * @details The simulation area is assumed to have edge boundary conditions at x = ``side``, y = ``side``, and have ranges [0, ``side``] in all directions.
+ * @see AreaParams::side
  */
 class EdgeBoundaryStrategy: public BoundaryStrategy {
 public:

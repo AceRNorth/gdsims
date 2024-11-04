@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="29" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="29" bodyend="29"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="33" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="33" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="class_toroidal_boundary_strategy_1a262f8bca65f10efa4e88c1aa67ac41ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -42,7 +42,7 @@
 <para>Calculates the shortest periodic distance between two points. </para>
         </briefdescription>
         <detaileddescription>
-<para>The simulation area is assumed to have toroidal (or periodic) boundaries at x = side, y = side, and x and y to be in the range [0, side]. <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">p1</parametername>
 </parameternamelist>
@@ -61,13 +61,11 @@
 </parameterlist>
 <simplesect kind="return"><para>The shortest distance between the points. </para>
 </simplesect>
-<simplesect kind="see"><para><ref refid="struct_point" kindref="compound">Point</ref>, <ref refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kindref="member">BoundaryStrategy::side</ref> </para>
-</simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="30" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/BoundaryStrategy.cpp" bodystart="12" bodyend="32"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="34" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/BoundaryStrategy.cpp" bodystart="10" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="class_toroidal_boundary_strategy_1a47769682a09b91733ea8295517afe245" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="struct_point" kindref="compound">Point</ref></type>
@@ -111,14 +109,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="31" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/BoundaryStrategy.cpp" bodystart="40" bodyend="56"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="35" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/BoundaryStrategy.cpp" bodystart="38" bodyend="54"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Implements the distance method for toroidal boundary conditions. </para>
+<para>Implements the methods for toroidal boundary conditions. </para>
     </briefdescription>
     <detaileddescription>
-<para>The simulation area is assumed to have periodic boundary conditions at x = side, y = side, and have ranges [0, side] in all directions. </para>
+<para>The simulation area is assumed to have periodic boundary conditions at x = <computeroutput>side</computeroutput>, y = <computeroutput>side</computeroutput>, and have ranges [0, <computeroutput>side</computeroutput>] in all directions. <simplesect kind="see"><para><ref refid="struct_area_params_1a25bc9f9baa5f3b4f9352101dfec36a99" kindref="member">AreaParams::side</ref> </para>
+</simplesect>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -144,13 +144,14 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="27" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="27" bodyend="32"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="31" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="31" bodyend="36"/>
     <listofallmembers>
       <member refid="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" prot="public" virt="non-virtual"><scope>ToroidalBoundaryStrategy</scope><name>BoundaryStrategy</name></member>
       <member refid="class_toroidal_boundary_strategy_1a262f8bca65f10efa4e88c1aa67ac41ee" prot="public" virt="virtual"><scope>ToroidalBoundaryStrategy</scope><name>distance</name></member>
       <member refid="class_toroidal_boundary_strategy_1a47769682a09b91733ea8295517afe245" prot="public" virt="virtual"><scope>ToroidalBoundaryStrategy</scope><name>relative_pos</name></member>
       <member refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" prot="protected" virt="non-virtual"><scope>ToroidalBoundaryStrategy</scope><name>side</name></member>
       <member refid="class_toroidal_boundary_strategy_1a5ea5b1bb1027b4722d19ece1d1209509" prot="public" virt="non-virtual"><scope>ToroidalBoundaryStrategy</scope><name>ToroidalBoundaryStrategy</name></member>
+      <member refid="class_boundary_strategy_1a9f8754869c6cbe6af73352e61b581c48" prot="public" virt="non-virtual"><scope>ToroidalBoundaryStrategy</scope><name>~BoundaryStrategy</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

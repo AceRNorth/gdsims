@@ -19,6 +19,7 @@ Program Listing for File Dispersal.cpp
    #include "Dispersal.h"
    #include "random.h"
    #include "constants.h"
+   #include <iostream>
    
    Dispersal::Dispersal(DispersalParams* params, BoundaryType boundary, double side) 
    {
@@ -210,7 +211,7 @@ Program Listing for File Dispersal.cpp
    }
    
    std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> RadialDispersal::compute_connecs(std::vector<Patch*> &sites) {
-        int num_sites = sites.size();
+       int num_sites = sites.size();
        std::vector<std::vector<double>> connec_weights(num_sites);
        std::vector<std::vector<int>> connec_indices(num_sites);
        // Compute inter-point distances
@@ -300,6 +301,7 @@ Program Listing for File Dispersal.cpp
                    }
                }
            }
+   
        }
        return {connec_indices, connec_weights};
    }

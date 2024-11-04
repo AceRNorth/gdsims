@@ -24,7 +24,7 @@ Collaboration diagram for Dispersal\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=220pt]{class_dispersal__coll__graph}
+\includegraphics[width=223pt]{class_dispersal__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -63,7 +63,12 @@ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{class_dispersa
 \doxysubsection{Detailed Description}
 \doxylink{class_dispersal}{Dispersal} base class. 
 
-Defines the interface for dispersal classes. 
+Defines the interface for dispersal classes.
+
+The \doxylink{class_dispersal}{Dispersal} classes compute the connections between \doxylink{class_patch}{Patch} objects with their respective connection weights, dependent on the maximum dispersal distance {\ttfamily max\+\_\+dist}, and carry out dispersal in and out of the patches, dependent on the dispersal rate {\ttfamily disp\+\_\+rate}. \begin{DoxySeeAlso}{See also}
+\doxylink{struct_dispersal_params}{Dispersal\+Params} 
+\end{DoxySeeAlso}
+
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_dispersal_a4eb55d34c12749b33bd68d4c8bfee61a}\label{class_dispersal_a4eb55d34c12749b33bd68d4c8bfee61a} 
@@ -76,7 +81,7 @@ Defines the interface for dispersal classes.
 
 \doxylink{class_dispersal}{Dispersal} constructor. 
 
-Determines what type of boundary strategy to use for calculating dispersal distances from the boundary type passed. 
+Constructs the \doxylink{class_boundary_strategy}{Boundary\+Strategy} object from the boundary type passed. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em params} & dispersal parameters \\
 \hline
@@ -118,7 +123,7 @@ Implemented in \mbox{\hyperlink{class_distance_kernel_dispersal_a8f42419dd4e180e
 
 Determines the number of mated females (of each genotype combination) dispersing out from each patch. 
 
-The number of females of a given genotype conbination dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate. 
+The number of females of a given genotype combination dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
 \hline
@@ -127,7 +132,7 @@ The number of females of a given genotype conbination dispersing from a given pa
 The number of mated females dispersing out, divided by female genotype, male sperm genotype and outgoing patch. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_dispersal_ac4a92820d2e1967895862466abd1c701}{Dispersal\+::disp\+\_\+rate}, \doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}, \doxylink{class_patch_a9e6066355010ba73abb33d8d41714677}{Patch\+::F} 
+\doxylink{struct_dispersal_params_a9a6b644b1897710b43f94688b73b42b4}{Dispersal\+Params\+::disp\+\_\+rate}, \doxylink{class_model_a17b3a93529de4ef762254f9a1932b67e}{Model\+::get\+\_\+sites()}, \doxylink{random_8cpp_a4e7a8d4c70cb879b071d51ddec9a8b1f}{random\+\_\+binomial()} 
 \end{DoxySeeAlso}
 \Hypertarget{class_dispersal_a5ffa246788b8c993b6a34e8c8387d863}\label{class_dispersal_a5ffa246788b8c993b6a34e8c8387d863} 
 \index{Dispersal@{Dispersal}!M\_dispersing\_out@{M\_dispersing\_out}}
@@ -148,7 +153,7 @@ The number of males of a given genotype dispersing from a given patch is determi
 The number of males dispersing out, divided by genotype and outgoing patch. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_dispersal_ac4a92820d2e1967895862466abd1c701}{Dispersal\+::disp\+\_\+rate}, \doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites}, \doxylink{class_patch_a6e9cda8c3620873eaadf23db0f5a7b27}{Patch\+::M} 
+\doxylink{struct_dispersal_params_a9a6b644b1897710b43f94688b73b42b4}{Dispersal\+Params\+::disp\+\_\+rate}, \doxylink{class_model_a17b3a93529de4ef762254f9a1932b67e}{Model\+::get\+\_\+sites()}, \doxylink{random_8cpp_a4e7a8d4c70cb879b071d51ddec9a8b1f}{random\+\_\+binomial()} 
 \end{DoxySeeAlso}
 \Hypertarget{class_dispersal_aef84d06c465ccb461d1cfb39e82de838}\label{class_dispersal_aef84d06c465ccb461d1cfb39e82de838} 
 \index{Dispersal@{Dispersal}!set\_connecs@{set\_connecs}}

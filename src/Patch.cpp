@@ -91,9 +91,8 @@ void Patch::populate(int initial_WJ, int initial_WM, int initial_WV, int initial
 }
 
 /**
- * @brief Returns the coordinates of the patch.
- * @return The coordinates of the patch. 
- * @see Point, Patch::coords
+ * @brief Returns the coordinates of the patch. 
+ * @see Point
  */
 Point Patch::get_coords() const
 {
@@ -101,9 +100,7 @@ Point Patch::get_coords() const
 }
 
 /**
- * @brief Returns the number of males in the patch. 
- * @return The number of males in the patch.
- * @see Patch::M 
+ * @brief Returns the number of males in the patch, divided by genotype. 
  */
 std::array<long long int, constants::num_gen> Patch::get_M() const
 {
@@ -111,9 +108,7 @@ std::array<long long int, constants::num_gen> Patch::get_M() const
 }
 
 /**
- * @brief Returns the number of females in the patch.
- * @return The number of females in the patch. 
- * @see Patch::F
+ * @brief Returns the number of females in the patch, divided by female genotype and male sperm genotype.
  */
 std::array<std::array<long long int, constants::num_gen>, constants::num_gen> Patch::get_F() const
 {
@@ -123,7 +118,6 @@ std::array<std::array<long long int, constants::num_gen>, constants::num_gen> Pa
 /**
  * @brief Calculates the total number of juveniles in the patch.
  * @return The total number of juveniles in the patch across all ages and genotypes. 
- * @see Patch::J
  */
 long long int Patch::calculate_tot_J() 
 {
@@ -139,7 +133,6 @@ long long int Patch::calculate_tot_J()
 /**
  * @brief Calculates the total number of males in the patch.
  * @return The total number of males in the patch across all genotypes.
- * @see Patch::M
  */
 long long int Patch::calculate_tot_M() 
 {
@@ -153,7 +146,6 @@ long long int Patch::calculate_tot_M()
 /**
  * @brief Calculates the total number of virgin (unmated) females in the patch.
  * @return The total number of virgin (unmated) females in the patch across all genotypes.
- * @see Patch::V
  */
 long long int Patch::calculate_tot_V()
 {
@@ -167,7 +159,6 @@ long long int Patch::calculate_tot_V()
 /**
  * @brief Calculates the total number of mated females in the patch.
  * @return The total number of mated females in the patch across all female and male sperm genotypes.
- * @see Patch::F
  */
 long long int Patch::calculate_tot_F()
 {
@@ -267,7 +258,6 @@ void Patch::add_driver_M(int num_driver_M)
  * @brief Ages the juveniles of different age groups in the patch by a day.
  * @note Not all juveniles survive the aging process.
  * @details The number of surviving individuals in an age group (for a given genotype) is determined by a binomial distibution of juvenile survival probability. 
- * @see Patch::comp 
  */
 void Patch::juv_get_older() 
 {
@@ -283,7 +273,7 @@ void Patch::juv_get_older()
 /**
  * @brief Removes dying adults from the patch.
  * @details Determines the number of adults that die in the given day and removes them from the patch. The number of males that die (for a given genotype) is determined by a binomial distribution of adult mortality, and similarly for virgin and mated females.
- * @see LifeParams::mu_a
+ * @see InputParams::mu_a
  */
 void Patch::adults_die()
 {
@@ -307,7 +297,6 @@ void Patch::adults_die()
 /**
  * @brief Mates a fraction of the virgin females in the patch.
  * @details Determines the number of virgin females that mate in the given day (for a given female genotype) with a male of genotype j by using a binomial distribution of the mating rate. Then, tranforms the virgin females into mated females carrying male sperm of genotype j. Mating is carried out within the patch, and females only mate once. 
- * @see Patch::mate_rate
  */
 void Patch::virgins_mate() 
 {
@@ -332,7 +321,7 @@ void Patch::virgins_mate()
  * @details Determines the number of eggs laid with genotype k on the given day by using a Poisson distribution. Other relevant parameters include the egg laying rate. Determines the development duration of these new juveniles using a multinomial distribution of development duration probabilities. 
  * @param[in] inher_fraction 		inheritance fraction for new offspring
  * @param[in] dev_duration_probs 	probabilities for juvenile development duration of new offspring
- * @see Simulation::inher_fraction, Model::dev_duration_probs, LifeParams::theta
+ * @see Simulation::set_inheritance(), InputParams::theta
  */
 void Patch::lay_eggs(const std::array<std::array<std::array <double, constants::num_gen>, constants::num_gen>, constants::num_gen> &inher_fraction,
  const std::array<double, constants::max_dev+1> &dev_duration_probs)
@@ -359,7 +348,6 @@ void Patch::lay_eggs(const std::array<std::array<std::array <double, constants::
  * @brief Turns the oldest juveniles into adults.
  * @note Not all juveniles survive eclosion. 
  * @details The number of survivors is determined by a binomial distribution of the juvenile survival probability. Sex determination upon eclosion is determined by a binomial distribution with 0.5 probability. 
- * @see Patch::comp
  */
 void Patch::juv_eclose() 
 {
@@ -379,8 +367,12 @@ void Patch::juv_eclose()
 
 /**
  * @brief Updates the juvenile survival probability of the patch. 
- * @details Relevant parameters include the juvenile mortality rate, the juvenile survival probability power and the carrying capacity.
- * @see Seasonality::get_alpha(), Patch::alpha0, LifeParams::mu_j, LifeParams::comp_power, Patch::comp
+ * @details Relevant parameters include the juvenile mortality rate, the juvenile survival probability power and the carrying capacity. The survival probability is computed as 
+ * \f[
+ *  \textrm{comp} = (1 - \mu_j)    \sqrt[\textrm{comp_power}]{\frac{\alpha}{\alpha + \textrm{J}_{\textrm{tot}}}},
+ * \f]
+ * with \f$ \mu_j \f$ juvenile mortality rate and \f$ \alpha \f$ carrying capacity.
+ * @see Seasonality::alpha(), InputParams::mu_j, InputParams::comp_power
  */
 void Patch::update_comp()
 {
@@ -391,9 +383,12 @@ void Patch::update_comp()
 }
 
 /**
- * @brief Updates the mating rate of the patch. 
- * @details Relevant parameters include the beta parameter. 
- * @see LifeParams::beta
+ * @brief Updates the mating rate of the patch.
+ * @details Relevant parameters include the beta parameter. The mating rate is computed as
+ * \f[ 
+ *   \textrm{mate_rate} =  \frac{\textrm{M}_{\textrm{tot}}}{\beta + \textrm{M}_{\textrm{tot}}}.
+ * \f]
+ * @see InputParams::beta
  */
 void Patch::update_mate()
 {

@@ -2,7 +2,7 @@
 \hypertarget{class_edge_boundary_strategy}{}\label{class_edge_boundary_strategy}\index{EdgeBoundaryStrategy@{EdgeBoundaryStrategy}}
 
 
-Implements the distance method for edge boundary conditions.  
+Implements methods for edge boundary conditions.  
 
 
 
@@ -40,7 +40,9 @@ double \mbox{\hyperlink{class_edge_boundary_strategy_a58bed301f6c5f63a491bad0ebe
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_boundary_strategy_a8fbbc051751dbb883c0f00673d9027c4}{Boundary\+Strategy}} (double \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}})
-\begin{DoxyCompactList}\small\item\em \doxylink{class_boundary_strategy}{Boundary\+Strategy} constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_boundary_strategy}{Boundary\+Strategy} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_boundary_strategy_a9f8754869c6cbe6af73352e61b581c48}{\texorpdfstring{$\sim$}{\string~}\+Boundary\+Strategy}} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_boundary_strategy}{Boundary\+Strategy}}}
 \begin{DoxyCompactItemize}
@@ -50,9 +52,12 @@ double \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f
 
 
 \doxysubsection{Detailed Description}
-Implements the distance method for edge boundary conditions. 
+Implements methods for edge boundary conditions. 
 
-The simulation area is assumed to have edge boundary conditions at x = side, y = side, and have ranges \mbox{[}0, side\mbox{]} in all directions. 
+The simulation area is assumed to have edge boundary conditions at x = {\ttfamily side}, y = {\ttfamily side}, and have ranges \mbox{[}0, {\ttfamily side}\mbox{]} in all directions. \begin{DoxySeeAlso}{See also}
+\doxylink{struct_area_params_a25bc9f9baa5f3b4f9352101dfec36a99}{Area\+Params\+::side} 
+\end{DoxySeeAlso}
+
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_edge_boundary_strategy_a1746c13f06d1b1514c32a41ef6804389}\label{class_edge_boundary_strategy_a1746c13f06d1b1514c32a41ef6804389} 
@@ -84,9 +89,6 @@ Calculates the distance between two points.
 \begin{DoxyReturn}{Returns}
 The distance between the points. 
 \end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\doxylink{struct_point}{Point} 
-\end{DoxySeeAlso}
 
 
 Implements \mbox{\hyperlink{class_boundary_strategy_ab845b40ed83aeb78018c23f45565cd0e}{Boundary\+Strategy}}.

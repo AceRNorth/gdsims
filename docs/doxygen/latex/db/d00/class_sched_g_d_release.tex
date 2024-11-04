@@ -1,0 +1,141 @@
+\doxysection{Sched\+GDRelease Class Reference}
+\hypertarget{class_sched_g_d_release}{}\label{class_sched_g_d_release}\index{SchedGDRelease@{SchedGDRelease}}
+
+
+Implements gene drive release for pre-\/selected release sites.  
+
+
+
+
+{\ttfamily \#include $<$GDRelease.\+h$>$}
+
+
+
+Inheritance diagram for Sched\+GDRelease\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{d9/d00/class_sched_g_d_release__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sched\+GDRelease\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{d4/d00/class_sched_g_d_release__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sched_g_d_release_a5bfb7430747b3f7764b085eec40173be}{Sched\+GDRelease}} (\mbox{\hyperlink{struct_release_params}{Release\+Params}} \texorpdfstring{$\ast$}{*}params, std\+::vector$<$ int $>$ rel\+\_\+sites, std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_sched_g_d_release}{Sched\+GDRelease} constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_g_d_release}{GDRelease}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_g_d_release_a7d3d5cfa8f9d71e08383edf435fcfdbb}{GDRelease}} (int \mbox{\hyperlink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{num\+\_\+driver\+\_\+M}}, std\+::vector$<$ int $>$ rel\+\_\+times)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_g_d_release}{GDRelease} constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_d_release_ac69ecb74bc31ac1d57764be524c68ca7}{release\+\_\+gene\+\_\+drive}} (int day, std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
+\begin{DoxyCompactList}\small\item\em Releases the gene drive mosquitoes into the simulation area if it is time for release. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_sched_g_d_release_a40212411e7dd81dac953dd0d6f9ad4ad}{select\+\_\+driver\+\_\+sites}} (int day, const std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites) override
+\begin{DoxyCompactList}\small\item\em Selects the release sites corresponding to the selected release time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_sched_g_d_release_a84d5e62bd160c6ff007b31db117b24e7}{release\+\_\+sites}}
+\begin{DoxyCompactList}\small\item\em Gene drive release sites. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_g_d_release}{GDRelease}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_g_d_release_a69a14d4b9e59ee1e1375d76630da00e3}{is\+\_\+release\+\_\+time}} (int day)
+\begin{DoxyCompactList}\small\item\em Determines if the day is a chosen release time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_d_release_a46170fb6a9f1a248346206b99773b684}{put\+\_\+driver\+\_\+sites}} (std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&rel\+\_\+sites)
+\begin{DoxyCompactList}\small\item\em Adds drive heterozygous (WD) male mosquitoes to the release sites. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_g_d_release}{GDRelease}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{num\+\_\+driver\+\_\+M}}
+\begin{DoxyCompactList}\small\item\em Number of drive heterozygous (WD) male mosquitoes per release. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_g_d_release_af257d77564ffbd7c694f57533dde7282}{release\+\_\+times}}
+\begin{DoxyCompactList}\small\item\em Days on which the gene drive mosquitoes will be released. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements gene drive release for pre-\/selected release sites. 
+
+Release sites are kept the same for each release, using the same pre-\/selected sites. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sched_g_d_release_a5bfb7430747b3f7764b085eec40173be}\label{class_sched_g_d_release_a5bfb7430747b3f7764b085eec40173be} 
+\index{SchedGDRelease@{SchedGDRelease}!SchedGDRelease@{SchedGDRelease}}
+\index{SchedGDRelease@{SchedGDRelease}!SchedGDRelease@{SchedGDRelease}}
+\doxysubsubsection{\texorpdfstring{SchedGDRelease()}{SchedGDRelease()}}
+{\footnotesize\ttfamily Sched\+GDRelease\+::\+Sched\+GDRelease (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_release_params}{Release\+Params}} \texorpdfstring{$\ast$}{*}}]{params,  }\item[{std\+::vector$<$ int $>$}]{rel\+\_\+sites,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&}]{sites }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_sched_g_d_release}{Sched\+GDRelease} constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em params} & gene drive release parameters \\
+\hline
+\mbox{\texttt{ in}}  & {\em rel\+\_\+sites} & chosen release sites, indices relative to \doxylink{class_model_a9aadb122b13c0e8be4f2437117264879}{Model\+::sites} \\
+\hline
+\mbox{\texttt{ in}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sched_g_d_release_a40212411e7dd81dac953dd0d6f9ad4ad}\label{class_sched_g_d_release_a40212411e7dd81dac953dd0d6f9ad4ad} 
+\index{SchedGDRelease@{SchedGDRelease}!select\_driver\_sites@{select\_driver\_sites}}
+\index{select\_driver\_sites@{select\_driver\_sites}!SchedGDRelease@{SchedGDRelease}}
+\doxysubsubsection{\texorpdfstring{select\_driver\_sites()}{select\_driver\_sites()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ Sched\+GDRelease\+::select\+\_\+driver\+\_\+sites (\begin{DoxyParamCaption}\item[{int}]{day,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&}]{sites }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Selects the release sites corresponding to the selected release time. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em day} & simulation day \\
+\hline
+\mbox{\texttt{ in}}  & {\em sites} & vector of all \doxylink{class_patch}{Patch} objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The release sites. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_g_d_release_a941e51bbc4999dacdb4f22277ffdebbf}{GDRelease}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_sched_g_d_release_a84d5e62bd160c6ff007b31db117b24e7}\label{class_sched_g_d_release_a84d5e62bd160c6ff007b31db117b24e7} 
+\index{SchedGDRelease@{SchedGDRelease}!release\_sites@{release\_sites}}
+\index{release\_sites@{release\_sites}!SchedGDRelease@{SchedGDRelease}}
+\doxysubsubsection{\texorpdfstring{release\_sites}{release\_sites}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_patch}{Patch}}\texorpdfstring{$\ast$}{*}$>$ Sched\+GDRelease\+::release\+\_\+sites\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gene drive release sites. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/includes/\mbox{\hyperlink{_g_d_release_8h}{GDRelease.\+h}}\item 
+C\+:/\+Users/biol0117/\+One\+Drive -\/ Nexus365/\+Documents/\+Programming projects/\+C++ Model/\+General\+Metapop/src/\mbox{\hyperlink{_g_d_release_8cpp}{GDRelease.\+cpp}}\end{DoxyCompactItemize}

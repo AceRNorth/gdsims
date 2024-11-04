@@ -292,6 +292,7 @@
 <para>The number of different genotypes in the mosquito population. </para>
         </briefdescription>
         <detaileddescription>
+<para>For 6 genotypes these represent WW, WD, DD, WR, RR and DR (in this order), where W is the wild type allele, D is the drive type allele and R is the non-functional resistance allele. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

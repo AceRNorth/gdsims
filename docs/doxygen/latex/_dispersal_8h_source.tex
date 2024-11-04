@@ -16,51 +16,51 @@
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_patch}{Patch}};}
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dispersal}{Dispersal}}\ \{}
-\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_dispersal_a4eb55d34c12749b33bd68d4c8bfee61a}{Dispersal}}(\mbox{\hyperlink{struct_dispersal_params}{DispersalParams}}*\ params,\ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{BoundaryType}}\ boundary,\ \textcolor{keywordtype}{double}\ side);}
-\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_dispersal_aed1dabe97b773b3616811b648b170350}{\string~Dispersal}}();}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dispersal_aef84d06c465ccb461d1cfb39e82de838}{set\_connecs}}(std::vector<Patch*>\ \&sites)\ =\ 0;}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dispersal_a90638547dc5983463ee88d89a9167b5a}{adults\_disperse}}(std::vector<Patch*>\ \&sites)\ =\ 0;}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dispersal_ac4a92820d2e1967895862466abd1c701}{disp\_rate}};\ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dispersal_a8b95350f1ca6fd7c635944dd776b806f}{max\_disp}};\ }
-\DoxyCodeLine{00029\ \ \ \ \ std::vector<std::vector<int>>\ \mbox{\hyperlink{class_dispersal_ae829e3cc99c732c2e4e15995a6aabc75}{connec\_indices}};\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ }}
-\DoxyCodeLine{00031\ \ \ \ \ std::vector<std::vector<double>>\ \mbox{\hyperlink{class_dispersal_a5837fcddaf8f9fa9cff545828be47d5a}{connec\_weights}};\ }
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_boundary_strategy}{BoundaryStrategy}}*\ \mbox{\hyperlink{class_dispersal_ab408b6c47b542c65c99e2c141962e81e}{boundary\_strategy}};}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ std::vector<std::array<long\ long\ int,\ constants::num\_gen>>\ \mbox{\hyperlink{class_dispersal_a5ffa246788b8c993b6a34e8c8387d863}{M\_dispersing\_out}}(\textcolor{keyword}{const}\ std::vector<Patch*>\ \&sites);}
-\DoxyCodeLine{00036\ \ \ \ \ std::vector<std::array<std::array<long\ long\ int,\ constants::num\_gen>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>>\ \mbox{\hyperlink{class_dispersal_ade53b8a69c5eea72536bcf2c7ef76857}{F\_dispersing\_out}}(\textcolor{keyword}{const}\ std::vector<Patch*>\ \&sites);}
-\DoxyCodeLine{00037\ \};}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_distance_kernel_dispersal}{DistanceKernelDispersal}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dispersal}{Dispersal}}\ \{}
-\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_distance_kernel_dispersal_a451ffadeea98f45c0db9515fc12e050c}{DistanceKernelDispersal}}(\mbox{\hyperlink{struct_dispersal_params}{DispersalParams}}*\ params,\ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{BoundaryType}}\ boundary,\ \textcolor{keywordtype}{double}\ side):\ \mbox{\hyperlink{class_dispersal}{Dispersal}}(params,\ boundary,\ side)\ \{\};}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_distance_kernel_dispersal_a980ed0ba571a2adf1e856f408d914078}{set\_connecs}}(std::vector<Patch*>\ \&sites)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_distance_kernel_dispersal_a8f42419dd4e180ed62680ffab734c677}{adults\_disperse}}(std::vector<Patch*>\ \&sites)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00056\ \ \ \ \ std::pair<std::vector<std::vector<int>>,\ std::vector<std::vector<double>>>\ \mbox{\hyperlink{class_distance_kernel_dispersal_afc863f141fc20f64d770f3b54e8fd8f9}{compute\_connecs}}(std::vector<Patch*>\ \&sites);}
-\DoxyCodeLine{00057\ \};}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00063\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_radial_dispersal}{RadialDispersal}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dispersal}{Dispersal}}\ \{}
-\DoxyCodeLine{00064\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_radial_dispersal_ac63e6e6d97e7c720b6e6ef349e07c711}{RadialDispersal}}(\mbox{\hyperlink{struct_dispersal_params}{DispersalParams}}*\ params,\ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{BoundaryType}}\ boundary,\ \textcolor{keywordtype}{double}\ side);}
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_radial_dispersal_a363d41e54203e0cd6cadb0667b1f6548}{set\_connecs}}(std::vector<Patch*>\ \&sites)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_radial_dispersal_aa3bca3cc8b2d80af4bd11d91cacf09bb}{adults\_disperse}}(std::vector<Patch*>\ \&sites)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00070\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_radial_dispersal_a58a082ed4dfcec4a9f66fb6753a70522}{connec\_weights\_sum}};\ }
-\DoxyCodeLine{00072\ \ \ \ \ std::pair<std::vector<std::vector<int>>,\ std::vector<std::vector<double>>>\ \mbox{\hyperlink{class_radial_dispersal_ad09b4df09539d8b421c8d7ed3199d0c4}{compute\_connecs}}(std::vector<Patch*>\ \&sites);}
-\DoxyCodeLine{00073\ \ \ \ \ std::pair<std::vector<std::pair<double,\ double>>,\ \textcolor{keywordtype}{double}>\ \mbox{\hyperlink{class_radial_dispersal_ae456b5d871312e16812fb6c4024288f6}{compute\_interval\_union}}(\textcolor{keyword}{const}\ std::pair<double,\ double>\&\ qq,}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::pair<double,\ double>>\&\ input);}
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_radial_dispersal_a55a26db2720e9bf5811aa51cf3a8d873}{wrap\_around}}(\textcolor{keywordtype}{double}\ value,\ \textcolor{keywordtype}{double}\ range);\ }
-\DoxyCodeLine{00076\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_radial_dispersal_a4df7ea1ccbcc88991b3e63a46f0e0bb1}{get\_sorted\_positions}}(\textcolor{keyword}{const}\ std::vector<double>\&\ numbers);}
-\DoxyCodeLine{00077\ \ \ \ \ std::vector<std::vector<double>>\ \mbox{\hyperlink{class_radial_dispersal_a28a558e2dcb75b8db11fd424aa66243e}{compute\_distances}}(\textcolor{keyword}{const}\ std::vector<Patch*>\ \&sites);}
-\DoxyCodeLine{00078\ \};}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_DISPERSAL\_H}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dispersal}{Dispersal}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_dispersal_a4eb55d34c12749b33bd68d4c8bfee61a}{Dispersal}}(\mbox{\hyperlink{struct_dispersal_params}{DispersalParams}}*\ params,\ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{BoundaryType}}\ boundary,\ \textcolor{keywordtype}{double}\ side);}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_dispersal_aed1dabe97b773b3616811b648b170350}{\string~Dispersal}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dispersal_aef84d06c465ccb461d1cfb39e82de838}{set\_connecs}}(std::vector<Patch*>\ \&sites)\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dispersal_a90638547dc5983463ee88d89a9167b5a}{adults\_disperse}}(std::vector<Patch*>\ \&sites)\ =\ 0;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dispersal_ac4a92820d2e1967895862466abd1c701}{disp\_rate}};\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dispersal_a8b95350f1ca6fd7c635944dd776b806f}{max\_disp}};\ }
+\DoxyCodeLine{00031\ \ \ \ \ std::vector<std::vector<int>>\ \mbox{\hyperlink{class_dispersal_ae829e3cc99c732c2e4e15995a6aabc75}{connec\_indices}};\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00033\ \ \ \ \ std::vector<std::vector<double>>\ \mbox{\hyperlink{class_dispersal_a5837fcddaf8f9fa9cff545828be47d5a}{connec\_weights}};\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_boundary_strategy}{BoundaryStrategy}}*\ \mbox{\hyperlink{class_dispersal_ab408b6c47b542c65c99e2c141962e81e}{boundary\_strategy}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<std::array<long\ long\ int,\ constants::num\_gen>>\ \mbox{\hyperlink{class_dispersal_a5ffa246788b8c993b6a34e8c8387d863}{M\_dispersing\_out}}(\textcolor{keyword}{const}\ std::vector<Patch*>\ \&sites);}
+\DoxyCodeLine{00038\ \ \ \ \ std::vector<std::array<std::array<long\ long\ int,\ constants::num\_gen>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>>\ \mbox{\hyperlink{class_dispersal_ade53b8a69c5eea72536bcf2c7ef76857}{F\_dispersing\_out}}(\textcolor{keyword}{const}\ std::vector<Patch*>\ \&sites);}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_distance_kernel_dispersal}{DistanceKernelDispersal}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dispersal}{Dispersal}}\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_distance_kernel_dispersal_a451ffadeea98f45c0db9515fc12e050c}{DistanceKernelDispersal}}(\mbox{\hyperlink{struct_dispersal_params}{DispersalParams}}*\ params,\ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{BoundaryType}}\ boundary,\ \textcolor{keywordtype}{double}\ side):\ \mbox{\hyperlink{class_dispersal}{Dispersal}}(params,\ boundary,\ side)\ \{\};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_distance_kernel_dispersal_a980ed0ba571a2adf1e856f408d914078}{set\_connecs}}(std::vector<Patch*>\ \&sites)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_distance_kernel_dispersal_a8f42419dd4e180ed62680ffab734c677}{adults\_disperse}}(std::vector<Patch*>\ \&sites)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \ \ std::pair<std::vector<std::vector<int>>,\ std::vector<std::vector<double>>>\ \mbox{\hyperlink{class_distance_kernel_dispersal_afc863f141fc20f64d770f3b54e8fd8f9}{compute\_connecs}}(std::vector<Patch*>\ \&sites);}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_radial_dispersal}{RadialDispersal}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dispersal}{Dispersal}}\ \{}
+\DoxyCodeLine{00067\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_radial_dispersal_ac63e6e6d97e7c720b6e6ef349e07c711}{RadialDispersal}}(\mbox{\hyperlink{struct_dispersal_params}{DispersalParams}}*\ params,\ \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{BoundaryType}}\ boundary,\ \textcolor{keywordtype}{double}\ side);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_radial_dispersal_a363d41e54203e0cd6cadb0667b1f6548}{set\_connecs}}(std::vector<Patch*>\ \&sites)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_radial_dispersal_aa3bca3cc8b2d80af4bd11d91cacf09bb}{adults\_disperse}}(std::vector<Patch*>\ \&sites)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00073\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_radial_dispersal_a58a082ed4dfcec4a9f66fb6753a70522}{connec\_weights\_sum}};\ }
+\DoxyCodeLine{00075\ \ \ \ \ std::pair<std::vector<std::vector<int>>,\ std::vector<std::vector<double>>>\ \mbox{\hyperlink{class_radial_dispersal_ad09b4df09539d8b421c8d7ed3199d0c4}{compute\_connecs}}(std::vector<Patch*>\ \&sites);}
+\DoxyCodeLine{00076\ \ \ \ \ std::pair<std::vector<std::pair<double,\ double>>,\ \textcolor{keywordtype}{double}>\ \mbox{\hyperlink{class_radial_dispersal_ae456b5d871312e16812fb6c4024288f6}{compute\_interval\_union}}(\textcolor{keyword}{const}\ std::pair<double,\ double>\&\ qq,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::pair<double,\ double>>\&\ input);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_radial_dispersal_a55a26db2720e9bf5811aa51cf3a8d873}{wrap\_around}}(\textcolor{keywordtype}{double}\ value,\ \textcolor{keywordtype}{double}\ range);\ }
+\DoxyCodeLine{00079\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_radial_dispersal_a4df7ea1ccbcc88991b3e63a46f0e0bb1}{get\_sorted\_positions}}(\textcolor{keyword}{const}\ std::vector<double>\&\ numbers);}
+\DoxyCodeLine{00080\ \ \ \ \ std::vector<std::vector<double>>\ \mbox{\hyperlink{class_radial_dispersal_a28a558e2dcb75b8db11fd424aa66243e}{compute\_distances}}(\textcolor{keyword}{const}\ std::vector<Patch*>\ \&sites);}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_DISPERSAL\_H}}
 
 \end{DoxyCode}

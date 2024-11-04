@@ -1,0 +1,5 @@
+<map id="SchedGDRelease" name="SchedGDRelease">
+<area shape="rect" id="Node000001" title="Implements gene drive release for pre&#45;selected release sites." alt="" coords="7,229,145,320"/>
+<area shape="rect" id="Node000002" href="$dc/d00/class_g_d_release.html" title="Gene drive release base class." alt="" coords="5,5,147,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,196,79,230,73,230,73,196"/>
+</map>

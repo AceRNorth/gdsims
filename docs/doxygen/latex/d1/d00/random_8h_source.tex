@@ -1,0 +1,25 @@
+\doxysection{random.\+h}
+\hypertarget{random_8h_source}{}\label{random_8h_source}\index{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h@{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/random.h}}
+\mbox{\hyperlink{random_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GENERALMETAPOP\_RANDOM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GENERALMETAPOP\_RANDOM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{constants_8h}{constants.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Random\ number\ generator\ functions}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{random_8h_a108ff3fb960f77177389a96a01ed1c74}{random\_real}}();}
+\DoxyCodeLine{00011\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{random_8h_af03c0e74140efa3114c4cd1361da5548}{random\_discrete}}(\textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{int}\ b);}
+\DoxyCodeLine{00012\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{random_8h_a2b4b3dc20892808a0220d878773ba864}{random\_poisson}}(\textcolor{keywordtype}{double}\ lambda);}
+\DoxyCodeLine{00013\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{random_8h_a4e7a8d4c70cb879b071d51ddec9a8b1f}{random\_binomial}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{double}\ p);}
+\DoxyCodeLine{00014\ std::vector<long\ long\ int>\ \mbox{\hyperlink{random_8h_a180e4f01c99b4c4fae00714c08fa647b}{random\_multinomial}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keyword}{const}\ std::vector<double>\&\ probs);}
+\DoxyCodeLine{00015\ std::vector<long\ long\ int>\ \mbox{\hyperlink{random_8h_a180e4f01c99b4c4fae00714c08fa647b}{random\_multinomial}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keyword}{const}\ std::array<long\ long\ int,\ constants::num\_gen>\&\ probs);}
+\DoxyCodeLine{00016\ std::vector<long\ long\ int>\ \mbox{\hyperlink{random_8h_a180e4f01c99b4c4fae00714c08fa647b}{random\_multinomial}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keyword}{const}\ std::array<double,\ constants::max\_dev+1>\&\ probs);}
+\DoxyCodeLine{00017\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{random_8h_ab1651a929e139f6da870eae2f0c641e0}{random\_lognormal}}(\textcolor{keywordtype}{double}\ des\_mean,\ \textcolor{keywordtype}{double}\ des\_var);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_RANDOM\_H}}
+
+\end{DoxyCode}

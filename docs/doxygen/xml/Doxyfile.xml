@@ -196,7 +196,8 @@
     <value><![CDATA[*]]></value>
   </option>
   <option  id='EXAMPLE_RECURSIVE' default='yes' type='bool'><value>NO</value></option>
-  <option  id='IMAGE_PATH' default='yes' type='stringlist'>
+  <option  id='IMAGE_PATH' default='no' type='stringlist'>
+    <value><![CDATA[images]]></value>
   </option>
   <option  id='INPUT_FILTER' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='FILTER_PATTERNS' default='yes' type='stringlist'>
@@ -346,7 +347,8 @@
   </option>
   <option  id='INCLUDE_FILE_PATTERNS' default='yes' type='stringlist'>
   </option>
-  <option  id='PREDEFINED' default='yes' type='stringlist'>
+  <option  id='PREDEFINED' default='no' type='stringlist'>
+    <value><![CDATA[DOXYGEN_SHOULD_SKIP_THIS]]></value>
   </option>
   <option  id='EXPAND_AS_DEFINED' default='yes' type='stringlist'>
   </option>

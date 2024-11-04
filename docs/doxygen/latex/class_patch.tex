@@ -30,9 +30,9 @@ void \mbox{\hyperlink{class_patch_ada58f98a20b459b05e7d4b986de3aeee}{populate}} 
 \mbox{\hyperlink{struct_point}{Point}} \mbox{\hyperlink{class_patch_a384ca47849b58d7f215d5a7aaa8049bb}{get\+\_\+coords}} () const
 \begin{DoxyCompactList}\small\item\em Returns the coordinates of the patch. \end{DoxyCompactList}\item 
 std\+::array$<$ long long int, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ \mbox{\hyperlink{class_patch_a18366a21df794d2cebbbdfe3195734a5}{get\+\_\+M}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of males in the patch. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns the number of males in the patch, divided by genotype. \end{DoxyCompactList}\item 
 std\+::array$<$ std\+::array$<$ long long int, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$, \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants\+::num\+\_\+gen}} $>$ \mbox{\hyperlink{class_patch_a7754f3fd7fb22af2c3661d4d5229ab2d}{get\+\_\+F}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of females in the patch. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns the number of females in the patch, divided by female genotype and male sperm genotype. \end{DoxyCompactList}\item 
 long long int \mbox{\hyperlink{class_patch_a3071272790d2c5cde8675e94a306ac0a}{calculate\+\_\+tot\+\_\+J}} ()
 \begin{DoxyCompactList}\small\item\em Calculates the total number of juveniles in the patch. \end{DoxyCompactList}\item 
 long long int \mbox{\hyperlink{class_patch_adf7fcfe3a5b2b00afe76c9dac3aea50c}{calculate\+\_\+tot\+\_\+M}} ()
@@ -96,6 +96,8 @@ long double \mbox{\hyperlink{class_patch_a31046a60938f68ee9db3d779e2ba9dbe}{mate
 
 \doxysubsection{Detailed Description}
 Contains the information of a local mosquito population. 
+
+The population is divided into four types\+: juveniles (J), males (M), virgin (unmated) females (V) and mated females (F). These are then subdivided into six genotypes (in this order)\+: WW, WD, DD, DR, WR and RR composed of a wild-\/type allele (W), a drive-\/type allele (D) and a resistant-\/type allele (R). Juveniles are also subdivided into age groups, ordered from oldest (0 days left to eclosion) to youngest (max\+\_\+dev -\/ 1 days left). The population can carry out life-\/processes and interface with other classes to introduce gene drive mosquitoes into the \doxylink{class_patch}{Patch}, carry out dispersal in and out of the \doxylink{class_patch}{Patch} and aestivate.  
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_patch_a8f0ac2f89a3d9065ea6df83662cf1410}\label{class_patch_a8f0ac2f89a3d9065ea6df83662cf1410} 
@@ -172,7 +174,7 @@ Introduces driver heterozygous males into the patch.
 Removes dying adults from the patch. 
 
 Determines the number of adults that die in the given day and removes them from the patch. The number of males that die (for a given genotype) is determined by a binomial distribution of adult mortality, and similarly for virgin and mated females. \begin{DoxySeeAlso}{See also}
-\doxylink{struct_life_params_a528e234b9f36c9ee20e1e65ccb6f18ac}{Life\+Params\+::mu\+\_\+a} 
+\doxylink{struct_input_params_ad5675a09a39929aa98cd569cb4c4403f}{Input\+Params\+::mu\+\_\+a} 
 \end{DoxySeeAlso}
 \Hypertarget{class_patch_a55c95af0f8a5c1d7ac885a828a873865}\label{class_patch_a55c95af0f8a5c1d7ac885a828a873865} 
 \index{Patch@{Patch}!calculate\_tot\_F@{calculate\_tot\_F}}
@@ -187,9 +189,6 @@ Calculates the total number of mated females in the patch.
 \begin{DoxyReturn}{Returns}
 The total number of mated females in the patch across all female and male sperm genotypes. 
 \end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\doxylink{class_patch_a9e6066355010ba73abb33d8d41714677}{Patch\+::F} 
-\end{DoxySeeAlso}
 \Hypertarget{class_patch_a3071272790d2c5cde8675e94a306ac0a}\label{class_patch_a3071272790d2c5cde8675e94a306ac0a} 
 \index{Patch@{Patch}!calculate\_tot\_J@{calculate\_tot\_J}}
 \index{calculate\_tot\_J@{calculate\_tot\_J}!Patch@{Patch}}
@@ -203,9 +202,6 @@ Calculates the total number of juveniles in the patch.
 \begin{DoxyReturn}{Returns}
 The total number of juveniles in the patch across all ages and genotypes. 
 \end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\doxylink{class_patch_a9ec8ec87984a6e18efa7afd83e6df081}{Patch\+::J} 
-\end{DoxySeeAlso}
 \Hypertarget{class_patch_adf7fcfe3a5b2b00afe76c9dac3aea50c}\label{class_patch_adf7fcfe3a5b2b00afe76c9dac3aea50c} 
 \index{Patch@{Patch}!calculate\_tot\_M@{calculate\_tot\_M}}
 \index{calculate\_tot\_M@{calculate\_tot\_M}!Patch@{Patch}}
@@ -219,9 +215,6 @@ Calculates the total number of males in the patch.
 \begin{DoxyReturn}{Returns}
 The total number of males in the patch across all genotypes. 
 \end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\doxylink{class_patch_a6e9cda8c3620873eaadf23db0f5a7b27}{Patch\+::M} 
-\end{DoxySeeAlso}
 \Hypertarget{class_patch_af90e1ce58bd0c009e6dc9e939d2ee81d}\label{class_patch_af90e1ce58bd0c009e6dc9e939d2ee81d} 
 \index{Patch@{Patch}!calculate\_tot\_V@{calculate\_tot\_V}}
 \index{calculate\_tot\_V@{calculate\_tot\_V}!Patch@{Patch}}
@@ -235,9 +228,6 @@ Calculates the total number of virgin (unmated) females in the patch.
 \begin{DoxyReturn}{Returns}
 The total number of virgin (unmated) females in the patch across all genotypes. 
 \end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\doxylink{class_patch_ae4195468f66138a8bf7f0c37701098da}{Patch\+::V} 
-\end{DoxySeeAlso}
 \Hypertarget{class_patch_a4b3a7d2c76b525c22175e48784951d5e}\label{class_patch_a4b3a7d2c76b525c22175e48784951d5e} 
 \index{Patch@{Patch}!F\_disperse\_in@{F\_disperse\_in}}
 \index{F\_disperse\_in@{F\_disperse\_in}!Patch@{Patch}}
@@ -312,11 +302,8 @@ Introduces back into the patch those females that wake up from aestivation.
 
 Returns the coordinates of the patch. 
 
-\begin{DoxyReturn}{Returns}
-The coordinates of the patch. 
-\end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\doxylink{struct_point}{Point}, \doxylink{class_patch_ab18c50790301400e0a1130dbd4867db9}{Patch\+::coords} 
+\doxylink{struct_point}{Point} 
 \end{DoxySeeAlso}
 \Hypertarget{class_patch_a7754f3fd7fb22af2c3661d4d5229ab2d}\label{class_patch_a7754f3fd7fb22af2c3661d4d5229ab2d} 
 \index{Patch@{Patch}!get\_F@{get\_F}}
@@ -326,14 +313,8 @@ The coordinates of the patch.
 
 
 
-Returns the number of females in the patch. 
+Returns the number of females in the patch, divided by female genotype and male sperm genotype. 
 
-\begin{DoxyReturn}{Returns}
-The number of females in the patch. 
-\end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\doxylink{class_patch_a9e6066355010ba73abb33d8d41714677}{Patch\+::F} 
-\end{DoxySeeAlso}
 \Hypertarget{class_patch_a18366a21df794d2cebbbdfe3195734a5}\label{class_patch_a18366a21df794d2cebbbdfe3195734a5} 
 \index{Patch@{Patch}!get\_M@{get\_M}}
 \index{get\_M@{get\_M}!Patch@{Patch}}
@@ -342,14 +323,8 @@ The number of females in the patch.
 
 
 
-Returns the number of males in the patch. 
+Returns the number of males in the patch, divided by genotype. 
 
-\begin{DoxyReturn}{Returns}
-The number of males in the patch. 
-\end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\doxylink{class_patch_a6e9cda8c3620873eaadf23db0f5a7b27}{Patch\+::M} 
-\end{DoxySeeAlso}
 \Hypertarget{class_patch_a935e1a959a81d818c161b1182a45e958}\label{class_patch_a935e1a959a81d818c161b1182a45e958} 
 \index{Patch@{Patch}!juv\_eclose@{juv\_eclose}}
 \index{juv\_eclose@{juv\_eclose}!Patch@{Patch}}
@@ -363,10 +338,7 @@ Turns the oldest juveniles into adults.
 \begin{DoxyNote}{Note}
 Not all juveniles survive eclosion.
 \end{DoxyNote}
-The number of survivors is determined by a binomial distribution of the juvenile survival probability. Sex determination upon eclosion is determined by a binomial distribution with 0.\+5 probability. \begin{DoxySeeAlso}{See also}
-\doxylink{class_patch_a9807128f092d63158e4d75279b508557}{Patch\+::comp} 
-\end{DoxySeeAlso}
-\Hypertarget{class_patch_a1ac1a35f87b779415c9c0f91f0235add}\label{class_patch_a1ac1a35f87b779415c9c0f91f0235add} 
+The number of survivors is determined by a binomial distribution of the juvenile survival probability. Sex determination upon eclosion is determined by a binomial distribution with 0.\+5 probability. \Hypertarget{class_patch_a1ac1a35f87b779415c9c0f91f0235add}\label{class_patch_a1ac1a35f87b779415c9c0f91f0235add} 
 \index{Patch@{Patch}!juv\_get\_older@{juv\_get\_older}}
 \index{juv\_get\_older@{juv\_get\_older}!Patch@{Patch}}
 \doxysubsubsection{\texorpdfstring{juv\_get\_older()}{juv\_get\_older()}}
@@ -379,10 +351,7 @@ Ages the juveniles of different age groups in the patch by a day.
 \begin{DoxyNote}{Note}
 Not all juveniles survive the aging process.
 \end{DoxyNote}
-The number of surviving individuals in an age group (for a given genotype) is determined by a binomial distibution of juvenile survival probability. \begin{DoxySeeAlso}{See also}
-\doxylink{class_patch_a9807128f092d63158e4d75279b508557}{Patch\+::comp} 
-\end{DoxySeeAlso}
-\Hypertarget{class_patch_acbbe56b0cc3e9e65720191eb92bd33f3}\label{class_patch_acbbe56b0cc3e9e65720191eb92bd33f3} 
+The number of surviving individuals in an age group (for a given genotype) is determined by a binomial distibution of juvenile survival probability. \Hypertarget{class_patch_acbbe56b0cc3e9e65720191eb92bd33f3}\label{class_patch_acbbe56b0cc3e9e65720191eb92bd33f3} 
 \index{Patch@{Patch}!lay\_eggs@{lay\_eggs}}
 \index{lay\_eggs@{lay\_eggs}!Patch@{Patch}}
 \doxysubsubsection{\texorpdfstring{lay\_eggs()}{lay\_eggs()}}
@@ -400,7 +369,7 @@ Determines the number of eggs laid with genotype k on the given day by using a P
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\doxylink{class_simulation_a5bf54d592f89fb121f5f8225d2761e30}{Simulation\+::inher\+\_\+fraction}, \doxylink{class_model_a1d8427bbcb5f7e9db04d213111e208ba}{Model\+::dev\+\_\+duration\+\_\+probs}, \doxylink{struct_life_params_aea4fb1949f3ae9889fbd022ce728c1e2}{Life\+Params\+::theta} 
+\doxylink{class_simulation_ac5440a772e9d7788c588a795a7821fb6}{Simulation\+::set\+\_\+inheritance()}, \doxylink{struct_input_params_a7183128711c0a119f7fc72e94ae6bdd4}{Input\+Params\+::theta} 
 \end{DoxySeeAlso}
 \Hypertarget{class_patch_a6e8160f0e8dc961b25aa89d273cdfc2e}\label{class_patch_a6e8160f0e8dc961b25aa89d273cdfc2e} 
 \index{Patch@{Patch}!M\_disperse\_in@{M\_disperse\_in}}
@@ -465,8 +434,10 @@ Populates the local site with a wild mosquito population.
 
 Updates the juvenile survival probability of the patch. 
 
-Relevant parameters include the juvenile mortality rate, the juvenile survival probability power and the carrying capacity. \begin{DoxySeeAlso}{See also}
-Seasonality\+::get\+\_\+alpha(), \doxylink{class_patch_a5b781b751c5a39bb3a94640e3542a517}{Patch\+::alpha0}, \doxylink{struct_life_params_a02c6d31cc4adf7efc95abf6707c9f75b}{Life\+Params\+::mu\+\_\+j}, \doxylink{struct_life_params_a113c7b28bb3132aa7e9e34f5380f0837}{Life\+Params\+::comp\+\_\+power}, \doxylink{class_patch_a9807128f092d63158e4d75279b508557}{Patch\+::comp} 
+Relevant parameters include the juvenile mortality rate, the juvenile survival probability power and the carrying capacity. The survival probability is computed as  \[
+ \textrm{comp} = (1 - \mu_j)    \sqrt[\textrm{comp_power}]{\frac{\alpha}{\alpha + \textrm{J}_{\textrm{tot}}}},
+\] with $ \mu_j $ juvenile mortality rate and $ \alpha $ carrying capacity. \begin{DoxySeeAlso}{See also}
+\doxylink{class_seasonality_a86bfbdfc639ab1a08e3643e05b55d6f1}{Seasonality\+::alpha()}, \doxylink{struct_input_params_a746b1ef46c9498a5dd09b825ea4b7a24}{Input\+Params\+::mu\+\_\+j}, \doxylink{struct_input_params_a99ec67370f4794427a09d93630b248e3}{Input\+Params\+::comp\+\_\+power} 
 \end{DoxySeeAlso}
 \Hypertarget{class_patch_a14846b95a2c4032ae4de370abc5ddb04}\label{class_patch_a14846b95a2c4032ae4de370abc5ddb04} 
 \index{Patch@{Patch}!update\_mate@{update\_mate}}
@@ -478,8 +449,10 @@ Seasonality\+::get\+\_\+alpha(), \doxylink{class_patch_a5b781b751c5a39bb3a94640e
 
 Updates the mating rate of the patch. 
 
-Relevant parameters include the beta parameter. \begin{DoxySeeAlso}{See also}
-\doxylink{struct_life_params_a2cf17ed50803c966c18b4d1ca30b442c}{Life\+Params\+::beta} 
+Relevant parameters include the beta parameter. The mating rate is computed as  \[ 
+  \textrm{mate_rate} =  \frac{\textrm{M}_{\textrm{tot}}}{\beta + \textrm{M}_{\textrm{tot}}}.
+\] \begin{DoxySeeAlso}{See also}
+\doxylink{struct_input_params_a4fb2cae8d6b3a9585e386b2bfeb03299}{Input\+Params\+::beta} 
 \end{DoxySeeAlso}
 \Hypertarget{class_patch_a831b026c31ae2bbb56b04e8cc8fa2277}\label{class_patch_a831b026c31ae2bbb56b04e8cc8fa2277} 
 \index{Patch@{Patch}!virgins\_mate@{virgins\_mate}}
@@ -491,10 +464,7 @@ Relevant parameters include the beta parameter. \begin{DoxySeeAlso}{See also}
 
 Mates a fraction of the virgin females in the patch. 
 
-Determines the number of virgin females that mate in the given day (for a given female genotype) with a male of genotype j by using a binomial distribution of the mating rate. Then, tranforms the virgin females into mated females carrying male sperm of genotype j. Mating is carried out within the patch, and females only mate once. \begin{DoxySeeAlso}{See also}
-\doxylink{class_patch_a31046a60938f68ee9db3d779e2ba9dbe}{Patch\+::mate\+\_\+rate} 
-\end{DoxySeeAlso}
-
+Determines the number of virgin females that mate in the given day (for a given female genotype) with a male of genotype j by using a binomial distribution of the mating rate. Then, tranforms the virgin females into mated females carrying male sperm of genotype j. Mating is carried out within the patch, and females only mate once. 
 
 \doxysubsection{Member Data Documentation}
 \Hypertarget{class_patch_a5b781b751c5a39bb3a94640e3542a517}\label{class_patch_a5b781b751c5a39bb3a94640e3542a517} 

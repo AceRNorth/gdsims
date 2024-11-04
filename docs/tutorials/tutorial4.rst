@@ -6,6 +6,8 @@ As we saw in the previous animation, using toroidal boundary conditions (BCs) me
 
 This tutorial will describe how to set the boundary type to edge, where the axes are no longer looped around, and what this means for the gene drive spread. 
 
+.. _tutorial-4.1:
+
 4.1 Setting the boundary type to Edge
 -------------------------------------
 

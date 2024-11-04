@@ -31,12 +31,12 @@ The grey circle below represents the maximum dispersal area available for connec
 .. image:: ../images/tut6_radial_disp_diagram.png
     :scale: 70 %
 
-More details on dispersal types can be found in the User Guide.
+More details on dispersal types can be found in the :doc:`../user_guide/adv_options` section of the User Guide.
 
 6.2 Setting the dispersal type to Radial
 ----------------------------------------
 
-To set the dispersal type to Radial, we can once again use the advanced options of a custom run. We will build upon the previous tutorial (Tutorial :ref:`tutorial-5.1`), using the same parameter set and custom coordinates, as well as an Edge boundary. These options may often be used together, as they create the most realistic setting for the model.
+To set the dispersal type to Radial, we can once again use the advanced options of a custom run. We will build upon  Tutorial :ref:`tutorial-4.1`, using the same parameter set and custom coordinates, as well as an Edge boundary. These options may often be used together, as they create the most realistic setting for the model.
 
 After selecting all the previous advanced options, select option ``2 – Dispersal type``. This will prompt us to choose between Distance Kernel and Radial. Choose Radial ``r``.
 
@@ -48,10 +48,7 @@ With this, we're ready to run. From the output files we can create another anima
 .. image:: ../images/tut6_anim_radial.gif
     :scale: 90 %
 
-The above animation may not be as exciting as the previous ones, but it illustrates two of the concepts from the previous section:
-
-1. The gene drive will spread much slower with Radial dispersal, particularly under unfavourable circumstances such as long distances between patches (relative to the maximum dispersal distance). Here, the mosquitoes can only disperse to the patches above, below, to the right and to the left of their patch, as the patches in diagonal are too far.
-2. Some patches may remain uncolonised if the mosquitoes don't set out in that direction, even though they are within range. This is the case for the bottom half of the area in our animation. 
+Let's compare this animation to the one from Tutorial :ref:`tutorial-4.1`. We can see that in this case the gene drive will spread much quicker with the radial dispersal. 
 
 
 

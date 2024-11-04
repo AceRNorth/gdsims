@@ -3,7 +3,6 @@
 #include "Seasonality.h"
 #include "constants.h"
 
-
 /**
  * SineRainfall constructor.
  * @param[in] params seasonality parameters for sine rainfall-type seasonality
@@ -13,13 +12,16 @@ SineRainfall::SineRainfall(SineRainfallParams *params): Seasonality(params->alph
     amp = params->amp;
 }
 
-// 
 /**
  * Computes the carrying-capacity alpha value for the given day and alpha0. Models rainfall contribution as a sine wave.
+ * @details
+ * \f[
+ *      \alpha = \alpha_0 + \alpha_1 \left(1 + \textrm{A}\sin\left(\frac{2 \pi d}{365}\right)\right),
+ * \f]
+ * where \f$ \alpha \f$ is the carrying capacity, \f$ \alpha_0 \f$ is the baseline contribution, \f$ \alpha_1 \f$ is the factor accounting for rainfall contribution, \f$ \textrm{A} \f$ is the amplitude of rainfall fluctuations and \f$ d \f$ is the given simulation day.
  * @param[in] day       simulation day
  * @param[in] alpha0    baseline contribution to the carrying capacity
  * @return The carrying-capacity.
- * @see Patch::alpha0
  */
 double SineRainfall::alpha(int day, double alpha0)
 {
@@ -47,10 +49,14 @@ InputRainfall::InputRainfall(InputRainfallParams *params): Seasonality(params->a
 
 /**
  * Computes the carrying-capacity alpha value for the given day and alpha0. Models rainfall contribution as an exponential of daily rainfall.
+ * @details
+ * \f[
+ *      \alpha = \alpha_0 + \alpha_1 (1 - e^{-\textrm{R} r_d}),
+ * \f]
+ * where \f$ \alpha \f$ is the carrying capacity, \f$ \alpha_0 \f$ is the baseline contribution, \f$ \alpha_1 \f$ is the factor accounting for rainfall contribution, \f$ \textrm{R} \f$ is the responsiveness to the rainfall contribution and \f$ r_d \f$ is the rainfall for the given day.
  * @param[in] day       simulation day
  * @param[in] alpha0    baseline contribution to the carrying capacity
  * @return The carrying-capacity.
- * @see Patch::alpha0
  */
 double InputRainfall::alpha(int day, double alpha0)
 {

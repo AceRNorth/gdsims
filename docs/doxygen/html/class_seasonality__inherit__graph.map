@@ -1,7 +1,7 @@
 <map id="Seasonality" name="Seasonality">
-<area shape="rect" id="Node000001" title="Seasonality base class." alt="" coords="69,5,169,96"/>
-<area shape="rect" id="Node000002" href="$class_input_rainfall.html" title="Implements seasonality by modelling the rainfall contribution to carrying capacity from daily rainfal..." alt="" coords="5,144,107,256"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,111,82,145,77,143,92,109"/>
-<area shape="rect" id="Node000003" href="$class_sine_rainfall.html" title="Implements seasonality by modelling the rainfall contribution to carrying capacity as a sinusoid wave..." alt="" coords="131,155,231,245"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,109,165,154,160,156,141,111"/>
+<area shape="rect" id="Node000001" title="Seasonality base class." alt="" coords="65,5,173,117"/>
+<area shape="rect" id="Node000002" href="$class_input_rainfall.html" title="Implements seasonality by modelling the rainfall contribution to carrying capacity from daily rainfal..." alt="" coords="5,165,107,277"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,132,80,166,75,165,89,130"/>
+<area shape="rect" id="Node000003" href="$class_sine_rainfall.html" title="Implements seasonality by modelling the rainfall contribution to carrying capacity as a sinusoid wave..." alt="" coords="131,176,231,267"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,130,166,175,161,177,143,132"/>
 </map>

@@ -1,0 +1,95 @@
+\doxysection{Random}
+\hypertarget{group__random}{}\label{group__random}\index{Random@{Random}}
+
+
+Returns a random floating-\/point number from a uniform real distribution of 0.\+0 to 1.\+0.  
+
+
+Returns a random floating-\/point number from a uniform real distribution of 0.\+0 to 1.\+0. 
+
+Returns a random draw (non-\/negative floating-\/point number) from a lognormal distribution with desired mean des\+\_\+mean and desired variance des\+\_\+var.
+
+Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs.
+
+Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs.
+
+Returns a vector of outcomes from a random draw of the Multinomial distribution with N trials where each trial has a vector of probabilities probs.
+
+Returns a random draw (non-\/negative integer) from the Binomial distribution B(\+N,p).
+
+Returns a random draw (non-\/negative integer) from the Poisson distribution with mean lambda (using normal distribution approximation when lambda \texorpdfstring{$>$}{>} 30)
+
+Returns a random integer number from a uniform discrete distribution of a to b.
+
+\begin{DoxyReturn}{Returns}
+The random number.
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & lower value of the distribution range \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & upper value of the distribution range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The random number.
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lambda} & mean of the distribution \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The random number.
+\end{DoxyReturn}
+Uses Normal and Poisson distribution approximations for large N. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & number of trials \\
+\hline
+\mbox{\texttt{ in}}  & {\em p} & success probability \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The random number.
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & number of trials \\
+\hline
+\mbox{\texttt{ in}}  & {\em probs} & vector of probabilities for each outcome \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of the number of successes for each outcome (in the same order as the probabilities).
+\end{DoxyReturn}
+~\newline
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & number of trials \\
+\hline
+\mbox{\texttt{ in}}  & {\em probs} & array of probabilities for each outcome (each genotype). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of the number of successes for each outcome (in the same order as the probabilities).
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & number of trials \\
+\hline
+\mbox{\texttt{ in}}  & {\em probs} & array of probabilities for each outcome (each age group) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of the number of successes for each outcome (in the same order as the probabilities).
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em des\+\_\+mean} & desired mean \\
+\hline
+\mbox{\texttt{ in}}  & {\em des\+\_\+var} & desired variance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The random number. 
+\end{DoxyReturn}

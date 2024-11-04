@@ -11,6 +11,8 @@
 #include "InputParams.h"
 #include "sets.h"
 
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+
 int main()
 {	
 	std::vector<InputParams> sets = {set1, set2, set3, set4, set5, set6, set7, set8, set9, set10, set11, set12, set13, set14, set15, set16, set17, set18};
@@ -153,7 +155,7 @@ int main()
 				std::cout << "set_label            " << "\n"; 
 
 				std::string params_filename;
-				std::cout << "\n" << "Enter the filename of the parameters file (e.g. 'params.txt'). ";
+				std::cout << "\n" << "Enter the filename or filepath of the parameters file (e.g. 'params.txt'). ";
 				std::cout << "This must be a .txt file with parameter values in the above order and format: " << std::endl;
 				std::cin >> params_filename;
 
@@ -162,7 +164,7 @@ int main()
 					do {
 					std::cin.clear();
 					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-					std::cout << "Invalid filename. Make sure the file is in your current directory and enter the filename again:" << std::endl;
+					std::cout << "Invalid filename. Enter either a filename from your build directory or the absolute or relative filepath:" << std::endl;
 					std::cin >> params_filename;
 					params_filepath = std::filesystem::path(std::string("./")+params_filename);
 					} while (std::cin.fail() || !std::filesystem::exists(params_filepath) || !std::filesystem::is_regular_file(params_filepath));
@@ -487,7 +489,7 @@ int main()
 											std::cout << "Note: the resp value used for custom rainfall will be the one ";
 											std::cout << "previously entered as part of the simulation parameters." << std::endl;
 											std::string rainfall_filename;
-											std::cout << "Enter the filename of the rainfall file (e.g. 'rainfall.txt'). ";
+											std::cout << "Enter the filename or filepath of the rainfall file (e.g. 'rainfall.txt'). ";
 											std::cout << "This must be a .txt file with values delimited by \\n: " << std::endl;
 											std::cin >> rainfall_filename;
 
@@ -497,8 +499,7 @@ int main()
 												do {
 												std::cin.clear();
 												std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-												std::cout << "Invalid filename. Make sure the file is in your current directory ";
-												std::cout << "and enter the filename again:" << std::endl;
+												std::cout << "Invalid filename. Enter either a filename from your build directory or the absolute or relative filepath:" << std::endl;
 												std::cin >> rainfall_filename;
 												rainfall_filepath = std::filesystem::path(std::string("./")+rainfall_filename);
 												} while (std::cin.fail() || !std::filesystem::exists(rainfall_filepath) ||
@@ -509,7 +510,7 @@ int main()
 										}
 										else if (option4 == 4) {
 											std::string coords_filename;
-											std::cout << "\n" << "Enter the filename of the patch coordinates file ";
+											std::cout << "\n" << "Enter the filename or filepath of the patch coordinates file ";
 											std::cout << "(e.g. 'coords.txt'). ";
 											std::cout << "This must be a .txt file in x y char\\n x y char table format:" << std::endl;
 											std::cin >> coords_filename;
@@ -520,8 +521,7 @@ int main()
 												do {
 												std::cin.clear();
 												std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-												std::cout << "Invalid filename. Make sure the file is in your current directory ";
-												std::cout << "and enter the filename again:" << std::endl;
+												std::cout << "Invalid filename. Enter either a filename from your build directory or the absolute or relative filepath:" << std::endl;
 												std::cin >> coords_filename;
 												coords_filepath = std::filesystem::path(std::string("./")+coords_filename);
 												} while (std::cin.fail() || !std::filesystem::exists(coords_filepath) ||
@@ -532,7 +532,7 @@ int main()
 										}
 										else if (option4 == 5) {
 											std::string times_filename;
-											std::cout << "\n" << "Enter the filename of the gene drive release times";
+											std::cout << "\n" << "Enter the filename or filepath of the gene drive release times";
 											std::cout << "(e.g. 'rel_times.txt'). ";
 											std::cout << "This must be a .txt file, with values delimited by \\n:" << std::endl;
 											std::cin >> times_filename;
@@ -543,8 +543,7 @@ int main()
 												do {
 												std::cin.clear();
 												std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-												std::cout << "Invalid filename. Make sure the file is in your current directory ";
-												std::cout << "and enter the filename again:" << std::endl;
+												std::cout << "Invalid filename. Enter either a filename from your build directory or the absolute or relative filepath:" << std::endl;
 												std::cin >> times_filename;
 												times_filepath = std::filesystem::path(std::string("./")+times_filename);
 												} while (std::cin.fail() || !std::filesystem::exists(times_filepath) ||
@@ -649,8 +648,8 @@ int main()
 
 						// run simulation
 						Simulation simulation(sim_params);
-						if (option1 == 14 || option1 == 15) {simulation.set_rainfall("rainfall.txt");}
-						if (option1 == 17) {simulation.set_release_times("rel_times.txt");}
+						if (option1 == 14 || option1 == 15) {simulation.set_rainfall("../includes/rainfall.txt");}
+						if (option1 == 17) {simulation.set_release_times("../includes/rel_times.txt");}
 						simulation.set_inheritance(inher);
 						simulation.run_reps();
 
@@ -677,3 +676,5 @@ int main()
 	
 	return 0;
 }
+
+#endif /* DOXYGEN_SHOULD_SKIP_THIS */

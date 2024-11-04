@@ -37,7 +37,7 @@ Program Listing for File BoundaryStrategy.cpp
    
    Point ToroidalBoundaryStrategy::relative_pos(const Point &p1, const Point &p2) 
    {
-       Point t2;
+       Point t2=p2;
        if (2*(p2.x - p1.x) > side) {
            t2.x = p2.x - side;
        }

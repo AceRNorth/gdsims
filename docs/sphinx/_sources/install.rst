@@ -1,6 +1,9 @@
 
+.. _install:
+
 Installation
 ============
+
 The C++ program can be installed from the source code on our GitHub repository (link on the icon above). The project uses CMake, a cross-platform tool, to build the software from multiple source files. The instructions for command-line installations are below. 
 
 Requirements
@@ -52,6 +55,20 @@ Windows
       cd C:\Users\MyUser\Projects\GeneralMetapop
       mkdir build
       cd build
+
+   .. note:: 
+      The location of this ``build`` directory relative to the project will be important when entering relative filepaths for additional input files. The :ref:`tutorials-root` will assume the following directory structure: 
+
+      ::
+
+         GeneralMetapop
+         ├── build
+         ├── docs 
+         │   └── exercises
+         ├── includes
+         ├── src 
+         └── test
+
 
 #. Run CMake to configure the CMake project.
 

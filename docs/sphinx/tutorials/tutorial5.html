@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists\css\tree_view.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-treeview\bootstrap-treeview.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -47,8 +47,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
-    <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
-    <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+    <script src="../_static/bootstrap-treeview\bootstrap-treeview.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/tutorial5';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -161,6 +160,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="../user_guide/user_guide_root.html">User Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/param_sets.html">Parameter sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/output.html">Output files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/custom_set.html">Custom sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/adv_options.html">Advanced options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/defaults.html">Default behaviours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/structure.html">File structure and architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/code.html">Interacting through code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/test.html">Running tests</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="tutorials_root.html">Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="tutorial1.html">1. Running a pre-defined set</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial2.html">2. Running a custom set</a></li>
@@ -171,7 +181,7 @@
 <li class="toctree-l2"><a class="reference internal" href="tutorial7.html">7. Customising seasonality</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../api/library_root.html">Library API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/library_root.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../api/namespace_constants.html">Namespace constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/struct_aestivation_params.html">Struct AestivationParams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/struct_area_params.html">Struct AreaParams</a></li>
@@ -209,8 +219,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../api/function_inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517.html">Template Function check_bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be.html">Template Function check_interval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_inputval_8h_1a38cf9054c93e1fced65fe33940dda566.html">Template Function file_read_and_validate_type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/function_main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/function_main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_random_8h_1af03c0e74140efa3114c4cd1361da5548.html">Function random_discrete(int, int)</a></li>
@@ -436,7 +444,7 @@ document.write(`
 <section id="setting-multiple-release-times">
 <span id="tutorial-5-1"></span><h2>5.1 Setting multiple release times<a class="headerlink" href="#setting-multiple-release-times" title="Permalink to this heading">#</a></h2>
 <p>By default, the program uses a single gene drive release time at <code class="docutils literal notranslate"><span class="pre">driver_start</span></code> (we can see this in the previous runs). We can also choose to use multiple release times through the advanced options menu. This can be useful when we have a specific release schedule we want to test.</p>
-<p>Let’s create a text file named <code class="docutils literal notranslate"><span class="pre">params_set17</span></code>, where we will copy the set 1 parameters we used in Tutorial <a class="reference internal" href="tutorial1.html#tutorial-1"><span class="std std-ref">1. Running a pre-defined set</span></a>. Change the last parameter in the file, <code class="docutils literal notranslate"><span class="pre">set_label</span></code>, to 17. Remember all exercise files can also be found under the <code class="docutils literal notranslate"><span class="pre">docs/exercises</span></code> directory.</p>
+<p>We can create a text file named <code class="docutils literal notranslate"><span class="pre">params_set17.txt</span></code>, which contains the same parameters as set 1, which we used in Tutorial <a class="reference internal" href="tutorial1.html#tutorial-1"><span class="std std-ref">1. Running a pre-defined set</span></a>, except we change the last parameter in the file, <code class="docutils literal notranslate"><span class="pre">set_label</span></code>, to 17. To speed this up, we can use the one in the <code class="docutils literal notranslate"><span class="pre">docs/exercises</span></code> directory directly.</p>
 <details class="summary-parameters">
 <summary>Parameters</summary><div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">docs/exercises/params_set17.txt</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
@@ -478,11 +486,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</details><p>Again, input files should be in the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory.</p>
-<p>Run the program with a custom run, entering this file, and open the advanced options menu.
+</details><p>Run the program with a custom run, entering this filepath, and open the advanced options menu.
 Now, we can choose option <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">-</span> <span class="pre">Multiple</span> <span class="pre">gene</span> <span class="pre">drive</span> <span class="pre">release</span> <span class="pre">times</span></code>.</p>
 <img alt="../_images/tut5_adv_options.png" src="../_images/tut5_adv_options.png" />
-<p>This will prompt us to enter another filename for the release times. This text file should contain all chosen release times (as days relative to the simulation) as below:</p>
+<p>This will prompt us to enter another filename or filepath for the release times. This text file should contain all chosen release times (as days relative to the simulation) as below:</p>
 <details class="summary-release-times">
 <summary>Release times</summary><div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">docs/exercises/rel_times.txt</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
@@ -492,16 +499,16 @@ Now, we can choose option <code class="docutils literal notranslate"><span class
 </pre></div>
 </div>
 </div>
-</details><p>The drive mosquitoes will be released at all selected release sites at each release time. The method of release site selection will vary depending on the method of release chosen - more details in the User Guide. For this run, new release sites will be randomly chosen upon each release time.</p>
+</details><p>The drive mosquitoes will be released at all selected release sites at each release time. The method of release site selection will vary depending on the method of release chosen - more details in the <a class="reference internal" href="../user_guide/user_guide_root.html"><span class="doc">User Guide</span></a>. For this run, new release sites will be randomly chosen upon each release time.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>As before, successfully setting a custom option means overwriting the default parameter - in this case the single release time at <code class="docutils literal notranslate"><span class="pre">driver_start</span></code>.</p>
 </div>
-<p>Once we create this file and enter the filename, all that’s left to do is run the program!</p>
+<p>Once we create this file and enter the filepath, all that’s left to do is run the program!</p>
 <img alt="../_images/tut5_confirm.png" src="../_images/tut5_confirm.png" />
 <p>And with this, we have effectively run the pre-defined set 17!
 We can look at the totals plot and see for ourselves the spikes at each release time:</p>
-<a class="reference internal image-reference" href="../_images/tut5_totals_plot.png"><img alt="../_images/tut5_totals_plot.png" src="../_images/tut5_totals_plot.png" style="width: 522.9px; height: 392.40000000000003px;" /></a>
+<a class="reference internal image-reference" href="../_images/tut5_totals_plot.png"><img alt="../_images/tut5_totals_plot.png" src="../_images/tut5_totals_plot.png" style="width: 512.0px; height: 384.0px;" /></a>
 </section>
 </section>
 

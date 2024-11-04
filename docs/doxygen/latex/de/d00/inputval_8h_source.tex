@@ -1,0 +1,68 @@
+\doxysection{inputval.\+h}
+\hypertarget{inputval_8h_source}{}\label{inputval_8h_source}\index{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/inputval.h@{C:/Users/biol0117/OneDrive -\/ Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/inputval.h}}
+\mbox{\hyperlink{inputval_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GENERALMETAPOP\_INPUTVAL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GENERALMETAPOP\_INPUTVAL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <limits>}\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{inputval_8h_a5a4e5a7ca0db8d44c2b3e84c6eb2f517}{check\_bounds}}(\textcolor{keyword}{const}\ std::string\ \&par\_name,\ T\ value,\ T\ lower\_bound,\ \textcolor{keywordtype}{bool}\ inclusive\_lower\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00023\ \ T\ upper\_bound\ =\ std::numeric\_limits<T>::max(),\ \textcolor{keywordtype}{bool}\ inclusive\_upper\ =\ \textcolor{keyword}{true})\ }
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (lower\_bound\ >=\ upper\_bound)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ lower\_bound\ must\ be\ less\ than\ upper\_bound."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ lower\_check\ =\ inclusive\_lower\ ?\ value\ >=\ lower\_bound\ :\ value\ >\ lower\_bound;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ upper\_check\ =\ inclusive\_upper\ ?\ value\ <=\ upper\_bound\ :\ value\ <\ upper\_bound;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ lower\_bound\_char\ =\ inclusive\_lower\ ?\ \textcolor{stringliteral}{"{}\(\backslash\)u2264"{}}\ :\ \textcolor{stringliteral}{"{}<"{}};}
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ upper\_bound\_char\ =\ inclusive\_upper\ ?\ \textcolor{stringliteral}{"{}\(\backslash\)u2264"{}}\ :\ \textcolor{stringliteral}{"{}<"{}};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (!lower\_check\ ||\ !upper\_check)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}The\ parameter\ "{}}\ <<\ par\_name\ <<\ \textcolor{stringliteral}{"{}\ is\ out\ of\ bounds.\ "{}};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::cout\ <<\ par\_name\ <<\ \textcolor{stringliteral}{"{}\ should\ be\ "{}}\ <<\ lower\_bound\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ lower\_bound\_char\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ par\_name\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ std::cout\ <<\ \ upper\_bound\_char\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ upper\_bound\ <<\ \textcolor{stringliteral}{"{}.\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ lower\_check\ \&\&\ upper\_check;}
+\DoxyCodeLine{00042\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{inputval_8h_a9ceaca1e9eb448fa975e5bb7bdbf01be}{check\_interval}}(\textcolor{keyword}{const}\ std::string\ \&start\_name,\ \textcolor{keyword}{const}\ std::string\ \&stop\_name,\ T\ start,\ T\ stop)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{if}\ (stop\ <=\ start)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}The\ parameters\ "{}}\ <<\ start\_name\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ stop\_name\ <<\ \textcolor{stringliteral}{"{}\ do\ not\ constitute\ a\ valid\ interval."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{inputval_8h_a38cf9054c93e1fced65fe33940dda566}{file\_read\_and\_validate\_type}}(std::ifstream\ \&file,\ T\ \&par,\ \textcolor{keyword}{const}\ std::string\ \&par\_name,\ \textcolor{keyword}{const}\ std::string\ \&par\_type)\ }
+\DoxyCodeLine{00072\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(file\ >>\ par))\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ invalid\ type\ for\ "{}}\ <<\ par\_name\ <<\ \textcolor{stringliteral}{"{}.\ Expected\ "{}}\ <<\ par\_type\ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{inputval_8h_adc1edb0039433704b7af2b7b850cabce}{read\_and\_validate\_type}}(std::stringstream\ \&linestream,\ T\ \&par,\ \textcolor{keyword}{const}\ std::string\ \&par\_name,\ \textcolor{keyword}{const}\ std::string\ \&par\_type)}
+\DoxyCodeLine{00091\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(linestream\ >>\ par))\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ invalid\ type\ for\ "{}}\ <<\ par\_name\ <<\ \textcolor{stringliteral}{"{}.\ Expected\ "{}}\ <<\ par\_type\ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00097\ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_INPUTVAL\_H}}
+
+\end{DoxyCode}

@@ -37,6 +37,8 @@ Collaboration diagram for Random\+GDRelease\+:\nopagebreak
 \item 
 \mbox{\hyperlink{class_g_d_release_a7d3d5cfa8f9d71e08383edf435fcfdbb}{GDRelease}} (int \mbox{\hyperlink{class_g_d_release_a7ac47883a59de0732047fccf0a1cf6e0}{num\+\_\+driver\+\_\+M}}, std\+::vector$<$ int $>$ rel\+\_\+times)
 \begin{DoxyCompactList}\small\item\em \doxylink{class_g_d_release}{GDRelease} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_g_d_release_aef932e9494f48a28b012c04603d483fa}{\texorpdfstring{$\sim$}{\string~}\+GDRelease}} ()
+\item 
 void \mbox{\hyperlink{class_g_d_release_ac69ecb74bc31ac1d57764be524c68ca7}{release\+\_\+gene\+\_\+drive}} (int day, std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites)
 \begin{DoxyCompactList}\small\item\em Releases the gene drive mosquitoes into the simulation area if it is time for release. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
@@ -69,7 +71,10 @@ std\+::vector$<$ int $>$ \mbox{\hyperlink{class_g_d_release_af257d77564ffbd7c694
 \doxysubsection{Detailed Description}
 Implements gene drive release for randomised release sites. 
 
-Release sites are randomised upon each release time. 
+Release sites are randomised upon each release time, with the number selected on each release dependent on {\ttfamily num\+\_\+driver\+\_\+sites}. \begin{DoxySeeAlso}{See also}
+\doxylink{struct_release_params_a58423db2e16b0553d09ebec4d0d8a625}{Release\+Params\+::num\+\_\+driver\+\_\+sites} 
+\end{DoxySeeAlso}
+
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_random_g_d_release_abbf9f26d2fa13619476400ce3b0e17b8}\label{class_random_g_d_release_abbf9f26d2fa13619476400ce3b0e17b8} 

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists\css\tree_view.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-treeview\bootstrap-treeview.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -47,8 +47,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
-    <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
-    <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+    <script src="../_static/bootstrap-treeview\bootstrap-treeview.min.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/tutorial3';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -162,6 +161,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="../user_guide/user_guide_root.html">User Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/param_sets.html">Parameter sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/output.html">Output files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/custom_set.html">Custom sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/adv_options.html">Advanced options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/defaults.html">Default behaviours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/structure.html">File structure and architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/code.html">Interacting through code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/test.html">Running tests</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="tutorials_root.html">Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="tutorial1.html">1. Running a pre-defined set</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial2.html">2. Running a custom set</a></li>
@@ -172,7 +182,7 @@
 <li class="toctree-l2"><a class="reference internal" href="tutorial7.html">7. Customising seasonality</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../api/library_root.html">Library API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/library_root.html">API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../api/namespace_constants.html">Namespace constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/struct_aestivation_params.html">Struct AestivationParams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/struct_area_params.html">Struct AreaParams</a></li>
@@ -210,8 +220,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../api/function_inputval_8h_1a5a4e5a7ca0db8d44c2b3e84c6eb2f517.html">Template Function check_bounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_inputval_8h_1a9ceaca1e9eb448fa975e5bb7bdbf01be.html">Template Function check_interval</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_inputval_8h_1a38cf9054c93e1fced65fe33940dda566.html">Template Function file_read_and_validate_type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/function_main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/function_main2_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4.html">Function main()</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_random_8h_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_random_8cpp_1a4e7a8d4c70cb879b071d51ddec9a8b1f.html">Function random_binomial(long long int, double)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/function_random_8h_1af03c0e74140efa3114c4cd1361da5548.html">Function random_discrete(int, int)</a></li>
@@ -440,7 +448,7 @@ document.write(`
 <p>In this tutorial we give bite-sized introductions to some of the essential components of the model: patches and gene drive. Feel free to skip these sections if you’re familiar with these concepts. However, they do provide some of the assumptions specific to our model. We then cover how to set your own Patch coordinates and gene drive release sites, and how to visualise the release as an animation.</p>
 <section id="model-introduction-patch">
 <h2>3.1 Model introduction: Patch<a class="headerlink" href="#model-introduction-patch" title="Permalink to this heading">#</a></h2>
-<p>The Patch component is the essential building block of the model. It represents a population of mosquitoes mating, aging, dying… carrying out all the essential behaviours of a living, breathing population. As we’ve seen, the mosquitoes are divided into four types of individuals: juveniles (J), males (M), unmated (virgin) females (V) and mated females (F).</p>
+<p>The <a class="reference internal" href="../api/class_patch.html#_CPPv45Patch" title="Patch"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Patch</span></code></a> component is the essential building block of the model. It represents a population of mosquitoes mating, aging, dying… carrying out all the essential behaviours of a living, breathing population. As we’ve seen, the mosquitoes are divided into four types of individuals: juveniles (J), males (M), unmated (virgin) females (V) and mated females (F).</p>
 <figure class="align-left">
 <a class="reference internal image-reference" href="../_images/tut3_patch_intro.png"><img alt="../_images/tut3_patch_intro.png" src="../_images/tut3_patch_intro.png" style="width: 732.6px; height: 412.2px;" /></a>
 </figure>
@@ -501,13 +509,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</details><p>And enter the filename <code class="docutils literal notranslate"><span class="pre">params_set101.txt</span></code> into the program. Remember files need to be in the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory to be recognised.</p>
+</details><p>And, as before, enter the filepath for the parameters file (this time <code class="docutils literal notranslate"><span class="pre">params_set101.txt</span></code>) into the program. Remember these exercise files can be found in the <code class="docutils literal notranslate"><span class="pre">docs/exercises</span></code> directory and the filepath we use is relative to the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory, so we would enter <code class="docutils literal notranslate"><span class="pre">../docs/exercises/params_set101.txt</span></code> for this tutorial.</p>
 <p>Now we can say yes to the advanced options and we’ll be given a submenu of options. Let’s choose <code class="docutils literal notranslate"><span class="pre">4</span></code> - the custom patch coordinates option.</p>
 <a class="reference internal image-reference" href="../_images/tut3_adv_options.png"><img alt="../_images/tut3_adv_options.png" src="../_images/tut3_adv_options.png" style="width: 536.0px; height: 213.60000000000002px;" /></a>
 <p>The interface will then prompt us to enter a coordinates filename. Let’s have a quick look at what this file should look like before proceeding with the run.</p>
 <p>The custom coordinates file should have three columns - the x and y coordinates plus a <code class="docutils literal notranslate"><span class="pre">y</span></code> / <code class="docutils literal notranslate"><span class="pre">n</span></code> character. The last character describes whether the coordinate is a gene drive release site or not (yes or no).</p>
-<p>As in other parameter files, each row should be delimited by new lines and each value in a column by white space.</p>
-<p>The coordinate values may also be subject to certain bound checks - more information on this in the User Guide.</p>
+<p>As in other parameter files, each row should be delimited by new lines and each value in a row by white space.</p>
+<p>The coordinate values may also be subject to certain bound checks - more information on this in the <a class="reference internal" href="../user_guide/adv_options.html"><span class="doc">Advanced options</span></a> section of the User Guide.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Selecting release sites in this way will overwrite the number of release sites previously chosen with the <code class="docutils literal notranslate"><span class="pre">num_driver_sites</span></code> parameter.</p>
@@ -544,13 +552,17 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</details><p>Now we can enter the filename into the prompt. If there are no error messages, this will set the coordinates (more information on errors in the User Guide).</p>
+</details><p>Now we can enter the filepath into the prompt. Like with the parameters file, we can use the relative filepath to the <code class="docutils literal notranslate"><span class="pre">docs/exercises</span></code> directory. If there are no error messages, this will set the coordinates (more information on errors in the <a class="reference internal" href="../user_guide/custom_set.html"><span class="doc">Custom sets</span></a> and <a class="reference internal" href="../user_guide/adv_options.html"><span class="doc">Advanced options</span></a> sections of the User Guide).</p>
 <p>We can exit the advanced options and run the program by entering <code class="docutils literal notranslate"><span class="pre">0</span></code>, which should start outputting day data as in previous runs.</p>
 <img alt="../_images/tut3_set_coords.png" src="../_images/tut3_set_coords.png" />
 <p>Finally, we could re-plot the coordinates and check the difference, but we will leave this as an exercise for the user.</p>
 </section>
 <section id="creating-a-local-data-animation-drive-allele-frequency-optional-python">
 <h2>3.4 Creating a local data animation: drive allele frequency (optional - python)<a class="headerlink" href="#creating-a-local-data-animation-drive-allele-frequency-optional-python" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tutorial will require the same installations as Tutorial <a class="reference internal" href="tutorial1.html#tutorial-1-2"><span class="std std-ref">1.2 Simple plots: coordinates and totals (optional - python)</span></a>.</p>
+</div>
 <p>With a few tweaks we can easily transform our previous population size animation into an animation of the drive allele frequency to track the spread of the gene drive.</p>
 <p>The drive allele (D) frequency is calculated relative to all available genotypes:</p>
 <div class="math notranslate nohighlight">
@@ -574,6 +586,8 @@ document.write(`
     <span class="n">tot</span> <span class="o">=</span> <span class="n">WW_day0</span><span class="p">[</span><span class="n">pat</span><span class="p">]</span> <span class="o">+</span> <span class="n">WD_day0</span><span class="p">[</span><span class="n">pat</span><span class="p">]</span> <span class="o">+</span> <span class="n">DD_day0</span><span class="p">[</span><span class="n">pat</span><span class="p">]</span> <span class="o">+</span> <span class="n">WR_day0</span><span class="p">[</span><span class="n">pat</span><span class="p">]</span> <span class="o">+</span> <span class="n">RR_day0</span><span class="p">[</span><span class="n">pat</span><span class="p">]</span> <span class="o">+</span> <span class="n">DR_day0</span><span class="p">[</span><span class="n">pat</span><span class="p">]</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">tot</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
         <span class="n">drive_freq</span><span class="p">[</span><span class="n">pat</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="c1"># assign different distinguishable value for no-population patches</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">tot</span> <span class="o">==</span> <span class="n">WW</span><span class="p">[</span><span class="n">pat</span><span class="p">]):</span>
+        <span class="n">drive_freq</span><span class="p">[</span><span class="n">pat</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span> <span class="c1">#assign different distinguishable value for fully wild-population patches</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">drive_freq</span><span class="p">[</span><span class="n">pat</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">WD_day0</span><span class="p">[</span><span class="n">pat</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">DD_day0</span><span class="p">[</span><span class="n">pat</span><span class="p">])</span> <span class="o">+</span> <span class="n">DR_day0</span><span class="p">[</span><span class="n">pat</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">tot</span><span class="p">)</span>
 
@@ -581,7 +595,7 @@ document.write(`
 <span class="n">main_cmap</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;aquamarine&#39;</span><span class="p">,</span> <span class="s1">&#39;mediumturquoise&#39;</span><span class="p">,</span> <span class="s1">&#39;darkcyan&#39;</span><span class="p">,</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="s1">&#39;royalblue&#39;</span><span class="p">,</span> <span class="s1">&#39;mediumblue&#39;</span><span class="p">,</span> <span class="s1">&#39;slateblue&#39;</span><span class="p">,</span> <span class="s1">&#39;darkviolet&#39;</span><span class="p">,</span> <span class="s1">&#39;indigo&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">]</span>
 <span class="n">all_colours</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;darkgray&#39;</span><span class="p">,</span> <span class="s1">&#39;lightgreen&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">main_cmap</span> <span class="c1"># add colours for no-population patch and wild-population patch</span>
 <span class="n">cmap</span> <span class="o">=</span> <span class="n">mcolors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">(</span><span class="n">all_colours</span><span class="p">)</span>
-<span class="n">bounds</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+<span class="n">bounds</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
 <span class="n">cnorm</span> <span class="o">=</span> <span class="n">mcolors</span><span class="o">.</span><span class="n">BoundaryNorm</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">cmap</span><span class="o">.</span><span class="n">N</span><span class="p">)</span>
 
 <span class="c1"># make a scatter plot with drive frequency colour map</span>
@@ -622,6 +636,7 @@ document.write(`
 <p>This section should all be indented within the <code class="docutils literal notranslate"><span class="pre">update()</span></code> function.</p>
 </div>
 </details><p>You’ll also likely want to change the interval on the animation to 20 ms, since we have a lot more recorded days to cycle through.</p>
+<p>Finally, remember too to change the CoordinateList and LocalData files to match the set we have just used, <code class="docutils literal notranslate"><span class="pre">101</span></code>!</p>
 <p>Our new updated script should produce the following animation:</p>
 <a class="reference internal image-reference" href="../_images/tut3_drive_anim_coords.gif"><img alt="../_images/tut3_drive_anim_coords.gif" src="../_images/tut3_drive_anim_coords.gif" style="width: 576.0px; height: 432.0px;" /></a>
 <p>The animation clearly shows the spread of the gene drive and the subsequent collapse of the populations - note how the drive mosquitoes are released into the left edge central patch and spread, not only towards the right, but also appear from the right edge of the plot! This is because of the toroidal boundary conditions the model uses by default - we’ll get into more detail in the next tutorial.</p>

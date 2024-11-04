@@ -1,7 +1,7 @@
 <map id="RadialDispersal" name="RadialDispersal">
-<area shape="rect" id="Node000001" title="Implements dispersive behaviour for radial dispersal, where connection weights between patches are de..." alt="" coords="5,471,172,689"/>
-<area shape="rect" id="Node000002" href="$class_dispersal.html" title="Dispersal base class." alt="" coords="22,181,155,421"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,436,91,471,86,471,86,436"/>
-<area shape="rect" id="Node000003" href="$class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="21,5,157,117"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,117,91,164,86,164,86,117"/>
+<area shape="rect" id="Node000001" title="Implements dispersive behaviour for radial dispersal, where connection weights between patches are de..." alt="" coords="5,492,172,711"/>
+<area shape="rect" id="Node000002" href="$class_dispersal.html" title="Dispersal base class." alt="" coords="22,203,155,443"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,458,91,492,86,492,86,458"/>
+<area shape="rect" id="Node000003" href="$class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="17,5,161,139"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,138,91,186,86,186,86,138"/>
 </map>
