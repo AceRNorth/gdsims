@@ -214,97 +214,131 @@ Program Listing for File Dispersal.cpp
        int num_sites = sites.size();
        std::vector<std::vector<double>> connec_weights(num_sites);
        std::vector<std::vector<int>> connec_indices(num_sites);
-       // Compute inter-point distances
-       std::vector<std::vector<double>> distances = compute_distances(sites);
-       // Compute the smallest inter-point distance for each point; radius for each pt is half this
        std::vector<double> radii;
-       for (const auto& row : distances) {
-           double smallest_dist = std::numeric_limits<double>::infinity();
-           for (double dist : row) {
-               if (dist > 0 && dist < smallest_dist) {
-                   smallest_dist = dist;
-               }
-           }
-           radii.push_back(0.5*smallest_dist);
-       }
-   
        std::vector<std::pair<double, double>> intervals; // Vector to store intervals
        std::pair<double, double> qq; // temporary interval
-       double alpha, theta;
+       double alpha, theta,smallest_dist;
        Point loc1, loc2;
+       for(int pat=0;pat<num_sites;pat++)
+           {
+           auto result = compute_distances_site(pat,sites);
+           auto distances =result.first;
+           auto local_indices =result.second;
+           smallest_dist = std::numeric_limits<double>::infinity();
+           for (double dist : distances)
+               {
+               if (dist > 0 && dist < smallest_dist) smallest_dist = dist;
+               };
+           radii.push_back(0.5*smallest_dist);
+           };
+       // Compute inter-point distances
+   
+   
        for (int i=0; i < num_sites; i++) {
            intervals.clear();
-           std::vector<double> row = distances[i];
-           // Get the vector of positions in order of distance (need to computes connectivies from closest to farthest)
-           std::vector<int> order = get_sorted_positions(row);
+           auto result = compute_distances_site(i,sites);
+           auto distances =result.first;
+           auto local_indices =result.second;
+           std::vector<int> order = get_sorted_positions(distances);
            loc1 = sites[i]->get_coords();
            for (int j=1; j < order.size(); j++) {
                double length = 0;
                int jj = order[j];
+               int SiteElement=local_indices[j];
                loc2 = sites[jj]->get_coords();
-               if (distances[i][jj] < max_disp) {
-                   alpha = std::atan(radii[jj] / distances[i][jj]); 
-                   loc2 = boundary_strategy->relative_pos(loc1, loc2);
-                   if (loc2.y > loc1.y) 
-                   {   
-                       if (loc2.x > loc1.x) {
-                           theta = std::atan((loc2.y - loc1.y) / (loc2.x - loc1.x));
-                       }
-                       else if (loc2.x == loc1.x) {
-                           theta = constants::pi/2;
-                       }
-                       else {
-                           theta = constants::pi/2 + std::atan((loc1.x-loc2.x) / (loc2.y-loc1.y)); 
-                       }
-                   };
-                   if (loc2.y == loc1.y) {
-                       if (loc2.x >= loc1.x) {
-                           theta = 0;
-                       }
-                       else {
-                           theta = constants::pi;
-                       } 
+               alpha = std::atan(radii[SiteElement] / distances[jj]); 
+               loc2 = boundary_strategy->relative_pos(loc1, loc2);
+               if (loc2.y > loc1.y) 
+               {   
+                   if (loc2.x > loc1.x) {
+                       theta = std::atan((loc2.y - loc1.y) / (loc2.x - loc1.x));
                    }
-                   if (loc2.y < loc1.y) {
-                       if (loc1.x > loc2.x) {
-                           theta = constants::pi + std::atan((loc1.y - loc2.y) / (loc1.x - loc2.x));
-                       }
-                       else if (loc2.x==loc1.x) {
-                           theta = 3 * constants::pi / 2;
-                       }
-                       else {
-                           theta = 3 * constants::pi / 2 + std::atan((loc2.x - loc1.x) / (loc1.y - loc2.y)); 
-                       }
+                   else if (loc2.x == loc1.x) {
+                       theta = constants::pi/2;
                    }
+                   else {
+                       theta = constants::pi/2 + std::atan((loc1.x-loc2.x) / (loc2.y-loc1.y)); 
+                   }
+               };
+               if (loc2.y == loc1.y) {
+                   if (loc2.x >= loc1.x) {
+                       theta = 0;
+                   }
+                   else {
+                       theta = constants::pi;
+                   } 
+               }
+               if (loc2.y < loc1.y) {
+                   if (loc1.x > loc2.x) {
+                       theta = constants::pi + std::atan((loc1.y - loc2.y) / (loc1.x - loc2.x));
+                   }
+                   else if (loc2.x==loc1.x) {
+                       theta = 3 * constants::pi / 2;
+                   }
+                   else {
+                       theta = 3 * constants::pi / 2 + std::atan((loc2.x - loc1.x) / (loc1.y - loc2.y)); 
+                   }
+               }
    
-                   double t_min = wrap_around((theta - alpha) / (2*(constants::pi)), 1);
-                   double t_plus = wrap_around((theta + alpha) / (2*(constants::pi)), 1);
-                   if (t_min > t_plus) {
-                       qq = {t_min, 1};
-                       auto result = compute_interval_union(qq, intervals);
-                       intervals = result.first;
-                       length += result.second;
-                       qq = {0, t_plus};
-                       result = compute_interval_union(qq, intervals);
-                       intervals = result.first;
-                       length += result.second;
-                   }
-                   else { 
-                       qq = {t_min, t_plus};
-                       auto result = compute_interval_union(qq, intervals);
-                       intervals = result.first;
-                       length = result.second;
-                   }
-                   if (length > 0) {
-                       connec_weights[i].push_back(length);
-                       connec_indices[i].push_back(jj);
-                   }
+               double t_min = wrap_around((theta - alpha) / (2*(constants::pi)), 1);
+               double t_plus = wrap_around((theta + alpha) / (2*(constants::pi)), 1);
+               if (t_min > t_plus) {
+                   qq = {t_min, 1};
+                   auto result = compute_interval_union(qq, intervals);
+                   intervals = result.first;
+                   length += result.second;
+                   qq = {0, t_plus};
+                   result = compute_interval_union(qq, intervals);
+                   intervals = result.first;
+                   length += result.second;
+               }
+               else { 
+                   qq = {t_min, t_plus};
+                   auto result = compute_interval_union(qq, intervals);
+                   intervals = result.first;
+                   length = result.second;
+               }
+               if (length > 0) {
+                   connec_weights[i].push_back(length);
+                   connec_indices[i].push_back(jj);
                }
            }
    
+   <<<<<<< HEAD
+           std::cout<<i<<" NEW   ";
+           for(int jj=0;jj<connec_weights[i].size();++jj)std::cout<<connec_indices[i][jj]<<"     "<<connec_weights[i][jj]<<"    ";
+           std::cout<<std::endl;
+       
+   
+       };
+   =======
        }
+   >>>>>>> ee150b9807a483a70263b1031d1ef9c990a22741
        return {connec_indices, connec_weights};
    }
+   
+   
+   
+   std::pair<std::vector<double>,std::vector<int>> RadialDispersal::compute_distances_site(int i,std::vector<Patch*> &sites)
+   {
+           std::vector<double> distances;
+           std::vector<int> indices;
+           double dd;
+                   for (int j=0; j < sites.size(); ++j)
+                   {
+               dd = boundary_strategy->distance(sites[i]->get_coords(), sites[j]->get_coords());
+                           if(dd<max_disp && i!=j)
+                           {
+                           distances.push_back(dd);
+                           indices.push_back(j);
+                           };
+   
+                   }
+   
+           return {distances,indices};
+   }
+   
+   
    
    double RadialDispersal::wrap_around(double value, double range)
    {
@@ -358,20 +392,4 @@ Program Listing for File Dispersal.cpp
        std::sort(indices.begin(), indices.end(), [&numbers](int a, int b) {return numbers[a] < numbers[b];});
    
        return indices;
-   }
-   
-   
-   std::vector<std::vector<double>> RadialDispersal::compute_distances(const std::vector<Patch*>& sites) 
-   {
-       std::vector<std::vector<double>> distances;
-       for (int i=0; i < sites.size(); ++i) {
-           std::vector<double> row;
-           for (int j=0; j < sites.size(); ++j) {
-               double dist = boundary_strategy->distance(sites[i]->get_coords(), sites[j]->get_coords());
-               row.push_back(dist);
-           }
-           distances.push_back(row);
-       }
-   
-       return distances;
    }

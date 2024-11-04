@@ -66,7 +66,7 @@ Program Listing for File Dispersal.h
            const std::vector<std::pair<double, double>>& input);
        double wrap_around(double value, double range); 
        std::vector<int> get_sorted_positions(const std::vector<double>& numbers);
-       std::vector<std::vector<double>> compute_distances(const std::vector<Patch*> &sites);
+       std::pair<std::vector<double>,std::vector<int>> compute_distances_site(int,std::vector<Patch*> &sites);
    };
    
    #endif //GENERALMETAPOP_DISPERSAL_H

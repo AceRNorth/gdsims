@@ -245,6 +245,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api/variable_namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5.html">Variable num_gen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/variable_namespaceconstants_1a204a0248d18871c4d4d1b3e9a69ff495.html">Variable pi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/variable_random_8cpp_1a7071b0092ad8c5b57d6cc40c5f803df5.html">Variable rd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/variable_Dispersal_8cpp_1ac0e0fe07b782cbe30dcbf89b78e1a522.html">Variable return</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/variable_sets_8h_1abc6aedbb3f573c686c86355a0152cb0f.html">Variable set1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/variable_sets_8h_1aa09c4cdefed9eaa61256d2b5cb0b732c.html">Variable set10</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/variable_sets_8h_1a88a9f4a43efbcf5c6d749b6643f70aed.html">Variable set11</a></li>
@@ -2549,15 +2550,18 @@ Only those individuals that disperse out of a patch in a connected direction wil
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N15RadialDispersal17compute_distancesERKNSt6vectorIP5PatchEE">
-<span id="_CPPv3N15RadialDispersal17compute_distancesERKNSt6vectorIP5PatchEE"></span><span id="_CPPv2N15RadialDispersal17compute_distancesERKNSt6vectorIP5PatchEE"></span><span id="RadialDispersal::compute_distances__std::vector:PatchP:CR"></span><span class="target" id="classRadialDispersal_1a28a558e2dcb75b8db11fd424aa66243e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">compute_distances</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15RadialDispersal17compute_distancesERKNSt6vectorIP5PatchEE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Computes the inter-point distances for a list of points. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N15RadialDispersal22compute_distances_siteEiRNSt6vectorIP5PatchEE">
+<span id="_CPPv3N15RadialDispersal22compute_distances_siteEiRNSt6vectorIP5PatchEE"></span><span id="_CPPv2N15RadialDispersal22compute_distances_siteEiRNSt6vectorIP5PatchEE"></span><span id="RadialDispersal::compute_distances_site__i.std::vector:PatchP:R"></span><span class="target" id="classRadialDispersal_1ae499f129e03551e4f421de44de334fe0"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">compute_distances_site</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15RadialDispersal22compute_distances_siteEiRNSt6vectorIP5PatchEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Determines the points within a distance ‘max_dis’ of focal patch object from the set of all patch objects. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>sites</strong> – <strong>[in]</strong> vector of all <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> objects </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> – <strong>[in]</strong> the index of the focal point </p></li>
+<li><p><strong>sites</strong> – <strong>[in]</strong> vector of all <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> objects </p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The inter-point distances as a 2D vector, both axes in the order of the sites vector. </p>
+<dd class="field-even"><p>A list of the distances of these points, and a list of the indices within the set of all points </p>
 </dd>
 </dl>
 </dd></dl>
@@ -4150,6 +4154,14 @@ Other relevant parameters include the local recording interval. <div class="admo
 <em>#include “<a class="reference internal" href="#constants_8h"><span class="std std-ref">constants.h</span></a>”</em></div>
 <div class="docutils container">
 <em>#include &lt;iostream&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp">
+<span class="target" id="Dispersal_8cpp_1ac0e0fe07b782cbe30dcbf89b78e1a522"></span><span class="sig-name descname"><span class="pre">ee150b9807a483a70263b1031d1ef9c990a22741</span> <span class="pre">return</span>&#160;&#160; <span class="pre">=</span> <span class="pre">{connec_indices,</span> <span class="pre">connec_weights}</span></span></dt>
+<dd></dd></dl>
+
+</div>
 </dd></dl>
 
 <dl>

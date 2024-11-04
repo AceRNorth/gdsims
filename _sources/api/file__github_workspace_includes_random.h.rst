@@ -67,9 +67,9 @@ Functions
 
 - :ref:`exhale_function_random_8h_1ab1651a929e139f6da870eae2f0c641e0`
 
-- :ref:`exhale_function_random_8h_1a180e4f01c99b4c4fae00714c08fa647b`
-
 - :ref:`exhale_function_random_8h_1ab522b309a12c730ad270008709c19d09`
+
+- :ref:`exhale_function_random_8h_1a180e4f01c99b4c4fae00714c08fa647b`
 
 - :ref:`exhale_function_random_8h_1ae9bfea9d70562b34509b4ff50c57e117`
 
