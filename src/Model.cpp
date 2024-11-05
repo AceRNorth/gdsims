@@ -43,7 +43,7 @@ Model::Model(ModelParams* params, const std::array<std::array<std::array <double
 		for (int i=0; i < num_pat; ++i) {
 			Patch* pp = new Patch(this, params->life, alpha0(), coords[i]);
 			sites.push_back(pp);
-			delete [] pp;
+			//delete [] pp;
 		}
 	}
 	else {
@@ -51,7 +51,7 @@ Model::Model(ModelParams* params, const std::array<std::array<std::array <double
 			Patch* pp = new Patch(this, params->life, alpha0(), side);
 			sites.push_back(pp);
 			//delete pp;
-			delete [] pp;
+			//delete [] pp;
 		}
 	}
 
@@ -69,7 +69,7 @@ Model::Model(ModelParams* params, const std::array<std::array<std::array <double
 		new_disp = new DistanceKernelDispersal(params->disp, boundary, side);
 	}
 	dispersal = new_disp;
-delete [] new_disp;
+//delete [] new_disp;
 	GDRelease* new_gd_release;
 	if (coords.empty()) {
 		new_gd_release = new RandomGDRelease(params->rel);
@@ -78,10 +78,10 @@ delete [] new_disp;
 		new_gd_release = new SchedGDRelease(params->rel, rel_sites, sites);
 	}
 	gd_release = new_gd_release;
-delete [] new_gd_release;
+//delete [] new_gd_release;
 	Seasonality* new_seasonality = new SineRainfall(season);
 	seasonality = new_seasonality;
-delete [] new_seasonality;
+//delete [] new_seasonality;
 }
 
 /**
