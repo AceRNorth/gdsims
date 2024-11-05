@@ -54,10 +54,3 @@ Includes
 
 
 
-
-Variables
----------
-
-
-- :ref:`exhale_variable_Dispersal_8cpp_1ac0e0fe07b782cbe30dcbf89b78e1a522`
-

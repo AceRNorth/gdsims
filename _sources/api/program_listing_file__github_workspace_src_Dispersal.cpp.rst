@@ -304,16 +304,7 @@ Program Listing for File Dispersal.cpp
                }
            }
    
-   <<<<<<< HEAD
-           std::cout<<i<<" NEW   ";
-           for(int jj=0;jj<connec_weights[i].size();++jj)std::cout<<connec_indices[i][jj]<<"     "<<connec_weights[i][jj]<<"    ";
-           std::cout<<std::endl;
-       
-   
-       };
-   =======
        }
-   >>>>>>> ee150b9807a483a70263b1031d1ef9c990a22741
        return {connec_indices, connec_weights};
    }
    
