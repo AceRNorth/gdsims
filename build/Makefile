@@ -144,17 +144,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named gdsimslib
+# Target rules for targets named gdsimsapp
 
 # Build rule for target.
-gdsimslib: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gdsimslib
-.PHONY : gdsimslib
+gdsimsapp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gdsimsapp
+.PHONY : gdsimsapp
 
 # fast build rule for target.
-gdsimslib/fast:
-	$(MAKE) -f CMakeFiles/gdsimslib.dir/build.make CMakeFiles/gdsimslib.dir/build
-.PHONY : gdsimslib/fast
+gdsimsapp/fast:
+	$(MAKE) -f CMakeFiles/gdsimsapp.dir/build.make CMakeFiles/gdsimsapp.dir/build
+.PHONY : gdsimsapp/fast
 
 #=============================================================================
 # Target rules for targets named NightlyMemCheck
@@ -521,17 +521,17 @@ ContinuousSubmit/fast:
 .PHONY : ContinuousSubmit/fast
 
 #=============================================================================
-# Target rules for targets named gdsimsapp
+# Target rules for targets named gdsimslib
 
 # Build rule for target.
-gdsimsapp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gdsimsapp
-.PHONY : gdsimsapp
+gdsimslib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gdsimslib
+.PHONY : gdsimslib
 
 # fast build rule for target.
-gdsimsapp/fast:
-	$(MAKE) -f CMakeFiles/gdsimsapp.dir/build.make CMakeFiles/gdsimsapp.dir/build
-.PHONY : gdsimsapp/fast
+gdsimslib/fast:
+	$(MAKE) -f CMakeFiles/gdsimslib.dir/build.make CMakeFiles/gdsimslib.dir/build
+.PHONY : gdsimslib/fast
 
 src/Aestivation.o: src/Aestivation.cpp.o
 
@@ -776,32 +776,32 @@ src/Simulation.cpp.s:
 	$(MAKE) -f CMakeFiles/gdsimslib.dir/build.make CMakeFiles/gdsimslib.dir/src/Simulation.cpp.s
 .PHONY : src/Simulation.cpp.s
 
-src/main2.o: src/main2.cpp.o
+src/main.o: src/main.cpp.o
 
-.PHONY : src/main2.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/main2.cpp.o:
-	$(MAKE) -f CMakeFiles/gdsimsapp.dir/build.make CMakeFiles/gdsimsapp.dir/src/main2.cpp.o
-.PHONY : src/main2.cpp.o
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/gdsimsapp.dir/build.make CMakeFiles/gdsimsapp.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/main2.i: src/main2.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : src/main2.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/main2.cpp.i:
-	$(MAKE) -f CMakeFiles/gdsimsapp.dir/build.make CMakeFiles/gdsimsapp.dir/src/main2.cpp.i
-.PHONY : src/main2.cpp.i
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/gdsimsapp.dir/build.make CMakeFiles/gdsimsapp.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/main2.s: src/main2.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : src/main2.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/main2.cpp.s:
-	$(MAKE) -f CMakeFiles/gdsimsapp.dir/build.make CMakeFiles/gdsimsapp.dir/src/main2.cpp.s
-.PHONY : src/main2.cpp.s
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/gdsimsapp.dir/build.make CMakeFiles/gdsimsapp.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 src/random.o: src/random.cpp.o
 
@@ -839,7 +839,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... package_source"
-	@echo "... gdsimslib"
+	@echo "... gdsimsapp"
 	@echo "... edit_cache"
 	@echo "... NightlyMemCheck"
 	@echo "... NightlyTest"
@@ -870,7 +870,7 @@ help:
 	@echo "... ContinuousMemCheck"
 	@echo "... ContinuousTest"
 	@echo "... ContinuousSubmit"
-	@echo "... gdsimsapp"
+	@echo "... gdsimslib"
 	@echo "... src/Aestivation.o"
 	@echo "... src/Aestivation.i"
 	@echo "... src/Aestivation.s"
@@ -898,9 +898,9 @@ help:
 	@echo "... src/Simulation.o"
 	@echo "... src/Simulation.i"
 	@echo "... src/Simulation.s"
-	@echo "... src/main2.o"
-	@echo "... src/main2.i"
-	@echo "... src/main2.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... src/random.o"
 	@echo "... src/random.i"
 	@echo "... src/random.s"

@@ -55,7 +55,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/gdsimslib.dir/DependInfo.cmake"
+  "CMakeFiles/gdsimsapp.dir/DependInfo.cmake"
   "CMakeFiles/NightlyMemCheck.dir/DependInfo.cmake"
   "CMakeFiles/NightlyTest.dir/DependInfo.cmake"
   "CMakeFiles/ContinuousConfigure.dir/DependInfo.cmake"
@@ -84,5 +84,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ContinuousMemCheck.dir/DependInfo.cmake"
   "CMakeFiles/ContinuousTest.dir/DependInfo.cmake"
   "CMakeFiles/ContinuousSubmit.dir/DependInfo.cmake"
-  "CMakeFiles/gdsimsapp.dir/DependInfo.cmake"
+  "CMakeFiles/gdsimslib.dir/DependInfo.cmake"
   )

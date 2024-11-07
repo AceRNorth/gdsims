@@ -164,6 +164,12 @@ random.h
 constants.h
 /home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/constants.h
 
+/home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/BoundaryStrategy.cpp
+cmath
+-
+BoundaryStrategy.h
+/home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/BoundaryStrategy.h
+
 /home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/Dispersal.cpp
 vector
 -
@@ -248,6 +254,16 @@ iomanip
 Record.h
 /home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/Record.h
 
+/home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/Seasonality.cpp
+cmath
+-
+vector
+-
+Seasonality.h
+/home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/Seasonality.h
+constants.h
+/home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/constants.h
+
 /home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/Simulation.cpp
 array
 -
@@ -273,4 +289,20 @@ Record.h
 /home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/Record.h
 inputval.h
 /home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/inputval.h
+
+/home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/random.cpp
+vector
+-
+array
+-
+random
+-
+cmath
+-
+algorithm
+-
+random.h
+/home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/random.h
+constants.h
+/home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/constants.h
 

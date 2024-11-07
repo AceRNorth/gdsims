@@ -57,27 +57,27 @@ include CMakeFiles/gdsimsapp.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/gdsimsapp.dir/flags.make
 
-CMakeFiles/gdsimsapp.dir/src/main2.cpp.o: CMakeFiles/gdsimsapp.dir/flags.make
-CMakeFiles/gdsimsapp.dir/src/main2.cpp.o: ../src/main2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/biology/zool0973/Dropbox/Sara/GeneralMetapop/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gdsimsapp.dir/src/main2.cpp.o"
-	/usr/bin/g++-13  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gdsimsapp.dir/src/main2.cpp.o -c /home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/main2.cpp
+CMakeFiles/gdsimsapp.dir/src/main.cpp.o: CMakeFiles/gdsimsapp.dir/flags.make
+CMakeFiles/gdsimsapp.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/biology/zool0973/Dropbox/Sara/GeneralMetapop/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gdsimsapp.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gdsimsapp.dir/src/main.cpp.o -c /home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/main.cpp
 
-CMakeFiles/gdsimsapp.dir/src/main2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gdsimsapp.dir/src/main2.cpp.i"
-	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/main2.cpp > CMakeFiles/gdsimsapp.dir/src/main2.cpp.i
+CMakeFiles/gdsimsapp.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gdsimsapp.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/main.cpp > CMakeFiles/gdsimsapp.dir/src/main.cpp.i
 
-CMakeFiles/gdsimsapp.dir/src/main2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gdsimsapp.dir/src/main2.cpp.s"
-	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/main2.cpp -o CMakeFiles/gdsimsapp.dir/src/main2.cpp.s
+CMakeFiles/gdsimsapp.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gdsimsapp.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/biology/zool0973/Dropbox/Sara/GeneralMetapop/src/main.cpp -o CMakeFiles/gdsimsapp.dir/src/main.cpp.s
 
 # Object files for target gdsimsapp
 gdsimsapp_OBJECTS = \
-"CMakeFiles/gdsimsapp.dir/src/main2.cpp.o"
+"CMakeFiles/gdsimsapp.dir/src/main.cpp.o"
 
 # External object files for target gdsimsapp
 gdsimsapp_EXTERNAL_OBJECTS =
 
-gdsimsapp: CMakeFiles/gdsimsapp.dir/src/main2.cpp.o
+gdsimsapp: CMakeFiles/gdsimsapp.dir/src/main.cpp.o
 gdsimsapp: CMakeFiles/gdsimsapp.dir/build.make
 gdsimsapp: libgdsimslib.a
 gdsimsapp: CMakeFiles/gdsimsapp.dir/link.txt
