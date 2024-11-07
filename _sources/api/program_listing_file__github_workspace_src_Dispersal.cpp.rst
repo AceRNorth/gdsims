@@ -224,6 +224,11 @@ Program Listing for File Dispersal.cpp
            auto result = compute_distances_site(pat,sites);
            auto distances =result.first;
            auto local_indices =result.second;
+   
+   //      std::cout<<"site "<<pat<<"   ";
+   //      for(int ii=0;ii<distances.size();++ii)std::cout<<local_indices[ii]<<"   "<<distances[ii]<<"    ";
+   //      std::cout<<std::endl;
+   
            smallest_dist = std::numeric_limits<double>::infinity();
            for (double dist : distances)
                {
@@ -235,19 +240,20 @@ Program Listing for File Dispersal.cpp
    
    
        for (int i=0; i < num_sites; i++) {
+           loc1 = sites[i]->get_coords();
            intervals.clear();
            auto result = compute_distances_site(i,sites);
            auto distances =result.first;
            auto local_indices =result.second;
            std::vector<int> order = get_sorted_positions(distances);
-           loc1 = sites[i]->get_coords();
-           for (int j=1; j < order.size(); j++) {
-               double length = 0;
-               int jj = order[j];
-               int SiteElement=local_indices[j];
-               loc2 = sites[jj]->get_coords();
-               alpha = std::atan(radii[SiteElement] / distances[jj]); 
+           for (int j=0; j < order.size(); j++) 
+           {
+               int loc_index=order[j];//index among locally connected sites
+               int glob_index = local_indices[loc_index];//index among all sites
+               loc2 = sites[glob_index]->get_coords();
+               alpha = std::atan(radii[glob_index] / distances[loc_index]); 
                loc2 = boundary_strategy->relative_pos(loc1, loc2);
+               double length = 0;
                if (loc2.y > loc1.y) 
                {   
                    if (loc2.x > loc1.x) {
@@ -279,7 +285,6 @@ Program Listing for File Dispersal.cpp
                        theta = 3 * constants::pi / 2 + std::atan((loc2.x - loc1.x) / (loc1.y - loc2.y)); 
                    }
                }
-   
                double t_min = wrap_around((theta - alpha) / (2*(constants::pi)), 1);
                double t_plus = wrap_around((theta + alpha) / (2*(constants::pi)), 1);
                if (t_min > t_plus) {
@@ -300,9 +305,12 @@ Program Listing for File Dispersal.cpp
                }
                if (length > 0) {
                    connec_weights[i].push_back(length);
-                   connec_indices[i].push_back(jj);
+                   connec_indices[i].push_back(glob_index);
                }
            }
+       //  std::cout<<i<<" NEW   ";
+       //  for(int jj=0;jj<connec_weights[i].size();++jj)std::cout<<connec_indices[i][jj]<<"     "<<connec_weights[i][jj]<<"    ";
+       //  std::cout<<std::endl;
    
        }
        return {connec_indices, connec_weights};
