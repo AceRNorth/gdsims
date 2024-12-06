@@ -166,23 +166,24 @@ Program Listing for File main.cpp
                    std::cout << "rec_sites_freq       " << "\n"; 
                    std::cout << "set_label            " << "\n"; 
    
+                   std::cin.clear();
+                   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                   
                    std::string params_filename;
                    std::cout << "\n" << "Enter the filename or filepath of the parameters file (e.g. 'params.txt'). ";
                    std::cout << "This must be a .txt file with parameter values in the above order and format: " << std::endl;
-                   std::cin >> params_filename;
+                   std::getline(std::cin, params_filename);
    
-                   auto params_filepath = std::filesystem::path(std::string("./")+params_filename);
-                   if (std::cin.fail() || !std::filesystem::exists(params_filepath) || !std::filesystem::is_regular_file(params_filepath)) {
+                   auto params_filepath = std::filesystem::path(params_filename);
+                   if (!std::filesystem::exists(params_filepath) || !std::filesystem::is_regular_file(params_filepath)) {
                        do {
-                       std::cin.clear();
-                       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                        std::cout << "Invalid filename. Enter either a filename from your build directory or the absolute or relative filepath:" << std::endl;
-                       std::cin >> params_filename;
-                       params_filepath = std::filesystem::path(std::string("./")+params_filename);
-                       } while (std::cin.fail() || !std::filesystem::exists(params_filepath) || !std::filesystem::is_regular_file(params_filepath));
+                       std::getline(std::cin, params_filename);
+                       params_filepath = std::filesystem::path(params_filename);
+                       } while (!std::filesystem::exists(params_filepath) || !std::filesystem::is_regular_file(params_filepath));
                    }
    
-                   std::ifstream file(params_filename);
+                   std::ifstream file(params_filepath);
                    if (file.is_open()) {
                        if (!file_read_and_validate_type(file, num_runs, "num_runs", "int")) continue;
                        if (!file_read_and_validate_type(file, max_t, "max_t", "int")) continue;
@@ -348,9 +349,6 @@ Program Listing for File main.cpp
    
                std::cout << "\n" << "Would you like to run the simulation with this set of parameters? (y/n)" << std::endl;
    
-               std::cin.clear();
-               std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-   
                bool invalid_option_custom = true;
                while (invalid_option_custom) {
                    option2 = 'n';
@@ -427,7 +425,6 @@ Program Listing for File main.cpp
                                            std::cout << "4 - Custom patch coordinates \n";
                                            std::cout << "5 - Multiple gene drive release times \n";
                                            std::cout << "0 - Exit advanced options and run the program" << std::endl;
-                                           std::cin.clear();
                                            std::cin >> option4;
                                            if (std::cin.fail() || std::cin.peek() != '\n' || option4 < 0 || option4 > 5) {
                                                do {
@@ -437,6 +434,8 @@ Program Listing for File main.cpp
                                                    std::cin >> option4;
                                                } while (std::cin.fail() || std::cin.peek() != '\n' || option4 < 0 || option4 > 5);
                                            }
+                                           std::cin.clear();
+                                           std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                                            if (option4 == 0) {
                                                invalid_option_adv_enter = false;
                                                invalid_option_adv_num = false;
@@ -503,21 +502,18 @@ Program Listing for File main.cpp
                                                std::string rainfall_filename;
                                                std::cout << "Enter the filename or filepath of the rainfall file (e.g. 'rainfall.txt'). ";
                                                std::cout << "This must be a .txt file with values delimited by \\n: " << std::endl;
-                                               std::cin >> rainfall_filename;
+                                               std::getline(std::cin, rainfall_filename);
    
-                                               auto rainfall_filepath = std::filesystem::path(std::string("./")+rainfall_filename);
-                                               if (std::cin.fail() || !std::filesystem::exists(rainfall_filepath) ||
+                                               auto rainfall_filepath = std::filesystem::path(rainfall_filename);
+                                               if (!std::filesystem::exists(rainfall_filepath) ||
                                                 !std::filesystem::is_regular_file(rainfall_filepath)) {
                                                    do {
-                                                   std::cin.clear();
-                                                   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                                                   std::cout << "Invalid filename. Enter either a filename from your build directory or the absolute or relative filepath:" << std::endl;
-                                                   std::cin >> rainfall_filename;
-                                                   rainfall_filepath = std::filesystem::path(std::string("./")+rainfall_filename);
-                                                   } while (std::cin.fail() || !std::filesystem::exists(rainfall_filepath) ||
-                                                    !std::filesystem::is_regular_file(rainfall_filepath));
+                                                       std::cout << "Invalid filename. Enter either a filename from your build directory or the absolute or relative filepath:" << std::endl;
+                                                       std::getline(std::cin, rainfall_filename);
+                                                       rainfall_filepath = std::filesystem::path(rainfall_filename);
+                                                   } while (!std::filesystem::exists(rainfall_filepath) ||!std::filesystem::is_regular_file(rainfall_filepath));
                                                }
-                                               simulation_1.set_rainfall(rainfall_filename);
+                                               simulation_1.set_rainfall(rainfall_filepath);
                                                std::cout << "Custom rainfall values set." << std::endl;
                                            }
                                            else if (option4 == 4) {
@@ -525,21 +521,21 @@ Program Listing for File main.cpp
                                                std::cout << "\n" << "Enter the filename or filepath of the patch coordinates file ";
                                                std::cout << "(e.g. 'coords.txt'). ";
                                                std::cout << "This must be a .txt file in x y char\\n x y char table format:" << std::endl;
-                                               std::cin >> coords_filename;
+                                               //std::cin.clear();
+                                               //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                               std::getline(std::cin, coords_filename);
    
-                                               auto coords_filepath = std::filesystem::path(std::string("./")+coords_filename);
-                                               if (std::cin.fail() || !std::filesystem::exists(coords_filepath) ||
+                                               auto coords_filepath = std::filesystem::path(coords_filename);
+                                               if (!std::filesystem::exists(coords_filepath) ||
                                                 !std::filesystem::is_regular_file(coords_filepath)) {
                                                    do {
-                                                   std::cin.clear();
-                                                   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                                                   std::cout << "Invalid filename. Enter either a filename from your build directory or the absolute or relative filepath:" << std::endl;
-                                                   std::cin >> coords_filename;
-                                                   coords_filepath = std::filesystem::path(std::string("./")+coords_filename);
-                                                   } while (std::cin.fail() || !std::filesystem::exists(coords_filepath) ||
+                                                       std::cout << "Invalid filename. Enter either a filename from your build directory or the absolute or relative filepath:" << std::endl;
+                                                       std::getline(std::cin, coords_filename);
+                                                       coords_filepath = std::filesystem::path(coords_filename);
+                                                   } while (!std::filesystem::exists(coords_filepath) ||
                                                     !std::filesystem::is_regular_file(coords_filepath));
                                                }
-                                               simulation_1.set_coords(coords_filename);
+                                               simulation_1.set_coords(coords_filepath);
                                                std::cout << "Custom coordinates set." << std::endl;
                                            }
                                            else if (option4 == 5) {
@@ -547,21 +543,21 @@ Program Listing for File main.cpp
                                                std::cout << "\n" << "Enter the filename or filepath of the gene drive release times";
                                                std::cout << "(e.g. 'rel_times.txt'). ";
                                                std::cout << "This must be a .txt file, with values delimited by \\n:" << std::endl;
-                                               std::cin >> times_filename;
+                                               //std::cin.clear();
+                                               //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                               std::getline(std::cin, times_filename);
    
-                                               auto times_filepath = std::filesystem::path(std::string("./")+times_filename);
-                                               if (std::cin.fail() || !std::filesystem::exists(times_filepath) ||
+                                               auto times_filepath = std::filesystem::path(times_filename);
+                                               if (!std::filesystem::exists(times_filepath) ||
                                                 !std::filesystem::is_regular_file(times_filepath)) {
                                                    do {
-                                                   std::cin.clear();
-                                                   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                                                   std::cout << "Invalid filename. Enter either a filename from your build directory or the absolute or relative filepath:" << std::endl;
-                                                   std::cin >> times_filename;
-                                                   times_filepath = std::filesystem::path(std::string("./")+times_filename);
-                                                   } while (std::cin.fail() || !std::filesystem::exists(times_filepath) ||
+                                                       std::cout << "Invalid filename. Enter either a filename from your build directory or the absolute or relative filepath:" << std::endl;
+                                                       std::getline(std::cin, times_filename);
+                                                       times_filepath = std::filesystem::path(times_filename);
+                                                   } while (!std::filesystem::exists(times_filepath) ||
                                                     !std::filesystem::is_regular_file(times_filepath));
                                                }
-                                               simulation_1.set_release_times(times_filename);
+                                               simulation_1.set_release_times(times_filepath);
                                                std::cout << "Multiple release times set." << std::endl;
                                            }
                                        }

@@ -107,16 +107,14 @@ Program Listing for File Simulation.cpp
        delete rec_params;
    }
    
-   void Simulation::set_coords(const std::string& filename) 
+   void Simulation::set_coords(const std::filesystem::path& filepath) 
    {
        sites_coords.clear();
        release_sites.clear();
    
-       auto filepath = std::filesystem::path(filename);
        if (!std::filesystem::exists(filepath) || !std::filesystem::is_regular_file(filepath)) {
            std::cerr << "Invalid filename. To enter a filename, the file should be in the build directory. Otherwise, the filepath should be provided (either relative to 'build' or absolute)." << std::endl;
        }
-       
        else {
            std::ifstream file(filepath);
            std::string line;
@@ -173,15 +171,13 @@ Program Listing for File Simulation.cpp
        disp_type = disp;
    }
    
-   void Simulation::set_rainfall(const std::string& filename)
+   void Simulation::set_rainfall(const std::filesystem::path& filepath)
    {
        input_rainfall_params->rainfall.clear();
    
-       auto filepath = std::filesystem::path(filename);
        if (!std::filesystem::exists(filepath) || !std::filesystem::is_regular_file(filepath)) {
            std::cerr << "Invalid filename. To enter a filename, the file should be in the build directory. Otherwise, the filepath should be provided (either relative to 'build' or absolute)." << std::endl;
        }
-       
        else {
            std::ifstream file(filepath);
            std::string line;
@@ -212,9 +208,8 @@ Program Listing for File Simulation.cpp
        }
    }
    
-   void Simulation::set_release_times(const std::string& filename) 
+   void Simulation::set_release_times(const std::filesystem::path& filepath) 
    {
-       auto filepath = std::filesystem::path(filename);
        if (!std::filesystem::exists(filepath) || !std::filesystem::is_regular_file(filepath)) {
            std::cerr << "Invalid filename. To enter a filename, the file should be in the build directory. Otherwise, the filepath should be provided (either relative to 'build' or absolute)." << std::endl;
        }
