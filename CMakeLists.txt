@@ -17,6 +17,11 @@ target_include_directories(gdsimsapp PUBLIC includes)
 
 target_link_libraries(gdsimsapp PUBLIC gdsimslib)
 
+# Link filesystem library if necessary using keyword signature
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    target_link_libraries(gdsimsapp PUBLIC stdc++fs)
+endif()
+
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)

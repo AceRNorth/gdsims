@@ -110,16 +110,14 @@ Simulation::~Simulation()
  * @note The coordinates will undergo bound checks if the boundary type has been set to Toroid (the default) - coordinates will need to be in the range [0, side] for both x and y.
  * @param[in] filename coordinates filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory)
  */
-void Simulation::set_coords(const std::string& filename) 
+void Simulation::set_coords(const std::filesystem::path& filepath) 
 {
 	sites_coords.clear();
 	release_sites.clear();
 
-	auto filepath = std::filesystem::path(filename);
 	if (!std::filesystem::exists(filepath) || !std::filesystem::is_regular_file(filepath)) {
 		std::cerr << "Invalid filename. To enter a filename, the file should be in the build directory. Otherwise, the filepath should be provided (either relative to 'build' or absolute)." << std::endl;
 	}
-	
 	else {
 		std::ifstream file(filepath);
 		std::string line;
@@ -194,15 +192,13 @@ void Simulation::set_dispersal_type(DispersalType disp)
  * @param[in] filename rainfall filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory)
  * @see Seasonality
  */
-void Simulation::set_rainfall(const std::string& filename)
+void Simulation::set_rainfall(const std::filesystem::path& filepath)
 {
 	input_rainfall_params->rainfall.clear();
 
-	auto filepath = std::filesystem::path(filename);
 	if (!std::filesystem::exists(filepath) || !std::filesystem::is_regular_file(filepath)) {
 		std::cerr << "Invalid filename. To enter a filename, the file should be in the build directory. Otherwise, the filepath should be provided (either relative to 'build' or absolute)." << std::endl;
 	}
-	
 	else {
 		std::ifstream file(filepath);
 		std::string line;
@@ -241,9 +237,8 @@ void Simulation::set_rainfall(const std::string& filename)
  * @param[in] filename release times filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory)
  * @see GDRelease
  */
-void Simulation::set_release_times(const std::string& filename) 
+void Simulation::set_release_times(const std::filesystem::path& filepath) 
 {
-	auto filepath = std::filesystem::path(filename);
 	if (!std::filesystem::exists(filepath) || !std::filesystem::is_regular_file(filepath)) {
 		std::cerr << "Invalid filename. To enter a filename, the file should be in the build directory. Otherwise, the filepath should be provided (either relative to 'build' or absolute)." << std::endl;
 	}

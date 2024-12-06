@@ -4,6 +4,7 @@
 #include <array>
 #include <vector>
 #include <string>
+#include <filesystem>
 #include "constants.h"
 #include "Params.h"
 #include "InputParams.h"
@@ -20,11 +21,11 @@ class Simulation {
 public:
 	Simulation(InputParams input);
 	~Simulation();
-	void set_coords(const std::string& filename);
+	void set_coords(const std::filesystem::path& filepath);
 	void set_boundary_type(BoundaryType boundary);
 	void set_dispersal_type(DispersalType disp);
-	void set_rainfall(const std::string& filename);
-	void set_release_times(const std::string& filename);
+	void set_rainfall(const std::filesystem::path& filepath);
+	void set_release_times(const std::filesystem::path& filepath);
 	void set_inheritance(InheritanceParams inher_params); 
 	void run_reps();
 

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <filesystem>
 #include "Simulation.h"
 #include "inputval.h"
 #include "constants.h"
@@ -176,13 +177,16 @@ int main() {
     simulation.set_dispersal_type(disp);
 
     if (coords_filename != "none") {
-        simulation.set_coords(coords_filename);
+        auto coords_filepath = std::filesystem::path(coords_filename);
+        simulation.set_coords(coords_filepath);
     }
     if (rainfall_filename != "none") {
-        simulation.set_rainfall(rainfall_filename);
+        auto rainfall_filepath = std::filesystem::path(rainfall_filename);
+        simulation.set_rainfall(rainfall_filepath);
     }
     if (rel_times_filename != "none") {
-        simulation.set_release_times(rel_times_filename);
+        auto rel_times_filepath = std::filesystem::path(rel_times_filename);
+        simulation.set_release_times(rel_times_filepath);
     }
     simulation.run_reps();
 
