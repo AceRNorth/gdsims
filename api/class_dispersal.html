@@ -465,7 +465,7 @@ document.write(`
 <span id="_CPPv39Dispersal"></span><span id="_CPPv29Dispersal"></span><span id="Dispersal"></span><span class="target" id="classDispersal"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Dispersal</span></span></span><br /></dt>
 <dd><p><a class="reference internal" href="#classDispersal"><span class="std std-ref">Dispersal</span></a> base class. </p>
 <p>Defines the interface for dispersal classes.</p>
-<p>The <a class="reference internal" href="#classDispersal"><span class="std std-ref">Dispersal</span></a> classes compute the connections between <a class="reference internal" href="class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> objects with their respective connection weights, dependent on the maximum dispersal distance <code class="docutils literal notranslate"><span class="pre">max_dist</span></code>, and carry out dispersal in and out of the patches, dependent on the dispersal rate <code class="docutils literal notranslate"><span class="pre">disp_rate</span></code>. <div class="admonition seealso">
+<p>The <a class="reference internal" href="#classDispersal"><span class="std std-ref">Dispersal</span></a> classes compute the connections between <a class="reference internal" href="class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> objects with their respective connection weights, dependent on the maximum dispersal distance <code class="docutils literal notranslate"><span class="pre">max_disp</span></code>, and carry out dispersal in and out of the patches, dependent on the dispersal rate <code class="docutils literal notranslate"><span class="pre">disp_rate</span></code>. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="struct_dispersal_params.html#structDispersalParams"><span class="std std-ref">DispersalParams</span></a></p>
 </div>
@@ -474,8 +474,8 @@ document.write(`
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N9Dispersal9DispersalEP15DispersalParams12BoundaryTyped">
-<span id="_CPPv3N9Dispersal9DispersalEP15DispersalParams12BoundaryTyped"></span><span id="_CPPv2N9Dispersal9DispersalEP15DispersalParams12BoundaryTyped"></span><span id="Dispersal::Dispersal__DispersalParamsP.BoundaryType.double"></span><span class="target" id="classDispersal_1a4eb55d34c12749b33bd68d4c8bfee61a"></span><span class="sig-name descname"><span class="n"><span class="pre">Dispersal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../api.html#_CPPv415DispersalParams" title="DispersalParams"><span class="n"><span class="pre">DispersalParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span>, <a class="reference internal" href="../api.html#_CPPv412BoundaryType" title="BoundaryType"><span class="n"><span class="pre">BoundaryType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">boundary</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side</span></span><span class="sig-paren">)</span><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N9Dispersal9DispersalEP15DispersalParams12BoundaryTypedd">
+<span id="_CPPv3N9Dispersal9DispersalEP15DispersalParams12BoundaryTypedd"></span><span id="_CPPv2N9Dispersal9DispersalEP15DispersalParams12BoundaryTypedd"></span><span id="Dispersal::Dispersal__DispersalParamsP.BoundaryType.double.double"></span><span class="target" id="classDispersal_1ae1e9989ead71ea1d1a3921e6f2721d52"></span><span class="sig-name descname"><span class="n"><span class="pre">Dispersal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../api.html#_CPPv415DispersalParams" title="DispersalParams"><span class="n"><span class="pre">DispersalParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span>, <a class="reference internal" href="../api.html#_CPPv412BoundaryType" title="BoundaryType"><span class="n"><span class="pre">BoundaryType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">boundary</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_x</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_y</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p><a class="reference internal" href="#classDispersal"><span class="std std-ref">Dispersal</span></a> constructor. </p>
 <p>Constructs the <a class="reference internal" href="class_boundary_strategy.html#classBoundaryStrategy"><span class="std std-ref">BoundaryStrategy</span></a> object from the boundary type passed. </p>
 <dl class="field-list simple">
@@ -483,7 +483,8 @@ document.write(`
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> – <strong>[in]</strong> dispersal parameters </p></li>
 <li><p><strong>boundary</strong> – <strong>[in]</strong> boundary type to use for calculating dispersal distances </p></li>
-<li><p><strong>side</strong> – <strong>[in]</strong> size of one side of the simulation square </p></li>
+<li><p><strong>side_x</strong> – <strong>[in]</strong> size of one side of the simulation area (x-axis) </p></li>
+<li><p><strong>side_y</strong> – <strong>[in]</strong> size of one side of the simulation area (y-axis) </p></li>
 </ul>
 </dd>
 </dl>

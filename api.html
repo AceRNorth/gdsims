@@ -676,21 +676,20 @@ The number of females that attempt to go into aestivation (of the given genotype
 <em>#include &lt;<a class="reference internal" href="#BoundaryStrategy_8h"><span class="std std-ref">BoundaryStrategy.h</span></a>&gt;</em></div>
 <p>Boundary strategy base class. </p>
 <p>Defines the interface for boundary-type classes.</p>
-<p><a class="reference internal" href="api/class_boundary_strategy.html#classBoundaryStrategy"><span class="std std-ref">BoundaryStrategy</span></a> classes implement methods specific to the boundary type of the model. The simulation area is assumed to have boundary conditions at x = <code class="docutils literal notranslate"><span class="pre">side</span></code>, y = <code class="docutils literal notranslate"><span class="pre">side</span></code>, and have ranges [0, <code class="docutils literal notranslate"><span class="pre">side</span></code>] in all directions. <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="api/struct_area_params.html#structAreaParams_1a25bc9f9baa5f3b4f9352101dfec36a99"><span class="std std-ref">AreaParams::side</span></a></p>
-</div>
-</p>
+<p><a class="reference internal" href="api/class_boundary_strategy.html#classBoundaryStrategy"><span class="std std-ref">BoundaryStrategy</span></a> classes implement methods specific to the boundary type of the model. The simulation area is assumed to have boundary conditions at x = <code class="docutils literal notranslate"><span class="pre">side_x</span></code>, y = <code class="docutils literal notranslate"><span class="pre">side_y</span></code>, which are calculated from provided input coordinates or assumed to be 1 otherwise. </p>
 <p>Subclassed by <a class="reference internal" href="api/class_edge_boundary_strategy.html#classEdgeBoundaryStrategy"><span class="std std-ref">EdgeBoundaryStrategy</span></a>, <a class="reference internal" href="api/class_toroidal_boundary_strategy.html#classToroidalBoundaryStrategy"><span class="std std-ref">ToroidalBoundaryStrategy</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N16BoundaryStrategy16BoundaryStrategyEd">
-<span id="_CPPv3N16BoundaryStrategy16BoundaryStrategyEd"></span><span id="_CPPv2N16BoundaryStrategy16BoundaryStrategyEd"></span><span id="BoundaryStrategy::BoundaryStrategy__double"></span><span class="target" id="classBoundaryStrategy_1a8fbbc051751dbb883c0f00673d9027c4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BoundaryStrategy</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16BoundaryStrategy16BoundaryStrategyEd" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N16BoundaryStrategy16BoundaryStrategyEdd">
+<span id="_CPPv3N16BoundaryStrategy16BoundaryStrategyEdd"></span><span id="_CPPv2N16BoundaryStrategy16BoundaryStrategyEdd"></span><span id="BoundaryStrategy::BoundaryStrategy__double.double"></span><span class="target" id="classBoundaryStrategy_1ae9ab097162f1f79483ebd3bc70616a16"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BoundaryStrategy</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_x</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_y</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16BoundaryStrategy16BoundaryStrategyEdd" title="Permalink to this definition">#</a><br /></dt>
 <dd><p><a class="reference internal" href="api/class_boundary_strategy.html#classBoundaryStrategy"><span class="std std-ref">BoundaryStrategy</span></a> constructor. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>side</strong> – <strong>[in]</strong> size of one side of the simulation square </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>side_x</strong> – <strong>[in]</strong> size of one side of the simulation area (x-axis) </p></li>
+<li><p><strong>side_y</strong> – <strong>[in]</strong> size of one side of the simulation area (y-axis) </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -714,9 +713,15 @@ The number of females that attempt to go into aestivation (of the given genotype
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N16BoundaryStrategy4sideE">
-<span id="_CPPv3N16BoundaryStrategy4sideE"></span><span id="_CPPv2N16BoundaryStrategy4sideE"></span><span id="BoundaryStrategy::side__double"></span><span class="target" id="classBoundaryStrategy_1a8b9e897d2396509ec12f4d797e3101f1"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">side</span></span></span><a class="headerlink" href="#_CPPv4N16BoundaryStrategy4sideE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Size of one side of the simulation square. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N16BoundaryStrategy6side_xE">
+<span id="_CPPv3N16BoundaryStrategy6side_xE"></span><span id="_CPPv2N16BoundaryStrategy6side_xE"></span><span id="BoundaryStrategy::side_x__double"></span><span class="target" id="classBoundaryStrategy_1a166681cdb347e3f3ed67d3a3a2dbbf7f"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">side_x</span></span></span><a class="headerlink" href="#_CPPv4N16BoundaryStrategy6side_xE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Size of one side of the simulation area (x-axis). </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N16BoundaryStrategy6side_yE">
+<span id="_CPPv3N16BoundaryStrategy6side_yE"></span><span id="_CPPv2N16BoundaryStrategy6side_yE"></span><span id="BoundaryStrategy::side_y__double"></span><span class="target" id="classBoundaryStrategy_1aac6a1baa6fc5791d495058e77dd5eca3"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">side_y</span></span></span><a class="headerlink" href="#_CPPv4N16BoundaryStrategy6side_yE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Size of one side of the simulation area (y-axis). </p>
 </dd></dl>
 
 </div>
@@ -729,7 +734,7 @@ The number of females that attempt to go into aestivation (of the given genotype
 <em>#include &lt;<a class="reference internal" href="#Dispersal_8h"><span class="std std-ref">Dispersal.h</span></a>&gt;</em></div>
 <p><a class="reference internal" href="api/class_dispersal.html#classDispersal"><span class="std std-ref">Dispersal</span></a> base class. </p>
 <p>Defines the interface for dispersal classes.</p>
-<p>The <a class="reference internal" href="api/class_dispersal.html#classDispersal"><span class="std std-ref">Dispersal</span></a> classes compute the connections between <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> objects with their respective connection weights, dependent on the maximum dispersal distance <code class="docutils literal notranslate"><span class="pre">max_dist</span></code>, and carry out dispersal in and out of the patches, dependent on the dispersal rate <code class="docutils literal notranslate"><span class="pre">disp_rate</span></code>. <div class="admonition seealso">
+<p>The <a class="reference internal" href="api/class_dispersal.html#classDispersal"><span class="std std-ref">Dispersal</span></a> classes compute the connections between <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> objects with their respective connection weights, dependent on the maximum dispersal distance <code class="docutils literal notranslate"><span class="pre">max_disp</span></code>, and carry out dispersal in and out of the patches, dependent on the dispersal rate <code class="docutils literal notranslate"><span class="pre">disp_rate</span></code>. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="api/struct_dispersal_params.html#structDispersalParams"><span class="std std-ref">DispersalParams</span></a></p>
 </div>
@@ -738,8 +743,8 @@ The number of females that attempt to go into aestivation (of the given genotype
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N9Dispersal9DispersalEP15DispersalParams12BoundaryTyped">
-<span id="_CPPv3N9Dispersal9DispersalEP15DispersalParams12BoundaryTyped"></span><span id="_CPPv2N9Dispersal9DispersalEP15DispersalParams12BoundaryTyped"></span><span id="Dispersal::Dispersal__DispersalParamsP.BoundaryType.double"></span><span class="target" id="classDispersal_1a4eb55d34c12749b33bd68d4c8bfee61a"></span><span class="sig-name descname"><span class="n"><span class="pre">Dispersal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415DispersalParams" title="DispersalParams"><span class="n"><span class="pre">DispersalParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span>, <a class="reference internal" href="#_CPPv412BoundaryType" title="BoundaryType"><span class="n"><span class="pre">BoundaryType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">boundary</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Dispersal9DispersalEP15DispersalParams12BoundaryTyped" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N9Dispersal9DispersalEP15DispersalParams12BoundaryTypedd">
+<span id="_CPPv3N9Dispersal9DispersalEP15DispersalParams12BoundaryTypedd"></span><span id="_CPPv2N9Dispersal9DispersalEP15DispersalParams12BoundaryTypedd"></span><span id="Dispersal::Dispersal__DispersalParamsP.BoundaryType.double.double"></span><span class="target" id="classDispersal_1ae1e9989ead71ea1d1a3921e6f2721d52"></span><span class="sig-name descname"><span class="n"><span class="pre">Dispersal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415DispersalParams" title="DispersalParams"><span class="n"><span class="pre">DispersalParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span>, <a class="reference internal" href="#_CPPv412BoundaryType" title="BoundaryType"><span class="n"><span class="pre">BoundaryType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">boundary</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_x</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_y</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9Dispersal9DispersalEP15DispersalParams12BoundaryTypedd" title="Permalink to this definition">#</a><br /></dt>
 <dd><p><a class="reference internal" href="api/class_dispersal.html#classDispersal"><span class="std std-ref">Dispersal</span></a> constructor. </p>
 <p>Constructs the <a class="reference internal" href="api/class_boundary_strategy.html#classBoundaryStrategy"><span class="std std-ref">BoundaryStrategy</span></a> object from the boundary type passed. </p>
 <dl class="field-list simple">
@@ -747,7 +752,8 @@ The number of females that attempt to go into aestivation (of the given genotype
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> – <strong>[in]</strong> dispersal parameters </p></li>
 <li><p><strong>boundary</strong> – <strong>[in]</strong> boundary type to use for calculating dispersal distances </p></li>
-<li><p><strong>side</strong> – <strong>[in]</strong> size of one side of the simulation square </p></li>
+<li><p><strong>side_x</strong> – <strong>[in]</strong> size of one side of the simulation area (x-axis) </p></li>
+<li><p><strong>side_y</strong> – <strong>[in]</strong> size of one side of the simulation area (y-axis) </p></li>
 </ul>
 </dd>
 </dl>
@@ -878,15 +884,16 @@ The number of females that attempt to go into aestivation (of the given genotype
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N23DistanceKernelDispersal23DistanceKernelDispersalEP15DispersalParams12BoundaryTyped">
-<span id="_CPPv3N23DistanceKernelDispersal23DistanceKernelDispersalEP15DispersalParams12BoundaryTyped"></span><span id="_CPPv2N23DistanceKernelDispersal23DistanceKernelDispersalEP15DispersalParams12BoundaryTyped"></span><span id="DistanceKernelDispersal::DistanceKernelDispersal__DispersalParamsP.BoundaryType.double"></span><span class="target" id="classDistanceKernelDispersal_1a451ffadeea98f45c0db9515fc12e050c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DistanceKernelDispersal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415DispersalParams" title="DispersalParams"><span class="n"><span class="pre">DispersalParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span>, <a class="reference internal" href="#_CPPv412BoundaryType" title="BoundaryType"><span class="n"><span class="pre">BoundaryType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">boundary</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23DistanceKernelDispersal23DistanceKernelDispersalEP15DispersalParams12BoundaryTyped" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N23DistanceKernelDispersal23DistanceKernelDispersalEP15DispersalParams12BoundaryTypedd">
+<span id="_CPPv3N23DistanceKernelDispersal23DistanceKernelDispersalEP15DispersalParams12BoundaryTypedd"></span><span id="_CPPv2N23DistanceKernelDispersal23DistanceKernelDispersalEP15DispersalParams12BoundaryTypedd"></span><span id="DistanceKernelDispersal::DistanceKernelDispersal__DispersalParamsP.BoundaryType.double.double"></span><span class="target" id="classDistanceKernelDispersal_1a853889a5a8f874005a53d5582f9d1a3e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DistanceKernelDispersal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415DispersalParams" title="DispersalParams"><span class="n"><span class="pre">DispersalParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span>, <a class="reference internal" href="#_CPPv412BoundaryType" title="BoundaryType"><span class="n"><span class="pre">BoundaryType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">boundary</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_x</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_y</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N23DistanceKernelDispersal23DistanceKernelDispersalEP15DispersalParams12BoundaryTypedd" title="Permalink to this definition">#</a><br /></dt>
 <dd><p><a class="reference internal" href="api/class_distance_kernel_dispersal.html#classDistanceKernelDispersal"><span class="std std-ref">DistanceKernelDispersal</span></a> constructor. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> – <strong>[in]</strong> dispersal parameters </p></li>
 <li><p><strong>boundary</strong> – <strong>[in]</strong> boundary type to use for calculating dispersal distances </p></li>
-<li><p><strong>side</strong> – <strong>[in]</strong> size of one side of the simulation square </p></li>
+<li><p><strong>side_x</strong> – <strong>[in]</strong> size of one side of the simulation area (x-axis) </p></li>
+<li><p><strong>side_y</strong> – <strong>[in]</strong> size of one side of the simulation area (y-axis) </p></li>
 </ul>
 </dd>
 </dl>
@@ -962,16 +969,12 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dd><div class="docutils container">
 <em>#include &lt;<a class="reference internal" href="#BoundaryStrategy_8h"><span class="std std-ref">BoundaryStrategy.h</span></a>&gt;</em></div>
 <p>Implements methods for edge boundary conditions. </p>
-<p>The simulation area is assumed to have edge boundary conditions at x = <code class="docutils literal notranslate"><span class="pre">side</span></code>, y = <code class="docutils literal notranslate"><span class="pre">side</span></code>, and have ranges [0, <code class="docutils literal notranslate"><span class="pre">side</span></code>] in all directions. <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="api/struct_area_params.html#structAreaParams_1a25bc9f9baa5f3b4f9352101dfec36a99"><span class="std std-ref">AreaParams::side</span></a></p>
-</div>
-</p>
+<p>The simulation area is assumed to have edge boundary conditions at x = <code class="docutils literal notranslate"><span class="pre">side_x</span></code>, y = <code class="docutils literal notranslate"><span class="pre">side_y</span></code>. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N20EdgeBoundaryStrategy20EdgeBoundaryStrategyEd">
-<span id="_CPPv3N20EdgeBoundaryStrategy20EdgeBoundaryStrategyEd"></span><span id="_CPPv2N20EdgeBoundaryStrategy20EdgeBoundaryStrategyEd"></span><span id="EdgeBoundaryStrategy::EdgeBoundaryStrategy__double"></span><span class="target" id="classEdgeBoundaryStrategy_1a1746c13f06d1b1514c32a41ef6804389"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EdgeBoundaryStrategy</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N20EdgeBoundaryStrategy20EdgeBoundaryStrategyEd" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N20EdgeBoundaryStrategy20EdgeBoundaryStrategyEdd">
+<span id="_CPPv3N20EdgeBoundaryStrategy20EdgeBoundaryStrategyEdd"></span><span id="_CPPv2N20EdgeBoundaryStrategy20EdgeBoundaryStrategyEdd"></span><span id="EdgeBoundaryStrategy::EdgeBoundaryStrategy__double.double"></span><span class="target" id="classEdgeBoundaryStrategy_1a25ce12df04a57aeedee6a7dbed8ff651"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EdgeBoundaryStrategy</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_x</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_y</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N20EdgeBoundaryStrategy20EdgeBoundaryStrategyEdd" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -1906,9 +1909,15 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 </dd></dl>
 
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N5Model4sideE">
-<span id="_CPPv3N5Model4sideE"></span><span id="_CPPv2N5Model4sideE"></span><span id="Model::side__double"></span><span class="target" id="classModel_1ad456b9a7464879d80abb19f1d14971cf"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">side</span></span></span><a class="headerlink" href="#_CPPv4N5Model4sideE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Size of the square simulation area (side x side). </p>
+<dt class="sig sig-object cpp" id="_CPPv4N5Model6side_xE">
+<span id="_CPPv3N5Model6side_xE"></span><span id="_CPPv2N5Model6side_xE"></span><span id="Model::side_x__double"></span><span class="target" id="classModel_1a33ced6d9613c62ef84aadc016a667f22"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">side_x</span></span></span><a class="headerlink" href="#_CPPv4N5Model6side_xE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Size of one side of the simulation area (x-axis). </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Model6side_yE">
+<span id="_CPPv3N5Model6side_yE"></span><span id="_CPPv2N5Model6side_yE"></span><span id="Model::side_y__double"></span><span class="target" id="classModel_1ac6c296586aade2cfd8b0a013583ef337"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">side_y</span></span></span><a class="headerlink" href="#_CPPv4N5Model6side_yE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Size of one side of the simulation area (y-axis). </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -1998,12 +2007,12 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dd><div class="docutils container">
 <em>#include &lt;<a class="reference internal" href="#Patch_8h"><span class="std std-ref">Patch.h</span></a>&gt;</em></div>
 <p>Contains the information of a local mosquito population. </p>
-<p>The population is divided into four types: juveniles (J), males (M), virgin (unmated) females (V) and mated females (F). These are then subdivided into six genotypes (in this order): WW, WD, DD, DR, WR and RR composed of a wild-type allele (W), a drive-type allele (D) and a resistant-type allele (R). Juveniles are also subdivided into age groups, ordered from oldest (0 days left to eclosion) to youngest (max_dev - 1 days left). The population can carry out life-processes and interface with other classes to introduce gene drive mosquitoes into the <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a>, carry out dispersal in and out of the <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> and aestivate. <img alt="_images/patch_diagram.png" src="_images/patch_diagram.png" /></p>
+<p>The population is divided into four types: juveniles (J), males (M), virgin (unmated) females (V) and mated females (F). These are then subdivided into six genotypes (in this order): WW, WD, DD, DR, WR and RR composed of a wild-type allele (W), a drive-type allele (D) and a resistant-type allele (R). Juveniles are also subdivided into age groups, ordered from oldest (0 days left to eclosion) to youngest (<code class="docutils literal notranslate"><span class="pre">max_dev</span></code> - 1 days left). The population can carry out life-processes and interface with other classes to introduce gene drive mosquitoes into the <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a>, carry out dispersal in and out of the <a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> and aestivate. <img alt="_images/patch_diagram.png" src="_images/patch_diagram.png" /></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5Patch5PatchEP5ModelP10LifeParamsdd">
-<span id="_CPPv3N5Patch5PatchEP5ModelP10LifeParamsdd"></span><span id="_CPPv2N5Patch5PatchEP5ModelP10LifeParamsdd"></span><span id="Patch::Patch__ModelP.LifeParamsP.double.double"></span><span class="target" id="classPatch_1a8f0ac2f89a3d9065ea6df83662cf1410"></span><span class="sig-name descname"><span class="n"><span class="pre">Patch</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv45Model" title="Model"><span class="n"><span class="pre">Model</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">mod</span></span>, <a class="reference internal" href="#_CPPv410LifeParams" title="LifeParams"><span class="n"><span class="pre">LifeParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">par</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a0</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Patch5PatchEP5ModelP10LifeParamsdd" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N5Patch5PatchEP5ModelP10LifeParamsddd">
+<span id="_CPPv3N5Patch5PatchEP5ModelP10LifeParamsddd"></span><span id="_CPPv2N5Patch5PatchEP5ModelP10LifeParamsddd"></span><span id="Patch::Patch__ModelP.LifeParamsP.double.double.double"></span><span class="target" id="classPatch_1a5016d6bf9c9c8f39a0d6b0f50770dd68"></span><span class="sig-name descname"><span class="n"><span class="pre">Patch</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv45Model" title="Model"><span class="n"><span class="pre">Model</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">mod</span></span>, <a class="reference internal" href="#_CPPv410LifeParams" title="LifeParams"><span class="n"><span class="pre">LifeParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">par</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a0</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_x</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_y</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Patch5PatchEP5ModelP10LifeParamsddd" title="Permalink to this definition">#</a><br /></dt>
 <dd><p><a class="reference internal" href="api/class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> constructor for randomly generated coordinates. </p>
 <p>Sets coordinates randomly on the square simulation space of size side x side. </p>
 <div class="admonition note">
@@ -2016,7 +2025,8 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <li><p><strong>mod</strong> – <strong>[in]</strong> <a class="reference internal" href="api/class_model.html#classModel"><span class="std std-ref">Model</span></a> pointer </p></li>
 <li><p><strong>par</strong> – <strong>[in]</strong> life parameters </p></li>
 <li><p><strong>a0</strong> – <strong>[in]</strong> alpha0 carrying capacity baseline </p></li>
-<li><p><strong>side</strong> – <strong>[in]</strong> side of the square simulation area </p></li>
+<li><p><strong>side_x</strong> – <strong>[in]</strong> size of one side of the simulation area (x-axis) </p></li>
+<li><p><strong>side_y</strong> – <strong>[in]</strong> size of one side of the simulation area (y-axis) </p></li>
 </ul>
 </dd>
 </dl>
@@ -2422,15 +2432,16 @@ The number of survivors is determined by a binomial distribution of the juvenile
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N15RadialDispersal15RadialDispersalEP15DispersalParams12BoundaryTyped">
-<span id="_CPPv3N15RadialDispersal15RadialDispersalEP15DispersalParams12BoundaryTyped"></span><span id="_CPPv2N15RadialDispersal15RadialDispersalEP15DispersalParams12BoundaryTyped"></span><span id="RadialDispersal::RadialDispersal__DispersalParamsP.BoundaryType.double"></span><span class="target" id="classRadialDispersal_1ac63e6e6d97e7c720b6e6ef349e07c711"></span><span class="sig-name descname"><span class="n"><span class="pre">RadialDispersal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415DispersalParams" title="DispersalParams"><span class="n"><span class="pre">DispersalParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span>, <a class="reference internal" href="#_CPPv412BoundaryType" title="BoundaryType"><span class="n"><span class="pre">BoundaryType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">boundary</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15RadialDispersal15RadialDispersalEP15DispersalParams12BoundaryTyped" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N15RadialDispersal15RadialDispersalEP15DispersalParams12BoundaryTypedd">
+<span id="_CPPv3N15RadialDispersal15RadialDispersalEP15DispersalParams12BoundaryTypedd"></span><span id="_CPPv2N15RadialDispersal15RadialDispersalEP15DispersalParams12BoundaryTypedd"></span><span id="RadialDispersal::RadialDispersal__DispersalParamsP.BoundaryType.double.double"></span><span class="target" id="classRadialDispersal_1ac4acd4593fc38e7de82fa73652d2619f"></span><span class="sig-name descname"><span class="n"><span class="pre">RadialDispersal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415DispersalParams" title="DispersalParams"><span class="n"><span class="pre">DispersalParams</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">params</span></span>, <a class="reference internal" href="#_CPPv412BoundaryType" title="BoundaryType"><span class="n"><span class="pre">BoundaryType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">boundary</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_x</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_y</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15RadialDispersal15RadialDispersalEP15DispersalParams12BoundaryTypedd" title="Permalink to this definition">#</a><br /></dt>
 <dd><p><a class="reference internal" href="api/class_radial_dispersal.html#classRadialDispersal"><span class="std std-ref">RadialDispersal</span></a> constructor. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> – <strong>[in]</strong> dispersal parameters </p></li>
 <li><p><strong>boundary</strong> – <strong>[in]</strong> boundary type to use for calculating dispersal distances </p></li>
-<li><p><strong>side</strong> – <strong>[in]</strong> size of one side of the simulation square </p></li>
+<li><p><strong>side_x</strong> – <strong>[in]</strong> size of one side of the simulation area (x-axis) </p></li>
+<li><p><strong>side_y</strong> – <strong>[in]</strong> size of one side of the simulation area (y-axis) </p></li>
 </ul>
 </dd>
 </dl>
@@ -2486,7 +2497,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
 <dd class="field-odd"><p><strong>sites</strong> – <strong>[in]</strong> vector of all Patches objects </p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as <a class="reference internal" href="#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a>, where the first item represents all connections to the first patch in <a class="reference internal" href="#classModel_1a9aadb122b13c0e8be4f2437117264879"><span class="std std-ref">Model::sites</span></a>, etc. </p>
+<dd class="field-even"><p>The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as <a class="reference internal" href="api/class_model.html#classModel_1a17b3a93529de4ef762254f9a1932b67e"><span class="std std-ref">Model::get_sites()</span></a>, where the first item represents all connections to the first patch in <a class="reference internal" href="api/class_model.html#classModel_1a17b3a93529de4ef762254f9a1932b67e"><span class="std std-ref">Model::get_sites()</span></a>, etc. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -3390,16 +3401,12 @@ Other relevant parameters include the local recording interval. <div class="admo
 <dd><div class="docutils container">
 <em>#include &lt;<a class="reference internal" href="#BoundaryStrategy_8h"><span class="std std-ref">BoundaryStrategy.h</span></a>&gt;</em></div>
 <p>Implements the methods for toroidal boundary conditions. </p>
-<p>The simulation area is assumed to have periodic boundary conditions at x = <code class="docutils literal notranslate"><span class="pre">side</span></code>, y = <code class="docutils literal notranslate"><span class="pre">side</span></code>, and have ranges [0, <code class="docutils literal notranslate"><span class="pre">side</span></code>] in all directions. <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="api/struct_area_params.html#structAreaParams_1a25bc9f9baa5f3b4f9352101dfec36a99"><span class="std std-ref">AreaParams::side</span></a></p>
-</div>
-</p>
+<p>The simulation area is assumed to have periodic boundary conditions at x = <code class="docutils literal notranslate"><span class="pre">side_x</span></code>, y = <code class="docutils literal notranslate"><span class="pre">side_y</span></code>. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N24ToroidalBoundaryStrategy24ToroidalBoundaryStrategyEd">
-<span id="_CPPv3N24ToroidalBoundaryStrategy24ToroidalBoundaryStrategyEd"></span><span id="_CPPv2N24ToroidalBoundaryStrategy24ToroidalBoundaryStrategyEd"></span><span id="ToroidalBoundaryStrategy::ToroidalBoundaryStrategy__double"></span><span class="target" id="classToroidalBoundaryStrategy_1a5ea5b1bb1027b4722d19ece1d1209509"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ToroidalBoundaryStrategy</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N24ToroidalBoundaryStrategy24ToroidalBoundaryStrategyEd" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N24ToroidalBoundaryStrategy24ToroidalBoundaryStrategyEdd">
+<span id="_CPPv3N24ToroidalBoundaryStrategy24ToroidalBoundaryStrategyEdd"></span><span id="_CPPv2N24ToroidalBoundaryStrategy24ToroidalBoundaryStrategyEdd"></span><span id="ToroidalBoundaryStrategy::ToroidalBoundaryStrategy__double.double"></span><span class="target" id="classToroidalBoundaryStrategy_1a0b1917bf132a1688a471a38670ab1a44"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ToroidalBoundaryStrategy</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_x</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_y</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N24ToroidalBoundaryStrategy24ToroidalBoundaryStrategyEdd" title="Permalink to this definition">#</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -4227,6 +4234,8 @@ Other relevant parameters include the local recording interval. <div class="admo
 <em>#include &lt;vector&gt;</em></div>
 <div class="docutils container">
 <em>#include &lt;cassert&gt;</em></div>
+<div class="docutils container">
+<em>#include &lt;algorithm&gt;</em></div>
 <div class="docutils container">
 <em>#include “<a class="reference internal" href="#Model_8h"><span class="std std-ref">Model.h</span></a>”</em></div>
 <div class="docutils container">

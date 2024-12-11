@@ -19,7 +19,7 @@ This page covers the specifics of the different types of advanced options - for 
 Boundary type
 -------------
 
-The boundary type of the model area can be modified. This means modifying the type of boundary conditions applied to the boundaries of the square area. Two boundary type options currently exist:
+The boundary type of the model area can be modified. This means modifying the type of boundary conditions applied to the boundaries of the simulation area. Two boundary type options currently exist:
 
 - Toroid (default)
 - Edge

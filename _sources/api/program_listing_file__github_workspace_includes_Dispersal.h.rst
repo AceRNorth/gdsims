@@ -26,7 +26,7 @@ Program Listing for File Dispersal.h
    
    class Dispersal {
    public:
-       Dispersal(DispersalParams* params, BoundaryType boundary, double side);
+       Dispersal(DispersalParams* params, BoundaryType boundary, double side_x, double side_y);
        ~Dispersal();
        virtual void set_connecs(std::vector<Patch*> &sites) = 0;
        virtual void adults_disperse(std::vector<Patch*> &sites) = 0;
@@ -35,7 +35,6 @@ Program Listing for File Dispersal.h
        double disp_rate; 
        double max_disp; 
        std::vector<std::vector<int>> connec_indices; 
-       // 
        std::vector<std::vector<double>> connec_weights; 
        BoundaryStrategy* boundary_strategy;
    
@@ -45,7 +44,7 @@ Program Listing for File Dispersal.h
    
    class DistanceKernelDispersal: public Dispersal {
    public:
-       DistanceKernelDispersal(DispersalParams* params, BoundaryType boundary, double side): Dispersal(params, boundary, side) {};
+       DistanceKernelDispersal(DispersalParams* params, BoundaryType boundary, double side_x, double side_y): Dispersal(params, boundary, side_x, side_y) {};
        void set_connecs(std::vector<Patch*> &sites) override;
        void adults_disperse(std::vector<Patch*> &sites) override;
    
@@ -55,7 +54,7 @@ Program Listing for File Dispersal.h
    
    class RadialDispersal: public Dispersal {
    public:
-       RadialDispersal(DispersalParams* params, BoundaryType boundary, double side);
+       RadialDispersal(DispersalParams* params, BoundaryType boundary, double side_x, double side_y);
        void set_connecs(std::vector<Patch*> &sites) override;
        void adults_disperse(std::vector<Patch*> &sites) override;
    

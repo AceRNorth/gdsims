@@ -17,14 +17,14 @@ Program Listing for File Patch.cpp
    #include "random.h"
    #include "constants.h"
    
-   Patch::Patch(Model* mod, LifeParams* par, double a0, double side) 
+   Patch::Patch(Model* mod, LifeParams* par, double a0, double side_x, double side_y) 
    {
        model = mod;
        params = par;
        alpha0 = a0;
        
-       double x = random_real() * side;
-       double y = random_real() * side;
+       double x = random_real() * side_x;
+       double y = random_real() * side_y;
        coords = {x, y};
    
        for (int i=0; i < constants::num_gen; ++i) {

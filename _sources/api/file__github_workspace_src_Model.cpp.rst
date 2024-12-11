@@ -40,6 +40,8 @@ Includes
 
 - ``Patch.h`` (:ref:`file__github_workspace_includes_Patch.h`)
 
+- ``algorithm``
+
 - ``cassert``
 
 - ``constants.h`` (:ref:`file__github_workspace_includes_constants.h`)

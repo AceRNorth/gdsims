@@ -480,7 +480,7 @@ document.write(`
 <section id="patch-coordinates">
 <h2>Patch coordinates<a class="headerlink" href="#patch-coordinates" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Continuous and randomly generated for <em>x</em> and <em>y</em> in the range [0, <code class="docutils literal notranslate"><span class="pre">side</span></code>].</p></li>
+<li><p>Continuous and randomly generated for <em>x</em> and <em>y</em> in the ranges [0, <code class="docutils literal notranslate"><span class="pre">side_x</span></code>] and [0, <code class="docutils literal notranslate"><span class="pre">side_y</span></code>] respectively, where by default <code class="docutils literal notranslate"><span class="pre">side_x</span></code> = <code class="docutils literal notranslate"><span class="pre">side_y</span></code> = 1.</p></li>
 </ul>
 </section>
 <section id="dispersal">
@@ -509,7 +509,7 @@ document.write(`
 <ul class="simple">
 <li><p>Toroid</p></li>
 </ul>
-<p>Toroidal (or otherwise called periodic) boundary conditions are applied to all edges of the square model area by default.</p>
+<p>Toroidal (or otherwise called periodic) boundary conditions are applied to all edges of the rectangular model area by default.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>Tutorial <a class="reference internal" href="../tutorials/tutorial4.html"><span class="doc">4. Setting the boundary type</span></a></p>
