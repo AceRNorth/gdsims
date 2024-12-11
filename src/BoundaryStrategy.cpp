@@ -12,15 +12,15 @@ double ToroidalBoundaryStrategy::distance(const Point &p1, const Point &p2)
     double x_dist = 0;
 	double y_dist = 0;
 
-	if (std::abs(p1.x - p2.x) > side - std::abs(p1.x - p2.x)) {
-		x_dist = side - std::abs(p1.x - p2.x);
+	if (std::abs(p1.x - p2.x) > side_x - std::abs(p1.x - p2.x)) {
+		x_dist = side_x - std::abs(p1.x - p2.x);
 	} 
 	else {
 		x_dist = std::abs(p1.x - p2.x);
 	}
 
-	if (std::abs(p1.y - p2.y) > side - std::abs(p1.y - p2.y)) {
-		y_dist = side - std::abs(p1.y - p2.y);
+	if (std::abs(p1.y - p2.y) > side_y - std::abs(p1.y - p2.y)) {
+		y_dist = side_y - std::abs(p1.y - p2.y);
 	}
 	else {
 		y_dist = std::abs(p1.y - p2.y);
@@ -38,17 +38,17 @@ double ToroidalBoundaryStrategy::distance(const Point &p1, const Point &p2)
 Point ToroidalBoundaryStrategy::relative_pos(const Point &p1, const Point &p2) 
 {
 	Point t2=p2;
-	if (2*(p2.x - p1.x) > side) {
-		t2.x = p2.x - side;
+	if (2*(p2.x - p1.x) > side_x) {
+		t2.x = p2.x - side_x;
 	}
-	if (2*(p1.x - p2.x) > side) {
-		t2.x = p2.x + side;
+	if (2*(p1.x - p2.x) > side_x) {
+		t2.x = p2.x + side_x;
 	}
-	if (2*(p2.y - p1.y) > side) {
-		t2.y = p2.y - side;
+	if (2*(p2.y - p1.y) > side_y) {
+		t2.y = p2.y - side_y;
 	}
-	if (2*(p1.y - p2.y) > side) {
-		t2.y = p2.y + side;
+	if (2*(p1.y - p2.y) > side_y) {
+		t2.y = p2.y + side_y;
 	}
 	return t2;
 }

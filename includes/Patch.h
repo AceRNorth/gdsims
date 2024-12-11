@@ -11,13 +11,13 @@
 class Model;
 
 /**
- * Contains the information of a local mosquito population. The population is divided into four types: juveniles (J), males (M), virgin (unmated) females (V) and mated females (F). These are then subdivided into six genotypes (in this order): WW, WD, DD, DR, WR and RR composed of a wild-type allele (W), a drive-type allele (D) and a resistant-type allele (R). Juveniles are also subdivided into age groups, ordered from oldest (0 days left to eclosion) to youngest (max_dev - 1 days left).
+ * Contains the information of a local mosquito population. The population is divided into four types: juveniles (J), males (M), virgin (unmated) females (V) and mated females (F). These are then subdivided into six genotypes (in this order): WW, WD, DD, DR, WR and RR composed of a wild-type allele (W), a drive-type allele (D) and a resistant-type allele (R). Juveniles are also subdivided into age groups, ordered from oldest (0 days left to eclosion) to youngest (``max_dev`` - 1 days left).
  * The population can carry out life-processes and interface with other classes to introduce gene drive mosquitoes into the Patch, carry out dispersal in and out of the Patch and aestivate. 
  * @image xml patch_diagram.png "Patch behaviour diagram"
  */
 class Patch {
 public:
-	Patch(Model* mod, LifeParams* par, double a0, double side);
+	Patch(Model* mod, LifeParams* par, double a0, double side_x, double side_y); // *
 	Patch(Model* mod, LifeParams* par, double a0, Point point);
 	void populate(int initial_WJ, int initial_WM, int initial_WV, int initial_WF);
 

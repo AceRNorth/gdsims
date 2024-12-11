@@ -52,7 +52,8 @@ private:
 
 	// simulation area parameters
 	int num_pat; /**< Number of population sites (patches) chosen for the simulation. */ 
-	double side; /**< Size of the square simulation area (side x side). */ 
+	double side_x; /**< Size of one side of the simulation area (x-axis). */
+	double side_y; /**< Size of one side of the simulation area (y-axis). */
 
 	InitialPopsParams *initial_pops; /**< Initial population values - common for all Patches. */
 

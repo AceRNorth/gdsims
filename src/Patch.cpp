@@ -9,19 +9,20 @@
  * @brief Patch constructor for randomly generated coordinates.
  * @details Sets coordinates randomly on the square simulation space of size side x side. 
  * @note Coordinates range from 0 to side for bound checking purposes. 
- * @param[in] mod 	Model pointer
- * @param[in] par 	life parameters
- * @param[in] a0 	alpha0 carrying capacity baseline
- * @param[in] side 	side of the square simulation area
+ * @param[in] mod 		Model pointer
+ * @param[in] par 		life parameters
+ * @param[in] a0 		alpha0 carrying capacity baseline
+ * @param[in] side_x 	size of one side of the simulation area (x-axis)
+ * @param[in] side_y 	size of one side of the simulation area (y-axis)
  */
-Patch::Patch(Model* mod, LifeParams* par, double a0, double side) 
+Patch::Patch(Model* mod, LifeParams* par, double a0, double side_x, double side_y) 
 {
 	model = mod;
 	params = par;
 	alpha0 = a0;
 	
-	double x = random_real() * side;
-	double y = random_real() * side;
+	double x = random_real() * side_x;
+	double y = random_real() * side_y;
 	coords = {x, y};
 
 	for (int i=0; i < constants::num_gen; ++i) {

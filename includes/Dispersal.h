@@ -14,12 +14,12 @@ class Patch;
 
 /**
  * Dispersal base class. Defines the interface for dispersal classes. 
- * @details The Dispersal classes compute the connections between Patch objects with their respective connection weights, dependent on the maximum dispersal distance ``max_dist``, and carry out dispersal in and out of the patches, dependent on the dispersal rate ``disp_rate``. 
+ * @details The Dispersal classes compute the connections between Patch objects with their respective connection weights, dependent on the maximum dispersal distance ``max_disp``, and carry out dispersal in and out of the patches, dependent on the dispersal rate ``disp_rate``. 
  * @see DispersalParams
  */
 class Dispersal {
 public:
-	Dispersal(DispersalParams* params, BoundaryType boundary, double side);
+	Dispersal(DispersalParams* params, BoundaryType boundary, double side_x, double side_y);
 	~Dispersal();
 	virtual void set_connecs(std::vector<Patch*> &sites) = 0;
 	virtual void adults_disperse(std::vector<Patch*> &sites) = 0;
@@ -29,7 +29,6 @@ protected:
 	double max_disp; /**< Maximum distance at which two sites are connected. */ 
 
 	std::vector<std::vector<int>> connec_indices; /**< Connected patch indices ordered by each patch in Model::sites, such that the first element contains the indices of all the patches connected to the first sites patch, etc. */
-	// 
 	std::vector<std::vector<double>> connec_weights; /**< Connection weights of the connected patches ordered by each patch in Model::sites, such that the first element contains the connection weights between the first patch in sites and all the patches connected to it, etc. */
 
 	BoundaryStrategy* boundary_strategy;
@@ -48,9 +47,10 @@ public:
 	 * DistanceKernelDispersal constructor.
 	 * @param[in] params 	dispersal parameters
 	 * @param[in] boundary 	boundary type to use for calculating dispersal distances
- 	 * @param[in] side 		size of one side of the simulation square
+ 	 * @param[in] side_x 	size of one side of the simulation area (x-axis)
+	 * @param[in] side_y 	size of one side of the simulation area (y-axis)
 	 */
-	DistanceKernelDispersal(DispersalParams* params, BoundaryType boundary, double side): Dispersal(params, boundary, side) {};
+	DistanceKernelDispersal(DispersalParams* params, BoundaryType boundary, double side_x, double side_y): Dispersal(params, boundary, side_x, side_y) {};
 	void set_connecs(std::vector<Patch*> &sites) override;
 	void adults_disperse(std::vector<Patch*> &sites) override;
 
@@ -65,7 +65,7 @@ private:
  */
 class RadialDispersal: public Dispersal {
 public:
-	RadialDispersal(DispersalParams* params, BoundaryType boundary, double side);
+	RadialDispersal(DispersalParams* params, BoundaryType boundary, double side_x, double side_y);
 	void set_connecs(std::vector<Patch*> &sites) override;
 	void adults_disperse(std::vector<Patch*> &sites) override;
 

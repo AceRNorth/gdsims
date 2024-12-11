@@ -14,21 +14,22 @@
  * @details Constructs the BoundaryStrategy object from the boundary type passed. 
  * @param[in] params 	dispersal parameters
  * @param[in] boundary 	boundary type to use for calculating dispersal distances
- * @param[in] side 		size of one side of the simulation square
+ * @param[in] side_x 	size of one side of the simulation area (x-axis)
+ * @param[in] side_y	size of one side of the simulation area (y-axis)
  */
-Dispersal::Dispersal(DispersalParams* params, BoundaryType boundary, double side) 
+Dispersal::Dispersal(DispersalParams* params, BoundaryType boundary, double side_x, double side_y) 
 {
 	disp_rate = params->disp_rate;
 	max_disp = params->max_disp;
 	
 	if (boundary == Toroid) {
-		boundary_strategy = new ToroidalBoundaryStrategy(side);
+		boundary_strategy = new ToroidalBoundaryStrategy(side_x, side_y);
 	}
 	else if (boundary == Edge) {
-		boundary_strategy = new EdgeBoundaryStrategy(side);
+		boundary_strategy = new EdgeBoundaryStrategy(side_x, side_y);
 	}
 	else {
-		boundary_strategy = new ToroidalBoundaryStrategy(side);
+		boundary_strategy = new ToroidalBoundaryStrategy(side_x, side_y);
 	}
 }
 
@@ -186,9 +187,10 @@ std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> Dista
  * RadialDispersal constructor.
  * @param[in] params 	dispersal parameters
  * @param[in] boundary 	boundary type to use for calculating dispersal distances
- * @param[in] side	 	size of one side of the simulation square
+ * @param[in] side_x	size of one side of the simulation area (x-axis)
+ * @param[in] side_y    size of one side of the simulation area (y-axis)
  */
-RadialDispersal::RadialDispersal(DispersalParams* params, BoundaryType boundary, double side): Dispersal(params, boundary, side) {
+RadialDispersal::RadialDispersal(DispersalParams* params, BoundaryType boundary, double side_x, double side_y): Dispersal(params, boundary, side_x, side_y) {
 	connec_weights_sum.clear();
 }
 
@@ -271,48 +273,39 @@ void RadialDispersal::adults_disperse(std::vector<Patch*> &sites) {
  * @details If the distance between two patches is less than the the maximum dispersal distance, they may be connected. The connection weight of a focal patch to its neighbouring patch is determined by the angle of bisecting lines from the centre of the focal patch to the catchment of the receiving patch. More distant villages may also be directly connected but the connectivity will be reduced if there are closer villages along the same flight path. Patches that are further apart than the maximum dispersal distance are not connected.
  * @note Under this dispersal type, patches are NOT connected to themselves. 
  * @param[in] sites vector of all Patches objects
- * @return The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as Model::sites, where the first item represents all connections to the first patch in Model::sites, etc. 
+ * @return The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as Model::get_sites(), where the first item represents all connections to the first patch in Model::get_sites(), etc. 
  */
 std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> RadialDispersal::compute_connecs(std::vector<Patch*> &sites) {
 	int num_sites = sites.size();
 	std::vector<std::vector<double>> connec_weights(num_sites);
 	std::vector<std::vector<int>> connec_indices(num_sites);
 	std::vector<double> radii;
-	std::vector<std::pair<double, double>> intervals; // Vector to store intervals
+	std::vector<std::pair<double, double>> intervals; // vector to store intervals
 	std::pair<double, double> qq; // temporary interval
-	double alpha, theta,smallest_dist;
+	double alpha, theta, smallest_dist;
 	Point loc1, loc2;
-	for(int pat=0;pat<num_sites;pat++)
-		{
+	for(int pat=0;pat<num_sites;pat++) {
 		auto result = compute_distances_site(pat,sites);
 		auto distances =result.first;
 		auto local_indices =result.second;
-
-//		std::cout<<"site "<<pat<<"   ";
-//		for(int ii=0;ii<distances.size();++ii)std::cout<<local_indices[ii]<<"   "<<distances[ii]<<"    ";
-//		std::cout<<std::endl;
-
 		smallest_dist = std::numeric_limits<double>::infinity();
-		for (double dist : distances)
-			{
-			if (dist > 0 && dist < smallest_dist) smallest_dist = dist;
-			};
+		for (double dist : distances) {
+			if (dist > 0 && dist < smallest_dist) {smallest_dist = dist;}
+		}
 		radii.push_back(0.5*smallest_dist);
-		};
-	// Compute inter-point distances
-
-
+	}
+	// compute inter-point distances
 	for (int i=0; i < num_sites; i++) {
 		loc1 = sites[i]->get_coords();
 		intervals.clear();
 		auto result = compute_distances_site(i,sites);
-		auto distances =result.first;
+		auto distances = result.first;
 		auto local_indices =result.second;
 		std::vector<int> order = get_sorted_positions(distances);
 		for (int j=0; j < order.size(); j++) 
 		{
-			int loc_index=order[j];//index among locally connected sites
-			int glob_index = local_indices[loc_index];//index among all sites
+			int loc_index = order[j]; // index among locally connected sites
+			int glob_index = local_indices[loc_index]; // index among all sites
 			loc2 = sites[glob_index]->get_coords();
 			alpha = std::atan(radii[glob_index] / distances[loc_index]); 
 			loc2 = boundary_strategy->relative_pos(loc1, loc2);
@@ -371,10 +364,6 @@ std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> Radia
 				connec_indices[i].push_back(glob_index);
 			}
 		}
-	//	std::cout<<i<<" NEW   ";
-	//	for(int jj=0;jj<connec_weights[i].size();++jj)std::cout<<connec_indices[i][jj]<<"     "<<connec_weights[i][jj]<<"    ";
-	//	std::cout<<std::endl;
-
 	}
 	return {connec_indices, connec_weights};
 }
@@ -387,26 +376,20 @@ std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> Radia
  *  @param[in] sites vector of all Patch objects
  * @return A list of the distances of these points, and a list of the indices within the set of all points
  */
-std::pair<std::vector<double>,std::vector<int>> RadialDispersal::compute_distances_site(int i,std::vector<Patch*> &sites)
+std::pair<std::vector<double>,std::vector<int>> RadialDispersal::compute_distances_site(int i, std::vector<Patch*> &sites)
 {
         std::vector<double> distances;
         std::vector<int> indices;
         double dd;
-                for (int j=0; j < sites.size(); ++j)
-                {
+        for (int j=0; j < sites.size(); ++j) {
 			dd = boundary_strategy->distance(sites[i]->get_coords(), sites[j]->get_coords());
-                        if(dd<max_disp && i!=j)
-                        {
-                        distances.push_back(dd);
-                        indices.push_back(j);
-                        };
-
-                }
-
+            if(dd < max_disp && i != j) {
+				distances.push_back(dd);
+				indices.push_back(j);
+            }
+        }
         return {distances,indices};
 }
-
-
 
 /**
  * Function to 'wrap' a real-valued number into the interval from zero to a maximum specified by the parameter 'range': if the input value is outside the interval it is wrapped around so that the output is within the interval.

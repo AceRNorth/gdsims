@@ -1,5 +1,6 @@
 #include <vector>
 #include <cassert>
+#include <algorithm>
 #include "Model.h"
 #include "random.h"
 #include "constants.h"
@@ -27,7 +28,6 @@ Model::Model(ModelParams* params, const std::array<std::array<std::array <double
  double a0_mean, double a0_var, std::vector<int> rel_sites, BoundaryType boundary, DispersalType disp_type, std::vector<Point> coords)
 {
 	num_pat = params->area->num_pat;
-	side = params->area->side;
 	initial_pops = params->initial;
 	min_dev = params->life->min_dev;
 	alpha0_mean = a0_mean;
@@ -37,17 +37,31 @@ Model::Model(ModelParams* params, const std::array<std::array<std::array <double
 
 	day_sim = 0;
 	sites.clear();
-
+	side_x = 0;
+	side_y = 0;
 	if (!coords.empty()) {
 		assert(coords.size() == num_pat);
+
+		// calculate sides for toroidal boundary
+		auto compare_x = [](const Point& a, const Point& b){return a.x < b.x;}; 
+		auto x_min = (*std::min_element(coords.begin(), coords.end(), compare_x)).x;
+		auto x_max = (*std::max_element(coords.begin(), coords.end(), compare_x)).x;
+		auto compare_y = [](const Point& a, const Point& b){return a.y < b.y;};
+		auto y_min = (*std::min_element(coords.begin(), coords.end(), compare_y)).y;
+		auto y_max = (*std::max_element(coords.begin(), coords.end(), compare_y)).y;
+		side_x = x_max - x_min;
+		side_y = y_max - y_min;
+	
 		for (int i=0; i < num_pat; ++i) {
 			Patch* pp = new Patch(this, params->life, alpha0(), coords[i]);
 			sites.push_back(pp);
 		}
 	}
 	else {
+		side_x = 1;
+		side_y = 1;
 		for (int i=0; i < num_pat; ++i) {
-			Patch* pp = new Patch(this, params->life, alpha0(), side);
+			Patch* pp = new Patch(this, params->life, alpha0(), side_x, side_y);
 			sites.push_back(pp);
 		}
 	}
@@ -57,13 +71,13 @@ Model::Model(ModelParams* params, const std::array<std::array<std::array <double
 
 	Dispersal* new_disp;
 	if (disp_type == DistanceKernel) {
-		new_disp = new DistanceKernelDispersal(params->disp, boundary, side);
+		new_disp = new DistanceKernelDispersal(params->disp, boundary, side_x, side_y);
 	}
 	else if (disp_type == Radial) {
-		new_disp = new RadialDispersal(params->disp, boundary, side);
+		new_disp = new RadialDispersal(params->disp, boundary, side_x, side_y);
 	}
 	else {
-		new_disp = new DistanceKernelDispersal(params->disp, boundary, side);
+		new_disp = new DistanceKernelDispersal(params->disp, boundary, side_x, side_y);
 	}
 	dispersal = new_disp;
 
@@ -97,7 +111,6 @@ Model::Model(ModelParams* params, const std::array<std::array<std::array <double
  double a0_mean, double a0_var, std::vector<int> rel_sites, BoundaryType boundary, DispersalType disp_type, std::vector<Point> coords)
 {
 	num_pat = params->area->num_pat;
-	side = params->area->side;
 	initial_pops = params->initial;
 	min_dev = params->life->min_dev;
 	alpha0_mean = a0_mean;
@@ -110,14 +123,27 @@ Model::Model(ModelParams* params, const std::array<std::array<std::array <double
 
 	if (!coords.empty()) {
 		assert(coords.size() == num_pat);
+
+		// calculate sides for toroidal boundary
+		auto compare_x = [](const Point& a, const Point& b){return a.x < b.x;};
+		auto x_min = (*std::min_element(coords.begin(), coords.end(), compare_x)).x;
+		auto x_max = (*std::max_element(coords.begin(), coords.end(), compare_x)).x;
+		auto compare_y = [](const Point& a, const Point& b){return a.y < b.y;};
+		auto y_min = (*std::min_element(coords.begin(), coords.end(), compare_y)).y;
+		auto y_max = (*std::max_element(coords.begin(), coords.end(), compare_y)).y;
+		side_x = x_max - x_min;
+		side_y = y_max - y_min;
+
 		for (int i=0; i < num_pat; ++i) {
 			Patch* pp = new Patch(this, params->life, alpha0(), coords[i]);
 			sites.push_back(pp);
 		}
 	}
 	else {
+		side_x = 1;
+		side_y = 1;
 		for (int i=0; i < num_pat; ++i) {
-			Patch* pp = new Patch(this, params->life, alpha0(), side);
+			Patch* pp = new Patch(this, params->life, alpha0(), side_x, side_y);
 			sites.push_back(pp);
 		}
 	}
@@ -127,13 +153,13 @@ Model::Model(ModelParams* params, const std::array<std::array<std::array <double
 
 	Dispersal* new_disp;
 	if (disp_type == DistanceKernel) {
-		new_disp = new DistanceKernelDispersal(params->disp, boundary, side);
+		new_disp = new DistanceKernelDispersal(params->disp, boundary, side_x, side_y);
 	}
 	else if (disp_type == Radial) {
-		new_disp = new RadialDispersal(params->disp, boundary, side);
+		new_disp = new RadialDispersal(params->disp, boundary, side_x, side_y);
 	}
 	else {
-		new_disp = new DistanceKernelDispersal(params->disp, boundary, side);
+		new_disp = new DistanceKernelDispersal(params->disp, boundary, side_x, side_y);
 	}
 	dispersal = new_disp;
 

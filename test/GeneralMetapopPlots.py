@@ -5,15 +5,15 @@ import matplotlib.animation as animation
 import matplotlib.colors as mcolors
 
 #%% Plot global output (totals) from model
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set15")
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set17")
 
-totals = np.loadtxt("Totals15run1.txt", skiprows=2)
+totals = np.loadtxt("Totals5run1.txt", skiprows=2)
 
 times = totals[:, 0]
 total_males = totals[:, 1:]
 
 plt.figure()
-plt.title("Total males across the area - set 15 run 1")
+plt.title("Total males across the area - set 17 run 1")
 plt.xlabel("Day")
 plt.ylabel("Total number of individuals")
 plt.plot(times, total_males[:, 0], label="$M_{WW}$")
