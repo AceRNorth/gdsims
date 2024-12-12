@@ -660,12 +660,6 @@ The number of females that attempt to go into aestivation (of the given genotype
 <dd><p>Number of population sites chosen for the simulation. </p>
 </dd></dl>
 
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N10AreaParams4sideE">
-<span id="_CPPv3N10AreaParams4sideE"></span><span id="_CPPv2N10AreaParams4sideE"></span><span id="AreaParams::side__double"></span><span class="target" id="structAreaParams_1a25bc9f9baa5f3b4f9352101dfec36a99"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">side</span></span></span><a class="headerlink" href="#_CPPv4N10AreaParams4sideE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Size of the square simulation area (side x side). </p>
-</dd></dl>
-
 </div>
 </dd></dl>
 
@@ -1198,12 +1192,6 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 <dt class="sig sig-object cpp" id="_CPPv4N11InputParams7num_patE">
 <span id="_CPPv3N11InputParams7num_patE"></span><span id="_CPPv2N11InputParams7num_patE"></span><span id="InputParams::num_pat__i"></span><span class="target" id="structInputParams_1a62f9db260cddf268056a39c133e971f7"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_pat</span></span></span><a class="headerlink" href="#_CPPv4N11InputParams7num_patE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Number of population sites chosen for the simulation. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N11InputParams4sideE">
-<span id="_CPPv3N11InputParams4sideE"></span><span id="_CPPv2N11InputParams4sideE"></span><span id="InputParams::side__double"></span><span class="target" id="structInputParams_1a1c3cdff052b3a5b67b56b6d9f24fd0c1"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">side</span></span></span><a class="headerlink" href="#_CPPv4N11InputParams4sideE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Size of the square simulation area (side x side). </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -3111,17 +3099,13 @@ Other relevant parameters include the local recording interval. <div class="admo
 <span id="_CPPv3N10Simulation10set_coordsERKNSt10filesystem4pathE"></span><span id="_CPPv2N10Simulation10set_coordsERKNSt10filesystem4pathE"></span><span id="Simulation::set_coords__std::filesystem::pathCR"></span><span class="target" id="classSimulation_1a96c1d2c754a5e90464516a20208e58fc"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_coords</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">filesystem</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">path</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filepath</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation10set_coordsERKNSt10filesystem4pathE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the sites’ coordinates and the release sites from a file, unless any errors are thrown. </p>
 <p>The file should be structured in three columns, with x and y coordinates and whether the site is a release site (y/n) respectively. Values should be delimited by white space, and site rows should be delimited by new lines. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The coordinates will undergo bound checks if the boundary type has been set to Toroid (the default) - coordinates will need to be in the range [0, side] for both x and y. </p>
-</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Setting specific release sites will change the mode of gene drive release from random to scheduled. The specified release sites will be used for each of the releases (if using multiple release times). Mosquitoes will be released at all release sites for each release time. </p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> coordinates filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
+<dd class="field-odd"><p><strong>filepath</strong> – <strong>[in]</strong> coordinates filepath, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
 </dd>
 </dl>
 </dd></dl>
@@ -3173,7 +3157,7 @@ Other relevant parameters include the local recording interval. <div class="admo
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> rainfall filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
+<dd class="field-odd"><p><strong>filepath</strong> – <strong>[in]</strong> rainfall filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
 </dd>
 </dl>
 </dd></dl>
@@ -3193,7 +3177,7 @@ Other relevant parameters include the local recording interval. <div class="admo
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> release times filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
+<dd class="field-odd"><p><strong>filepath</strong> – <strong>[in]</strong> release times filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
 </dd>
 </dl>
 </dd></dl>
@@ -3995,7 +3979,7 @@ Other relevant parameters include the local recording interval. <div class="admo
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv44set6">
 <span id="_CPPv34set6"></span><span id="_CPPv24set6"></span><span id="set6__InputParams"></span><span class="target" id="sets_8h_1ab4c69bd62d6eba4ce0cfefaeb3077289"></span><a class="reference internal" href="#_CPPv411InputParams" title="InputParams"><span class="n"><span class="pre">InputParams</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set6</span></span></span><a class="headerlink" href="#_CPPv44set6" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Parameter set 6 - small area. </p>
+<dd><p>Parameter set 6 - high fitness cost. </p>
 <p>Includes gene drive and dispersal but no aestivation or seasonality. </p>
 </dd></dl>
 

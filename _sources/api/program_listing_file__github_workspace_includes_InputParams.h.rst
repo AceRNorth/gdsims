@@ -17,7 +17,6 @@ Program Listing for File InputParams.h
        int num_runs; 
        int max_t; 
        int num_pat; 
-       double side; 
        double mu_j; 
        double mu_a; 
        double beta; 

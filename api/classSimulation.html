@@ -492,17 +492,13 @@ document.write(`
 <span id="_CPPv3N10Simulation10set_coordsERKNSt10filesystem4pathE"></span><span id="_CPPv2N10Simulation10set_coordsERKNSt10filesystem4pathE"></span><span id="Simulation::set_coords__std::filesystem::pathCR"></span><span class="target" id="classSimulation_1a96c1d2c754a5e90464516a20208e58fc"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_coords</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">filesystem</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">path</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filepath</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Sets the sites’ coordinates and the release sites from a file, unless any errors are thrown. </p>
 <p>The file should be structured in three columns, with x and y coordinates and whether the site is a release site (y/n) respectively. Values should be delimited by white space, and site rows should be delimited by new lines. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The coordinates will undergo bound checks if the boundary type has been set to Toroid (the default) - coordinates will need to be in the range [0, side] for both x and y. </p>
-</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Setting specific release sites will change the mode of gene drive release from random to scheduled. The specified release sites will be used for each of the releases (if using multiple release times). Mosquitoes will be released at all release sites for each release time. </p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> coordinates filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
+<dd class="field-odd"><p><strong>filepath</strong> – <strong>[in]</strong> coordinates filepath, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
 </dd>
 </dl>
 </dd></dl>
@@ -554,7 +550,7 @@ document.write(`
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> rainfall filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
+<dd class="field-odd"><p><strong>filepath</strong> – <strong>[in]</strong> rainfall filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
 </dd>
 </dl>
 </dd></dl>
@@ -574,7 +570,7 @@ document.write(`
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> release times filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
+<dd class="field-odd"><p><strong>filepath</strong> – <strong>[in]</strong> release times filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
 </dd>
 </dl>
 </dd></dl>

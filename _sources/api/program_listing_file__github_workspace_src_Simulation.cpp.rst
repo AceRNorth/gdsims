@@ -31,7 +31,6 @@ Program Listing for File Simulation.cpp
        model_params = new ModelParams;
        model_params->area = new AreaParams;
        model_params->area->num_pat = input.num_pat;
-       model_params->area->side = input.side;
        model_params->life = new LifeParams;
        model_params->life->mu_j = input.mu_j;
        model_params->life->mu_a = input.mu_a;
@@ -132,10 +131,6 @@ Program Listing for File Simulation.cpp
                    if (!read_and_validate_type(linestream, y, "y" + std::to_string(i+1), "double")) err++;
                    if (!read_and_validate_type(linestream, is_rel_site, "is_rel_site" + std::to_string(i+1), "char")) err++;
                    
-                   if (boundary_type == Toroid) {
-                       if (!check_bounds("x" + std::to_string(i+1), x, 0.0, true, model_params->area->side, true)) err++;
-                       if (!check_bounds("y" + std::to_string(i+1), y, 0.0, true, model_params->area->side, true)) err++;
-                   }
                    if (!(is_rel_site == 'y' || is_rel_site == 'n')) 
                    {
                        std::cerr << "Error: the parameter is_rel_site" << std::to_string(i+1) << " contains an invalid value. ";
