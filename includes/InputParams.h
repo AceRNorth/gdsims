@@ -7,9 +7,7 @@
 struct InputParams {
 	int num_runs; /**< Number of simulation replicates to run. */ 
 	int max_t; /**<  Maximum simulated time (in days). */
-
 	int num_pat; /**< Number of population sites chosen for the simulation. */ 
-	double side; /**< Size of the square simulation area (side x side). */ 
 
 	double mu_j; /**< Juvenile density independent mortality rate per day. */ 
 	double mu_a; /**< Adult mortality rate per day. */ 

@@ -114,7 +114,7 @@ for j in range(0, len(sets)):
                 
 #%% Make .txt params files for each test set of parameters - main
 
-param_csv_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\GDSiMS Documentation and Files\\Parameters - new layout v7.csv"
+param_csv_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\GDSiMS Documentation and Files\\Parameters - new layout v8.csv"
 
 # Read input parameter set from .csv file
 params = pd.read_table(param_csv_filepath, delimiter=",")
@@ -125,7 +125,7 @@ labels = labels.drop(index=0)
 sets = [col for col in params if col.startswith('set ')]
 for i in range(0, len(sets)):
     sets[i] = int(sets[i].removeprefix("set "))
-sets = [18]
+#sets = [1]
 
 for j in range(0, len(sets)):
     if ("set " + str(sets[j])) in params:
@@ -145,7 +145,7 @@ exe_filepath = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming
 
 sets = [i for i in range(1, 19)]
 #sets = [14, 15, 17]
-#sets = [18]
+#sets = [1]
 
 for j in range(0, len(sets)):
     params_filename = "params_set" + str(sets[j]) + ".txt"
@@ -158,10 +158,10 @@ for j in range(0, len(sets)):
         
     # if want advanced options, uncomment below line
     # e.g. setting boundary type to edge and dispersal type to radial
-    input_string += "1" + "\n" + "e" + "\n" + "2" + "\n" + "r" + "\n" 
+    input_string += "1" + "\n" + "t" + "\n" + "2" + "\n" + "r" + "\n" 
     # e.g. setting custom coords file
     #input_string += "4" + "\n" + "coords_set1run1.txt" + "\n"
-    input_string += "4" + "\n" + "coords_set" + str(sets[j]) + "run1" + "_er.txt" + "\n"
+    #input_string += "4" + "\n" + "coords_set" + str(sets[j]) + "run1" + "_er.txt" + "\n"
     #input_string += "4" + "\n" + "coords_grid.txt" + "\n"
     
     input_string += "0" + "\n"
@@ -213,7 +213,7 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\edge_radial"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_radial"
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
@@ -224,7 +224,7 @@ sets = [i for i in range(1, 19)]
 num_runs_list = [2 for i in range(0, len(sets))]
 # num_runs_list = [2, 3, 1]
 
-make_plot = True
+make_plot = False
 
 for j in range(0, len(sets)):
     print("Set " + str(sets[j]))

@@ -18,7 +18,6 @@ struct ProgressionParams {
  */ 
 struct AreaParams {
 	int num_pat; /**< Number of population sites chosen for the simulation. */ 
-	double side; /**< Size of the square simulation area (side x side). */ 
 };
 
 /**

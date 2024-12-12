@@ -24,7 +24,6 @@ Simulation::Simulation(InputParams input)
 	model_params = new ModelParams;
 	model_params->area = new AreaParams;
 	model_params->area->num_pat = input.num_pat;
-	model_params->area->side = input.side;
 	model_params->life = new LifeParams;
 	model_params->life->mu_j = input.mu_j;
 	model_params->life->mu_a = input.mu_a;
@@ -107,8 +106,7 @@ Simulation::~Simulation()
  * Sets the sites' coordinates and the release sites from a file, unless any errors are thrown.
  * The file should be structured in three columns, with x and y coordinates and whether the site is a release site (y/n) respectively. Values should be delimited by white space, and site rows should be delimited by new lines. 
  * @warning Setting specific release sites will change the mode of gene drive release from random to scheduled. The specified release sites will be used for each of the releases (if using multiple release times). Mosquitoes will be released at all release sites for each release time.
- * @note The coordinates will undergo bound checks if the boundary type has been set to Toroid (the default) - coordinates will need to be in the range [0, side] for both x and y.
- * @param[in] filename coordinates filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory)
+ * @param[in] filepath coordinates filepath, can be a relative or absolute filepath, or a filename (only if the file is in the build directory)
  */
 void Simulation::set_coords(const std::filesystem::path& filepath) 
 {
@@ -135,10 +133,6 @@ void Simulation::set_coords(const std::filesystem::path& filepath)
 				if (!read_and_validate_type(linestream, y, "y" + std::to_string(i+1), "double")) err++;
 				if (!read_and_validate_type(linestream, is_rel_site, "is_rel_site" + std::to_string(i+1), "char")) err++;
 				
-				if (boundary_type == Toroid) {
-					if (!check_bounds("x" + std::to_string(i+1), x, 0.0, true, model_params->area->side, true)) err++;
-					if (!check_bounds("y" + std::to_string(i+1), y, 0.0, true, model_params->area->side, true)) err++;
-				}
 				if (!(is_rel_site == 'y' || is_rel_site == 'n')) 
 				{
 					std::cerr << "Error: the parameter is_rel_site" << std::to_string(i+1) << " contains an invalid value. ";
@@ -189,7 +183,7 @@ void Simulation::set_dispersal_type(DispersalType disp)
  * These can be daily values for a year cycle (365 days), or daily values for all the simulated days (max_t). 
  * The values should be delimited by new lines.
  * @note This option will use the input parameters alpha1 and resp previously provided and ignore amp.
- * @param[in] filename rainfall filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory)
+ * @param[in] filepath rainfall filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory)
  * @see Seasonality
  */
 void Simulation::set_rainfall(const std::filesystem::path& filepath)
@@ -234,7 +228,7 @@ void Simulation::set_rainfall(const std::filesystem::path& filepath)
  * Release times should be simulation day numbers within the maximum time of simulation.
  * Values should be delimited by new lines.
  * @note When using this option, the input parameter driver_start previously entered will be ignored.
- * @param[in] filename release times filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory)
+ * @param[in] filepath release times filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory)
  * @see GDRelease
  */
 void Simulation::set_release_times(const std::filesystem::path& filepath) 

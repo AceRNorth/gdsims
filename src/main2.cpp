@@ -26,7 +26,6 @@ int main() {
 
 	// area parameters
 	int num_pat;  
-	double side;
 	
 	// model parameters
 	double mu_j;
@@ -76,7 +75,6 @@ int main() {
     std::cin >> num_runs;
     std::cin >> max_t;
     std::cin >> num_pat;
-    std::cin >> side;
     std::cin >> mu_j;
     std::cin >> mu_a;
     std::cin >> beta;
@@ -118,7 +116,6 @@ int main() {
     params.num_runs = num_runs;
     params.max_t = max_t;
     params.num_pat = num_pat;
-    params.side = side;
     params.mu_j = mu_j;
     params.mu_a = mu_a;
     params.beta = beta;

@@ -24,7 +24,6 @@ int main()
 
 	// area parameters
 	int num_pat;  
-	double side;
 	
 	// model parameters
 	double mu_j;
@@ -80,7 +79,7 @@ int main()
 		std::cout << "Set 3  - no dispersal \n";
 		std::cout << "Set 4  - full mixing \n";
 		std::cout << "Set 5  - 1 day \n";
-		std::cout << "Set 6  - small area \n";
+		std::cout << "Set 6  - high fitness cost \n";
 		std::cout << "Set 7  - low aestivation \n";
 		std::cout << "Set 8  - high aestivation \n";
 		std::cout << "Set 9  - no gene drive \n";
@@ -121,7 +120,6 @@ int main()
 				std::cout << "num_runs             " << "\n"; 
 				std::cout << "max_t                " << "\n"; 
 				std::cout << "num_pat              " << "\n";  
-				std::cout << "side                 " << "\n"; 
 				std::cout << "mu_j                 " << "\n"; 
 				std::cout << "mu_a                 " << "\n"; 
 				std::cout << "beta                 " << "\n"; 
@@ -176,7 +174,6 @@ int main()
 					if (!file_read_and_validate_type(file, num_runs, "num_runs", "int")) continue;
 					if (!file_read_and_validate_type(file, max_t, "max_t", "int")) continue;
 					if (!file_read_and_validate_type(file, num_pat, "num_pat", "int")) continue;
-					if (!file_read_and_validate_type(file, side, "side", "double")) continue;
 					if (!file_read_and_validate_type(file, mu_j, "mu_j", "double")) continue;
 					if (!file_read_and_validate_type(file, mu_a, "mu_a", "double")) continue;
 					if (!file_read_and_validate_type(file, beta, "beta", "double")) continue;
@@ -216,7 +213,6 @@ int main()
 				if (!check_bounds("num_runs", num_runs, 0, false)) bound_errors++;
 				if (!check_bounds("max_t", max_t, 0, false)) bound_errors++;
 				if (!check_bounds("num_pat", num_pat, 0, false)) bound_errors++;
-				if (!check_bounds("side", side, 0.0, false)) bound_errors++;
 				if (!check_bounds("mu_j", mu_j, 0.0, true, 1.0, false)) bound_errors++;
 				if (!check_bounds("mu_a", mu_a, 0.0, false, 1.0, false)) bound_errors++;
 				if (!check_bounds("beta", beta, 0.0, false)) bound_errors++;
@@ -230,7 +226,7 @@ int main()
 				if (!check_bounds("num_driver_M", num_driver_M, 0)) bound_errors++;
 				if (!check_bounds("num_driver_sites", num_driver_sites, 0)) bound_errors++;
 				if (!check_bounds("disp_rate", disp_rate, 0.0, true, 1.0, true)) bound_errors++;
-				if (!check_bounds("max_disp", max_disp, 0.0, false, side, true)) bound_errors++;
+				if (!check_bounds("max_disp", max_disp, 0.0, false)) bound_errors++;
 				if (!check_bounds("psi", psi, 0.0, true, 1.0, true)) bound_errors++;
 				if (!check_bounds("mu_aes", mu_aes, 0.0, true, 1.0, true)) bound_errors++;
 				if (psi > 0) {
@@ -271,7 +267,6 @@ int main()
 			std::cout << "num_runs             " << num_runs << "\n"; 
 			std::cout << "max_t                " << max_t << "\n"; 
 			std::cout << "num_pat              " << num_pat << "\n";  
-			std::cout << "side                 " << side << "\n"; 
 			std::cout << "mu_j                 " << mu_j << "\n"; 
 			std::cout << "mu_a                 " << mu_a << "\n"; 
 			std::cout << "beta                 " << beta << "\n"; 
@@ -316,9 +311,6 @@ int main()
 			if (disp_rate == 0 || max_disp == 0) {
 				std::cout << "Warning: disp_rate or max_disp = 0. This simulation will not include dispersal." << std::endl;
 			} 
-			if (max_disp > side/2) {
-				std::cout << "Warning: max_disp > side/2." << std::endl;
-			}
 			if (t_hide1 > max_t || t_hide2 > max_t || t_wake1 > max_t || t_wake2 > max_t) {
 				std::cout << "Warning: the aestivation interval times are larger than max_t. ";
 				std::cout << "This simulation will only run partly through the aestivation period." << std::endl;
@@ -350,7 +342,6 @@ int main()
 						custom_input.num_runs = num_runs;
 						custom_input.max_t = max_t;
 						custom_input.num_pat = num_pat;
-						custom_input.side = side;
 						custom_input.mu_j = mu_j;
 						custom_input.mu_a = mu_a;
 						custom_input.beta = beta;
@@ -509,8 +500,6 @@ int main()
 											std::cout << "\n" << "Enter the filename or filepath of the patch coordinates file ";
 											std::cout << "(e.g. 'coords.txt'). ";
 											std::cout << "This must be a .txt file in x y char\\n x y char table format:" << std::endl;
-											//std::cin.clear();
-											//std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 											std::getline(std::cin, coords_filename);
 
 											auto coords_filepath = std::filesystem::path(coords_filename);
@@ -531,8 +520,6 @@ int main()
 											std::cout << "\n" << "Enter the filename or filepath of the gene drive release times";
 											std::cout << "(e.g. 'rel_times.txt'). ";
 											std::cout << "This must be a .txt file, with values delimited by \\n:" << std::endl;
-											//std::cin.clear();
-											//std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 											std::getline(std::cin, times_filename);
 
 											auto times_filepath = std::filesystem::path(times_filename);
@@ -589,7 +576,6 @@ int main()
 			std::cout << "num_runs             " << sets[option1 - 1].num_runs << "\n"; 
 			std::cout << "max_t                " << sets[option1 - 1].max_t << "\n"; 
 			std::cout << "num_pat              " << sets[option1 - 1].num_pat << "\n";  
-			std::cout << "side                 " << sets[option1 - 1].side << "\n"; 
 			std::cout << "mu_j                 " << sets[option1 - 1].mu_j << "\n"; 
 			std::cout << "mu_a                 " << sets[option1 - 1].mu_a << "\n"; 
 			std::cout << "beta                 " << sets[option1 - 1].beta << "\n"; 
