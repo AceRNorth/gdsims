@@ -32,7 +32,6 @@ For this example, you can include the following parameters. You can copy these i
         1
         1400
         50
-        1
         0.05
         0.125
         100
@@ -139,9 +138,6 @@ Now that we have our output files for the custom run, we can do something even m
         annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
         ax.set_xlabel("x (km)")
         ax.set_ylabel("y (km)")  
-        side = 1 # modify manually depending on selected side parameter
-        ax.set_xlim(0, side)
-        ax.set_ylim(0, side)
 
         def update(t):
             sim_day = int(local_data[t*len(x), 0])
@@ -164,7 +160,7 @@ Now that we have our output files for the custom run, we can do something even m
         rec_sites_freq = 1
         num_frames = int(len(local_data[:, 0]) / (len(x) / rec_sites_freq))
 
-        anim = animation.FuncAnimation(fig=fig, func=update, frames=num_frames, interval=1000)
+        anim = animation.FuncAnimation(fig=fig, func=update, frames=num_frames, interval=500)
         anim.save("set100_pop_anim.gif")
         plt.show()
 

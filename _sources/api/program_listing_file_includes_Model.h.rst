@@ -58,7 +58,8 @@ Program Listing for File Model.h
        int day_sim; 
        // simulation area parameters
        int num_pat; 
-       double side; 
+       double side_x; 
+       double side_y; 
        InitialPopsParams *initial_pops; 
        // juvenile development parameters - common for all Patches
        int min_dev; 

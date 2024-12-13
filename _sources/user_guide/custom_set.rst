@@ -44,8 +44,6 @@ The expected bounds on parameters can be found below.
 +-------------------------+-------------+----------------------+
 | ``num_pat``             |   Integer   |   (0, inf)           |
 +-------------------------+-------------+----------------------+
-| ``side``                |  Continuous |   (0, inf)           |  
-+-------------------------+-------------+----------------------+
 | ``mu_j``                |  Continuous |    [0, 1)            | 
 +-------------------------+-------------+----------------------+
 | ``mu_a``                |  Continuous |    (0, 1)            | 
@@ -117,6 +115,7 @@ Advanced options
 Custom set runs on the CLI provide a submenu to set advanced options.
 
 .. image:: ../images/tut3_adv_options.png
+    :scale: 80%
 
 Multiple options can be set one after the other. If setting an option is unsuccessful (i.e. there are error messages), the option can be re-set by selecting it again.
 

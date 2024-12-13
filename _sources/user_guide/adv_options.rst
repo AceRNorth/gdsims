@@ -132,9 +132,6 @@ in a row should be separated by white space and the rows separated by new lines.
 
 .. image:: ../images/adv_coords_input_file.png
 
-.. note::
-    The coordinates will undergo bound checks if the boundary type has been set to Toroid (or if not set at all, since this is the default) - coordinates will need to be in the range [0, ``side``] for both *x* and *y*.
-
 .. seealso::
     Tutorial :ref:`tutorial-3.3`
 

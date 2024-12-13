@@ -465,7 +465,7 @@ document.write(`
 <h2>7.2 Running with default rainfall<a class="headerlink" href="#running-with-default-rainfall" title="Permalink to this heading">#</a></h2>
 <p>In our previous runs of the program we haven’t included any rainfall contribution - you can easily check that the previous parameter sets had <code class="docutils literal notranslate"><span class="pre">alpha1</span></code> = 0. Let’s run the program with some default rainfall so we can compare the output to other types of seasonality later.
 We can choose one of the pre-defined sets - sets 12 and 13 could be good for this, let’s choose 13.</p>
-<a class="reference internal image-reference" href="../_images/tut7_set13.png"><img alt="../_images/tut7_set13.png" src="../_images/tut7_set13.png" style="width: 528.3000000000001px; height: 641.7px;" /></a>
+<a class="reference internal image-reference" href="../_images/tut7_set13.png"><img alt="../_images/tut7_set13.png" src="../_images/tut7_set13.png" style="width: 660.6px; height: 777.6px;" /></a>
 <p>This is the high seasonality, default rainfall parameter set. Observe how <code class="docutils literal notranslate"><span class="pre">alpha0_mean</span></code> (the baseline) is very small compared to <code class="docutils literal notranslate"><span class="pre">alpha1</span></code> - this will ensure the population fluctuations due to rainfall (i.e. seasonality) are seen very clearly. We have also set a non-zero <code class="docutils literal notranslate"><span class="pre">amp</span></code> value for the amplitude of fluctuations.</p>
 <p>With our output data, we can plot the total males as we did in Tutorial <a class="reference internal" href="tutorial1.html#tutorial-1-2"><span class="std std-ref">1.2 Simple plots: coordinates and totals (optional - python)</span></a>:</p>
 <a class="reference internal image-reference" href="../_images/tut7_totals_plot_set13.png"><img alt="../_images/tut7_totals_plot_set13.png" src="../_images/tut7_totals_plot_set13.png" style="width: 512.0px; height: 384.0px;" /></a>
@@ -475,14 +475,13 @@ We can choose one of the pre-defined sets - sets 12 and 13 could be good for thi
 <h2>7.3 Setting a rainfall file<a class="headerlink" href="#setting-a-rainfall-file" title="Permalink to this heading">#</a></h2>
 <p>We can now input our own rainfall data to create a more realistic environment. This option is also covered by the advanced options menu of the custom run.</p>
 <p>This time we will use the parameters below for the custom run, which include a non-zero value for <code class="docutils literal notranslate"><span class="pre">resp</span></code>:</p>
-<a class="reference internal image-reference" href="../_images/tut7_set15.png"><img alt="../_images/tut7_set15.png" src="../_images/tut7_set15.png" style="width: 293.29999999999995px; height: 591.5px;" /></a>
+<a class="reference internal image-reference" href="../_images/tut7_set15.png"><img alt="../_images/tut7_set15.png" src="../_images/tut7_set15.png" style="width: 289.09999999999997px; height: 576.0999999999999px;" /></a>
 <details class="summary-parameters">
 <summary>Parameters</summary><div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">docs/exercises/params_set15.txt</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span>
 <span class="mi">1000</span>
 <span class="mi">50</span>
-<span class="mi">1</span>
 <span class="mf">0.05</span>
 <span class="mf">0.125</span>
 <span class="mi">100</span>

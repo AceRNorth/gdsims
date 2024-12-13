@@ -19,7 +19,6 @@ We can create a text file named ``params_set17.txt``, which contains the same pa
         2
         1000
         50
-        1
         0.05
         0.125
         100

@@ -24,7 +24,7 @@ Program Listing for File Patch.h
    
    class Patch {
    public:
-       Patch(Model* mod, LifeParams* par, double a0, double side);
+       Patch(Model* mod, LifeParams* par, double a0, double side_x, double side_y); // *
        Patch(Model* mod, LifeParams* par, double a0, Point point);
        void populate(int initial_WJ, int initial_WM, int initial_WV, int initial_WF);
    
