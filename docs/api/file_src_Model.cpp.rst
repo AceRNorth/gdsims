@@ -40,6 +40,8 @@ Includes
 
 - ``Patch.h`` (:ref:`file_includes_Patch.h`)
 
+- ``algorithm``
+
 - ``cassert``
 
 - ``constants.h`` (:ref:`file_includes_constants.h`)

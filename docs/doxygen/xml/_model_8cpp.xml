@@ -4,6 +4,7 @@
     <compoundname>Model.cpp</compoundname>
     <includes local="no">vector</includes>
     <includes local="no">cassert</includes>
+    <includes local="no">algorithm</includes>
     <includes refid="_model_8h" local="yes">Model.h</includes>
     <includes refid="random_8h" local="yes">random.h</includes>
     <includes refid="constants_8h" local="yes">constants.h</includes>
@@ -12,126 +13,126 @@
     <includes refid="_g_d_release_8h" local="yes">GDRelease.h</includes>
     <includes refid="_aestivation_8h" local="yes">Aestivation.h</includes>
     <incdepgraph>
-      <node id="13">
+      <node id="14">
         <label>Aestivation.h</label>
         <link refid="_aestivation_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>BoundaryStrategy.h</label>
-        <link refid="_boundary_strategy_8h"/>
         <childnode refid="9" relation="include">
         </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
       </node>
-      <node id="10">
+      <node id="13">
+        <label>BoundaryStrategy.h</label>
+        <link refid="_boundary_strategy_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
         <label>Dispersal.h</label>
         <link refid="_dispersal_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
         <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>GDRelease.h</label>
-        <link refid="_g_d_release_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>Model.h</label>
-        <link refid="_model_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+      </node>
+      <node id="15">
+        <label>GDRelease.h</label>
+        <link refid="_g_d_release_8h"/>
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="7">
+      <node id="5">
+        <label>Model.h</label>
+        <link refid="_model_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
         <label>Params.h</label>
         <link refid="_params_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="8">
+      <node id="9">
         <label>Patch.h</label>
         <link refid="_patch_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="9">
+      <node id="10">
         <label>Point.h</label>
         <link refid="_point_8h"/>
       </node>
-      <node id="15">
+      <node id="16">
         <label>Seasonality.h</label>
         <link refid="_seasonality_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="6">
+      <node id="7">
         <label>constants.h</label>
         <link refid="constants_8h"/>
       </node>
-      <node id="16">
+      <node id="17">
         <label>random.h</label>
         <link refid="random_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
         <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -143,26 +144,31 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
       </node>
-      <node id="5">
+      <node id="4">
+        <label>algorithm</label>
+      </node>
+      <node id="6">
         <label>array</label>
       </node>
       <node id="3">
         <label>cassert</label>
       </node>
-      <node id="11">
+      <node id="12">
         <label>utility</label>
       </node>
       <node id="2">
@@ -176,21 +182,21 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cassert&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_model_8h" kindref="compound">Model.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="random_8h" kindref="compound">random.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="constants_8h" kindref="compound">constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_patch_8h" kindref="compound">Patch.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_dispersal_8h" kindref="compound">Dispersal.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_g_d_release_8h" kindref="compound">GDRelease.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_aestivation_8h" kindref="compound">Aestivation.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceconstants" kindref="compound">constants</ref>;</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><ref refid="class_model_1a46b88e44d343b0bc26544e1e77538e5b" kindref="member">Model::Model</ref>(<ref refid="struct_model_params" kindref="compound">ModelParams</ref>*<sp/>params,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;std::array&lt;std::array<sp/>&lt;double,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>&amp;inher_frac,<sp/><ref refid="struct_sine_rainfall_params" kindref="compound">SineRainfallParams</ref>*<sp/>season,</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_mean,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_var,<sp/>std::vector&lt;int&gt;<sp/>rel_sites,<sp/><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8" kindref="member">BoundaryType</ref><sp/>boundary,<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04a" kindref="member">DispersalType</ref><sp/>disp_type,<sp/>std::vector&lt;Point&gt;<sp/>coords)</highlight></codeline>
-<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref><sp/>=<sp/>params-&gt;<ref refid="struct_model_params_1a53c7cd827ceb1f96a1e4ffd850efc096" kindref="member">area</ref>-&gt;<ref refid="struct_area_params_1ae2dcd6b60485cc3a2f54b70355987385" kindref="member">num_pat</ref>;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1ad456b9a7464879d80abb19f1d14971cf" kindref="member">side</ref><sp/>=<sp/>params-&gt;<ref refid="struct_model_params_1a53c7cd827ceb1f96a1e4ffd850efc096" kindref="member">area</ref>-&gt;<ref refid="struct_area_params_1a25bc9f9baa5f3b4f9352101dfec36a99" kindref="member">side</ref>;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_model_8h" kindref="compound">Model.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="random_8h" kindref="compound">random.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="constants_8h" kindref="compound">constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_patch_8h" kindref="compound">Patch.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_dispersal_8h" kindref="compound">Dispersal.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_g_d_release_8h" kindref="compound">GDRelease.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_aestivation_8h" kindref="compound">Aestivation.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceconstants" kindref="compound">constants</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="class_model_1a46b88e44d343b0bc26544e1e77538e5b" kindref="member">Model::Model</ref>(<ref refid="struct_model_params" kindref="compound">ModelParams</ref>*<sp/>params,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;std::array&lt;std::array<sp/>&lt;double,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>&amp;inher_frac,<sp/><ref refid="struct_sine_rainfall_params" kindref="compound">SineRainfallParams</ref>*<sp/>season,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_mean,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_var,<sp/>std::vector&lt;int&gt;<sp/>rel_sites,<sp/><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8" kindref="member">BoundaryType</ref><sp/>boundary,<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04a" kindref="member">DispersalType</ref><sp/>disp_type,<sp/>std::vector&lt;Point&gt;<sp/>coords)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref><sp/>=<sp/>params-&gt;<ref refid="struct_model_params_1a53c7cd827ceb1f96a1e4ffd850efc096" kindref="member">area</ref>-&gt;<ref refid="struct_area_params_1ae2dcd6b60485cc3a2f54b70355987385" kindref="member">num_pat</ref>;</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9f55ce896e1332f492570af65cfe76d4" kindref="member">initial_pops</ref><sp/>=<sp/>params-&gt;<ref refid="struct_model_params_1a6cb4a8401e0037d73a4cb8bf82705dbf" kindref="member">initial</ref>;</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1af1ba01eda7176a872d16eff80fa8cde9" kindref="member">min_dev</ref><sp/>=<sp/>params-&gt;<ref refid="struct_model_params_1ae0c846a42a36f1e6bc6eccb35bf55763" kindref="member">life</ref>-&gt;<ref refid="struct_life_params_1a68805af09da4a9755cdd659dfd6fddd9" kindref="member">min_dev</ref>;</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a106416d6d9dc6510bda17ea0b6b1b588" kindref="member">alpha0_mean</ref><sp/>=<sp/>a0_mean;</highlight></codeline>
@@ -200,269 +206,295 @@
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a864dafb787704b50f6b3ca2b416533df" kindref="member">day_sim</ref><sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>.clear();</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!coords.empty())<sp/>{</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(coords.size()<sp/>==<sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref>);</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i<sp/>&lt;<sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref>;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patch" kindref="compound">Patch</ref>*<sp/>pp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_patch" kindref="compound">Patch</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>params-&gt;<ref refid="struct_model_params_1ae0c846a42a36f1e6bc6eccb35bf55763" kindref="member">life</ref>,<sp/><ref refid="class_model_1ad1efe8336546de49c99d0d8c8ec8e6e8" kindref="member">alpha0</ref>(),<sp/>coords[i]);</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>.push_back(pp);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i<sp/>&lt;<sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref>;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patch" kindref="compound">Patch</ref>*<sp/>pp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_patch" kindref="compound">Patch</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>params-&gt;<ref refid="struct_model_params_1ae0c846a42a36f1e6bc6eccb35bf55763" kindref="member">life</ref>,<sp/><ref refid="class_model_1ad1efe8336546de49c99d0d8c8ec8e6e8" kindref="member">alpha0</ref>(),<sp/><ref refid="class_model_1ad456b9a7464879d80abb19f1d14971cf" kindref="member">side</ref>);</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>.push_back(pp);</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_aestivation" kindref="compound">Aestivation</ref>*<sp/>new_aestivation<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_aestivation" kindref="compound">Aestivation</ref>(params-&gt;<ref refid="struct_model_params_1a87446d8f4e014fdfd555bd74b8b7fd70" kindref="member">aes</ref>,<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>.size());</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kindref="member">aestivation</ref><sp/>=<sp/>new_aestivation;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_dispersal" kindref="compound">Dispersal</ref>*<sp/>new_disp;</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(disp_type<sp/>==<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf" kindref="member">DistanceKernel</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_disp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_distance_kernel_dispersal" kindref="compound">DistanceKernelDispersal</ref>(params-&gt;<ref refid="struct_model_params_1a3bdf0759e5b47d434f45982452a39b81" kindref="member">disp</ref>,<sp/>boundary,<sp/><ref refid="class_model_1ad456b9a7464879d80abb19f1d14971cf" kindref="member">side</ref>);</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(disp_type<sp/>==<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3709dd357d0541fa8a1fc6b2238fa583" kindref="member">Radial</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_disp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_radial_dispersal" kindref="compound">RadialDispersal</ref>(params-&gt;<ref refid="struct_model_params_1a3bdf0759e5b47d434f45982452a39b81" kindref="member">disp</ref>,<sp/>boundary,<sp/><ref refid="class_model_1ad456b9a7464879d80abb19f1d14971cf" kindref="member">side</ref>);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_disp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_distance_kernel_dispersal" kindref="compound">DistanceKernelDispersal</ref>(params-&gt;<ref refid="struct_model_params_1a3bdf0759e5b47d434f45982452a39b81" kindref="member">disp</ref>,<sp/>boundary,<sp/><ref refid="class_model_1ad456b9a7464879d80abb19f1d14971cf" kindref="member">side</ref>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a33ced6d9613c62ef84aadc016a667f22" kindref="member">side_x</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1ac6c296586aade2cfd8b0a013583ef337" kindref="member">side_y</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!coords.empty())<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(coords.size()<sp/>==<sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>calculate<sp/>sides<sp/>for<sp/>toroidal<sp/>boundary</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>compare_x<sp/>=<sp/>[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>b){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a.<ref refid="struct_point_1ab99c56589bc8ad5fa5071387110a5bc7" kindref="member">x</ref><sp/>&lt;<sp/>b.x;};<sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>x_min<sp/>=<sp/>(*std::min_element(coords.begin(),<sp/>coords.end(),<sp/>compare_x)).x;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>x_max<sp/>=<sp/>(*std::max_element(coords.begin(),<sp/>coords.end(),<sp/>compare_x)).x;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>compare_y<sp/>=<sp/>[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>b){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a.<ref refid="struct_point_1afa38be143ae800e6ad69ce8ed4df62d8" kindref="member">y</ref><sp/>&lt;<sp/>b.y;};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>y_min<sp/>=<sp/>(*std::min_element(coords.begin(),<sp/>coords.end(),<sp/>compare_y)).y;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>y_max<sp/>=<sp/>(*std::max_element(coords.begin(),<sp/>coords.end(),<sp/>compare_y)).y;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a33ced6d9613c62ef84aadc016a667f22" kindref="member">side_x</ref><sp/>=<sp/>x_max<sp/>-<sp/>x_min;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1ac6c296586aade2cfd8b0a013583ef337" kindref="member">side_y</ref><sp/>=<sp/>y_max<sp/>-<sp/>y_min;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i<sp/>&lt;<sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patch" kindref="compound">Patch</ref>*<sp/>pp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_patch" kindref="compound">Patch</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>params-&gt;<ref refid="struct_model_params_1ae0c846a42a36f1e6bc6eccb35bf55763" kindref="member">life</ref>,<sp/><ref refid="class_model_1ad1efe8336546de49c99d0d8c8ec8e6e8" kindref="member">alpha0</ref>(),<sp/>coords[i]);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>.push_back(pp);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a33ced6d9613c62ef84aadc016a667f22" kindref="member">side_x</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1ac6c296586aade2cfd8b0a013583ef337" kindref="member">side_y</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i<sp/>&lt;<sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patch" kindref="compound">Patch</ref>*<sp/>pp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_patch" kindref="compound">Patch</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>params-&gt;<ref refid="struct_model_params_1ae0c846a42a36f1e6bc6eccb35bf55763" kindref="member">life</ref>,<sp/><ref refid="class_model_1ad1efe8336546de49c99d0d8c8ec8e6e8" kindref="member">alpha0</ref>(),<sp/><ref refid="class_model_1a33ced6d9613c62ef84aadc016a667f22" kindref="member">side_x</ref>,<sp/><ref refid="class_model_1ac6c296586aade2cfd8b0a013583ef337" kindref="member">side_y</ref>);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>.push_back(pp);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a76d71b89f763d239c57657156b143231" kindref="member">dispersal</ref><sp/>=<sp/>new_disp;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_g_d_release" kindref="compound">GDRelease</ref>*<sp/>new_gd_release;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(coords.empty())<sp/>{</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_gd_release<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_random_g_d_release" kindref="compound">RandomGDRelease</ref>(params-&gt;<ref refid="struct_model_params_1a77b9b6eab4e2185ef28937f8a438f08d" kindref="member">rel</ref>);</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_gd_release<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_sched_g_d_release" kindref="compound">SchedGDRelease</ref>(params-&gt;<ref refid="struct_model_params_1a77b9b6eab4e2185ef28937f8a438f08d" kindref="member">rel</ref>,<sp/>rel_sites,<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>);</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9d0be7ddf0f62f9e9444ab5be8be8da6" kindref="member">gd_release</ref><sp/>=<sp/>new_gd_release;</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_seasonality" kindref="compound">Seasonality</ref>*<sp/>new_seasonality<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_sine_rainfall" kindref="compound">SineRainfall</ref>(season);</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9d3cb8400740de092adeaa6fdea121a8" kindref="member">seasonality</ref><sp/>=<sp/>new_seasonality;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><ref refid="class_model_1a46b88e44d343b0bc26544e1e77538e5b" kindref="member">Model::Model</ref>(<ref refid="struct_model_params" kindref="compound">ModelParams</ref>*<sp/>params,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;std::array&lt;std::array<sp/>&lt;double,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>&amp;inher_frac,<sp/><ref refid="struct_input_rainfall_params" kindref="compound">InputRainfallParams</ref><sp/>*season,</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_mean,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_var,<sp/>std::vector&lt;int&gt;<sp/>rel_sites,<sp/><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8" kindref="member">BoundaryType</ref><sp/>boundary,<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04a" kindref="member">DispersalType</ref><sp/>disp_type,<sp/>std::vector&lt;Point&gt;<sp/>coords)</highlight></codeline>
-<codeline lineno="98"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref><sp/>=<sp/>params-&gt;<ref refid="struct_model_params_1a53c7cd827ceb1f96a1e4ffd850efc096" kindref="member">area</ref>-&gt;<ref refid="struct_area_params_1ae2dcd6b60485cc3a2f54b70355987385" kindref="member">num_pat</ref>;</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1ad456b9a7464879d80abb19f1d14971cf" kindref="member">side</ref><sp/>=<sp/>params-&gt;<ref refid="struct_model_params_1a53c7cd827ceb1f96a1e4ffd850efc096" kindref="member">area</ref>-&gt;<ref refid="struct_area_params_1a25bc9f9baa5f3b4f9352101dfec36a99" kindref="member">side</ref>;</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9f55ce896e1332f492570af65cfe76d4" kindref="member">initial_pops</ref><sp/>=<sp/>params-&gt;<ref refid="struct_model_params_1a6cb4a8401e0037d73a4cb8bf82705dbf" kindref="member">initial</ref>;</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1af1ba01eda7176a872d16eff80fa8cde9" kindref="member">min_dev</ref><sp/>=<sp/>params-&gt;<ref refid="struct_model_params_1ae0c846a42a36f1e6bc6eccb35bf55763" kindref="member">life</ref>-&gt;<ref refid="struct_life_params_1a68805af09da4a9755cdd659dfd6fddd9" kindref="member">min_dev</ref>;</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a106416d6d9dc6510bda17ea0b6b1b588" kindref="member">alpha0_mean</ref><sp/>=<sp/>a0_mean;</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1ad10cafc06c6b49b020c22efb034f8362" kindref="member">alpha0_variance</ref><sp/>=<sp/>a0_var;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a1d8427bbcb5f7e9db04d213111e208ba" kindref="member">dev_duration_probs</ref>.fill(0);</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a0fb3ac96dac77d8c0f67142ab70ad899" kindref="member">inher_fraction</ref><sp/>=<sp/>inher_frac;</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"></highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a864dafb787704b50f6b3ca2b416533df" kindref="member">day_sim</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>.clear();</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!coords.empty())<sp/>{</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(coords.size()<sp/>==<sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref>);</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i<sp/>&lt;<sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref>;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patch" kindref="compound">Patch</ref>*<sp/>pp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_patch" kindref="compound">Patch</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>params-&gt;<ref refid="struct_model_params_1ae0c846a42a36f1e6bc6eccb35bf55763" kindref="member">life</ref>,<sp/><ref refid="class_model_1ad1efe8336546de49c99d0d8c8ec8e6e8" kindref="member">alpha0</ref>(),<sp/>coords[i]);</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>.push_back(pp);</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i<sp/>&lt;<sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref>;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patch" kindref="compound">Patch</ref>*<sp/>pp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_patch" kindref="compound">Patch</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>params-&gt;<ref refid="struct_model_params_1ae0c846a42a36f1e6bc6eccb35bf55763" kindref="member">life</ref>,<sp/><ref refid="class_model_1ad1efe8336546de49c99d0d8c8ec8e6e8" kindref="member">alpha0</ref>(),<sp/><ref refid="class_model_1ad456b9a7464879d80abb19f1d14971cf" kindref="member">side</ref>);</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>.push_back(pp);</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_aestivation" kindref="compound">Aestivation</ref>*<sp/>new_aestivation<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_aestivation" kindref="compound">Aestivation</ref>(params-&gt;<ref refid="struct_model_params_1a87446d8f4e014fdfd555bd74b8b7fd70" kindref="member">aes</ref>,<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>.size());</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kindref="member">aestivation</ref><sp/>=<sp/>new_aestivation;</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_dispersal" kindref="compound">Dispersal</ref>*<sp/>new_disp;</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(disp_type<sp/>==<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf" kindref="member">DistanceKernel</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_disp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_distance_kernel_dispersal" kindref="compound">DistanceKernelDispersal</ref>(params-&gt;<ref refid="struct_model_params_1a3bdf0759e5b47d434f45982452a39b81" kindref="member">disp</ref>,<sp/>boundary,<sp/><ref refid="class_model_1ad456b9a7464879d80abb19f1d14971cf" kindref="member">side</ref>);</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(disp_type<sp/>==<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3709dd357d0541fa8a1fc6b2238fa583" kindref="member">Radial</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_disp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_radial_dispersal" kindref="compound">RadialDispersal</ref>(params-&gt;<ref refid="struct_model_params_1a3bdf0759e5b47d434f45982452a39b81" kindref="member">disp</ref>,<sp/>boundary,<sp/><ref refid="class_model_1ad456b9a7464879d80abb19f1d14971cf" kindref="member">side</ref>);</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_disp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_distance_kernel_dispersal" kindref="compound">DistanceKernelDispersal</ref>(params-&gt;<ref refid="struct_model_params_1a3bdf0759e5b47d434f45982452a39b81" kindref="member">disp</ref>,<sp/>boundary,<sp/><ref refid="class_model_1ad456b9a7464879d80abb19f1d14971cf" kindref="member">side</ref>);</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a76d71b89f763d239c57657156b143231" kindref="member">dispersal</ref><sp/>=<sp/>new_disp;</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_g_d_release" kindref="compound">GDRelease</ref>*<sp/>new_gd_release;</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!rel_sites.empty())<sp/>{</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_gd_release<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_sched_g_d_release" kindref="compound">SchedGDRelease</ref>(params-&gt;<ref refid="struct_model_params_1a77b9b6eab4e2185ef28937f8a438f08d" kindref="member">rel</ref>,<sp/>rel_sites,<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>);</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_gd_release<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_random_g_d_release" kindref="compound">RandomGDRelease</ref>(params-&gt;<ref refid="struct_model_params_1a77b9b6eab4e2185ef28937f8a438f08d" kindref="member">rel</ref>);</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9d0be7ddf0f62f9e9444ab5be8be8da6" kindref="member">gd_release</ref><sp/>=<sp/>new_gd_release;</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"></highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_seasonality" kindref="compound">Seasonality</ref>*<sp/>new_seasonality<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_input_rainfall" kindref="compound">InputRainfall</ref>(season);</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9d3cb8400740de092adeaa6fdea121a8" kindref="member">seasonality</ref><sp/>=<sp/>new_seasonality;</highlight></codeline>
-<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"></highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><ref refid="class_model_1ad6ebd2062a0b823db841a0b88baac4c0" kindref="member">Model::~Model</ref>()<sp/></highlight></codeline>
-<codeline lineno="157"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kindref="member">aestivation</ref>;</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_model_1a76d71b89f763d239c57657156b143231" kindref="member">dispersal</ref>;</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_model_1a9d0be7ddf0f62f9e9444ab5be8be8da6" kindref="member">gd_release</ref>;</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_model_1a9d3cb8400740de092adeaa6fdea121a8" kindref="member">seasonality</ref>;</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>pat;</highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"></highlight></codeline>
-<codeline lineno="174"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_model_1ad1efe8336546de49c99d0d8c8ec8e6e8" kindref="member">Model::alpha0</ref>()<sp/></highlight></codeline>
-<codeline lineno="175"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="random_8cpp_1ab1651a929e139f6da870eae2f0c641e0" kindref="member">random_lognormal</ref>(<ref refid="class_model_1a106416d6d9dc6510bda17ea0b6b1b588" kindref="member">alpha0_mean</ref>,<sp/><ref refid="class_model_1ad10cafc06c6b49b020c22efb034f8362" kindref="member">alpha0_variance</ref>);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_aestivation" kindref="compound">Aestivation</ref>*<sp/>new_aestivation<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_aestivation" kindref="compound">Aestivation</ref>(params-&gt;<ref refid="struct_model_params_1a87446d8f4e014fdfd555bd74b8b7fd70" kindref="member">aes</ref>,<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>.size());</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kindref="member">aestivation</ref><sp/>=<sp/>new_aestivation;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_dispersal" kindref="compound">Dispersal</ref>*<sp/>new_disp;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(disp_type<sp/>==<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf" kindref="member">DistanceKernel</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_disp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_distance_kernel_dispersal" kindref="compound">DistanceKernelDispersal</ref>(params-&gt;<ref refid="struct_model_params_1a3bdf0759e5b47d434f45982452a39b81" kindref="member">disp</ref>,<sp/>boundary,<sp/><ref refid="class_model_1a33ced6d9613c62ef84aadc016a667f22" kindref="member">side_x</ref>,<sp/><ref refid="class_model_1ac6c296586aade2cfd8b0a013583ef337" kindref="member">side_y</ref>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(disp_type<sp/>==<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3709dd357d0541fa8a1fc6b2238fa583" kindref="member">Radial</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_disp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_radial_dispersal" kindref="compound">RadialDispersal</ref>(params-&gt;<ref refid="struct_model_params_1a3bdf0759e5b47d434f45982452a39b81" kindref="member">disp</ref>,<sp/>boundary,<sp/><ref refid="class_model_1a33ced6d9613c62ef84aadc016a667f22" kindref="member">side_x</ref>,<sp/><ref refid="class_model_1ac6c296586aade2cfd8b0a013583ef337" kindref="member">side_y</ref>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_disp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_distance_kernel_dispersal" kindref="compound">DistanceKernelDispersal</ref>(params-&gt;<ref refid="struct_model_params_1a3bdf0759e5b47d434f45982452a39b81" kindref="member">disp</ref>,<sp/>boundary,<sp/><ref refid="class_model_1a33ced6d9613c62ef84aadc016a667f22" kindref="member">side_x</ref>,<sp/><ref refid="class_model_1ac6c296586aade2cfd8b0a013583ef337" kindref="member">side_y</ref>);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a76d71b89f763d239c57657156b143231" kindref="member">dispersal</ref><sp/>=<sp/>new_disp;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_g_d_release" kindref="compound">GDRelease</ref>*<sp/>new_gd_release;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(coords.empty())<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_gd_release<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_random_g_d_release" kindref="compound">RandomGDRelease</ref>(params-&gt;<ref refid="struct_model_params_1a77b9b6eab4e2185ef28937f8a438f08d" kindref="member">rel</ref>);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_gd_release<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_sched_g_d_release" kindref="compound">SchedGDRelease</ref>(params-&gt;<ref refid="struct_model_params_1a77b9b6eab4e2185ef28937f8a438f08d" kindref="member">rel</ref>,<sp/>rel_sites,<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9d0be7ddf0f62f9e9444ab5be8be8da6" kindref="member">gd_release</ref><sp/>=<sp/>new_gd_release;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_seasonality" kindref="compound">Seasonality</ref>*<sp/>new_seasonality<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_sine_rainfall" kindref="compound">SineRainfall</ref>(season);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9d3cb8400740de092adeaa6fdea121a8" kindref="member">seasonality</ref><sp/>=<sp/>new_seasonality;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><ref refid="class_model_1a46b88e44d343b0bc26544e1e77538e5b" kindref="member">Model::Model</ref>(<ref refid="struct_model_params" kindref="compound">ModelParams</ref>*<sp/>params,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;std::array&lt;std::array<sp/>&lt;double,<sp/>constants::num_gen&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;,<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>&gt;<sp/>&amp;inher_frac,<sp/><ref refid="struct_input_rainfall_params" kindref="compound">InputRainfallParams</ref><sp/>*season,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_mean,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_var,<sp/>std::vector&lt;int&gt;<sp/>rel_sites,<sp/><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8" kindref="member">BoundaryType</ref><sp/>boundary,<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04a" kindref="member">DispersalType</ref><sp/>disp_type,<sp/>std::vector&lt;Point&gt;<sp/>coords)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref><sp/>=<sp/>params-&gt;<ref refid="struct_model_params_1a53c7cd827ceb1f96a1e4ffd850efc096" kindref="member">area</ref>-&gt;<ref refid="struct_area_params_1ae2dcd6b60485cc3a2f54b70355987385" kindref="member">num_pat</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9f55ce896e1332f492570af65cfe76d4" kindref="member">initial_pops</ref><sp/>=<sp/>params-&gt;<ref refid="struct_model_params_1a6cb4a8401e0037d73a4cb8bf82705dbf" kindref="member">initial</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1af1ba01eda7176a872d16eff80fa8cde9" kindref="member">min_dev</ref><sp/>=<sp/>params-&gt;<ref refid="struct_model_params_1ae0c846a42a36f1e6bc6eccb35bf55763" kindref="member">life</ref>-&gt;<ref refid="struct_life_params_1a68805af09da4a9755cdd659dfd6fddd9" kindref="member">min_dev</ref>;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a106416d6d9dc6510bda17ea0b6b1b588" kindref="member">alpha0_mean</ref><sp/>=<sp/>a0_mean;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1ad10cafc06c6b49b020c22efb034f8362" kindref="member">alpha0_variance</ref><sp/>=<sp/>a0_var;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a1d8427bbcb5f7e9db04d213111e208ba" kindref="member">dev_duration_probs</ref>.fill(0);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a0fb3ac96dac77d8c0f67142ab70ad899" kindref="member">inher_fraction</ref><sp/>=<sp/>inher_frac;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a864dafb787704b50f6b3ca2b416533df" kindref="member">day_sim</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>.clear();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!coords.empty())<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(coords.size()<sp/>==<sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>calculate<sp/>sides<sp/>for<sp/>toroidal<sp/>boundary</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>compare_x<sp/>=<sp/>[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>b){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a.<ref refid="struct_point_1ab99c56589bc8ad5fa5071387110a5bc7" kindref="member">x</ref><sp/>&lt;<sp/>b.x;};</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>x_min<sp/>=<sp/>(*std::min_element(coords.begin(),<sp/>coords.end(),<sp/>compare_x)).x;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>x_max<sp/>=<sp/>(*std::max_element(coords.begin(),<sp/>coords.end(),<sp/>compare_x)).x;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>compare_y<sp/>=<sp/>[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_point" kindref="compound">Point</ref>&amp;<sp/>b){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a.<ref refid="struct_point_1afa38be143ae800e6ad69ce8ed4df62d8" kindref="member">y</ref><sp/>&lt;<sp/>b.y;};</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>y_min<sp/>=<sp/>(*std::min_element(coords.begin(),<sp/>coords.end(),<sp/>compare_y)).y;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>y_max<sp/>=<sp/>(*std::max_element(coords.begin(),<sp/>coords.end(),<sp/>compare_y)).y;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a33ced6d9613c62ef84aadc016a667f22" kindref="member">side_x</ref><sp/>=<sp/>x_max<sp/>-<sp/>x_min;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1ac6c296586aade2cfd8b0a013583ef337" kindref="member">side_y</ref><sp/>=<sp/>y_max<sp/>-<sp/>y_min;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i<sp/>&lt;<sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patch" kindref="compound">Patch</ref>*<sp/>pp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_patch" kindref="compound">Patch</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>params-&gt;<ref refid="struct_model_params_1ae0c846a42a36f1e6bc6eccb35bf55763" kindref="member">life</ref>,<sp/><ref refid="class_model_1ad1efe8336546de49c99d0d8c8ec8e6e8" kindref="member">alpha0</ref>(),<sp/>coords[i]);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>.push_back(pp);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a33ced6d9613c62ef84aadc016a667f22" kindref="member">side_x</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1ac6c296586aade2cfd8b0a013583ef337" kindref="member">side_y</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i<sp/>&lt;<sp/><ref refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kindref="member">num_pat</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patch" kindref="compound">Patch</ref>*<sp/>pp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_patch" kindref="compound">Patch</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>params-&gt;<ref refid="struct_model_params_1ae0c846a42a36f1e6bc6eccb35bf55763" kindref="member">life</ref>,<sp/><ref refid="class_model_1ad1efe8336546de49c99d0d8c8ec8e6e8" kindref="member">alpha0</ref>(),<sp/><ref refid="class_model_1a33ced6d9613c62ef84aadc016a667f22" kindref="member">side_x</ref>,<sp/><ref refid="class_model_1ac6c296586aade2cfd8b0a013583ef337" kindref="member">side_y</ref>);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>.push_back(pp);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_aestivation" kindref="compound">Aestivation</ref>*<sp/>new_aestivation<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_aestivation" kindref="compound">Aestivation</ref>(params-&gt;<ref refid="struct_model_params_1a87446d8f4e014fdfd555bd74b8b7fd70" kindref="member">aes</ref>,<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>.size());</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kindref="member">aestivation</ref><sp/>=<sp/>new_aestivation;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_dispersal" kindref="compound">Dispersal</ref>*<sp/>new_disp;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(disp_type<sp/>==<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf" kindref="member">DistanceKernel</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_disp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_distance_kernel_dispersal" kindref="compound">DistanceKernelDispersal</ref>(params-&gt;<ref refid="struct_model_params_1a3bdf0759e5b47d434f45982452a39b81" kindref="member">disp</ref>,<sp/>boundary,<sp/><ref refid="class_model_1a33ced6d9613c62ef84aadc016a667f22" kindref="member">side_x</ref>,<sp/><ref refid="class_model_1ac6c296586aade2cfd8b0a013583ef337" kindref="member">side_y</ref>);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(disp_type<sp/>==<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3709dd357d0541fa8a1fc6b2238fa583" kindref="member">Radial</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_disp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_radial_dispersal" kindref="compound">RadialDispersal</ref>(params-&gt;<ref refid="struct_model_params_1a3bdf0759e5b47d434f45982452a39b81" kindref="member">disp</ref>,<sp/>boundary,<sp/><ref refid="class_model_1a33ced6d9613c62ef84aadc016a667f22" kindref="member">side_x</ref>,<sp/><ref refid="class_model_1ac6c296586aade2cfd8b0a013583ef337" kindref="member">side_y</ref>);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_disp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_distance_kernel_dispersal" kindref="compound">DistanceKernelDispersal</ref>(params-&gt;<ref refid="struct_model_params_1a3bdf0759e5b47d434f45982452a39b81" kindref="member">disp</ref>,<sp/>boundary,<sp/><ref refid="class_model_1a33ced6d9613c62ef84aadc016a667f22" kindref="member">side_x</ref>,<sp/><ref refid="class_model_1ac6c296586aade2cfd8b0a013583ef337" kindref="member">side_y</ref>);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a76d71b89f763d239c57657156b143231" kindref="member">dispersal</ref><sp/>=<sp/>new_disp;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_g_d_release" kindref="compound">GDRelease</ref>*<sp/>new_gd_release;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!rel_sites.empty())<sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_gd_release<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_sched_g_d_release" kindref="compound">SchedGDRelease</ref>(params-&gt;<ref refid="struct_model_params_1a77b9b6eab4e2185ef28937f8a438f08d" kindref="member">rel</ref>,<sp/>rel_sites,<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_gd_release<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_random_g_d_release" kindref="compound">RandomGDRelease</ref>(params-&gt;<ref refid="struct_model_params_1a77b9b6eab4e2185ef28937f8a438f08d" kindref="member">rel</ref>);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9d0be7ddf0f62f9e9444ab5be8be8da6" kindref="member">gd_release</ref><sp/>=<sp/>new_gd_release;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_seasonality" kindref="compound">Seasonality</ref>*<sp/>new_seasonality<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_input_rainfall" kindref="compound">InputRainfall</ref>(season);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9d3cb8400740de092adeaa6fdea121a8" kindref="member">seasonality</ref><sp/>=<sp/>new_seasonality;</highlight></codeline>
 <codeline lineno="177"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="178"><highlight class="normal"></highlight></codeline>
-<codeline lineno="182"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a3d359ced00aacc31a7b50c53b8b1e340" kindref="member">Model::initiate</ref>()</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><ref refid="class_model_1ad6ebd2062a0b823db841a0b88baac4c0" kindref="member">Model::~Model</ref>()<sp/></highlight></codeline>
 <codeline lineno="183"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1add15fa39b2e8fda3fefc551de4d0e1bb" kindref="member">populate_sites</ref>();</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a1b78097ea008a3b4cc36b321c7d42289" kindref="member">set_dev_duration_probs</ref>(<ref refid="class_model_1af1ba01eda7176a872d16eff80fa8cde9" kindref="member">min_dev</ref>,<sp/><ref refid="namespaceconstants_1ab5cd2d6cdf356d98576ea193f6a54476" kindref="member">constants::max_dev</ref>);</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a76d71b89f763d239c57657156b143231" kindref="member">dispersal</ref>-&gt;<ref refid="class_dispersal_1aef84d06c465ccb461d1cfb39e82de838" kindref="member">set_connecs</ref>(<ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>);<sp/></highlight></codeline>
-<codeline lineno="187"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"></highlight></codeline>
-<codeline lineno="192"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1add15fa39b2e8fda3fefc551de4d0e1bb" kindref="member">Model::populate_sites</ref>()<sp/></highlight></codeline>
-<codeline lineno="193"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pat-&gt;populate(<ref refid="class_model_1a9f55ce896e1332f492570af65cfe76d4" kindref="member">initial_pops</ref>-&gt;<ref refid="struct_initial_pops_params_1a223e4fba21b1219765b0aaffb794cb7c" kindref="member">initial_WJ</ref>,<sp/><ref refid="class_model_1a9f55ce896e1332f492570af65cfe76d4" kindref="member">initial_pops</ref>-&gt;<ref refid="struct_initial_pops_params_1affa8fc67eb8a0fc91227b5034b38bdc3" kindref="member">initial_WM</ref>,<sp/><ref refid="class_model_1a9f55ce896e1332f492570af65cfe76d4" kindref="member">initial_pops</ref>-&gt;<ref refid="struct_initial_pops_params_1a13e0588763c9fcaf905384cd34866aaf" kindref="member">initial_WV</ref>,<sp/><ref refid="class_model_1a9f55ce896e1332f492570af65cfe76d4" kindref="member">initial_pops</ref>-&gt;<ref refid="struct_initial_pops_params_1ac125c56f73e260d96236434d57dd1599" kindref="member">initial_WF</ref>);</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="197"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="198"><highlight class="normal"><sp/></highlight></codeline>
-<codeline lineno="204"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a1b78097ea008a3b4cc36b321c7d42289" kindref="member">Model::set_dev_duration_probs</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>min_time,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_time)<sp/></highlight></codeline>
-<codeline lineno="205"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a=0;<sp/>a<sp/>&lt;<sp/>max_time<sp/>+<sp/>1;<sp/>++a)<sp/>{</highlight></codeline>
-<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(a<sp/>&gt;=<sp/>min_time)<sp/>{</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a1d8427bbcb5f7e9db04d213111e208ba" kindref="member">dev_duration_probs</ref>[a]<sp/>=<sp/>1.0<sp/>/<sp/>(max_time<sp/>-<sp/>min_time);</highlight></codeline>
-<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a1d8427bbcb5f7e9db04d213111e208ba" kindref="member">dev_duration_probs</ref>[a]<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="214"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="215"><highlight class="normal"></highlight></codeline>
-<codeline lineno="221"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a7e4eb741e72b3946a9166dceed6fc02d" kindref="member">Model::run</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day)</highlight></codeline>
-<codeline lineno="222"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a864dafb787704b50f6b3ca2b416533df" kindref="member">day_sim</ref><sp/>=<sp/>day;<sp/></highlight><highlight class="comment">//<sp/>used<sp/>later<sp/>for<sp/>seasonality</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9d0be7ddf0f62f9e9444ab5be8be8da6" kindref="member">gd_release</ref>-&gt;<ref refid="class_g_d_release_1ac69ecb74bc31ac1d57764be524c68ca7" kindref="member">release_gene_drive</ref>(day,<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>);</highlight></codeline>
-<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(day<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1ae7c17f3d562ffc8baea8945ba4ffd3c3" kindref="member">run_step</ref>(day);</highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="228"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"></highlight></codeline>
-<codeline lineno="234"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1ae7c17f3d562ffc8baea8945ba4ffd3c3" kindref="member">Model::run_step</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day)<sp/></highlight></codeline>
-<codeline lineno="235"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a2a3151eb1bb6333c2ba103f0c7c6c475" kindref="member">juv_get_older</ref>();</highlight></codeline>
-<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1ae2fa6af0cf426e1df144e4dcbee4069d" kindref="member">adults_die</ref>();</highlight></codeline>
-<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a76f26441a5112d1f596d5b9317734be4" kindref="member">virgins_mate</ref>();</highlight></codeline>
-<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a76d71b89f763d239c57657156b143231" kindref="member">dispersal</ref>-&gt;<ref refid="class_dispersal_1a90638547dc5983463ee88d89a9167b5a" kindref="member">adults_disperse</ref>(<ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>);</highlight></codeline>
-<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a85c48027be32159a36337531249a435a" kindref="member">lay_eggs</ref>();</highlight></codeline>
-<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1af30fafd15a6451c20c3dcef622aaf6d0" kindref="member">juv_eclose</ref>();</highlight></codeline>
-<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kindref="member">aestivation</ref>-&gt;<ref refid="class_aestivation_1ad52ef1d1e4febab22176ac1690f22d76" kindref="member">is_hide_time</ref>(day))<sp/><ref refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kindref="member">aestivation</ref>-&gt;<ref refid="class_aestivation_1a43390ce5cf1f9be08cf9b82d8cce00f3" kindref="member">hide</ref>(<ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>);</highlight></codeline>
-<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kindref="member">aestivation</ref>-&gt;<ref refid="class_aestivation_1a28d413fd0b0ab424b5071832de34e86c" kindref="member">is_wake_time</ref>(day))<sp/><ref refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kindref="member">aestivation</ref>-&gt;<ref refid="class_aestivation_1ade758967c3a5d774e15ffd2836b6e21d" kindref="member">wake</ref>(day,<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>);</highlight></codeline>
-<codeline lineno="244"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="245"><highlight class="normal"></highlight></codeline>
-<codeline lineno="251"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_model_1a8aaa1031c217f20626283a360d44b53f" kindref="member">Model::calculate_tot_J</ref>()</highlight></codeline>
-<codeline lineno="252"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tot_J<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tot_J<sp/>+=<sp/>pat-&gt;calculate_tot_J();</highlight></codeline>
-<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tot_J;</highlight></codeline>
-<codeline lineno="258"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><sp/></highlight></codeline>
-<codeline lineno="265"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_model_1ab92b4e7f88b556e690391528330ba6af" kindref="member">Model::calculate_tot_M</ref>()</highlight></codeline>
-<codeline lineno="266"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tot_M<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tot_M<sp/>+=<sp/>pat-&gt;calculate_tot_M();</highlight></codeline>
-<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tot_M;</highlight></codeline>
-<codeline lineno="272"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="273"><highlight class="normal"></highlight></codeline>
-<codeline lineno="279"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_model_1a0d762e0b53f2f1443b59d1425366cfc4" kindref="member">Model::calculate_tot_V</ref>()</highlight></codeline>
-<codeline lineno="280"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tot_V<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tot_V<sp/>+=<sp/>pat-&gt;calculate_tot_V();</highlight></codeline>
-<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tot_V;</highlight></codeline>
-<codeline lineno="286"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="287"><highlight class="normal"></highlight></codeline>
-<codeline lineno="293"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_model_1a8be5555da392871558de820795938a04" kindref="member">Model::calculate_tot_F</ref>()</highlight></codeline>
-<codeline lineno="294"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tot_F<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tot_F<sp/>+=<sp/>pat-&gt;calculate_tot_F();</highlight></codeline>
-<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tot_F;</highlight></codeline>
-<codeline lineno="300"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="301"><highlight class="normal"></highlight></codeline>
-<codeline lineno="307"><highlight class="normal">std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;<sp/><ref refid="class_model_1a6d5f4f68f41e76c3e966e312d2f6e9e3" kindref="member">Model::calculate_tot_M_gen</ref>()<sp/></highlight></codeline>
-<codeline lineno="308"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;<sp/>tot_M_gen;</highlight></codeline>
-<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>tot_M_gen.fill(0);</highlight></codeline>
-<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;<sp/>m_pat<sp/>=<sp/>pat-&gt;get_M();</highlight></codeline>
-<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tot_M_gen[i]<sp/>+=<sp/>m_pat[i];</highlight></codeline>
-<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tot_M_gen;</highlight></codeline>
-<codeline lineno="318"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="319"><highlight class="normal"></highlight></codeline>
-<codeline lineno="325"><highlight class="normal">std::vector&lt;Patch*&gt;<sp/><ref refid="class_model_1a17b3a93529de4ef762254f9a1932b67e" kindref="member">Model::get_sites</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="326"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>;</highlight></codeline>
-<codeline lineno="328"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="329"><highlight class="normal"></highlight></codeline>
-<codeline lineno="335"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_model_1a6499bfa0eeb48133e352ce72f79aee9d" kindref="member">Model::get_day</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="336"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_model_1a864dafb787704b50f6b3ca2b416533df" kindref="member">day_sim</ref>;</highlight></codeline>
-<codeline lineno="338"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="339"><highlight class="normal"></highlight></codeline>
-<codeline lineno="345"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_model_1a04c1c541fc6d4f4c12f854b971197ea5" kindref="member">Model::get_alpha</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alpha0)</highlight></codeline>
-<codeline lineno="346"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alpha<sp/>=<sp/><ref refid="class_model_1a9d3cb8400740de092adeaa6fdea121a8" kindref="member">seasonality</ref>-&gt;<ref refid="class_seasonality_1a86bfbdfc639ab1a08e3643e05b55d6f1" kindref="member">alpha</ref>(<ref refid="class_model_1a864dafb787704b50f6b3ca2b416533df" kindref="member">day_sim</ref>,<sp/><ref refid="class_model_1ad1efe8336546de49c99d0d8c8ec8e6e8" kindref="member">alpha0</ref>);</highlight></codeline>
-<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>alpha;</highlight></codeline>
-<codeline lineno="349"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="350"><highlight class="normal"></highlight></codeline>
-<codeline lineno="355"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a2a3151eb1bb6333c2ba103f0c7c6c475" kindref="member">Model::juv_get_older</ref>()<sp/></highlight></codeline>
-<codeline lineno="356"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pat-&gt;juv_get_older();</highlight></codeline>
-<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="360"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="361"><highlight class="normal"></highlight></codeline>
-<codeline lineno="366"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1ae2fa6af0cf426e1df144e4dcbee4069d" kindref="member">Model::adults_die</ref>()</highlight></codeline>
-<codeline lineno="367"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pat-&gt;adults_die();</highlight></codeline>
-<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="371"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="372"><highlight class="normal"></highlight></codeline>
-<codeline lineno="377"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a76f26441a5112d1f596d5b9317734be4" kindref="member">Model::virgins_mate</ref>()<sp/></highlight></codeline>
-<codeline lineno="378"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pat-&gt;virgins_mate();</highlight></codeline>
-<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="382"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="383"><highlight class="normal"></highlight></codeline>
-<codeline lineno="388"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a85c48027be32159a36337531249a435a" kindref="member">Model::lay_eggs</ref>()</highlight></codeline>
-<codeline lineno="389"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pat-&gt;lay_eggs(<ref refid="class_model_1a0fb3ac96dac77d8c0f67142ab70ad899" kindref="member">inher_fraction</ref>,<sp/><ref refid="class_model_1a1d8427bbcb5f7e9db04d213111e208ba" kindref="member">dev_duration_probs</ref>);</highlight></codeline>
-<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="393"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="394"><highlight class="normal"></highlight></codeline>
-<codeline lineno="400"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1af30fafd15a6451c20c3dcef622aaf6d0" kindref="member">Model::juv_eclose</ref>()</highlight></codeline>
-<codeline lineno="401"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pat-&gt;juv_eclose();</highlight></codeline>
-<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="405"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kindref="member">aestivation</ref>;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_model_1a76d71b89f763d239c57657156b143231" kindref="member">dispersal</ref>;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_model_1a9d0be7ddf0f62f9e9444ab5be8be8da6" kindref="member">gd_release</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_model_1a9d3cb8400740de092adeaa6fdea121a8" kindref="member">seasonality</ref>;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>pat;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_model_1ad1efe8336546de49c99d0d8c8ec8e6e8" kindref="member">Model::alpha0</ref>()<sp/></highlight></codeline>
+<codeline lineno="201"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="random_8cpp_1ab1651a929e139f6da870eae2f0c641e0" kindref="member">random_lognormal</ref>(<ref refid="class_model_1a106416d6d9dc6510bda17ea0b6b1b588" kindref="member">alpha0_mean</ref>,<sp/><ref refid="class_model_1ad10cafc06c6b49b020c22efb034f8362" kindref="member">alpha0_variance</ref>);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a3d359ced00aacc31a7b50c53b8b1e340" kindref="member">Model::initiate</ref>()</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1add15fa39b2e8fda3fefc551de4d0e1bb" kindref="member">populate_sites</ref>();</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a1b78097ea008a3b4cc36b321c7d42289" kindref="member">set_dev_duration_probs</ref>(<ref refid="class_model_1af1ba01eda7176a872d16eff80fa8cde9" kindref="member">min_dev</ref>,<sp/><ref refid="namespaceconstants_1ab5cd2d6cdf356d98576ea193f6a54476" kindref="member">constants::max_dev</ref>);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a76d71b89f763d239c57657156b143231" kindref="member">dispersal</ref>-&gt;<ref refid="class_dispersal_1aef84d06c465ccb461d1cfb39e82de838" kindref="member">set_connecs</ref>(<ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>);<sp/></highlight></codeline>
+<codeline lineno="213"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1add15fa39b2e8fda3fefc551de4d0e1bb" kindref="member">Model::populate_sites</ref>()<sp/></highlight></codeline>
+<codeline lineno="219"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pat-&gt;populate(<ref refid="class_model_1a9f55ce896e1332f492570af65cfe76d4" kindref="member">initial_pops</ref>-&gt;<ref refid="struct_initial_pops_params_1a223e4fba21b1219765b0aaffb794cb7c" kindref="member">initial_WJ</ref>,<sp/><ref refid="class_model_1a9f55ce896e1332f492570af65cfe76d4" kindref="member">initial_pops</ref>-&gt;<ref refid="struct_initial_pops_params_1affa8fc67eb8a0fc91227b5034b38bdc3" kindref="member">initial_WM</ref>,<sp/><ref refid="class_model_1a9f55ce896e1332f492570af65cfe76d4" kindref="member">initial_pops</ref>-&gt;<ref refid="struct_initial_pops_params_1a13e0588763c9fcaf905384cd34866aaf" kindref="member">initial_WV</ref>,<sp/><ref refid="class_model_1a9f55ce896e1332f492570af65cfe76d4" kindref="member">initial_pops</ref>-&gt;<ref refid="struct_initial_pops_params_1ac125c56f73e260d96236434d57dd1599" kindref="member">initial_WF</ref>);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a1b78097ea008a3b4cc36b321c7d42289" kindref="member">Model::set_dev_duration_probs</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>min_time,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_time)<sp/></highlight></codeline>
+<codeline lineno="231"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a=0;<sp/>a<sp/>&lt;<sp/>max_time<sp/>+<sp/>1;<sp/>++a)<sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(a<sp/>&gt;=<sp/>min_time)<sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a1d8427bbcb5f7e9db04d213111e208ba" kindref="member">dev_duration_probs</ref>[a]<sp/>=<sp/>1.0<sp/>/<sp/>(max_time<sp/>-<sp/>min_time);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1a1d8427bbcb5f7e9db04d213111e208ba" kindref="member">dev_duration_probs</ref>[a]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a7e4eb741e72b3946a9166dceed6fc02d" kindref="member">Model::run</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a864dafb787704b50f6b3ca2b416533df" kindref="member">day_sim</ref><sp/>=<sp/>day;<sp/></highlight><highlight class="comment">//<sp/>used<sp/>later<sp/>for<sp/>seasonality</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a9d0be7ddf0f62f9e9444ab5be8be8da6" kindref="member">gd_release</ref>-&gt;<ref refid="class_g_d_release_1ac69ecb74bc31ac1d57764be524c68ca7" kindref="member">release_gene_drive</ref>(day,<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(day<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_1ae7c17f3d562ffc8baea8945ba4ffd3c3" kindref="member">run_step</ref>(day);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1ae7c17f3d562ffc8baea8945ba4ffd3c3" kindref="member">Model::run_step</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>day)<sp/></highlight></codeline>
+<codeline lineno="261"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a2a3151eb1bb6333c2ba103f0c7c6c475" kindref="member">juv_get_older</ref>();</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1ae2fa6af0cf426e1df144e4dcbee4069d" kindref="member">adults_die</ref>();</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a76f26441a5112d1f596d5b9317734be4" kindref="member">virgins_mate</ref>();</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a76d71b89f763d239c57657156b143231" kindref="member">dispersal</ref>-&gt;<ref refid="class_dispersal_1a90638547dc5983463ee88d89a9167b5a" kindref="member">adults_disperse</ref>(<ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1a85c48027be32159a36337531249a435a" kindref="member">lay_eggs</ref>();</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_model_1af30fafd15a6451c20c3dcef622aaf6d0" kindref="member">juv_eclose</ref>();</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kindref="member">aestivation</ref>-&gt;<ref refid="class_aestivation_1ad52ef1d1e4febab22176ac1690f22d76" kindref="member">is_hide_time</ref>(day))<sp/><ref refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kindref="member">aestivation</ref>-&gt;<ref refid="class_aestivation_1a43390ce5cf1f9be08cf9b82d8cce00f3" kindref="member">hide</ref>(<ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kindref="member">aestivation</ref>-&gt;<ref refid="class_aestivation_1a28d413fd0b0ab424b5071832de34e86c" kindref="member">is_wake_time</ref>(day))<sp/><ref refid="class_model_1a9671f0b8d7b750684254ced32a7b1bc9" kindref="member">aestivation</ref>-&gt;<ref refid="class_aestivation_1ade758967c3a5d774e15ffd2836b6e21d" kindref="member">wake</ref>(day,<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_model_1a8aaa1031c217f20626283a360d44b53f" kindref="member">Model::calculate_tot_J</ref>()</highlight></codeline>
+<codeline lineno="278"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tot_J<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tot_J<sp/>+=<sp/>pat-&gt;calculate_tot_J();</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tot_J;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_model_1ab92b4e7f88b556e690391528330ba6af" kindref="member">Model::calculate_tot_M</ref>()</highlight></codeline>
+<codeline lineno="292"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tot_M<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tot_M<sp/>+=<sp/>pat-&gt;calculate_tot_M();</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tot_M;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_model_1a0d762e0b53f2f1443b59d1425366cfc4" kindref="member">Model::calculate_tot_V</ref>()</highlight></codeline>
+<codeline lineno="306"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tot_V<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tot_V<sp/>+=<sp/>pat-&gt;calculate_tot_V();</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tot_V;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_model_1a8be5555da392871558de820795938a04" kindref="member">Model::calculate_tot_F</ref>()</highlight></codeline>
+<codeline lineno="320"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tot_F<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tot_F<sp/>+=<sp/>pat-&gt;calculate_tot_F();</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tot_F;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal">std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;<sp/><ref refid="class_model_1a6d5f4f68f41e76c3e966e312d2f6e9e3" kindref="member">Model::calculate_tot_M_gen</ref>()<sp/></highlight></codeline>
+<codeline lineno="334"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;<sp/>tot_M_gen;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/>tot_M_gen.fill(0);</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;long<sp/>long<sp/>int,<sp/>constants::num_gen&gt;<sp/>m_pat<sp/>=<sp/>pat-&gt;get_M();</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tot_M_gen[i]<sp/>+=<sp/>m_pat[i];</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tot_M_gen;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal">std::vector&lt;Patch*&gt;<sp/><ref refid="class_model_1a17b3a93529de4ef762254f9a1932b67e" kindref="member">Model::get_sites</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="352"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>;</highlight></codeline>
+<codeline lineno="354"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_model_1a6499bfa0eeb48133e352ce72f79aee9d" kindref="member">Model::get_day</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="362"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_model_1a864dafb787704b50f6b3ca2b416533df" kindref="member">day_sim</ref>;</highlight></codeline>
+<codeline lineno="364"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_model_1a04c1c541fc6d4f4c12f854b971197ea5" kindref="member">Model::get_alpha</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alpha0)</highlight></codeline>
+<codeline lineno="372"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alpha<sp/>=<sp/><ref refid="class_model_1a9d3cb8400740de092adeaa6fdea121a8" kindref="member">seasonality</ref>-&gt;<ref refid="class_seasonality_1a86bfbdfc639ab1a08e3643e05b55d6f1" kindref="member">alpha</ref>(<ref refid="class_model_1a864dafb787704b50f6b3ca2b416533df" kindref="member">day_sim</ref>,<sp/><ref refid="class_model_1ad1efe8336546de49c99d0d8c8ec8e6e8" kindref="member">alpha0</ref>);</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>alpha;</highlight></codeline>
+<codeline lineno="375"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a2a3151eb1bb6333c2ba103f0c7c6c475" kindref="member">Model::juv_get_older</ref>()<sp/></highlight></codeline>
+<codeline lineno="382"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pat-&gt;juv_get_older();</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="386"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1ae2fa6af0cf426e1df144e4dcbee4069d" kindref="member">Model::adults_die</ref>()</highlight></codeline>
+<codeline lineno="393"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pat-&gt;adults_die();</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="397"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a76f26441a5112d1f596d5b9317734be4" kindref="member">Model::virgins_mate</ref>()<sp/></highlight></codeline>
+<codeline lineno="404"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pat-&gt;virgins_mate();</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="408"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1a85c48027be32159a36337531249a435a" kindref="member">Model::lay_eggs</ref>()</highlight></codeline>
+<codeline lineno="415"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pat-&gt;lay_eggs(<ref refid="class_model_1a0fb3ac96dac77d8c0f67142ab70ad899" kindref="member">inher_fraction</ref>,<sp/><ref refid="class_model_1a1d8427bbcb5f7e9db04d213111e208ba" kindref="member">dev_duration_probs</ref>);</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="419"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"></highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_1af30fafd15a6451c20c3dcef622aaf6d0" kindref="member">Model::juv_eclose</ref>()</highlight></codeline>
+<codeline lineno="427"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pat<sp/>:<sp/><ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">sites</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pat-&gt;juv_eclose();</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="431"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Model.cpp"/>
   </compounddef>

@@ -11,7 +11,8 @@ Sets up and runs the model.
 
 
 
-Collaboration diagram for Model\+:\nopagebreak
+Collaboration diagram for Model\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -85,8 +86,10 @@ int \mbox{\hyperlink{class_model_a864dafb787704b50f6b3ca2b416533df}{day\+\_\+sim
 \begin{DoxyCompactList}\small\item\em Current day of the simulation. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_model_a73f36f72009040a8bcf8b15a94961b55}{num\+\_\+pat}}
 \begin{DoxyCompactList}\small\item\em Number of population sites (patches) chosen for the simulation. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{class_model_ad456b9a7464879d80abb19f1d14971cf}{side}}
-\begin{DoxyCompactList}\small\item\em Size of the square simulation area (side x side). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_a33ced6d9613c62ef84aadc016a667f22}{side\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em Size of one side of the simulation area (x-\/axis). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_ac6c296586aade2cfd8b0a013583ef337}{side\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em Size of one side of the simulation area (y-\/axis). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_initial_pops_params}{Initial\+Pops\+Params}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_model_a9f55ce896e1332f492570af65cfe76d4}{initial\+\_\+pops}}
 \begin{DoxyCompactList}\small\item\em Initial population values -\/ common for all Patches. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_model_af1ba01eda7176a872d16eff80fa8cde9}{min\+\_\+dev}}
@@ -564,15 +567,25 @@ Number of population sites (patches) chosen for the simulation.
 \doxysubsubsection{\texorpdfstring{seasonality}{seasonality}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_seasonality}{Seasonality}}\texorpdfstring{$\ast$}{*} Model\+::seasonality\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{class_model_ad456b9a7464879d80abb19f1d14971cf}\label{class_model_ad456b9a7464879d80abb19f1d14971cf} 
-\index{Model@{Model}!side@{side}}
-\index{side@{side}!Model@{Model}}
-\doxysubsubsection{\texorpdfstring{side}{side}}
-{\footnotesize\ttfamily double Model\+::side\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{class_model_a33ced6d9613c62ef84aadc016a667f22}\label{class_model_a33ced6d9613c62ef84aadc016a667f22} 
+\index{Model@{Model}!side\_x@{side\_x}}
+\index{side\_x@{side\_x}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{side\_x}{side\_x}}
+{\footnotesize\ttfamily double Model\+::side\+\_\+x\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Size of the square simulation area (side x side). 
+Size of one side of the simulation area (x-\/axis). 
+
+\Hypertarget{class_model_ac6c296586aade2cfd8b0a013583ef337}\label{class_model_ac6c296586aade2cfd8b0a013583ef337} 
+\index{Model@{Model}!side\_y@{side\_y}}
+\index{side\_y@{side\_y}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{side\_y}{side\_y}}
+{\footnotesize\ttfamily double Model\+::side\+\_\+y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Size of one side of the simulation area (y-\/axis). 
 
 \Hypertarget{class_model_a9aadb122b13c0e8be4f2437117264879}\label{class_model_a9aadb122b13c0e8be4f2437117264879} 
 \index{Model@{Model}!sites@{sites}}

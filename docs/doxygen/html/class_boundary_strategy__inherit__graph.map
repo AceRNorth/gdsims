@@ -1,7 +1,7 @@
 <map id="BoundaryStrategy" name="BoundaryStrategy">
-<area shape="rect" id="Node000001" title="Boundary strategy base class." alt="" coords="115,5,259,139"/>
-<area shape="rect" id="Node000002" href="$class_edge_boundary_strategy.html" title="Implements methods for edge boundary conditions." alt="" coords="5,187,171,299"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,153,122,188,118,186,139,150"/>
-<area shape="rect" id="Node000003" href="$class_toroidal_boundary_strategy.html" title="Implements the methods for toroidal boundary conditions." alt="" coords="195,187,375,299"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,150,256,186,251,188,230,153"/>
+<area shape="rect" id="Node000001" title="Boundary strategy base class." alt="" coords="115,5,259,160"/>
+<area shape="rect" id="Node000002" href="$class_edge_boundary_strategy.html" title="Implements methods for edge boundary conditions." alt="" coords="5,208,171,320"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,174,120,210,116,207,135,172"/>
+<area shape="rect" id="Node000003" href="$class_toroidal_boundary_strategy.html" title="Implements the methods for toroidal boundary conditions." alt="" coords="195,208,375,320"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="238,172,258,207,253,210,233,174"/>
 </map>

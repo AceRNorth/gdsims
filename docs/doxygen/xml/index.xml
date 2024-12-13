@@ -24,11 +24,11 @@
   </compound>
   <compound refid="struct_area_params" kind="struct"><name>AreaParams</name>
     <member refid="struct_area_params_1ae2dcd6b60485cc3a2f54b70355987385" kind="variable"><name>num_pat</name></member>
-    <member refid="struct_area_params_1a25bc9f9baa5f3b4f9352101dfec36a99" kind="variable"><name>side</name></member>
   </compound>
   <compound refid="class_boundary_strategy" kind="class"><name>BoundaryStrategy</name>
-    <member refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" kind="variable"><name>side</name></member>
-    <member refid="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" kind="function"><name>BoundaryStrategy</name></member>
+    <member refid="class_boundary_strategy_1a166681cdb347e3f3ed67d3a3a2dbbf7f" kind="variable"><name>side_x</name></member>
+    <member refid="class_boundary_strategy_1aac6a1baa6fc5791d495058e77dd5eca3" kind="variable"><name>side_y</name></member>
+    <member refid="class_boundary_strategy_1ae9ab097162f1f79483ebd3bc70616a16" kind="function"><name>BoundaryStrategy</name></member>
     <member refid="class_boundary_strategy_1a9f8754869c6cbe6af73352e61b581c48" kind="function"><name>~BoundaryStrategy</name></member>
     <member refid="class_boundary_strategy_1ab845b40ed83aeb78018c23f45565cd0e" kind="function"><name>distance</name></member>
     <member refid="class_boundary_strategy_1a37b4146de796d583d01fc15ad3381ea8" kind="function"><name>relative_pos</name></member>
@@ -39,7 +39,7 @@
     <member refid="class_dispersal_1ae829e3cc99c732c2e4e15995a6aabc75" kind="variable"><name>connec_indices</name></member>
     <member refid="class_dispersal_1a5837fcddaf8f9fa9cff545828be47d5a" kind="variable"><name>connec_weights</name></member>
     <member refid="class_dispersal_1ab408b6c47b542c65c99e2c141962e81e" kind="variable"><name>boundary_strategy</name></member>
-    <member refid="class_dispersal_1a4eb55d34c12749b33bd68d4c8bfee61a" kind="function"><name>Dispersal</name></member>
+    <member refid="class_dispersal_1ae1e9989ead71ea1d1a3921e6f2721d52" kind="function"><name>Dispersal</name></member>
     <member refid="class_dispersal_1aed1dabe97b773b3616811b648b170350" kind="function"><name>~Dispersal</name></member>
     <member refid="class_dispersal_1aef84d06c465ccb461d1cfb39e82de838" kind="function"><name>set_connecs</name></member>
     <member refid="class_dispersal_1a90638547dc5983463ee88d89a9167b5a" kind="function"><name>adults_disperse</name></member>
@@ -51,13 +51,13 @@
     <member refid="struct_dispersal_params_1a9f7d0b061d1024b76f726c795a4df4cd" kind="variable"><name>max_disp</name></member>
   </compound>
   <compound refid="class_distance_kernel_dispersal" kind="class"><name>DistanceKernelDispersal</name>
-    <member refid="class_distance_kernel_dispersal_1a451ffadeea98f45c0db9515fc12e050c" kind="function"><name>DistanceKernelDispersal</name></member>
+    <member refid="class_distance_kernel_dispersal_1a853889a5a8f874005a53d5582f9d1a3e" kind="function"><name>DistanceKernelDispersal</name></member>
     <member refid="class_distance_kernel_dispersal_1a980ed0ba571a2adf1e856f408d914078" kind="function"><name>set_connecs</name></member>
     <member refid="class_distance_kernel_dispersal_1a8f42419dd4e180ed62680ffab734c677" kind="function"><name>adults_disperse</name></member>
     <member refid="class_distance_kernel_dispersal_1afc863f141fc20f64d770f3b54e8fd8f9" kind="function"><name>compute_connecs</name></member>
   </compound>
   <compound refid="class_edge_boundary_strategy" kind="class"><name>EdgeBoundaryStrategy</name>
-    <member refid="class_edge_boundary_strategy_1a1746c13f06d1b1514c32a41ef6804389" kind="function"><name>EdgeBoundaryStrategy</name></member>
+    <member refid="class_edge_boundary_strategy_1a25ce12df04a57aeedee6a7dbed8ff651" kind="function"><name>EdgeBoundaryStrategy</name></member>
     <member refid="class_edge_boundary_strategy_1a58bed301f6c5f63a491bad0ebe982752" kind="function"><name>distance</name></member>
     <member refid="class_edge_boundary_strategy_1afa01b99a109ff593117736e8722da894" kind="function"><name>relative_pos</name></member>
   </compound>
@@ -86,7 +86,6 @@
     <member refid="struct_input_params_1ab541958fd9e07697d71f0ea16e618de2" kind="variable"><name>num_runs</name></member>
     <member refid="struct_input_params_1a2ff1e7d5dd5c45bf804f0701072200f4" kind="variable"><name>max_t</name></member>
     <member refid="struct_input_params_1a62f9db260cddf268056a39c133e971f7" kind="variable"><name>num_pat</name></member>
-    <member refid="struct_input_params_1a1c3cdff052b3a5b67b56b6d9f24fd0c1" kind="variable"><name>side</name></member>
     <member refid="struct_input_params_1a746b1ef46c9498a5dd09b825ea4b7a24" kind="variable"><name>mu_j</name></member>
     <member refid="struct_input_params_1ad5675a09a39929aa98cd569cb4c4403f" kind="variable"><name>mu_a</name></member>
     <member refid="struct_input_params_1a4fb2cae8d6b3a9585e386b2bfeb03299" kind="variable"><name>beta</name></member>
@@ -150,7 +149,8 @@
     <member refid="class_model_1a9d3cb8400740de092adeaa6fdea121a8" kind="variable"><name>seasonality</name></member>
     <member refid="class_model_1a864dafb787704b50f6b3ca2b416533df" kind="variable"><name>day_sim</name></member>
     <member refid="class_model_1a73f36f72009040a8bcf8b15a94961b55" kind="variable"><name>num_pat</name></member>
-    <member refid="class_model_1ad456b9a7464879d80abb19f1d14971cf" kind="variable"><name>side</name></member>
+    <member refid="class_model_1a33ced6d9613c62ef84aadc016a667f22" kind="variable"><name>side_x</name></member>
+    <member refid="class_model_1ac6c296586aade2cfd8b0a013583ef337" kind="variable"><name>side_y</name></member>
     <member refid="class_model_1a9f55ce896e1332f492570af65cfe76d4" kind="variable"><name>initial_pops</name></member>
     <member refid="class_model_1af1ba01eda7176a872d16eff80fa8cde9" kind="variable"><name>min_dev</name></member>
     <member refid="class_model_1a1d8427bbcb5f7e9db04d213111e208ba" kind="variable"><name>dev_duration_probs</name></member>
@@ -199,7 +199,7 @@
     <member refid="class_patch_1a9e6066355010ba73abb33d8d41714677" kind="variable"><name>F</name></member>
     <member refid="class_patch_1a9807128f092d63158e4d75279b508557" kind="variable"><name>comp</name></member>
     <member refid="class_patch_1a31046a60938f68ee9db3d779e2ba9dbe" kind="variable"><name>mate_rate</name></member>
-    <member refid="class_patch_1a8f0ac2f89a3d9065ea6df83662cf1410" kind="function"><name>Patch</name></member>
+    <member refid="class_patch_1a5016d6bf9c9c8f39a0d6b0f50770dd68" kind="function"><name>Patch</name></member>
     <member refid="class_patch_1a891de9d894bd3c2e3d800c58c82d7485" kind="function"><name>Patch</name></member>
     <member refid="class_patch_1ada58f98a20b459b05e7d4b986de3aeee" kind="function"><name>populate</name></member>
     <member refid="class_patch_1a384ca47849b58d7f215d5a7aaa8049bb" kind="function"><name>get_coords</name></member>
@@ -234,14 +234,14 @@
   </compound>
   <compound refid="class_radial_dispersal" kind="class"><name>RadialDispersal</name>
     <member refid="class_radial_dispersal_1a58a082ed4dfcec4a9f66fb6753a70522" kind="variable"><name>connec_weights_sum</name></member>
-    <member refid="class_radial_dispersal_1ac63e6e6d97e7c720b6e6ef349e07c711" kind="function"><name>RadialDispersal</name></member>
+    <member refid="class_radial_dispersal_1ac4acd4593fc38e7de82fa73652d2619f" kind="function"><name>RadialDispersal</name></member>
     <member refid="class_radial_dispersal_1a363d41e54203e0cd6cadb0667b1f6548" kind="function"><name>set_connecs</name></member>
     <member refid="class_radial_dispersal_1aa3bca3cc8b2d80af4bd11d91cacf09bb" kind="function"><name>adults_disperse</name></member>
     <member refid="class_radial_dispersal_1ad09b4df09539d8b421c8d7ed3199d0c4" kind="function"><name>compute_connecs</name></member>
     <member refid="class_radial_dispersal_1ae456b5d871312e16812fb6c4024288f6" kind="function"><name>compute_interval_union</name></member>
     <member refid="class_radial_dispersal_1a55a26db2720e9bf5811aa51cf3a8d873" kind="function"><name>wrap_around</name></member>
     <member refid="class_radial_dispersal_1a4df7ea1ccbcc88991b3e63a46f0e0bb1" kind="function"><name>get_sorted_positions</name></member>
-    <member refid="class_radial_dispersal_1a28a558e2dcb75b8db11fd424aa66243e" kind="function"><name>compute_distances</name></member>
+    <member refid="class_radial_dispersal_1ae499f129e03551e4f421de44de334fe0" kind="function"><name>compute_distances_site</name></member>
   </compound>
   <compound refid="class_random_g_d_release" kind="class"><name>RandomGDRelease</name>
     <member refid="class_random_g_d_release_1aa45f254b5d9bfa9239e5ec3833f33cf5" kind="variable"><name>num_driver_sites</name></member>
@@ -311,11 +311,11 @@
     <member refid="class_simulation_1a5bf54d592f89fb121f5f8225d2761e30" kind="variable"><name>inher_fraction</name></member>
     <member refid="class_simulation_1a78403ca84dfef50ffa06c053648347a6" kind="function"><name>Simulation</name></member>
     <member refid="class_simulation_1a80fad3f57dfaf195a36f7bc49bc88279" kind="function"><name>~Simulation</name></member>
-    <member refid="class_simulation_1ab365e7a0000cae028998efae63b7d0c1" kind="function"><name>set_coords</name></member>
+    <member refid="class_simulation_1a96c1d2c754a5e90464516a20208e58fc" kind="function"><name>set_coords</name></member>
     <member refid="class_simulation_1ac6575f63c78f7fffff4817665f5a0f05" kind="function"><name>set_boundary_type</name></member>
     <member refid="class_simulation_1a451b81744f93c2470a28d75bece48783" kind="function"><name>set_dispersal_type</name></member>
-    <member refid="class_simulation_1abc5c5d0891de7943820db3e6682cd125" kind="function"><name>set_rainfall</name></member>
-    <member refid="class_simulation_1a7d774bb0496b0ea95c2c88afc0d24731" kind="function"><name>set_release_times</name></member>
+    <member refid="class_simulation_1a23c92301547fd16189ab88664c3ad4c9" kind="function"><name>set_rainfall</name></member>
+    <member refid="class_simulation_1a16c2953b5d8555b9edb6c7ce8280ecdf" kind="function"><name>set_release_times</name></member>
     <member refid="class_simulation_1ac5440a772e9d7788c588a795a7821fb6" kind="function"><name>set_inheritance</name></member>
     <member refid="class_simulation_1a46325953f7df60733d519b8b3cd1de61" kind="function"><name>run_reps</name></member>
   </compound>
@@ -329,7 +329,7 @@
     <member refid="struct_sine_rainfall_params_1a08519d3070e7acb0e281d4513c4fc78c" kind="variable"><name>amp</name></member>
   </compound>
   <compound refid="class_toroidal_boundary_strategy" kind="class"><name>ToroidalBoundaryStrategy</name>
-    <member refid="class_toroidal_boundary_strategy_1a5ea5b1bb1027b4722d19ece1d1209509" kind="function"><name>ToroidalBoundaryStrategy</name></member>
+    <member refid="class_toroidal_boundary_strategy_1a0b1917bf132a1688a471a38670ab1a44" kind="function"><name>ToroidalBoundaryStrategy</name></member>
     <member refid="class_toroidal_boundary_strategy_1a262f8bca65f10efa4e88c1aa67ac41ee" kind="function"><name>distance</name></member>
     <member refid="class_toroidal_boundary_strategy_1a47769682a09b91733ea8295517afe245" kind="function"><name>relative_pos</name></member>
   </compound>

@@ -11,7 +11,8 @@ Boundary strategy base class.
 
 
 
-Inheritance diagram for Boundary\+Strategy\+:\nopagebreak
+Inheritance diagram for Boundary\+Strategy\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Boundary\+Strategy\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Boundary\+Strategy\+:\nopagebreak
+Collaboration diagram for Boundary\+Strategy\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,7 +32,7 @@ Collaboration diagram for Boundary\+Strategy\+:\nopagebreak
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_boundary_strategy_a8fbbc051751dbb883c0f00673d9027c4}{Boundary\+Strategy}} (double \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}})
+\mbox{\hyperlink{class_boundary_strategy_ae9ab097162f1f79483ebd3bc70616a16}{Boundary\+Strategy}} (double \mbox{\hyperlink{class_boundary_strategy_a166681cdb347e3f3ed67d3a3a2dbbf7f}{side\+\_\+x}}, double \mbox{\hyperlink{class_boundary_strategy_aac6a1baa6fc5791d495058e77dd5eca3}{side\+\_\+y}})
 \begin{DoxyCompactList}\small\item\em \doxylink{class_boundary_strategy}{Boundary\+Strategy} constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_boundary_strategy_a9f8754869c6cbe6af73352e61b581c48}{\texorpdfstring{$\sim$}{\string~}\+Boundary\+Strategy}} ()
 \item 
@@ -41,8 +43,10 @@ virtual \mbox{\hyperlink{struct_point}{Point}} \mbox{\hyperlink{class_boundary_s
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-double \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}}
-\begin{DoxyCompactList}\small\item\em Size of one side of the simulation square. \end{DoxyCompactList}\end{DoxyCompactItemize}
+double \mbox{\hyperlink{class_boundary_strategy_a166681cdb347e3f3ed67d3a3a2dbbf7f}{side\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em Size of one side of the simulation area (x-\/axis). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_boundary_strategy_aac6a1baa6fc5791d495058e77dd5eca3}{side\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em Size of one side of the simulation area (y-\/axis). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -50,17 +54,14 @@ Boundary strategy base class.
 
 Defines the interface for boundary-\/type classes.
 
-\doxylink{class_boundary_strategy}{Boundary\+Strategy} classes implement methods specific to the boundary type of the model. The simulation area is assumed to have boundary conditions at x = {\ttfamily side}, y = {\ttfamily side}, and have ranges \mbox{[}0, {\ttfamily side}\mbox{]} in all directions. \begin{DoxySeeAlso}{See also}
-\doxylink{struct_area_params_a25bc9f9baa5f3b4f9352101dfec36a99}{Area\+Params\+::side} 
-\end{DoxySeeAlso}
-
+\doxylink{class_boundary_strategy}{Boundary\+Strategy} classes implement methods specific to the boundary type of the model. The simulation area is assumed to have boundary conditions at x = {\ttfamily side\+\_\+x}, y = {\ttfamily side\+\_\+y}, which are calculated from provided input coordinates or assumed to be 1 otherwise. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_boundary_strategy_a8fbbc051751dbb883c0f00673d9027c4}\label{class_boundary_strategy_a8fbbc051751dbb883c0f00673d9027c4} 
+\Hypertarget{class_boundary_strategy_ae9ab097162f1f79483ebd3bc70616a16}\label{class_boundary_strategy_ae9ab097162f1f79483ebd3bc70616a16} 
 \index{BoundaryStrategy@{BoundaryStrategy}!BoundaryStrategy@{BoundaryStrategy}}
 \index{BoundaryStrategy@{BoundaryStrategy}!BoundaryStrategy@{BoundaryStrategy}}
 \doxysubsubsection{\texorpdfstring{BoundaryStrategy()}{BoundaryStrategy()}}
-{\footnotesize\ttfamily Boundary\+Strategy\+::\+Boundary\+Strategy (\begin{DoxyParamCaption}\item[{double}]{side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Boundary\+Strategy\+::\+Boundary\+Strategy (\begin{DoxyParamCaption}\item[{double}]{side\+\_\+x,  }\item[{double}]{side\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -68,7 +69,9 @@ Defines the interface for boundary-\/type classes.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em side} & size of one side of the simulation square \\
+\mbox{\texttt{ in}}  & {\em side\+\_\+x} & size of one side of the simulation area (x-\/axis) \\
+\hline
+\mbox{\texttt{ in}}  & {\em side\+\_\+y} & size of one side of the simulation area (y-\/axis) \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_boundary_strategy_a9f8754869c6cbe6af73352e61b581c48}\label{class_boundary_strategy_a9f8754869c6cbe6af73352e61b581c48} 
@@ -103,15 +106,25 @@ Implemented in \mbox{\hyperlink{class_toroidal_boundary_strategy_a47769682a09b91
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}\label{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1} 
-\index{BoundaryStrategy@{BoundaryStrategy}!side@{side}}
-\index{side@{side}!BoundaryStrategy@{BoundaryStrategy}}
-\doxysubsubsection{\texorpdfstring{side}{side}}
-{\footnotesize\ttfamily double Boundary\+Strategy\+::side\hspace{0.3cm}{\ttfamily [protected]}}
+\Hypertarget{class_boundary_strategy_a166681cdb347e3f3ed67d3a3a2dbbf7f}\label{class_boundary_strategy_a166681cdb347e3f3ed67d3a3a2dbbf7f} 
+\index{BoundaryStrategy@{BoundaryStrategy}!side\_x@{side\_x}}
+\index{side\_x@{side\_x}!BoundaryStrategy@{BoundaryStrategy}}
+\doxysubsubsection{\texorpdfstring{side\_x}{side\_x}}
+{\footnotesize\ttfamily double Boundary\+Strategy\+::side\+\_\+x\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Size of one side of the simulation square. 
+Size of one side of the simulation area (x-\/axis). 
+
+\Hypertarget{class_boundary_strategy_aac6a1baa6fc5791d495058e77dd5eca3}\label{class_boundary_strategy_aac6a1baa6fc5791d495058e77dd5eca3} 
+\index{BoundaryStrategy@{BoundaryStrategy}!side\_y@{side\_y}}
+\index{side\_y@{side\_y}!BoundaryStrategy@{BoundaryStrategy}}
+\doxysubsubsection{\texorpdfstring{side\_y}{side\_y}}
+{\footnotesize\ttfamily double Boundary\+Strategy\+::side\+\_\+y\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Size of one side of the simulation area (y-\/axis). 
 
 
 

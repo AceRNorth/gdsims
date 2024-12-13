@@ -77,9 +77,6 @@ ax.set_title("Population sizes - set 1 run 1")
 annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
 ax.set_xlabel("x (km)")
 ax.set_ylabel("y (km)")
-side = 1 # modify manually depending on selected side parameter
-ax.set_xlim(0, side)
-ax.set_ylim(0, side)     
 
 #%% Spatial animation of total population size
 
@@ -118,9 +115,6 @@ cbar = fig.colorbar(scat, ax=ax, label='Total population size')
 annotation = fig.text(x=0.1, y=0.92, s='t = {}'.format(sim_day))
 ax.set_xlabel("x (km)")
 ax.set_ylabel("y (km)") 
-side = 1 # modify manually depending on selected side parameter
-ax.set_xlim(0, side)
-ax.set_ylim(0, side)
 
 def update_pop_size(t):
     sim_day = int(local_data[t*len(x), 0])
@@ -193,9 +187,6 @@ cbar.ax.set_yticklabels(['None', '0.0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6'
 annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
 ax.set_xlabel("x (km)")
 ax.set_ylabel("y (km)")
-side = 1 # modify manually depending on selected side parameter
-ax.set_xlim(0, side)
-ax.set_ylim(0, side)
 #plt.grid()
 
 #%% Spatial animation of gene drive allele frequency
@@ -250,9 +241,6 @@ labels[1].set_verticalalignment('bottom')
 annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
 ax.set_xlabel("x (km)")
 ax.set_ylabel("y (km)")
-side = 1 # modify manually depending on selected side parameter
-ax.set_xlim(0, side)
-ax.set_ylim(0, side)
 #plt.grid()
 
 def update_drive_freq(t):

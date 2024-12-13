@@ -24,7 +24,6 @@ Program Listing for File Params.h
    
    struct AreaParams {
        int num_pat; 
-       double side; 
    };
    
    struct LifeParams {

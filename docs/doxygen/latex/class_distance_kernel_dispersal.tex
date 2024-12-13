@@ -20,17 +20,18 @@ Inheritance diagram for Distance\+Kernel\+Dispersal\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Distance\+Kernel\+Dispersal\+:\nopagebreak
+Collaboration diagram for Distance\+Kernel\+Dispersal\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=234pt]{class_distance_kernel_dispersal__coll__graph}
+\includegraphics[height=550pt]{class_distance_kernel_dispersal__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_distance_kernel_dispersal_a451ffadeea98f45c0db9515fc12e050c}{Distance\+Kernel\+Dispersal}} (\mbox{\hyperlink{struct_dispersal_params}{Dispersal\+Params}} \texorpdfstring{$\ast$}{*}params, \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} boundary, double side)
+\mbox{\hyperlink{class_distance_kernel_dispersal_a853889a5a8f874005a53d5582f9d1a3e}{Distance\+Kernel\+Dispersal}} (\mbox{\hyperlink{struct_dispersal_params}{Dispersal\+Params}} \texorpdfstring{$\ast$}{*}params, \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} boundary, double side\+\_\+x, double side\+\_\+y)
 \begin{DoxyCompactList}\small\item\em \doxylink{class_distance_kernel_dispersal}{Distance\+Kernel\+Dispersal} constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_distance_kernel_dispersal_a980ed0ba571a2adf1e856f408d914078}{set\+\_\+connecs}} (std\+::vector$<$ \mbox{\hyperlink{class_patch}{Patch}} \texorpdfstring{$\ast$}{*} $>$ \&sites) override
 \begin{DoxyCompactList}\small\item\em Sets the inter-\/patch connectivities for dispersal. \end{DoxyCompactList}\item 
@@ -39,7 +40,7 @@ void \mbox{\hyperlink{class_distance_kernel_dispersal_a8f42419dd4e180ed62680ffab
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_dispersal}{Dispersal}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_dispersal_a4eb55d34c12749b33bd68d4c8bfee61a}{Dispersal}} (\mbox{\hyperlink{struct_dispersal_params}{Dispersal\+Params}} \texorpdfstring{$\ast$}{*}params, \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} boundary, double side)
+\mbox{\hyperlink{class_dispersal_ae1e9989ead71ea1d1a3921e6f2721d52}{Dispersal}} (\mbox{\hyperlink{struct_dispersal_params}{Dispersal\+Params}} \texorpdfstring{$\ast$}{*}params, \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} boundary, double side\+\_\+x, double side\+\_\+y)
 \begin{DoxyCompactList}\small\item\em \doxylink{class_dispersal}{Dispersal} constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dispersal_aed1dabe97b773b3616811b648b170350}{\texorpdfstring{$\sim$}{\string~}\+Dispersal}} ()
 \begin{DoxyCompactList}\small\item\em \doxylink{class_dispersal}{Dispersal} destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -77,11 +78,11 @@ Implements dispersive behaviour in the model for simple dispersal, where connect
 All dispersing individuals are assumed to survive dispersal, and are guaranteed a connected patch to disperse to. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_distance_kernel_dispersal_a451ffadeea98f45c0db9515fc12e050c}\label{class_distance_kernel_dispersal_a451ffadeea98f45c0db9515fc12e050c} 
+\Hypertarget{class_distance_kernel_dispersal_a853889a5a8f874005a53d5582f9d1a3e}\label{class_distance_kernel_dispersal_a853889a5a8f874005a53d5582f9d1a3e} 
 \index{DistanceKernelDispersal@{DistanceKernelDispersal}!DistanceKernelDispersal@{DistanceKernelDispersal}}
 \index{DistanceKernelDispersal@{DistanceKernelDispersal}!DistanceKernelDispersal@{DistanceKernelDispersal}}
 \doxysubsubsection{\texorpdfstring{DistanceKernelDispersal()}{DistanceKernelDispersal()}}
-{\footnotesize\ttfamily Distance\+Kernel\+Dispersal\+::\+Distance\+Kernel\+Dispersal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_dispersal_params}{Dispersal\+Params}} \texorpdfstring{$\ast$}{*}}]{params,  }\item[{\mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}}}]{boundary,  }\item[{double}]{side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Distance\+Kernel\+Dispersal\+::\+Distance\+Kernel\+Dispersal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_dispersal_params}{Dispersal\+Params}} \texorpdfstring{$\ast$}{*}}]{params,  }\item[{\mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}}}]{boundary,  }\item[{double}]{side\+\_\+x,  }\item[{double}]{side\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -93,7 +94,9 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
 \hline
 \mbox{\texttt{ in}}  & {\em boundary} & boundary type to use for calculating dispersal distances \\
 \hline
-\mbox{\texttt{ in}}  & {\em side} & size of one side of the simulation square \\
+\mbox{\texttt{ in}}  & {\em side\+\_\+x} & size of one side of the simulation area (x-\/axis) \\
+\hline
+\mbox{\texttt{ in}}  & {\em side\+\_\+y} & size of one side of the simulation area (y-\/axis) \\
 \hline
 \end{DoxyParams}
 

@@ -1,15 +1,15 @@
 <map id="Model" name="Model">
-<area shape="rect" id="Node000001" title="Sets up and runs the model." alt="" coords="291,549,459,1237"/>
-<area shape="rect" id="Node000002" href="$class_dispersal.html" title="Dispersal base class." alt="" coords="11,224,144,464"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,463,285,722,280,724,140,465"/>
-<area shape="rect" id="Node000003" href="$class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="5,5,149,139"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,139,80,207,75,207,75,139"/>
-<area shape="rect" id="Node000004" href="$class_aestivation.html" title="Implements aestivative behaviour for the model." alt="" coords="169,203,279,485"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="265,484,289,570,284,572,260,486"/>
-<area shape="rect" id="Node000005" href="$class_g_d_release.html" title="Gene drive release base class." alt="" coords="304,245,445,443"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="377,442,377,532,372,532,372,442"/>
-<area shape="rect" id="Node000006" href="$class_seasonality.html" title="Seasonality base class." alt="" coords="470,288,578,400"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="512,400,466,569,461,567,507,399"/>
-<area shape="rect" id="Node000007" href="$struct_initial_pops_params.html" title="Initial population values for the model." alt="" coords="603,277,720,411"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="631,412,593,487,469,722,464,719,588,484,626,409"/>
+<area shape="rect" id="Node000001" title="Sets up and runs the model." alt="" coords="291,571,459,1280"/>
+<area shape="rect" id="Node000002" href="$class_dispersal.html" title="Dispersal base class." alt="" coords="11,245,144,485"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,484,285,751,281,753,138,486"/>
+<area shape="rect" id="Node000003" href="$class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="5,5,149,160"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,160,80,228,75,228,75,160"/>
+<area shape="rect" id="Node000004" href="$class_aestivation.html" title="Implements aestivative behaviour for the model." alt="" coords="169,224,279,507"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="264,506,289,596,284,598,259,507"/>
+<area shape="rect" id="Node000005" href="$class_g_d_release.html" title="Gene drive release base class." alt="" coords="304,267,445,464"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="377,464,377,554,372,554,372,464"/>
+<area shape="rect" id="Node000006" href="$class_seasonality.html" title="Seasonality base class." alt="" coords="470,309,578,421"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="512,422,466,595,460,594,507,420"/>
+<area shape="rect" id="Node000007" href="$struct_initial_pops_params.html" title="Initial population values for the model." alt="" coords="603,299,720,432"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="631,433,593,508,469,749,464,746,588,505,626,431"/>
 </map>

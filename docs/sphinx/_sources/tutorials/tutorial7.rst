@@ -70,7 +70,6 @@ This time we will use the parameters below for the custom run, which include a n
         2
         1000
         50
-        1
         0.05
         0.125
         100

@@ -79,7 +79,6 @@ To create a custom parameter set, we can use the :class:`InputParams` structure,
             params.num_runs = 1;
             params.max_t = 1400;
             params.num_pat = 50;
-            params.side = 1.0;
             params.mu_j = 0.05;
             params.mu_a = 0.125;
             params.beta = 100;

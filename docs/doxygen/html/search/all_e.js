@@ -2,7 +2,7 @@ var searchData=
 [
   ['params_0',['params',['../class_patch.html#a79f803e7bb4536f9b0127b0dfe76c1ab',1,'Patch']]],
   ['params_2eh_1',['Params.h',['../_params_8h.html',1,'']]],
-  ['patch_2',['Patch',['../class_patch.html',1,'Patch'],['../class_patch.html#a8f0ac2f89a3d9065ea6df83662cf1410',1,'Patch::Patch(Model *mod, LifeParams *par, double a0, double side)'],['../class_patch.html#a891de9d894bd3c2e3d800c58c82d7485',1,'Patch::Patch(Model *mod, LifeParams *par, double a0, Point point)']]],
+  ['patch_2',['Patch',['../class_patch.html',1,'Patch'],['../class_patch.html#a5016d6bf9c9c8f39a0d6b0f50770dd68',1,'Patch::Patch(Model *mod, LifeParams *par, double a0, double side_x, double side_y)'],['../class_patch.html#a891de9d894bd3c2e3d800c58c82d7485',1,'Patch::Patch(Model *mod, LifeParams *par, double a0, Point point)']]],
   ['patch_2ecpp_3',['Patch.cpp',['../_patch_8cpp.html',1,'']]],
   ['patch_2eh_4',['Patch.h',['../_patch_8h.html',1,'']]],
   ['pi_5',['pi',['../namespaceconstants.html#a204a0248d18871c4d4d1b3e9a69ff495',1,'constants']]],

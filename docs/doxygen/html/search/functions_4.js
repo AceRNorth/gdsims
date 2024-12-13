@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['edgeboundarystrategy_0',['EdgeBoundaryStrategy',['../class_edge_boundary_strategy.html#a1746c13f06d1b1514c32a41ef6804389',1,'EdgeBoundaryStrategy']]]
+  ['edgeboundarystrategy_0',['EdgeBoundaryStrategy',['../class_edge_boundary_strategy.html#a25ce12df04a57aeedee6a7dbed8ff651',1,'EdgeBoundaryStrategy']]]
 ];

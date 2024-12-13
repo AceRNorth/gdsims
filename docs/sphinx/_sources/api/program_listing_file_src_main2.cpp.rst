@@ -12,6 +12,7 @@ Program Listing for File main2.cpp
 
    #include <iostream>
    #include <string>
+   #include <filesystem>
    #include "Simulation.h"
    #include "inputval.h"
    #include "constants.h"
@@ -37,7 +38,6 @@ Program Listing for File main2.cpp
    
        // area parameters
        int num_pat;  
-       double side;
        
        // model parameters
        double mu_j;
@@ -87,7 +87,6 @@ Program Listing for File main2.cpp
        std::cin >> num_runs;
        std::cin >> max_t;
        std::cin >> num_pat;
-       std::cin >> side;
        std::cin >> mu_j;
        std::cin >> mu_a;
        std::cin >> beta;
@@ -129,7 +128,6 @@ Program Listing for File main2.cpp
        params.num_runs = num_runs;
        params.max_t = max_t;
        params.num_pat = num_pat;
-       params.side = side;
        params.mu_j = mu_j;
        params.mu_a = mu_a;
        params.beta = beta;
@@ -188,13 +186,16 @@ Program Listing for File main2.cpp
        simulation.set_dispersal_type(disp);
    
        if (coords_filename != "none") {
-           simulation.set_coords(coords_filename);
+           auto coords_filepath = std::filesystem::path(coords_filename);
+           simulation.set_coords(coords_filepath);
        }
        if (rainfall_filename != "none") {
-           simulation.set_rainfall(rainfall_filename);
+           auto rainfall_filepath = std::filesystem::path(rainfall_filename);
+           simulation.set_rainfall(rainfall_filepath);
        }
        if (rel_times_filename != "none") {
-           simulation.set_release_times(rel_times_filename);
+           auto rel_times_filepath = std::filesystem::path(rel_times_filename);
+           simulation.set_release_times(rel_times_filepath);
        }
        simulation.run_reps();
    

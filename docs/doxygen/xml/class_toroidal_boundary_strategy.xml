@@ -5,15 +5,19 @@
     <basecompoundref refid="class_boundary_strategy" prot="public" virt="non-virtual">BoundaryStrategy</basecompoundref>
     <includes refid="_boundary_strategy_8h" local="no">BoundaryStrategy.h</includes>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_toroidal_boundary_strategy_1a5ea5b1bb1027b4722d19ece1d1209509" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_toroidal_boundary_strategy_1a0b1917bf132a1688a471a38670ab1a44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>ToroidalBoundaryStrategy::ToroidalBoundaryStrategy</definition>
-        <argsstring>(double side)</argsstring>
+        <argsstring>(double side_x, double side_y)</argsstring>
         <name>ToroidalBoundaryStrategy</name>
         <qualifiedname>ToroidalBoundaryStrategy::ToroidalBoundaryStrategy</qualifiedname>
         <param>
           <type>double</type>
-          <declname>side</declname>
+          <declname>side_x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>side_y</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -116,9 +120,7 @@
 <para>Implements the methods for toroidal boundary conditions. </para>
     </briefdescription>
     <detaileddescription>
-<para>The simulation area is assumed to have periodic boundary conditions at x = <computeroutput>side</computeroutput>, y = <computeroutput>side</computeroutput>, and have ranges [0, <computeroutput>side</computeroutput>] in all directions. <simplesect kind="see"><para><ref refid="struct_area_params_1a25bc9f9baa5f3b4f9352101dfec36a99" kindref="member">AreaParams::side</ref> </para>
-</simplesect>
-</para>
+<para>The simulation area is assumed to have periodic boundary conditions at x = <computeroutput>side_x</computeroutput>, y = <computeroutput>side_y</computeroutput>. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -146,11 +148,12 @@
     </collaborationgraph>
     <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="31" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="31" bodyend="36"/>
     <listofallmembers>
-      <member refid="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" prot="public" virt="non-virtual"><scope>ToroidalBoundaryStrategy</scope><name>BoundaryStrategy</name></member>
+      <member refid="class_boundary_strategy_1ae9ab097162f1f79483ebd3bc70616a16" prot="public" virt="non-virtual"><scope>ToroidalBoundaryStrategy</scope><name>BoundaryStrategy</name></member>
       <member refid="class_toroidal_boundary_strategy_1a262f8bca65f10efa4e88c1aa67ac41ee" prot="public" virt="virtual"><scope>ToroidalBoundaryStrategy</scope><name>distance</name></member>
       <member refid="class_toroidal_boundary_strategy_1a47769682a09b91733ea8295517afe245" prot="public" virt="virtual"><scope>ToroidalBoundaryStrategy</scope><name>relative_pos</name></member>
-      <member refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" prot="protected" virt="non-virtual"><scope>ToroidalBoundaryStrategy</scope><name>side</name></member>
-      <member refid="class_toroidal_boundary_strategy_1a5ea5b1bb1027b4722d19ece1d1209509" prot="public" virt="non-virtual"><scope>ToroidalBoundaryStrategy</scope><name>ToroidalBoundaryStrategy</name></member>
+      <member refid="class_boundary_strategy_1a166681cdb347e3f3ed67d3a3a2dbbf7f" prot="protected" virt="non-virtual"><scope>ToroidalBoundaryStrategy</scope><name>side_x</name></member>
+      <member refid="class_boundary_strategy_1aac6a1baa6fc5791d495058e77dd5eca3" prot="protected" virt="non-virtual"><scope>ToroidalBoundaryStrategy</scope><name>side_y</name></member>
+      <member refid="class_toroidal_boundary_strategy_1a0b1917bf132a1688a471a38670ab1a44" prot="public" virt="non-virtual"><scope>ToroidalBoundaryStrategy</scope><name>ToroidalBoundaryStrategy</name></member>
       <member refid="class_boundary_strategy_1a9f8754869c6cbe6af73352e61b581c48" prot="public" virt="non-virtual"><scope>ToroidalBoundaryStrategy</scope><name>~BoundaryStrategy</name></member>
     </listofallmembers>
   </compounddef>

@@ -488,21 +488,17 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N10Simulation10set_coordsERKNSt6stringE">
-<span id="_CPPv3N10Simulation10set_coordsERKNSt6stringE"></span><span id="_CPPv2N10Simulation10set_coordsERKNSt6stringE"></span><span id="Simulation::set_coords__ssCR"></span><span class="target" id="class_simulation_1ab365e7a0000cae028998efae63b7d0c1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_coords</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation10set_coordsERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N10Simulation10set_coordsERKNSt10filesystem4pathE">
+<span id="_CPPv3N10Simulation10set_coordsERKNSt10filesystem4pathE"></span><span id="_CPPv2N10Simulation10set_coordsERKNSt10filesystem4pathE"></span><span id="Simulation::set_coords__std::filesystem::pathCR"></span><span class="target" id="class_simulation_1a96c1d2c754a5e90464516a20208e58fc"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_coords</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">filesystem</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">path</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filepath</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation10set_coordsERKNSt10filesystem4pathE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the sites’ coordinates and the release sites from a file, unless any errors are thrown. </p>
 <p>The file should be structured in three columns, with x and y coordinates and whether the site is a release site (y/n) respectively. Values should be delimited by white space, and site rows should be delimited by new lines. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The coordinates will undergo bound checks if the boundary type has been set to Toroid (the default) - coordinates will need to be in the range [0, side] for both x and y. </p>
-</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Setting specific release sites will change the mode of gene drive release from random to scheduled. The specified release sites will be used for each of the releases (if using multiple release times). Mosquitoes will be released at all release sites for each release time. </p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> coordinates filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
+<dd class="field-odd"><p><strong>filepath</strong> – <strong>[in]</strong> coordinates filepath, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
 </dd>
 </dl>
 </dd></dl>
@@ -540,8 +536,8 @@ document.write(`
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N10Simulation12set_rainfallERKNSt6stringE">
-<span id="_CPPv3N10Simulation12set_rainfallERKNSt6stringE"></span><span id="_CPPv2N10Simulation12set_rainfallERKNSt6stringE"></span><span id="Simulation::set_rainfall__ssCR"></span><span class="target" id="class_simulation_1abc5c5d0891de7943820db3e6682cd125"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_rainfall</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation12set_rainfallERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N10Simulation12set_rainfallERKNSt10filesystem4pathE">
+<span id="_CPPv3N10Simulation12set_rainfallERKNSt10filesystem4pathE"></span><span id="_CPPv2N10Simulation12set_rainfallERKNSt10filesystem4pathE"></span><span id="Simulation::set_rainfall__std::filesystem::pathCR"></span><span class="target" id="class_simulation_1a23c92301547fd16189ab88664c3ad4c9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_rainfall</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">filesystem</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">path</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filepath</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation12set_rainfallERKNSt10filesystem4pathE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the daily rainfall values from a file, unless any errors are thrown. </p>
 <p>These can be daily values for a year cycle (365 days), or daily values for all the simulated days (max_t). The values should be delimited by new lines. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -554,14 +550,14 @@ document.write(`
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> rainfall filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
+<dd class="field-odd"><p><strong>filepath</strong> – <strong>[in]</strong> rainfall filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N10Simulation17set_release_timesERKNSt6stringE">
-<span id="_CPPv3N10Simulation17set_release_timesERKNSt6stringE"></span><span id="_CPPv2N10Simulation17set_release_timesERKNSt6stringE"></span><span id="Simulation::set_release_times__ssCR"></span><span class="target" id="class_simulation_1a7d774bb0496b0ea95c2c88afc0d24731"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_release_times</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation17set_release_timesERKNSt6stringE" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N10Simulation17set_release_timesERKNSt10filesystem4pathE">
+<span id="_CPPv3N10Simulation17set_release_timesERKNSt10filesystem4pathE"></span><span id="_CPPv2N10Simulation17set_release_timesERKNSt10filesystem4pathE"></span><span id="Simulation::set_release_times__std::filesystem::pathCR"></span><span class="target" id="class_simulation_1a16c2953b5d8555b9edb6c7ce8280ecdf"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_release_times</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">filesystem</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">path</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filepath</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N10Simulation17set_release_timesERKNSt10filesystem4pathE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the release times for gene drive release from a file, unless any errors are thrown. </p>
 <p>Release times should be simulation day numbers within the maximum time of simulation. Values should be delimited by new lines. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -574,7 +570,7 @@ document.write(`
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> – <strong>[in]</strong> release times filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
+<dd class="field-odd"><p><strong>filepath</strong> – <strong>[in]</strong> release times filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) </p>
 </dd>
 </dl>
 </dd></dl>

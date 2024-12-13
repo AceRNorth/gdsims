@@ -1,21 +1,21 @@
 <map id="Patch" name="Patch">
-<area shape="rect" id="Node000001" title="Contains the information of a local mosquito population." alt="" coords="469,1301,593,1989"/>
-<area shape="rect" id="Node000002" href="$class_model.html" title="Sets up and runs the model." alt="" coords="291,549,459,1237"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="449,1236,468,1329,463,1330,443,1238"/>
-<area shape="rect" id="Node000003" href="$class_dispersal.html" title="Dispersal base class." alt="" coords="11,224,144,464"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="144,463,285,722,280,724,140,465"/>
-<area shape="rect" id="Node000004" href="$class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="5,5,149,139"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="80,139,80,207,75,207,75,139"/>
-<area shape="rect" id="Node000005" href="$class_aestivation.html" title="Implements aestivative behaviour for the model." alt="" coords="169,203,279,485"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="265,484,289,570,284,572,260,486"/>
-<area shape="rect" id="Node000006" href="$class_g_d_release.html" title="Gene drive release base class." alt="" coords="304,245,445,443"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="377,442,377,532,372,532,372,442"/>
-<area shape="rect" id="Node000007" href="$class_seasonality.html" title="Seasonality base class." alt="" coords="470,288,578,400"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="512,400,466,569,461,567,507,399"/>
-<area shape="rect" id="Node000008" href="$struct_initial_pops_params.html" title="Initial population values for the model." alt="" coords="603,277,720,411"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="635,412,593,487,577,510,556,528,532,537,511,537,492,539,472,551,472,552,468,548,469,547,490,534,510,532,531,531,553,523,573,506,588,484,631,409"/>
-<area shape="rect" id="Node000009" href="$struct_life_params.html" title="Model life&#45;process parameters." alt="" coords="483,805,579,981"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="533,981,533,1284,528,1284,528,981"/>
-<area shape="rect" id="Node000010" href="$struct_point.html" title="Represents a 2D point with Cartesian coordinates." alt="" coords="603,848,645,939"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="622,939,593,1238,589,1278,588,1285,583,1284,584,1277,588,1237,617,938"/>
+<area shape="rect" id="Node000001" title="Contains the information of a local mosquito population." alt="" coords="469,1344,593,2032"/>
+<area shape="rect" id="Node000002" href="$class_model.html" title="Sets up and runs the model." alt="" coords="291,571,459,1280"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="450,1279,468,1367,463,1368,445,1281"/>
+<area shape="rect" id="Node000003" href="$class_dispersal.html" title="Dispersal base class." alt="" coords="11,245,144,485"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="143,484,285,751,281,753,138,486"/>
+<area shape="rect" id="Node000004" href="$class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="5,5,149,160"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="80,160,80,228,75,228,75,160"/>
+<area shape="rect" id="Node000005" href="$class_aestivation.html" title="Implements aestivative behaviour for the model." alt="" coords="169,224,279,507"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="264,506,289,596,284,598,259,507"/>
+<area shape="rect" id="Node000006" href="$class_g_d_release.html" title="Gene drive release base class." alt="" coords="304,267,445,464"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="377,464,377,554,372,554,372,464"/>
+<area shape="rect" id="Node000007" href="$class_seasonality.html" title="Seasonality base class." alt="" coords="470,309,578,421"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="512,422,466,595,460,594,507,420"/>
+<area shape="rect" id="Node000008" href="$struct_initial_pops_params.html" title="Initial population values for the model." alt="" coords="603,299,720,432"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="644,433,630,464,611,496,588,525,560,549,535,558,513,559,493,560,472,573,472,573,468,570,469,569,491,555,513,554,534,553,557,544,584,521,607,493,625,462,639,431"/>
+<area shape="rect" id="Node000009" href="$struct_life_params.html" title="Model life&#45;process parameters." alt="" coords="483,837,579,1013"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="533,1013,533,1327,528,1327,528,1013"/>
+<area shape="rect" id="Node000010" href="$struct_point.html" title="Represents a 2D point with Cartesian coordinates." alt="" coords="603,880,645,971"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="623,970,593,1280,589,1320,588,1327,583,1327,584,1320,588,1280,617,970"/>
 </map>

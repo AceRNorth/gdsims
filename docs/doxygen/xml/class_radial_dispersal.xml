@@ -22,10 +22,10 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_radial_dispersal_1ac63e6e6d97e7c720b6e6ef349e07c711" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_radial_dispersal_1ac4acd4593fc38e7de82fa73652d2619f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>RadialDispersal::RadialDispersal</definition>
-        <argsstring>(DispersalParams *params, BoundaryType boundary, double side)</argsstring>
+        <argsstring>(DispersalParams *params, BoundaryType boundary, double side_x, double side_y)</argsstring>
         <name>RadialDispersal</name>
         <qualifiedname>RadialDispersal::RadialDispersal</qualifiedname>
         <param>
@@ -38,7 +38,11 @@
         </param>
         <param>
           <type>double</type>
-          <declname>side</declname>
+          <declname>side_x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>side_y</declname>
         </param>
         <briefdescription>
 <para><ref refid="class_radial_dispersal" kindref="compound">RadialDispersal</ref> constructor. </para>
@@ -62,10 +66,18 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">side</parametername>
+<parametername direction="in">side_x</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>size of one side of the simulation square </para>
+<para>size of one side of the simulation area (x-axis) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">side_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of one side of the simulation area (y-axis) </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -73,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="68" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="191" bodyend="193"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="68" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="193" bodyend="195"/>
       </memberdef>
       <memberdef kind="function" id="class_radial_dispersal_1a363d41e54203e0cd6cadb0667b1f6548" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -103,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="69" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="200" bodyend="215"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="69" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="202" bodyend="217"/>
       </memberdef>
       <memberdef kind="function" id="class_radial_dispersal_1aa3bca3cc8b2d80af4bd11d91cacf09bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -137,7 +149,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="70" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="224" bodyend="267"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="70" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="226" bodyend="269"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -166,13 +178,13 @@ Only those individuals that disperse out of a patch in a connected direction wil
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as <ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">Model::sites</ref>, where the first item represents all connections to the first patch in <ref refid="class_model_1a9aadb122b13c0e8be4f2437117264879" kindref="member">Model::sites</ref>, etc. </para>
+<simplesect kind="return"><para>The connections between all patches, divided into connection indices and connection weights. These are then organised in the same order as <ref refid="class_model_1a17b3a93529de4ef762254f9a1932b67e" kindref="member">Model::get_sites()</ref>, where the first item represents all connections to the first patch in <ref refid="class_model_1a17b3a93529de4ef762254f9a1932b67e" kindref="member">Model::get_sites()</ref>, etc. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="75" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="276" bodyend="370"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="75" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="278" bodyend="369"/>
       </memberdef>
       <memberdef kind="function" id="class_radial_dispersal_1ae456b5d871312e16812fb6c4024288f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::pair&lt; std::vector&lt; std::pair&lt; double, double &gt; &gt;, double &gt;</type>
@@ -221,7 +233,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="76" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="402" bodyend="436"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="76" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="424" bodyend="458"/>
       </memberdef>
       <memberdef kind="function" id="class_radial_dispersal_1a55a26db2720e9bf5811aa51cf3a8d873" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -264,7 +276,7 @@ Only those individuals that disperse out of a patch in a connected direction wil
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="78" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="378" bodyend="381"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="78" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="400" bodyend="403"/>
       </memberdef>
       <memberdef kind="function" id="class_radial_dispersal_1a4df7ea1ccbcc88991b3e63a46f0e0bb1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; int &gt;</type>
@@ -295,23 +307,35 @@ Only those individuals that disperse out of a patch in a connected direction wil
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="79" column="17" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="444" bodyend="454"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="79" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="466" bodyend="476"/>
       </memberdef>
-      <memberdef kind="function" id="class_radial_dispersal_1a28a558e2dcb75b8db11fd424aa66243e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>std::vector&lt; std::vector&lt; double &gt; &gt;</type>
-        <definition>std::vector&lt; std::vector&lt; double &gt; &gt; RadialDispersal::compute_distances</definition>
-        <argsstring>(const std::vector&lt; Patch * &gt; &amp;sites)</argsstring>
-        <name>compute_distances</name>
-        <qualifiedname>RadialDispersal::compute_distances</qualifiedname>
+      <memberdef kind="function" id="class_radial_dispersal_1ae499f129e03551e4f421de44de334fe0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; std::vector&lt; double &gt;, std::vector&lt; int &gt; &gt;</type>
+        <definition>std::pair&lt; std::vector&lt; double &gt;, std::vector&lt; int &gt; &gt; RadialDispersal::compute_distances_site</definition>
+        <argsstring>(int, std::vector&lt; Patch * &gt; &amp;sites)</argsstring>
+        <name>compute_distances_site</name>
+        <qualifiedname>RadialDispersal::compute_distances_site</qualifiedname>
         <param>
-          <type>const std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
+          <type>int</type>
+          <defname>i</defname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="class_patch" kindref="compound">Patch</ref> * &gt; &amp;</type>
           <declname>sites</declname>
         </param>
         <briefdescription>
-<para>Computes the inter-point distances for a list of points. </para>
+<para>Determines the points within a distance &apos;max_dis&apos; of focal patch object from the set of all patch objects. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the index of the focal point </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
 <parameternamelist>
 <parametername direction="in">sites</parametername>
 </parameternamelist>
@@ -320,13 +344,13 @@ Only those individuals that disperse out of a patch in a connected direction wil
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>The inter-point distances as a 2D vector, both axes in the order of the sites vector. </para>
+<simplesect kind="return"><para>A list of the distances of these points, and a list of the indices within the set of all points </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="80" column="17" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="462" bodyend="475"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="80" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="379" bodyend="392"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -372,18 +396,18 @@ Only those individuals that disperse out of a patch in a connected direction wil
       <member refid="class_radial_dispersal_1aa3bca3cc8b2d80af4bd11d91cacf09bb" prot="public" virt="virtual"><scope>RadialDispersal</scope><name>adults_disperse</name></member>
       <member refid="class_dispersal_1ab408b6c47b542c65c99e2c141962e81e" prot="protected" virt="non-virtual"><scope>RadialDispersal</scope><name>boundary_strategy</name></member>
       <member refid="class_radial_dispersal_1ad09b4df09539d8b421c8d7ed3199d0c4" prot="private" virt="non-virtual"><scope>RadialDispersal</scope><name>compute_connecs</name></member>
-      <member refid="class_radial_dispersal_1a28a558e2dcb75b8db11fd424aa66243e" prot="private" virt="non-virtual"><scope>RadialDispersal</scope><name>compute_distances</name></member>
+      <member refid="class_radial_dispersal_1ae499f129e03551e4f421de44de334fe0" prot="private" virt="non-virtual"><scope>RadialDispersal</scope><name>compute_distances_site</name></member>
       <member refid="class_radial_dispersal_1ae456b5d871312e16812fb6c4024288f6" prot="private" virt="non-virtual"><scope>RadialDispersal</scope><name>compute_interval_union</name></member>
       <member refid="class_dispersal_1ae829e3cc99c732c2e4e15995a6aabc75" prot="protected" virt="non-virtual"><scope>RadialDispersal</scope><name>connec_indices</name></member>
       <member refid="class_dispersal_1a5837fcddaf8f9fa9cff545828be47d5a" prot="protected" virt="non-virtual"><scope>RadialDispersal</scope><name>connec_weights</name></member>
       <member refid="class_radial_dispersal_1a58a082ed4dfcec4a9f66fb6753a70522" prot="private" virt="non-virtual"><scope>RadialDispersal</scope><name>connec_weights_sum</name></member>
       <member refid="class_dispersal_1ac4a92820d2e1967895862466abd1c701" prot="protected" virt="non-virtual"><scope>RadialDispersal</scope><name>disp_rate</name></member>
-      <member refid="class_dispersal_1a4eb55d34c12749b33bd68d4c8bfee61a" prot="public" virt="non-virtual"><scope>RadialDispersal</scope><name>Dispersal</name></member>
+      <member refid="class_dispersal_1ae1e9989ead71ea1d1a3921e6f2721d52" prot="public" virt="non-virtual"><scope>RadialDispersal</scope><name>Dispersal</name></member>
       <member refid="class_dispersal_1ade53b8a69c5eea72536bcf2c7ef76857" prot="protected" virt="non-virtual"><scope>RadialDispersal</scope><name>F_dispersing_out</name></member>
       <member refid="class_radial_dispersal_1a4df7ea1ccbcc88991b3e63a46f0e0bb1" prot="private" virt="non-virtual"><scope>RadialDispersal</scope><name>get_sorted_positions</name></member>
       <member refid="class_dispersal_1a5ffa246788b8c993b6a34e8c8387d863" prot="protected" virt="non-virtual"><scope>RadialDispersal</scope><name>M_dispersing_out</name></member>
       <member refid="class_dispersal_1a8b95350f1ca6fd7c635944dd776b806f" prot="protected" virt="non-virtual"><scope>RadialDispersal</scope><name>max_disp</name></member>
-      <member refid="class_radial_dispersal_1ac63e6e6d97e7c720b6e6ef349e07c711" prot="public" virt="non-virtual"><scope>RadialDispersal</scope><name>RadialDispersal</name></member>
+      <member refid="class_radial_dispersal_1ac4acd4593fc38e7de82fa73652d2619f" prot="public" virt="non-virtual"><scope>RadialDispersal</scope><name>RadialDispersal</name></member>
       <member refid="class_radial_dispersal_1a363d41e54203e0cd6cadb0667b1f6548" prot="public" virt="virtual"><scope>RadialDispersal</scope><name>set_connecs</name></member>
       <member refid="class_radial_dispersal_1a55a26db2720e9bf5811aa51cf3a8d873" prot="private" virt="non-virtual"><scope>RadialDispersal</scope><name>wrap_around</name></member>
       <member refid="class_dispersal_1aed1dabe97b773b3616811b648b170350" prot="public" virt="non-virtual"><scope>RadialDispersal</scope><name>~Dispersal</name></member>

@@ -5,10 +5,10 @@
     <basecompoundref refid="class_dispersal" prot="public" virt="non-virtual">Dispersal</basecompoundref>
     <includes refid="_dispersal_8h" local="no">Dispersal.h</includes>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_distance_kernel_dispersal_1a451ffadeea98f45c0db9515fc12e050c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_distance_kernel_dispersal_1a853889a5a8f874005a53d5582f9d1a3e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>DistanceKernelDispersal::DistanceKernelDispersal</definition>
-        <argsstring>(DispersalParams *params, BoundaryType boundary, double side)</argsstring>
+        <argsstring>(DispersalParams *params, BoundaryType boundary, double side_x, double side_y)</argsstring>
         <name>DistanceKernelDispersal</name>
         <qualifiedname>DistanceKernelDispersal::DistanceKernelDispersal</qualifiedname>
         <param>
@@ -21,7 +21,11 @@
         </param>
         <param>
           <type>double</type>
-          <declname>side</declname>
+          <declname>side_x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>side_y</declname>
         </param>
         <briefdescription>
 <para><ref refid="class_distance_kernel_dispersal" kindref="compound">DistanceKernelDispersal</ref> constructor. </para>
@@ -45,10 +49,18 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">side</parametername>
+<parametername direction="in">side_x</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>size of one side of the simulation square </para>
+<para>size of one side of the simulation area (x-axis) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">side_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of one side of the simulation area (y-axis) </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -90,7 +102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="54" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="98" bodyend="104"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="54" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="99" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="class_distance_kernel_dispersal_1a8f42419dd4e180ed62680ffab734c677" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -124,7 +136,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="55" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="113" bodyend="148"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="55" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="114" bodyend="149"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -161,7 +173,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="58" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="160" bodyend="183"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="58" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="161" bodyend="184"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -201,7 +213,7 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="45" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="45" bodyend="59"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="44" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="44" bodyend="59"/>
     <listofallmembers>
       <member refid="class_distance_kernel_dispersal_1a8f42419dd4e180ed62680ffab734c677" prot="public" virt="virtual"><scope>DistanceKernelDispersal</scope><name>adults_disperse</name></member>
       <member refid="class_dispersal_1ab408b6c47b542c65c99e2c141962e81e" prot="protected" virt="non-virtual"><scope>DistanceKernelDispersal</scope><name>boundary_strategy</name></member>
@@ -209,8 +221,8 @@ All dispersing individuals are assumed to survive dispersal, and are guaranteed 
       <member refid="class_dispersal_1ae829e3cc99c732c2e4e15995a6aabc75" prot="protected" virt="non-virtual"><scope>DistanceKernelDispersal</scope><name>connec_indices</name></member>
       <member refid="class_dispersal_1a5837fcddaf8f9fa9cff545828be47d5a" prot="protected" virt="non-virtual"><scope>DistanceKernelDispersal</scope><name>connec_weights</name></member>
       <member refid="class_dispersal_1ac4a92820d2e1967895862466abd1c701" prot="protected" virt="non-virtual"><scope>DistanceKernelDispersal</scope><name>disp_rate</name></member>
-      <member refid="class_dispersal_1a4eb55d34c12749b33bd68d4c8bfee61a" prot="public" virt="non-virtual"><scope>DistanceKernelDispersal</scope><name>Dispersal</name></member>
-      <member refid="class_distance_kernel_dispersal_1a451ffadeea98f45c0db9515fc12e050c" prot="public" virt="non-virtual"><scope>DistanceKernelDispersal</scope><name>DistanceKernelDispersal</name></member>
+      <member refid="class_dispersal_1ae1e9989ead71ea1d1a3921e6f2721d52" prot="public" virt="non-virtual"><scope>DistanceKernelDispersal</scope><name>Dispersal</name></member>
+      <member refid="class_distance_kernel_dispersal_1a853889a5a8f874005a53d5582f9d1a3e" prot="public" virt="non-virtual"><scope>DistanceKernelDispersal</scope><name>DistanceKernelDispersal</name></member>
       <member refid="class_dispersal_1ade53b8a69c5eea72536bcf2c7ef76857" prot="protected" virt="non-virtual"><scope>DistanceKernelDispersal</scope><name>F_dispersing_out</name></member>
       <member refid="class_dispersal_1a5ffa246788b8c993b6a34e8c8387d863" prot="protected" virt="non-virtual"><scope>DistanceKernelDispersal</scope><name>M_dispersing_out</name></member>
       <member refid="class_dispersal_1a8b95350f1ca6fd7c635944dd776b806f" prot="protected" virt="non-virtual"><scope>DistanceKernelDispersal</scope><name>max_disp</name></member>

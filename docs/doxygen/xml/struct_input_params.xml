@@ -47,22 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="11" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="11" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="struct_input_params_1a1c3cdff052b3a5b67b56b6d9f24fd0c1" prot="public" static="no" mutable="no">
-        <type>double</type>
-        <definition>double InputParams::side</definition>
-        <argsstring></argsstring>
-        <name>side</name>
-        <qualifiedname>InputParams::side</qualifiedname>
-        <briefdescription>
-<para>Size of the square simulation area (side x side). </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="12" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="12" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="10" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="10" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a746b1ef46c9498a5dd09b825ea4b7a24" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -77,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="14" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="14" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="12" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="12" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1ad5675a09a39929aa98cd569cb4c4403f" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -92,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="15" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="15" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="13" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="13" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a4fb2cae8d6b3a9585e386b2bfeb03299" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -107,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="16" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="16" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="14" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="14" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a7183128711c0a119f7fc72e94ae6bdd4" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -122,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="17" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="17" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="15" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="15" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a99ec67370f4794427a09d93630b248e3" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -137,7 +122,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="18" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="18" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="16" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a2593d199fff80f091dfd1cf576c5c54f" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -152,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="19" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="19" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="17" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a746acff494ce4f310d92d67bfcbed018" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -167,7 +152,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="21" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="21" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="19" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="19" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a2f34329974d0d04d9027f00955c4bc99" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -182,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="22" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="22" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="20" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a803f48bc190f6b07b317539429626ee3" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -197,7 +182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="23" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="23" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="21" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a0bd5fad3e6b9c0fe9a889aa42ae9abf6" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -212,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="25" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="25" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="23" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a99737ba534111f33e3882576b93eb88a" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -227,7 +212,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="26" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="26" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="24" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1ac071e4057a91d95a69871d8f07ad9bcb" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -242,7 +227,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="27" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="27" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="25" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a52529a486affcbf464037cf78e1610ad" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -257,7 +242,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="29" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="29" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="27" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a7c92eaa0ddaa679b439b0d9aa6a30086" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -272,7 +257,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="30" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="30" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="28" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1adc5b2a93829b4fa4eafa0e804446558a" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -287,7 +272,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="32" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="32" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="30" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1af4132ca26a4a4ce1e19c46c89d8aee38" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -302,7 +287,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="33" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="33" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="31" column="8" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a5d0c54631c85331b117bed861883fba5" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -317,7 +302,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="34" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="34" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="32" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1ae17cce0a7ef61941a6e97158ebf80f1c" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -332,7 +317,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="35" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="35" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="33" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1aa0b9fe354099482dfdead7877fd3409b" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -347,7 +332,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="36" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="36" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="34" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a4542cd7e2b6b2b386a9e63e08c2b527f" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -362,7 +347,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="37" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="37" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="35" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a2056a53757ab38ff189bca6870d2f7d5" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -377,7 +362,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="38" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="38" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="36" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a4497eea80bab35f4d09bb8aa1fd71c3e" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -392,7 +377,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="39" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="39" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="37" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a811a584ea9d14cb5223d56efaa8f68c5" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -407,7 +392,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="40" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="40" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="38" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1ab02eb338f46a10a8144e4219292c34c9" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -422,7 +407,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="41" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="41" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="39" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a113b8e6f08c2123150b03908be887817" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -437,7 +422,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="42" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="42" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="40" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a4194d9346cbff529ae873c304699d2c5" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -453,7 +438,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="44" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="44" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="42" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="42" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1aa8bdf3859ec5f900b12c23f01ba28504" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -469,7 +454,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="45" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="45" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="43" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1af73a502e495c5f5e8b5c6d5b0f92125e" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -485,7 +470,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="46" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="46" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="44" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1af7bf83f2f03a3ed0f16265796dd0d25d" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -501,7 +486,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="47" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="47" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="45" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="45" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a6e73a95f47dcfa05263838b0b1f3ad27" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -516,7 +501,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="49" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="49" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="47" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a1223c275e31ee8b901b5d5a274d85c74" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -531,7 +516,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="50" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="50" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="48" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a88ac9f864219bc930cda1f52aa0920b3" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -546,7 +531,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="51" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="51" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="49" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1ae1a85942abb2e6e81ee33bb395fee17d" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -561,7 +546,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="52" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="52" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="50" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a0aa285f32fbb33162549d1480f36e1f0" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -576,7 +561,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="53" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="53" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="51" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_input_params_1a07f5774fe964faa2107831863f75ab1c" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -591,7 +576,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="54" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="54" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="52" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="52" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -605,7 +590,7 @@
         <link refid="struct_input_params"/>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="7" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="7" bodyend="55"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" line="7" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/InputParams.h" bodystart="7" bodyend="53"/>
     <listofallmembers>
       <member refid="struct_input_params_1a2056a53757ab38ff189bca6870d2f7d5" prot="public" virt="non-virtual"><scope>InputParams</scope><name>alpha0_mean</name></member>
       <member refid="struct_input_params_1a4497eea80bab35f4d09bb8aa1fd71c3e" prot="public" virt="non-virtual"><scope>InputParams</scope><name>alpha0_variance</name></member>
@@ -639,7 +624,6 @@
       <member refid="struct_input_params_1a6e73a95f47dcfa05263838b0b1f3ad27" prot="public" virt="non-virtual"><scope>InputParams</scope><name>rec_start</name></member>
       <member refid="struct_input_params_1a113b8e6f08c2123150b03908be887817" prot="public" virt="non-virtual"><scope>InputParams</scope><name>resp</name></member>
       <member refid="struct_input_params_1a07f5774fe964faa2107831863f75ab1c" prot="public" virt="non-virtual"><scope>InputParams</scope><name>set_label</name></member>
-      <member refid="struct_input_params_1a1c3cdff052b3a5b67b56b6d9f24fd0c1" prot="public" virt="non-virtual"><scope>InputParams</scope><name>side</name></member>
       <member refid="struct_input_params_1a5d0c54631c85331b117bed861883fba5" prot="public" virt="non-virtual"><scope>InputParams</scope><name>t_hide1</name></member>
       <member refid="struct_input_params_1ae17cce0a7ef61941a6e97158ebf80f1c" prot="public" virt="non-virtual"><scope>InputParams</scope><name>t_hide2</name></member>
       <member refid="struct_input_params_1aa0b9fe354099482dfdead7877fd3409b" prot="public" virt="non-virtual"><scope>InputParams</scope><name>t_wake1</name></member>

@@ -5,15 +5,19 @@
     <basecompoundref refid="class_boundary_strategy" prot="public" virt="non-virtual">BoundaryStrategy</basecompoundref>
     <includes refid="_boundary_strategy_8h" local="no">BoundaryStrategy.h</includes>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_edge_boundary_strategy_1a1746c13f06d1b1514c32a41ef6804389" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_edge_boundary_strategy_1a25ce12df04a57aeedee6a7dbed8ff651" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>EdgeBoundaryStrategy::EdgeBoundaryStrategy</definition>
-        <argsstring>(double side)</argsstring>
+        <argsstring>(double side_x, double side_y)</argsstring>
         <name>EdgeBoundaryStrategy</name>
         <qualifiedname>EdgeBoundaryStrategy::EdgeBoundaryStrategy</qualifiedname>
         <param>
           <type>double</type>
-          <declname>side</declname>
+          <declname>side_x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>side_y</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -21,7 +25,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="45" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="45" bodyend="45"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="44" column="5" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="44" bodyend="44"/>
       </memberdef>
       <memberdef kind="function" id="class_edge_boundary_strategy_1a58bed301f6c5f63a491bad0ebe982752" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -65,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="46" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/BoundaryStrategy.cpp" bodystart="62" bodyend="65"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="45" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/BoundaryStrategy.cpp" bodystart="62" bodyend="65"/>
       </memberdef>
       <memberdef kind="function" id="class_edge_boundary_strategy_1afa01b99a109ff593117736e8722da894" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="struct_point" kindref="compound">Point</ref></type>
@@ -109,16 +113,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="47" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/BoundaryStrategy.cpp" bodystart="73" bodyend="76"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="46" column="11" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/BoundaryStrategy.cpp" bodystart="73" bodyend="76"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Implements methods for edge boundary conditions. </para>
     </briefdescription>
     <detaileddescription>
-<para>The simulation area is assumed to have edge boundary conditions at x = <computeroutput>side</computeroutput>, y = <computeroutput>side</computeroutput>, and have ranges [0, <computeroutput>side</computeroutput>] in all directions. <simplesect kind="see"><para><ref refid="struct_area_params_1a25bc9f9baa5f3b4f9352101dfec36a99" kindref="member">AreaParams::side</ref> </para>
-</simplesect>
-</para>
+<para>The simulation area is assumed to have edge boundary conditions at x = <computeroutput>side_x</computeroutput>, y = <computeroutput>side_y</computeroutput>. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -144,13 +146,14 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="43" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="43" bodyend="48"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="42" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="42" bodyend="47"/>
     <listofallmembers>
-      <member refid="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" prot="public" virt="non-virtual"><scope>EdgeBoundaryStrategy</scope><name>BoundaryStrategy</name></member>
+      <member refid="class_boundary_strategy_1ae9ab097162f1f79483ebd3bc70616a16" prot="public" virt="non-virtual"><scope>EdgeBoundaryStrategy</scope><name>BoundaryStrategy</name></member>
       <member refid="class_edge_boundary_strategy_1a58bed301f6c5f63a491bad0ebe982752" prot="public" virt="virtual"><scope>EdgeBoundaryStrategy</scope><name>distance</name></member>
-      <member refid="class_edge_boundary_strategy_1a1746c13f06d1b1514c32a41ef6804389" prot="public" virt="non-virtual"><scope>EdgeBoundaryStrategy</scope><name>EdgeBoundaryStrategy</name></member>
+      <member refid="class_edge_boundary_strategy_1a25ce12df04a57aeedee6a7dbed8ff651" prot="public" virt="non-virtual"><scope>EdgeBoundaryStrategy</scope><name>EdgeBoundaryStrategy</name></member>
       <member refid="class_edge_boundary_strategy_1afa01b99a109ff593117736e8722da894" prot="public" virt="virtual"><scope>EdgeBoundaryStrategy</scope><name>relative_pos</name></member>
-      <member refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" prot="protected" virt="non-virtual"><scope>EdgeBoundaryStrategy</scope><name>side</name></member>
+      <member refid="class_boundary_strategy_1a166681cdb347e3f3ed67d3a3a2dbbf7f" prot="protected" virt="non-virtual"><scope>EdgeBoundaryStrategy</scope><name>side_x</name></member>
+      <member refid="class_boundary_strategy_1aac6a1baa6fc5791d495058e77dd5eca3" prot="protected" virt="non-virtual"><scope>EdgeBoundaryStrategy</scope><name>side_y</name></member>
       <member refid="class_boundary_strategy_1a9f8754869c6cbe6af73352e61b581c48" prot="public" virt="non-virtual"><scope>EdgeBoundaryStrategy</scope><name>~BoundaryStrategy</name></member>
     </listofallmembers>
   </compounddef>

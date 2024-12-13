@@ -20,8 +20,9 @@ var searchData=
   ['set8_17',['set8',['../sets_8h.html#a03a6f5d6f4b4551c0ae561e305c43025',1,'sets.h']]],
   ['set9_18',['set9',['../sets_8h.html#ab5de9597265e321d12d3e5a066f0eaa8',1,'sets.h']]],
   ['set_5flabel_19',['set_label',['../struct_input_params.html#a07f5774fe964faa2107831863f75ab1c',1,'InputParams::set_label'],['../struct_record_params.html#a9df186c8b9f5788c29d023a41ba8088e',1,'RecordParams::set_label'],['../class_record.html#a6af350cda36acab3641fce143db9e23f',1,'Record::set_label']]],
-  ['side_20',['side',['../class_boundary_strategy.html#a8b9e897d2396509ec12f4d797e3101f1',1,'BoundaryStrategy::side'],['../struct_input_params.html#a1c3cdff052b3a5b67b56b6d9f24fd0c1',1,'InputParams::side'],['../class_model.html#ad456b9a7464879d80abb19f1d14971cf',1,'Model::side'],['../struct_area_params.html#a25bc9f9baa5f3b4f9352101dfec36a99',1,'AreaParams::side']]],
-  ['sine_5frainfall_5fparams_21',['sine_rainfall_params',['../class_simulation.html#ac42205211628f51d8f680b6522ca663e',1,'Simulation']]],
-  ['sites_22',['sites',['../class_model.html#a9aadb122b13c0e8be4f2437117264879',1,'Model']]],
-  ['sites_5fcoords_23',['sites_coords',['../class_simulation.html#a73b6b686f5dca876da14e5b79f8123a5',1,'Simulation']]]
+  ['side_5fx_20',['side_x',['../class_boundary_strategy.html#a166681cdb347e3f3ed67d3a3a2dbbf7f',1,'BoundaryStrategy::side_x'],['../class_model.html#a33ced6d9613c62ef84aadc016a667f22',1,'Model::side_x']]],
+  ['side_5fy_21',['side_y',['../class_boundary_strategy.html#aac6a1baa6fc5791d495058e77dd5eca3',1,'BoundaryStrategy::side_y'],['../class_model.html#ac6c296586aade2cfd8b0a013583ef337',1,'Model::side_y']]],
+  ['sine_5frainfall_5fparams_22',['sine_rainfall_params',['../class_simulation.html#ac42205211628f51d8f680b6522ca663e',1,'Simulation']]],
+  ['sites_23',['sites',['../class_model.html#a9aadb122b13c0e8be4f2437117264879',1,'Model']]],
+  ['sites_5fcoords_24',['sites_coords',['../class_simulation.html#a73b6b686f5dca876da14e5b79f8123a5',1,'Simulation']]]
 ];

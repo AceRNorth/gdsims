@@ -2,8 +2,8 @@
 <area shape="rect" id="Node000001" title="Sets up and controls the flow of the simulation." alt="" coords="509,485,651,896"/>
 <area shape="rect" id="Node000002" href="$struct_model_params.html" title="Model parameters." alt="" coords="324,299,417,368"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="387,366,433,460,502,572,498,575,429,463,382,369"/>
-<area shape="rect" id="Node000003" href="$struct_area_params.html" title="Model area parameters." alt="" coords="5,48,91,139"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="72,137,87,159,105,179,154,220,208,254,309,305,307,310,205,259,151,224,101,183,83,162,68,140"/>
+<area shape="rect" id="Node000003" href="$struct_area_params.html" title="Model area parameters." alt="" coords="5,59,91,128"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="66,127,83,154,105,179,154,220,208,254,309,305,307,310,205,259,151,224,101,183,79,157,62,129"/>
 <area shape="rect" id="Node000004" href="$struct_initial_pops_params.html" title="Initial population values for the model." alt="" coords="115,27,232,160"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="228,158,246,180,334,285,330,288,242,183,224,161"/>
 <area shape="rect" id="Node000005" href="$struct_life_params.html" title="Model life&#45;process parameters." alt="" coords="256,5,352,181"/>

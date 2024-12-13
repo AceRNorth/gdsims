@@ -19,7 +19,7 @@ This page covers the specifics of the different types of advanced options - for 
 Boundary type
 -------------
 
-The boundary type of the model area can be modified. This means modifying the type of boundary conditions applied to the boundaries of the square area. Two boundary type options currently exist:
+The boundary type of the model area can be modified. This means modifying the type of boundary conditions applied to the boundaries of the simulation area. Two boundary type options currently exist:
 
 - Toroid (default)
 - Edge
@@ -131,9 +131,6 @@ the given patch, and the third one indicates whether the patch will be a release
 in a row should be separated by white space and the rows separated by new lines.
 
 .. image:: ../images/adv_coords_input_file.png
-
-.. note::
-    The coordinates will undergo bound checks if the boundary type has been set to Toroid (or if not set at all, since this is the default) - coordinates will need to be in the range [0, ``side``] for both *x* and *y*.
 
 .. seealso::
     Tutorial :ref:`tutorial-3.3`

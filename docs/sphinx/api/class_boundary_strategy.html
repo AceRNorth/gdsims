@@ -465,21 +465,20 @@ document.write(`
 <span id="_CPPv316BoundaryStrategy"></span><span id="_CPPv216BoundaryStrategy"></span><span id="BoundaryStrategy"></span><span class="target" id="class_boundary_strategy"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BoundaryStrategy</span></span></span><a class="headerlink" href="#_CPPv416BoundaryStrategy" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Boundary strategy base class. </p>
 <p>Defines the interface for boundary-type classes.</p>
-<p><a class="reference internal" href="#class_boundary_strategy"><span class="std std-ref">BoundaryStrategy</span></a> classes implement methods specific to the boundary type of the model. The simulation area is assumed to have boundary conditions at x = <code class="docutils literal notranslate"><span class="pre">side</span></code>, y = <code class="docutils literal notranslate"><span class="pre">side</span></code>, and have ranges [0, <code class="docutils literal notranslate"><span class="pre">side</span></code>] in all directions. <div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="struct_area_params.html#struct_area_params_1a25bc9f9baa5f3b4f9352101dfec36a99"><span class="std std-ref">AreaParams::side</span></a></p>
-</div>
-</p>
+<p><a class="reference internal" href="#class_boundary_strategy"><span class="std std-ref">BoundaryStrategy</span></a> classes implement methods specific to the boundary type of the model. The simulation area is assumed to have boundary conditions at x = <code class="docutils literal notranslate"><span class="pre">side_x</span></code>, y = <code class="docutils literal notranslate"><span class="pre">side_y</span></code>, which are calculated from provided input coordinates or assumed to be 1 otherwise. </p>
 <p>Subclassed by <a class="reference internal" href="class_edge_boundary_strategy.html#class_edge_boundary_strategy"><span class="std std-ref">EdgeBoundaryStrategy</span></a>, <a class="reference internal" href="class_toroidal_boundary_strategy.html#class_toroidal_boundary_strategy"><span class="std std-ref">ToroidalBoundaryStrategy</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N16BoundaryStrategy16BoundaryStrategyEd">
-<span id="_CPPv3N16BoundaryStrategy16BoundaryStrategyEd"></span><span id="_CPPv2N16BoundaryStrategy16BoundaryStrategyEd"></span><span id="BoundaryStrategy::BoundaryStrategy__double"></span><span class="target" id="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BoundaryStrategy</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16BoundaryStrategy16BoundaryStrategyEd" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N16BoundaryStrategy16BoundaryStrategyEdd">
+<span id="_CPPv3N16BoundaryStrategy16BoundaryStrategyEdd"></span><span id="_CPPv2N16BoundaryStrategy16BoundaryStrategyEdd"></span><span id="BoundaryStrategy::BoundaryStrategy__double.double"></span><span class="target" id="class_boundary_strategy_1ae9ab097162f1f79483ebd3bc70616a16"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BoundaryStrategy</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_x</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">side_y</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16BoundaryStrategy16BoundaryStrategyEdd" title="Permalink to this definition">#</a><br /></dt>
 <dd><p><a class="reference internal" href="#class_boundary_strategy"><span class="std std-ref">BoundaryStrategy</span></a> constructor. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>side</strong> – <strong>[in]</strong> size of one side of the simulation square </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>side_x</strong> – <strong>[in]</strong> size of one side of the simulation area (x-axis) </p></li>
+<li><p><strong>side_y</strong> – <strong>[in]</strong> size of one side of the simulation area (y-axis) </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -503,9 +502,15 @@ document.write(`
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N16BoundaryStrategy4sideE">
-<span id="_CPPv3N16BoundaryStrategy4sideE"></span><span id="_CPPv2N16BoundaryStrategy4sideE"></span><span id="BoundaryStrategy::side__double"></span><span class="target" id="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">side</span></span></span><a class="headerlink" href="#_CPPv4N16BoundaryStrategy4sideE" title="Permalink to this definition">#</a><br /></dt>
-<dd><p>Size of one side of the simulation square. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N16BoundaryStrategy6side_xE">
+<span id="_CPPv3N16BoundaryStrategy6side_xE"></span><span id="_CPPv2N16BoundaryStrategy6side_xE"></span><span id="BoundaryStrategy::side_x__double"></span><span class="target" id="class_boundary_strategy_1a166681cdb347e3f3ed67d3a3a2dbbf7f"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">side_x</span></span></span><br /></dt>
+<dd><p>Size of one side of the simulation area (x-axis). </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N16BoundaryStrategy6side_yE">
+<span id="_CPPv3N16BoundaryStrategy6side_yE"></span><span id="_CPPv2N16BoundaryStrategy6side_yE"></span><span id="BoundaryStrategy::side_y__double"></span><span class="target" id="class_boundary_strategy_1aac6a1baa6fc5791d495058e77dd5eca3"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">side_y</span></span></span><br /></dt>
+<dd><p>Size of one side of the simulation area (y-axis). </p>
 </dd></dl>
 
 </div>

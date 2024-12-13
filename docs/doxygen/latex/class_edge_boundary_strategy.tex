@@ -11,7 +11,8 @@ Implements methods for edge boundary conditions.
 
 
 
-Inheritance diagram for Edge\+Boundary\+Strategy\+:\nopagebreak
+Inheritance diagram for Edge\+Boundary\+Strategy\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Edge\+Boundary\+Strategy\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Edge\+Boundary\+Strategy\+:\nopagebreak
+Collaboration diagram for Edge\+Boundary\+Strategy\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,7 +32,7 @@ Collaboration diagram for Edge\+Boundary\+Strategy\+:\nopagebreak
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_edge_boundary_strategy_a1746c13f06d1b1514c32a41ef6804389}{Edge\+Boundary\+Strategy}} (double \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}})
+\mbox{\hyperlink{class_edge_boundary_strategy_a25ce12df04a57aeedee6a7dbed8ff651}{Edge\+Boundary\+Strategy}} (double \mbox{\hyperlink{class_boundary_strategy_a166681cdb347e3f3ed67d3a3a2dbbf7f}{side\+\_\+x}}, double \mbox{\hyperlink{class_boundary_strategy_aac6a1baa6fc5791d495058e77dd5eca3}{side\+\_\+y}})
 \item 
 double \mbox{\hyperlink{class_edge_boundary_strategy_a58bed301f6c5f63a491bad0ebe982752}{distance}} (const \mbox{\hyperlink{struct_point}{Point}} \&p1, const \mbox{\hyperlink{struct_point}{Point}} \&p2) override
 \begin{DoxyCompactList}\small\item\em Calculates the distance between two points. \end{DoxyCompactList}\item 
@@ -39,7 +41,7 @@ double \mbox{\hyperlink{class_edge_boundary_strategy_a58bed301f6c5f63a491bad0ebe
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_boundary_strategy}{Boundary\+Strategy}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_boundary_strategy_a8fbbc051751dbb883c0f00673d9027c4}{Boundary\+Strategy}} (double \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}})
+\mbox{\hyperlink{class_boundary_strategy_ae9ab097162f1f79483ebd3bc70616a16}{Boundary\+Strategy}} (double \mbox{\hyperlink{class_boundary_strategy_a166681cdb347e3f3ed67d3a3a2dbbf7f}{side\+\_\+x}}, double \mbox{\hyperlink{class_boundary_strategy_aac6a1baa6fc5791d495058e77dd5eca3}{side\+\_\+y}})
 \begin{DoxyCompactList}\small\item\em \doxylink{class_boundary_strategy}{Boundary\+Strategy} constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_boundary_strategy_a9f8754869c6cbe6af73352e61b581c48}{\texorpdfstring{$\sim$}{\string~}\+Boundary\+Strategy}} ()
 \end{DoxyCompactItemize}
@@ -47,24 +49,23 @@ double \mbox{\hyperlink{class_edge_boundary_strategy_a58bed301f6c5f63a491bad0ebe
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_boundary_strategy}{Boundary\+Strategy}}}
 \begin{DoxyCompactItemize}
 \item 
-double \mbox{\hyperlink{class_boundary_strategy_a8b9e897d2396509ec12f4d797e3101f1}{side}}
-\begin{DoxyCompactList}\small\item\em Size of one side of the simulation square. \end{DoxyCompactList}\end{DoxyCompactItemize}
+double \mbox{\hyperlink{class_boundary_strategy_a166681cdb347e3f3ed67d3a3a2dbbf7f}{side\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em Size of one side of the simulation area (x-\/axis). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_boundary_strategy_aac6a1baa6fc5791d495058e77dd5eca3}{side\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em Size of one side of the simulation area (y-\/axis). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Implements methods for edge boundary conditions. 
 
-The simulation area is assumed to have edge boundary conditions at x = {\ttfamily side}, y = {\ttfamily side}, and have ranges \mbox{[}0, {\ttfamily side}\mbox{]} in all directions. \begin{DoxySeeAlso}{See also}
-\doxylink{struct_area_params_a25bc9f9baa5f3b4f9352101dfec36a99}{Area\+Params\+::side} 
-\end{DoxySeeAlso}
-
+The simulation area is assumed to have edge boundary conditions at x = {\ttfamily side\+\_\+x}, y = {\ttfamily side\+\_\+y}. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_edge_boundary_strategy_a1746c13f06d1b1514c32a41ef6804389}\label{class_edge_boundary_strategy_a1746c13f06d1b1514c32a41ef6804389} 
+\Hypertarget{class_edge_boundary_strategy_a25ce12df04a57aeedee6a7dbed8ff651}\label{class_edge_boundary_strategy_a25ce12df04a57aeedee6a7dbed8ff651} 
 \index{EdgeBoundaryStrategy@{EdgeBoundaryStrategy}!EdgeBoundaryStrategy@{EdgeBoundaryStrategy}}
 \index{EdgeBoundaryStrategy@{EdgeBoundaryStrategy}!EdgeBoundaryStrategy@{EdgeBoundaryStrategy}}
 \doxysubsubsection{\texorpdfstring{EdgeBoundaryStrategy()}{EdgeBoundaryStrategy()}}
-{\footnotesize\ttfamily Edge\+Boundary\+Strategy\+::\+Edge\+Boundary\+Strategy (\begin{DoxyParamCaption}\item[{double}]{side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Edge\+Boundary\+Strategy\+::\+Edge\+Boundary\+Strategy (\begin{DoxyParamCaption}\item[{double}]{side\+\_\+x,  }\item[{double}]{side\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 

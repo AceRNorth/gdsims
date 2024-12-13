@@ -64,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="33" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="33" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="32" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_dispersal_1ab408b6c47b542c65c99e2c141962e81e" prot="protected" static="no" mutable="no">
         <type><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref> *</type>
@@ -78,14 +78,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="35" column="18" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="35" bodyend="-1"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="34" column="18" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="34" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_dispersal_1a4eb55d34c12749b33bd68d4c8bfee61a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_dispersal_1ae1e9989ead71ea1d1a3921e6f2721d52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>Dispersal::Dispersal</definition>
-        <argsstring>(DispersalParams *params, BoundaryType boundary, double side)</argsstring>
+        <argsstring>(DispersalParams *params, BoundaryType boundary, double side_x, double side_y)</argsstring>
         <name>Dispersal</name>
         <qualifiedname>Dispersal::Dispersal</qualifiedname>
         <param>
@@ -98,7 +98,11 @@
         </param>
         <param>
           <type>double</type>
-          <declname>side</declname>
+          <declname>side_x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>side_y</declname>
         </param>
         <briefdescription>
 <para><ref refid="class_dispersal" kindref="compound">Dispersal</ref> constructor. </para>
@@ -122,10 +126,18 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">side</parametername>
+<parametername direction="in">side_x</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>size of one side of the simulation square </para>
+<para>size of one side of the simulation area (x-axis) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">side_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of one side of the simulation area (y-axis) </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -133,7 +145,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="22" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="19" bodyend="33"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="22" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="20" bodyend="34"/>
       </memberdef>
       <memberdef kind="function" id="class_dispersal_1aed1dabe97b773b3616811b648b170350" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -148,7 +160,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="23" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="38" bodyend="41"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="23" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="39" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="class_dispersal_1aef84d06c465ccb461d1cfb39e82de838" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -223,7 +235,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="37" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="50" bodyend="63"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="36" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="51" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="class_dispersal_1ade53b8a69c5eea72536bcf2c7ef76857" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; std::array&lt; std::array&lt; long long int, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt;, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt; &gt;</type>
@@ -256,7 +268,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="38" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="72" bodyend="87"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="37" column="13" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Dispersal.cpp" bodystart="73" bodyend="88"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -264,7 +276,7 @@
     </briefdescription>
     <detaileddescription>
 <para>Defines the interface for dispersal classes.</para>
-<para>The <ref refid="class_dispersal" kindref="compound">Dispersal</ref> classes compute the connections between <ref refid="class_patch" kindref="compound">Patch</ref> objects with their respective connection weights, dependent on the maximum dispersal distance <computeroutput>max_dist</computeroutput>, and carry out dispersal in and out of the patches, dependent on the dispersal rate <computeroutput>disp_rate</computeroutput>. <simplesect kind="see"><para><ref refid="struct_dispersal_params" kindref="compound">DispersalParams</ref> </para>
+<para>The <ref refid="class_dispersal" kindref="compound">Dispersal</ref> classes compute the connections between <ref refid="class_patch" kindref="compound">Patch</ref> objects with their respective connection weights, dependent on the maximum dispersal distance <computeroutput>max_disp</computeroutput>, and carry out dispersal in and out of the patches, dependent on the dispersal rate <computeroutput>disp_rate</computeroutput>. <simplesect kind="see"><para><ref refid="struct_dispersal_params" kindref="compound">DispersalParams</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>
@@ -299,14 +311,14 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="20" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="20" bodyend="39"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" line="20" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Dispersal.h" bodystart="20" bodyend="38"/>
     <listofallmembers>
       <member refid="class_dispersal_1a90638547dc5983463ee88d89a9167b5a" prot="public" virt="pure-virtual"><scope>Dispersal</scope><name>adults_disperse</name></member>
       <member refid="class_dispersal_1ab408b6c47b542c65c99e2c141962e81e" prot="protected" virt="non-virtual"><scope>Dispersal</scope><name>boundary_strategy</name></member>
       <member refid="class_dispersal_1ae829e3cc99c732c2e4e15995a6aabc75" prot="protected" virt="non-virtual"><scope>Dispersal</scope><name>connec_indices</name></member>
       <member refid="class_dispersal_1a5837fcddaf8f9fa9cff545828be47d5a" prot="protected" virt="non-virtual"><scope>Dispersal</scope><name>connec_weights</name></member>
       <member refid="class_dispersal_1ac4a92820d2e1967895862466abd1c701" prot="protected" virt="non-virtual"><scope>Dispersal</scope><name>disp_rate</name></member>
-      <member refid="class_dispersal_1a4eb55d34c12749b33bd68d4c8bfee61a" prot="public" virt="non-virtual"><scope>Dispersal</scope><name>Dispersal</name></member>
+      <member refid="class_dispersal_1ae1e9989ead71ea1d1a3921e6f2721d52" prot="public" virt="non-virtual"><scope>Dispersal</scope><name>Dispersal</name></member>
       <member refid="class_dispersal_1ade53b8a69c5eea72536bcf2c7ef76857" prot="protected" virt="non-virtual"><scope>Dispersal</scope><name>F_dispersing_out</name></member>
       <member refid="class_dispersal_1a5ffa246788b8c993b6a34e8c8387d863" prot="protected" virt="non-virtual"><scope>Dispersal</scope><name>M_dispersing_out</name></member>
       <member refid="class_dispersal_1a8b95350f1ca6fd7c635944dd776b806f" prot="protected" virt="non-virtual"><scope>Dispersal</scope><name>max_disp</name></member>

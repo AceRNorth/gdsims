@@ -11,7 +11,8 @@
 
 
 
-Inheritance diagram for Dispersal\+:\nopagebreak
+Inheritance diagram for Dispersal\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Dispersal\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Dispersal\+:\nopagebreak
+Collaboration diagram for Dispersal\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,7 +32,7 @@ Collaboration diagram for Dispersal\+:\nopagebreak
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_dispersal_a4eb55d34c12749b33bd68d4c8bfee61a}{Dispersal}} (\mbox{\hyperlink{struct_dispersal_params}{Dispersal\+Params}} \texorpdfstring{$\ast$}{*}params, \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} boundary, double side)
+\mbox{\hyperlink{class_dispersal_ae1e9989ead71ea1d1a3921e6f2721d52}{Dispersal}} (\mbox{\hyperlink{struct_dispersal_params}{Dispersal\+Params}} \texorpdfstring{$\ast$}{*}params, \mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} boundary, double side\+\_\+x, double side\+\_\+y)
 \begin{DoxyCompactList}\small\item\em \doxylink{class_dispersal}{Dispersal} constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dispersal_aed1dabe97b773b3616811b648b170350}{\texorpdfstring{$\sim$}{\string~}\+Dispersal}} ()
 \begin{DoxyCompactList}\small\item\em \doxylink{class_dispersal}{Dispersal} destructor. \end{DoxyCompactList}\item 
@@ -65,17 +67,17 @@ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{class_dispersa
 
 Defines the interface for dispersal classes.
 
-The \doxylink{class_dispersal}{Dispersal} classes compute the connections between \doxylink{class_patch}{Patch} objects with their respective connection weights, dependent on the maximum dispersal distance {\ttfamily max\+\_\+dist}, and carry out dispersal in and out of the patches, dependent on the dispersal rate {\ttfamily disp\+\_\+rate}. \begin{DoxySeeAlso}{See also}
+The \doxylink{class_dispersal}{Dispersal} classes compute the connections between \doxylink{class_patch}{Patch} objects with their respective connection weights, dependent on the maximum dispersal distance {\ttfamily max\+\_\+disp}, and carry out dispersal in and out of the patches, dependent on the dispersal rate {\ttfamily disp\+\_\+rate}. \begin{DoxySeeAlso}{See also}
 \doxylink{struct_dispersal_params}{Dispersal\+Params} 
 \end{DoxySeeAlso}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_dispersal_a4eb55d34c12749b33bd68d4c8bfee61a}\label{class_dispersal_a4eb55d34c12749b33bd68d4c8bfee61a} 
+\Hypertarget{class_dispersal_ae1e9989ead71ea1d1a3921e6f2721d52}\label{class_dispersal_ae1e9989ead71ea1d1a3921e6f2721d52} 
 \index{Dispersal@{Dispersal}!Dispersal@{Dispersal}}
 \index{Dispersal@{Dispersal}!Dispersal@{Dispersal}}
 \doxysubsubsection{\texorpdfstring{Dispersal()}{Dispersal()}}
-{\footnotesize\ttfamily Dispersal\+::\+Dispersal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_dispersal_params}{Dispersal\+Params}} \texorpdfstring{$\ast$}{*}}]{params,  }\item[{\mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}}}]{boundary,  }\item[{double}]{side }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Dispersal\+::\+Dispersal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_dispersal_params}{Dispersal\+Params}} \texorpdfstring{$\ast$}{*}}]{params,  }\item[{\mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}}}]{boundary,  }\item[{double}]{side\+\_\+x,  }\item[{double}]{side\+\_\+y }\end{DoxyParamCaption})}
 
 
 
@@ -87,7 +89,9 @@ Constructs the \doxylink{class_boundary_strategy}{Boundary\+Strategy} object fro
 \hline
 \mbox{\texttt{ in}}  & {\em boundary} & boundary type to use for calculating dispersal distances \\
 \hline
-\mbox{\texttt{ in}}  & {\em side} & size of one side of the simulation square \\
+\mbox{\texttt{ in}}  & {\em side\+\_\+x} & size of one side of the simulation area (x-\/axis) \\
+\hline
+\mbox{\texttt{ in}}  & {\em side\+\_\+y} & size of one side of the simulation area (y-\/axis) \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_dispersal_aed1dabe97b773b3616811b648b170350}\label{class_dispersal_aed1dabe97b773b3616811b648b170350} 

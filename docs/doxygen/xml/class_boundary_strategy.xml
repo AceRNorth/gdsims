@@ -6,14 +6,14 @@
     <derivedcompoundref refid="class_toroidal_boundary_strategy" prot="public" virt="non-virtual">ToroidalBoundaryStrategy</derivedcompoundref>
     <includes refid="_boundary_strategy_8h" local="no">BoundaryStrategy.h</includes>
     <sectiondef kind="protected-attrib">
-      <memberdef kind="variable" id="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" prot="protected" static="no" mutable="no">
+      <memberdef kind="variable" id="class_boundary_strategy_1a166681cdb347e3f3ed67d3a3a2dbbf7f" prot="protected" static="no" mutable="no">
         <type>double</type>
-        <definition>double BoundaryStrategy::side</definition>
+        <definition>double BoundaryStrategy::side_x</definition>
         <argsstring></argsstring>
-        <name>side</name>
-        <qualifiedname>BoundaryStrategy::side</qualifiedname>
+        <name>side_x</name>
+        <qualifiedname>BoundaryStrategy::side_x</qualifiedname>
         <briefdescription>
-<para>Size of one side of the simulation square. </para>
+<para>Size of one side of the simulation area (x-axis). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -21,17 +21,36 @@
         </inbodydescription>
         <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="23" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="23" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="class_boundary_strategy_1aac6a1baa6fc5791d495058e77dd5eca3" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double BoundaryStrategy::side_y</definition>
+        <argsstring></argsstring>
+        <name>side_y</name>
+        <qualifiedname>BoundaryStrategy::side_y</qualifiedname>
+        <briefdescription>
+<para>Size of one side of the simulation area (y-axis). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="24" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_boundary_strategy_1ae9ab097162f1f79483ebd3bc70616a16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>BoundaryStrategy::BoundaryStrategy</definition>
-        <argsstring>(double side)</argsstring>
+        <argsstring>(double side_x, double side_y)</argsstring>
         <name>BoundaryStrategy</name>
         <qualifiedname>BoundaryStrategy::BoundaryStrategy</qualifiedname>
         <param>
           <type>double</type>
-          <declname>side</declname>
+          <declname>side_x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>side_y</declname>
         </param>
         <briefdescription>
 <para><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref> constructor. </para>
@@ -39,10 +58,18 @@
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername direction="in">side</parametername>
+<parametername direction="in">side_x</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>size of one side of the simulation square </para>
+<para>size of one side of the simulation area (x-axis) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">side_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of one side of the simulation area (y-axis) </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -120,9 +147,7 @@
     </briefdescription>
     <detaileddescription>
 <para>Defines the interface for boundary-type classes.</para>
-<para><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref> classes implement methods specific to the boundary type of the model. The simulation area is assumed to have boundary conditions at x = <computeroutput>side</computeroutput>, y = <computeroutput>side</computeroutput>, and have ranges [0, <computeroutput>side</computeroutput>] in all directions. <simplesect kind="see"><para><ref refid="struct_area_params_1a25bc9f9baa5f3b4f9352101dfec36a99" kindref="member">AreaParams::side</ref> </para>
-</simplesect>
-</para>
+<para><ref refid="class_boundary_strategy" kindref="compound">BoundaryStrategy</ref> classes implement methods specific to the boundary type of the model. The simulation area is assumed to have boundary conditions at x = <computeroutput>side_x</computeroutput>, y = <computeroutput>side_y</computeroutput>, which are calculated from provided input coordinates or assumed to be 1 otherwise. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -148,12 +173,13 @@
         <link refid="class_boundary_strategy"/>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="11" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="11" bodyend="24"/>
+    <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" line="10" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/BoundaryStrategy.h" bodystart="10" bodyend="25"/>
     <listofallmembers>
-      <member refid="class_boundary_strategy_1a8fbbc051751dbb883c0f00673d9027c4" prot="public" virt="non-virtual"><scope>BoundaryStrategy</scope><name>BoundaryStrategy</name></member>
+      <member refid="class_boundary_strategy_1ae9ab097162f1f79483ebd3bc70616a16" prot="public" virt="non-virtual"><scope>BoundaryStrategy</scope><name>BoundaryStrategy</name></member>
       <member refid="class_boundary_strategy_1ab845b40ed83aeb78018c23f45565cd0e" prot="public" virt="pure-virtual"><scope>BoundaryStrategy</scope><name>distance</name></member>
       <member refid="class_boundary_strategy_1a37b4146de796d583d01fc15ad3381ea8" prot="public" virt="pure-virtual"><scope>BoundaryStrategy</scope><name>relative_pos</name></member>
-      <member refid="class_boundary_strategy_1a8b9e897d2396509ec12f4d797e3101f1" prot="protected" virt="non-virtual"><scope>BoundaryStrategy</scope><name>side</name></member>
+      <member refid="class_boundary_strategy_1a166681cdb347e3f3ed67d3a3a2dbbf7f" prot="protected" virt="non-virtual"><scope>BoundaryStrategy</scope><name>side_x</name></member>
+      <member refid="class_boundary_strategy_1aac6a1baa6fc5791d495058e77dd5eca3" prot="protected" virt="non-virtual"><scope>BoundaryStrategy</scope><name>side_y</name></member>
       <member refid="class_boundary_strategy_1a9f8754869c6cbe6af73352e61b581c48" prot="public" virt="non-virtual"><scope>BoundaryStrategy</scope><name>~BoundaryStrategy</name></member>
     </listofallmembers>
   </compounddef>

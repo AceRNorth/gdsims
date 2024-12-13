@@ -158,7 +158,7 @@ for j in range(0, len(sets)):
         
     # if want advanced options, uncomment below line
     # e.g. setting boundary type to edge and dispersal type to radial
-    input_string += "1" + "\n" + "t" + "\n" + "2" + "\n" + "r" + "\n" 
+    input_string += "1" + "\n" + "e" + "\n" + "2" + "\n" + "d" + "\n" 
     # e.g. setting custom coords file
     #input_string += "4" + "\n" + "coords_set1run1.txt" + "\n"
     #input_string += "4" + "\n" + "coords_set" + str(sets[j]) + "run1" + "_er.txt" + "\n"
@@ -213,7 +213,7 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_radial"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\edge_distance_kernel"
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
@@ -222,7 +222,7 @@ sets = [i for i in range(1, 19)]
 
 # ** Modify the list of num_runs in each set selected as needed **
 num_runs_list = [2 for i in range(0, len(sets))]
-# num_runs_list = [2, 3, 1]
+# num_runs_list = [2, 3, 1]S
 
 make_plot = False
 

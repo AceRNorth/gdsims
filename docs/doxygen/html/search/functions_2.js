@@ -8,6 +8,6 @@ var searchData=
   ['check_5fbounds_5',['check_bounds',['../inputval_8h.html#a5a4e5a7ca0db8d44c2b3e84c6eb2f517',1,'inputval.h']]],
   ['check_5finterval_6',['check_interval',['../inputval_8h.html#a9ceaca1e9eb448fa975e5bb7bdbf01be',1,'inputval.h']]],
   ['compute_5fconnecs_7',['compute_connecs',['../class_distance_kernel_dispersal.html#afc863f141fc20f64d770f3b54e8fd8f9',1,'DistanceKernelDispersal::compute_connecs()'],['../class_radial_dispersal.html#ad09b4df09539d8b421c8d7ed3199d0c4',1,'RadialDispersal::compute_connecs(std::vector&lt; Patch * &gt; &amp;sites)']]],
-  ['compute_5fdistances_8',['compute_distances',['../class_radial_dispersal.html#a28a558e2dcb75b8db11fd424aa66243e',1,'RadialDispersal']]],
+  ['compute_5fdistances_5fsite_8',['compute_distances_site',['../class_radial_dispersal.html#ae499f129e03551e4f421de44de334fe0',1,'RadialDispersal']]],
   ['compute_5finterval_5funion_9',['compute_interval_union',['../class_radial_dispersal.html#ae456b5d871312e16812fb6c4024288f6',1,'RadialDispersal']]]
 ];

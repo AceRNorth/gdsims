@@ -1,5 +1,5 @@
 <map id="EdgeBoundaryStrategy" name="EdgeBoundaryStrategy">
-<area shape="rect" id="Node000001" title="Implements methods for edge boundary conditions." alt="" coords="5,187,171,299"/>
-<area shape="rect" id="Node000002" href="$class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="16,5,160,139"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,154,91,187,85,187,85,154"/>
+<area shape="rect" id="Node000001" title="Implements methods for edge boundary conditions." alt="" coords="5,208,171,320"/>
+<area shape="rect" id="Node000002" href="$class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="16,5,160,160"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,175,91,208,85,208,85,175"/>
 </map>

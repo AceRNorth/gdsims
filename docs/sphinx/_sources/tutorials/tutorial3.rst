@@ -47,7 +47,6 @@ Create a file that contains these parameters:
         1
         1000
         25
-        1
         0.05
         0.125
         100

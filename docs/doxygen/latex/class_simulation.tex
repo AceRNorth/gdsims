@@ -11,7 +11,8 @@ Sets up and controls the flow of the simulation.
 
 
 
-Collaboration diagram for Simulation\+:\nopagebreak
+Collaboration diagram for Simulation\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -25,15 +26,15 @@ Collaboration diagram for Simulation\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em \doxylink{class_simulation}{Simulation} constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_simulation_a80fad3f57dfaf195a36f7bc49bc88279}{\texorpdfstring{$\sim$}{\string~}\+Simulation}} ()
 \begin{DoxyCompactList}\small\item\em \doxylink{class_simulation}{Simulation} destructor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_simulation_ab365e7a0000cae028998efae63b7d0c1}{set\+\_\+coords}} (const std\+::string \&filename)
+void \mbox{\hyperlink{class_simulation_a96c1d2c754a5e90464516a20208e58fc}{set\+\_\+coords}} (const std\+::filesystem\+::path \&filepath)
 \begin{DoxyCompactList}\small\item\em Sets the sites\textquotesingle{} coordinates and the release sites from a file, unless any errors are thrown. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simulation_ac6575f63c78f7fffff4817665f5a0f05}{set\+\_\+boundary\+\_\+type}} (\mbox{\hyperlink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}} boundary)
 \begin{DoxyCompactList}\small\item\em Sets the boundary type for the model. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simulation_a451b81744f93c2470a28d75bece48783}{set\+\_\+dispersal\+\_\+type}} (\mbox{\hyperlink{constants_8h_ac025f1e887ae43bed8cad7aff794c04a}{Dispersal\+Type}} disp)
 \begin{DoxyCompactList}\small\item\em Sets the dispersal type for the model. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_simulation_abc5c5d0891de7943820db3e6682cd125}{set\+\_\+rainfall}} (const std\+::string \&filename)
+void \mbox{\hyperlink{class_simulation_a23c92301547fd16189ab88664c3ad4c9}{set\+\_\+rainfall}} (const std\+::filesystem\+::path \&filepath)
 \begin{DoxyCompactList}\small\item\em Sets the daily rainfall values from a file, unless any errors are thrown. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_simulation_a7d774bb0496b0ea95c2c88afc0d24731}{set\+\_\+release\+\_\+times}} (const std\+::string \&filename)
+void \mbox{\hyperlink{class_simulation_a16c2953b5d8555b9edb6c7ce8280ecdf}{set\+\_\+release\+\_\+times}} (const std\+::filesystem\+::path \&filepath)
 \begin{DoxyCompactList}\small\item\em Sets the release times for gene drive release from a file, unless any errors are thrown. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simulation_ac5440a772e9d7788c588a795a7821fb6}{set\+\_\+inheritance}} (\mbox{\hyperlink{struct_inheritance_params}{Inheritance\+Params}} inher\+\_\+params)
 \begin{DoxyCompactList}\small\item\em Sets the values of the f\+\_\+\{ijk\} inheritance fraction for the gene drive considering r2 non-\/functional resistance alleles. \end{DoxyCompactList}\item 
@@ -147,11 +148,11 @@ Sets the boundary type for the model.
 \begin{DoxySeeAlso}{See also}
 \doxylink{constants_8h_af75d5dd7322fa39ed0af4e7839e600f8}{Boundary\+Type}, \doxylink{class_boundary_strategy}{Boundary\+Strategy} 
 \end{DoxySeeAlso}
-\Hypertarget{class_simulation_ab365e7a0000cae028998efae63b7d0c1}\label{class_simulation_ab365e7a0000cae028998efae63b7d0c1} 
+\Hypertarget{class_simulation_a96c1d2c754a5e90464516a20208e58fc}\label{class_simulation_a96c1d2c754a5e90464516a20208e58fc} 
 \index{Simulation@{Simulation}!set\_coords@{set\_coords}}
 \index{set\_coords@{set\_coords}!Simulation@{Simulation}}
 \doxysubsubsection{\texorpdfstring{set\_coords()}{set\_coords()}}
-{\footnotesize\ttfamily void Simulation\+::set\+\_\+coords (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Simulation\+::set\+\_\+coords (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{filepath }\end{DoxyParamCaption})}
 
 
 
@@ -160,12 +161,9 @@ Sets the sites\textquotesingle{} coordinates and the release sites from a file, 
 The file should be structured in three columns, with x and y coordinates and whether the site is a release site (y/n) respectively. Values should be delimited by white space, and site rows should be delimited by new lines. \begin{DoxyWarning}{Warning}
 Setting specific release sites will change the mode of gene drive release from random to scheduled. The specified release sites will be used for each of the releases (if using multiple release times). Mosquitoes will be released at all release sites for each release time. 
 \end{DoxyWarning}
-\begin{DoxyNote}{Note}
-The coordinates will undergo bound checks if the boundary type has been set to Toroid (the default) -\/ coordinates will need to be in the range \mbox{[}0, side\mbox{]} for both x and y. 
-\end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em filename} & coordinates filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) \\
+\mbox{\texttt{ in}}  & {\em filepath} & coordinates filepath, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_simulation_a451b81744f93c2470a28d75bece48783}\label{class_simulation_a451b81744f93c2470a28d75bece48783} 
@@ -211,11 +209,11 @@ DD, RR and DR females are assumed to be sterile as they don\textquotesingle{}t p
 \begin{DoxySeeAlso}{See also}
 \doxylink{struct_inheritance_params}{Inheritance\+Params}, \doxylink{struct_input_params}{Input\+Params}\+:gamma, \doxylink{struct_input_params}{Input\+Params}\+:xi, \doxylink{struct_input_params_a803f48bc190f6b07b317539429626ee3}{Input\+Params\+::e} 
 \end{DoxySeeAlso}
-\Hypertarget{class_simulation_abc5c5d0891de7943820db3e6682cd125}\label{class_simulation_abc5c5d0891de7943820db3e6682cd125} 
+\Hypertarget{class_simulation_a23c92301547fd16189ab88664c3ad4c9}\label{class_simulation_a23c92301547fd16189ab88664c3ad4c9} 
 \index{Simulation@{Simulation}!set\_rainfall@{set\_rainfall}}
 \index{set\_rainfall@{set\_rainfall}!Simulation@{Simulation}}
 \doxysubsubsection{\texorpdfstring{set\_rainfall()}{set\_rainfall()}}
-{\footnotesize\ttfamily void Simulation\+::set\+\_\+rainfall (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Simulation\+::set\+\_\+rainfall (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{filepath }\end{DoxyParamCaption})}
 
 
 
@@ -226,17 +224,17 @@ This option will use the input parameters alpha1 and resp previously provided an
 \end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em filename} & rainfall filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) \\
+\mbox{\texttt{ in}}  & {\em filepath} & rainfall filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
 \doxylink{class_seasonality}{Seasonality} 
 \end{DoxySeeAlso}
-\Hypertarget{class_simulation_a7d774bb0496b0ea95c2c88afc0d24731}\label{class_simulation_a7d774bb0496b0ea95c2c88afc0d24731} 
+\Hypertarget{class_simulation_a16c2953b5d8555b9edb6c7ce8280ecdf}\label{class_simulation_a16c2953b5d8555b9edb6c7ce8280ecdf} 
 \index{Simulation@{Simulation}!set\_release\_times@{set\_release\_times}}
 \index{set\_release\_times@{set\_release\_times}!Simulation@{Simulation}}
 \doxysubsubsection{\texorpdfstring{set\_release\_times()}{set\_release\_times()}}
-{\footnotesize\ttfamily void Simulation\+::set\+\_\+release\+\_\+times (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Simulation\+::set\+\_\+release\+\_\+times (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{filepath }\end{DoxyParamCaption})}
 
 
 
@@ -247,7 +245,7 @@ When using this option, the input parameter driver\+\_\+start previously entered
 \end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em filename} & release times filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) \\
+\mbox{\texttt{ in}}  & {\em filepath} & release times filename, can be a relative or absolute filepath, or a filename (only if the file is in the build directory) \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}

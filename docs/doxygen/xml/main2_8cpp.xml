@@ -4,35 +4,36 @@
     <compoundname>main2.cpp</compoundname>
     <includes local="no">iostream</includes>
     <includes local="no">string</includes>
+    <includes local="no">filesystem</includes>
     <includes refid="_simulation_8h" local="yes">Simulation.h</includes>
     <includes refid="inputval_8h" local="yes">inputval.h</includes>
     <includes refid="constants_8h" local="yes">constants.h</includes>
     <includes refid="_params_8h" local="yes">Params.h</includes>
     <incdepgraph>
-      <node id="9">
+      <node id="10">
         <label>InputParams.h</label>
         <link refid="_input_params_8h"/>
       </node>
-      <node id="8">
+      <node id="9">
         <label>Params.h</label>
         <link refid="_params_8h"/>
-        <childnode refid="6" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="10">
+      <node id="11">
         <label>Point.h</label>
         <link refid="_point_8h"/>
       </node>
-      <node id="4">
+      <node id="5">
         <label>Simulation.h</label>
         <link refid="_simulation_8h"/>
-        <childnode refid="5" relation="include">
-        </childnode>
         <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
@@ -40,23 +41,25 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
       </node>
-      <node id="7">
+      <node id="8">
         <label>constants.h</label>
         <link refid="constants_8h"/>
       </node>
-      <node id="11">
+      <node id="12">
         <label>inputval.h</label>
         <link refid="inputval_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
         <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -68,32 +71,37 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
       </node>
-      <node id="5">
+      <node id="6">
         <label>array</label>
       </node>
-      <node id="12">
+      <node id="4">
+        <label>filesystem</label>
+      </node>
+      <node id="13">
         <label>fstream</label>
       </node>
       <node id="2">
         <label>iostream</label>
       </node>
-      <node id="13">
+      <node id="14">
         <label>limits</label>
       </node>
-      <node id="14">
+      <node id="15">
         <label>sstream</label>
       </node>
       <node id="3">
         <label>string</label>
       </node>
-      <node id="6">
+      <node id="7">
         <label>vector</label>
       </node>
     </incdepgraph>
@@ -104,32 +112,32 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_simulation_8h" kindref="compound">Simulation.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="inputval_8h" kindref="compound">inputval.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="constants_8h" kindref="compound">constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_params_8h" kindref="compound">Params.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DOXYGEN_SHOULD_SKIP_THIS</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()<sp/>{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::string<sp/>params_filename;<sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cin<sp/>&gt;&gt;<sp/>params_filename;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>boundary_type;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>disp_type;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>coords_filename;<sp/></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>rainfall_filename;<sp/></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>rel_times_filename;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>input<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>progression<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_runs;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_t;<sp/></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>area<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_pat;<sp/><sp/></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>side;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;filesystem&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_simulation_8h" kindref="compound">Simulation.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="inputval_8h" kindref="compound">inputval.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="constants_8h" kindref="compound">constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_params_8h" kindref="compound">Params.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DOXYGEN_SHOULD_SKIP_THIS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::string<sp/>params_filename;<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cin<sp/>&gt;&gt;<sp/>params_filename;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>boundary_type;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>disp_type;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>coords_filename;<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>rainfall_filename;<sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>rel_times_filename;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>input<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>progression<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_runs;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_t;<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>area<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_pat;<sp/><sp/></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>model<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>mu_j;</highlight></codeline>
@@ -179,121 +187,122 @@
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>num_runs;</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>max_t;</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>num_pat;</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>side;</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>mu_j;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>mu_a;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>beta;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>theta;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>comp_power;</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>min_dev;</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>gamma;</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>xi;</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>e;</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>driver_start;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>num_driver_M;</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>num_driver_sites;</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>disp_rate;</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>max_disp;</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>psi;</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>mu_aes;</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>t_hide1;</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>t_hide2;</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>t_wake1;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>t_wake2;</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>alpha0_mean;</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>alpha0_variance;</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>alpha1;</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>amp;</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>resp;</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>rec_start;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>rec_end;</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>rec_interval_global;</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>rec_interval_local;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>rec_sites_freq;</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>set_label;</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>boundary_type;</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>disp_type;</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>coords_filename;</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>rainfall_filename;<sp/></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>rel_times_filename;</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_input_params" kindref="compound">InputParams</ref><sp/>params;</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1ab541958fd9e07697d71f0ea16e618de2" kindref="member">num_runs</ref><sp/>=<sp/>num_runs;</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a2ff1e7d5dd5c45bf804f0701072200f4" kindref="member">max_t</ref><sp/>=<sp/>max_t;</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a62f9db260cddf268056a39c133e971f7" kindref="member">num_pat</ref><sp/>=<sp/>num_pat;</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a1c3cdff052b3a5b67b56b6d9f24fd0c1" kindref="member">side</ref><sp/>=<sp/>side;</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a746b1ef46c9498a5dd09b825ea4b7a24" kindref="member">mu_j</ref><sp/>=<sp/>mu_j;</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1ad5675a09a39929aa98cd569cb4c4403f" kindref="member">mu_a</ref><sp/>=<sp/>mu_a;</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a4fb2cae8d6b3a9585e386b2bfeb03299" kindref="member">beta</ref><sp/>=<sp/>beta;</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a7183128711c0a119f7fc72e94ae6bdd4" kindref="member">theta</ref><sp/>=<sp/>theta;</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a99ec67370f4794427a09d93630b248e3" kindref="member">comp_power</ref><sp/>=<sp/>comp_power;</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a2593d199fff80f091dfd1cf576c5c54f" kindref="member">min_dev</ref><sp/>=<sp/>min_dev;</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a746acff494ce4f310d92d67bfcbed018" kindref="member">gamma</ref><sp/>=<sp/>gamma;</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a2f34329974d0d04d9027f00955c4bc99" kindref="member">xi</ref><sp/>=<sp/>xi;</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a803f48bc190f6b07b317539429626ee3" kindref="member">e</ref><sp/>=<sp/>e;</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a0bd5fad3e6b9c0fe9a889aa42ae9abf6" kindref="member">driver_start</ref><sp/>=<sp/>driver_start;</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a99737ba534111f33e3882576b93eb88a" kindref="member">num_driver_M</ref><sp/>=<sp/>num_driver_M;</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1ac071e4057a91d95a69871d8f07ad9bcb" kindref="member">num_driver_sites</ref><sp/>=<sp/>num_driver_sites;</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a52529a486affcbf464037cf78e1610ad" kindref="member">disp_rate</ref><sp/>=<sp/>disp_rate;</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a7c92eaa0ddaa679b439b0d9aa6a30086" kindref="member">max_disp</ref><sp/>=<sp/>max_disp;</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1adc5b2a93829b4fa4eafa0e804446558a" kindref="member">psi</ref><sp/>=<sp/>psi;</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1af4132ca26a4a4ce1e19c46c89d8aee38" kindref="member">mu_aes</ref><sp/>=<sp/>mu_aes;</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a5d0c54631c85331b117bed861883fba5" kindref="member">t_hide1</ref><sp/>=<sp/>t_hide1;</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1ae17cce0a7ef61941a6e97158ebf80f1c" kindref="member">t_hide2</ref><sp/>=<sp/>t_hide2;</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1aa0b9fe354099482dfdead7877fd3409b" kindref="member">t_wake1</ref><sp/>=<sp/>t_wake1;</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a4542cd7e2b6b2b386a9e63e08c2b527f" kindref="member">t_wake2</ref><sp/>=<sp/>t_wake2;</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a2056a53757ab38ff189bca6870d2f7d5" kindref="member">alpha0_mean</ref><sp/>=<sp/>alpha0_mean;</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a4497eea80bab35f4d09bb8aa1fd71c3e" kindref="member">alpha0_variance</ref><sp/>=<sp/>alpha0_variance;</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a811a584ea9d14cb5223d56efaa8f68c5" kindref="member">alpha1</ref><sp/>=<sp/>alpha1;</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1ab02eb338f46a10a8144e4219292c34c9" kindref="member">amp</ref><sp/>=<sp/>amp;</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a113b8e6f08c2123150b03908be887817" kindref="member">resp</ref><sp/>=<sp/>resp;</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a6e73a95f47dcfa05263838b0b1f3ad27" kindref="member">rec_start</ref><sp/>=<sp/>rec_start;</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a1223c275e31ee8b901b5d5a274d85c74" kindref="member">rec_end</ref><sp/>=<sp/>rec_end;</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a88ac9f864219bc930cda1f52aa0920b3" kindref="member">rec_interval_global</ref><sp/>=<sp/>rec_interval_global;</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1ae1a85942abb2e6e81ee33bb395fee17d" kindref="member">rec_interval_local</ref><sp/>=<sp/>rec_interval_local;</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a0aa285f32fbb33162549d1480f36e1f0" kindref="member">rec_sites_freq</ref><sp/>=<sp/>rec_sites_freq;</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a07f5774fe964faa2107831863f75ab1c" kindref="member">set_label</ref><sp/>=<sp/>set_label;</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"></highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8" kindref="member">BoundaryType</ref><sp/>boundary;</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(boundary_type<sp/>==<sp/></highlight><highlight class="charliteral">&apos;t&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boundary<sp/>=<sp/><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d" kindref="member">Toroid</ref>;</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(boundary_type<sp/>==<sp/></highlight><highlight class="charliteral">&apos;e&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boundary<sp/>=<sp/><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8a7f0bc3a17ff45e6a7c3fe52b35db1888" kindref="member">Edge</ref>;</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"></highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04a" kindref="member">DispersalType</ref><sp/>disp;</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(disp_type<sp/>==<sp/></highlight><highlight class="charliteral">&apos;d&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disp<sp/>=<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf" kindref="member">DistanceKernel</ref>;</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(disp_type<sp/>==<sp/></highlight><highlight class="charliteral">&apos;r&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disp<sp/>=<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3709dd357d0541fa8a1fc6b2238fa583" kindref="member">Radial</ref>;</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"></highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_simulation" kindref="compound">Simulation</ref><sp/>simulation(params);</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_inheritance_params" kindref="compound">InheritanceParams</ref><sp/>inher;</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>inher.<ref refid="struct_inheritance_params_1af0f03901f9ab61ad32d860a629319933" kindref="member">gamma</ref><sp/>=<sp/>params.<ref refid="struct_input_params_1a746acff494ce4f310d92d67bfcbed018" kindref="member">gamma</ref>;</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>inher.<ref refid="struct_inheritance_params_1ad465251fe02c73cfdf5a183f66a38c3a" kindref="member">xi</ref><sp/>=<sp/>params.<ref refid="struct_input_params_1a2f34329974d0d04d9027f00955c4bc99" kindref="member">xi</ref>;</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>inher.<ref refid="struct_inheritance_params_1a21c21bbae006decbedd489a7f8dbf631" kindref="member">e</ref><sp/>=<sp/>params.<ref refid="struct_input_params_1a803f48bc190f6b07b317539429626ee3" kindref="member">e</ref>;</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation.set_inheritance(inher);</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation.set_boundary_type(boundary);</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation.set_dispersal_type(disp);</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"></highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(coords_filename<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>simulation.set_coords(coords_filename);</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rainfall_filename<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>simulation.set_rainfall(rainfall_filename);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>mu_j;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>mu_a;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>beta;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>theta;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>comp_power;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>min_dev;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>gamma;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>xi;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>e;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>driver_start;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>num_driver_M;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>num_driver_sites;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>disp_rate;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>max_disp;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>psi;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>mu_aes;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>t_hide1;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>t_hide2;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>t_wake1;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>t_wake2;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>alpha0_mean;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>alpha0_variance;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>alpha1;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>amp;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>resp;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>rec_start;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>rec_end;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>rec_interval_global;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>rec_interval_local;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>rec_sites_freq;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>set_label;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>boundary_type;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>disp_type;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>coords_filename;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>rainfall_filename;<sp/></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>rel_times_filename;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_input_params" kindref="compound">InputParams</ref><sp/>params;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1ab541958fd9e07697d71f0ea16e618de2" kindref="member">num_runs</ref><sp/>=<sp/>num_runs;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a2ff1e7d5dd5c45bf804f0701072200f4" kindref="member">max_t</ref><sp/>=<sp/>max_t;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a62f9db260cddf268056a39c133e971f7" kindref="member">num_pat</ref><sp/>=<sp/>num_pat;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a746b1ef46c9498a5dd09b825ea4b7a24" kindref="member">mu_j</ref><sp/>=<sp/>mu_j;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1ad5675a09a39929aa98cd569cb4c4403f" kindref="member">mu_a</ref><sp/>=<sp/>mu_a;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a4fb2cae8d6b3a9585e386b2bfeb03299" kindref="member">beta</ref><sp/>=<sp/>beta;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a7183128711c0a119f7fc72e94ae6bdd4" kindref="member">theta</ref><sp/>=<sp/>theta;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a99ec67370f4794427a09d93630b248e3" kindref="member">comp_power</ref><sp/>=<sp/>comp_power;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a2593d199fff80f091dfd1cf576c5c54f" kindref="member">min_dev</ref><sp/>=<sp/>min_dev;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a746acff494ce4f310d92d67bfcbed018" kindref="member">gamma</ref><sp/>=<sp/>gamma;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a2f34329974d0d04d9027f00955c4bc99" kindref="member">xi</ref><sp/>=<sp/>xi;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a803f48bc190f6b07b317539429626ee3" kindref="member">e</ref><sp/>=<sp/>e;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a0bd5fad3e6b9c0fe9a889aa42ae9abf6" kindref="member">driver_start</ref><sp/>=<sp/>driver_start;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a99737ba534111f33e3882576b93eb88a" kindref="member">num_driver_M</ref><sp/>=<sp/>num_driver_M;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1ac071e4057a91d95a69871d8f07ad9bcb" kindref="member">num_driver_sites</ref><sp/>=<sp/>num_driver_sites;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a52529a486affcbf464037cf78e1610ad" kindref="member">disp_rate</ref><sp/>=<sp/>disp_rate;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a7c92eaa0ddaa679b439b0d9aa6a30086" kindref="member">max_disp</ref><sp/>=<sp/>max_disp;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1adc5b2a93829b4fa4eafa0e804446558a" kindref="member">psi</ref><sp/>=<sp/>psi;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1af4132ca26a4a4ce1e19c46c89d8aee38" kindref="member">mu_aes</ref><sp/>=<sp/>mu_aes;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a5d0c54631c85331b117bed861883fba5" kindref="member">t_hide1</ref><sp/>=<sp/>t_hide1;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1ae17cce0a7ef61941a6e97158ebf80f1c" kindref="member">t_hide2</ref><sp/>=<sp/>t_hide2;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1aa0b9fe354099482dfdead7877fd3409b" kindref="member">t_wake1</ref><sp/>=<sp/>t_wake1;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a4542cd7e2b6b2b386a9e63e08c2b527f" kindref="member">t_wake2</ref><sp/>=<sp/>t_wake2;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a2056a53757ab38ff189bca6870d2f7d5" kindref="member">alpha0_mean</ref><sp/>=<sp/>alpha0_mean;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a4497eea80bab35f4d09bb8aa1fd71c3e" kindref="member">alpha0_variance</ref><sp/>=<sp/>alpha0_variance;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a811a584ea9d14cb5223d56efaa8f68c5" kindref="member">alpha1</ref><sp/>=<sp/>alpha1;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1ab02eb338f46a10a8144e4219292c34c9" kindref="member">amp</ref><sp/>=<sp/>amp;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a113b8e6f08c2123150b03908be887817" kindref="member">resp</ref><sp/>=<sp/>resp;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a6e73a95f47dcfa05263838b0b1f3ad27" kindref="member">rec_start</ref><sp/>=<sp/>rec_start;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a1223c275e31ee8b901b5d5a274d85c74" kindref="member">rec_end</ref><sp/>=<sp/>rec_end;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a88ac9f864219bc930cda1f52aa0920b3" kindref="member">rec_interval_global</ref><sp/>=<sp/>rec_interval_global;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1ae1a85942abb2e6e81ee33bb395fee17d" kindref="member">rec_interval_local</ref><sp/>=<sp/>rec_interval_local;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a0aa285f32fbb33162549d1480f36e1f0" kindref="member">rec_sites_freq</ref><sp/>=<sp/>rec_sites_freq;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>params.<ref refid="struct_input_params_1a07f5774fe964faa2107831863f75ab1c" kindref="member">set_label</ref><sp/>=<sp/>set_label;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8" kindref="member">BoundaryType</ref><sp/>boundary;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(boundary_type<sp/>==<sp/></highlight><highlight class="charliteral">&apos;t&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boundary<sp/>=<sp/><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8ab937327ce1842198af32bc41177a231d" kindref="member">Toroid</ref>;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(boundary_type<sp/>==<sp/></highlight><highlight class="charliteral">&apos;e&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boundary<sp/>=<sp/><ref refid="constants_8h_1af75d5dd7322fa39ed0af4e7839e600f8a7f0bc3a17ff45e6a7c3fe52b35db1888" kindref="member">Edge</ref>;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04a" kindref="member">DispersalType</ref><sp/>disp;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(disp_type<sp/>==<sp/></highlight><highlight class="charliteral">&apos;d&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disp<sp/>=<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3d3f3ea532b62c38af7090a0421187cf" kindref="member">DistanceKernel</ref>;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(disp_type<sp/>==<sp/></highlight><highlight class="charliteral">&apos;r&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disp<sp/>=<sp/><ref refid="constants_8h_1ac025f1e887ae43bed8cad7aff794c04aa3709dd357d0541fa8a1fc6b2238fa583" kindref="member">Radial</ref>;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_simulation" kindref="compound">Simulation</ref><sp/>simulation(params);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_inheritance_params" kindref="compound">InheritanceParams</ref><sp/>inher;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>inher.<ref refid="struct_inheritance_params_1af0f03901f9ab61ad32d860a629319933" kindref="member">gamma</ref><sp/>=<sp/>params.<ref refid="struct_input_params_1a746acff494ce4f310d92d67bfcbed018" kindref="member">gamma</ref>;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>inher.<ref refid="struct_inheritance_params_1ad465251fe02c73cfdf5a183f66a38c3a" kindref="member">xi</ref><sp/>=<sp/>params.<ref refid="struct_input_params_1a2f34329974d0d04d9027f00955c4bc99" kindref="member">xi</ref>;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>inher.<ref refid="struct_inheritance_params_1a21c21bbae006decbedd489a7f8dbf631" kindref="member">e</ref><sp/>=<sp/>params.<ref refid="struct_input_params_1a803f48bc190f6b07b317539429626ee3" kindref="member">e</ref>;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation.set_inheritance(inher);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation.set_boundary_type(boundary);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation.set_dispersal_type(disp);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(coords_filename<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>coords_filepath<sp/>=<sp/>std::filesystem::path(coords_filename);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>simulation.set_coords(coords_filepath);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rainfall_filename<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>rainfall_filepath<sp/>=<sp/>std::filesystem::path(rainfall_filename);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>simulation.set_rainfall(rainfall_filepath);</highlight></codeline>
 <codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rel_times_filename<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>simulation.set_release_times(rel_times_filename);</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation.run_reps();</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"></highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="190"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"></highlight></codeline>
-<codeline lineno="192"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DOXYGEN_SHOULD_SKIP_THIS<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>rel_times_filepath<sp/>=<sp/>std::filesystem::path(rel_times_filename);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>simulation.set_release_times(rel_times_filepath);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>simulation.run_reps();</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DOXYGEN_SHOULD_SKIP_THIS<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
     <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/main2.cpp"/>
   </compounddef>

@@ -432,6 +432,7 @@ document.write(`
 <p>↰ <a class="reference internal" href="file_src_main2.cpp.html#file-src-main2-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">src\main2.cpp</span></code>)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;filesystem&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Simulation.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;inputval.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;constants.h&quot;</span>
@@ -457,7 +458,6 @@ document.write(`
 
 <span class="w">    </span><span class="c1">// area parameters</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num_pat</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">side</span><span class="p">;</span>
 
 <span class="w">    </span><span class="c1">// model parameters</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">mu_j</span><span class="p">;</span>
@@ -507,7 +507,6 @@ document.write(`
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">num_runs</span><span class="p">;</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">max_t</span><span class="p">;</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">num_pat</span><span class="p">;</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">side</span><span class="p">;</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">mu_j</span><span class="p">;</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">mu_a</span><span class="p">;</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">beta</span><span class="p">;</span>
@@ -549,7 +548,6 @@ document.write(`
 <span class="w">    </span><span class="n">params</span><span class="p">.</span><span class="n">num_runs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num_runs</span><span class="p">;</span>
 <span class="w">    </span><span class="n">params</span><span class="p">.</span><span class="n">max_t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_t</span><span class="p">;</span>
 <span class="w">    </span><span class="n">params</span><span class="p">.</span><span class="n">num_pat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num_pat</span><span class="p">;</span>
-<span class="w">    </span><span class="n">params</span><span class="p">.</span><span class="n">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">side</span><span class="p">;</span>
 <span class="w">    </span><span class="n">params</span><span class="p">.</span><span class="n">mu_j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mu_j</span><span class="p">;</span>
 <span class="w">    </span><span class="n">params</span><span class="p">.</span><span class="n">mu_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mu_a</span><span class="p">;</span>
 <span class="w">    </span><span class="n">params</span><span class="p">.</span><span class="n">beta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">beta</span><span class="p">;</span>
@@ -608,13 +606,16 @@ document.write(`
 <span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_dispersal_type</span><span class="p">(</span><span class="n">disp</span><span class="p">);</span>
 
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">coords_filename</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_coords</span><span class="p">(</span><span class="n">coords_filename</span><span class="p">);</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">coords_filepath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span><span class="p">(</span><span class="n">coords_filename</span><span class="p">);</span>
+<span class="w">        </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_coords</span><span class="p">(</span><span class="n">coords_filepath</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rainfall_filename</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_rainfall</span><span class="p">(</span><span class="n">rainfall_filename</span><span class="p">);</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">rainfall_filepath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span><span class="p">(</span><span class="n">rainfall_filename</span><span class="p">);</span>
+<span class="w">        </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_rainfall</span><span class="p">(</span><span class="n">rainfall_filepath</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rel_times_filename</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_release_times</span><span class="p">(</span><span class="n">rel_times_filename</span><span class="p">);</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">rel_times_filepath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">filesystem</span><span class="o">::</span><span class="n">path</span><span class="p">(</span><span class="n">rel_times_filename</span><span class="p">);</span>
+<span class="w">        </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_release_times</span><span class="p">(</span><span class="n">rel_times_filepath</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">run_reps</span><span class="p">();</span>
 

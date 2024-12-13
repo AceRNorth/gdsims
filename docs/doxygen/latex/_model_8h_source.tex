@@ -50,31 +50,32 @@
 \DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_a864dafb787704b50f6b3ca2b416533df}{day\_sim}};\ }
 \DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ simulation\ area\ parameters}}
 \DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_a73f36f72009040a8bcf8b15a94961b55}{num\_pat}};\ }
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_ad456b9a7464879d80abb19f1d14971cf}{side}};\ }
-\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{struct_initial_pops_params}{InitialPopsParams}}\ *\mbox{\hyperlink{class_model_a9f55ce896e1332f492570af65cfe76d4}{initial\_pops}};\ }
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ juvenile\ development\ parameters\ -\/\ common\ for\ all\ Patches}}
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_af1ba01eda7176a872d16eff80fa8cde9}{min\_dev}};\ }
-\DoxyCodeLine{00061\ \ \ \ \ std::array<double,\ constants::max\_dev+1>\ \mbox{\hyperlink{class_model_a1d8427bbcb5f7e9db04d213111e208ba}{dev\_duration\_probs}};\ }
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ inheritance}}
-\DoxyCodeLine{00064\ \ \ \ \ std::array<std::array<std::array\ <double,\ constants::num\_gen>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>\ \mbox{\hyperlink{class_model_a0fb3ac96dac77d8c0f67142ab70ad899}{inher\_fraction}};\ }
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ Patch\ construction\ parameters}}
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_a106416d6d9dc6510bda17ea0b6b1b588}{alpha0\_mean}};\ }
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_ad10cafc06c6b49b020c22efb034f8362}{alpha0\_variance}};\ }
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_ad1efe8336546de49c99d0d8c8ec8e6e8}{alpha0}}();}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\ initiation\ methods}}
-\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_add15fa39b2e8fda3fefc551de4d0e1bb}{populate\_sites}}();}
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a1b78097ea008a3b4cc36b321c7d42289}{set\_dev\_duration\_probs}}(\textcolor{keywordtype}{int}\ min\_time,\ \textcolor{keywordtype}{int}\ max\_time);}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ life-\/processes\ -\/\ interface\ with\ Patch}}
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_ae7c17f3d562ffc8baea8945ba4ffd3c3}{run\_step}}(\textcolor{keywordtype}{int}\ day);}
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a2a3151eb1bb6333c2ba103f0c7c6c475}{juv\_get\_older}}();}
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_ae2fa6af0cf426e1df144e4dcbee4069d}{adults\_die}}();}
-\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a76f26441a5112d1f596d5b9317734be4}{virgins\_mate}}();}
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a85c48027be32159a36337531249a435a}{lay\_eggs}}();}
-\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_af30fafd15a6451c20c3dcef622aaf6d0}{juv\_eclose}}();}
-\DoxyCodeLine{00082\ \};}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_MODEL\_H}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_a33ced6d9613c62ef84aadc016a667f22}{side\_x}};\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_ac6c296586aade2cfd8b0a013583ef337}{side\_y}};\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{struct_initial_pops_params}{InitialPopsParams}}\ *\mbox{\hyperlink{class_model_a9f55ce896e1332f492570af65cfe76d4}{initial\_pops}};\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ juvenile\ development\ parameters\ -\/\ common\ for\ all\ Patches}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_model_af1ba01eda7176a872d16eff80fa8cde9}{min\_dev}};\ }
+\DoxyCodeLine{00062\ \ \ \ \ std::array<double,\ constants::max\_dev+1>\ \mbox{\hyperlink{class_model_a1d8427bbcb5f7e9db04d213111e208ba}{dev\_duration\_probs}};\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ inheritance}}
+\DoxyCodeLine{00065\ \ \ \ \ std::array<std::array<std::array\ <double,\ constants::num\_gen>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>,\ \mbox{\hyperlink{namespaceconstants_aaff2693551946e51a92ed8115c3be3e5}{constants::num\_gen}}>\ \mbox{\hyperlink{class_model_a0fb3ac96dac77d8c0f67142ab70ad899}{inher\_fraction}};\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ Patch\ construction\ parameters}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_a106416d6d9dc6510bda17ea0b6b1b588}{alpha0\_mean}};\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_ad10cafc06c6b49b020c22efb034f8362}{alpha0\_variance}};\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_ad1efe8336546de49c99d0d8c8ec8e6e8}{alpha0}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//\ initiation\ methods}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_add15fa39b2e8fda3fefc551de4d0e1bb}{populate\_sites}}();}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a1b78097ea008a3b4cc36b321c7d42289}{set\_dev\_duration\_probs}}(\textcolor{keywordtype}{int}\ min\_time,\ \textcolor{keywordtype}{int}\ max\_time);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ life-\/processes\ -\/\ interface\ with\ Patch}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_ae7c17f3d562ffc8baea8945ba4ffd3c3}{run\_step}}(\textcolor{keywordtype}{int}\ day);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a2a3151eb1bb6333c2ba103f0c7c6c475}{juv\_get\_older}}();}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_ae2fa6af0cf426e1df144e4dcbee4069d}{adults\_die}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a76f26441a5112d1f596d5b9317734be4}{virgins\_mate}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a85c48027be32159a36337531249a435a}{lay\_eggs}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_af30fafd15a6451c20c3dcef622aaf6d0}{juv\_eclose}}();}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GENERALMETAPOP\_MODEL\_H}}
 
 \end{DoxyCode}

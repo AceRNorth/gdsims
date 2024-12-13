@@ -38,8 +38,7 @@ Gene drive release
 Patch coordinates
 -----------------
 
-- Continuous and randomly generated for *x* and *y* in the range [0, ``side``]. 
-
+- Continuous and randomly generated for *x* and *y* in the ranges [0, ``side_x``] and [0, ``side_y``] respectively, where by default ``side_x`` = ``side_y`` = 1. 
 
 Dispersal
 ---------
@@ -63,7 +62,7 @@ Boundary type
 
 - Toroid 
 
-Toroidal (or otherwise called periodic) boundary conditions are applied to all edges of the square model area by default.
+Toroidal (or otherwise called periodic) boundary conditions are applied to all edges of the rectangular model area by default.
 
 .. seealso::
     Tutorial :doc:`../tutorials/tutorial4`

@@ -89,19 +89,19 @@ Collaboration diagram for Model:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_model__coll__graph.png" border="0" usemap="#a_model_coll__map" alt="Collaboration graph"/></div>
 <map name="a_model_coll__map" id="a_model_coll__map">
-<area shape="rect" title="Sets up and runs the model." alt="" coords="291,549,459,1237"/>
-<area shape="rect" href="class_dispersal.html" title="Dispersal base class." alt="" coords="11,224,144,464"/>
-<area shape="poly" title=" " alt="" coords="144,463,285,722,280,724,140,465"/>
-<area shape="rect" href="class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="5,5,149,139"/>
-<area shape="poly" title=" " alt="" coords="80,139,80,207,75,207,75,139"/>
-<area shape="rect" href="class_aestivation.html" title="Implements aestivative behaviour for the model." alt="" coords="169,203,279,485"/>
-<area shape="poly" title=" " alt="" coords="265,484,289,570,284,572,260,486"/>
-<area shape="rect" href="class_g_d_release.html" title="Gene drive release base class." alt="" coords="304,245,445,443"/>
-<area shape="poly" title=" " alt="" coords="377,442,377,532,372,532,372,442"/>
-<area shape="rect" href="class_seasonality.html" title="Seasonality base class." alt="" coords="470,288,578,400"/>
-<area shape="poly" title=" " alt="" coords="512,400,466,569,461,567,507,399"/>
-<area shape="rect" href="struct_initial_pops_params.html" title="Initial population values for the model." alt="" coords="603,277,720,411"/>
-<area shape="poly" title=" " alt="" coords="631,412,593,487,469,722,464,719,588,484,626,409"/>
+<area shape="rect" title="Sets up and runs the model." alt="" coords="291,571,459,1280"/>
+<area shape="rect" href="class_dispersal.html" title="Dispersal base class." alt="" coords="11,245,144,485"/>
+<area shape="poly" title=" " alt="" coords="143,484,285,751,281,753,138,486"/>
+<area shape="rect" href="class_boundary_strategy.html" title="Boundary strategy base class." alt="" coords="5,5,149,160"/>
+<area shape="poly" title=" " alt="" coords="80,160,80,228,75,228,75,160"/>
+<area shape="rect" href="class_aestivation.html" title="Implements aestivative behaviour for the model." alt="" coords="169,224,279,507"/>
+<area shape="poly" title=" " alt="" coords="264,506,289,596,284,598,259,507"/>
+<area shape="rect" href="class_g_d_release.html" title="Gene drive release base class." alt="" coords="304,267,445,464"/>
+<area shape="poly" title=" " alt="" coords="377,464,377,554,372,554,372,464"/>
+<area shape="rect" href="class_seasonality.html" title="Seasonality base class." alt="" coords="470,309,578,421"/>
+<area shape="poly" title=" " alt="" coords="512,422,466,595,460,594,507,420"/>
+<area shape="rect" href="struct_initial_pops_params.html" title="Initial population values for the model." alt="" coords="603,299,720,432"/>
+<area shape="poly" title=" " alt="" coords="631,433,593,508,469,749,464,746,588,505,626,431"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -196,9 +196,12 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a73f36f72009040a8bcf8b15a94961b55" id="r_a73f36f72009040a8bcf8b15a94961b55"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73f36f72009040a8bcf8b15a94961b55">num_pat</a></td></tr>
 <tr class="memdesc:a73f36f72009040a8bcf8b15a94961b55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of population sites (patches) chosen for the simulation.  <br /></td></tr>
 <tr class="separator:a73f36f72009040a8bcf8b15a94961b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad456b9a7464879d80abb19f1d14971cf" id="r_ad456b9a7464879d80abb19f1d14971cf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad456b9a7464879d80abb19f1d14971cf">side</a></td></tr>
-<tr class="memdesc:ad456b9a7464879d80abb19f1d14971cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the square simulation area (side x side).  <br /></td></tr>
-<tr class="separator:ad456b9a7464879d80abb19f1d14971cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33ced6d9613c62ef84aadc016a667f22" id="r_a33ced6d9613c62ef84aadc016a667f22"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33ced6d9613c62ef84aadc016a667f22">side_x</a></td></tr>
+<tr class="memdesc:a33ced6d9613c62ef84aadc016a667f22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of one side of the simulation area (x-axis).  <br /></td></tr>
+<tr class="separator:a33ced6d9613c62ef84aadc016a667f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6c296586aade2cfd8b0a013583ef337" id="r_ac6c296586aade2cfd8b0a013583ef337"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6c296586aade2cfd8b0a013583ef337">side_y</a></td></tr>
+<tr class="memdesc:ac6c296586aade2cfd8b0a013583ef337"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of one side of the simulation area (y-axis).  <br /></td></tr>
+<tr class="separator:ac6c296586aade2cfd8b0a013583ef337"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f55ce896e1332f492570af65cfe76d4" id="r_a9f55ce896e1332f492570af65cfe76d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_initial_pops_params.html">InitialPopsParams</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f55ce896e1332f492570af65cfe76d4">initial_pops</a></td></tr>
 <tr class="memdesc:a9f55ce896e1332f492570af65cfe76d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial population values - common for all Patches.  <br /></td></tr>
 <tr class="separator:a9f55ce896e1332f492570af65cfe76d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1151,8 +1154,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad456b9a7464879d80abb19f1d14971cf" name="ad456b9a7464879d80abb19f1d14971cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad456b9a7464879d80abb19f1d14971cf">&#9670;&#160;</a></span>side</h2>
+<a id="a33ced6d9613c62ef84aadc016a667f22" name="a33ced6d9613c62ef84aadc016a667f22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33ced6d9613c62ef84aadc016a667f22">&#9670;&#160;</a></span>side_x</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1161,7 +1164,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double Model::side</td>
+          <td class="memname">double Model::side_x</td>
         </tr>
       </table>
   </td>
@@ -1171,7 +1174,31 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Size of the square simulation area (side x side). </p>
+<p>Size of one side of the simulation area (x-axis). </p>
+
+</div>
+</div>
+<a id="ac6c296586aade2cfd8b0a013583ef337" name="ac6c296586aade2cfd8b0a013583ef337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6c296586aade2cfd8b0a013583ef337">&#9670;&#160;</a></span>side_y</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Model::side_y</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Size of one side of the simulation area (y-axis). </p>
 
 </div>
 </div>

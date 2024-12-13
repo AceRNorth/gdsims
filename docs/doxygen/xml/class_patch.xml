@@ -159,10 +159,10 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_patch_1a8f0ac2f89a3d9065ea6df83662cf1410" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_patch_1a5016d6bf9c9c8f39a0d6b0f50770dd68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>Patch::Patch</definition>
-        <argsstring>(Model *mod, LifeParams *par, double a0, double side)</argsstring>
+        <argsstring>(Model *mod, LifeParams *par, double a0, double side_x, double side_y)</argsstring>
         <name>Patch</name>
         <qualifiedname>Patch::Patch</qualifiedname>
         <param>
@@ -179,7 +179,11 @@
         </param>
         <param>
           <type>double</type>
-          <declname>side</declname>
+          <declname>side_x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>side_y</declname>
         </param>
         <briefdescription>
 <para><ref refid="class_patch" kindref="compound">Patch</ref> constructor for randomly generated coordinates. </para>
@@ -213,10 +217,18 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="in">side</parametername>
+<parametername direction="in">side_x</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>side of the square simulation area </para>
+<para>size of one side of the simulation area (x-axis) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">side_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of one side of the simulation area (y-axis) </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -224,7 +236,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="20" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="17" bodyend="39"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="20" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="18" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a891de9d894bd3c2e3d800c58c82d7485" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -289,7 +301,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="21" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="48" bodyend="71"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="21" column="1" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="49" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1ada58f98a20b459b05e7d4b986de3aeee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -354,7 +366,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="22" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="80" bodyend="91"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="22" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="81" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a384ca47849b58d7f215d5a7aaa8049bb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="struct_point" kindref="compound">Point</ref></type>
@@ -372,7 +384,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="24" column="7" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="97" bodyend="100"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="24" column="7" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="98" bodyend="101"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a18366a21df794d2cebbbdfe3195734a5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::array&lt; long long int, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt;</type>
@@ -387,7 +399,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="25" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="105" bodyend="108"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="25" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="106" bodyend="109"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a7754f3fd7fb22af2c3661d4d5229ab2d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::array&lt; std::array&lt; long long int, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt;, <ref refid="namespaceconstants_1aaff2693551946e51a92ed8115c3be3e5" kindref="member">constants::num_gen</ref> &gt;</type>
@@ -402,7 +414,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="26" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="113" bodyend="116"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="26" column="12" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="114" bodyend="117"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a3071272790d2c5cde8675e94a306ac0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>long long int</type>
@@ -420,7 +432,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="28" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="122" bodyend="131"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="28" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="123" bodyend="132"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1adf7fcfe3a5b2b00afe76c9dac3aea50c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>long long int</type>
@@ -438,7 +450,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="29" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="137" bodyend="144"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="29" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="138" bodyend="145"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1af90e1ce58bd0c009e6dc9e939d2ee81d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>long long int</type>
@@ -456,7 +468,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="30" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="150" bodyend="157"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="30" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="151" bodyend="158"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a55c95af0f8a5c1d7ac885a828a873865" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>long long int</type>
@@ -474,7 +486,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="31" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="163" bodyend="172"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="31" column="15" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="164" bodyend="173"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a1ac1a35f87b779415c9c0f91f0235add" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -492,7 +504,7 @@ The number of surviving individuals in an age group (for a given genotype) is de
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="35" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="262" bodyend="271"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="35" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="263" bodyend="272"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a57e9e06fbf179f6d3c808dee1522f6a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -510,7 +522,7 @@ The number of surviving individuals in an age group (for a given genotype) is de
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="36" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="278" bodyend="295"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="36" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="279" bodyend="296"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a831b026c31ae2bbb56b04e8cc8fa2277" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -526,7 +538,7 @@ The number of surviving individuals in an age group (for a given genotype) is de
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="37" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="301" bodyend="316"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="37" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="302" bodyend="317"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1acbbe56b0cc3e9e65720191eb92bd33f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -570,7 +582,7 @@ The number of surviving individuals in an age group (for a given genotype) is de
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="38" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="326" bodyend="345"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="38" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="327" bodyend="346"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a935e1a959a81d818c161b1182a45e958" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -588,7 +600,7 @@ The number of survivors is determined by a binomial distribution of the juvenile
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="40" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="352" bodyend="366"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="40" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="353" bodyend="367"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1abfcba309e2ecc8eb224b89a5f11d6042" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -608,7 +620,7 @@ The number of survivors is determined by a binomial distribution of the juvenile
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="41" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="377" bodyend="383"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="41" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="378" bodyend="384"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a14846b95a2c4032ae4de370abc5ddb04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -628,7 +640,7 @@ The number of survivors is determined by a binomial distribution of the juvenile
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="42" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="393" bodyend="397"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="42" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="394" bodyend="398"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a2ef705901ca9492bad465c4392fe84cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -657,7 +669,7 @@ The number of survivors is determined by a binomial distribution of the juvenile
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="46" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="178" bodyend="184"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="46" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="179" bodyend="185"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1af11ef5b41bc1c8e274368396a0e506ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -686,7 +698,7 @@ The number of survivors is determined by a binomial distribution of the juvenile
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="47" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="190" bodyend="197"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="47" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="191" bodyend="198"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a6e8160f0e8dc961b25aa89d273cdfc2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -727,7 +739,7 @@ The number of survivors is determined by a binomial distribution of the juvenile
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="48" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="204" bodyend="208"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="48" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="205" bodyend="209"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a4b3a7d2c76b525c22175e48784951d5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -780,7 +792,7 @@ The number of survivors is determined by a binomial distribution of the juvenile
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="49" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="216" bodyend="219"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="49" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="217" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a9cae604040d09f1d07faee40bddb46f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -809,7 +821,7 @@ The number of survivors is determined by a binomial distribution of the juvenile
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="53" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="225" bodyend="232"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="53" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="226" bodyend="233"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a696522469c14fcb175f419f5e5540279" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -838,7 +850,7 @@ The number of survivors is determined by a binomial distribution of the juvenile
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="54" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="238" bodyend="245"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="54" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="239" bodyend="246"/>
       </memberdef>
       <memberdef kind="function" id="class_patch_1a40d8e016a59e2c0fafa5c4a840f54aaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -867,14 +879,14 @@ The number of survivors is determined by a binomial distribution of the juvenile
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="58" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="251" bodyend="255"/>
+        <location file="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/includes/Patch.h" line="58" column="6" bodyfile="C:/Users/biol0117/OneDrive - Nexus365/Documents/Programming projects/C++ Model/GeneralMetapop/src/Patch.cpp" bodystart="252" bodyend="256"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Contains the information of a local mosquito population. </para>
     </briefdescription>
     <detaileddescription>
-<para>The population is divided into four types: juveniles (J), males (M), virgin (unmated) females (V) and mated females (F). These are then subdivided into six genotypes (in this order): WW, WD, DD, DR, WR and RR composed of a wild-type allele (W), a drive-type allele (D) and a resistant-type allele (R). Juveniles are also subdivided into age groups, ordered from oldest (0 days left to eclosion) to youngest (max_dev - 1 days left). The population can carry out life-processes and interface with other classes to introduce gene drive mosquitoes into the <ref refid="class_patch" kindref="compound">Patch</ref>, carry out dispersal in and out of the <ref refid="class_patch" kindref="compound">Patch</ref> and aestivate. <image type="xml" name="patch_diagram.png">Patch behaviour diagram</image>
+<para>The population is divided into four types: juveniles (J), males (M), virgin (unmated) females (V) and mated females (F). These are then subdivided into six genotypes (in this order): WW, WD, DD, DR, WR and RR composed of a wild-type allele (W), a drive-type allele (D) and a resistant-type allele (R). Juveniles are also subdivided into age groups, ordered from oldest (0 days left to eclosion) to youngest (<computeroutput>max_dev</computeroutput> - 1 days left). The population can carry out life-processes and interface with other classes to introduce gene drive mosquitoes into the <ref refid="class_patch" kindref="compound">Patch</ref>, carry out dispersal in and out of the <ref refid="class_patch" kindref="compound">Patch</ref> and aestivate. <image type="xml" name="patch_diagram.png">Patch behaviour diagram</image>
  </para>
     </detaileddescription>
     <collaborationgraph>
@@ -975,7 +987,7 @@ The number of survivors is determined by a binomial distribution of the juvenile
       <member refid="class_patch_1a31046a60938f68ee9db3d779e2ba9dbe" prot="private" virt="non-virtual"><scope>Patch</scope><name>mate_rate</name></member>
       <member refid="class_patch_1a037a39e096bd12a5fb5299caa7505671" prot="private" virt="non-virtual"><scope>Patch</scope><name>model</name></member>
       <member refid="class_patch_1a79f803e7bb4536f9b0127b0dfe76c1ab" prot="private" virt="non-virtual"><scope>Patch</scope><name>params</name></member>
-      <member refid="class_patch_1a8f0ac2f89a3d9065ea6df83662cf1410" prot="public" virt="non-virtual"><scope>Patch</scope><name>Patch</name></member>
+      <member refid="class_patch_1a5016d6bf9c9c8f39a0d6b0f50770dd68" prot="public" virt="non-virtual"><scope>Patch</scope><name>Patch</name></member>
       <member refid="class_patch_1a891de9d894bd3c2e3d800c58c82d7485" prot="public" virt="non-virtual"><scope>Patch</scope><name>Patch</name></member>
       <member refid="class_patch_1ada58f98a20b459b05e7d4b986de3aeee" prot="public" virt="non-virtual"><scope>Patch</scope><name>populate</name></member>
       <member refid="class_patch_1abfcba309e2ecc8eb224b89a5f11d6042" prot="public" virt="non-virtual"><scope>Patch</scope><name>update_comp</name></member>
