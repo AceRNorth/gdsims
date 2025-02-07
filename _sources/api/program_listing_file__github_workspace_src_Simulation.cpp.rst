@@ -194,11 +194,11 @@ Program Listing for File Simulation.cpp
            }
            file.close();
    
-           if (temp.size() == 365 || temp.size() == max_t) {
+           if (temp.size() == 365 || (temp.size() == max_t && max_t >= 365)) {
                input_rainfall_params->rainfall = temp;
            }
            else {
-               std::cerr << "Error: the number of valid daily rainfall values in the file is not 365 or max_t." << std::endl;
+               std::cerr << "Error: the number of valid daily rainfall values in the file is not 365 or max_t (where max_t must be at least 365 days)." << std::endl;
            }   
        }
    }
