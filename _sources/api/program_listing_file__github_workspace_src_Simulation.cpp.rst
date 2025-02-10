@@ -26,7 +26,7 @@ Program Listing for File Simulation.cpp
    Simulation::Simulation(InputParams input)
    { 
        num_runs = input.num_runs;
-       max_t = input.max_t;
+       max_t = input.max_t + 365;
    
        model_params = new ModelParams;
        model_params->area = new AreaParams;
@@ -39,7 +39,7 @@ Program Listing for File Simulation.cpp
        model_params->life->comp_power = input.comp_power;
        model_params->life->min_dev = input.min_dev;
        model_params->rel = new ReleaseParams;
-       model_params->rel->release_times.push_back(input.driver_start);
+       model_params->rel->release_times.push_back(input.driver_start + 365);
        model_params->rel->num_driver_M = input.num_driver_M;
        model_params->rel->num_driver_sites = input.num_driver_sites;
        model_params->disp = new DispersalParams;
@@ -194,7 +194,13 @@ Program Listing for File Simulation.cpp
            }
            file.close();
    
-           if (temp.size() == 365 || (temp.size() == max_t && max_t >= 365)) {
+           if (temp.size() == 365 || (temp.size() == (max_t-365) && (max_t-365) >= 365)) {
+               if (temp.size() == (max_t-365) && (max_t-365) >= 365) {
+                   // select sample data for burn-in period and insert
+                   std::vector<double> slice(365);
+                   std::copy(temp.begin(), temp.begin() + 364 + 1, slice.begin());
+                   temp.insert(temp.begin(), slice.begin(), slice.end());
+               }
                input_rainfall_params->rainfall = temp;
            }
            else {
@@ -222,7 +228,7 @@ Program Listing for File Simulation.cpp
                    int r_d;
                    int err = 0;
                    if (!read_and_validate_type(linestream, r_d, "release_day" + std::to_string(i+1), "int")) err++;
-                   if (!check_bounds("release_day" + std::to_string(i+1), r_d, 0, true, max_t, true)) err++;
+                   if (!check_bounds("release_day" + std::to_string(i+1), r_d, 0, true, max_t - 365, true)) err++; // account for burn-in adapted max_t
    
                    if (err == 0) {
                        temp.push_back(r_d);
@@ -233,6 +239,10 @@ Program Listing for File Simulation.cpp
            file.close();
    
            if (tot_err == 0) {
+               // correct values to account for burn-in period
+               for (int i=0; i < temp.size(); ++i) {
+                   temp.at(i) = temp.at(i) + 365;
+               }
                model_params->rel->release_times = temp;
            }
            else {
@@ -363,13 +373,17 @@ Program Listing for File Simulation.cpp
            for (int tt=0; tt <= max_t; ++tt) { // current day of the simulation 
                model->run(tt);
    
-               if (data.is_rec_global_time(tt)) {
-                   data.output_totals(tt, model->calculate_tot_J(), model->calculate_tot_M(), model->calculate_tot_V(),
-                    model->calculate_tot_F());
-                   data.record_global(tt, model->calculate_tot_M_gen());
-               }
-               if (data.is_rec_local_time(tt)) {
-                   data.record_local(tt, model->get_sites());
+               // start recording after burn-in period
+               if (tt >= 365) {
+                   int rt = tt - 365; // correct recorded time after burn-in
+                   if (data.is_rec_global_time(rt)) {
+                       data.output_totals(rt, model->calculate_tot_J(), model->calculate_tot_M(), model->calculate_tot_V(),
+                       model->calculate_tot_F());
+                       data.record_global(rt, model->calculate_tot_M_gen());
+                   }
+                   if (data.is_rec_local_time(rt)) {
+                       data.record_local(rt, model->get_sites());
+                   }
                }
            }
    
