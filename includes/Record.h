@@ -43,6 +43,9 @@ private:
 	int set_label; /**< 'Set of repetitions' index label for output files. */
 	int rep_label; /**< 'Repetition' index label for output files (within given set). */
 
+	int next_local_day;
+	int next_global_day;
+
 	std::ostringstream os1; /**< Local data output filename */
 	std::ostringstream os2; /**< Global data output filename */
 	std::ostringstream os3; /**< Coordinate data output filename */

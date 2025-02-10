@@ -23,6 +23,9 @@ Record::Record(RecordParams* rec_params, int rep)
 	set_label = rec_params->set_label;
 	rep_label = rep;
 
+	next_local_day = rec_params->rec_start;
+	next_global_day = 0;
+
 	// create folder for destination of output files 
 	if (!std::filesystem::exists("./output_files")) {
 		std::filesystem::create_directory("output_files");
@@ -86,6 +89,7 @@ void Record::record_global(int day, const std::array<long long int, constants::n
 		global_data << "\t" << m_gen;
 	}
 	global_data << std::endl;
+	next_global_day += rec_interval_global;
 }
 
 /**
@@ -123,6 +127,7 @@ void Record::record_local(int day, const std::vector<Patch*> &sites)
 		}
 		local_data << std::endl;
 	}
+	next_local_day += rec_interval_local;
 }
 
 /**
@@ -134,7 +139,7 @@ void Record::record_local(int day, const std::vector<Patch*> &sites)
  */
 bool Record::is_rec_global_time(int day)
 {
-	return day % rec_interval_global == 0;
+	return day == next_global_day;
 }
 
 /**
@@ -147,5 +152,5 @@ bool Record::is_rec_global_time(int day)
  */
 bool Record::is_rec_local_time(int day) 
 {
-	return (day == 0) || (day >= rec_start && day <= rec_end && day % rec_interval_local == 0);
+	return day >= rec_start && day <= rec_end && day == next_local_day;
 }
