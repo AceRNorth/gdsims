@@ -45,6 +45,9 @@ Program Listing for File Record.h
    
        int set_label; 
        int rep_label; 
+       int next_local_day;
+       int next_global_day;
+   
        std::ostringstream os1; 
        std::ostringstream os2; 
        std::ostringstream os3; 
