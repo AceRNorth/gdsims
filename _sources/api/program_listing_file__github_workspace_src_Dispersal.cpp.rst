@@ -37,11 +37,6 @@ Program Listing for File Dispersal.cpp
        }
    }
    
-   Dispersal::~Dispersal()
-   {
-       delete boundary_strategy;
-   }
-   
    std::vector<std::array<long long int, constants::num_gen>> Dispersal::M_dispersing_out(const std::vector<Patch*> &sites) 
    {
        std::vector<std::array<long long int, constants::num_gen>> m_move;  
@@ -72,6 +67,10 @@ Program Listing for File Dispersal.cpp
            f_move.push_back(f_out);
        }
        return f_move;
+   }
+   
+   DistanceKernelDispersal::~DistanceKernelDispersal() {
+       delete boundary_strategy;
    }
    
    void DistanceKernelDispersal::set_connecs(std::vector<Patch*> &sites) {
@@ -146,6 +145,10 @@ Program Listing for File Dispersal.cpp
    
    RadialDispersal::RadialDispersal(DispersalParams* params, BoundaryType boundary, double side_x, double side_y): Dispersal(params, boundary, side_x, side_y) {
        connec_weights_sum.clear();
+   }
+   
+   RadialDispersal::~RadialDispersal() {
+       delete boundary_strategy;
    }
    
    void RadialDispersal::set_connecs(std::vector<Patch*> &sites) {

@@ -18,7 +18,7 @@ Program Listing for File BoundaryStrategy.h
    class BoundaryStrategy {
    public:
        BoundaryStrategy(double side_x, double side_y): side_x(side_x), side_y(side_y) {};
-       ~BoundaryStrategy() {}; 
+       virtual ~BoundaryStrategy() {}; 
        virtual double distance(const Point& p1, const Point& p2) = 0;
        virtual Point relative_pos(const Point &p1, const Point &p2) = 0;
    
@@ -30,6 +30,7 @@ Program Listing for File BoundaryStrategy.h
    class ToroidalBoundaryStrategy: public BoundaryStrategy {
    public:
        ToroidalBoundaryStrategy(double side_x, double side_y): BoundaryStrategy(side_x, side_y) {};
+       ~ToroidalBoundaryStrategy() {};
        double distance(const Point &p1, const Point &p2) override;
        Point relative_pos(const Point &p1, const Point &p2) override;
    };
@@ -37,6 +38,7 @@ Program Listing for File BoundaryStrategy.h
    class EdgeBoundaryStrategy: public BoundaryStrategy {
    public:
        EdgeBoundaryStrategy(double side_x, double side_y): BoundaryStrategy(side_x, side_y) {};
+       ~EdgeBoundaryStrategy() {};
        double distance(const Point& p1, const Point& p2) override;
        Point relative_pos(const Point &p1, const Point &p2) override;
    };

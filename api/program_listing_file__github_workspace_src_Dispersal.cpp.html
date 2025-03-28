@@ -457,11 +457,6 @@ document.write(`
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="n">Dispersal</span><span class="o">::~</span><span class="n">Dispersal</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">boundary_strategy</span><span class="p">;</span>
-<span class="p">}</span>
-
 <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">constants</span><span class="o">::</span><span class="n">num_gen</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">Dispersal</span><span class="o">::</span><span class="n">M_dispersing_out</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Patch</span><span class="o">*&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sites</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">constants</span><span class="o">::</span><span class="n">num_gen</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">m_move</span><span class="p">;</span>
@@ -492,6 +487,10 @@ document.write(`
 <span class="w">        </span><span class="n">f_move</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">f_out</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">f_move</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">DistanceKernelDispersal</span><span class="o">::~</span><span class="n">DistanceKernelDispersal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">boundary_strategy</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="n">DistanceKernelDispersal</span><span class="o">::</span><span class="n">set_connecs</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Patch</span><span class="o">*&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sites</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -566,6 +565,10 @@ document.write(`
 
 <span class="n">RadialDispersal</span><span class="o">::</span><span class="n">RadialDispersal</span><span class="p">(</span><span class="n">DispersalParams</span><span class="o">*</span><span class="w"> </span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">BoundaryType</span><span class="w"> </span><span class="n">boundary</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">side_x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">side_y</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">Dispersal</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="w"> </span><span class="n">boundary</span><span class="p">,</span><span class="w"> </span><span class="n">side_x</span><span class="p">,</span><span class="w"> </span><span class="n">side_y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">connec_weights_sum</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">RadialDispersal</span><span class="o">::~</span><span class="n">RadialDispersal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">boundary_strategy</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="n">RadialDispersal</span><span class="o">::</span><span class="n">set_connecs</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Patch</span><span class="o">*&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sites</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>

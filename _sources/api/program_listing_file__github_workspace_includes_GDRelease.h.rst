@@ -22,7 +22,7 @@ Program Listing for File GDRelease.h
    class GDRelease {
    public:
        GDRelease(int num_driver_M, std::vector<int> rel_times): num_driver_M(num_driver_M), release_times(rel_times) {}
-       ~GDRelease() {};
+       virtual ~GDRelease() {};
        void release_gene_drive(int day, std::vector<Patch*> &sites);
    protected:
        int num_driver_M;
@@ -35,6 +35,7 @@ Program Listing for File GDRelease.h
    class RandomGDRelease: public GDRelease {
    public:
        RandomGDRelease(ReleaseParams* params);
+       ~RandomGDRelease() {};
    private:
        int num_driver_sites; 
        std::vector<Patch*> select_driver_sites(int day, const std::vector<Patch*> &sites) override;
@@ -43,6 +44,7 @@ Program Listing for File GDRelease.h
    class SchedGDRelease: public GDRelease {
    public:
        SchedGDRelease(ReleaseParams* params, std::vector<int> rel_sites, std::vector<Patch*> &sites);
+       ~SchedGDRelease() {};
    private:
        std::vector<Patch*> release_sites; 
        std::vector<Patch*> select_driver_sites(int day, const std::vector<Patch*> &sites) override;
