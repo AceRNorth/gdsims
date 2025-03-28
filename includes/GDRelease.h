@@ -19,7 +19,7 @@ public:
 	 * @param[in] rel_times 	days on which the gene drive mosquitoes will be released
 	 */
 	GDRelease(int num_driver_M, std::vector<int> rel_times): num_driver_M(num_driver_M), release_times(rel_times) {}
-	~GDRelease() {};
+	virtual ~GDRelease() {};
 	void release_gene_drive(int day, std::vector<Patch*> &sites);
 protected:
 	int num_driver_M;/**< Number of drive heterozygous (WD) male mosquitoes per release. */
@@ -37,6 +37,7 @@ protected:
 class RandomGDRelease: public GDRelease {
 public:
     RandomGDRelease(ReleaseParams* params);
+	~RandomGDRelease() {};
 private:
     int num_driver_sites; /**< Number of gene drive release sites per release. */ 
     std::vector<Patch*> select_driver_sites(int day, const std::vector<Patch*> &sites) override;
@@ -49,6 +50,7 @@ private:
 class SchedGDRelease: public GDRelease {
 public:
 	SchedGDRelease(ReleaseParams* params, std::vector<int> rel_sites, std::vector<Patch*> &sites);
+	~SchedGDRelease() {};
 private:
 	std::vector<Patch*> release_sites; /**< Gene drive release sites. */ 
     std::vector<Patch*> select_driver_sites(int day, const std::vector<Patch*> &sites) override;

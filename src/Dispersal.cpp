@@ -34,14 +34,6 @@ Dispersal::Dispersal(DispersalParams* params, BoundaryType boundary, double side
 }
 
 /**
- * Dispersal destructor.
- */
-Dispersal::~Dispersal()
-{
-	delete boundary_strategy;
-}
-
-/**
  * Determines the number of males (of each genotype) dispersing out from each patch.
  * @details The number of males of a given genotype dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate.
  * @param[in] sites vector of all Patch objects
@@ -85,6 +77,10 @@ std::vector<std::array<std::array<long long int, constants::num_gen>, constants:
 		f_move.push_back(f_out);
 	}
 	return f_move;
+}
+
+DistanceKernelDispersal::~DistanceKernelDispersal() {
+	delete boundary_strategy;
 }
 
 /**
@@ -192,6 +188,10 @@ std::pair<std::vector<std::vector<int>>, std::vector<std::vector<double>>> Dista
  */
 RadialDispersal::RadialDispersal(DispersalParams* params, BoundaryType boundary, double side_x, double side_y): Dispersal(params, boundary, side_x, side_y) {
 	connec_weights_sum.clear();
+}
+
+RadialDispersal::~RadialDispersal() {
+	delete boundary_strategy;
 }
 
 /**

@@ -20,7 +20,7 @@ class Patch;
 class Dispersal {
 public:
 	Dispersal(DispersalParams* params, BoundaryType boundary, double side_x, double side_y);
-	~Dispersal();
+	virtual ~Dispersal() {};
 	virtual void set_connecs(std::vector<Patch*> &sites) = 0;
 	virtual void adults_disperse(std::vector<Patch*> &sites) = 0;
 
@@ -51,6 +51,7 @@ public:
 	 * @param[in] side_y 	size of one side of the simulation area (y-axis)
 	 */
 	DistanceKernelDispersal(DispersalParams* params, BoundaryType boundary, double side_x, double side_y): Dispersal(params, boundary, side_x, side_y) {};
+	~DistanceKernelDispersal();
 	void set_connecs(std::vector<Patch*> &sites) override;
 	void adults_disperse(std::vector<Patch*> &sites) override;
 
@@ -66,6 +67,7 @@ private:
 class RadialDispersal: public Dispersal {
 public:
 	RadialDispersal(DispersalParams* params, BoundaryType boundary, double side_x, double side_y);
+	~RadialDispersal();
 	void set_connecs(std::vector<Patch*> &sites) override;
 	void adults_disperse(std::vector<Patch*> &sites) override;
 
