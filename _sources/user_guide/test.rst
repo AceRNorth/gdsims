@@ -142,3 +142,6 @@ which means our data passes all tests!
 The script will have also generated plots for us to visually compare results. These can be useful to debug an issue when the tests fail. We can turn this off by setting the ``make_plot variable`` to ``False``.
 
 It is important to note that these are end-to-end tests. In the future the testing suite may be extended if requested.
+
+.. note::
+    The test data has been created using a Windows 10 system with a g++ 13.1.0 compiler. The data may vary slightly when using other systems or compilers due to differences in pseudo-random number generation. 
