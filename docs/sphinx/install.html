@@ -430,6 +430,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mac">Mac</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
 </ul>
             </nav>
@@ -448,7 +449,7 @@ document.write(`
 <section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>C++17-compatible compiler or higher (e.g. MinGW g++ <span class="math notranslate nohighlight">\(\geq\)</span> 8.0)</p></li>
+<li><p>C++17-compatible compiler or higher (e.g. MinGW g++ <span class="math notranslate nohighlight">\(\geq\)</span> 8.0 for Windows, Clang for Mac)</p></li>
 <li><p>CMake <span class="math notranslate nohighlight">\(\geq\)</span> 3.5.0</p></li>
 </ul>
 <div class="admonition seealso">
@@ -531,6 +532,73 @@ mkdir<span class="w"> </span>build
 </li>
 <li><p>Finally, run the executable file <code class="docutils literal notranslate"><span class="pre">gdsimsapp.exe</span></code> that has been created in the build directory.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdsimsapp.exe
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If you later make changes to the source code (such as to fully randomise results), repeat steps 5 and 6 to re-build and re-compile the program afterwards.</p>
+</div>
+</section>
+<section id="mac">
+<h2>Mac<a class="headerlink" href="#mac" title="Permalink to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Open the terminal and run the <code class="docutils literal notranslate"><span class="pre">bash</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash
+</pre></div>
+</div>
+</li>
+<li><p>The easiest compiler for us to use is Clang, which might be already installed on your system. You can check this by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>clang<span class="w"> </span>--version
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If it’s not installed, you can run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xcode-select<span class="w"> </span>--install
+</pre></div>
+</div>
+<p>This will likely ask for your user password before proceeding.</p>
+</div>
+</li>
+<li><p>Then, check CMake has been correctly installed from its website (you can find this at the top of the page) - you should have moved the CMake app into your Applications directory (by dragging) as indicated by the installer.</p>
+<a class="reference internal image-reference" href="_images/install_cmake_mac.jpg"><img alt="_images/install_cmake_mac.jpg" src="_images/install_cmake_mac.jpg" style="width: 585.0px; height: 347.5px;" /></a>
+<p>We can finish the command-line installation by running the lines below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span><span class="s2">&quot;/Applications/CMake.app/Contents/bin/cmake-gui&quot;</span><span class="w"> </span>--install
+cmake<span class="w"> </span>--version
+</pre></div>
+</div>
+</li>
+<li><p>Clone the repository: Navigate to your chosen directory and clone the repository here. Git should have already been installed on your system with XCode Command Line tools (from the second step).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/Documents/Projects
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AceRNorth/GeneralMetapop.git
+</pre></div>
+</div>
+</li>
+<li><p>Navigate to the repository directory. Then, create a subdirectory called <code class="docutils literal notranslate"><span class="pre">build</span></code> where CMake files will be created, and navigate to it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>GeneralMetapop
+mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
+</pre></div>
+</div>
+</li>
+<li><p>Run CMake to configure the CMake project.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>..
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If at any point you get CMake cache error messages, delete the CMakeCache file in the build directory and run cmake again.</p>
+</div>
+</li>
+<li><p>Build all CMake targets.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>--build<span class="w"> </span>.
+</pre></div>
+</div>
+</li>
+<li><p>Finally, run the executable file <code class="docutils literal notranslate"><span class="pre">gdsimsapp</span></code> that has been created in the build directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./gdsimsapp
 </pre></div>
 </div>
 </li>
@@ -645,6 +713,7 @@ mkdir<span class="w"> </span>build
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mac">Mac</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
 </ul>
   </nav></div>
