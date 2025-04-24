@@ -231,11 +231,11 @@ for j in range(0, len(sets)):
     for i in range(1, num_runs_list[j] + 1):
         #import oracle data
         os.chdir(os.path.join(oracle_folder_path, "set" + str(sets[j])))
-        totals_oracle = np.loadtxt("Totals" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
+        totals_oracle = np.loadtxt("Totals" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2, ndmin=2)
         times_oracle = totals_oracle[:, 0]
         tot_males_oracle = totals_oracle[:, 1:]
-        coords_oracle = np.loadtxt("CoordinateList" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
-        local_oracle = np.loadtxt("LocalData" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
+        coords_oracle = np.loadtxt("CoordinateList" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2, ndmin=2)
+        local_oracle = np.loadtxt("LocalData" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2, ndmin=2)
         
         # plot oracle data
         if make_plot:
@@ -253,11 +253,11 @@ for j in range(0, len(sets)):
         
         # import test data
         os.chdir(test_data_folder_path)
-        totals_test = np.loadtxt("Totals" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
+        totals_test = np.loadtxt("Totals" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2, ndmin=2)
         times_test = totals_test[:, 0]
         tot_males_test = totals_test[:, 1:]
-        coords_test = np.loadtxt("CoordinateList" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
-        local_test = np.loadtxt("LocalData" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
+        coords_test = np.loadtxt("CoordinateList" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2, ndmin=2)
+        local_test = np.loadtxt("LocalData" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2, ndmin=2)
         
         # plot test data
         if make_plot:

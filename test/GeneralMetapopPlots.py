@@ -5,9 +5,9 @@ import matplotlib.animation as animation
 import matplotlib.colors as mcolors
 
 #%% Plot global output (totals) from model
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set17")
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set2")
 
-totals = np.loadtxt("Totals5run1.txt", skiprows=2)
+totals = np.loadtxt("Totals2run1.txt", skiprows=2, ndmin=2)
 
 times = totals[:, 0]
 total_males = totals[:, 1:]
@@ -26,9 +26,9 @@ plt.legend()
 
 #%% Plot coordinates of patches
 
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set1")
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set2")
 
-coords = np.loadtxt("CoordinateList1run1.txt", skiprows=2)
+coords = np.loadtxt("CoordinateList2run1.txt", skiprows=2, ndmin=2)
 
 x = coords[:, 1]
 y = coords[:, 2]
@@ -44,13 +44,13 @@ plt.scatter(x, y, marker='.')
 fig, ax = plt.subplots()
 
 # get coords of sites
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files")
-coords = np.loadtxt("CoordinateList1run1.txt", skiprows=2)
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set2")
+coords = np.loadtxt("CoordinateList2run1.txt", skiprows=2, ndmin=2)
 x = coords[:, 1]
 y = coords[:, 2]
 
 # get populations
-local_data = np.loadtxt("LocalData1run1.txt", skiprows=2)
+local_data = np.loadtxt("LocalData2run1.txt", skiprows=2, ndmin=2)
 
 # get populations on one day
 t=3 # recorded timestep
@@ -83,13 +83,13 @@ ax.set_ylabel("y (km)")
 fig, ax = plt.subplots()
 
 # get coords of sites
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files")
-coords = np.loadtxt("CoordinateList100run1.txt", skiprows=2)
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set2")
+coords = np.loadtxt("CoordinateList2run1.txt", skiprows=2, ndmin=2)
 x = coords[:, 1]
 y = coords[:, 2]
 
 # get populations
-local_data = np.loadtxt("LocalData100run1.txt", skiprows=2)
+local_data = np.loadtxt("LocalData2run1.txt", skiprows=2, ndmin=2)
 
 # get populations on one day
 t=0 # recorded timestep
@@ -145,12 +145,12 @@ fig, ax = plt.subplots()
 
 # get coords of sites
 os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files")
-coords = np.loadtxt("CoordinateList1run1.txt", skiprows=2)
+coords = np.loadtxt("CoordinateList1run1.txt", skiprows=2, ndmin=2)
 x = coords[:, 1]
 y = coords[:, 2]
 
 # get populations per genotype
-local_data = np.loadtxt("LocalData1run1.txt", skiprows=2)
+local_data = np.loadtxt("LocalData1run1.txt", skiprows=2, ndmin=2)
 t=3 # recorded timestep
 sim_day = int(local_data[t*len(x), 0])
 local_data = local_data[t*len(x):((t+1)*len(x)), 2:8]
@@ -196,12 +196,12 @@ fig, ax = plt.subplots()
 # get coords of sites
 os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files")
 #os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set10")
-coords = np.loadtxt("CoordinateList1run1.txt", skiprows=2)
+coords = np.loadtxt("CoordinateList1run1.txt", skiprows=2, ndmin=2)
 x = coords[:, 1]
 y = coords[:, 2]
 
 # get populations per genotype
-local_data = np.loadtxt("LocalData1run1.txt", skiprows=2)
+local_data = np.loadtxt("LocalData1run1.txt", skiprows=2, ndmin=2)
 t=0 # recorded timestep
 sim_day = int(local_data[t*len(x), 0])
 local_data_day0 = local_data[t*len(x):((t+1)*len(x)), 2:8]
