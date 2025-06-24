@@ -8,7 +8,7 @@ The C++ program can be installed from the source code on our GitHub repository (
 
 Requirements
 ------------
-- C++17-compatible compiler or higher (e.g. MinGW g++ :math:`\geq` 8.0 for Windows, Clang for Mac)
+- C++20-compatible compiler or higher (e.g. MinGW g++ :math:`\geq` 8.0 for Windows, Clang :math:`\geq` 10 for Mac)
 - CMake :math:`\geq` 3.5.0
 
 .. seealso::
