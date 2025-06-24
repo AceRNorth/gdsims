@@ -4,7 +4,7 @@ GeneralMetapop is a metapopulation simulation program modelling mosquito populat
 The full documentation website can be found [here](https://acernorth.github.io/GeneralMetapop/), which includes updated installation instructions, tutorials, a user guide and full API documentation.
 
 ## Requirements:
-- C++17-compatible compiler or higher (e.g. MinGW g++ $\geq$ 8.0)
+- C++20-compatible compiler or higher (e.g. MinGW g++ $\geq$ 8.0 for Windows, Clang $\geq$ 10 for Mac)
 - CMake $\geq$ 3.5.0
 
 ## Installation
