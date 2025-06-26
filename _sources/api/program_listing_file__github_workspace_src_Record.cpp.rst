@@ -44,10 +44,10 @@ Program Listing for File Record.cpp
        os3 << "CoordinateList" << set_label << "run" << rep_label << ".txt";
        coord_list.open(os3.str());
    
-       local_data << "Male populations of each genotype at each site\n";
+       local_data << "Adult male populations of each genotype at each site\n";
        local_data << "Day" << "\t" << "Site" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
    
-       global_data << "Total males of each genotype\n";
+       global_data << "Total adult males of each genotype\n";
        global_data << "Day" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
    
        coord_list << "Coordinate list of the sites\n";

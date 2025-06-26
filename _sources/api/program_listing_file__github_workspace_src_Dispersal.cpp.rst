@@ -45,7 +45,7 @@ Program Listing for File Dispersal.cpp
        for (int pat=0; pat < sites.size(); ++pat) {
            m = sites[pat]->get_M();
            for (int i=0; i < constants::num_gen; ++i) {
-               m_out[i] = random_binomial(m[i], disp_rate); // how many males will disperse from the given patch
+               m_out[i] = random_binomial(m[i], disp_rate); // how many adult males will disperse from the given patch
            }
            m_move.push_back(m_out);
        }
@@ -61,7 +61,7 @@ Program Listing for File Dispersal.cpp
            f = sites[pat]->get_F();
            for (int i=0; i < constants::num_gen; ++i) {
                for (int j=0; j < constants::num_gen; ++j) {
-                   f_out[i][j] = random_binomial(f[i][j], disp_rate); // how many females will disperse from the given patch
+                   f_out[i][j] = random_binomial(f[i][j], disp_rate); // how many adult females will disperse from the given patch
                }
            }
            f_move.push_back(f_out);

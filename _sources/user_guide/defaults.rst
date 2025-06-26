@@ -22,7 +22,7 @@ Gene drive inheritance
 Gene drive release
 ------------------
 
-- Only drive-heterozygous (WD) male mosquitoes will be released.
+- Only adult drive-heterozygous (WD) male mosquitoes will be released.
 - Mosquitoes will be released at *every* selected release site for each release time.
 - By default, there will only be one release time at ``driver_start``.
 

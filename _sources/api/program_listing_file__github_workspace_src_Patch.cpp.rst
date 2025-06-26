@@ -261,7 +261,7 @@ Program Listing for File Patch.cpp
            long long int surv = random_binomial(J[i][0], comp); // number of juveniles that survive eclosion
            J[i][0] = 0; // all the oldest juveniles either successfully eclose or die
            if (surv > 0) { 
-               // roughly half of the juveniles become male and half female following a distribution
+               // roughly half of the juveniles become adult male and half adult (unmated) female following a distribution
                long long int surv_m = random_binomial(surv, 0.5); 
                M[i] += surv_m; 
                V[i] += surv - surv_m;

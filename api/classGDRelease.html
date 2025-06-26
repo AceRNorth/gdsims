@@ -465,7 +465,7 @@ document.write(`
 <span id="_CPPv39GDRelease"></span><span id="_CPPv29GDRelease"></span><span id="GDRelease"></span><span class="target" id="classGDRelease"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GDRelease</span></span></span><br /></dt>
 <dd><p>Gene drive release base class. </p>
 <p>Defines the basic implementation of gene drive release in the model.</p>
-<p><a class="reference internal" href="class_g_d_release.html#classGDRelease"><span class="std std-ref">GDRelease</span></a> classes implement the selection mechanism of the release sites from available patches and the release of gene drive mosquitoes into the <a class="reference internal" href="class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> objects at the chosen release times. The number of drive heterozygous male mosquitoes released into each release site at each release time is determined by <code class="docutils literal notranslate"><span class="pre">num_driver_M</span></code>. </p>
+<p><a class="reference internal" href="class_g_d_release.html#classGDRelease"><span class="std std-ref">GDRelease</span></a> classes implement the selection mechanism of the release sites from available patches and the release of gene drive mosquitoes into the <a class="reference internal" href="class_patch.html#classPatch"><span class="std std-ref">Patch</span></a> objects at the chosen release times. The number of drive heterozygous adult male mosquitoes released into each release site at each release time is determined by <code class="docutils literal notranslate"><span class="pre">num_driver_M</span></code>. </p>
 <p>Subclassed by <a class="reference internal" href="class_random_g_d_release.html#classRandomGDRelease"><span class="std std-ref">RandomGDRelease</span></a>, <a class="reference internal" href="class_sched_g_d_release.html#classSchedGDRelease"><span class="std std-ref">SchedGDRelease</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
@@ -476,7 +476,7 @@ document.write(`
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>num_driver_M</strong> – <strong>[in]</strong> number of drive heterozygous (WD) male mosquitoes per release </p></li>
+<li><p><strong>num_driver_M</strong> – <strong>[in]</strong> number of drive heterozygous (WD) adult male mosquitoes per release </p></li>
 <li><p><strong>rel_times</strong> – <strong>[in]</strong> days on which the gene drive mosquitoes will be released </p></li>
 </ul>
 </dd>
@@ -527,8 +527,8 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N9GDRelease16put_driver_sitesERNSt6vectorIP5PatchEE">
 <span id="_CPPv3N9GDRelease16put_driver_sitesERNSt6vectorIP5PatchEE"></span><span id="_CPPv2N9GDRelease16put_driver_sitesERNSt6vectorIP5PatchEE"></span><span id="GDRelease::put_driver_sites__std::vector:PatchP:R"></span><span class="target" id="classGDRelease_1a46170fb6a9f1a248346206b99773b684"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">put_driver_sites</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../api.html#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rel_sites</span></span><span class="sig-paren">)</span><br /></dt>
-<dd><p>Adds drive heterozygous (WD) male mosquitoes to the release sites. </p>
-<p>Relevant parameters include the number of male driver mosquitoes to be released at each site <code class="docutils literal notranslate"><span class="pre">num_driver_M</span></code>. </p>
+<dd><p>Adds drive heterozygous (WD) adult male mosquitoes to the release sites. </p>
+<p>Relevant parameters include the number of adult male driver mosquitoes to be released at each site <code class="docutils literal notranslate"><span class="pre">num_driver_M</span></code>. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>rel_sites</strong> – <strong>[inout]</strong> release sites </p>
@@ -542,7 +542,7 @@ document.write(`
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N9GDRelease12num_driver_ME">
 <span id="_CPPv3N9GDRelease12num_driver_ME"></span><span id="_CPPv2N9GDRelease12num_driver_ME"></span><span id="GDRelease::num_driver_M__i"></span><span class="target" id="classGDRelease_1a7ac47883a59de0732047fccf0a1cf6e0"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_driver_M</span></span></span><br /></dt>
-<dd><p>Number of drive heterozygous (WD) male mosquitoes per release. </p>
+<dd><p>Number of drive heterozygous (WD) adult male mosquitoes per release. </p>
 </dd></dl>
 
 <dl class="cpp var">

@@ -7,7 +7,7 @@ In this tutorial we give bite-sized introductions to some of the essential compo
 3.1 Model introduction: Patch
 -----------------------------
 
-The :class:`Patch` component is the essential building block of the model. It represents a population of mosquitoes mating, aging, dying… carrying out all the essential behaviours of a living, breathing population. As we've seen, the mosquitoes are divided into four types of individuals: juveniles (J), males (M), unmated (virgin) females (V) and mated females (F). 
+The :class:`Patch` component is the essential building block of the model. It represents a population of mosquitoes mating, aging, dying… carrying out all the essential behaviours of a living, breathing population. As we've seen, the mosquitoes are divided into four types of individuals: juveniles (J), adult males (M), adult unmated (virgin) females (V) and adult mated females (F). 
 
 .. figure:: ../images/tut3_patch_intro.png
     :align: left

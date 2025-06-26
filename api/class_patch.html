@@ -451,7 +451,7 @@ document.write(`
 <dt class="sig sig-object cpp" id="_CPPv45Patch">
 <span id="_CPPv35Patch"></span><span id="_CPPv25Patch"></span><span id="Patch"></span><span class="target" id="classPatch"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Patch</span></span></span><br /></dt>
 <dd><p>Contains the information of a local mosquito population. </p>
-<p>The population is divided into four types: juveniles (J), males (M), virgin (unmated) females (V) and mated females (F). These are then subdivided into six genotypes (in this order): WW, WD, DD, DR, WR and RR composed of a wild-type allele (W), a drive-type allele (D) and a resistant-type allele (R). Juveniles are also subdivided into age groups, ordered from oldest (0 days left to eclosion) to youngest (<code class="docutils literal notranslate"><span class="pre">max_dev</span></code> - 1 days left). The population can carry out life-processes and interface with other classes to introduce gene drive mosquitoes into the <a class="reference internal" href="#classPatch"><span class="std std-ref">Patch</span></a>, carry out dispersal in and out of the <a class="reference internal" href="#classPatch"><span class="std std-ref">Patch</span></a> and aestivate. <img alt="../_images/patch_diagram.png" src="../_images/patch_diagram.png" /></p>
+<p>The population is divided into four types: juveniles (J), adult males (M), adult virgin (unmated) females (V) and adult mated females (F). These are then subdivided into six genotypes (in this order): WW, WD, DD, DR, WR and RR composed of a wild-type allele (W), a drive-type allele (D) and a resistant-type allele (R). Juveniles are also subdivided into age groups, ordered from oldest (0 days left to eclosion) to youngest (<code class="docutils literal notranslate"><span class="pre">max_dev</span></code> - 1 days left). The population can carry out life-processes and interface with other classes to introduce gene drive mosquitoes into the <a class="reference internal" href="#classPatch"><span class="std std-ref">Patch</span></a>, carry out dispersal in and out of the <a class="reference internal" href="#classPatch"><span class="std std-ref">Patch</span></a> and aestivate. <img alt="../_images/patch_diagram.png" src="../_images/patch_diagram.png" /></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -500,9 +500,9 @@ document.write(`
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>initial_WJ</strong> – <strong>[in]</strong> The number of initial wild juveniles. </p></li>
-<li><p><strong>initial_WM</strong> – <strong>[in]</strong> The number of initial wild males. </p></li>
-<li><p><strong>initial_WV</strong> – <strong>[in]</strong> The number of initial wild virgin (unmated) females. </p></li>
-<li><p><strong>initial_WF</strong> – <strong>[in]</strong> The number of initial wild mated females. </p></li>
+<li><p><strong>initial_WM</strong> – <strong>[in]</strong> The number of initial wild adult males. </p></li>
+<li><p><strong>initial_WV</strong> – <strong>[in]</strong> The number of initial wild adult virgin (unmated) females. </p></li>
+<li><p><strong>initial_WF</strong> – <strong>[in]</strong> The number of initial wild adult mated females. </p></li>
 </ul>
 </dd>
 </dl>
@@ -522,13 +522,13 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK5Patch5get_MEv">
 <span id="_CPPv3NK5Patch5get_MEv"></span><span id="_CPPv2NK5Patch5get_MEv"></span><span id="Patch::get_MC"></span><span class="target" id="classPatch_1a18366a21df794d2cebbbdfe3195734a5"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../api.html#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_M</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
-<dd><p>Returns the number of males in the patch, divided by genotype. </p>
+<dd><p>Returns the number of adult males in the patch, divided by genotype. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK5Patch5get_FEv">
 <span id="_CPPv3NK5Patch5get_FEv"></span><span id="_CPPv2NK5Patch5get_FEv"></span><span id="Patch::get_FC"></span><span class="target" id="classPatch_1a7754f3fd7fb22af2c3661d4d5229ab2d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../api.html#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../api.html#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_F</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
-<dd><p>Returns the number of females in the patch, divided by female genotype and male sperm genotype. </p>
+<dd><p>Returns the number of adult mated females in the patch, divided by female genotype and male sperm genotype. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -545,10 +545,10 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch15calculate_tot_MEv">
 <span id="_CPPv3N5Patch15calculate_tot_MEv"></span><span id="_CPPv2N5Patch15calculate_tot_MEv"></span><span id="Patch::calculate_tot_M"></span><span class="target" id="classPatch_1adf7fcfe3a5b2b00afe76c9dac3aea50c"></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculate_tot_M</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
-<dd><p>Calculates the total number of males in the patch. </p>
+<dd><p>Calculates the total number of adult males in the patch. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The total number of males in the patch across all genotypes. </p>
+<dd class="field-odd"><p>The total number of adult males in the patch across all genotypes. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -556,10 +556,10 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch15calculate_tot_VEv">
 <span id="_CPPv3N5Patch15calculate_tot_VEv"></span><span id="_CPPv2N5Patch15calculate_tot_VEv"></span><span id="Patch::calculate_tot_V"></span><span class="target" id="classPatch_1af90e1ce58bd0c009e6dc9e939d2ee81d"></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculate_tot_V</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
-<dd><p>Calculates the total number of virgin (unmated) females in the patch. </p>
+<dd><p>Calculates the total number of adult virgin (unmated) females in the patch. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The total number of virgin (unmated) females in the patch across all genotypes. </p>
+<dd class="field-odd"><p>The total number of adult virgin (unmated) females in the patch across all genotypes. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -567,10 +567,10 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch15calculate_tot_FEv">
 <span id="_CPPv3N5Patch15calculate_tot_FEv"></span><span id="_CPPv2N5Patch15calculate_tot_FEv"></span><span id="Patch::calculate_tot_F"></span><span class="target" id="classPatch_1a55c95af0f8a5c1d7ac885a828a873865"></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calculate_tot_F</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
-<dd><p>Calculates the total number of mated females in the patch. </p>
+<dd><p>Calculates the total number of adult mated females in the patch. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The total number of mated females in the patch across all female and male sperm genotypes. </p>
+<dd class="field-odd"><p>The total number of adult mated females in the patch across all female and male sperm genotypes. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -591,7 +591,7 @@ The number of surviving individuals in an age group (for a given genotype) is de
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch10adults_dieEv">
 <span id="_CPPv3N5Patch10adults_dieEv"></span><span id="_CPPv2N5Patch10adults_dieEv"></span><span id="Patch::adults_die"></span><span class="target" id="classPatch_1a57e9e06fbf179f6d3c808dee1522f6a9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">adults_die</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Removes dying adults from the patch. </p>
-<p>Determines the number of adults that die in the given day and removes them from the patch. The number of males that die (for a given genotype) is determined by a binomial distribution of adult mortality, and similarly for virgin and mated females. <div class="admonition seealso">
+<p>Determines the number of adults that die in the given day and removes them from the patch. The number of adult males that die (for a given genotype) is determined by a binomial distribution of adult mortality, and similarly for adult virgin and mated females. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="struct_input_params.html#structInputParams_1ad5675a09a39929aa98cd569cb4c4403f"><span class="std std-ref">InputParams::mu_a</span></a></p>
 </div>
@@ -601,14 +601,14 @@ The number of surviving individuals in an age group (for a given genotype) is de
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch12virgins_mateEv">
 <span id="_CPPv3N5Patch12virgins_mateEv"></span><span id="_CPPv2N5Patch12virgins_mateEv"></span><span id="Patch::virgins_mate"></span><span class="target" id="classPatch_1a831b026c31ae2bbb56b04e8cc8fa2277"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">virgins_mate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
-<dd><p>Mates a fraction of the virgin females in the patch. </p>
-<p>Determines the number of virgin females that mate in the given day (for a given female genotype) with a male of genotype j by using a binomial distribution of the mating rate. Then, tranforms the virgin females into mated females carrying male sperm of genotype j. Mating is carried out within the patch, and females only mate once. </p>
+<dd><p>Mates a fraction of the adult virgin females in the patch. </p>
+<p>Determines the number of adult virgin females that mate in the given day (for a given female genotype) with a male of genotype j by using a binomial distribution of the mating rate. Then, tranforms the adult virgin females into adult mated females carrying male sperm of genotype j. Mating is carried out within the patch, and females only mate once. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch8lay_eggsERKNSt5arrayINSt5arrayINSt5arrayIdN9constants7num_genEEEN9constants7num_genEEEN9constants7num_genEEERKNSt5arrayIdXplN9constants7max_devEL1EEEE">
 <span id="_CPPv3N5Patch8lay_eggsERKNSt5arrayINSt5arrayINSt5arrayIdN9constants7num_genEEEN9constants7num_genEEEN9constants7num_genEEERKNSt5arrayIdXplN9constants7max_devEL1EEEE"></span><span id="_CPPv2N5Patch8lay_eggsERKNSt5arrayINSt5arrayINSt5arrayIdN9constants7num_genEEEN9constants7num_genEEEN9constants7num_genEEERKNSt5arrayIdXconstants::max_dev + 1EEE"></span><span id="Patch::lay_eggs__std::array:std::array:std::array:double.constants::num_gen:.constants::num_gen:.constants::num_gen:CR.std::array:double.constants::max_dev-+-1:CR"></span><span class="target" id="classPatch_1acbbe56b0cc3e9e65720191eb92bd33f3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lay_eggs</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../api.html#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../api.html#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../api.html#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">f</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../api.html#_CPPv4N9constants7max_devE" title="constants::max_dev"><span class="n"><span class="pre">max_dev</span></span></a><span class="w"> </span><span class="o"><span class="pre">+</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dev_duration_probs</span></span><span class="sig-paren">)</span><br /></dt>
-<dd><p>Females lay eggs, creating new juveniles. </p>
+<dd><p>Adult mated females lay eggs, creating new juveniles. </p>
 <p>Determines the number of eggs laid with genotype k on the given day by using a Poisson distribution. Other relevant parameters include the egg laying rate. Determines the development duration of these new juveniles using a multinomial distribution of development duration probabilities. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="class_simulation.html#classSimulation_1ac5440a772e9d7788c588a795a7821fb6"><span class="std std-ref">Simulation::set_inheritance()</span></a>, <a class="reference internal" href="struct_input_params.html#structInputParams_1a7183128711c0a119f7fc72e94ae6bdd4"><span class="std std-ref">InputParams::theta</span></a></p>
@@ -669,10 +669,10 @@ The number of survivors is determined by a binomial distribution of the juvenile
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch14M_disperse_outERKNSt5arrayIxN9constants7num_genEEE">
 <span id="_CPPv3N5Patch14M_disperse_outERKNSt5arrayIxN9constants7num_genEEE"></span><span id="_CPPv2N5Patch14M_disperse_outERKNSt5arrayIxN9constants7num_genEEE"></span><span id="Patch::M_disperse_out__std::array:l-l-i.constants::num_gen:CR"></span><span class="target" id="classPatch_1a2ef705901ca9492bad465c4392fe84cf"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">M_disperse_out</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../api.html#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">m_out</span></span><span class="sig-paren">)</span><br /></dt>
-<dd><p>Removes males from the patch as they disperse out. </p>
+<dd><p>Removes adult males from the patch as they disperse out. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>m_out</strong> – <strong>[in]</strong> The number of males dispersing out. </p>
+<dd class="field-odd"><p><strong>m_out</strong> – <strong>[in]</strong> The number of adult males dispersing out. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -680,10 +680,10 @@ The number of survivors is determined by a binomial distribution of the juvenile
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch14F_disperse_outERKNSt5arrayINSt5arrayIxN9constants7num_genEEEN9constants7num_genEEE">
 <span id="_CPPv3N5Patch14F_disperse_outERKNSt5arrayINSt5arrayIxN9constants7num_genEEEN9constants7num_genEEE"></span><span id="_CPPv2N5Patch14F_disperse_outERKNSt5arrayINSt5arrayIxN9constants7num_genEEEN9constants7num_genEEE"></span><span id="Patch::F_disperse_out__std::array:std::array:l-l-i.constants::num_gen:.constants::num_gen:CR"></span><span class="target" id="classPatch_1af11ef5b41bc1c8e274368396a0e506ef"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">F_disperse_out</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../api.html#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../api.html#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">f_out</span></span><span class="sig-paren">)</span><br /></dt>
-<dd><p>Removes mated females from the patch as they disperse out. </p>
+<dd><p>Removes adult mated females from the patch as they disperse out. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>f_out</strong> – <strong>[in]</strong> The number of mated females dispersing out. </p>
+<dd class="field-odd"><p><strong>f_out</strong> – <strong>[in]</strong> The number of adult mated females dispersing out. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -691,12 +691,12 @@ The number of survivors is determined by a binomial distribution of the juvenile
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch13M_disperse_inEix">
 <span id="_CPPv3N5Patch13M_disperse_inEix"></span><span id="_CPPv2N5Patch13M_disperse_inEix"></span><span id="Patch::M_disperse_in__i.l-l-i"></span><span class="target" id="classPatch_1a6e8160f0e8dc961b25aa89d273cdfc2e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">M_disperse_in</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">gen</span></span>, <span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">m_in</span></span><span class="sig-paren">)</span><br /></dt>
-<dd><p>Introduces new males into the patch as they disperse in. </p>
+<dd><p>Introduces new adult males into the patch as they disperse in. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>gen</strong> – <strong>[in]</strong> The genotype index for the males to disperse into M. </p></li>
-<li><p><strong>m_in</strong> – <strong>[in]</strong> The number of males dispersing in for the given genotype. </p></li>
+<li><p><strong>gen</strong> – <strong>[in]</strong> The genotype index for the adult males to disperse into M. </p></li>
+<li><p><strong>m_in</strong> – <strong>[in]</strong> The number of adult males dispersing in for the given genotype. </p></li>
 </ul>
 </dd>
 </dl>
@@ -705,13 +705,13 @@ The number of survivors is determined by a binomial distribution of the juvenile
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch13F_disperse_inEiix">
 <span id="_CPPv3N5Patch13F_disperse_inEiix"></span><span id="_CPPv2N5Patch13F_disperse_inEiix"></span><span id="Patch::F_disperse_in__i.i.l-l-i"></span><span class="target" id="classPatch_1a4b3a7d2c76b525c22175e48784951d5e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">F_disperse_in</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">f_gen</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">m_gen</span></span>, <span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">f_disp</span></span><span class="sig-paren">)</span><br /></dt>
-<dd><p>Introduces new mated females into the patch as they disperse in. </p>
+<dd><p>Introduces new adult mated females into the patch as they disperse in. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>f_gen</strong> – <strong>[in]</strong> The female genotype index for the females to disperse into F. </p></li>
 <li><p><strong>m_gen</strong> – <strong>[in]</strong> The male sperm genotype index for the females to disperse into F. </p></li>
-<li><p><strong>f_disp</strong> – <strong>[in]</strong> The number of females dispersing in for the given genotype combination. </p></li>
+<li><p><strong>f_disp</strong> – <strong>[in]</strong> The number of adult females dispersing in for the given genotype combination. </p></li>
 </ul>
 </dd>
 </dl>
@@ -723,7 +723,7 @@ The number of survivors is determined by a binomial distribution of the juvenile
 <dd><p>Removes those females from the patch that attempt to go into aestivation. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>f_try</strong> – <strong>[in]</strong> The number of mated females that attempt to go into aestivation. </p>
+<dd class="field-odd"><p><strong>f_try</strong> – <strong>[in]</strong> The number of adult mated females that attempt to go into aestivation. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -734,7 +734,7 @@ The number of survivors is determined by a binomial distribution of the juvenile
 <dd><p>Introduces back into the patch those females that wake up from aestivation. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>f_wake</strong> – <strong>[in]</strong> The number of mated females from the given patch that wake up from aestivation. </p>
+<dd class="field-odd"><p><strong>f_wake</strong> – <strong>[in]</strong> The number of adult mated females from the given patch that wake up from aestivation. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -742,10 +742,10 @@ The number of survivors is determined by a binomial distribution of the juvenile
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Patch12add_driver_MEi">
 <span id="_CPPv3N5Patch12add_driver_MEi"></span><span id="_CPPv2N5Patch12add_driver_MEi"></span><span id="Patch::add_driver_M__i"></span><span class="target" id="classPatch_1a40d8e016a59e2c0fafa5c4a840f54aaa"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">add_driver_M</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">num_driver_M</span></span><span class="sig-paren">)</span><br /></dt>
-<dd><p>Introduces driver heterozygous males into the patch. </p>
+<dd><p>Introduces driver heterozygous adult males into the patch. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>num_driver_M</strong> – <strong>[in]</strong> The number of driver heterozygous males to introduce. </p>
+<dd class="field-odd"><p><strong>num_driver_M</strong> – <strong>[in]</strong> The number of driver heterozygous adult males to introduce. </p>
 </dd>
 </dl>
 </dd></dl>
