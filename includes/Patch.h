@@ -11,7 +11,7 @@
 class Model;
 
 /**
- * Contains the information of a local mosquito population. The population is divided into four types: juveniles (J), males (M), virgin (unmated) females (V) and mated females (F). These are then subdivided into six genotypes (in this order): WW, WD, DD, DR, WR and RR composed of a wild-type allele (W), a drive-type allele (D) and a resistant-type allele (R). Juveniles are also subdivided into age groups, ordered from oldest (0 days left to eclosion) to youngest (``max_dev`` - 1 days left).
+ * Contains the information of a local mosquito population. The population is divided into four types: juveniles (J), adult males (M), adult virgin (unmated) females (V) and adult mated females (F). These are then subdivided into six genotypes (in this order): WW, WD, DD, DR, WR and RR composed of a wild-type allele (W), a drive-type allele (D) and a resistant-type allele (R). Juveniles are also subdivided into age groups, ordered from oldest (0 days left to eclosion) to youngest (``max_dev`` - 1 days left).
  * The population can carry out life-processes and interface with other classes to introduce gene drive mosquitoes into the Patch, carry out dispersal in and out of the Patch and aestivate. 
  * @image xml patch_diagram.png "Patch behaviour diagram"
  */
@@ -64,12 +64,12 @@ private:
 
 	Point coords; /**< Patch coordinates */ 
 	std::array<std::array<long long int, constants::max_dev+1>, constants::num_gen> J; /**< Number of juvenile mosquitoes in the patch, divided by genotype and age group. @note The age groups are ordered from oldest (0 days left to eclosion) to youngest (max_dev - 1 days left). */
-	std::array<long long int, constants::num_gen> M; /**< Number of male mosquitoes in the patch, divided by genotype. */ 
-	std::array<long long int, constants::num_gen> V; /**< Number of virgin (unmated) female mosquitoes, divided by genotype. */ 
-	std::array<std::array<long long int, constants::num_gen>, constants::num_gen> F; /**< Number of mated female mosquitoes F_{ij}, divided by female genotype i and male sperm genotype j. */ 
+	std::array<long long int, constants::num_gen> M; /**< Number of adult male mosquitoes in the patch, divided by genotype. */ 
+	std::array<long long int, constants::num_gen> V; /**< Number of adult virgin (unmated) female mosquitoes, divided by genotype. */ 
+	std::array<std::array<long long int, constants::num_gen>, constants::num_gen> F; /**< Number of adult mated female mosquitoes F_{ij}, divided by female genotype i and male sperm genotype j. */ 
 
 	long double comp; /**< Survival probability per juvenile per day (both density-dependent and independent factors). */ 
-	long double mate_rate; /**< Probability of a virgin (unmated) female mating on a given day. */
+	long double mate_rate; /**< Probability of an adult virgin (unmated) female mating on a given day. */
 };
 
 #endif //GENERALMETAPOP_PATCH_H

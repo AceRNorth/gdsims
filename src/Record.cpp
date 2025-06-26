@@ -39,10 +39,10 @@ Record::Record(RecordParams* rec_params, int rep)
 	os3 << "CoordinateList" << set_label << "run" << rep_label << ".txt";
 	coord_list.open(os3.str());
 
-	local_data << "Male populations of each genotype at each site\n";
+	local_data << "Adult male populations of each genotype at each site\n";
 	local_data << "Day" << "\t" << "Site" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
 
-	global_data << "Total males of each genotype\n";
+	global_data << "Total adult males of each genotype\n";
 	global_data << "Day" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
 
 	coord_list << "Coordinate list of the sites\n";
@@ -76,10 +76,10 @@ void Record::record_coords(const std::vector<Patch*> &sites)
 }
 
 /**
- * @brief Records the total numbers of male mosquitoes for the given day, divided by genotype. 
+ * @brief Records the total numbers of adult male mosquitoes for the given day, divided by genotype. 
  * @details The totals are assumed to be across all sites. 
  * @param[in] day 		simulation day
- * @param[in] tot_M_gen total number of males divided by genotype
+ * @param[in] tot_M_gen total number of adult males divided by genotype
  * @see Model::calculate_tot_M_gen(), Patch::get_M()
  */
 void Record::record_global(int day, const std::array<long long int, constants::num_gen> &tot_M_gen)
@@ -93,13 +93,13 @@ void Record::record_global(int day, const std::array<long long int, constants::n
 }
 
 /**
- * @brief Outputs the total numbers of juvenile (J), male (M), virgin female (V) and mated female (F) mosquitoes for the given day.
+ * @brief Outputs the total numbers of juvenile (J), adult male (M), adult virgin female (V) and adult mated female (F) mosquitoes for the given day.
  * @details The totals are assumed to be across all sites, and over all genotypes and age groups. 
  * @param[in] day 	simulation day
  * @param[in] tot_J	total number of juveniles
- * @param[in] tot_M	total number of males
- * @param[in] tot_V	total number of virgin (unmated) females
- * @param[in] tot_F	total number of mated females
+ * @param[in] tot_M	total number of adult males
+ * @param[in] tot_V	total number of adult virgin (unmated) females
+ * @param[in] tot_F	total number of adult mated females
  * @see Patch
  */
 void Record::output_totals(int day, long long int tot_J, long long int tot_M, long long int tot_V, long long int tot_F)
@@ -112,8 +112,8 @@ void Record::output_totals(int day, long long int tot_J, long long int tot_M, lo
 }
 
 /**
- * @brief Records the number of males at each site for the given day.
- * @details The number of males at each site is divided by genotype. Relevant parameters include the fraction of sites to collect data for.
+ * @brief Records the number of adult males at each site for the given day.
+ * @details The number of adult males at each site is divided by genotype. Relevant parameters include the fraction of sites to collect data for.
  * @param[in] day 	simulation day
  * @param[in] sites vector of all Patch objects
  * @see InputParams::rec_sites_freq
@@ -132,7 +132,7 @@ void Record::record_local(int day, const std::vector<Patch*> &sites)
 
 /**
  * @brief Determines if it is time to record global data.
- * @details The number of males at each site is divided by genotype.  
+ * @details The number of adult males at each site is divided by genotype.  
  * @param[in] day 	simulation day
  * @return As you would expect.
  * @see Record::record_global()

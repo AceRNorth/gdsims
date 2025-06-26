@@ -34,10 +34,10 @@ Dispersal::Dispersal(DispersalParams* params, BoundaryType boundary, double side
 }
 
 /**
- * Determines the number of males (of each genotype) dispersing out from each patch.
- * @details The number of males of a given genotype dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate.
+ * Determines the number of adult males (of each genotype) dispersing out from each patch.
+ * @details The number of adult males of a given genotype dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate.
  * @param[in] sites vector of all Patch objects
- * @return The number of males dispersing out, divided by genotype and outgoing patch.
+ * @return The number of adult males dispersing out, divided by genotype and outgoing patch.
  * @see DispersalParams::disp_rate, Model::get_sites(), random_binomial()
  */
 std::vector<std::array<long long int, constants::num_gen>> Dispersal::M_dispersing_out(const std::vector<Patch*> &sites) 
@@ -48,7 +48,7 @@ std::vector<std::array<long long int, constants::num_gen>> Dispersal::M_dispersi
 	for (int pat=0; pat < sites.size(); ++pat) {
 		m = sites[pat]->get_M();
 		for (int i=0; i < constants::num_gen; ++i) {
-			m_out[i] = random_binomial(m[i], disp_rate); // how many males will disperse from the given patch
+			m_out[i] = random_binomial(m[i], disp_rate); // how many adult males will disperse from the given patch
 		}
 		m_move.push_back(m_out);
 	}
@@ -56,10 +56,10 @@ std::vector<std::array<long long int, constants::num_gen>> Dispersal::M_dispersi
 }
 
 /**
- * Determines the number of mated females (of each genotype combination) dispersing out from each patch.
- * @details The number of females of a given genotype combination dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate.
+ * Determines the number of adult mated females (of each genotype combination) dispersing out from each patch.
+ * @details The number of adult females of a given genotype combination dispersing from a given patch is determined by a random draw from a binomial distribution with probability of adult dispersal rate.
  * @param[in] sites vector of all Patch objects
- * @return The number of mated females dispersing out, divided by female genotype, male sperm genotype and outgoing patch.
+ * @return The number of adult mated females dispersing out, divided by female genotype, male sperm genotype and outgoing patch.
  * @see DispersalParams::disp_rate, Model::get_sites(), random_binomial()
  */
 std::vector<std::array<std::array<long long int, constants::num_gen>, constants::num_gen>> Dispersal::F_dispersing_out(const std::vector<Patch*> &sites)
@@ -71,7 +71,7 @@ std::vector<std::array<std::array<long long int, constants::num_gen>, constants:
 		f = sites[pat]->get_F();
 		for (int i=0; i < constants::num_gen; ++i) {
 			for (int j=0; j < constants::num_gen; ++j) {
-				f_out[i][j] = random_binomial(f[i][j], disp_rate); // how many females will disperse from the given patch
+				f_out[i][j] = random_binomial(f[i][j], disp_rate); // how many adult females will disperse from the given patch
 			}
 		}
 		f_move.push_back(f_out);
@@ -102,7 +102,7 @@ void DistanceKernelDispersal::set_connecs(std::vector<Patch*> &sites) {
 
 /**
  * Implements dispersal by adults from and to each patch, depending on the patch connectivities.
- * @note Only males and mated females are assumed to disperse from the patches.
+ * @note Only adult males and mated females are assumed to disperse from the patches.
  * @details All dispersing individuals are assumed to survive dispersal, and are guaranteed a connected patch to disperse to. The number of males dispersing from a given patch to each of its connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females.
  * @param[in, out] sites vector of all Patch objects
  * @see Model::get_sites(), random_multinomial()
@@ -218,7 +218,7 @@ void RadialDispersal::set_connecs(std::vector<Patch*> &sites) {
 
 /**
  * Implements dispersal by adults from and to each patch, depending on the patch connectivities.
- * @note Only males and mated females are assumed to disperse from the patches. There is also dispersal mortality associated with this dispersal type.
+ * @note Only adult males and mated females are assumed to disperse from the patches. There is also dispersal mortality associated with this dispersal type.
  * @details Only those individuals that disperse out of a patch in a connected direction will survive. The number of dispersing males (of a given genotype) that survive dispersal out of their patch is determined by a random draw from a binomial distribution with probability of the total connection weight for all its connected patches. Of those, the number dispersing to each of the connected patches is determined by a random draw from a multinomial distribution with probabilities equal to the connection weights. Similarly for the mated females.
  * @param[in, out] sites vector of all Patch objects
  * @see Model::get_sites(), random_binomial(), random_multinomial()

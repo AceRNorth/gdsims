@@ -35,7 +35,7 @@ Aestivation::Aestivation(AestivationParams* params, int sites_size)
 
 /**
  * Hides aestivating females from their patches.
- * @note Not all females survive aestivation. Only mated females aestivate. 
+ * @note Not all females survive aestivation. Only adult mated females aestivate. 
  * @details The number of females that attempt to go into aestivation (of the given genotype combination) is determined by a binomial distribution of the aestivation rate. Of those, the number that survive is determined by a binomial distribution of 1 - ``mu_aes`` (the aestivation mortality). Aestivating females are temporarily separated from the rest of the female patch population.
  * @param[in, out] sites vector of all Patch objects
  * @see InputParams::psi, InputParams::mu_aes, random_binomial()
@@ -60,7 +60,7 @@ void Aestivation::hide(std::vector<Patch*> &sites)
 
 /**
  * Wakes a fraction of the aestivating females.
- * @details The number of females that wake up on the given day (for the given genotype combination and patch) is determined by a binomial distribution with probability ``1.0 / (1.0 + t_wake2 - (day%365)``. Those that wake are returned to their patch's female population. 
+ * @details The number of females that wake up on the given day (for the given genotype combination and patch) is determined by a binomial distribution with probability ``1.0 / (1.0 + t_wake2 - (day%365)``. Those that wake are returned to their patch's adult mated female population. 
  * @param[in] day 			simulation day
  * @param[in, out] sites	vector of all Patch objects
  * @see InputParams::t_wake2, random_binomial()

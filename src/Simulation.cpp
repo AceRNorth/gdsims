@@ -283,7 +283,7 @@ void Simulation::set_release_times(const std::filesystem::path& filepath)
  * Sets the values of the f_{ijk} inheritance fraction for the gene drive considering r2 non-functional resistance alleles. f_{ijk} denotes the fraction of genotype k offspring from mother with genotype i mated to father with genotype j.
  * @details The order of elements in each matrix axis is the following genotype order: WW, WD, DD, WR, RR and DR, composed of wild-type (W), drive-type (D) and resistant-type (R) alleles. 
  * @note Six genotypes are counted and not nine because WD and DW genotypes are counted together, and likewise for the other heterozygous genotypes.
- * @note  DD, RR and DR females are assumed to be sterile as they don't possess one functional copy of the dsx gene and thus produce no offspring.
+ * @note  DD, RR and DR adult females are assumed to be sterile as they don't possess one functional copy of the dsx gene and thus produce no offspring.
  * @param[in] inher_params inheritance parameters
  * @see InheritanceParams, InputParams:gamma, InputParams:xi, InputParams::e
  */

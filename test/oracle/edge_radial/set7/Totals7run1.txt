@@ -1,4 +1,4 @@
-Total males of each genotype
+Total adult males of each genotype
 Day	WW	WD	DD	WR	RR	DR
 0	1793596	0	0	0	0	0
 1	1793391	0	0	0	0	0

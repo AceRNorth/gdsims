@@ -27,7 +27,7 @@ struct LifeParams {
 	double mu_j; /**< Juvenile density independent mortality rate per day. */ 
 	double mu_a; /**< Adult mortality rate per day. */ 
 	double beta; /**< Parameter that controls mating rate. */ 
-	double theta; /**< Average egg laying rate of wildtype females (eggs per day). */ 
+	double theta; /**< Average egg laying rate of wildtype adult females (eggs per day). */ 
 	double comp_power; /**< Parameter that controls the juvenile survival probability. */
 	int min_dev; /**< Minimum development time for a juvenile (in days). */ 
 }; 
@@ -45,7 +45,7 @@ struct InheritanceParams {
  * Gene drive release model parameters.
  */ 
 struct ReleaseParams {
-	int num_driver_M; /**< Number of drive heterozygous (WD) male mosquitoes per release. */ 
+	int num_driver_M; /**< Number of drive heterozygous (WD) adult male mosquitoes per release. */ 
 	int num_driver_sites; /**< Number of gene drive release sites per year. */ 
 	std::vector<int> release_times; /**< Days on which the gene drive mosquitoes will be released. */ 
 };

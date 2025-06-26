@@ -28,8 +28,8 @@ bool GDRelease::is_release_time(int day)
 }
 
 /**
- * Adds drive heterozygous (WD) male mosquitoes to the release sites.
- * @details Relevant parameters include the number of male driver mosquitoes to be released at each site ``num_driver_M``.
+ * Adds drive heterozygous (WD) adult male mosquitoes to the release sites.
+ * @details Relevant parameters include the number of adult male driver mosquitoes to be released at each site ``num_driver_M``.
  * @param[in, out] rel_sites release sites
  */
 void GDRelease::put_driver_sites(std::vector<Patch*>& rel_sites) 

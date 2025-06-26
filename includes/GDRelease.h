@@ -9,20 +9,20 @@ class Patch;
 
 /**
  * Gene drive release base class. Defines the basic implementation of gene drive release in the model.
- * @details GDRelease classes implement the selection mechanism of the release sites from available patches and the release of gene drive mosquitoes into the Patch objects at the chosen release times. The number of drive heterozygous male mosquitoes released into each release site at each release time is determined by ``num_driver_M``. 
+ * @details GDRelease classes implement the selection mechanism of the release sites from available patches and the release of gene drive mosquitoes into the Patch objects at the chosen release times. The number of drive heterozygous adult male mosquitoes released into each release site at each release time is determined by ``num_driver_M``. 
  */
 class GDRelease {
 public:
 	/**
 	 * GDRelease constructor.
-	 * @param[in] num_driver_M 	number of drive heterozygous (WD) male mosquitoes per release
+	 * @param[in] num_driver_M 	number of drive heterozygous (WD) adult male mosquitoes per release
 	 * @param[in] rel_times 	days on which the gene drive mosquitoes will be released
 	 */
 	GDRelease(int num_driver_M, std::vector<int> rel_times): num_driver_M(num_driver_M), release_times(rel_times) {}
 	virtual ~GDRelease() {};
 	void release_gene_drive(int day, std::vector<Patch*> &sites);
 protected:
-	int num_driver_M;/**< Number of drive heterozygous (WD) male mosquitoes per release. */
+	int num_driver_M;/**< Number of drive heterozygous (WD) adult male mosquitoes per release. */
 	std::vector<int> release_times; /**< Days on which the gene drive mosquitoes will be released. */ 
 	bool is_release_time(int day);
     virtual std::vector<Patch*> select_driver_sites(int day, const std::vector<Patch*> &sites) = 0;

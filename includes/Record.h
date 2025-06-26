@@ -13,8 +13,8 @@
  * Records model data.
  * Creates CoordinateList, Totals and LocalData output .txt files for each repetition of the model.
  * CoordinateList: contains the coordinates of all recorded sites.
- * Totals: contains the total numbers of males of each genotype across all sites, for each recorded day of the simulation.
- * LocalData: contains the number of males of each genotype for each site on each simulated day that is recorded. 
+ * Totals: contains the total numbers of adult males of each genotype across all sites, for each recorded day of the simulation.
+ * LocalData: contains the number of adult males of each genotype for each site on each simulated day that is recorded. 
  * @see RecordParams
  */ 
 class Record {

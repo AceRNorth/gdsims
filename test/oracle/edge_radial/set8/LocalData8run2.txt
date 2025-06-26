@@ -1,4 +1,4 @@
-Male populations of each genotype at each site
+Adult male populations of each genotype at each site
 Day	Site	WW	WD	DD	WR	RR	DR
 0	1	30780	0	0	0	0	0
 0	2	32456	0	0	0	0	0

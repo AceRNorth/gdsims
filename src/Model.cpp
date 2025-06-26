@@ -284,8 +284,8 @@ long long int Model::calculate_tot_J()
 }
  
 /**
- * Returns the total number of males across all genotypes and across all patches.
- * @return The total number of males in the model run.
+ * Returns the total number of adult males across all genotypes and across all patches.
+ * @return The total number of adult males in the model run.
  * @see Patch::get_M()
  */
 long long int Model::calculate_tot_M()
@@ -298,8 +298,8 @@ long long int Model::calculate_tot_M()
 }
 
 /**
- * Returns the total number of virgin (unmated) females across all genotypes and across all patches.
- * @return The total number of virgin (unmated) females in the model run.
+ * Returns the total number of adult virgin (unmated) females across all genotypes and across all patches.
+ * @return The total number of adult virgin (unmated) females in the model run.
  * @see Patch
  */
 long long int Model::calculate_tot_V()
@@ -312,8 +312,8 @@ long long int Model::calculate_tot_V()
 }
 
 /**
- * Returns the total number of mated females across all female and male sperm genotypes and across all patches.
- * @return The total number of mated females in the model run.
+ * Returns the total number of adult mated females across all female and male sperm genotypes and across all patches.
+ * @return The total number of adult mated females in the model run.
  * @see Patch::get_F()
  */
 long long int Model::calculate_tot_F()
@@ -326,8 +326,8 @@ long long int Model::calculate_tot_F()
 }
 
 /**
- * Returns the total number of males of each genotype across all patches.
- * @return The total number of males in the model run, divided by genotype.
+ * Returns the total number of adult males of each genotype across all patches.
+ * @return The total number of adult males in the model run, divided by genotype.
  * @see Patch::get_M()
  */
 std::array<long long int, constants::num_gen> Model::calculate_tot_M_gen() 
