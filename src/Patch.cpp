@@ -318,7 +318,7 @@ void Patch::virgins_mate()
 
 // 
 /**
- * @brief Adult mated females lay eggs, creating new juveniles. 
+ * @brief Adult mated females lay eggs, creating new juveniles. These juveniles do not have a specific sex. 
  * @details Determines the number of eggs laid with genotype k on the given day by using a Poisson distribution. Other relevant parameters include the egg laying rate. Determines the development duration of these new juveniles using a multinomial distribution of development duration probabilities. 
  * @param[in] inher_fraction 		inheritance fraction for new offspring
  * @param[in] dev_duration_probs 	probabilities for juvenile development duration of new offspring
@@ -348,7 +348,7 @@ void Patch::lay_eggs(const std::array<std::array<std::array <double, constants::
 /**
  * @brief Turns the oldest juveniles into adults.
  * @note Not all juveniles survive eclosion. 
- * @details The number of survivors is determined by a binomial distribution of the juvenile survival probability. Sex determination upon eclosion is determined by a binomial distribution with 0.5 probability. 
+ * @details The number of survivors is determined by a binomial distribution of the juvenile survival probability. The proportion of the individuals' sexes upon eclosion is determined by a binomial distribution with 0.5 probability. 
  */
 void Patch::juv_eclose() 
 {
