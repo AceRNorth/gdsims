@@ -50,6 +50,10 @@ With this, we're ready to run. From the output files we can create another anima
 
 Let's compare this animation to the one from Tutorial :ref:`tutorial-4.1`. We can see that in this case the gene drive will spread much quicker with the radial dispersal. 
 
+.. note::
+
+    More detail on dispersal types can be found in the :doc:`../user_guide/adv_options` page of the User Guide. It's important to note that the boundary type and dispersal type selected will interact to create nuanced differences in boundary conditions. This is discussed in the above page. 
+
 
 
 

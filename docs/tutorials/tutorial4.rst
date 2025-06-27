@@ -25,3 +25,7 @@ With our output files, we can repeat the animation from the previous vignette an
     :scale: 90 %
 
 We can see how the drive mosquitoes aren't jumping from left to right edge anymore, and it thus takes longer for the gene drive to spread across the simulation area. 
+
+.. note::
+
+    More detail on boundary types can be found in the :doc:`../user_guide/adv_options` page of the User Guide.
