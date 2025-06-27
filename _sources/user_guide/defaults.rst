@@ -57,6 +57,10 @@ Dispersal
 
     Class documentation
 
+    :doc:`adv_options`
+
+    User guide page on Advanced model options. Details the differences between available dispersal types. 
+
 Boundary type
 -------------
 
@@ -72,6 +76,10 @@ Toroidal (or otherwise called periodic) boundary conditions are applied to all e
     :class:`ToroidalBoundaryStrategy`
     
     Class documentation
+
+    :doc:`adv_options`
+
+    User guide page on Advanced model options. Details the differences between available boundary types. 
 
 Seasonality
 -----------

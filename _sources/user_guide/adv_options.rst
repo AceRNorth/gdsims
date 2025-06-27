@@ -37,6 +37,14 @@ Edge type will apply non-periodic boundary conditions.
     
     Class documentation (with links to derived classes)
 
+    :doc:`defaults`
+
+    User guide page on default model options, including the default boundary type.
+
+.. note::
+
+    See Dispersal type section below for details of how different boundary types and dispersal types interact to create different boundary conditions. 
+
 Dispersal type
 --------------
 
@@ -68,6 +76,14 @@ The dispersal type of the model influences how dispersal connectivities between 
 
     Radial dispersal - the grey circle represents the maximum dispersal area for the central focal patch. The orange triangles are drawn from bisecting lines from the centre of the focal patch to the catchment radius of the receiving patch. The angle between these two lines determines the connection weight of the receiving patch to the focal patch. Patches connected with yellow triangles have reduced connection due to closer patches. Those with no triangles associated but still within the grey area have been fully blocked by closer patches. They are thus connected to the focal patch but with zero connection weight. 
 
+.. note::
+
+    Different combinations of dispersal type and boundary type interact to create boundary conditions with nuanced differences.
+
+    A toroidal boundary type is not absorbing or reflective - each axis is treated as continuous space, where mosquitoes enter one side of the boundary and come out the other in the same original direction. The Edge boundary type is more nuanced, depending on the dispersal type selected. 
+    
+    With a distance kernel dispersal type, mosquitoes simply travel between connected patches. This means that connections are formed across boundaries with a Toroid boundary type, whereas they're not formed in this way with an Edge boundary type (thus, neither absorbing nor reflecting). However, with a Radial dispersal type the mosquitoes will also travel in all outward directions from the initial patch, not just directly to connected patches (and thus may die if dispersal is unsuccessful). This means that a Radial dispersal type with an Edge boundary type effectively makes an absorbing boundary (all mosquitoes crossing the boundary will die). This is not the case for the Toroid boundary as, though mosquitoes may die when travelling through the boundary, they may still successfully travel to a connected patch on the other side.
+
 More information on how dispersal is modelled can be found in the links below.
 
 .. seealso::
@@ -78,6 +94,10 @@ More information on how dispersal is modelled can be found in the links below.
     :class:`Dispersal`
 
     Class documentation (with links to derived classes)
+
+    :doc:`defaults`
+
+    User guide page on default model options, including the default dispersal type.
 
 
 Custom rainfall
