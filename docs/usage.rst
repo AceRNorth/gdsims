@@ -48,3 +48,6 @@ Upon running a set, output files will be created in a new subdirectory called ``
 - ``Totals.txt``
 
 for each run of the set. Optional Python scripts are provided in the ``test`` directory for default visualisation options and running tests.
+
+.. note::
+    Before outputting any data, the :class:`Simulation` class will implicitly run a burn-in period of 1 year (365 days) at the start of each run. This is to make sure the simulated populations have reached a stable equilibrium before modelling any interventions. 
