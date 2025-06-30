@@ -32,6 +32,10 @@ This will run the simulation, displaying some data to show how the simulation is
 .. image:: ../images/tut1_output.png
     :scale: 80 %
 
+.. note::
+
+    The data will take a while to start showing on screen at the start of each run. This is because the simulation implicitly runs what is known in computational modelling as a 'burn-in period'. This is a period of time given to the populations being modelled so they can reach a stable equilibrium, before any interventions can be applied to them. In our model, the burn-in period is 1 year (365 days). We discard this data and start recording from here.
+
 On the first column we have the simulation day. This will run up to 1000 days, since we have chosen ``max_t`` = 1000. The following four columns display the total number of juvenile mosquitoes (J), adult male mosquitoes (M), adult virgin (unmated) females (V) and adult (mated) females (F). 
 
 Since this set includes two repetitions (``num_runs`` = 2), the days will restart upon the second repetition.
