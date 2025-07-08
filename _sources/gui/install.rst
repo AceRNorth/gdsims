@@ -5,12 +5,12 @@ Installation
 
 GDSiMS GUI is currently available for Windows 10 and 11 and ARM-based Macs (Apple Silicon) via the Releases tab on the right-hand side of the `repository <https://github.com/AceRNorth/gdsims-gui>`_. Click on the latest release and scroll down to download the appropriate asset for your system. 
 
-.. image:: ../images/gui_install_github_releases.png
+.. image:: ../images/gui_install_github_releases.PNG
     :scale: 50 %
 
 
 
-.. image:: ../images/gui_install_github_assets.png
+.. image:: ../images/gui_install_github_assets.PNG
     :scale: 50 %
 
 
