@@ -11,6 +11,7 @@
    usage
    user_guide/user_guide_root
    tutorials/tutorials_root
+   gui/gui_root
    api/library_root
 
 GDSiMS documentation
