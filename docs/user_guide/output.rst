@@ -41,6 +41,8 @@ The first column denotes the simulation day, where day 0 is the initialisation d
 .. image:: ../images/output_totals.png
     :scale: 80 %
 
+.. _local_output_file:
+
 Local data file
 ---------------
 
