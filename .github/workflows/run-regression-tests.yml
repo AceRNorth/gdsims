@@ -78,7 +78,7 @@ jobs:
       with:
         path: |
           ${{ github.workspace }}/build
-        key: steps.cache-gdsimsapp-save.outputs.cache-primary-key
+        key: ${{ steps.cache-gdsimsapp-save.outputs.cache-primary-key }}
 
     - name: Regression test
       working-directory: ${{github.workspace}}/build
