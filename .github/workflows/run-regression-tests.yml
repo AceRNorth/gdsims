@@ -19,7 +19,8 @@ jobs:
     # You can convert this to a matrix build if you need cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
     runs-on: ubuntu-latest
-    
+    outputs:
+      GDSIMSAPP_KEY: ${{ steps.cache-gdsimsapp-save.outputs.cache-primary-key }}
     steps:
     - uses: actions/checkout@v4
 
@@ -78,7 +79,7 @@ jobs:
       with:
         path: |
           ${{ github.workspace }}/build
-        key: ${{ steps.cache-gdsimsapp-save.outputs.cache-primary-key }}
+        key: ${{ needs.build.outputs.GDSIMSAPP_KEY }}
 
     - name: Regression test
       working-directory: ${{github.workspace}}/build
