@@ -78,7 +78,7 @@ jobs:
     - name: Regression test
       working-directory: ${{ github.workspace }}/build
       run: |
-          pytest ../test/test_gdsimsapp.py --set_label=${{ matrix.param-set }} --boundary_type=${{ matrix.boundary-type }} --dispersal_type=${{ matrix.dispersal-type }}
+          pytest ../test --set_label=${{ matrix.param-set }} --boundary_type=${{ matrix.boundary-type }} --dispersal_type=${{ matrix.dispersal-type }}
 
     - name: Produce artifacts
       uses: actions/upload-artifact@v4
