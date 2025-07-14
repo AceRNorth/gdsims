@@ -75,6 +75,9 @@ jobs:
         path: |
           ${{ github.workspace }}/build
         key: ${{ runner.os }}-gdsimsapp-${{ hashFiles('**/src/*', '**/includes/*') }}
+        restore-keys: |
+          ${{ runner.os }}-gdsimsapp-
+          Linux-gdsimsapp-
 
     - name: Regression test
       working-directory: ${{ github.workspace }}/test
