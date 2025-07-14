@@ -19,6 +19,7 @@ def custom_args(request):
 def test_gdsimsapp(custom_args):
     set_label, boundary_type, dispersal_type = custom_args
 
+    os.chdir("../build") # change to app's directory, but only after conftest flags have been used
     # Create input
     params_filename = "../test/oracle/params_sets/params_set" + set_label + ".txt"
     input_string = "100" + "\n" + params_filename + "\n" + "y" +"\n" + "y" + "\n"
