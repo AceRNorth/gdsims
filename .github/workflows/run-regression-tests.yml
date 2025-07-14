@@ -83,11 +83,13 @@ jobs:
       working-directory: ${{ github.workspace }}/test
       run: |
           pytest ./test_gdsimsapp.py --set_label=${{ matrix.param-set }} --boundary_type=${{ matrix.boundary-type }} --dispersal_type=${{ matrix.dispersal-type }}
-
+    - name: Print artifact name
+      run: |
+          echo "Artifact name: ${{ matrix.boundary-type }}_${{ matrix.dispersal-type }}_set_${{ matrix.param_set }}"
     - name: Produce artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: ${{ matrix.boundary-type }}_${{ matrix.dispersal-type }}_set${{ matrix.param_set }} 
+        name: "${{ matrix.boundary-type }}_${{ matrix.dispersal-type }}_set_${{ matrix.param_set }}"
         path: ${{ github.workspace }}/build/output_files/*${{ matrix.param_set }}run*.txt
 
 
