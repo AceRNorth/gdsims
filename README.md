@@ -1,7 +1,7 @@
-# GeneralMetapop
-GeneralMetapop is a metapopulation simulation program modelling mosquito populations and their response to gene drive release. The main aims of the project are to create a model program that is maintainable, extensible and widely accessible.
+# GDSiMS
+GDSiMS: the Gene Drive Simulator of Mosquito Spread is a metapopulation simulation program modelling mosquito populations and their response to gene drive release. The main aims of the project are to create a model program that is maintainable, extensible and widely accessible.
 
-The full documentation website can be found [here](https://acernorth.github.io/GeneralMetapop/), which includes updated installation instructions, tutorials, a user guide and full API documentation.
+The full documentation website can be found [here](https://acernorth.github.io/gdsims/), which includes updated installation instructions, tutorials, a user guide and full API documentation.
 
 ## Requirements:
 - C++20-compatible compiler or higher (e.g. MinGW g++ $\geq$ 8.0 for Windows, Clang $\geq$ 10 for Mac)
@@ -28,17 +28,17 @@ The full documentation website can be found [here](https://acernorth.github.io/G
       Install Git Bash and open. Navigate to your chosen directory and run this command to clone the repository:
      ```bash
      cd C:\Users\MyUser\Projects
-     git clone https://github.com/AceRNorth/GeneralMetapop.git
+     git clone https://github.com/AceRNorth/gdsims.git
      ```
    ii. Alternatively, download the files as a ZIP folder, unzip and move to your chosen directory.
    
-   ![download_ZIP](https://github.com/AceRNorth/GeneralMetapop/assets/129318133/f17b09cc-eeb0-4735-ba0c-613a07cb714b)
+   ![download_ZIP](docs/images/install_github_zip.png)
 
 
 3. Open the Windows command prompt again and navigate to your chosen directory.
 
    ```bash
-   cd C:\Users\MyUser\Projects\GeneralMetapop
+   cd C:\Users\MyUser\Projects\gdsims
    ```
 
 4. Create a directory called build where CMake files will be created, and navigate to it:
@@ -87,13 +87,13 @@ The full documentation website can be found [here](https://acernorth.github.io/G
    
      ```bash
      cd ./Projects
-     git clone https://github.com/AceRNorth/GeneralMetapop.git
+     git clone https://github.com/AceRNorth/gdsims.git
      ```
      
 3. Navigate to the repository directory:
 
    ```bash
-   cd GeneralMetapop
+   cd gdsims
    ```
 
 5. Create a directory called build where CMake files will be created, and navigate to it:
