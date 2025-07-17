@@ -42,7 +42,7 @@ Windows
       .. code-block:: bash
 
          cd C:\Users\MyUser\Projects
-         git clone https://github.com/AceRNorth/GeneralMetapop.git
+         git clone https://github.com/AceRNorth/gdsims.git
 
    ii. Alternatively, download the files as a ZIP folder, unzip and move to your chosen directory.
 
@@ -53,7 +53,7 @@ Windows
 
    .. code-block:: bash
 
-      cd C:\Users\MyUser\Projects\GeneralMetapop
+      cd C:\Users\MyUser\Projects\gdsims
       mkdir build
       cd build
 
@@ -62,7 +62,7 @@ Windows
 
       ::
 
-         GeneralMetapop
+         gdsims
          ├── build
          ├── docs 
          │   └── exercises
@@ -140,13 +140,13 @@ Mac
    .. code-block:: bash
 
       cd ~/Documents/Projects
-      git clone https://github.com/AceRNorth/GeneralMetapop.git
+      git clone https://github.com/AceRNorth/gdsims.git
 
 #. Navigate to the repository directory. Then, create a subdirectory called ``build`` where CMake files will be created, and navigate to it. 
 
    .. code-block:: bash
 
-      cd GeneralMetapop
+      cd gdsims
       mkdir build
       cd build
 
@@ -192,13 +192,13 @@ These instructions will closely follow those for Windows, with the exception of 
    .. code-block:: bash
 
       cd ./Projects
-      git clone https://github.com/AceRNorth/GeneralMetapop.git
+      git clone https://github.com/AceRNorth/gdsims.git
 
 #. Navigate to the repository directory. Then, create a subdirectory called ``build`` where CMake files will be created, and navigate to it. 
 
    .. code-block:: bash
 
-      cd GeneralMetapop
+      cd gdsims
       mkdir build
       cd build
 
