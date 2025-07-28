@@ -419,7 +419,7 @@ void Simulation::run_reps()
 				if (data.is_rec_global_time(rt)) {
 					data.output_totals(rt, model->calculate_tot_J(), model->calculate_tot_M(), model->calculate_tot_V(),
 					model->calculate_tot_F());
-					data.record_global(rt, model->calculate_tot_M_gen());
+					data.record_global(rt, model->calculate_tot_F_gen());
 				}
 				if (data.is_rec_local_time(rt)) {
 					data.record_local(rt, model->get_sites());

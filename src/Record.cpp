@@ -39,10 +39,10 @@ Record::Record(RecordParams* rec_params, int rep)
 	os3 << "CoordinateList" << set_label << "run" << rep_label << ".txt";
 	coord_list.open(os3.str());
 
-	local_data << "Adult male populations of each genotype at each site\n";
+	local_data << "Adult female populations of each genotype at each site\n";
 	local_data << "Day" << "\t" << "Site" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
 
-	global_data << "Total adult males of each genotype\n";
+	global_data << "Total adult females of each genotype\n";
 	global_data << "Day" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
 
 	coord_list << "Coordinate list of the sites\n";
@@ -76,17 +76,17 @@ void Record::record_coords(const std::vector<Patch*> &sites)
 }
 
 /**
- * @brief Records the total numbers of adult male mosquitoes for the given day, divided by genotype. 
+ * @brief Records the total numbers of adult mated female mosquitoes for the given day, divided by female genotype. 
  * @details The totals are assumed to be across all sites. 
  * @param[in] day 		simulation day
- * @param[in] tot_M_gen total number of adult males divided by genotype
- * @see Model::calculate_tot_M_gen(), Patch::get_M()
+ * @param[in] tot_fem_gen total number of adult mated females divided by female genotype
+ * @see Model::calculate_tot_F_gen(), Patch::get_F()
  */
-void Record::record_global(int day, const std::array<long long int, constants::num_gen> &tot_M_gen)
+void Record::record_global(int day, const std::array<long long int, constants::num_gen> &tot_F_gen)
 {
 	global_data << day;
-	for (const auto& m_gen : tot_M_gen) {
-		global_data << "\t" << m_gen;
+	for (const auto& f_gen : tot_F_gen) {
+		global_data << "\t" << f_gen;
 	}
 	global_data << std::endl;
 	next_global_day += rec_interval_global;
@@ -112,8 +112,8 @@ void Record::output_totals(int day, long long int tot_J, long long int tot_M, lo
 }
 
 /**
- * @brief Records the number of adult males at each site for the given day.
- * @details The number of adult males at each site is divided by genotype. Relevant parameters include the fraction of sites to collect data for.
+ * @brief Records the number of adult mated females at each site for the given day.
+ * @details The number of adult mated females at each site is divided by female genotype. Relevant parameters include the fraction of sites to collect data for.
  * @param[in] day 	simulation day
  * @param[in] sites vector of all Patch objects
  * @see InputParams::rec_sites_freq
@@ -122,8 +122,8 @@ void Record::record_local(int day, const std::vector<Patch*> &sites)
 {
 	for (int pat=0; pat < sites.size(); pat += rec_sites_freq) {
 		local_data << day << "\t" << pat+1;
-		for (const auto& m_gen : sites[pat]->get_M()) {
-			local_data << "\t" << m_gen;
+		for (const auto& fem_gen : sites[pat]->get_F_fem_gen()) {
+			local_data << "\t" << fem_gen;
 		}
 		local_data << std::endl;
 	}

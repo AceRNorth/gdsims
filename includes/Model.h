@@ -36,7 +36,7 @@ public:
 	long long int calculate_tot_M();
 	long long int calculate_tot_V();
 	long long int calculate_tot_F();
-	std::array<long long int, constants::num_gen> calculate_tot_M_gen();
+	std::array<long long int, constants::num_gen> calculate_tot_F_gen();
 	std::vector<Patch*> get_sites() const;
 	int get_day() const;
 	double get_alpha(double alpha0);

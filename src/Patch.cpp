@@ -117,6 +117,21 @@ std::array<std::array<long long int, constants::num_gen>, constants::num_gen> Pa
 }
 
 /**
+ * @brief Returns the number of adult mated females in the patch, divided only by female genotype.
+ */
+std::array<long long int, constants::num_gen> Patch::get_F_fem_gen() const
+{
+	std::array<long long int, constants::num_gen> f_fem_gen;
+	f_fem_gen.fill(0);
+	for (int i = 0; i < constants::num_gen; ++i) {
+		for (int j = 0; j < constants::num_gen; ++j) {
+			f_fem_gen[i] += F[i][j];
+		}
+	}
+	return f_fem_gen;
+}
+
+/**
  * @brief Calculates the total number of juveniles in the patch.
  * @return The total number of juveniles in the patch across all ages and genotypes. 
  */
