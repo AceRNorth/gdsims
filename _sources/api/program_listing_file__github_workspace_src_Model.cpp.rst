@@ -262,17 +262,17 @@ Program Listing for File Model.cpp
        return tot_F;
    }
    
-   std::array<long long int, constants::num_gen> Model::calculate_tot_M_gen() 
+   std::array<long long int, constants::num_gen> Model::calculate_tot_F_gen() 
    {
-       std::array<long long int, constants::num_gen> tot_M_gen;
-       tot_M_gen.fill(0);
+       std::array<long long int, constants::num_gen> tot_F_gen;
+       tot_F_gen.fill(0);
        for (auto pat : sites) {
-           std::array<long long int, constants::num_gen> m_pat = pat->get_M();
+           std::array<long long int, constants::num_gen> f_pat = pat->get_F_fem_gen();
            for (int i = 0; i < constants::num_gen; ++i) {
-               tot_M_gen[i] += m_pat[i];
+               tot_F_gen[i] += f_pat[i];
            }
        }
-       return tot_M_gen;
+       return tot_F_gen;
    }
    
    std::vector<Patch*> Model::get_sites() const

@@ -504,17 +504,17 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N6Record13record_globalEiRKNSt5arrayIxN9constants7num_genEEE">
 <span id="_CPPv3N6Record13record_globalEiRKNSt5arrayIxN9constants7num_genEEE"></span><span id="_CPPv2N6Record13record_globalEiRKNSt5arrayIxN9constants7num_genEEE"></span><span id="Record::record_global__i.std::array:l-l-i.constants::num_gen:CR"></span><span class="target" id="classRecord_1aa8ed3bd4fdee0c2dddbb5cec2f685577"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">record_global</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../api.html#_CPPv49constants" title="constants"><span class="n"><span class="pre">constants</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../api.html#_CPPv4N9constants7num_genE" title="constants::num_gen"><span class="n"><span class="pre">num_gen</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tot_M_gen</span></span><span class="sig-paren">)</span><br /></dt>
-<dd><p>Records the total numbers of adult male mosquitoes for the given day, divided by genotype. </p>
+<dd><p>Records the total numbers of adult mated female mosquitoes for the given day, divided by female genotype. </p>
 <p>The totals are assumed to be across all sites. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="class_model.html#classModel_1a6d5f4f68f41e76c3e966e312d2f6e9e3"><span class="std std-ref">Model::calculate_tot_M_gen()</span></a>, <a class="reference internal" href="class_patch.html#classPatch_1a18366a21df794d2cebbbdfe3195734a5"><span class="std std-ref">Patch::get_M()</span></a></p>
+<p><a class="reference internal" href="class_model.html#classModel_1a40b8179f3a10d83e8ec5f9906c8ec7a1"><span class="std std-ref">Model::calculate_tot_F_gen()</span></a>, <a class="reference internal" href="class_patch.html#classPatch_1a7754f3fd7fb22af2c3661d4d5229ab2d"><span class="std std-ref">Patch::get_F()</span></a></p>
 </div>
 </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>day</strong> – <strong>[in]</strong> simulation day </p></li>
-<li><p><strong>tot_M_gen</strong> – <strong>[in]</strong> total number of adult males divided by genotype </p></li>
+<li><p><strong>tot_fem_gen</strong> – <strong>[in]</strong> total number of adult mated females divided by female genotype </p></li>
 </ul>
 </dd>
 </dl>
@@ -545,8 +545,8 @@ document.write(`
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N6Record12record_localEiRKNSt6vectorIP5PatchEE">
 <span id="_CPPv3N6Record12record_localEiRKNSt6vectorIP5PatchEE"></span><span id="_CPPv2N6Record12record_localEiRKNSt6vectorIP5PatchEE"></span><span id="Record::record_local__i.std::vector:PatchP:CR"></span><span class="target" id="classRecord_1a8e504c6253ef29fa5c86d216e3f28e1c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">record_local</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">day</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../api.html#_CPPv45Patch" title="Patch"><span class="n"><span class="pre">Patch</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sites</span></span><span class="sig-paren">)</span><br /></dt>
-<dd><p>Records the number of adult males at each site for the given day. </p>
-<p>The number of adult males at each site is divided by genotype. Relevant parameters include the fraction of sites to collect data for. <div class="admonition seealso">
+<dd><p>Records the number of adult mated females at each site for the given day. </p>
+<p>The number of adult mated females at each site is divided by female genotype. Relevant parameters include the fraction of sites to collect data for. <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="struct_input_params.html#structInputParams_1a0aa285f32fbb33162549d1480f36e1f0"><span class="std std-ref">InputParams::rec_sites_freq</span></a></p>
 </div>

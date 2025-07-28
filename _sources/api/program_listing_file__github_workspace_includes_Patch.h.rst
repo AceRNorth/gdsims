@@ -31,6 +31,7 @@ Program Listing for File Patch.h
        Point get_coords() const;
        std::array<long long int, constants::num_gen> get_M() const;
        std::array<std::array<long long int, constants::num_gen>, constants::num_gen> get_F() const;
+       std::array<long long int, constants::num_gen> get_F_fem_gen() const;
    
        long long int calculate_tot_J();
        long long int calculate_tot_M();

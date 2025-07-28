@@ -44,10 +44,10 @@ Program Listing for File Record.cpp
        os3 << "CoordinateList" << set_label << "run" << rep_label << ".txt";
        coord_list.open(os3.str());
    
-       local_data << "Adult male populations of each genotype at each site\n";
+       local_data << "Adult female populations of each genotype at each site\n";
        local_data << "Day" << "\t" << "Site" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
    
-       global_data << "Total adult males of each genotype\n";
+       global_data << "Total adult females of each genotype\n";
        global_data << "Day" << "\t" << "WW" << "\t" << "WD" << "\t" << "DD" << "\t" << "WR" << "\t" << "RR" << "\t" << "DR" << std::endl;
    
        coord_list << "Coordinate list of the sites\n";
@@ -70,11 +70,11 @@ Program Listing for File Record.cpp
        coord_list << std::setprecision(default_precision);
    }
    
-   void Record::record_global(int day, const std::array<long long int, constants::num_gen> &tot_M_gen)
+   void Record::record_global(int day, const std::array<long long int, constants::num_gen> &tot_F_gen)
    {
        global_data << day;
-       for (const auto& m_gen : tot_M_gen) {
-           global_data << "\t" << m_gen;
+       for (const auto& f_gen : tot_F_gen) {
+           global_data << "\t" << f_gen;
        }
        global_data << std::endl;
        next_global_day += rec_interval_global;
@@ -93,8 +93,8 @@ Program Listing for File Record.cpp
    {
        for (int pat=0; pat < sites.size(); pat += rec_sites_freq) {
            local_data << day << "\t" << pat+1;
-           for (const auto& m_gen : sites[pat]->get_M()) {
-               local_data << "\t" << m_gen;
+           for (const auto& fem_gen : sites[pat]->get_F_fem_gen()) {
+               local_data << "\t" << fem_gen;
            }
            local_data << std::endl;
        }

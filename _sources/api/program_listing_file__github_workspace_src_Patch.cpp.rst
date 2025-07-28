@@ -94,6 +94,18 @@ Program Listing for File Patch.cpp
        return F;
    }
    
+   std::array<long long int, constants::num_gen> Patch::get_F_fem_gen() const
+   {
+       std::array<long long int, constants::num_gen> f_fem_gen;
+       f_fem_gen.fill(0);
+       for (int i = 0; i < constants::num_gen; ++i) {
+           for (int j = 0; j < constants::num_gen; ++j) {
+               f_fem_gen[i] += F[i][j];
+           }
+       }
+       return f_fem_gen;
+   }
+   
    long long int Patch::calculate_tot_J() 
    {
        long long int tot_J = 0;
