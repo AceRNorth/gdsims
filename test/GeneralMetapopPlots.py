@@ -5,23 +5,24 @@ import matplotlib.animation as animation
 import matplotlib.colors as mcolors
 
 #%% Plot global output (totals) from model
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set2")
+#os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files\\")
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set13\\")
 
-totals = np.loadtxt("Totals2run1.txt", skiprows=2, ndmin=2)
+totals = np.loadtxt("Totals13run1.txt", skiprows=2, ndmin=2)
 
 times = totals[:, 0]
-total_males = totals[:, 1:]
+total_females = totals[:, 1:]
 
 plt.figure()
-plt.title("Total males across the area - set 17 run 1")
+plt.title("Total females across the area - set 13 run 1")
 plt.xlabel("Day")
 plt.ylabel("Total number of individuals")
-plt.plot(times, total_males[:, 0], label="$M_{WW}$")
-plt.plot(times, total_males[:, 1], label="$M_{WD}$")
-plt.plot(times, total_males[:, 2], label="$M_{DD}$")
-plt.plot(times, total_males[:, 3], label="$M_{WR}$")
-plt.plot(times, total_males[:, 4], label="$M_{RR}$")
-plt.plot(times, total_males[:, 5], label="$M_{DR}$")
+plt.plot(times, total_females[:, 0], label="$F_{WW}$")
+plt.plot(times, total_females[:, 1], label="$F_{WD}$")
+plt.plot(times, total_females[:, 2], label="$F_{DD}$")
+plt.plot(times, total_females[:, 3], label="$F_{WR}$")
+plt.plot(times, total_females[:, 4], label="$F_{RR}$")
+plt.plot(times, total_females[:, 5], label="$F_{DR}$")
 plt.legend()
 
 #%% Plot coordinates of patches
@@ -83,13 +84,13 @@ ax.set_ylabel("y (km)")
 fig, ax = plt.subplots()
 
 # get coords of sites
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set2")
-coords = np.loadtxt("CoordinateList2run1.txt", skiprows=2, ndmin=2)
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files")
+coords = np.loadtxt("CoordinateList100run1.txt", skiprows=2, ndmin=2)
 x = coords[:, 1]
 y = coords[:, 2]
 
 # get populations
-local_data = np.loadtxt("LocalData2run1.txt", skiprows=2, ndmin=2)
+local_data = np.loadtxt("LocalData100run1.txt", skiprows=2, ndmin=2)
 
 # get populations on one day
 t=0 # recorded timestep
@@ -196,12 +197,12 @@ fig, ax = plt.subplots()
 # get coords of sites
 os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files")
 #os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set10")
-coords = np.loadtxt("CoordinateList1run1.txt", skiprows=2, ndmin=2)
+coords = np.loadtxt("CoordinateList101run1.txt", skiprows=2, ndmin=2)
 x = coords[:, 1]
 y = coords[:, 2]
 
 # get populations per genotype
-local_data = np.loadtxt("LocalData1run1.txt", skiprows=2, ndmin=2)
+local_data = np.loadtxt("LocalData101run1.txt", skiprows=2, ndmin=2)
 t=0 # recorded timestep
 sim_day = int(local_data[t*len(x), 0])
 local_data_day0 = local_data[t*len(x):((t+1)*len(x)), 2:8]

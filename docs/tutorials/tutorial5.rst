@@ -78,7 +78,7 @@ Once we create this file and enter the filepath, all that's left to do is run th
 .. image:: ../images/tut5_confirm.png
 
 And with this, we have effectively run the pre-defined set 17! 
-We can look at the totals plot and see for ourselves the spikes at each release time:
+We can look at the totals plot and see the subtle bumps in drive heterozygous female numbers at each release time:
 
 .. image:: ../images/tut5_totals_plot.png
     :scale: 80 %

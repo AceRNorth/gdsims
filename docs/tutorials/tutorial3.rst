@@ -156,7 +156,7 @@ The drive allele (D) frequency is calculated relative to all available genotypes
 
     \text{drive allele freq.} = \frac{\mathrm{WD} + 2(\mathrm{DD}) + \mathrm{DR}}{2(\mathrm{TOT})}
 
-with :math:`\textrm{TOT} = \textrm{WW} + \textrm{WD} + \textrm{DD} + \textrm{WR} + \textrm{RR} + \textrm{DR}`. Each genotype in the equation represents the total number of males of that genotype in the overall area.
+with :math:`\textrm{TOT} = \textrm{WW} + \textrm{WD} + \textrm{DD} + \textrm{WR} + \textrm{RR} + \textrm{DR}`. Each genotype in the equation represents the total number of mated females of that genotype in the overall area.
 
 To make this animation, you can either use the script cell ``GeneralMetapopPlots.py - 'Spatial animation of gene drive allele frequency'`` found in the ``test`` directory, or follow along in editing the animation script from Tutorial :ref:`tutorial-2.2`. If you're using the script directly, you can skip to the animation image. 
 
@@ -181,7 +181,7 @@ To modify our previous animation script, we can substitute some of the sections 
             if (tot == 0):
                 drive_freq[pat] = -2 # assign different distinguishable value for no-population patches
             elif (tot == WW[pat]):
-                drive_freq[pat] = -0.5 #assign different distinguishable value for fully wild-population patches
+                drive_freq[pat] = -0.5 # assign different distinguishable value for fully wild-population patches
             else:
                 drive_freq[pat] = (WD_day0[pat] + (2*DD_day0[pat]) + DR_day0[pat]) / (2*tot)
 
