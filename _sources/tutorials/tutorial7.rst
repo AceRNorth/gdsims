@@ -161,7 +161,7 @@ Finally, enter the filepath and proceed to run the program. Remember again that 
 
 .. image:: ../images/tut7_confirm.png
 
-If we plot the total adult males again, we can observe that the fluctuations are more irregular than before, since our custom rainfall values don't follow a perfect sinusoid pattern. 
+If we plot the total adult mated females again, we can observe that the fluctuations are more irregular than before, since our custom rainfall values don't follow a perfect sinusoid pattern. 
 
 .. image:: ../images/tut7_totals_plot_set15.png
     :scale: 80 %

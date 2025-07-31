@@ -48,7 +48,7 @@ With this, we're ready to run. From the output files we can create another anima
 .. image:: ../images/tut6_anim_radial.gif
     :scale: 90 %
 
-Let's compare this animation to the one from Tutorial :ref:`tutorial-4.1`. We can see that in this case the gene drive will spread much quicker with the radial dispersal. 
+Let's compare this animation to the one from Tutorial :ref:`tutorial-4.1`. We can see that in this case the gene drive will spread quicker with the radial dispersal. 
 
 .. note::
 

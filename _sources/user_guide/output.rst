@@ -30,13 +30,15 @@ The second and third columns contain the `x` and `y` coordinates respectively.
 Totals file
 -----------
 
-The totals file records the total number of adult male mosquitoes over all sites for each day of the simulation. These are divided into the different genotypes available. By default, the program uses 6 genotypes (more information in the :doc:`defaults` section).
+The totals file records the total number of adult mated female mosquitoes over all sites for each day of the simulation. These are divided into the different female genotypes available. By default, the program uses 6 genotypes (more information in the :doc:`defaults` section).
 
-The first column denotes the simulation day, where day 0 is the initialisation day. The following columns denote the number of males of each genotype, where W is a wild-type allele, D is a drive-type allele and R is a non-functional resistance allele. 
+The first column denotes the simulation day, where day 0 is the initialisation day. The following columns denote the number of females of each genotype, where W is a wild-type allele, D is a drive-type allele and R is a non-functional resistance allele. 
 
 .. note::
-    During the initialisation day, sites are populated with some initial populations and gene drive mosquitoes may be released, but mosquitoes don't carry out their life processes or disperse. This is to set a baseline for the model. Mosquito numbers are always recorded as the very last step of the simulation day.
+    During the initialisation day, sites are populated with some initial populations and mosquitoes don't carry out their life processes or disperse. This is to set a baseline for the model. Mosquito numbers are always recorded as the very last step of the simulation day.
 
+.. note::
+    The model will simulate a burn-in period of 365 days before recording any data so that the modelled mosquito populations can reach an equilibrium before other modelled behaviours, such as gene drive release, are introduced. This is all done implicitly before recording starts. 
 
 .. image:: ../images/output_totals.png
     :scale: 80 %
@@ -46,9 +48,9 @@ The first column denotes the simulation day, where day 0 is the initialisation d
 Local data file
 ---------------
 
-Similarly to the totals file, the local data file records the number of adult male mosquitoes for each day of the simulation, but this is split by each site. This provides a more in-depth view of the population evolution at each site. The male population numbers are also divided by genotype. 
+Similarly to the totals file, the local data file records the number of adult mated female mosquitoes for each day of the simulation, but this is split by each site. This provides a more in-depth view of the population evolution at each site. The female population numbers are also divided by genotype. 
 
-The first column again denotes the simulation day, the second column denotes the site index (as seen in :ref:`coords_output_file`) and the following columns denote the number of males of each genotype (as seen in :ref:`totals_file`).
+The first column again denotes the simulation day, the second column denotes the site index (as seen in :ref:`coords_output_file`) and the following columns denote the number of females of each genotype (as seen in :ref:`totals_file`).
 
 .. image:: ../images/output_local.png
     :scale: 80 %
