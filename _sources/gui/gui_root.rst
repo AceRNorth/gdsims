@@ -33,3 +33,4 @@ Both are freely available on their respective GitHub repositories, have an open-
 
     install
     usage
+    tutorials

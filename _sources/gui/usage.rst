@@ -44,6 +44,8 @@ Three objects are created in the simulation folder:
 
 -	``output_files`` folder - contains data files produced by the model program. More detail on these in the model program's :doc:`../user_guide/output` documentation page.
 
+.. _gui-param-sets:
+
 Pre-defined parameter sets
 ---------------------------
 
@@ -151,6 +153,8 @@ Also note that the default dispersal type in the GUI is Radial - this differs fr
 .. caution::
 
    If the advanced parameter window is closed with the close button, changes won't be applied. Please use the Ok or Apply buttons to confirm changes. 
+
+.. _gui-plots:
 
 Plots
 -----
