@@ -20,6 +20,17 @@ Requirements
      GCC, the GNU compiler collection site. GCC includes g++, which is a C++ compiler. This site has links to download sites for different operating systems. 
 
 
+.. note::
+   Installing compilers and CMake
+
+   For Windows we recommend installing GCC, the GNU compiler collection. Installing through their official site can be quite convoluted so we recommend following `these instructions <https://gist.github.com/alandsilva26/53cd2fecf253554c2f671766d3df5d66>`_ (Installation and PATH sections only). Please note after installing MSYS2 the commands in the above link need to be run in the MSYS2 terminal. You can find this by searching for MSYS2 with your system's Start search bar. Commands cannot be copied into the MSYS2 terminal with Ctrl+v, use right-click + Paste instead. Also note the comment at the end of the page, which corrects one of the filepaths that need to be added to the PATH (``C:\msys64\mingw32\bin`` with w, NOT ``C:\msys64\ming32\bin``).
+
+   For Mac we recommend installing the Clang compiler. Instructions for this are detailed as part of the below Mac section.
+
+   To install CMake (necessary for both operating systems), open the CMake Download link above and download either the 'Windows x64 Installer' for Windows or the 'macOS 10.13 or later' .dmg file for Mac. Double-click the installers and proceed, making sure the 'Add CMake to the PATH environment variable' checkbox is selected. For Mac, you can then follow the instructions in the below Mac section to complete the CMake installation.
+
+   We assume anyone using Linux will be comfortable installing their desired compiler and CMake version themselves.
+
 Windows
 -------
 .. admonition:: Additional recommended installations 
