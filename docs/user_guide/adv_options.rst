@@ -110,6 +110,8 @@ In addition to the default seasonality option provided, where rainfall contribut
 
 Similarly to the custom set :ref:`custom_params_file`, this advanced option asks for an input file. The filename will follow the same rules as the parameter file, as so will any other input files required by other advanced options.
 
+.. _rainfall_file:
+
 Rainfall data input file
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -133,6 +135,7 @@ The file should contain a list of values separated by new lines.
 
     Class documentation (with links to derived classes)
 
+.. _coords_custom_file:
 
 Custom patch coordinates
 ------------------------
