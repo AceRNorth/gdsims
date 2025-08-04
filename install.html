@@ -468,6 +468,14 @@ document.write(`
 </dd>
 </dl>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Installing compilers and CMake</p>
+<p>For Windows we recommend installing GCC, the GNU compiler collection. Installing through their official site can be quite convoluted so we recommend following <a class="reference external" href="https://gist.github.com/alandsilva26/53cd2fecf253554c2f671766d3df5d66">these instructions</a> (Installation and PATH sections only). Please note after installing MSYS2 the commands in the above link need to be run in the MSYS2 terminal. You can find this by searching for MSYS2 with your system’s Start search bar. Commands cannot be copied into the MSYS2 terminal with Ctrl+v, use right-click + Paste instead. Also note the comment at the end of the page, which corrects one of the filepaths that need to be added to the PATH (<code class="docutils literal notranslate"><span class="pre">C:\msys64\mingw32\bin</span></code> with w, NOT <code class="docutils literal notranslate"><span class="pre">C:\msys64\ming32\bin</span></code>).</p>
+<p>For Mac we recommend installing the Clang compiler. Instructions for this are detailed as part of the below Mac section.</p>
+<p>To install CMake (necessary for both operating systems), open the CMake Download link above and download either the ‘Windows x64 Installer’ for Windows or the ‘macOS 10.13 or later’ .dmg file for Mac. Double-click the installers and proceed, making sure the ‘Add CMake to the PATH environment variable’ checkbox is selected. For Mac, you can then follow the instructions in the below Mac section to complete the CMake installation.</p>
+<p>We assume anyone using Linux will be comfortable installing their desired compiler and CMake version themselves.</p>
+</div>
 </section>
 <section id="windows">
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">#</a></h2>
