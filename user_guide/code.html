@@ -410,7 +410,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -426,6 +428,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-include-in-your-main3-cpp-file">What to include in your main3.cpp file</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -438,8 +448,16 @@ document.write(`
   <section id="interacting-through-code">
 <h1>Interacting through code<a class="headerlink" href="#interacting-through-code" title="Permalink to this heading">#</a></h1>
 <p>The program architecture has been designed to flexibly provide different ways of running the program. For more advanced users, making custom parameter set runs with many advanced options may be quicker and easier by directly interacting with our <a class="reference internal" href="../api.html#_CPPv410Simulation" title="Simulation"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Simulation</span></code></a> class through C++ code instead of using the built-in command-line interface (CLI). This also allows further customisation of parameter reading methods.</p>
-<p>GDSiMS uses CMake as its build tool, with the corresponding CMakeLists file provided in our repository. We can easily substitute the executable file with our own user-defined source file (labelled as <code class="docutils literal notranslate"><span class="pre">main2.cpp</span></code> below).</p>
-<a class="reference internal image-reference" href="../_images/usage_main2_cmakelists.png"><img alt="../_images/usage_main2_cmakelists.png" src="../_images/usage_main2_cmakelists.png" style="width: 667.2px; height: 274.40000000000003px;" /></a>
+<p>GDSiMS uses CMake as its build tool, with the corresponding <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file provided in our repository. We can easily substitute the source file for the command-line interface, <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>, with our own user-defined source file (we can call this <code class="docutils literal notranslate"><span class="pre">main3.cpp</span></code>).</p>
+<p>To do this:</p>
+<ol class="arabic simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">main3.cpp</span></code> file in the <code class="docutils literal notranslate"><span class="pre">src</span></code> folder of your cloned repository. You can do this by opening a new file on the Notepad app on Windows or any other text editor and saving the file, making sure to include the <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> extension in replacement of <code class="docutils literal notranslate"><span class="pre">.txt</span></code>.</p></li>
+<li><p>Edit the file and save - look at the next section to choose what you want to include.</p></li>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file in your cloned repository, this should be in the <code class="docutils literal notranslate"><span class="pre">gdsims</span></code> top folder.</p></li>
+<li><p>Edit the <code class="docutils literal notranslate"><span class="pre">add_executable(gdsimsapp</span> <span class="pre">src/main.cpp)</span></code> line, substituting <code class="docutils literal notranslate"><span class="pre">src/main.cpp</span></code> with <code class="docutils literal notranslate"><span class="pre">src/main3.cpp</span></code>, and save.</p></li>
+<li><p>Re-build and re-compile the project with CMake (repeat steps 5-6 of the Windows installation instructions or steps 7-8 of the Mac instructions at <a class="reference internal" href="../install.html"><span class="doc">Installation</span></a>).</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/usage_main3_cmakelists.PNG"><img alt="../_images/usage_main3_cmakelists.PNG" src="../_images/usage_main3_cmakelists.PNG" style="width: 829.1999999999999px; height: 449.4px;" /></a>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
@@ -451,27 +469,30 @@ document.write(`
 <p class="admonition-title">Caution</p>
 <p>The CMake project will need to be re-built and re-compiled after making these changes (as explained in <a class="reference internal" href="../install.html"><span class="doc">Installation</span></a>).</p>
 </div>
-<p>To run the simulation with the default parameters of set 1, <code class="docutils literal notranslate"><span class="pre">main2.cpp</span></code> would look like this:</p>
+<section id="what-to-include-in-your-main3-cpp-file">
+<h2>What to include in your main3.cpp file<a class="headerlink" href="#what-to-include-in-your-main3-cpp-file" title="Permalink to this heading">#</a></h2>
+<p>To run the simulation with the default parameters of set 1, <code class="docutils literal notranslate"><span class="pre">main3.cpp</span></code> would look like this:</p>
 <details class="summary-pre-defined-parameter-set-run" open>
-<summary>Pre-defined parameter set run</summary><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Simulation.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sets.h&quot;</span>
+<summary>Pre-defined parameter set run</summary><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Simulation.h&quot;</span><span class="c1"> // load our GDSiMS Simulation class</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sets.h&quot;</span><span class="c1"> // load the pre-defined sets data structures</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Simulation</span><span class="w"> </span><span class="n">simulation</span><span class="p">(</span><span class="n">set1</span><span class="p">);</span>
-<span class="w">    </span><span class="n">InheritanceParams</span><span class="w"> </span><span class="n">inher</span><span class="p">;</span>
-<span class="w">    </span><span class="n">inher</span><span class="p">.</span><span class="n">gamma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">set1</span><span class="p">.</span><span class="n">gamma</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Simulation</span><span class="w"> </span><span class="n">simulation</span><span class="p">(</span><span class="n">set1</span><span class="p">);</span><span class="w"> </span><span class="c1">// create a simulation object using parameter set 1</span>
+<span class="w">    </span><span class="n">InheritanceParams</span><span class="w"> </span><span class="n">inher</span><span class="p">;</span><span class="w"> </span><span class="c1">// create a data structure for the inheritance parameters</span>
+<span class="w">    </span><span class="n">inher</span><span class="p">.</span><span class="n">gamma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">set1</span><span class="p">.</span><span class="n">gamma</span><span class="p">;</span><span class="w"> </span><span class="c1">// set the values of the above data structure to those from set 1</span>
 <span class="w">    </span><span class="n">inher</span><span class="p">.</span><span class="n">xi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">set1</span><span class="p">.</span><span class="n">xi</span><span class="p">;</span>
 <span class="w">    </span><span class="n">inher</span><span class="p">.</span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">set1</span><span class="p">.</span><span class="n">e</span><span class="p">;</span>
-<span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_inheritance</span><span class="p">(</span><span class="n">inher</span><span class="p">);</span>
-<span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">run_reps</span><span class="p">();</span>
+<span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_inheritance</span><span class="p">(</span><span class="n">inher</span><span class="p">);</span><span class="w"> </span><span class="c1">// set the inheritance fraction of our simulation object using our parameters</span>
+<span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">run_reps</span><span class="p">();</span><span class="w"> </span><span class="c1">// run the simulation with its repetitions</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </details><p><code class="docutils literal notranslate"><span class="pre">sets.h</span></code> contains the same pre-defined parameter sets used in the CLI for a quick start.</p>
-<p>The <a class="reference internal" href="../api.html#_CPPv410Simulation" title="Simulation"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Simulation</span></code></a> class has different methods available to run the simulation and set <a class="reference internal" href="adv_options.html"><span class="doc">Advanced options</span></a>. Of these, the two essential ones are <code class="docutils literal notranslate"><span class="pre">set_inheritance()</span></code> and <code class="docutils literal notranslate"><span class="pre">run_reps()</span></code>, which set the inheritance fraction for each genotype and run the simulation (including all its repetitions) respectively. For information on other methods visit the class’ documentation.</p>
-<p>To set all the advanced options, <code class="docutils literal notranslate"><span class="pre">main2.cpp</span></code> would look like this:</p>
+<p>The <a class="reference internal" href="../api.html#_CPPv410Simulation" title="Simulation"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Simulation</span></code></a> class has different functions available to run the simulation and set <a class="reference internal" href="adv_options.html"><span class="doc">Advanced options</span></a>. Of these, the two essential ones are <code class="docutils literal notranslate"><span class="pre">set_inheritance()</span></code> and <code class="docutils literal notranslate"><span class="pre">run_reps()</span></code>, which set the inheritance fraction for each genotype and run the simulation (including all its repetitions) respectively. For information on other functions visit the class’ documentation.</p>
+<p>The inheritance parameters are set separately to ensure these can be easily set by the user, in case these values are calculated using other models and need to be fed in.</p>
+<p>To set all the advanced options, <code class="docutils literal notranslate"><span class="pre">main3.cpp</span></code> would look like this:</p>
 <details class="summary-pre-defined-parameter-set-run-with-advanced-options-set" open>
-<summary>Pre-defined parameter set run with advanced options set</summary><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Simulation.h&quot;</span>
+<summary>Pre-defined parameter set run with advanced options set</summary><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Simulation.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sets.h&quot;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -481,22 +502,22 @@ document.write(`
 <span class="w">    </span><span class="n">inher</span><span class="p">.</span><span class="n">xi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">set1</span><span class="p">.</span><span class="n">xi</span><span class="p">;</span>
 <span class="w">    </span><span class="n">inher</span><span class="p">.</span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">set1</span><span class="p">.</span><span class="n">e</span><span class="p">;</span>
 <span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_inheritance</span><span class="p">(</span><span class="n">inher</span><span class="p">);</span>
-<span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_boundary_type</span><span class="p">(</span><span class="n">Edge</span><span class="p">);</span>
-<span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_dispersal_type</span><span class="p">(</span><span class="n">Radial</span><span class="p">);</span>
-<span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_rainfall</span><span class="p">(</span><span class="s">&quot;rainfall.txt&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_coords</span><span class="p">(</span><span class="s">&quot;coords_grid.txt&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_release_times</span><span class="p">(</span><span class="s">&quot;rel_times.txt&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_boundary_type</span><span class="p">(</span><span class="n">Edge</span><span class="p">);</span><span class="w"> </span><span class="c1">// available options are Toroid (default) or Edge</span>
+<span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_dispersal_type</span><span class="p">(</span><span class="n">Radial</span><span class="p">);</span><span class="w"> </span><span class="c1">// available options are DistanceKernel (default) or Radial</span>
+<span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_rainfall</span><span class="p">(</span><span class="s">&quot;rainfall.txt&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// takes a filepath relative to the build folder</span>
+<span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_coords</span><span class="p">(</span><span class="s">&quot;coords_grid.txt&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// takes a filepath relative to the build folder</span>
+<span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">set_release_times</span><span class="p">(</span><span class="s">&quot;rel_times.txt&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// takes a filepath relative to the build folder</span>
 <span class="w">    </span><span class="n">simulation</span><span class="p">.</span><span class="n">run_reps</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</details><p>To create a custom parameter set, we can use the <a class="reference internal" href="../api.html#_CPPv411InputParams" title="InputParams"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">InputParams</span></code></a> structure, which defines all the parameters needed:</p>
+</details><p>To create a custom parameter set, we can use the <a class="reference internal" href="../api.html#_CPPv411InputParams" title="InputParams"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">InputParams</span></code></a> data structure, which defines all the parameters needed:</p>
 <details class="summary-custom-parameter-set-run-with-advanced-options-set">
-<summary>Custom parameter set run with advanced options set</summary><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Simulation.h&quot;</span>
+<summary>Custom parameter set run with advanced options set</summary><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Simulation.h&quot;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">InputParams</span><span class="w"> </span><span class="n">params</span><span class="p">;</span>
-<span class="w">    </span><span class="n">params</span><span class="p">.</span><span class="n">num_runs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">InputParams</span><span class="w"> </span><span class="n">params</span><span class="p">;</span><span class="w"> </span><span class="c1">// create the input parameters data structure</span>
+<span class="w">    </span><span class="n">params</span><span class="p">.</span><span class="n">num_runs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// set the value for the num_runs parameter, the number of runs in the simulation</span>
 <span class="w">    </span><span class="n">params</span><span class="p">.</span><span class="n">max_t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1400</span><span class="p">;</span>
 <span class="w">    </span><span class="n">params</span><span class="p">.</span><span class="n">num_pat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
 <span class="w">    </span><span class="n">params</span><span class="p">.</span><span class="n">mu_j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span>
@@ -531,7 +552,7 @@ document.write(`
 <span class="w">    </span><span class="n">params</span><span class="p">.</span><span class="n">rec_sites_freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="w">    </span><span class="n">params</span><span class="p">.</span><span class="n">set_label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">Simulation</span><span class="w"> </span><span class="n">simulation</span><span class="p">(</span><span class="n">params</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Simulation</span><span class="w"> </span><span class="n">simulation</span><span class="p">(</span><span class="n">params</span><span class="p">);</span><span class="w"> </span><span class="c1">// create a Simulation object with our own set of parameters</span>
 <span class="w">    </span><span class="n">InheritanceParams</span><span class="w"> </span><span class="n">inher</span><span class="p">;</span>
 <span class="w">    </span><span class="n">inher</span><span class="p">.</span><span class="n">gamma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="p">.</span><span class="n">gamma</span><span class="p">;</span>
 <span class="w">    </span><span class="n">inher</span><span class="p">.</span><span class="n">xi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="p">.</span><span class="n">xi</span><span class="p">;</span>
@@ -550,13 +571,14 @@ document.write(`
 </details><p>And similarly to the pre-defined parameter set, we can set the advanced options before we run the simulation.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>The <a class="reference internal" href="../api.html#_CPPv410Simulation" title="Simulation"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Simulation</span></code></a> constructor will not make bound or interval checks on the parameters. To see the allowed bounds for model parameters, visit the <a class="reference internal" href="custom_set.html"><span class="doc">Custom sets</span></a> page.</p>
+<p>The <a class="reference internal" href="../api.html#_CPPv410Simulation" title="Simulation"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Simulation</span></code></a> constructor (the function that creates the Simulation object) will not make bound or interval checks on the parameters. To see the allowed bounds for model parameters, visit the <a class="reference internal" href="custom_set.html"><span class="doc">Custom sets</span></a> page.</p>
 </div>
-<p>By modifying the <code class="docutils literal notranslate"><span class="pre">main2.cpp</span></code> file further, you can read the input parameters from a file. This feature is included by default in the CLI but it is understood that advanced users will want to define their own parameter reading method depending on their specific needs.</p>
+<p>By modifying the <code class="docutils literal notranslate"><span class="pre">main3.cpp</span></code> file further, you can read the input parameters from a file. This feature is included by default in the CLI but it is understood that advanced users will want to define their own parameter reading method depending on their specific needs.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">inputval.h</span></code> file in the project defines parameter file reading and bounds and interval checking functions used in the CLI which you may want to reuse. You will need to define the correct bounds for each parameter according to our <a class="reference internal" href="custom_set.html"><span class="doc">Custom sets</span></a> page.</p>
 </div>
+</section>
 </section>
 
 
@@ -594,6 +616,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-include-in-your-main3-cpp-file">What to include in your main3.cpp file</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

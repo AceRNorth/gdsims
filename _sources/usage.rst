@@ -24,19 +24,19 @@ For those comfortable with C++ programming, a user-defined main file may be spec
 
 The new main file can be substituted in ``CMakeLists.txt`` as the executable source file:
 
-.. image:: images/usage_main2_cmakelists.png
-    :scale: 80 %
+.. image:: images/usage_main3_cmakelists.PNG
+    :scale: 60 %
 
 
-To run the simulation with the default parameters of set 1, ``main2.cpp`` would look like this:
+To run the simulation with the default parameters of set 1, ``main3.cpp`` would look like this:
 
-.. image:: images/usage_main2_file.png
+.. image:: images/usage_main3_file.png
     :scale: 80 %
 
 
 The CMake project will need to be re-built and re-compiled after making these changes (as explained in the :doc:`install` section).
 
-More examples can be found in the :doc:`user_guide/code` section of the User Guide.
+Step-by-step details and examples can be found in the :doc:`user_guide/code` section of the User Guide.
 
 Output
 ======
