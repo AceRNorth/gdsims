@@ -1,6 +1,6 @@
-===
-API
-===
+==================
+Code Documentation
+==================
 
 .. include:: class_view_hierarchy.rst.include
 
