@@ -44,7 +44,7 @@ Graphical User Interface (GUI)
 
 The GUI is best for beginners to the model and those with little to no programming or command-line experience. It provides parameter inputting, simulation running and data visualisation features. 
 
-.. image:: ../images/gui_snapshot.png
+.. image:: images/gui_snapshot.png
     :scale: 70 %
 
 A full comparison of GDSiMS and GDSiMS GUI use cases, as well as GUI installation instructions, tutorials and usage documentation can be found in the :doc:`gui/gui_root` section.
