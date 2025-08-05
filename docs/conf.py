@@ -17,7 +17,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'GDSiMS'
-copyright = '2024, Sara Perez Vizan'
+copyright = '2025, Sara Perez Vizan'
 author = 'Sara Perez Vizan'
 
 
@@ -38,7 +38,7 @@ exhale_args = {
     "containmentFolder": "./api",
     "doxygenStripFromPath": "..",
     "rootFileName": "library_root.rst",
-    "rootFileTitle": "API",
+    "rootFileTitle": "Code Documentation",
     "createTreeView":        True,
     "treeViewIsBootstrap":   True,
     "exhaleExecutesDoxygen": False

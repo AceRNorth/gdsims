@@ -1,7 +1,7 @@
 .. _gui-root:
 
-GUI
-===
+Graphical User Interface
+========================
 
 GDSiMS also offers a Graphical User Interface (GUI) hosted on the `GDSiMS GUI GitHub repository <https://github.com/AceRNorth/gdsims-gui>`_. This can be installed directly from the repo and is best suited for users with no programming experience. Visit the GUI :ref:`gui-install` page for more details. 
 
