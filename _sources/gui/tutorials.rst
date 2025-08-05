@@ -9,20 +9,20 @@ Quickstart
 
 The GDSiMS Graphical User Interface (GUI) comes with pre-defined parameter sets to make a quickstart simple. The default parameter set 1 is loaded as you open the interface, so let's use that as a start. We can simply click 'Run' to run the simulation. 
 
-.. image:: ../images/gui_opening_snapshot.png
+.. image:: ../images/gui_opening_snapshot.PNG
     :scale: 70 %
 
 This will trigger the progress and message bar and the simulation will start running. An info message will pop up once it's done, letting us know that we can now plot our data. 
 
-.. image:: ../images/gui_progress_snapshot.png
+.. image:: ../images/gui_progress_snapshot.PNG
     :scale: 90 %
 
-.. image:: ../images/gui_completion_snapshot.png
+.. image:: ../images/gui_completion_snapshot.PNG
     :scale: 70 %
 
 Then, go to the plotspace and click Plot.
 
-.. image:: ../images/gui_starting_plotspace_snapshot.png
+.. image:: ../images/gui_starting_plotspace_snapshot.PNG
     :scale: 80 %
 
 This will plot in the default plot tab selected, the "Totals - Genotype" tab.
@@ -31,14 +31,14 @@ You can change tabs at the top to see other available plots and animations. You 
 
 You can also check and uncheck genotypes in the sidebar and click Plot again to re-plot with different curves. You can hover over the genotypes to see a description. Other tabs have their own custom interaction options, which also offer hovering descriptions.
 
-.. image:: ../images/gui_totals_gen_plot_snapshot.png
+.. image:: ../images/gui_totals_gen_plot_snapshot.PNG
     :scale: 70 %
 
 You can check out the parameters used and the output data in the app folder - the default location is different for Windows and Mac. 
 
 For Windows, this is the ``_internal`` subfolder in the ``GDSiMS_Win`` folder. 
 
-.. image:: ../images/gui_folder_gdsims_win.png
+.. image:: ../images/gui_folder_gdsims_win.PNG
     :scale: 90 %
 
 For Mac, you'll need to visit your computer's Applications folder (you can find this with the Finder) and find the GDSiMS app you've installed. Then, right-click on the app and click on 'Show Package Contents'. 
@@ -56,15 +56,15 @@ For both Windows and Mac, at the respective locations specified, a date-time sta
 
 -	``output_files`` folder - contains data files produced by the model program. More detail on these in the model program's :doc:`../user_guide/output` documentation page.
 
-.. image:: ../images/gui_folder_internal.png
+.. image:: ../images/gui_folder_internal.PNG
     :scale: 90 %
 
-.. image:: ../images/gui_folder_sim.png
+.. image:: ../images/gui_folder_sim.PNG
     :scale: 90 %
 
 If you ever can't find this documentation website you can click on the Help button (icon in the top right-hand corner for Windows, Help tab in the window's tools bar at the top of the screen for Mac) to open it again. 
 
-.. image:: ../images/gui_help_snapshot.png
+.. image:: ../images/gui_help_snapshot.PNG
     :scale: 90 %
 
 
@@ -76,7 +76,7 @@ Frequently Asked Questions
 
 Just go to the top left corner of the GUI and select a pre-defined set from the drop-down list. Then, click Load for the parameters to update. You can view a summary table of the parameter sets in the :ref:`gui-param-sets` section. This also includes the equivalent names for the GUI parameter names and the GDSiMS model parameter names so you can understand parameter documentation in other sections of this website. 
 
-.. image:: ../images/gui_load_sets.png
+.. image:: ../images/gui_load_sets.PNG
     :scale: 80 %
 
 2. I'd like to save my output data elsewhere, how do I do this?
@@ -84,7 +84,7 @@ Just go to the top left corner of the GUI and select a pre-defined set from the 
 
 You can use the two boxes above the progress bar to do this. Before running a simulation, select the output directory by clicking Select and choosing a folder in the Folder Explorer. You can then type your own simulation name for the simulation folder - the date-time stamp is used by default otherwise. 
 
-.. image:: ../images/gui_choose_output_directory.png
+.. image:: ../images/gui_choose_output_directory.PNG
     :scale: 80 %
 
 3. I'd like to save a plot.
@@ -92,7 +92,7 @@ You can use the two boxes above the progress bar to do this. Before running a si
 
 Just click the Save button on the plot toolbar at the top. You can select where to save the file to.
 
-.. image:: ../images/gui_plot_save_icon.png
+.. image:: ../images/gui_plot_save_icon.PNG
     :scale: 80 %
 
 4. I'd like to save an animation.
@@ -100,7 +100,7 @@ Just click the Save button on the plot toolbar at the top. You can select where 
 
 Click the Save button underneath the Play button. You can select where to save the file to. Saving may take a while to process if the animation is long.
 
-.. image:: ../images/gui_save_anim.png
+.. image:: ../images/gui_save_anim.PNG
     :scale: 80 %
 
 5. The recorded day interval on the animation is too large/too small. How do I set my desired day interval?
@@ -113,10 +113,10 @@ This corresponds to the "output frequency (full data)" parameter used to run the
 
 On the plot toolbar, click on the "Edit axes, curve and image parameters" icon (the graph icon with a rising arrow). Here you can edit axes labels and ranges on the Axes tab and curve colours, labels and styles in the Curves tab - click Ok when you're done. This should automatically update the plot. If you make any changes on the interactive sidebar and replot with the Plot button you'll have to make the same changes on the plot toolbar again. 
 
-.. image:: ../images/gui_plot_edit_axes_icon.png
+.. image:: ../images/gui_plot_edit_axes_icon.PNG
     :scale: 80 %
 
-.. image:: ../images/gui_plot_edit_axes_window.png
+.. image:: ../images/gui_plot_edit_axes_window.PNG
     :scale: 80 %
 
 7. I'd like to change the type of scale on a plot axis to e.g. a log scale.
@@ -134,10 +134,10 @@ Just tweak the parameters (and optionally select a different output directory or
 
 If you've used the wrong parameters and the simulation doesn't take too long we'd recommend letting it finish running. Otherwise, you can click the Abort button that replaces the Run button when running a simulation. Please note that aborting a simulation is a last-resort option and is an intensive process. It will usually take 1-2 mins and might freeze the application. Don't click on anything else until it's done - a pop-up info message will let you know when it's done. If there are errors and it takes any longer than this, close the window with the close button (it may take a couple of clicks) and force quit the application (and contact us with some details on the issue).
 
-.. image:: ../images/gui_abort_button.png
+.. image:: ../images/gui_abort_button.PNG
     :scale: 90 %
 
-.. image:: ../images/gui_abort_message.png
+.. image:: ../images/gui_abort_message.PNG
     :scale: 70 %
 
 Advanced tutorial 1: Coordinates file
@@ -149,17 +149,17 @@ You might want to add your own custom coordinates for the patch locations and se
 
 2. Open the GUI and click on the Advanced button in the parameters section - this will open a new window dialog. 
 
-.. image:: ../images/gui_advanced_button.png
+.. image:: ../images/gui_advanced_button.PNG
     :scale: 80 %
 
 3. The custom coordinates file option is only available for an Edge boundary type in the GUI, so change this first with the boundary type drop-down. 
 
-.. image:: ../images/gui_advanced_edge.png
+.. image:: ../images/gui_advanced_edge.PNG
     :scale: 80 %
 
 4. This should display a patch coordinates file checkbox. Checking this will display a Select button much like the output directory selection button in the main window. Click Select to browse for your file in the File Explorer. 
 
-.. image:: ../images/gui_advanced_coords.png
+.. image:: ../images/gui_advanced_coords.PNG
     :scale: 80 %
 
 5. Before confirming your advanced parameter changes make sure the 'no. of patches' parameter in the main window matches with the number of patches included in your coordinates file. In our example file we use 25 patches, so change this to 25. 
@@ -168,7 +168,7 @@ You might want to add your own custom coordinates for the patch locations and se
 
 7. Run the simulation as usual! Once it's done you can check the placement of your coordinates in the Coords plot tab. For our example it should look like this:
 
-.. image:: ../images/gui_coords_grid_plot.png
+.. image:: ../images/gui_coords_grid_plot.PNG
     :scale: 90 %
 
 
@@ -181,22 +181,22 @@ You might want to add a custom rainfall file to model your own seasonality. You 
 
 2. Open the GUI and click on the Advanced button in the parameters section - this will open a new window dialog. 
 
-.. image:: ../images/gui_advanced_button.png
+.. image:: ../images/gui_advanced_button.PNG
     :scale: 80 %
 
 3. The rainfall file checkbox is under the Seasonality section. Checking this will display a Select button much like the output directory selection button in the main window and a 'responsiveness to rainfall' parameter - we'll get to this parameter in the next step. Click Select to browse for your file in the File Explorer. 
 
-.. image:: ../images/gui_advanced_rainfall_file.png
+.. image:: ../images/gui_advanced_rainfall_file.PNG
     :scale: 80 %
 
 4. Tweak the 'responsiveness to rainfall' parameter - we can change it to 1.00. We might also wanna tweak some of the previous seasonality parameters so we can observe the rainfall effects on the plot more easily later on - let's change the 'population size factor' to 10000.00 and the 'rainfall contribution to population size' to 100000.00.
 
-.. image:: ../images/gui_advanced_rainfall_params.png
+.. image:: ../images/gui_advanced_rainfall_params.PNG
     :scale: 80 %
 
 5. Confirm the changes by clicking Ok or Apply at the bottom of the advanced parameter window dialog. 
 
 6. Run the simulation as usual! Once it's done you can check the totals plot to see the effect of seasonality on our total numbers of mosquitoes. For our example it should look like this:
 
-.. image:: ../images/gui_rainfall_totals_plot.png
+.. image:: ../images/gui_rainfall_totals_plot.PNG
     :scale: 80 %
