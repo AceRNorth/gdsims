@@ -2,7 +2,7 @@
 Usage
 =====
 
-The program can be used in two ways: through a command-line interface or interacting directly with the :class:`Simulation` class through C++ code. 
+The program can be used in two main ways: through a command-line interface or interacting directly with the :class:`Simulation` class through C++ code. There's also a Graphical User Interface available - more info on this in the :doc:`gui/gui_root` section.
 
 There also exists a more advanced option, where you can interact with the :class:`Model` and :class:`Record` classes directly, which may be added to the :doc:`user_guide/user_guide_root` in the future.
 
@@ -38,6 +38,18 @@ The CMake project will need to be re-built and re-compiled after making these ch
 
 Step-by-step details and examples can be found in the :doc:`user_guide/code` section of the User Guide.
 
+
+Graphical User Interface (GUI)
+------------------------------
+
+The GUI is best for beginners to the model and those with little to no programming or command-line experience. It provides parameter inputting, simulation running and data visualisation features. 
+
+.. image:: ../images/gui_snapshot.png
+    :scale: 70 %
+
+A full comparison of GDSiMS and GDSiMS GUI use cases, as well as GUI installation instructions, tutorials and usage documentation can be found in the :doc:`gui/gui_root` section.
+
+
 Output
 ======
 
@@ -48,6 +60,8 @@ Upon running a set, output files will be created in a new subdirectory called ``
 - ``Totals.txt``
 
 for each run of the set. Optional Python scripts are provided in the ``test`` directory for default visualisation options and running tests.
+
+More information on output files can be found in the User Guide :doc:`user_guide/output` page. 
 
 .. note::
     Before outputting any data, the :class:`Simulation` class will implicitly run a burn-in period of 1 year (365 days) at the start of each run. This is to make sure the simulated populations have reached a stable equilibrium before modelling any interventions. 

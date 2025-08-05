@@ -436,6 +436,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Usage</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-interface-cli">Command-line interface (CLI)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-main-file">User-defined main file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-user-interface-gui">Graphical User Interface (GUI)</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
@@ -453,7 +454,7 @@ document.write(`
                   
   <section id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h1>
-<p>The program can be used in two ways: through a command-line interface or interacting directly with the <a class="reference internal" href="api.html#_CPPv410Simulation" title="Simulation"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Simulation</span></code></a> class through C++ code.</p>
+<p>The program can be used in two main ways: through a command-line interface or interacting directly with the <a class="reference internal" href="api.html#_CPPv410Simulation" title="Simulation"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Simulation</span></code></a> class through C++ code. There’s also a Graphical User Interface available - more info on this in the <a class="reference internal" href="gui/gui_root.html"><span class="doc">Graphical User Interface</span></a> section.</p>
 <p>There also exists a more advanced option, where you can interact with the <a class="reference internal" href="api.html#_CPPv45Model" title="Model"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Model</span></code></a> and <a class="reference internal" href="api.html#_CPPv46Record" title="Record"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Record</span></code></a> classes directly, which may be added to the <a class="reference internal" href="user_guide/user_guide_root.html"><span class="doc">User Guide</span></a> in the future.</p>
 <section id="command-line-interface-cli">
 <h2>Command-line interface (CLI)<a class="headerlink" href="#command-line-interface-cli" title="Permalink to this heading">#</a></h2>
@@ -471,6 +472,12 @@ document.write(`
 <p>The CMake project will need to be re-built and re-compiled after making these changes (as explained in the <a class="reference internal" href="install.html"><span class="doc">Installation</span></a> section).</p>
 <p>Step-by-step details and examples can be found in the <a class="reference internal" href="user_guide/code.html"><span class="doc">Interacting through code</span></a> section of the User Guide.</p>
 </section>
+<section id="graphical-user-interface-gui">
+<h2>Graphical User Interface (GUI)<a class="headerlink" href="#graphical-user-interface-gui" title="Permalink to this heading">#</a></h2>
+<p>The GUI is best for beginners to the model and those with little to no programming or command-line experience. It provides parameter inputting, simulation running and data visualisation features.</p>
+<a class="reference internal image-reference" href="../images/gui_snapshot.png"><img alt="../images/gui_snapshot.png" src="../images/gui_snapshot.png" /></a>
+<p>A full comparison of GDSiMS and GDSiMS GUI use cases, as well as GUI installation instructions, tutorials and usage documentation can be found in the <a class="reference internal" href="gui/gui_root.html"><span class="doc">Graphical User Interface</span></a> section.</p>
+</section>
 </section>
 <section id="output">
 <h1>Output<a class="headerlink" href="#output" title="Permalink to this heading">#</a></h1>
@@ -481,6 +488,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">Totals.txt</span></code></p></li>
 </ul>
 <p>for each run of the set. Optional Python scripts are provided in the <code class="docutils literal notranslate"><span class="pre">test</span></code> directory for default visualisation options and running tests.</p>
+<p>More information on output files can be found in the User Guide <a class="reference internal" href="user_guide/output.html"><span class="doc">Output files</span></a> page.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Before outputting any data, the <a class="reference internal" href="api.html#_CPPv410Simulation" title="Simulation"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Simulation</span></code></a> class will implicitly run a burn-in period of 1 year (365 days) at the start of each run. This is to make sure the simulated populations have reached a stable equilibrium before modelling any interventions.</p>
@@ -535,6 +543,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Usage</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-interface-cli">Command-line interface (CLI)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-main-file">User-defined main file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-user-interface-gui">Graphical User Interface (GUI)</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#output">Output</a></li>
