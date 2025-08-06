@@ -200,3 +200,31 @@ You might want to add a custom rainfall file to model your own seasonality. You 
 
 .. image:: ../images/gui_rainfall_totals_plot.PNG
     :scale: 80 %
+
+
+Advanced tutorial 3: Release times file
+---------------------------------------
+
+You might want to add a custom gene drive release schedule to your simulation. You've already learnt how to choose the release sites above and you can also add a file for the scheduled release times if you want more than one release time (instead of the default 'release time' parameter in the main window).
+
+1. Create your release times file. The structure needed for this file is documented in the :ref:`release_times_file` section. You can also find an example release times file `here <https://github.com/AceRNorth/gdsims/tree/main/docs/exercises>`_ - you can download it by clicking on the file and clicking on the 'Download raw file' icon. Let's use the ``rel_times.txt`` file as an example. 
+
+2. Open the GUI and click on the Advanced button in the parameters section - this will open a new window dialog. 
+
+.. image:: ../images/gui_advanced_button.PNG
+    :scale: 80 %
+
+3. The release times file checkbox is under the Gene drive release section. Checking this will display a Select button - click it to browse for your file in the File Explorer. 
+
+.. image:: ../images/gui_advanced_release_times_file.PNG
+    :scale: 80 %
+
+5. Confirm the changes by clicking Ok or Apply at the bottom of the advanced parameter window dialog. 
+
+6. Run the simulation as usual! Once it's done you can open the totals genotype plot, uncheck all curves except WD, DD and DR from the sidebar and plot - this will allow us to focus on smaller changes in drive genotypes. Then, zoom into the beginning of the curves around days 200, 300 and 400 (these are the release times listed on the file we used) with the magnifying glass icon on the plot toolbar at the top. You just need to click on the icon and select the rectangle area on the plot to zoom into (and if you wanna go back to the original plot you can simply click the Home icon on the toolbar to reset it). We can see small bumps near these times, showing that gene drive mosquitoes are indeed being released then!
+
+.. image:: ../images/gui_release_times_plot_start.PNG
+    :scale: 80 %
+
+.. image:: ../images/gui_release_times_plot_zoomed.PNG
+    :scale: 80 %

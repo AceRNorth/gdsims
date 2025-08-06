@@ -448,6 +448,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tutorial-1-coordinates-file">Advanced tutorial 1: Coordinates file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tutorial-2-seasonality-file">Advanced tutorial 2: Seasonality file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tutorial-3-release-times-file">Advanced tutorial 3: Release times file</a></li>
 </ul>
             </nav>
         </div>
@@ -584,6 +585,25 @@ document.write(`
 </ol>
 <a class="reference internal image-reference" href="../_images/gui_rainfall_totals_plot.PNG"><img alt="../_images/gui_rainfall_totals_plot.PNG" src="../_images/gui_rainfall_totals_plot.PNG" style="width: 524.8000000000001px; height: 415.20000000000005px;" /></a>
 </section>
+<section id="advanced-tutorial-3-release-times-file">
+<h2>Advanced tutorial 3: Release times file<a class="headerlink" href="#advanced-tutorial-3-release-times-file" title="Permalink to this heading">#</a></h2>
+<p>You might want to add a custom gene drive release schedule to your simulation. You’ve already learnt how to choose the release sites above and you can also add a file for the scheduled release times if you want more than one release time (instead of the default ‘release time’ parameter in the main window).</p>
+<ol class="arabic simple">
+<li><p>Create your release times file. The structure needed for this file is documented in the <a class="reference internal" href="../user_guide/adv_options.html#release-times-file"><span class="std std-ref">Multiple gene drive release times</span></a> section. You can also find an example release times file <a class="reference external" href="https://github.com/AceRNorth/gdsims/tree/main/docs/exercises">here</a> - you can download it by clicking on the file and clicking on the ‘Download raw file’ icon. Let’s use the <code class="docutils literal notranslate"><span class="pre">rel_times.txt</span></code> file as an example.</p></li>
+<li><p>Open the GUI and click on the Advanced button in the parameters section - this will open a new window dialog.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/gui_advanced_button.PNG"><img alt="../_images/gui_advanced_button.PNG" src="../_images/gui_advanced_button.PNG" style="width: 296.0px; height: 457.6px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>The release times file checkbox is under the Gene drive release section. Checking this will display a Select button - click it to browse for your file in the File Explorer.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/gui_advanced_release_times_file.PNG"><img alt="../_images/gui_advanced_release_times_file.PNG" src="../_images/gui_advanced_release_times_file.PNG" style="width: 504.8px; height: 591.2px;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>Confirm the changes by clicking Ok or Apply at the bottom of the advanced parameter window dialog.</p></li>
+<li><p>Run the simulation as usual! Once it’s done you can open the totals genotype plot, uncheck all curves except WD, DD and DR from the sidebar and plot - this will allow us to focus on smaller changes in drive genotypes. Then, zoom into the beginning of the curves around days 200, 300 and 400 (these are the release times listed on the file we used) with the magnifying glass icon on the plot toolbar at the top. You just need to click on the icon and select the rectangle area on the plot to zoom into (and if you wanna go back to the original plot you can simply click the Home icon on the toolbar to reset it). We can see small bumps near these times, showing that gene drive mosquitoes are indeed being released then!</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/gui_release_times_plot_start.PNG"><img alt="../_images/gui_release_times_plot_start.PNG" src="../_images/gui_release_times_plot_start.PNG" style="width: 523.2px; height: 419.20000000000005px;" /></a>
+<a class="reference internal image-reference" href="../_images/gui_release_times_plot_zoomed.PNG"><img alt="../_images/gui_release_times_plot_zoomed.PNG" src="../_images/gui_release_times_plot_zoomed.PNG" style="width: 388.8px; height: 328.8px;" /></a>
+</section>
 </section>
 
 
@@ -646,6 +666,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tutorial-1-coordinates-file">Advanced tutorial 1: Coordinates file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tutorial-2-seasonality-file">Advanced tutorial 2: Seasonality file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-tutorial-3-release-times-file">Advanced tutorial 3: Release times file</a></li>
 </ul>
   </nav></div>
 
