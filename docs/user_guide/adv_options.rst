@@ -164,6 +164,7 @@ in a row should be separated by white space and the rows separated by new lines.
 
     Class documentation (with links to derived classes)
 
+.. _release_times_file:
 
 Multiple gene drive release times
 ---------------------------------
