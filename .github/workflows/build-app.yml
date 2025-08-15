@@ -1,6 +1,6 @@
 # Based off the starter workflow for a CMake project running on multiple platforms. There is a different starter workflow if you just want a single platform.
 # See: https://github.com/actions/starter-workflows/blob/main/ci/cmake-single-platform.yml
-name: Build macOS app
+name: Build app
 
 on:
   workflow_dispatch:
@@ -21,6 +21,10 @@ jobs:
         os: [macos-latest]
         build_type: [Release]
         c_compiler: [clang]
+        include:
+          - os: macos-latest
+            c_compiler: clang
+            cpp_compiler: clang++
 
     steps:
     - uses: actions/checkout@v4
