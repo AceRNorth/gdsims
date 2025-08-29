@@ -26,6 +26,8 @@ The GUI is easy and quick to install, though only currently available on Windows
 
 The model program is best suited to advanced users in need of quick custom parameter set changes. The model program also offers a command-line interface (CLI), which may be used by those not familiar with C++, and offers more pre-defined sets compared to the GUI. Directly interacting with the C++ code also provides flexible use cases thanks to its flexible architecture.
 
+For large numbers of simulation repetitions (> 15-20) we advise to use the model program as visualising data for individual simulations will become impractical on the GUI. Summary features for large number of repetitions may be developed in future.
+
 Both are freely available on their respective GitHub repositories, have an open-source licence and aim to have a documentation website with tutorials (tutorials for the GUI are in progress).
 
 .. toctree::
