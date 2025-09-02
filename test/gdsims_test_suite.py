@@ -213,7 +213,7 @@ for j in range(0, len(sets)):
 #%% Compare test case data for all runs
 
 # ** Modify oracle data folder path, and test data folder path as needed! **
-oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\edge_distance_kernel"
+oracle_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel"
 test_data_folder_path = "C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files"
 
 # ** Modify the list of set numbers selected as needed **
@@ -243,12 +243,12 @@ for j in range(0, len(sets)):
             plt.title("Totals oracle data for " + "set " + str(sets[j]) + " run " + str(i))
             plt.xlabel("Day")
             plt.ylabel("Total number of individuals")
-            plt.plot(times_oracle, tot_females_oracle[:, 0], label="$F_{WW}$")
-            plt.plot(times_oracle, tot_females_oracle[:, 1], label="$F_{WD}$")
-            plt.plot(times_oracle, tot_females_oracle[:, 2], label="$F_{DD}$")
-            plt.plot(times_oracle, tot_females_oracle[:, 3], label="$F_{WR}$")
-            plt.plot(times_oracle, tot_females_oracle[:, 4], label="$F_{RR}$")
-            plt.plot(times_oracle, tot_females_oracle[:, 5], label="$F_{DR}$")
+            plt.plot(times_oracle, tot_females_oracle[:, 0], label="$F_{WW}$", linestyle="solid", color="hotpink")
+            plt.plot(times_oracle, tot_females_oracle[:, 1], label="$F_{WD}$", linestyle="dashed", color="mediumturquoise")
+            plt.plot(times_oracle, tot_females_oracle[:, 2], label="$F_{DD}$", linestyle="solid", color="royalblue")
+            plt.plot(times_oracle, tot_females_oracle[:, 3], label="$F_{WR}$", linestyle="dotted", color="slategray")
+            plt.plot(times_oracle, tot_females_oracle[:, 4], label="$F_{RR}$", linestyle="solid", color="rebeccapurple")
+            plt.plot(times_oracle, tot_females_oracle[:, 5], label="$F_{DR}$", linestyle="dashed", color="darkviolet")
             plt.legend()
         
         # import test data
@@ -265,14 +265,14 @@ for j in range(0, len(sets)):
             plt.title("Totals test data for " + "set " + str(sets[j]) + " run " + str(i))
             plt.xlabel("Day")
             plt.ylabel("Total number of individuals")
-            plt.plot(times_test, tot_females_test[:, 0], label="$F_{WW}$")
-            plt.plot(times_test, tot_females_test[:, 1], label="$F_{WD}$")
-            plt.plot(times_test, tot_females_test[:, 2], label="$F_{DD}$")
-            plt.plot(times_test, tot_females_test[:, 3], label="$F_{WR}$")
-            plt.plot(times_test, tot_females_test[:, 4], label="$F_{RR}$")
-            plt.plot(times_test, tot_females_test[:, 5], label="$F_{DR}$")
+            plt.plot(times_test, tot_females_test[:, 0], label="$F_{WW}$", linestyle="solid", color="hotpink")
+            plt.plot(times_test, tot_females_test[:, 1], label="$F_{WD}$", linestyle="dashed", color="mediumturquoise")
+            plt.plot(times_test, tot_females_test[:, 2], label="$F_{DD}$", linestyle="solid", color="royalblue")
+            plt.plot(times_test, tot_females_test[:, 3], label="$F_{WR}$", linestyle="dotted", color="slategray")
+            plt.plot(times_test, tot_females_test[:, 4], label="$F_{RR}$", linestyle="solid", color="rebeccapurple")
+            plt.plot(times_test, tot_females_test[:, 5], label="$F_{DR}$", linestyle="dashed", color="darkviolet")
             plt.legend()
-        
+
         # compare
         print("Test results for " + "set " + str(sets[j]) + " run " + str(i) + ":")
         if totals_test.shape == totals_oracle.shape:

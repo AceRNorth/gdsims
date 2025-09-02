@@ -1,11 +1,11 @@
 import os
 import numpy as np
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import matplotlib.colors as mcolors
 
-#%% Plot global output (totals) from model
-#os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files\\")
+#%% Plot global output (totals) by genotype from model
 os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set13\\")
 
 totals = np.loadtxt("Totals13run1.txt", skiprows=2, ndmin=2)
@@ -14,264 +14,405 @@ times = totals[:, 0]
 total_females = totals[:, 1:]
 
 plt.figure()
-plt.title("Total females across the area - set 13 run 1")
+plt.title("Total females across the area by genotype - set 13 run 1")
 plt.xlabel("Day")
 plt.ylabel("Total number of individuals")
-plt.plot(times, total_females[:, 0], label="$F_{WW}$")
-plt.plot(times, total_females[:, 1], label="$F_{WD}$")
-plt.plot(times, total_females[:, 2], label="$F_{DD}$")
-plt.plot(times, total_females[:, 3], label="$F_{WR}$")
-plt.plot(times, total_females[:, 4], label="$F_{RR}$")
-plt.plot(times, total_females[:, 5], label="$F_{DR}$")
+plt.plot(times, total_females[:, 0], label="$F_{WW}$", linestyle="solid", color="hotpink")
+plt.plot(times, total_females[:, 1], label="$F_{WD}$", linestyle="dashed", color="mediumturquoise")
+plt.plot(times, total_females[:, 2], label="$F_{DD}$", linestyle="solid", color="royalblue")
+plt.plot(times, total_females[:, 3], label="$F_{WR}$", linestyle="dotted", color="slategray")
+plt.plot(times, total_females[:, 4], label="$F_{RR}$", linestyle="solid", color="rebeccapurple")
+plt.plot(times, total_females[:, 5], label="$F_{DR}$", linestyle="dashed", color="darkviolet")
+# # all genotypes
+# plt.plot(times, np.sum(total_females, axis=1).tolist(),
+#           label="$F_{WW}$+$F_{WD}$+\n$F_{DD}$+$F_{WR}$+\n$F_{RR}$+$F_{DR}$",
+#           linestyle="solid", color="black")
+# # capable of malaria transmission
+# plt.plot(times, np.sum(total_females[:, (0, 1, 3)], axis=1).tolist(),
+#           label="$F_{WW}$+$F_{WD}$+\n$F_{WR}$",
+#           linestyle="dashed", color="crimson")
+plt.legend()
+
+#%% Plot global output (totals) - allele frequency from model
+
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set13\\")
+
+totals = np.loadtxt("Totals13run1.txt", skiprows=2, ndmin=2)
+
+times = totals[:, 0]
+total_females = totals[0:, 1:]
+WW = total_females[:, 0]
+WD = total_females[:, 1]
+DD = total_females[:, 2]
+WR = total_females[:, 3]
+RR = total_females[:, 4]
+DR = total_females[:, 5]
+
+plt.figure()
+plt.title("Total females across the area by allele frequency - set 13 run 1")
+plt.xlabel("Day")
+plt.ylabel("Total number of individuals")
+
+for line in range(0, 3):  # keep same colours for same type of line
+    labels = ["wild",
+              "drive",
+              "r2 (non-functional) resistance"]
+    colours = ["hotpink",
+               "royalblue",
+               "rebeccapurple"]
+
+    y = []
+    for i in range(0, len(WW)):
+        top = [(WW[i] + WD[i] + WR[i]),  # wild
+               (WD[i] + DD[i] + DR[i]),  # drive
+               (WR[i] + RR[i] + DR[i])]  # r2 resistance
+        bottom = WW[i] + WD[i] + DD[i] + WR[i] + RR[i] + DR[i]
+        if bottom == 0:
+            result = 0
+        else:
+            result = top[line] / bottom
+        y.append(result)
+    plt.plot(times, y, label=labels[line], color=colours[line])
+
 plt.legend()
 
 #%% Plot coordinates of patches
 
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set2")
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set1")
 
-coords = np.loadtxt("CoordinateList2run1.txt", skiprows=2, ndmin=2)
+coords = np.loadtxt("CoordinateList1run1.txt", skiprows=2, ndmin=2)
 
 x = coords[:, 1]
 y = coords[:, 2]
 
-plt.figure()
+fig = plt.figure()
+axes = fig.add_subplot(111)
 plt.title("Patch locations")
 plt.xlabel("x (km)")
 plt.ylabel("y (km)")
-plt.scatter(x, y, marker='.')
+if len(x) == 1:
+    axes.set_xlim(x - x/2, x + x/2)
+else:
+    axes.set_xlim(np.amin(x), np.amax(x))
+if len(y) == 1:
+    axes.set_ylim(y - y/2, y + y/2)
+else:
+    axes.set_ylim(np.amin(y), np.amax(y))
+plt.scatter(x, y, marker='.', color="peru")
+axes.set_aspect('equal') # set equal aspect ratio for both axes
 
 #%% Spatial plot of total population size on one day
 
-fig, ax = plt.subplots()
+fig, axes = plt.subplots()
 
 # get coords of sites
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set2")
-coords = np.loadtxt("CoordinateList2run1.txt", skiprows=2, ndmin=2)
-x = coords[:, 1]
-y = coords[:, 2]
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set1")
 
-# get populations
-local_data = np.loadtxt("LocalData2run1.txt", skiprows=2, ndmin=2)
+ind, x, y = np.loadtxt("CoordinateList1run1.txt", skiprows=2, ndmin=2, unpack=True)
+numRecPats = len(x)
+localData = np.loadtxt("LocalData1run1.txt", skiprows=2, ndmin=2)  # get populations
 
-# get populations on one day
-t=3 # recorded timestep
-sim_day = int(local_data[t*len(x), 0])
-local_data_day = local_data[t*len(x):((t+1)*len(x)), 2:8]
+if len(localData) > numRecPats:
+    recIntervalLocal = int(localData[numRecPats, 0]) - int(localData[0, 0])
+else:
+    recIntervalLocal = 0
+
+# set these
+t = 0 # timestep starting from 0
+recStart = 0
+
+# get populations on one day, t+1 because always ignore initialisation day
+simDay = int(localData[t*numRecPats, 0])
+localDataDay = localData[t*numRecPats:((t+1)*numRecPats), 2:8]
 
 # calculate total population for all genotypes in each patch
-tot_pops = np.zeros(len(x))
+totPops = np.zeros(len(x))
 for pat in range(0, len(x)): 
-    patch_data = local_data_day[pat, :]
-    for i in range(0, len(patch_data)):
-        tot_pops[pat] += patch_data[i]
+    patchData = localDataDay[pat, :]
+    for i in range(0, len(patchData)):
+        totPops[pat] += patchData[i]
 
 # find maximum and minimum population values in whole simulation for colour map bounds
-max_pop = np.amax(local_data)
-min_pop = np.amin(local_data)
+maxPop = np.amax(localData)
+minPop = np.amin(localData)
 
-# make a scatter plot with drive frequency colour map
-scat = ax.scatter(x, y, c=tot_pops, cmap='copper', vmin=min_pop, vmax=max_pop, marker='o')
-cbar = fig.colorbar(scat, ax=ax, label='Total population size')
-#cbar.ax.set_yticklabels(['None', '0.0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1.0'])
+scat = axes.scatter(x, y, c=totPops, cmap="cividis_r", vmin=minPop, vmax=maxPop, marker='.')
+cbar = fig.colorbar(scat, ax=axes, label='Total population size')
+annotation = fig.text(x=0.1, y=0.9, s="t = {}".format((t * recIntervalLocal) + recStart))
+axes.set_xlabel("x")
+axes.set_ylabel("y")
+if len(x) == 1:
+    axes.set_xlim(x - x/2, x + x/2)
+else:
+    axes.set_xlim(np.amin(x), np.amax(x))
+if len(y) == 1:
+    axes.set_ylim(y - y/2, y + y/2)
+else:
+    axes.set_ylim(np.amin(y), np.amax(y))
+axes.set_aspect('equal') # set equal aspect ratio for both axes
+axes.minorticks_on()  # need it for animation saving to work
+axes.set_title("Population sizes - set 1 run 1")
 
-ax.set_title("Population sizes - set 1 run 1")
-annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
-ax.set_xlabel("x (km)")
-ax.set_ylabel("y (km)")
 
 #%% Spatial animation of total population size
 
-fig, ax = plt.subplots()
+fig, axes = plt.subplots()
 
 # get coords of sites
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files")
-coords = np.loadtxt("CoordinateList100run1.txt", skiprows=2, ndmin=2)
-x = coords[:, 1]
-y = coords[:, 2]
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set1")
 
-# get populations
-local_data = np.loadtxt("LocalData100run1.txt", skiprows=2, ndmin=2)
+ind, x, y = np.loadtxt("CoordinateList1run1.txt", skiprows=2, ndmin=2, unpack=True)
+numRecPats = len(x)
+localData = np.loadtxt("LocalData1run1.txt", skiprows=2, ndmin=2)  # get populations
 
-# get populations on one day
-t=0 # recorded timestep
-sim_day = int(local_data[t*len(x), 0])
-local_data_day0 = local_data[t*len(x):((t+1)*len(x)), 2:8]
+if len(localData) > numRecPats:
+    recIntervalLocal = int(localData[numRecPats, 0]) - int(localData[0, 0])
+else:
+    recIntervalLocal = 0
+
+# set these
+t = 0 # timestep starting from 0
+recStart = 0
+recEnd = 1000
+
+# get populations on one day, t+1 because always ignore initialisation day
+simDay = int(localData[t*numRecPats, 0])
+localDataDay = localData[t*numRecPats:((t+1)*numRecPats), 2:8]
 
 # calculate total population for all genotypes in each patch
-tot_pops = np.zeros(len(x))
+totPops = np.zeros(len(x))
 for pat in range(0, len(x)): 
-    patch_data = local_data_day0[pat, :]
-    for i in range(0, len(patch_data)):
-        tot_pops[pat] += patch_data[i]
+    patchData = localDataDay[pat, :]
+    for i in range(0, len(patchData)):
+        totPops[pat] += patchData[i]
 
 # find maximum and minimum population values in whole simulation for colour map bounds
-max_pop = np.amax(local_data)
-min_pop = np.amin(local_data)
+maxPop = np.amax(localData)
+minPop = np.amin(localData)
 
-# make a scatter plot with population size colour map
-scat = ax.scatter(x, y, c=tot_pops, cmap='copper', vmin=min_pop, vmax=max_pop, marker='o')
-cbar = fig.colorbar(scat, ax=ax, label='Total population size')
+scat = axes.scatter(x, y, c=totPops, cmap="cividis_r", vmin=minPop, vmax=maxPop, marker='.')
+cbar = fig.colorbar(scat, ax=axes, label='Total population size')
+annotation = fig.text(x=0.1, y=0.9, s="t = {}".format(simDay))
+axes.set_xlabel("x")
+axes.set_ylabel("y")
+if len(x) == 1:
+    axes.set_xlim(x - x/2, x + x/2)
+else:
+    axes.set_xlim(np.amin(x), np.amax(x))
+if len(y) == 1:
+    axes.set_ylim(y - y/2, y + y/2)
+else:
+    axes.set_ylim(np.amin(y), np.amax(y))
+axes.set_aspect('equal') # set equal aspect ratio for both axes
+axes.minorticks_on()  # need it for animation saving to work
+axes.set_title("Population sizes - set 1 run 1")
 
-#ax.set_title("Population sizes - set 1 run 1")
-annotation = fig.text(x=0.1, y=0.92, s='t = {}'.format(sim_day))
-ax.set_xlabel("x (km)")
-ax.set_ylabel("y (km)") 
-
-def update_pop_size(t):
-    sim_day = int(local_data[t*len(x), 0])
-    local_data_day = local_data[t*len(x):((t+1)*len(x)), 2:8]
+def updatePopSize(step):
+    simDay = int(localData[step*numRecPats, 0])
+    localDataDay = localData[step*len(x):((step+1)*len(x)), 2:8]
     
     # calculate total population for all genotypes in each patch
-    tot_pops = np.zeros(len(x))
+    totPops = np.zeros(len(x))
     for pat in range(0, len(x)): 
-        patch_data = local_data_day[pat, :]
-        for i in range(0, len(patch_data)):
-            tot_pops[pat] += patch_data[i]
-            
-    scat.set_array(tot_pops) # update the scatter point colours according to new tot_pops
-    annotation.set_text("t = {}".format(sim_day))
+        patchData = localDataDay[pat, :]
+        for i in range(0, len(patchData)):
+            totPops[pat] += patchData[i]
+
+    scat.set_array(totPops) # update the scatter point colours according to new tot_pops
+    annotation.set_text("t = {}".format(simDay))
     return scat
 
-#num_frames = int(local_data[-1, 0]) # only valid like this if timestep is 1, otherwise set manually
-rec_sites_freq = 1
-num_frames = int(len(local_data[:, 0]) / (len(x) / rec_sites_freq))
+numFrames = int((recEnd - recStart) / recIntervalLocal) + 1 # +1 because range(frames) below, assumes recSitesFreq=1
 
-anim = animation.FuncAnimation(fig=fig, func=update_pop_size, frames=num_frames, interval=500)
-anim.save("set100_pop_anim.gif")
+anim = animation.FuncAnimation(fig=fig, func=updatePopSize, frames=numFrames, interval=500)
+#anim.save("set100_pop_anim.gif")
 plt.show()
+
 
 #%% Spatial plot of gene drive allele frequency on one day
 
-fig, ax = plt.subplots()
+fig, axes = plt.subplots()
 
 # get coords of sites
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files")
-coords = np.loadtxt("CoordinateList1run1.txt", skiprows=2, ndmin=2)
-x = coords[:, 1]
-y = coords[:, 2]
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set1")
 
-# get populations per genotype
-local_data = np.loadtxt("LocalData1run1.txt", skiprows=2, ndmin=2)
-t=3 # recorded timestep
-sim_day = int(local_data[t*len(x), 0])
-local_data = local_data[t*len(x):((t+1)*len(x)), 2:8]
+ind, x, y = np.loadtxt("CoordinateList1run1.txt", skiprows=2, ndmin=2, unpack=True)
+numRecPats = len(x)
+localData = np.loadtxt("LocalData1run1.txt", skiprows=2, ndmin=2)  # get populations
 
-WW = local_data[:, 0]
-WD = local_data[:, 1]
-DD = local_data[:, 2]
-WR = local_data[:, 3]
-RR = local_data[:, 4]
-DR = local_data[:, 5]
+if len(localData) > numRecPats:
+    recIntervalLocal = int(localData[numRecPats, 0]) - int(localData[0, 0])
+else:
+    recIntervalLocal = 0
+
+# set these
+t = 0 # timestep starting from 0
+recStart = 0
+
+# get populations on one day, t+1 because always ignore initialisation day
+simDay = int(localData[t*numRecPats, 0])
+localDataDay = localData[t*numRecPats:((t+1)*numRecPats), 2:8]
+
+WW = localDataDay[:, 0]
+WD = localDataDay[:, 1]
+DD = localDataDay[:, 2]
+WR = localDataDay[:, 3]
+RR = localDataDay[:, 4]
+DR = localDataDay[:, 5]
 
 # calculate drive allele frequency for each patch
-drive_freq = np.zeros(len(x))
-for pat in range(0, len(x)):
+driveFreq = np.zeros(numRecPats)
+for pat in range(0, numRecPats):
     tot = WW[pat] + WD[pat] + DD[pat] + WR[pat] + RR[pat] + DR[pat]
-    if (tot == 0):
-        drive_freq[pat] = -1 # assign different distinguishable value for no-population patches
+    if tot == 0:
+        driveFreq[pat] = -2  # assign different distinguishable value for no-population patches
+    elif tot == WW[pat]:
+        driveFreq[pat] = -0.5
     else:
-        drive_freq[pat] = (WD[pat] + (2*DD[pat]) + DR[pat]) / (2*tot)
+        driveFreq[pat] = (WD[pat] + (2*DD[pat]) + DR[pat]) / (2*tot)
 
 # define discrete colourmap
-main_cmap = ['lightgreen', 'aquamarine', 'mediumturquoise', 'darkcyan','steelblue', 'royalblue', 'mediumblue', 'slateblue', 'darkviolet', 'indigo']
-all_colours = ['darkgray'] + main_cmap # add colour for no-population patch
-cmap = mcolors.ListedColormap(all_colours)
-bounds = [-1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] 
-cnorm = mcolors.BoundaryNorm(bounds, cmap.N)
-
-# make a scatter plot with drive frequency colour map
-scat = ax.scatter(x, y, c=drive_freq, cmap=cmap, norm=cnorm, marker='o')
-cbar = fig.colorbar(scat, ax=ax, ticks=[-1, 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0], label='Drive allele frequency')
-cbar.ax.set_yticklabels(['None', '0.0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1.0'])
-
-#ax.set_title("Patch locations - set 1 run 1")
-annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
-ax.set_xlabel("x (km)")
-ax.set_ylabel("y (km)")
-#plt.grid()
-
-#%% Spatial animation of gene drive allele frequency
-
-fig, ax = plt.subplots()
-
-# get coords of sites
-os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\build\\output_files")
-#os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set10")
-coords = np.loadtxt("CoordinateList101run1.txt", skiprows=2, ndmin=2)
-x = coords[:, 1]
-y = coords[:, 2]
-
-# get populations per genotype
-local_data = np.loadtxt("LocalData101run1.txt", skiprows=2, ndmin=2)
-t=0 # recorded timestep
-sim_day = int(local_data[t*len(x), 0])
-local_data_day0 = local_data[t*len(x):((t+1)*len(x)), 2:8]
-
-WW_day0 = local_data_day0[:, 0]
-WD_day0 = local_data_day0[:, 1]
-DD_day0 = local_data_day0[:, 2]
-WR_day0 = local_data_day0[:, 3]
-RR_day0 = local_data_day0[:, 4]
-DR_day0 = local_data_day0[:, 5]
-
-# calculate drive allele frequency for each patch
-drive_freq = np.zeros(len(x))
-for pat in range(0, len(x)):
-    tot = WW_day0[pat] + WD_day0[pat] + DD_day0[pat] + WR_day0[pat] + RR_day0[pat] + DR_day0[pat]
-    if (tot == 0):
-        drive_freq[pat] = -2 # assign different distinguishable value for no-population patches
-    else:
-        drive_freq[pat] = (WD_day0[pat] + (2*DD_day0[pat]) + DR_day0[pat]) / (2*tot)
-
-# define discrete colourmap
-main_cmap = ['aquamarine', 'mediumturquoise', 'darkcyan','steelblue', 'royalblue', 'mediumblue', 'slateblue', 'darkviolet', 'indigo', 'black']
-all_colours = ['darkgray', 'lightgreen'] + main_cmap # add colours for no-population patch and wild-population patch
-cmap = mcolors.ListedColormap(all_colours)
+viridisR = mpl.colormaps['viridis_r'].resampled(14)
+# don't want edge colours in viridis so there's enough contrast with two
+# additional cmap colours
+viridisColours = viridisR(np.linspace(0.2, 0.8, 10))
+# add colours for no-population patch and wild-population patch
+allColours = np.vstack((mcolors.to_rgba("lightgray"), mcolors.to_rgba("hotpink"), viridisColours))
+cmap = mcolors.ListedColormap(allColours)
 bounds = [-2, -1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 cnorm = mcolors.BoundaryNorm(bounds, cmap.N)
 
 # make a scatter plot with drive frequency colour map
-scat = ax.scatter(x, y, c=drive_freq, cmap=cmap, norm=cnorm, marker='o')
-cbar = fig.colorbar(scat, ax=ax, label='Drive allele frequency')
-cbar.ax.set_yticks([-2, -1, 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0], labels=['no pop', 'wild', '0.0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1.0'])
-labels = cbar.ax.get_yticklabels()
-labels[0].set_verticalalignment('bottom') # align first label text above the tick 
+scat = axes.scatter(x, y, c=driveFreq, cmap=cmap, norm=cnorm, marker='.')
+colorbar = fig.colorbar(scat, ax=axes)
+colorbar.set_label('Drive allele frequency', labelpad=-10)  # reduce distance to colorbar label
+colorbar.ax.set_yticks([-2, -1, 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+                            labels=['no pop', 'wild', '0.0', '0.1', '0.2', '0.3', '0.4',
+                                    '0.5', '0.6', '0.7', '0.8', '0.9', '1.0'])
+labels = colorbar.ax.get_yticklabels()
+labels[0].set_verticalalignment('bottom')  # align first label text above the tick
 labels[1].set_verticalalignment('bottom')
+annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(simDay))
+axes.set_xlabel("x")
+axes.set_ylabel("y")
+if len(x) == 1:
+    axes.set_xlim(x - x/2, x + x/2)
+else:
+    axes.set_xlim(np.amin(x), np.amax(x))
+if len(y) == 1:
+    axes.set_ylim(y - y/2, y + y/2)
+else:
+    axes.set_ylim(np.amin(y), np.amax(y))
+axes.set_aspect('equal') # set equal aspect ratio for both axes
+axes.minorticks_on()  # need it for animation saving to work
+axes.set_title("Drive allele frequencies - set 1 run 1")
 
-#ax.set_title("Patch locations - set 1 run 1")
-annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
-ax.set_xlabel("x (km)")
-ax.set_ylabel("y (km)")
-#plt.grid()
 
-def update_drive_freq(t):
-    sim_day = int(local_data[t*len(x), 0])
-    local_data_day = local_data[t*len(x):((t+1)*len(x)), 2:8]
+#%% Spatial animation of gene drive allele frequency
+
+fig, axes = plt.subplots()
+
+# get coords of sites
+os.chdir("C:\\Users\\biol0117\\OneDrive - Nexus365\\Documents\\Programming projects\\C++ Model\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel\\set1")
+
+ind, x, y = np.loadtxt("CoordinateList1run1.txt", skiprows=2, ndmin=2, unpack=True)
+numRecPats = len(x)
+localData = np.loadtxt("LocalData1run1.txt", skiprows=2, ndmin=2)  # get populations
+
+if len(localData) > numRecPats:
+    recIntervalLocal = int(localData[numRecPats, 0]) - int(localData[0, 0])
+else:
+    recIntervalLocal = 0
+
+# set these
+t = 0 # timestep starting from 0
+recStart = 0
+
+# get populations on one day, t+1 because always ignore initialisation day
+simDay = int(localData[t*numRecPats, 0])
+localDataDay = localData[t*numRecPats:((t+1)*numRecPats), 2:8]
+
+WW = localDataDay[:, 0]
+WD = localDataDay[:, 1]
+DD = localDataDay[:, 2]
+WR = localDataDay[:, 3]
+RR = localDataDay[:, 4]
+DR = localDataDay[:, 5]
+
+# calculate drive allele frequency for each patch
+driveFreq = np.zeros(numRecPats)
+for pat in range(0, numRecPats):
+    tot = WW[pat] + WD[pat] + DD[pat] + WR[pat] + RR[pat] + DR[pat]
+    if tot == 0:
+        driveFreq[pat] = -2  # assign different distinguishable value for no-population patches
+    elif tot == WW[pat]:
+        driveFreq[pat] = -0.5
+    else:
+        driveFreq[pat] = (WD[pat] + (2*DD[pat]) + DR[pat]) / (2*tot)
+
+# define discrete colourmap
+viridisR = mpl.colormaps['viridis_r'].resampled(14)
+# don't want edge colours in viridis so there's enough contrast with two
+# additional cmap colours
+viridisColours = viridisR(np.linspace(0.2, 0.8, 10))
+# add colours for no-population patch and wild-population patch
+allColours = np.vstack((mcolors.to_rgba("lightgray"), mcolors.to_rgba("hotpink"), viridisColours))
+cmap = mcolors.ListedColormap(allColours)
+bounds = [-2, -1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+cnorm = mcolors.BoundaryNorm(bounds, cmap.N)
+
+# make a scatter plot with drive frequency colour map
+scat = axes.scatter(x, y, c=driveFreq, cmap=cmap, norm=cnorm, marker='.')
+colorbar = fig.colorbar(scat, ax=axes)
+colorbar.set_label('Drive allele frequency', labelpad=-10)  # reduce distance to colorbar label
+colorbar.ax.set_yticks([-2, -1, 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+                            labels=['no pop', 'wild', '0.0', '0.1', '0.2', '0.3', '0.4',
+                                    '0.5', '0.6', '0.7', '0.8', '0.9', '1.0'])
+labels = colorbar.ax.get_yticklabels()
+labels[0].set_verticalalignment('bottom')  # align first label text above the tick
+labels[1].set_verticalalignment('bottom')
+annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format((t * recIntervalLocal) + recStart))
+axes.set_xlabel("x")
+axes.set_ylabel("y")
+if len(x) == 1:
+    axes.set_xlim(x - x/2, x + x/2)
+else:
+    axes.set_xlim(np.amin(x), np.amax(x))
+if len(y) == 1:
+    axes.set_ylim(y - y/2, y + y/2)
+else:
+    axes.set_ylim(np.amin(y), np.amax(y))
+axes.set_aspect('equal') # set equal aspect ratio for both axes
+axes.minorticks_on()  # need it for animation saving to work
+axes.set_title("Drive allele frequencies - set 1 run 1")
+
+def updateDriveFreq(step):
+    simDay = int(localData[(step*numRecPats), 0])
+    localDataDay = localData[(step*numRecPats):((step + 1)*numRecPats), 2:8]
     
-    WW = local_data_day[:, 0]
-    WD = local_data_day[:, 1]
-    DD = local_data_day[:, 2]
-    WR = local_data_day[:, 3]
-    RR = local_data_day[:, 4]
-    DR = local_data_day[:, 5]
+    WW = localDataDay[:, 0]
+    WD = localDataDay[:, 1]
+    DD = localDataDay[:, 2]
+    WR = localDataDay[:, 3]
+    RR = localDataDay[:, 4]
+    DR = localDataDay[:, 5]
 
-    drive_freq = np.zeros(len(x))
-    for pat in range(0, len(x)):
+    driveFreq = np.zeros(numRecPats)
+    for pat in range(0, numRecPats):
         tot = WW[pat] + WD[pat] + DD[pat] + WR[pat] + RR[pat] + DR[pat]
-        if (tot == 0):
-            drive_freq[pat] = -2
-        elif (tot == WW[pat]):
-            drive_freq[pat] = -0.5
+        if tot == 0:
+            driveFreq[pat] = -2
+        elif tot == WW[pat]:
+            driveFreq[pat] = -0.5
         else:
-            drive_freq[pat] = (WD[pat] + (2*DD[pat]) + DR[pat]) / (2*tot)
+            driveFreq[pat] = (WD[pat] + (2*DD[pat]) + DR[pat]) / (2*tot)
 
-    scat.set_array(drive_freq) # update the scatter point colours according to new drive_freq
-    annotation.set_text("t = {}".format(sim_day))
+    scat.set_array(driveFreq) # update the scatter point colours according to new driveFreq
+    annotation.set_text("t = {}".format(simDay))
 
     return scat
 
-rec_sites_freq = 1
-num_frames = int(len(local_data[:, 0]) / (len(x) / rec_sites_freq))
-anim = animation.FuncAnimation(fig=fig, func=update_drive_freq, frames=num_frames, interval=20)
+numFrames = int((recEnd - recStart) / recIntervalLocal) + 1 # +1 because range(frames) below, assumes recSitesFreq=1
+anim = animation.FuncAnimation(fig=fig, func=updateDriveFreq, frames=numFrames, interval=500)
 anim.save("set1_anim.gif")
 plt.show()
