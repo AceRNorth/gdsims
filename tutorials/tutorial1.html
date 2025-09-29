@@ -459,7 +459,7 @@ document.write(`
 <section id="first-run">
 <h2>1.1 First run<a class="headerlink" href="#first-run" title="Permalink to this heading">#</a></h2>
 <p>To run the program, open the command prompt and change the directory <code class="docutils literal notranslate"><span class="pre">cd</span></code> to that of the executable file <code class="docutils literal notranslate"><span class="pre">gdsimsapp</span></code>. Then, run the application. This step will look different depending on your operating system. For example, on Windows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>yUser<span class="se">\P</span>rojects<span class="se">\G</span>eneralMetapop<span class="se">\b</span>uild
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>yUser<span class="se">\P</span>rojects<span class="se">\g</span>dsimsapp<span class="se">\b</span>uild
 gdsimsapp.exe
 </pre></div>
 </div>
@@ -491,7 +491,7 @@ gdsimsapp.exe
 <section id="simple-plots-coordinates-and-totals-optional-python">
 <span id="tutorial-1-2"></span><h2>1.2 Simple plots: coordinates and totals (optional - python)<a class="headerlink" href="#simple-plots-coordinates-and-totals-optional-python" title="Permalink to this heading">#</a></h2>
 <p>The output files we have obtained can be plotted in various ways. Let’s look at how to make some simple plots on Python. Feel free to skip this vignette if you’d like to use a different language.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">test</span></code> directory you cloned from GitHub will contain a plotting script called <code class="docutils literal notranslate"><span class="pre">GeneralMetapopPlots.py</span></code> with the code for these examples.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">test</span></code> directory you cloned from GitHub will contain a plotting script called <code class="docutils literal notranslate"><span class="pre">gdsims_plots.py</span></code> with the code for these examples.</p>
 <div class="admonition-required-installations-for-this-tutorial admonition">
 <p class="admonition-title">Required installations for this tutorial</p>
 <ul class="simple">
@@ -504,7 +504,7 @@ gdsimsapp.exe
 <h3>Plotting the coordinates<a class="headerlink" href="#plotting-the-coordinates" title="Permalink to this heading">#</a></h3>
 <p>The following code will plot the patch coordinates for run 1 of the set we just ran. Make sure to have your directory set to <code class="docutils literal notranslate"><span class="pre">output_files</span></code>.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">test/GeneralMetapopPlots.py - ‘Plot coordinates of patches’</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">test/gdsims_plots.py - ‘Plot coordinates of patches’</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
@@ -536,7 +536,7 @@ gdsimsapp.exe
 <p>The following code will plot the total adult mated female mosquito numbers for the first run of set 1.
 We can plot several lines corresponding to the different genotypes so we can observe the changes in genotypic composition over time.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">test/GeneralMetapopPlots.py - ‘Plot global output (totals) from model’</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">test/gdsims_plots.py - ‘Plot global output (totals) from model’</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 

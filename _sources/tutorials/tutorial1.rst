@@ -12,7 +12,7 @@ To run the program, open the command prompt and change the directory ``cd`` to t
 
 .. code-block:: bash
 
-    cd C:\Users\MyUser\Projects\GeneralMetapop\build
+    cd C:\Users\MyUser\Projects\gdsimsapp\build
     gdsimsapp.exe
 
 This will display the command-line interface:
@@ -60,7 +60,7 @@ The program will generate a set of these files for each repetition (also called 
 
 The output files we have obtained can be plotted in various ways. Let's look at how to make some simple plots on Python. Feel free to skip this vignette if you'd like to use a different language.
 
-The ``test`` directory you cloned from GitHub will contain a plotting script called ``GeneralMetapopPlots.py`` with the code for these examples.
+The ``test`` directory you cloned from GitHub will contain a plotting script called ``gdsims_plots.py`` with the code for these examples.
 
 .. admonition:: Required installations for this tutorial
 
@@ -75,7 +75,7 @@ Plotting the coordinates
 The following code will plot the patch coordinates for run 1 of the set we just ran. Make sure to have your directory set to ``output_files``.
 
 .. code-block:: python
-    :caption: test/GeneralMetapopPlots.py - 'Plot coordinates of patches'
+    :caption: test/gdsims_plots.py - 'Plot coordinates of patches'
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -113,7 +113,7 @@ The following code will plot the total adult mated female mosquito numbers for t
 We can plot several lines corresponding to the different genotypes so we can observe the changes in genotypic composition over time. 
 
 .. code-block:: python
-    :caption: test/GeneralMetapopPlots.py - 'Plot global output (totals) from model'
+    :caption: test/gdsims_plots.py - 'Plot global output (totals) from model'
 
     import numpy as np
     import matplotlib.pyplot as plt

@@ -97,7 +97,7 @@ Now that we have our output files for the custom run, we can do something even m
 .. collapse:: Script
 
     .. code-block:: python
-        :caption: test/GeneralMetapopPlots.py - 'Spatial animation of total population size'
+        :caption: test/gdsims_plots.py - 'Spatial animation of total population size'
 
         import numpy as np
         import matplotlib.pyplot as plt

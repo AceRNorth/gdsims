@@ -104,33 +104,33 @@ Let's use the coordinates file below to create a square grid of patches.
 .. collapse:: Coordinates
     
     .. code-block:: 
-        :caption: docs/exercises/coords_grid.txt
+        :caption: docs/exercises/coords_square_25.txt
 
-        0.0    0.0    n
-        0.2    0.0    n
-        0.4    0.0    n
-        0.6    0.0    n
-        0.8    0.0    n
-        0.0    0.2    n
-        0.2    0.2    n
-        0.4    0.2    n
-        0.6    0.2    n
-        0.8    0.2    n
-        0.0    0.4    y
-        0.2    0.4    n
-        0.4    0.4    n
-        0.6    0.4    n
-        0.8    0.4    n
-        0.0    0.6    n
-        0.2    0.6    n
-        0.4    0.6    n
-        0.6    0.6    n
-        0.8    0.6    n
-        0.0    0.8    n
-        0.2    0.8    n
-        0.4    0.8    n
-        0.6    0.8    n
-        0.8    0.8    n
+        0.0     0.0	    n
+        0.25    0.0	    n
+        0.5	    0.0	    n
+        0.75	0.0	    n
+        1.0	    0.0	    n
+        0.0	    0.25	n
+        0.25	0.25	n
+        0.5	    0.25	n
+        0.75	0.25	n
+        1.0	    0.25	n
+        0.0	    0.5	    n
+        0.25	0.5	    n
+        0.5	    0.5	    y
+        0.75	0.5	    n
+        1.0	    0.5	    n
+        0.0	    0.75	n
+        0.25	0.75	n
+        0.5	    0.75	n
+        0.75	0.75	n
+        1.0	    0.75	n
+        0.0	    1.0	    n
+        0.25	1.0	    n
+        0.5	    1.0	    n
+        0.75	1.0	    n
+        1.0	    1.0	    n
 
 Now we can enter the filepath into the prompt. Like with the parameters file, we can use the relative filepath to the ``docs/exercises`` directory. If there are no error messages, this will set the coordinates (more information on errors in the :doc:`../user_guide/custom_set` and :doc:`../user_guide/adv_options` sections of the User Guide).
 
@@ -158,14 +158,14 @@ The drive allele (D) frequency is calculated relative to all available genotypes
 
 with :math:`\textrm{TOT} = \textrm{WW} + \textrm{WD} + \textrm{DD} + \textrm{WR} + \textrm{RR} + \textrm{DR}`. Each genotype in the equation represents the total number of mated females of that genotype in the overall area.
 
-To make this animation, you can either use the script cell ``GeneralMetapopPlots.py - 'Spatial animation of gene drive allele frequency'`` found in the ``test`` directory, or follow along in editing the animation script from Tutorial :ref:`tutorial-2.2`. If you're using the script directly, you can skip to the animation image. 
+To make this animation, you can either use the script cell ``gdsims_plots.py - 'Spatial animation of gene drive allele frequency'`` found in the ``test`` directory, or follow along in editing the animation script from Tutorial :ref:`tutorial-2.2`. If you're using the script directly, you can skip to the animation image. 
 
 To modify our previous animation script, we can substitute some of the sections marked with special characters. First, we're going to substitute the section enclosed by ``# - - - - -``  with the following code, which calculates the drive allele frequency for the first day and creates the initial scatter plot with our own discrete colourmap:
 
 .. collapse:: First section of script
 
     .. code-block:: python
-        :caption: section from test/GeneralMetapopPlots.py - 'Spatial animation of gene drive allele frequency'
+        :caption: section from test/gdsims_plots.py - 'Spatial animation of gene drive allele frequency'
 
         WW_day0 = local_data_day0[:, 0]
         WD_day0 = local_data_day0[:, 1]
@@ -205,7 +205,7 @@ Secondly, we're going to substitute the section enclosed by ``# ~ ~ ~ ~ ~`` with
 .. collapse:: Second section of script
 
     .. code-block:: python 
-        :caption: section from test/GeneralMetapopPlots.py - 'Spatial animation of gene drive allele frequency'`
+        :caption: section from test/gdsims_plots.py - 'Spatial animation of gene drive allele frequency'`
 
             WW = local_data_day[:, 0]
             WD = local_data_day[:, 1]

@@ -22,7 +22,7 @@ An example of this parameter file is given below, with added labels.
 
 To input the file, the CLI will ask for a filename. This may be one of three:
 
-- An absolute filepath, e.g. ``C:\Users\MyUser\GeneralMetapop\params_set100.txt`` for Windows, ``home/user/GeneralMetapop/Params/params_set100.txt`` for Linux
+- An absolute filepath, e.g. ``C:\Users\MyUser\gdsims\params_set100.txt`` for Windows, ``home/user/gdsims/Params/params_set100.txt`` for Linux
 - A relative filepath, relative to the ``build`` directory, e.g. ``../params_set100.txt``
 - A filename, if the file is within the ``build`` directory, e.g. ``params_set100.txt``
 

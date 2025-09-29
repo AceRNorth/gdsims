@@ -9,19 +9,19 @@ Once we have learnt to use the program through the tutorials, we can use testing
 
 The ``test`` directory of the GitHub repository contains a set of test data for all the pre-defined sets and different combinations of boundary type and dispersal type options. This data defines the correct output for the program - they are the same output files we have been working with: ``Totals.txt``, ``LocalData.txt`` and ``CoordinateList.txt``. 
 
-You may choose to write your own testing script to compare the data to yours but ``test`` also contains a sample script ``GeneralMetapopTest.py`` to make things easier. The script contains other useful sections, like running the executable program file directly from the Python script and generating other parameter and coordinate input files from the test sets.
+You may choose to write your own testing script to compare the data to yours but ``test`` also contains a sample script ``gdsims_test_suite.py`` to make things easier. The script contains other useful sections, like running the executable program file directly from the Python script and generating other parameter and coordinate input files from the test sets.
 
 Running a test
 --------------
 
 In this section we will be testing our results from Tutorial :ref:`tutorial-5.1` to set 17 from the test data. We will assume familiarity with Python.
 
-To access the test data you will firstly need to make sure you have downloaded or cloned the contents of the ``test`` directory from the GitHub repository. Then you can use the ``GeneralMetapopTest.py`` script, running the first cell to import the libraries,
+To access the test data you will firstly need to make sure you have downloaded or cloned the contents of the ``test`` directory from the GitHub repository. Then you can use the ``gdsims_test_suite.py`` script, running the first cell to import the libraries,
 
 .. collapse:: Import libraries cell
 
     .. code-block:: 
-        :caption: First script cell of test/GeneralMetapopTest.py
+        :caption: First script cell of test/gdsims_test_suite.py
 
         import pandas as pd
         import os
@@ -34,11 +34,11 @@ and then running the last cell, 'Compare test case data for all runs'. Instead o
 .. collapse:: Compare data cell
 
     .. code-block:: 
-        :caption: 'Compare test case data for all runs' script cell of test/GeneralMetapopTest.py
+        :caption: 'Compare test case data for all runs' script cell of test/gdsims_test_suite.py
 
         # ** Modify oracle data folder path, and test data folder path as needed! **
-        oracle_folder_path = "C:\\Users\\MyUser\\Projects\\GeneralMetapop\\test\\oracle\\toroid_distance_kernel"
-        test_data_folder_path = "C:\\Users\\MyUser\\Projects\\GeneralMetapop\\build\\output_files"
+        oracle_folder_path = "C:\\Users\\MyUser\\Projects\\gdsims\\test\\oracle\\toroid_distance_kernel"
+        test_data_folder_path = "C:\\Users\\MyUser\\Projects\\gdsims\\build\\output_files"
 
         # ** Modify the list of set numbers selected as needed **
         sets = [17]
@@ -55,7 +55,7 @@ and then running the last cell, 'Compare test case data for all runs'. Instead o
                 os.chdir(os.path.join(oracle_folder_path, "set" + str(sets[j])))
                 totals_oracle = np.loadtxt("Totals" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
                 times_oracle = totals_oracle[:, 0]
-                tot_males_oracle = totals_oracle[:, 1:]
+                tot_females_oracle = totals_oracle[:, 1:]
                 coords_oracle = np.loadtxt("CoordinateList" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
                 local_oracle = np.loadtxt("LocalData" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
                 
@@ -65,19 +65,19 @@ and then running the last cell, 'Compare test case data for all runs'. Instead o
                     plt.title("Totals oracle data for " + "set " + str(sets[j]) + " run " + str(i))
                     plt.xlabel("Day")
                     plt.ylabel("Total number of individuals")
-                    plt.plot(times_oracle, tot_males_oracle[:, 0], label="$M_{WW}$")
-                    plt.plot(times_oracle, tot_males_oracle[:, 1], label="$M_{WD}$")
-                    plt.plot(times_oracle, tot_males_oracle[:, 2], label="$M_{DD}$")
-                    plt.plot(times_oracle, tot_males_oracle[:, 3], label="$M_{WR}$")
-                    plt.plot(times_oracle, tot_males_oracle[:, 4], label="$M_{RR}$")
-                    plt.plot(times_oracle, tot_males_oracle[:, 5], label="$M_{DR}$")
+                    plt.plot(times_oracle, tot_females_oracle[:, 0], label="$F_{WW}$", linestyle="solid", color="hotpink")
+                    plt.plot(times_oracle, tot_females_oracle[:, 1], label="$F_{WD}$", linestyle="dashed", color="mediumturquoise")
+                    plt.plot(times_oracle, tot_females_oracle[:, 2], label="$F_{DD}$", linestyle="solid", color="royalblue")
+                    plt.plot(times_oracle, tot_females_oracle[:, 3], label="$F_{WR}$", linestyle="dotted", color="slategray")
+                    plt.plot(times_oracle, tot_females_oracle[:, 4], label="$F_{RR}$", linestyle="solid", color="rebeccapurple")
+                    plt.plot(times_oracle, tot_females_oracle[:, 5], label="$F_{DR}$", linestyle="dashed", color="darkviolet")
                     plt.legend()
                 
                 # import test data
                 os.chdir(test_data_folder_path)
                 totals_test = np.loadtxt("Totals" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
                 times_test = totals_test[:, 0]
-                tot_males_test = totals_test[:, 1:]
+                tot_females_test = totals_test[:, 1:]
                 coords_test = np.loadtxt("CoordinateList" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
                 local_test = np.loadtxt("LocalData" + str(sets[j]) + "run" + str(i) + ".txt", skiprows=2)
                 
@@ -87,12 +87,12 @@ and then running the last cell, 'Compare test case data for all runs'. Instead o
                     plt.title("Totals test data for " + "set " + str(sets[j]) + " run " + str(i))
                     plt.xlabel("Day")
                     plt.ylabel("Total number of individuals")
-                    plt.plot(times_test, tot_males_test[:, 0], label="$M_{WW}$")
-                    plt.plot(times_test, tot_males_test[:, 1], label="$M_{WD}$")
-                    plt.plot(times_test, tot_males_test[:, 2], label="$M_{DD}$")
-                    plt.plot(times_test, tot_males_test[:, 3], label="$M_{WR}$")
-                    plt.plot(times_test, tot_males_test[:, 4], label="$M_{RR}$")
-                    plt.plot(times_test, tot_males_test[:, 5], label="$M_{DR}$")
+                    plt.plot(times_test, tot_females_test[:, 0], label="$F_{WW}$", linestyle="solid", color="hotpink")
+                    plt.plot(times_test, tot_females_test[:, 1], label="$F_{WD}$", linestyle="dashed", color="mediumturquoise")
+                    plt.plot(times_test, tot_females_test[:, 2], label="$F_{DD}$", linestyle="solid", color="royalblue")
+                    plt.plot(times_test, tot_females_test[:, 3], label="$F_{WR}$", linestyle="dotted", color="slategray")
+                    plt.plot(times_test, tot_females_test[:, 4], label="$F_{RR}$", linestyle="solid", color="rebeccapurple")
+                    plt.plot(times_test, tot_females_test[:, 5], label="$F_{DR}$", linestyle="dashed", color="darkviolet")
                     plt.legend()
                 
                 # compare
@@ -139,7 +139,7 @@ Running the cell we should get the following output,
 
 which means our data passes all tests! 
 
-The script will have also generated plots for us to visually compare results. These can be useful to debug an issue when the tests fail. We can turn this off by setting the ``make_plot variable`` to ``False``.
+The script will have also generated plots for us to visually compare results. These can be useful to debug an issue when the tests fail. We can turn this off by setting the ``make_plot`` variable to ``False``.
 
 It is important to note that these are end-to-end tests. In the future the testing suite may be extended if requested.
 
