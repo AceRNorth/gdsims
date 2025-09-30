@@ -12,7 +12,7 @@ To run the program, open the command prompt and change the directory ``cd`` to t
 
 .. code-block:: bash
 
-    cd C:\Users\MyUser\Projects\gdsimsapp\build
+    cd C:\Users\MyUser\Projects\gdsims\build
     gdsimsapp.exe
 
 This will display the command-line interface:
@@ -60,7 +60,13 @@ The program will generate a set of these files for each repetition (also called 
 
 The output files we have obtained can be plotted in various ways. Let's look at how to make some simple plots on Python. Feel free to skip this vignette if you'd like to use a different language.
 
-The ``test`` directory you cloned from GitHub will contain a plotting script called ``gdsims_plots.py`` with the code for these examples.
+The ``plot`` directory you cloned from GitHub will contain a plotting library called ``gdsimsplotlib.py`` we can use for gdsims-specific plots. The plotting library is colour-blind friendly.
+
+We can install the required Python modules below and create our own script file **in the** ``plot`` **directory.**
+
+.. note::
+
+    We recommend creating our script file in the same directory as the plotting library file so Python can easily find it. If you're familiar with importing custom libraries and filepaths feel free to choose your own location. You may need to modify the filepaths in subsequent examples.
 
 .. admonition:: Required installations for this tutorial
 
@@ -68,32 +74,34 @@ The ``test`` directory you cloned from GitHub will contain a plotting script cal
    - :py:mod:`numpy` package
    - :py:mod:`matplotlib` package
 
+In our script we can import the library at the top using
+
+.. code-block:: python
+
+    import gdsimsplotlib as gdp
+
 
 Plotting the coordinates
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following code will plot the patch coordinates for run 1 of the set we just ran. Make sure to have your directory set to ``output_files``.
+The following code will plot the patch coordinates for run 1 of the set we just ran. Make sure to change the directory after the imports to **your** ``output_files`` path so the files can be found. The path below is just an example.
+
+.. note:: 
+
+    If you're using Windows, filepaths will need to be slightly modified so Python can read them. This is explained further `here <https://www.sqlpey.com/python/solved-how-to-properly-write-a-windows-path-in-a-python-string-literal/>`_. The simplest way is to use the first raw string method presented. This will work with filepaths that have spaces in them.
+
+    Examples will use Windows filepaths in this way - if you're using Mac/Linux ignore the ``r`` before filepaths and just copy your filepath.
 
 .. code-block:: python
-    :caption: test/gdsims_plots.py - 'Plot coordinates of patches'
 
-    import numpy as np
-    import matplotlib.pyplot as plt
+    import gdsimsplotlib as gdp
+    import os
 
-    # extract data from the file
-    coords = np.loadtxt("CoordinateList1run1.txt", skiprows=2) 
+    os.chdir(r"C:\Users\MyUser\Projects\gdsims\build\output_files")  # change the current directory to the output_files directory
+    gdp.plot_coords("CoordinateList1run1.txt")
+    # gdp.plot_coords("CoordinateList1run1.txt", title="Patch locations - set 1 run 1")  # optional argument for the plot title. The default is "Patch locations".
 
-    x = coords[:, 1] # second column
-    y = coords[:, 2] # third column
-
-    plt.figure()
-    plt.title("Patch locations")
-    plt.xlabel("x (km)")
-    plt.ylabel("y (km)")
-    plt.scatter(x, y, marker='.')
-
-
-Notice how we skip the first two rows of the table containing the header labels. We also ignore the first column since it only contains the patch index numbers.
+At the end we have added an extra (commented out) example with an optional argument for the plot title. For example, here we may want to specify the parameter set and run number we've used. All plotting functions have this optional title argument with their respective default plot titles. You can check what these defaults are and what function arguments are available in the ``gdsimsplotlib.py`` in-file function documentation. If you'd like an empty title you can pass the argument an empty string "".
 
 This script will generate the following plot:
 
@@ -110,37 +118,33 @@ Plotting total females over time
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following code will plot the total adult mated female mosquito numbers for the first run of set 1.
-We can plot several lines corresponding to the different genotypes so we can observe the changes in genotypic composition over time. 
+We can plot several lines corresponding to the different genotypes so we can observe the changes in genotypic composition over time.
 
 .. code-block:: python
-    :caption: test/gdsims_plots.py - 'Plot global output (totals) from model'
+    
+    import gdsimsplotlib as gdp
+    import os
 
-    import numpy as np
-    import matplotlib.pyplot as plt
+    os.chdir(r"C:\Users\MyUser\Projects\gdsims\build\output_files")  # change the current directory to the output_files directory
+    gdp.plot_totals_genotype("Totals1run1.txt")
+    gdp.plot_totals_genotype("Totals1run1.txt", sum_lines=True, title="Total females across the area by genotype - set 1 run 1")  # optional argument sum_lines. Describes whether summation lines for all genotypes and mosquito genotypes capable of malaria transmission will be plotted. The default is False.
 
-    # extract data from the file
-    totals = np.loadtxt("Totals1run1.txt", skiprows=2)
-    times = totals[:, 0]
-    total_females = totals[:, 1:]
+Notice we have called the function twice, specifying some optional arguments on the second call. Extra lines can be added to the plot to view summed totals for all genotypes together (WW + WD + DD+ WR + RR + DR) and for those genotypes capable of malaria transmission (WW + WD + WR). This is set to False by default so as to not overcrowd the plot unnecessarily. We will explain further about the genotypes being modelled in tutorial section :ref:`tutorial-3.2`.
 
-    plt.figure()
-    plt.title("Total mated females across the area")
-    plt.xlabel("Day")
-    plt.ylabel("Total number of individuals")
-    plt.plot(times, total_females[:, 0], label="$F_{WW}$")
-    plt.plot(times, total_females[:, 1], label="$F_{WD}$")
-    plt.plot(times, total_females[:, 2], label="$F_{DD}$")
-    plt.plot(times, total_females[:, 3], label="$F_{WR}$")
-    plt.plot(times, total_females[:, 4], label="$F_{RR}$")
-    plt.plot(times, total_females[:, 5], label="$F_{DR}$")
+This script will generate the following plots:
 
-
-As before, make sure to skip the first two rows of the table.
-
-This script will generate the following plot:
+.. image:: ../images/tut1_totals_plot.png
+    :scale: 80 %
 
 .. image:: ../images/tut1_totals_plot.png
     :scale: 80 %
 
 We can now clearly see how the composition of the overall mosquito population evolves over time!
 
+.. tip::
+
+    You can also similarly use the ``plot_totals_allele_freq()`` function to plot the totals across the area by allele frequency (wild, drive and resistance alleles). We won't cover this in the tutorials but you can check its in-function documentation on the same ``gdsimsplotlib.py`` file.
+
+.. tip::
+
+    All **plotting** functions (not animation functions) in the plotting library return a matplotlib Figure object which you can modify further if needed. Always check the in-function documentation as some may return this figure as part of a tuple with other values. Refer to `matplotlib's docs <https://matplotlib.org/stable/api/figure_api.html#module-matplotlib.figure>`_.

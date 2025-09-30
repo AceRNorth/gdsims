@@ -94,78 +94,14 @@ The program should now start running in the same way as the pre-defined set run.
 
 Now that we have our output files for the custom run, we can do something even more exciting. We can combine the local data and the coordinates files to create an animation showing how the population sizes evolve over time and space. We can use the following script:
 
-.. collapse:: Script
+.. code-block:: python
 
-    .. code-block:: python
-        :caption: test/gdsims_plots.py - 'Spatial animation of total population size'
+    import gdsimsplotlib as gdp
+    import os
 
-        import numpy as np
-        import matplotlib.pyplot as plt
-        import matplotlib.animation as animation
-        import matplotlib.colors as mcolors
-
-        fig, ax = plt.subplots()
-
-        # get coords of sites
-        coords = np.loadtxt("CoordinateList100run1.txt", skiprows=2)
-        x = coords[:, 1]
-        y = coords[:, 2]
-
-        # get populations
-        local_data = np.loadtxt("LocalData100run1.txt", skiprows=2)
-
-        # get populations on one day
-        t=0 # recorded timestep
-        sim_day = int(local_data[t*len(x), 0])
-        local_data_day0 = local_data[t*len(x):((t+1)*len(x)), 2:8]
-
-        # - - - - -
-        # calculate total population for all genotypes in each patch
-        tot_pops = np.zeros(len(x))
-        for pat in range(0, len(x)): 
-            patch_data = local_data_day0[pat, :]
-            for i in range(0, len(patch_data)):
-                tot_pops[pat] += patch_data[i]
-
-        # find maximum and minimum population values in whole simulation for colour map bounds
-        max_pop = np.amax(local_data)
-        min_pop = np.amin(local_data)
-
-        # make a scatter plot with population size colour map
-        scat = ax.scatter(x, y, c=tot_pops, cmap='copper', vmin=min_pop, vmax=max_pop, marker='o')
-        cbar = fig.colorbar(scat, ax=ax, label='Total population size')
-        # - - - - -
-        annotation = fig.text(x=0.1, y=0.9, s='t = {}'.format(sim_day))
-        ax.set_xlabel("x (km)")
-        ax.set_ylabel("y (km)")  
-
-        def update(t):
-            sim_day = int(local_data[t*len(x), 0])
-            local_data_day = local_data[t*len(x):((t+1)*len(x)), 2:8]
-            
-            # ~ ~ ~ ~ ~
-            # calculate total population for all genotypes in each patch
-            tot_pops = np.zeros(len(x))
-            for pat in range(0, len(x)): 
-                patch_data = local_data_day[pat, :]
-                for i in range(0, len(patch_data)):
-                    tot_pops[pat] += patch_data[i]
-                    
-            scat.set_array(tot_pops) # update the scatter point colours according to new tot_pops
-            # ~ ~ ~ ~ ~
-            annotation.set_text("t = {}".format(sim_day))
-            return scat
-
-        # calculate number of frames in animation
-        rec_sites_freq = 1
-        num_frames = int(len(local_data[:, 0]) / (len(x) / rec_sites_freq))
-
-        anim = animation.FuncAnimation(fig=fig, func=update, frames=num_frames, interval=500)
-        anim.save("set100_pop_anim.gif")
-        plt.show()
-
-
-We won't get into the details of the python code since this is an optional vignette and there is plenty of documentation in the :py:mod:`matplotlib` website. However, notice the calculation at the end of the script for the number of frames in the animation. We have provided a simple way to calculate this by manually entering the value of ``rec_sites_freq`` we used in our run. 
+    os.chdir(r"C:\Users\MyUser\Projects\gdsims\build\output_files")  # change the current directory to the output_files directory
+    anim = gdp.animate_local_pop_size("LocalData100run1.txt", "CoordinateList100run1.txt")  # assign return to a variable to ensure animation lives long enough to display
+    anim.save("set100_pop_anim.gif")  # save to file if needed
 
 This should produce the following animation:
 
@@ -173,6 +109,6 @@ This should produce the following animation:
     :scale: 90 %
 
 .. tip::
-    Depending on the IDE you are using, animations may not be displayed correctly in inline plot settings, so make sure to change the graphics view settings. The ``anim.save()`` command should have also saved a copy of the animation as a .gif file in your current directory.
+    Depending on the IDE you are using, animations may not be displayed correctly in inline plot settings, so make sure to change the graphics view settings. The ``anim.save()`` command should have also saved a copy of the animation as a .gif file in your current directory. Other methods that can be used with this matplotlib FuncAnimation object are documented in `matplotlib's docs <https://matplotlib.org/stable/api/_as_gen/matplotlib.animation.FuncAnimation.html#matplotlib.animation.FuncAnimation>`_.
 
 We can see the animation flows well at 100-day jumps, but it could be re-run with a smaller ``rec_interval_local`` if we want smoother changes. We could also start recording at a later ``rec_start`` closer to the release of the gene drive, or even include less sites in the animation with ``rec_sites_freq`` so the plot looks less cluttered. 

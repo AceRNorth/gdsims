@@ -45,7 +45,7 @@ We can choose one of the pre-defined sets - sets 12 and 13 could be good for thi
 
 This is the high seasonality, default rainfall parameter set. Observe how ``alpha0_mean`` (the baseline) is very small compared to ``alpha1`` - this will ensure the population fluctuations due to rainfall (i.e. seasonality) are seen very clearly. We have also set a non-zero ``amp`` value for the amplitude of fluctuations.
 
-With our output data, we can plot the total males as we did in Tutorial :ref:`tutorial-1.2`:
+With our output data, we can plot the total females as we did in Tutorial :ref:`tutorial-1.2`:
 
 .. image:: ../images/tut7_totals_plot_set13.png
     :scale: 80 %
