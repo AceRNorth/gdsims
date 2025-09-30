@@ -148,7 +148,7 @@ Finally, we could re-plot the coordinates and check the difference, but we will 
 
    This tutorial will require the same installations as Tutorial :ref:`tutorial-1.2`.
 
-With a few tweaks we can easily transform our previous population size animation into an animation of the drive allele frequency to track the spread of the gene drive. 
+We can also create an animation of the drive allele frequency to track the spread of the gene drive.
 
 The drive allele (D) frequency is calculated relative to all available genotypes:
 
@@ -158,83 +158,25 @@ The drive allele (D) frequency is calculated relative to all available genotypes
 
 with :math:`\textrm{TOT} = \textrm{WW} + \textrm{WD} + \textrm{DD} + \textrm{WR} + \textrm{RR} + \textrm{DR}`. Each genotype in the equation represents the total number of mated females of that genotype in the overall area.
 
-To make this animation, you can either use the script cell ``gdsims_plots.py - 'Spatial animation of gene drive allele frequency'`` found in the ``test`` directory, or follow along in editing the animation script from Tutorial :ref:`tutorial-2.2`. If you're using the script directly, you can skip to the animation image. 
+To make this animation, you should run this script:
 
-To modify our previous animation script, we can substitute some of the sections marked with special characters. First, we're going to substitute the section enclosed by ``# - - - - -``  with the following code, which calculates the drive allele frequency for the first day and creates the initial scatter plot with our own discrete colourmap:
+.. code-block:: python
 
-.. collapse:: First section of script
+    import gdsimsplotlib as gdp
+    import os
 
-    .. code-block:: python
-        :caption: section from test/gdsims_plots.py - 'Spatial animation of gene drive allele frequency'
+    os.chdir(r"C:\Users\MyUser\Projects\gdsims\build\output_files")  # change the current directory to the output_files directory
+    anim = gdp.animate_local_drive_allele_freq("LocalData101run1.txt", "CoordinateList101run1.txt")  # assign return to a variable to ensure animation lives long enough to display
 
-        WW_day0 = local_data_day0[:, 0]
-        WD_day0 = local_data_day0[:, 1]
-        DD_day0 = local_data_day0[:, 2]
-        WR_day0 = local_data_day0[:, 3]
-        RR_day0 = local_data_day0[:, 4]
-        DR_day0 = local_data_day0[:, 5]
+You'll likely want to change the frame interval on the animation to 20 ms (compared to the default of 500 ms) since we have a lot more recorded days to cycle through. It's also important to note that for animations the function return must be assigned to a variable for the animation object to live long enough to be displayed. Otherwise, you will get an error saying this. 
 
-        # calculate drive allele frequency for each patch
-        drive_freq = np.zeros(len(x))
-        for pat in range(0, len(x)):
-            tot = WW_day0[pat] + WD_day0[pat] + DD_day0[pat] + WR_day0[pat] + RR_day0[pat] + DR_day0[pat]
-            if (tot == 0):
-                drive_freq[pat] = -2 # assign different distinguishable value for no-population patches
-            elif (tot == WW[pat]):
-                drive_freq[pat] = -0.5 # assign different distinguishable value for fully wild-population patches
-            else:
-                drive_freq[pat] = (WD_day0[pat] + (2*DD_day0[pat]) + DR_day0[pat]) / (2*tot)
-
-        # define discrete colourmap
-        main_cmap = ['aquamarine', 'mediumturquoise', 'darkcyan','steelblue', 'royalblue', 'mediumblue', 'slateblue', 'darkviolet', 'indigo', 'black']
-        all_colours = ['darkgray', 'lightgreen'] + main_cmap # add colours for no-population patch and wild-population patch
-        cmap = mcolors.ListedColormap(all_colours)
-        bounds = [-2, -1, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
-        cnorm = mcolors.BoundaryNorm(bounds, cmap.N)
-
-        # make a scatter plot with drive frequency colour map
-        scat = ax.scatter(x, y, c=drive_freq, cmap=cmap, norm=cnorm, marker='o')
-        cbar = fig.colorbar(scat, ax=ax, label='Drive allele frequency')
-        cbar.ax.set_yticks([-2, -1, 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0], labels=['no pop', 'wild', '0.0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1.0'])
-        labels = cbar.ax.get_yticklabels()
-        labels[0].set_verticalalignment('bottom') # align first label text above the tick 
-        labels[1].set_verticalalignment('bottom')
-
-Secondly, we're going to substitute the section enclosed by ``# ~ ~ ~ ~ ~`` with a section that updates the scatter plot to our new drive allele frequency values:
-
-.. collapse:: Second section of script
-
-    .. code-block:: python 
-        :caption: section from test/gdsims_plots.py - 'Spatial animation of gene drive allele frequency'`
-
-            WW = local_data_day[:, 0]
-            WD = local_data_day[:, 1]
-            DD = local_data_day[:, 2]
-            WR = local_data_day[:, 3]
-            RR = local_data_day[:, 4]
-            DR = local_data_day[:, 5]
-
-            drive_freq = np.zeros(len(x))
-            for pat in range(0, len(x)):
-                tot = WW[pat] + WD[pat] + DD[pat] + WR[pat] + RR[pat] + DR[pat]
-                if (tot == 0):
-                    drive_freq[pat] = -2
-                else:
-                    drive_freq[pat] = (WD[pat] + (2*DD[pat]) + DR[pat]) / (2*tot)
-
-        scat.set_array(drive_freq) # update the scatter point colours according to new drive_freq
-
-    .. caution:: 
-
-        This section should all be indented within the ``update()`` function.
-
-You'll also likely want to change the interval on the animation to 20 ms, since we have a lot more recorded days to cycle through.     
-
-Finally, remember too to change the CoordinateList and LocalData files to match the set we have just used, ``101``!
-
-Our new updated script should produce the following animation:
+Our script should produce the following animation:
 
 .. image:: ../images/tut3_drive_anim_coords.gif
     :scale: 90 %
 
 The animation clearly shows the spread of the gene drive and the subsequent collapse of the populations - note how the drive mosquitoes are released into the left edge central patch and spread, not only towards the right, but also appear from the right edge of the plot! This is because of the toroidal boundary conditions the model uses by default - we'll get into more detail in the next tutorial.
+
+.. tip::
+
+    If you want to look at specific snapshots of the two animations we have discussed, you can use the sister plotting functions, ``plot_local_pop_size()`` and ``plot_local_drive_allele_freq()``, included in the library. Please read the in-function documentation, particularly around the timestep argument t, as this may be non-intuitive.

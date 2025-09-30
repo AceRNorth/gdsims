@@ -459,7 +459,7 @@ document.write(`
 <section id="first-run">
 <h2>1.1 First run<a class="headerlink" href="#first-run" title="Permalink to this heading">#</a></h2>
 <p>To run the program, open the command prompt and change the directory <code class="docutils literal notranslate"><span class="pre">cd</span></code> to that of the executable file <code class="docutils literal notranslate"><span class="pre">gdsimsapp</span></code>. Then, run the application. This step will look different depending on your operating system. For example, on Windows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>yUser<span class="se">\P</span>rojects<span class="se">\g</span>dsimsapp<span class="se">\b</span>uild
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>yUser<span class="se">\P</span>rojects<span class="se">\g</span>dsims<span class="se">\b</span>uild
 gdsimsapp.exe
 </pre></div>
 </div>
@@ -491,7 +491,12 @@ gdsimsapp.exe
 <section id="simple-plots-coordinates-and-totals-optional-python">
 <span id="tutorial-1-2"></span><h2>1.2 Simple plots: coordinates and totals (optional - python)<a class="headerlink" href="#simple-plots-coordinates-and-totals-optional-python" title="Permalink to this heading">#</a></h2>
 <p>The output files we have obtained can be plotted in various ways. Let’s look at how to make some simple plots on Python. Feel free to skip this vignette if you’d like to use a different language.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">test</span></code> directory you cloned from GitHub will contain a plotting script called <code class="docutils literal notranslate"><span class="pre">gdsims_plots.py</span></code> with the code for these examples.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">plot</span></code> directory you cloned from GitHub will contain a plotting library called <code class="docutils literal notranslate"><span class="pre">gdsimsplotlib.py</span></code> we can use for gdsims-specific plots. The plotting library is colour-blind friendly.</p>
+<p>We can install the required Python modules below and create our own script file <strong>in the</strong> <code class="docutils literal notranslate"><span class="pre">plot</span></code> <strong>directory.</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We recommend creating our script file in the same directory as the plotting library file so Python can easily find it. If you’re familiar with importing custom libraries and filepaths feel free to choose your own location. You may need to modify the filepaths in subsequent examples.</p>
+</div>
 <div class="admonition-required-installations-for-this-tutorial admonition">
 <p class="admonition-title">Required installations for this tutorial</p>
 <ul class="simple">
@@ -500,29 +505,27 @@ gdsimsapp.exe
 <li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">matplotlib</span></code> package</p></li>
 </ul>
 </div>
-<section id="plotting-the-coordinates">
-<h3>Plotting the coordinates<a class="headerlink" href="#plotting-the-coordinates" title="Permalink to this heading">#</a></h3>
-<p>The following code will plot the patch coordinates for run 1 of the set we just ran. Make sure to have your directory set to <code class="docutils literal notranslate"><span class="pre">output_files</span></code>.</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">test/gdsims_plots.py - ‘Plot coordinates of patches’</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="c1"># extract data from the file</span>
-<span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;CoordinateList1run1.txt&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">coords</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># second column</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">coords</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="c1"># third column</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Patch locations&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x (km)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y (km)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<p>In our script we can import the library at the top using</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gdsimsplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gdp</span>
 </pre></div>
 </div>
+<section id="plotting-the-coordinates">
+<h3>Plotting the coordinates<a class="headerlink" href="#plotting-the-coordinates" title="Permalink to this heading">#</a></h3>
+<p>The following code will plot the patch coordinates for run 1 of the set we just ran. Make sure to change the directory after the imports to <strong>your</strong> <code class="docutils literal notranslate"><span class="pre">output_files</span></code> path so the files can be found. The path below is just an example.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’re using Windows, filepaths will need to be slightly modified so Python can read them. This is explained further <a class="reference external" href="https://www.sqlpey.com/python/solved-how-to-properly-write-a-windows-path-in-a-python-string-literal/">here</a>. The simplest way is to use the first raw string method presented. This will work with filepaths that have spaces in them.</p>
+<p>Examples will use Windows filepaths in this way - if you’re using Mac/Linux ignore the <code class="docutils literal notranslate"><span class="pre">r</span></code> before filepaths and just copy your filepath.</p>
 </div>
-<p>Notice how we skip the first two rows of the table containing the header labels. We also ignore the first column since it only contains the patch index numbers.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gdsimsplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gdp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\MyUser\Projects\gdsims\build\output_files&quot;</span><span class="p">)</span>  <span class="c1"># change the current directory to the output_files directory</span>
+<span class="n">gdp</span><span class="o">.</span><span class="n">plot_coords</span><span class="p">(</span><span class="s2">&quot;CoordinateList1run1.txt&quot;</span><span class="p">)</span>
+<span class="c1"># gdp.plot_coords(&quot;CoordinateList1run1.txt&quot;, title=&quot;Patch locations - set 1 run 1&quot;)  # optional argument for the plot title. The default is &quot;Patch locations&quot;.</span>
+</pre></div>
+</div>
+<p>At the end we have added an extra (commented out) example with an optional argument for the plot title. For example, here we may want to specify the parameter set and run number we’ve used. All plotting functions have this optional title argument with their respective default plot titles. You can check what these defaults are and what function arguments are available in the <code class="docutils literal notranslate"><span class="pre">gdsimsplotlib.py</span></code> in-file function documentation. If you’d like an empty title you can pass the argument an empty string “”.</p>
 <p>This script will generate the following plot:</p>
 <a class="reference internal image-reference" href="../_images/tut1_coords_plot.png"><img alt="../_images/tut1_coords_plot.png" src="../_images/tut1_coords_plot.png" style="width: 512.0px; height: 384.0px;" /></a>
 <p>Now we can see the spatial distribution of the patches!</p>
@@ -535,33 +538,27 @@ gdsimsapp.exe
 <h3>Plotting total females over time<a class="headerlink" href="#plotting-total-females-over-time" title="Permalink to this heading">#</a></h3>
 <p>The following code will plot the total adult mated female mosquito numbers for the first run of set 1.
 We can plot several lines corresponding to the different genotypes so we can observe the changes in genotypic composition over time.</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">test/gdsims_plots.py - ‘Plot global output (totals) from model’</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gdsimsplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gdp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
-<span class="c1"># extract data from the file</span>
-<span class="n">totals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;Totals1run1.txt&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">times</span> <span class="o">=</span> <span class="n">totals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">total_females</span> <span class="o">=</span> <span class="n">totals</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Total mated females across the area&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Day&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Total number of individuals&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">total_females</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$F_</span><span class="si">{WW}</span><span class="s2">$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">total_females</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$F_</span><span class="si">{WD}</span><span class="s2">$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">total_females</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$F_</span><span class="si">{DD}</span><span class="s2">$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">total_females</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$F_</span><span class="si">{WR}</span><span class="s2">$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">total_females</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$F_</span><span class="si">{RR}</span><span class="s2">$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">total_females</span><span class="p">[:,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$F_</span><span class="si">{DR}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\MyUser\Projects\gdsims\build\output_files&quot;</span><span class="p">)</span>  <span class="c1"># change the current directory to the output_files directory</span>
+<span class="n">gdp</span><span class="o">.</span><span class="n">plot_totals_genotype</span><span class="p">(</span><span class="s2">&quot;Totals1run1.txt&quot;</span><span class="p">)</span>
+<span class="n">gdp</span><span class="o">.</span><span class="n">plot_totals_genotype</span><span class="p">(</span><span class="s2">&quot;Totals1run1.txt&quot;</span><span class="p">,</span> <span class="n">sum_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Total females across the area by genotype - set 1 run 1&quot;</span><span class="p">)</span>  <span class="c1"># optional argument sum_lines. Describes whether summation lines for all genotypes and mosquito genotypes capable of malaria transmission will be plotted. The default is False.</span>
 </pre></div>
 </div>
-</div>
-<p>As before, make sure to skip the first two rows of the table.</p>
-<p>This script will generate the following plot:</p>
+<p>Notice we have called the function twice, specifying some optional arguments on the second call. Extra lines can be added to the plot to view summed totals for all genotypes together (WW + WD + DD+ WR + RR + DR) and for those genotypes capable of malaria transmission (WW + WD + WR). This is set to False by default so as to not overcrowd the plot unnecessarily. We will explain further about the genotypes being modelled in tutorial section <a class="reference internal" href="tutorial3.html#tutorial-3-2"><span class="std std-ref">3.2 Model introduction: Gene drive</span></a>.</p>
+<p>This script will generate the following plots:</p>
+<a class="reference internal image-reference" href="../_images/tut1_totals_plot.png"><img alt="../_images/tut1_totals_plot.png" src="../_images/tut1_totals_plot.png" style="width: 512.0px; height: 384.0px;" /></a>
 <a class="reference internal image-reference" href="../_images/tut1_totals_plot.png"><img alt="../_images/tut1_totals_plot.png" src="../_images/tut1_totals_plot.png" style="width: 512.0px; height: 384.0px;" /></a>
 <p>We can now clearly see how the composition of the overall mosquito population evolves over time!</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can also similarly use the <code class="docutils literal notranslate"><span class="pre">plot_totals_allele_freq()</span></code> function to plot the totals across the area by allele frequency (wild, drive and resistance alleles). We won’t cover this in the tutorials but you can check its in-function documentation on the same <code class="docutils literal notranslate"><span class="pre">gdsimsplotlib.py</span></code> file.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>All <strong>plotting</strong> functions (not animation functions) in the plotting library return a matplotlib Figure object which you can modify further if needed. Always check the in-function documentation as some may return this figure as part of a tuple with other values. Refer to <a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#module-matplotlib.figure">matplotlib’s docs</a>.</p>
+</div>
 </section>
 </section>
 </section>

@@ -8,7 +8,7 @@ These tutorials will guide you all the way from a quick first run of the program
 
 All exercise files can be found in the ``docs/exercises`` directory on GitHub. 
 
-Optional Python scripts for visualisation can be found in the ``test`` directory. 
+The companion plotting library written in Python can be found in the ``plot`` directory. 
 
 .. note::
     These tutorials have been written using a Windows 10 system with a g++ 13.1.0 compiler. The visualised data may vary slightly when using other systems or compilers due to differences in pseudo-random number generation. 

@@ -528,82 +528,19 @@ The values should be delimited by new lines.</p>
 <p>This tutorial will require the same installations as Tutorial <a class="reference internal" href="tutorial1.html#tutorial-1-2"><span class="std std-ref">1.2 Simple plots: coordinates and totals (optional - python)</span></a>.</p>
 </div>
 <p>Now that we have our output files for the custom run, we can do something even more exciting. We can combine the local data and the coordinates files to create an animation showing how the population sizes evolve over time and space. We can use the following script:</p>
-<details class="summary-script">
-<summary>Script</summary><div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">test/gdsims_plots.py - ‘Spatial animation of total population size’</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.animation</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">animation</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mcolors</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gdsimsplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gdp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-
-<span class="c1"># get coords of sites</span>
-<span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;CoordinateList100run1.txt&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">coords</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">coords</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
-
-<span class="c1"># get populations</span>
-<span class="n">local_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;LocalData100run1.txt&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="c1"># get populations on one day</span>
-<span class="n">t</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># recorded timestep</span>
-<span class="n">sim_day</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">local_data</span><span class="p">[</span><span class="n">t</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">0</span><span class="p">])</span>
-<span class="n">local_data_day0</span> <span class="o">=</span> <span class="n">local_data</span><span class="p">[</span><span class="n">t</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):((</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="mi">2</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>
-
-<span class="c1"># - - - - -</span>
-<span class="c1"># calculate total population for all genotypes in each patch</span>
-<span class="n">tot_pops</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">pat</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
-    <span class="n">patch_data</span> <span class="o">=</span> <span class="n">local_data_day0</span><span class="p">[</span><span class="n">pat</span><span class="p">,</span> <span class="p">:]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">patch_data</span><span class="p">)):</span>
-        <span class="n">tot_pops</span><span class="p">[</span><span class="n">pat</span><span class="p">]</span> <span class="o">+=</span> <span class="n">patch_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-
-<span class="c1"># find maximum and minimum population values in whole simulation for colour map bounds</span>
-<span class="n">max_pop</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">local_data</span><span class="p">)</span>
-<span class="n">min_pop</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">local_data</span><span class="p">)</span>
-
-<span class="c1"># make a scatter plot with population size colour map</span>
-<span class="n">scat</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">tot_pops</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;copper&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">min_pop</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">max_pop</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">scat</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Total population size&#39;</span><span class="p">)</span>
-<span class="c1"># - - - - -</span>
-<span class="n">annotation</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="s1">&#39;t = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sim_day</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x (km)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;y (km)&quot;</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-    <span class="n">sim_day</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">local_data</span><span class="p">[</span><span class="n">t</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="n">local_data_day</span> <span class="o">=</span> <span class="n">local_data</span><span class="p">[</span><span class="n">t</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):((</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="mi">2</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>
-
-    <span class="c1"># ~ ~ ~ ~ ~</span>
-    <span class="c1"># calculate total population for all genotypes in each patch</span>
-    <span class="n">tot_pops</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">pat</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
-        <span class="n">patch_data</span> <span class="o">=</span> <span class="n">local_data_day</span><span class="p">[</span><span class="n">pat</span><span class="p">,</span> <span class="p">:]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">patch_data</span><span class="p">)):</span>
-            <span class="n">tot_pops</span><span class="p">[</span><span class="n">pat</span><span class="p">]</span> <span class="o">+=</span> <span class="n">patch_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-
-    <span class="n">scat</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="n">tot_pops</span><span class="p">)</span> <span class="c1"># update the scatter point colours according to new tot_pops</span>
-    <span class="c1"># ~ ~ ~ ~ ~</span>
-    <span class="n">annotation</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s2">&quot;t = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sim_day</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">scat</span>
-
-<span class="c1"># calculate number of frames in animation</span>
-<span class="n">rec_sites_freq</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">num_frames</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">local_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">rec_sites_freq</span><span class="p">))</span>
-
-<span class="n">anim</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="n">update</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">num_frames</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
-<span class="n">anim</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;set100_pop_anim.gif&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\MyUser\Projects\gdsims\build\output_files&quot;</span><span class="p">)</span>  <span class="c1"># change the current directory to the output_files directory</span>
+<span class="n">anim</span> <span class="o">=</span> <span class="n">gdp</span><span class="o">.</span><span class="n">animate_local_pop_size</span><span class="p">(</span><span class="s2">&quot;LocalData100run1.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;CoordinateList100run1.txt&quot;</span><span class="p">)</span>  <span class="c1"># assign return to a variable to ensure animation lives long enough to display</span>
+<span class="n">anim</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;set100_pop_anim.gif&quot;</span><span class="p">)</span>  <span class="c1"># save to file if needed</span>
 </pre></div>
 </div>
-</div>
-</details><p>We won’t get into the details of the python code since this is an optional vignette and there is plenty of documentation in the <code class="xref py py-mod docutils literal notranslate"><span class="pre">matplotlib</span></code> website. However, notice the calculation at the end of the script for the number of frames in the animation. We have provided a simple way to calculate this by manually entering the value of <code class="docutils literal notranslate"><span class="pre">rec_sites_freq</span></code> we used in our run.</p>
 <p>This should produce the following animation:</p>
 <a class="reference internal image-reference" href="../_images/tut2_pop_size_anim.gif"><img alt="../_images/tut2_pop_size_anim.gif" src="../_images/tut2_pop_size_anim.gif" style="width: 576.0px; height: 432.0px;" /></a>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Depending on the IDE you are using, animations may not be displayed correctly in inline plot settings, so make sure to change the graphics view settings. The <code class="docutils literal notranslate"><span class="pre">anim.save()</span></code> command should have also saved a copy of the animation as a .gif file in your current directory.</p>
+<p>Depending on the IDE you are using, animations may not be displayed correctly in inline plot settings, so make sure to change the graphics view settings. The <code class="docutils literal notranslate"><span class="pre">anim.save()</span></code> command should have also saved a copy of the animation as a .gif file in your current directory. Other methods that can be used with this matplotlib FuncAnimation object are documented in <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.animation.FuncAnimation.html#matplotlib.animation.FuncAnimation">matplotlib’s docs</a>.</p>
 </div>
 <p>We can see the animation flows well at 100-day jumps, but it could be re-run with a smaller <code class="docutils literal notranslate"><span class="pre">rec_interval_local</span></code> if we want smoother changes. We could also start recording at a later <code class="docutils literal notranslate"><span class="pre">rec_start</span></code> closer to the release of the gene drive, or even include less sites in the animation with <code class="docutils literal notranslate"><span class="pre">rec_sites_freq</span></code> so the plot looks less cluttered.</p>
 </section>
