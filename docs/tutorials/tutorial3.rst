@@ -166,7 +166,7 @@ To make this animation, you should run this script:
     import os
 
     os.chdir(r"C:\Users\MyUser\Projects\gdsims\build\output_files")  # change the current directory to the output_files directory
-    anim = gdp.animate_local_drive_allele_freq("LocalData101run1.txt", "CoordinateList101run1.txt")  # assign return to a variable to ensure animation lives long enough to display
+    anim = gdp.animate_local_drive_allele_freq("LocalData101run1.txt", "CoordinateList101run1.txt", interval=20)  # assign return to a variable to ensure animation lives long enough to display
 
 You'll likely want to change the frame interval on the animation to 20 ms (compared to the default of 500 ms) since we have a lot more recorded days to cycle through. It's also important to note that for animations the function return must be assigned to a variable for the animation object to live long enough to be displayed. Otherwise, you will get an error saying this. 
 
