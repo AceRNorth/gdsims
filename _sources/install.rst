@@ -87,20 +87,20 @@ Windows
 
    .. code-block:: bash
 
-      cmake ..
+      cmake -DCMAKE_BUILD_TYPE=Release ..
 
    .. hint::
       This step might not succeed as some Windows systems have issues selecting a generator. You can run ``cmake --help``  to view a list of available generators and then run CMake with one of them, e.g.
 
       .. code-block:: bash
 
-         cmake -G "MinGW Makefiles" ..
+         cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release ..
 
 #. Build all CMake targets.
 
    .. code-block:: bash
 
-      cmake --build .
+      cmake --build . --config Release
 
 #. Finally, run the executable file ``gdsimsapp.exe`` that has been created in the build directory.
 
@@ -166,7 +166,7 @@ Mac
 
    .. code-block:: bash
 
-      cmake ..
+      cmake -DCMAKE_BUILD_TYPE=Release ..
 
    .. tip::
       If at any point you get CMake cache error messages, delete the CMakeCache file in the build directory and run cmake again.
@@ -175,7 +175,7 @@ Mac
 
    .. code-block:: bash
 
-      cmake --build .
+      cmake --build . --config Release
 
 #. Finally, run the executable file ``gdsimsapp`` that has been created in the build directory.
 
@@ -218,14 +218,14 @@ These instructions will closely follow those for Windows, with the exception of 
 
    .. code-block:: bash
 
-      cmake ..
+      cmake -DCMAKE_BUILD_TYPE=Release ..
 
    .. hint:: 
       This step might not succeed if the default compiler version doesn't support C++17 and its standard library. You can instead run cmake by setting the new compiler version, e.g.
 
       .. code-block:: bash
 
-         cmake -D CMAKE_CXX_COMPILER=g++13 ..
+         cmake -D CMAKE_CXX_COMPILER=g++13 -DCMAKE_BUILD_TYPE=Release ..
 
    .. tip::
       If at any point you get CMake cache error messages, delete the CMakeCache file in the build directory and run cmake again.
@@ -234,7 +234,7 @@ These instructions will closely follow those for Windows, with the exception of 
 
    .. code-block:: bash
 
-      cmake --build .
+      cmake --build . --config Release
 
 #. Finally, run the executable file ``gdsimsapp.exe`` that has been created in the build directory.
 

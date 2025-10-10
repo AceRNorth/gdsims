@@ -529,19 +529,19 @@ mkdir<span class="w"> </span>build
 </div>
 </li>
 <li><p>Run CMake to configure the CMake project.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>..
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release<span class="w"> </span>..
 </pre></div>
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>This step might not succeed as some Windows systems have issues selecting a generator. You can run <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--help</span></code>  to view a list of available generators and then run CMake with one of them, e.g.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;MinGW Makefiles&quot;</span><span class="w"> </span>..
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;MinGW Makefiles&quot;</span><span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release<span class="w"> </span>..
 </pre></div>
 </div>
 </div>
 </li>
 <li><p>Build all CMake targets.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>--build<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>--build<span class="w"> </span>.<span class="w"> </span>--config<span class="w"> </span>Release
 </pre></div>
 </div>
 </li>
@@ -599,7 +599,7 @@ mkdir<span class="w"> </span>build
 </div>
 </li>
 <li><p>Run CMake to configure the CMake project.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>..
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release<span class="w"> </span>..
 </pre></div>
 </div>
 <div class="admonition tip">
@@ -608,7 +608,7 @@ mkdir<span class="w"> </span>build
 </div>
 </li>
 <li><p>Build all CMake targets.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>--build<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>--build<span class="w"> </span>.<span class="w"> </span>--config<span class="w"> </span>Release
 </pre></div>
 </div>
 </li>
@@ -648,13 +648,13 @@ mkdir<span class="w"> </span>build
 </div>
 </li>
 <li><p>Run CMake to configure the CMake project.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>..
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release<span class="w"> </span>..
 </pre></div>
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>This step might not succeed if the default compiler version doesn’t support C++17 and its standard library. You can instead run cmake by setting the new compiler version, e.g.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_CXX_COMPILER</span><span class="o">=</span>g++13<span class="w"> </span>..
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_CXX_COMPILER</span><span class="o">=</span>g++13<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release<span class="w"> </span>..
 </pre></div>
 </div>
 </div>
@@ -664,7 +664,7 @@ mkdir<span class="w"> </span>build
 </div>
 </li>
 <li><p>Build all CMake targets.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>--build<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>--build<span class="w"> </span>.<span class="w"> </span>--config<span class="w"> </span>Release
 </pre></div>
 </div>
 </li>
