@@ -59,7 +59,7 @@ Upon running a set, output files will be created in a new subdirectory called ``
 - ``LocalData.txt``
 - ``Totals.txt``
 
-for each run of the set. Optional Python scripts are provided in the ``test`` directory for default visualisation options and running tests.
+for each run of the set. A companion plotting library is provided in the ``plot`` directory with default visualisation options. Scripts for running tests are provided in the ``test`` directory.
 
 More information on output files can be found in the User Guide :doc:`user_guide/output` page. 
 

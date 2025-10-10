@@ -492,8 +492,8 @@ document.write(`
 <span class="mi">50</span>
 <span class="mi">5000</span>
 <span class="mi">1</span>
-<span class="mf">0.01</span>
-<span class="mf">0.25</span>
+<span class="mf">0.1</span>
+<span class="mf">0.3</span>
 <span class="mi">0</span>
 <span class="mi">0</span>
 <span class="mi">0</span>
@@ -525,10 +525,10 @@ document.write(`
 <p class="admonition-title">Warning</p>
 <p>Selecting release sites in this way will overwrite the number of release sites previously chosen with the <code class="docutils literal notranslate"><span class="pre">num_driver_sites</span></code> parameter.</p>
 </div>
-<p>Let’s use the coordinates file below to create a square grid of patches.</p>
+<p>Let’s use the coordinates file below to create a square grid of patches with release site on the central left edge.</p>
 <details class="summary-coordinates">
 <summary>Coordinates</summary><div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">docs/exercises/coords_square_25.txt</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">docs/exercises/coords_square_25_left.txt</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="mf">0.0</span><span class="w">     </span><span class="mf">0.0</span><span class="w">         </span><span class="n">n</span>
 <span class="mf">0.25</span><span class="w">    </span><span class="mf">0.0</span><span class="w">         </span><span class="n">n</span>
 <span class="mf">0.5</span><span class="w">         </span><span class="mf">0.0</span><span class="w">     </span><span class="n">n</span>
@@ -539,9 +539,9 @@ document.write(`
 <span class="mf">0.5</span><span class="w">         </span><span class="mf">0.25</span><span class="w">        </span><span class="n">n</span>
 <span class="mf">0.75</span><span class="w">    </span><span class="mf">0.25</span><span class="w">    </span><span class="n">n</span>
 <span class="mf">1.0</span><span class="w">         </span><span class="mf">0.25</span><span class="w">        </span><span class="n">n</span>
-<span class="mf">0.0</span><span class="w">         </span><span class="mf">0.5</span><span class="w">     </span><span class="n">n</span>
+<span class="mf">0.0</span><span class="w">         </span><span class="mf">0.5</span><span class="w">     </span><span class="n">y</span>
 <span class="mf">0.25</span><span class="w">    </span><span class="mf">0.5</span><span class="w">         </span><span class="n">n</span>
-<span class="mf">0.5</span><span class="w">         </span><span class="mf">0.5</span><span class="w">     </span><span class="n">y</span>
+<span class="mf">0.5</span><span class="w">         </span><span class="mf">0.5</span><span class="w">     </span><span class="n">n</span>
 <span class="mf">0.75</span><span class="w">    </span><span class="mf">0.5</span><span class="w">         </span><span class="n">n</span>
 <span class="mf">1.0</span><span class="w">         </span><span class="mf">0.5</span><span class="w">     </span><span class="n">n</span>
 <span class="mf">0.0</span><span class="w">         </span><span class="mf">0.75</span><span class="w">        </span><span class="n">n</span>

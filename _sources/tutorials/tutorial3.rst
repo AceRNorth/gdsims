@@ -59,8 +59,8 @@ Create a file that contains these parameters:
         50
         5000
         1
-        0.01
-        0.25
+        0.1
+        0.3
         0
         0
         0
@@ -99,12 +99,12 @@ The coordinate values may also be subject to certain bound checks - more informa
     Selecting release sites in this way will overwrite the number of release sites previously chosen with the ``num_driver_sites`` parameter. 
 
 
-Let's use the coordinates file below to create a square grid of patches. 
+Let's use the coordinates file below to create a square grid of patches with release site on the central left edge. 
 
 .. collapse:: Coordinates
     
     .. code-block:: 
-        :caption: docs/exercises/coords_square_25.txt
+        :caption: docs/exercises/coords_square_25_left.txt
 
         0.0     0.0	    n
         0.25    0.0	    n
@@ -116,9 +116,9 @@ Let's use the coordinates file below to create a square grid of patches.
         0.5	    0.25	n
         0.75	0.25	n
         1.0	    0.25	n
-        0.0	    0.5	    n
+        0.0	    0.5	    y
         0.25	0.5	    n
-        0.5	    0.5	    y
+        0.5	    0.5	    n
         0.75	0.5	    n
         1.0	    0.5	    n
         0.0	    0.75	n

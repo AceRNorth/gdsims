@@ -78,6 +78,7 @@ Windows
          ├── docs 
          │   └── exercises
          ├── includes
+         ├── plot
          ├── src 
          └── test
 

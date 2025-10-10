@@ -143,30 +143,44 @@ If you've used the wrong parameters and the simulation doesn't take too long we'
 Advanced tutorial 1: Coordinates file
 -------------------------------------
 
-You might want to add your own custom coordinates for the patch locations and select which of these are release sites. You can do this by adding your own coordinates file to the parameters.
+You might want to select some coordinate grid pattern or add your own custom coordinates for the patch locations and select which of these are release sites. You can do this through the advanced coordinate settings.
 
-1. Create your coordinates file. The structure needed for this file is documented in the :ref:`coords_custom_file` section. You can also find example coordinates files `here <https://github.com/AceRNorth/gdsims/tree/main/docs/exercises>`_ - you can download them by clicking on the file and clicking on the 'Download raw file' icon. Let's use the ``coords_grid.txt`` file as an example. 
-
-2. Open the GUI and click on the Advanced button in the parameters section - this will open a new window dialog. 
+1. Open the GUI and click on the Advanced button in the parameters section - this will open a new window dialog.
 
 .. image:: ../images/gui_advanced_button.PNG
     :scale: 80 %
 
-3. The custom coordinates file option is only available for an Edge boundary type in the GUI, so change this first with the boundary type drop-down. 
+2. The custom coordinates file option is only available for an Edge boundary type in the GUI, so change this first with the boundary type drop-down. 
 
 .. image:: ../images/gui_advanced_edge.PNG
     :scale: 80 %
 
-4. This should display a patch coordinates file checkbox. Checking this will display a Select button much like the output directory selection button in the main window. Click Select to browse for your file in the File Explorer. 
+3. This should display a patch coordinates file checkbox. Checking this will display a drop-down menu to choose default grid options. There are square and hexagonal grids available with a couple of different patch number options for each. Let's choose the first one, 'Square grid 25 patches'.
 
-.. image:: ../images/gui_advanced_coords.PNG
+.. image:: ../images/gui_advanced_coords_default.PNG
     :scale: 80 %
 
-5. Before confirming your advanced parameter changes make sure the 'no. of patches' parameter in the main window matches with the number of patches included in your coordinates file. In our example file we use 25 patches, so change this to 25. 
+.. note::
+
+    We can also select a custom coordinates file instead. 
+    
+    3. i. On the drop-down select 'Custom'. Create your coordinates file. The structure needed for this file is documented in the :ref:`coords_custom_file` section. You can also find example coordinates files `here <https://github.com/AceRNorth/gdsims/tree/main/docs/exercises>`_ - you can download them by clicking on the file and clicking on the 'Download raw file' icon. Let's use the ``coords_square_25.txt`` file as an example - it will be the same file that's used for the default 'Square grid 25 patches' option.
+
+    3. ii. Selecting this will display a Select button much like the output directory selection button in the main window. Click Select to browse for your file in the File Explorer. 
+
+    .. image:: ../images/gui_advanced_coords_custom.PNG
+        :scale: 80 %
+
+4. Before confirming your advanced parameter changes or previewing plots make sure the 'no. of patches' parameter in the main window matches with the number of patches included in your coordinates file. This is a sanity check to ensure you know how many patches will be used. In our example file we use 25 patches, so change this to 25.
+
+5. Notice there is a preview button next to the drop-down bar. Clicking it will display a pop-up window with a preview plot of the coordinates, clearly indicating the release sites selected. Release sites have been pre-selected in the default options but you can choose your own in your custom files.
+
+.. image:: ../images/gui_advanced_coords_preview.PNG
+    :scale: 80 %
 
 6. Confirm the changes by clicking Ok or Apply at the bottom of the advanced parameter window dialog. 
 
-7. Run the simulation as usual! Once it's done you can check the placement of your coordinates in the Coords plot tab. For our example it should look like this:
+7. Run the simulation as usual! Once it's done you can check the placement of your coordinates in the Coords plot tab. It should look very similar to our preview:
 
 .. image:: ../images/gui_coords_grid_plot.PNG
     :scale: 90 %
@@ -194,9 +208,15 @@ You might want to add a custom rainfall file to model your own seasonality. You 
 .. image:: ../images/gui_advanced_rainfall_params.PNG
     :scale: 80 %
 
-5. Confirm the changes by clicking Ok or Apply at the bottom of the advanced parameter window dialog. 
 
-6. Run the simulation as usual! Once it's done you can check the totals plot to see the effect of seasonality on our total numbers of mosquitoes. For our example it should look like this:
+5. We can preview what the rainfall data in the file looks like by clicking Preview under the Select button. This will open a pop-up window with the preview plot. 
+
+.. image:: ../images/gui_advanced_rainfall_preview.PNG
+    :scale: 80 %
+
+6. Confirm the changes by clicking Ok or Apply at the bottom of the advanced parameter window dialog. 
+
+7. Run the simulation as usual! Once it's done you can check the totals plot to see the effect of seasonality on our total numbers of mosquitoes. For our example it should look like this:
 
 .. image:: ../images/gui_rainfall_totals_plot.PNG
     :scale: 80 %
@@ -221,7 +241,7 @@ You might want to add a custom gene drive release schedule to your simulation. Y
 
 5. Confirm the changes by clicking Ok or Apply at the bottom of the advanced parameter window dialog. 
 
-6. Run the simulation as usual! Once it's done you can open the totals genotype plot, uncheck all curves except WD, DD and DR from the sidebar and plot - this will allow us to focus on smaller changes in drive genotypes. Then, zoom into the beginning of the curves around days 200, 300 and 400 (these are the release times listed on the file we used) with the magnifying glass icon on the plot toolbar at the top. You just need to click on the icon and select the rectangle area on the plot to zoom into (and if you wanna go back to the original plot you can simply click the Home icon on the toolbar to reset it). We can see small bumps near these times, showing that gene drive mosquitoes are indeed being released then!
+6. Run the simulation as usual! Once it's done you can open the totals genotype plot, uncheck all curves except WD, DD, DR and the release times lines from the sidebar and plot - this will allow us to focus on smaller changes in drive genotypes. Then, zoom into the beginning of the curves around days 200, 300 and 400 (the area with the release times bar) with the magnifying glass icon on the plot toolbar at the top. You just need to click on the icon and select the rectangle area on the plot to zoom into (and if you wanna go back to the original plot you can simply click the Home icon on the toolbar to reset it). We can see subtle bumps near these times, with a slight delay of 10-15 days after each release time, showing that gene drive mosquitoes are indeed being released then! The delay is due to **male** drive heterozygous mosquitoes being released. For the change to take effect in the adult mated females, we must wait for these males to mate, and their mated females to lay eggs with the new genotypes, and these eggs to grow into juveniles and ultimately into the mated heterozygous females we record. This agrees with the juvenile min. development time parameter we have used of 10 days.
 
 .. image:: ../images/gui_release_times_plot_start.PNG
     :scale: 80 %

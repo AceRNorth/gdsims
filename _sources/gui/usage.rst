@@ -178,7 +178,7 @@ Similar to the above, where allele frequencies for the wild-type (W), drive-type
 e.g. for wild-type allele on one day
 
 .. math::
-    \text{W}_{\text{freq}} = \frac{\text{M}_{\text{WW}} + \text{M}_{\text{WD}} + \text{M}_{\text{WR}}}{\text{M}_{\text{WW}} + \text{M}_{\text{WD}} + \text{M}_{\text{DD}} + \text{M}_{\text{WR}} + \text{M}_{\text{RR}} + \text{M}_{\text{DR}}}
+    \text{W}_{\text{freq}} = \frac{\text{F}_{\text{WW}} + \text{F}_{\text{WD}} + \text{F}_{\text{WR}}}{\text{F}_{\text{WW}} + \text{F}_{\text{WD}} + \text{F}_{\text{DD}} + \text{F}_{\text{WR}} + \text{F}_{\text{RR}} + \text{F}_{\text{DR}}}
 
 Coordinates 
 ^^^^^^^^^^^

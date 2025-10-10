@@ -136,7 +136,7 @@ This script will generate the following plots:
 .. image:: ../images/tut1_totals_plot.png
     :scale: 80 %
 
-.. image:: ../images/tut1_totals_plot.png
+.. image:: ../images/tut1_totals_plot_sum_lines.png
     :scale: 80 %
 
 We can now clearly see how the composition of the overall mosquito population evolves over time!
