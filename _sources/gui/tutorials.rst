@@ -171,7 +171,7 @@ You might want to select some coordinate grid pattern or add your own custom coo
     .. image:: ../images/gui_advanced_coords_custom.PNG
         :scale: 80 %
 
-4. Before confirming your advanced parameter changes or previewing plots make sure the 'no. of patches' parameter in the main window matches with the number of patches included in your coordinates file. This is a sanity check to ensure you know how many patches will be used. In our example file we use 25 patches, so change this to 25.
+4. Before confirming your advanced parameter changes or previewing plots make sure the 'no. of patches' and 'no. of release patches' parameters in the main window match with the number of patches and release sites included in your coordinates file. This is a sanity check to ensure you know how many patches will be used. In our example file we use 25 patches and 1 release patch, so change this to 25 (and 1 respectively, if it's not set to that already).
 
 5. Notice there is a preview button next to the drop-down bar. Clicking it will display a pop-up window with a preview plot of the coordinates, clearly indicating the release sites selected. Release sites have been pre-selected in the default options but you can choose your own in your custom files.
 
@@ -189,34 +189,42 @@ You might want to select some coordinate grid pattern or add your own custom coo
 Advanced tutorial 2: Seasonality file
 -------------------------------------
 
-You might want to add a custom rainfall file to model your own seasonality. You can do this by adding your own rainfall file to the parameters. Details of the seasonality model default and custom options can be found in Tutorial :ref:`tutorial-7.1`.
+You might want to add some rainfall file data to model your own seasonality. You can do this by selecting a default rainfall file from the options or adding your own custom rainfall file to the parameters. Details of the seasonality model default and custom options can be found in Tutorial :ref:`tutorial-7.1`.
 
-1. Create your rainfall file. The structure needed for this file is documented in the :ref:`rainfall_file` section. You can also find example rainfall files `here <https://github.com/AceRNorth/gdsims/tree/main/docs/exercises>`_ - you can download them by clicking on the file and clicking on the 'Download raw file' icon. Let's use the ``rainfall.txt`` file as an example. 
-
-2. Open the GUI and click on the Advanced button in the parameters section - this will open a new window dialog. 
+1. Open the GUI and click on the Advanced button in the parameters section - this will open a new window dialog. 
 
 .. image:: ../images/gui_advanced_button.PNG
     :scale: 80 %
 
-3. The rainfall file checkbox is under the Seasonality section. Checking this will display a Select button much like the output directory selection button in the main window and a 'responsiveness to rainfall' parameter - we'll get to this parameter in the next step. Click Select to browse for your file in the File Explorer. 
+2. The rainfall file checkbox is under the Seasonality section. Checking this will display a drop-down menu to choose default rainfall data options. Let's choose the first one, 'Uganda islands 365 days'. Checking the checkbox will have also displayed a 'responsiveness to rainfall' parameter under the drop-down (and hidden the rainfall seasonality parameter) - we'll get to this parameter in the next step.
 
-.. image:: ../images/gui_advanced_rainfall_file.PNG
+.. image:: ../images/gui_advanced_rainfall_default.PNG
     :scale: 80 %
 
-4. Tweak the 'responsiveness to rainfall' parameter - we can change it to 1.00. We might also wanna tweak some of the previous seasonality parameters so we can observe the rainfall effects on the plot more easily later on - let's change the 'population size factor' to 10000.00 and the 'rainfall contribution to population size' to 100000.00.
+.. note::
+
+    We can also select a custom rainfall data file instead.
+
+    2. i. On the drop-down select 'Custom'. Create your rainfall file. The structure needed for this file is documented in the :ref:`rainfall_file` section. You can also find example rainfall files `here <https://github.com/AceRNorth/gdsims/tree/main/docs/exercises>`_ - you can download them by clicking on the file and clicking on the 'Download raw file' icon. Let's use the ``rainfall_uganda_islands_365.txt`` file as an example - it will be the same file that's used for the default 'Uganda islands 365 days' option.
+
+    2. ii. Selecting this will display a Select button much like the output directory selection button in the main window. Click Select to browse for your file in the File Explorer.
+
+    .. image:: ../images/gui_advanced_rainfall_custom.PNG
+        :scale: 80 %
+
+3. Tweak the 'responsiveness to rainfall' parameter - we can change it to 1.00. We might also wanna tweak some of the previous seasonality parameters so we can observe the rainfall effects on the plot more easily later on - let's change the 'population size factor' to 10000.00 and the 'rainfall contribution to population size' to 100000.00.
 
 .. image:: ../images/gui_advanced_rainfall_params.PNG
     :scale: 80 %
 
-
-5. We can preview what the rainfall data in the file looks like by clicking Preview under the Select button. This will open a pop-up window with the preview plot. 
+4. We can preview what the rainfall data in the file looks like by clicking Preview next to the drop-down. This will open a pop-up window with the preview plot.
 
 .. image:: ../images/gui_advanced_rainfall_preview.PNG
     :scale: 80 %
 
-6. Confirm the changes by clicking Ok or Apply at the bottom of the advanced parameter window dialog. 
+5. Confirm the changes by clicking Ok or Apply at the bottom of the advanced parameter window dialog. 
 
-7. Run the simulation as usual! Once it's done you can check the totals plot to see the effect of seasonality on our total numbers of mosquitoes. For our example it should look like this:
+6. Run the simulation as usual! Once it's done you can check the totals plot to see the effect of seasonality on our total numbers of mosquitoes. For our example it should look like this:
 
 .. image:: ../images/gui_rainfall_totals_plot.PNG
     :scale: 80 %

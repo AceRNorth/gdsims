@@ -143,6 +143,8 @@ Advanced parameter window
 
 Advanced parameters can be accessed by clicking the Advanced button at the bottom of the parameters section. For more information on the model's advanced options visit the :doc:`../user_guide/adv_options` page.
 
+Advanced parameter files can be selected by checking the file checkboxes. This will display some default options where available and/or a custom file option to select your own file. This is described in detail in the advanced tutorials of :doc:`tutorials`.
+
 Note that patch coordinates file selection will only show when an Edge boundary type is selected. 
 
 Also note that the default dispersal type in the GUI is Radial - this differs from GDSiMS, where the default is Distance kernel.
@@ -168,7 +170,7 @@ Current plot tabs available:
 Totals - Genotype
 ^^^^^^^^^^^^^^^^^
 
-A plot of the total number of adult male mosquitoes over all sites for each day of the simulation. This includes plot lines for the different genotypes modelled - plot lines can be selected and re-plotted by clicking Plot again. Hover over the labels in the interaction sidebar to see descriptions for these. This plot uses data from the :ref:`totals_file`. W is a wild-type allele, D is a drive-type allele and R is a non-functional resistance allele.
+A plot of the total number of adult mated female mosquitoes over all sites for each day of the simulation. This includes plot lines for the different genotypes modelled, including special combinations of genotypes such as the grand total, as well as release time lines - plot lines can be selected and re-plotted by clicking Plot again. Hover over the labels in the interaction sidebar to see descriptions for these. This plot uses data from the :ref:`totals_file`. W is a wild-type allele, D is a drive-type allele and R is a non-functional resistance allele.
 
 Totals - Allele frequency
 ^^^^^^^^^^^^^^^^^^^^^^^^^
