@@ -434,6 +434,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-include-in-your-main3-cpp-file">What to include in your main3.cpp file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extending-the-model">Extending the model</a></li>
 </ul>
             </nav>
         </div>
@@ -579,6 +580,17 @@ document.write(`
 <p>The <code class="docutils literal notranslate"><span class="pre">inputval.h</span></code> file in the project defines parameter file reading and bounds and interval checking functions used in the CLI which you may want to reuse. You will need to define the correct bounds for each parameter according to our <a class="reference internal" href="custom_set.html"><span class="doc">Custom sets</span></a> page.</p>
 </div>
 </section>
+<section id="extending-the-model">
+<h2>Extending the model<a class="headerlink" href="#extending-the-model" title="Permalink to this heading">#</a></h2>
+<p>You may want to extend the model program. For example, by extending the number of genotypes modelled, the inheritance rates of these or the way this inheritance information is passed to the program. To do this, you would need to follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Update the <a class="reference internal" href="../api.html#_CPPv4N9constants7num_genE" title="constants::num_gen"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">constants::num_gen</span></code></a> constant with your chosen number of genotypes.</p></li>
+<li><p>Update the <a class="reference internal" href="../api.html#_CPPv4N10Simulation15set_inheritanceE17InheritanceParams" title="Simulation::set_inheritance"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Simulation::set_inheritance()</span></code></a> function with the new genotypes and respective inheritance rates for each. This functionality could be extended and/or overloaded depending on the problem - it just needs to set the internal <a class="reference internal" href="../api.html#_CPPv4N10Simulation14inher_fractionE" title="Simulation::inher_fraction"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">Simulation::inher_fraction</span></code></a> class variable. For example, the function could be overloaded to take the inheritance parameters from a file.</p></li>
+<li><p>Make sure the new genotype arrays keep WD (wild-drive heterozygous genotype) in the same index (index 1), since this is used to release the WD gene drive mosquitoes (otherwise modify the index in <a class="reference internal" href="../api.html#_CPPv4N5Patch12add_driver_MEi" title="Patch::add_driver_M"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Patch::add_driver_M()</span></code></a>).</p></li>
+<li><p>Update the class <a class="reference internal" href="../api.html#_CPPv46Record" title="Record"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Record</span></code></a> constructor with the new headers for record files (the new genotype labels). And remember to update your plotting scripts later on!</p></li>
+</ol>
+<p>You can follow similar steps to extend functions in the user-facing class <a class="reference internal" href="../api.html#_CPPv410Simulation" title="Simulation"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Simulation</span></code></a>. However, if model behaviour needs to be extended further, for example by adding specific fitness costs beyond inheritance to the new genotypes, this will involve extensions to deeper layers of code.</p>
+</section>
 </section>
 
 
@@ -627,6 +639,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-include-in-your-main3-cpp-file">What to include in your main3.cpp file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extending-the-model">Extending the model</a></li>
 </ul>
   </nav></div>
 

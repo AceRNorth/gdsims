@@ -153,3 +153,18 @@ By modifying the ``main3.cpp`` file further, you can read the input parameters f
 .. tip::
     The ``inputval.h`` file in the project defines parameter file reading and bounds and interval checking functions used in the CLI which you may want to reuse. You will need to define the correct bounds for each parameter according to our :doc:`custom_set` page. 
 
+
+Extending the model
+-------------------
+
+You may want to extend the model program. For example, by extending the number of genotypes modelled, the inheritance rates of these or the way this inheritance information is passed to the program. To do this, you would need to follow these steps:
+
+1. Update the :var:`constants::num_gen` constant with your chosen number of genotypes.
+
+2. Update the :func:`Simulation::set_inheritance()` function with the new genotypes and respective inheritance rates for each. This functionality could be extended and/or overloaded depending on the problem - it just needs to set the internal :var:`Simulation::inher_fraction` class variable. For example, the function could be overloaded to take the inheritance parameters from a file.
+
+3. Make sure the new genotype arrays keep WD (wild-drive heterozygous genotype) in the same index (index 1), since this is used to release the WD gene drive mosquitoes (otherwise modify the index in :func:`Patch::add_driver_M()`).
+
+4. Update the class :class:`Record` constructor with the new headers for record files (the new genotype labels). And remember to update your plotting scripts later on!
+
+You can follow similar steps to extend functions in the user-facing class :class:`Simulation`. However, if model behaviour needs to be extended further, for example by adding specific fitness costs beyond inheritance to the new genotypes, this will involve extensions to deeper layers of code.
